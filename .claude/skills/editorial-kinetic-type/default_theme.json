@@ -1,0 +1,11 @@
+{
+  "name": "default-cream-clay",
+  "description": "Anthropic-adjacent baseline: warm cream paper, deep ink, clay accent",
+  "background": "#F0EEE6",
+  "ink": "#191919",
+  "accent": "#CC785C",
+  "muted": "#7C7C7C",
+  "rule": "#D9D5C8",
+  "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+  "sans": "'DejaVu Sans', sans-serif"
+}

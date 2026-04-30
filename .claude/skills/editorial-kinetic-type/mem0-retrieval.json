@@ -1,0 +1,50 @@
+{
+  "date": "2026-04-29",
+  "topic": "mem0 gated hybrid retrieval",
+  "theme": "default",
+  "scenes": {
+    "title": {
+      "headline": "Hybrid Retrieval",
+      "eyebrow": "what mem0 just shipped"
+    },
+    "three_things": {
+      "eyebrow": "THREE SIGNALS",
+      "items": [
+        {"name": "Semantic", "descriptor": "vector match"},
+        {"name": "BM25", "descriptor": "lexical match"},
+        {"name": "Entity match", "descriptor": "named entities"}
+      ]
+    },
+    "problem": {
+      "line_a": "Fusion alone",
+      "line_b": "ships bugs.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "BM25 can rescue",
+      "line_b": "a semantically wrong",
+      "line_c": "match.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Gate first.",
+      "secondary": "Fuse second."
+    },
+    "mechanism": {
+      "line_a": "If the semantic score",
+      "line_b": "is below threshold",
+      "line_c": "drop.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "BM25 can't rescue",
+      "line_b": "what the gate",
+      "line_c": "already dropped."
+    },
+    "close": {
+      "primary": "Gate first.",
+      "accent": "Fuse second.",
+      "subtitle": "the part most builders miss."
+    }
+  }
+}
