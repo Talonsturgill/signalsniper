@@ -1,137 +1,41 @@
-#!/usr/bin/env python3
-"""
-editorial-kinetic-type HTML builder.
-
-Reads a scene-spec.json and emits a single self-contained HTML file
-that plays the 25-second editorial kinetic-typography video in any
-modern browser. CSS animations drive the typography, Web Audio API
-drives the soundtrack, no external assets.
-
-Two variant axes (selected per build):
-
-    motion_variant  ∈ {rise, lateral, drop, cascade, stack, split}
-    audio_variant   ∈ {ambient, minimal, warm}
-
-Defaults are rise + ambient (the original v1 behavior). Variants can
-be supplied via CLI flags or inside the scene spec under the
-"motion_variant" / "audio_variant" keys.
-
-Usage:
-    python build_html.py <spec.json> <output.html>
-        [--theme theme.json]
-        [--motion-variant rise|lateral|drop|cascade|stack|split]
-        [--audio-variant  ambient|minimal|warm]
-"""
-
-import argparse
-import json
-from pathlib import Path
-
-
-SCENE_DURATIONS_S = {
-    "title": 3.0,
-    "three_things": 3.0,
-    "problem": 3.0,
-    "specific_case": 3.0,
-    "fix": 3.0,
-    "mechanism": 3.0,
-    "consequence": 3.0,
-    "close": 4.0,
-}
-TOTAL_S = sum(SCENE_DURATIONS_S.values())  # 25.0
-
-MOTION_VARIANTS = ("rise", "lateral", "drop", "cascade", "stack", "split")
-AUDIO_VARIANTS = ("ambient", "minimal", "warm")
-
-
-def scene_starts():
-    starts = {}
-    cursor = 0.0
-    for name, dur in SCENE_DURATIONS_S.items():
-        starts[name] = (cursor, cursor + dur)
-        cursor += dur
-    return starts
-
-
-STARTS = scene_starts()
-
-
-def esc(s):
-    return (
-        s.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-    )
-
-
-def resolve_theme(spec, theme_arg):
-    if theme_arg:
-        return json.loads(Path(theme_arg).read_text())
-    if isinstance(spec.get("theme"), dict):
-        return spec["theme"]
-    default_path = Path(__file__).parent / "default_theme.json"
-    return json.loads(default_path.read_text())
-
-
-# ===================================================================
-# CSS
-# ===================================================================
-
-# Per-motion-variant alignment overrides. Type sizes never vary —
-# only where the lines sit on the canvas does.
-VARIANT_ALIGN_CSS = {
-    "rise": "",  # default centered, no overrides
-    "lateral": """
-.scene[data-scene="title"]         { align-items: flex-start; text-align: left; padding-left: 11%; }
-.scene[data-scene="three_things"]  { align-items: flex-start; text-align: left; padding-left: 11%; }
-.scene[data-scene="mechanism"]     { align-items: flex-start; text-align: left; padding-left: 11%; }
-.scene[data-scene="close"]         { align-items: flex-end;   text-align: right; padding-right: 11%; }
-""",
-    "drop": "",  # default centered
-    "cascade": """
-.scene { align-items: flex-start; text-align: left; padding-left: 11%; }
-.tt-rule { margin-left: 0; margin-right: auto; }
-""",
-    "stack": """
-.scene { justify-content: flex-end; padding-bottom: 22%; }
-""",
-    "split": "",  # default centered
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Archon, deterministic AI coding harness by Cole Medin</title>
+<style>
+:root {
+  --bg: #08090B;
+  --ink: #E6E8EB;
+  --accent: #0F92F7;
+  --muted: #77787B;
+  --rule: #1E1F21;
+  --serif: 'Bitstream Charter', 'DejaVu Serif', Georgia, serif;
+  --sans: 'DejaVu Sans', sans-serif;
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-def build_css(theme, motion_variant):
-    base = f"""
-:root {{
-  --bg: {theme['background']};
-  --ink: {theme['ink']};
-  --accent: {theme['accent']};
-  --muted: {theme['muted']};
-  --rule: {theme['rule']};
-  --serif: {theme['serif']};
-  --sans: {theme['sans']};
-}}
-
-* {{ box-sizing: border-box; margin: 0; padding: 0; }}
-
-html, body {{
+html, body {
   background: #0d0d0e;
   color: var(--ink);
   font-family: var(--serif);
   height: 100%;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
-}}
+}
 
-body {{
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
   padding: 16px;
-}}
+}
 
-.stage {{
+.stage {
   position: relative;
   width: min(86vmin, calc(100vh - 100px));
   aspect-ratio: 1 / 1;
@@ -140,17 +44,17 @@ body {{
   border-radius: 12px;
   box-shadow: 0 30px 80px -30px rgba(0,0,0,0.5),
               0 0 0 1px rgba(255,255,255,0.04);
-}}
+}
 
-.canvas {{
+.canvas {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-}}
+}
 
-.scene {{
+.scene {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -160,54 +64,54 @@ body {{
   justify-content: center;
   text-align: center;
   padding: 8%;
-}}
-.scene.active {{ pointer-events: auto; }}
+}
+.scene.active { pointer-events: auto; }
 
-.headline {{
+.headline {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 10.2cqw;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
-}}
-.eyebrow-small {{
+}
+.eyebrow-small {
   font-family: var(--sans);
   font-weight: 400;
   font-size: 3cqw;
   color: var(--muted);
   margin-top: 2.4cqw;
-}}
-.tt-eyebrow {{
+}
+.tt-eyebrow {
   font-family: var(--sans);
   font-weight: 600;
   font-size: 2.4cqw;
   letter-spacing: 0.36em;
   color: var(--accent);
   text-transform: uppercase;
-}}
-.tt-rule {{
+}
+.tt-rule {
   height: 2px;
   background: var(--rule);
   margin: 1.6cqw auto 5cqw;
   width: 0;
-}}
-.tt-item {{ margin: 1cqw 0; }}
-.tt-name {{
+}
+.tt-item { margin: 1cqw 0; }
+.tt-name {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 5.9cqw;
   line-height: 1.1;
   color: var(--ink);
-}}
-.tt-descriptor {{
+}
+.tt-descriptor {
   font-family: var(--sans);
   font-style: italic;
   font-size: 2.05cqw;
   color: var(--muted);
   margin-top: 0.4cqw;
-}}
-.problem-line {{
+}
+.problem-line {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 8.9cqw;
@@ -215,18 +119,18 @@ body {{
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0.6cqw 0;
-}}
-.problem-line.accent {{ color: var(--accent); }}
-.case-line {{
+}
+.problem-line.accent { color: var(--accent); }
+.case-line {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 5.9cqw;
   line-height: 1.15;
   color: var(--ink);
   margin: 0.6cqw 0;
-}}
-.case-line.accent {{ color: var(--accent); font-weight: 700; }}
-.fix-primary {{
+}
+.case-line.accent { color: var(--accent); font-weight: 700; }
+.fix-primary {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 13cqw;
@@ -234,60 +138,60 @@ body {{
   letter-spacing: -0.02em;
   color: var(--ink);
   display: inline-block;
-}}
-.fix-primary .ch {{ display: inline-block; white-space: pre; opacity: 0; }}
-.fix-secondary {{
+}
+.fix-primary .ch { display: inline-block; white-space: pre; opacity: 0; }
+.fix-secondary {
   font-family: var(--serif);
   font-style: italic;
   font-size: 5.9cqw;
   color: var(--muted);
   margin-top: 4cqw;
-}}
-.mech-line {{
+}
+.mech-line {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 5.2cqw;
   line-height: 1.1;
   color: var(--ink);
   margin: 0.6cqw 0;
-}}
-.mech-line.accent {{
+}
+.mech-line.accent {
   font-weight: 700;
   font-size: 6.7cqw;
   color: var(--accent);
-}}
-.cons-a {{
+}
+.cons-a {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 6.5cqw;
   line-height: 1.1;
   color: var(--ink);
-}}
-.cons-b {{
+}
+.cons-b {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 5.2cqw;
   line-height: 1.15;
   color: var(--ink);
   margin-top: 1.2cqw;
-}}
-.cons-c {{
+}
+.cons-c {
   font-family: var(--serif);
   font-style: italic;
   font-size: 5.2cqw;
   line-height: 1.15;
   color: var(--muted);
   margin-top: 1.2cqw;
-}}
-.close-primary {{
+}
+.close-primary {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 9.3cqw;
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--ink);
-}}
-.close-accent {{
+}
+.close-accent {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 9.3cqw;
@@ -295,16 +199,16 @@ body {{
   letter-spacing: -0.02em;
   color: var(--accent);
   margin-top: 2cqw;
-}}
-.close-subtitle {{
+}
+.close-subtitle {
   font-family: var(--sans);
   font-style: italic;
   font-size: 2.4cqw;
   color: var(--muted);
   margin-top: 4.6cqw;
-}}
+}
 
-.controls {{
+.controls {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -312,8 +216,8 @@ body {{
   color: rgba(255,255,255,0.55);
   font-family: var(--sans);
   font-size: 11px;
-}}
-.controls button {{
+}
+.controls button {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.85);
@@ -323,123 +227,99 @@ body {{
   cursor: pointer;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}}
-.controls button:hover {{ border-color: var(--accent); color: var(--accent); }}
-.progress {{
+}
+.controls button:hover { border-color: var(--accent); color: var(--accent); }
+.progress {
   flex: 1;
   height: 2px;
   background: rgba(255,255,255,0.12);
   border-radius: 1px;
   overflow: hidden;
-}}
-.progress-fill {{
+}
+.progress-fill {
   height: 100%;
   width: 0%;
   background: var(--accent);
-}}
-.clock {{ font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); }}
+}
+.clock { font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); }
 
-.stage {{ container-type: inline-size; container-name: stage; }}
-@container stage (min-width: 0px) {{
-  .headline {{ font-size: 10.2cqw; }}
-}}
-"""
-    return base + VARIANT_ALIGN_CSS[motion_variant]
+.stage { container-type: inline-size; container-name: stage; }
+@container stage (min-width: 0px) {
+  .headline { font-size: 10.2cqw; }
+}
 
+.scene[data-scene="title"]         { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="three_things"]  { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="mechanism"]     { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="close"]         { align-items: flex-end;   text-align: right; padding-right: 11%; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
 
-# ===================================================================
-# Scene HTML
-# ===================================================================
-
-def build_scene_html(spec):
-    s = spec["scenes"]
-    parts = []
-
-    parts.append(f"""
 <section class="scene" data-scene="title">
-  <div class="headline">{esc(s['title']['headline'])}</div>
-  <div class="eyebrow-small">{esc(s['title']['eyebrow'])}</div>
-</section>""")
+  <div class="headline">Archon</div>
+  <div class="eyebrow-small">the harness builder for AI coding</div>
+</section>
 
-    items_html = "".join(
-        f"""<div class="tt-item">
-        <div class="tt-name">{esc(item['name'])}</div>
-        <div class="tt-descriptor">{esc(item['descriptor'])}</div>
-      </div>"""
-        for item in s["three_things"]["items"]
-    )
-    parts.append(f"""
 <section class="scene" data-scene="three_things">
-  <div class="tt-eyebrow">{esc(s['three_things']['eyebrow'])}</div>
+  <div class="tt-eyebrow">THREE PIECES</div>
   <div class="tt-rule"></div>
-  {items_html}
-</section>""")
+  <div class="tt-item">
+        <div class="tt-name">YAML workflow</div>
+        <div class="tt-descriptor">the recipe in code</div>
+      </div><div class="tt-item">
+        <div class="tt-name">DAG nodes</div>
+        <div class="tt-descriptor">deterministic plus AI</div>
+      </div><div class="tt-item">
+        <div class="tt-name">Worktrees</div>
+        <div class="tt-descriptor">isolated parallel runs</div>
+      </div>
+</section>
 
-    p = s["problem"]
-    accent_a = " accent" if p.get("accent_line") == "a" else ""
-    accent_b = " accent" if p.get("accent_line") == "b" else ""
-    parts.append(f"""
 <section class="scene" data-scene="problem">
-  <div class="problem-line{accent_a}">{esc(p['line_a'])}</div>
-  <div class="problem-line{accent_b}">{esc(p['line_b'])}</div>
-</section>""")
+  <div class="problem-line">AI agents improvise.</div>
+  <div class="problem-line accent">That ships bugs.</div>
+</section>
 
-    sc = s["specific_case"]
-    accent = sc.get("accent_line", "b")
-    parts.append(f"""
 <section class="scene" data-scene="specific_case">
-  <div class="case-line{' accent' if accent == 'a' else ''}">{esc(sc['line_a'])}</div>
-  <div class="case-line{' accent' if accent == 'b' else ''}">{esc(sc['line_b'])}</div>
-  <div class="case-line{' accent' if accent == 'c' else ''}">{esc(sc['line_c'])}</div>
-</section>""")
+  <div class="case-line">Same prompt, two runs,</div>
+  <div class="case-line accent">two different patches.</div>
+  <div class="case-line">One ships, one breaks.</div>
+</section>
 
-    fx = s["fix"]
-    parts.append(f"""
 <section class="scene" data-scene="fix">
-  <div class="fix-primary" data-text="{esc(fx['primary'])}">{esc(fx['primary'])}</div>
-  <div class="fix-secondary">{esc(fx['secondary'])}</div>
-</section>""")
+  <div class="fix-primary" data-text="Ship the harness.">Ship the harness.</div>
+  <div class="fix-secondary">No more freestyle.</div>
+</section>
 
-    mc = s["mechanism"]
-    m_accent = mc.get("accent_line", "c")
-    parts.append(f"""
 <section class="scene" data-scene="mechanism">
-  <div class="mech-line{' accent' if m_accent == 'a' else ''}">{esc(mc['line_a'])}</div>
-  <div class="mech-line{' accent' if m_accent == 'b' else ''}">{esc(mc['line_b'])}</div>
-  <div class="mech-line{' accent' if m_accent == 'c' else ''}">{esc(mc['line_c'])}</div>
-</section>""")
+  <div class="mech-line">Plan, build, validate,</div>
+  <div class="mech-line">review, then PR.</div>
+  <div class="mech-line accent">Same DAG every time.</div>
+</section>
 
-    cn = s["consequence"]
-    parts.append(f"""
 <section class="scene" data-scene="consequence">
-  <div class="cons-a">{esc(cn['line_a'])}</div>
-  <div class="cons-b">{esc(cn['line_b'])}</div>
-  <div class="cons-c">{esc(cn['line_c'])}</div>
-</section>""")
+  <div class="cons-a">Same input, same diff.</div>
+  <div class="cons-b">The randomness</div>
+  <div class="cons-c">is gone.</div>
+</section>
 
-    cl = s["close"]
-    parts.append(f"""
 <section class="scene" data-scene="close">
-  <div class="close-primary">{esc(cl['primary'])}</div>
-  <div class="close-accent">{esc(cl['accent'])}</div>
-  <div class="close-subtitle">{esc(cl['subtitle'])}</div>
-</section>""")
-
-    return "\n".join(parts)
-
-
-# ===================================================================
-# JS
-# ===================================================================
-
-# The runtime ships all 6 motion variants and all 3 audio variants and
-# selects between them via the constants injected at build time. The
-# extra ~6 KB of unused variant code per output is negligible compared
-# to making the template easier to maintain and inspect.
-
-JS_DRIVER_TEMPLATE = r"""
-const MOTION_VARIANT = "__MOTION_VARIANT__";
-const AUDIO_VARIANT  = "__AUDIO_VARIANT__";
+  <div class="close-primary">Treat agents</div>
+  <div class="close-accent">as infra.</div>
+  <div class="close-subtitle">Archon by Cole Medin.</div>
+</section>
+</div>
+<div class="controls">
+  <button id="play">replay</button>
+  <button id="mute">sound: on</button>
+  <div class="progress"><div class="progress-fill" id="pf"></div></div>
+  <span class="clock" id="clock">00:00</span>
+</div>
+<script>
+const MOTION_VARIANT = "lateral";
+const AUDIO_VARIANT  = "minimal";
 
 const TL = [
   ["title",         0.00,  3.00],
@@ -1270,71 +1150,6 @@ document.getElementById("mute").addEventListener("click", () => {
 });
 
 play();
-"""
-
-
-def build_js(motion_variant, audio_variant):
-    return (
-        JS_DRIVER_TEMPLATE
-        .replace("__MOTION_VARIANT__", motion_variant)
-        .replace("__AUDIO_VARIANT__", audio_variant)
-    )
-
-
-def build_html(spec, theme, motion_variant, audio_variant):
-    css = build_css(theme, motion_variant)
-    scenes_html = build_scene_html(spec)
-    js = build_js(motion_variant, audio_variant)
-    title_text = spec.get("topic") or spec["scenes"]["title"]["headline"]
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>{esc(title_text)}</title>
-<style>{css}</style>
-</head>
-<body>
-<div class="stage" id="stage">
-{scenes_html}
-</div>
-<div class="controls">
-  <button id="play">replay</button>
-  <button id="mute">sound: on</button>
-  <div class="progress"><div class="progress-fill" id="pf"></div></div>
-  <span class="clock" id="clock">00:00</span>
-</div>
-<script>{js}</script>
+</script>
 </body>
 </html>
-"""
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("spec", help="Path to scene-spec.json")
-    parser.add_argument("output", help="Path to write HTML output")
-    parser.add_argument("--theme", help="Path to theme.json (defaults to default_theme.json)")
-    parser.add_argument("--motion-variant", choices=MOTION_VARIANTS, default=None,
-                        help="motion treatment (overrides spec.motion_variant; default rise)")
-    parser.add_argument("--audio-variant", choices=AUDIO_VARIANTS, default=None,
-                        help="audio score (overrides spec.audio_variant; default ambient)")
-    args = parser.parse_args()
-
-    spec = json.loads(Path(args.spec).read_text())
-    theme = resolve_theme(spec, args.theme)
-
-    motion_variant = args.motion_variant or spec.get("motion_variant", "rise")
-    audio_variant = args.audio_variant or spec.get("audio_variant", "ambient")
-    if motion_variant not in MOTION_VARIANTS:
-        raise SystemExit(f"unknown motion_variant: {motion_variant!r}, expected one of {MOTION_VARIANTS}")
-    if audio_variant not in AUDIO_VARIANTS:
-        raise SystemExit(f"unknown audio_variant: {audio_variant!r}, expected one of {AUDIO_VARIANTS}")
-
-    html = build_html(spec, theme, motion_variant, audio_variant)
-    Path(args.output).write_text(html)
-    print(f"Wrote {args.output} ({len(html):,} bytes, motion={motion_variant}, audio={audio_variant})")
-
-
-if __name__ == "__main__":
-    main()

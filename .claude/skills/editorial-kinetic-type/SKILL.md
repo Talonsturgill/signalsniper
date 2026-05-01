@@ -105,6 +105,49 @@ These rules come from the calibration that makes the format land. They apply to 
 
 Voice: pattern-recognition, builder's POV, declarative. No hedging. No "perhaps." No "it could be argued." If the user has a `write-like-X` skill committed to the repo, use it to draft the copy first, then trim to fit the character limits.
 
+## Motion and audio variants
+
+The skill ships a fixed catalog of **motion variants** (visual entry treatment + per-scene alignment) and **audio variants** (soundtrack profile). The structure, type sizes, scene order, and 25s timing never vary — but where the words sit on the canvas, how they enter, and how transitions sound do. The routine picks one of each per day so back-to-back posts don't read as duplicate cuts.
+
+### Motion variants
+
+| Name      | Alignment family             | Entry treatment |
+|-----------|------------------------------|-----------------|
+| `rise`    | centered                     | fade-up translateY 12-14px, scale-in on scene 5 (default v1) |
+| `lateral` | mixed (left for title/three_things/mechanism, right for close) | sides + character cascade on scene 5 |
+| `drop`    | centered                     | translateY -16-22px (drop from above), scene 5 scales 1.05 → 1.0 |
+| `cascade` | left across all scenes       | strong left slide-in, character cascade on scene 5 |
+| `stack`   | centered, anchored bottom    | slide up from below, character cascade on scene 5 |
+| `split`   | centered                     | paired entries from opposite sides, three-line scenes alternate L/C/R |
+
+### Audio variants
+
+| Name      | Score profile |
+|-----------|---------------|
+| `ambient` | white-noise transition swells, soft sub thumps, mallet bells, UI ticks (default v1) |
+| `minimal` | sine shimmers on chord tones at boundaries, soft glass bells at emphasis moments. No swells, thumps, or ticks. Reads like a product-drop pad bloom. |
+| `warm`    | Cmaj7 pad (drops the 9th), octave-down sine lift tones at boundaries, felted-piano bells at emphasis moments. No swells. |
+
+Total: 6 × 3 = **18 distinct cuts** before any combo repeats.
+
+### Brand-driven picker (lives in the routine prompt)
+
+The routine writes both fields into the per-day scene spec before invoking the skill. The picker reads brand-spec.json and creator-dossier.md to map onto a variant pair:
+
+- **Brand fingerprint** from brand-spec.json: background lightness L (0–1) and accent hue family (warm / cool / neutral)
+- **Dossier mood** chosen by Claude in the routine: one of {precise, bold, quiet, playful, warm}
+- **Motion variant** = `MOTION_BY_MOOD[mood][creator_appearance_index % 2]`. Each mood maps to a 2-variant subset; we rotate within the subset across appearances of the same creator. Indicative mapping (the routine can override per spec):
+  - `precise` → {cascade, drop}
+  - `bold` → {lateral, split}
+  - `quiet` → {rise, stack}
+  - `playful` → {cascade, split}
+  - `warm` → {rise, lateral}
+- **Audio variant** = `AUDIO_BY_BRAND[hue_family]`: warm hue → `warm`, cool hue → `minimal`, neutral hue → `ambient`
+
+`creator_appearance_index` is derived by counting prior `reports/*-YYYY-MM-DD.md` files for the same creator slug, so the second time a creator gets featured they get the other variant from their mood subset rather than a duplicate.
+
+If you want to hand-pick a variant pair (one-off cuts, A/B tests), just write `motion_variant` / `audio_variant` directly into the spec. The picker only fills in fields that aren't already set.
+
 ## Workflow
 
 ### Step 1: Read or create the scene spec
@@ -118,6 +161,8 @@ Spec shape:
   "date": "2026-04-29",
   "topic": "mem0 gated hybrid retrieval",
   "theme": "default",
+  "motion_variant": "rise",
+  "audio_variant": "ambient",
   "scenes": {
     "title":         { "headline": "Hybrid Retrieval", "eyebrow": "what mem0 just shipped" },
     "three_things": {
@@ -154,6 +199,8 @@ python .claude/skills/editorial-kinetic-type/build_html.py \
   videos/linkedin-video-YYYY-MM-DD.html
 ```
 
+`motion_variant` and `audio_variant` are read from the spec. To override on the command line for a one-off cut, pass `--motion-variant` and/or `--audio-variant`.
+
 The output is a single self-contained HTML file. CSS animations drive the typography on a 1080x1080 stage that scales to the viewport. The Web Audio API drives the soundtrack. No external assets, no remote fonts, no JS dependencies. Open it in any modern browser to play.
 
 It belongs under `<repo>/videos/` because that path is auto-deployed to GitHub Pages by `.github/workflows/pages.yml`. Once committed and pushed to `main`, the deployed URL is `https://<owner>.github.io/<repo>/linkedin-video-YYYY-MM-DD.html` (typically live within ~60 seconds).
@@ -163,13 +210,16 @@ It belongs under `<repo>/videos/` because that path is auto-deployed to GitHub P
 ```bash
 python .claude/skills/editorial-kinetic-type/record_mp4.py \
   videos/linkedin-video-YYYY-MM-DD.html \
-  reports/linkedin-video-YYYY-MM-DD.mp4
+  reports/linkedin-video-YYYY-MM-DD.mp4 \
+  --spec reports/scene-spec-YYYY-MM-DD.json
 ```
+
+Pass `--spec` so the recorder reads `audio_variant` from the spec. Or pass `--audio-variant` directly to override.
 
 This script:
 1. Installs Playwright + Chromium if missing
 2. Loads the HTML in a headless 1080x1080 browser, records 26 seconds of webm
-3. Synthesizes the soundtrack to wav via `synth_audio.py`
+3. Synthesizes the soundtrack to wav via `synth_audio.py --audio-variant <variant>`
 4. Muxes webm + wav into an H.264 baseline + AAC MP4 with `+faststart`
 
 Tab audio cannot be captured by Playwright, which is why we synthesize the audio separately. The schedule in `synth_audio.py` is calibrated to match the JS sync points in the HTML (scene transitions at 3-21s, mallet hits at 12.0s and 21.0s/22.5s).
