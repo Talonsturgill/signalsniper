@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-01",
+  "topic": "Archon, deterministic AI coding harness by Cole Medin",
+  "theme": {
+    "background": "#08090B",
+    "ink": "#E6E8EB",
+    "accent": "#0F92F7",
+    "muted": "#77787B",
+    "rule": "#1E1F21",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Archon",
+      "eyebrow": "the harness builder for AI coding"
+    },
+    "three_things": {
+      "eyebrow": "THREE PIECES",
+      "items": [
+        {"name": "YAML workflow", "descriptor": "the recipe in code"},
+        {"name": "DAG nodes", "descriptor": "deterministic plus AI"},
+        {"name": "Worktrees", "descriptor": "isolated parallel runs"}
+      ]
+    },
+    "problem": {
+      "line_a": "AI agents improvise.",
+      "line_b": "That ships bugs.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "Same prompt, two runs,",
+      "line_b": "two different patches.",
+      "line_c": "One ships, one breaks.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Ship the harness.",
+      "secondary": "No more freestyle."
+    },
+    "mechanism": {
+      "line_a": "Plan, build, validate,",
+      "line_b": "review, then PR.",
+      "line_c": "Same DAG every time.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "Same input, same diff.",
+      "line_b": "The randomness",
+      "line_c": "is gone."
+    },
+    "close": {
+      "primary": "Treat agents",
+      "accent": "as infra.",
+      "subtitle": "Archon by Cole Medin."
+    }
+  }
+}
