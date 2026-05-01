@@ -684,73 +684,56 @@ function playSub(t0, totalDur) {
   });
 }
 
-function playSwell(t0) {
-  const len = Math.floor(audioCtx.sampleRate * 1.4);
-  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
-  const data = buf.getChannelData(0);
-  for (let i = 0; i < len; i++) data[i] = (Math.random() * 2 - 1) * 0.4;
-  const src = audioCtx.createBufferSource();
-  src.buffer = buf;
-  const bp = audioCtx.createBiquadFilter();
-  bp.type = "bandpass";
-  bp.frequency.value = 2200;
-  bp.Q.value = 0.7;
+// Tonal shimmer at a scene boundary: pure sine on a chord tone, slow fade in
+// and out. Replaces the white-noise swoosh with a softer harmonic bloom.
+function playShimmer(t0, freq) {
+  const o = audioCtx.createOscillator();
+  o.type = "sine";
+  o.frequency.value = freq;
   const g = audioCtx.createGain();
   g.gain.setValueAtTime(0.0001, t0);
-  g.gain.exponentialRampToValueAtTime(0.18, t0 + 1.2);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.4);
-  src.connect(bp).connect(g).connect(masterGain);
-  track(src, t0, 1.5);
-}
-
-function playMallet(t0, freq, vol) {
-  const o = audioCtx.createOscillator();
-  const mod = audioCtx.createOscillator();
-  const modGain = audioCtx.createGain();
-  o.type = "sine";
-  mod.type = "sine";
-  o.frequency.value = freq;
-  mod.frequency.value = freq * 3.2;
-  modGain.gain.value = freq * 1.4;
-  mod.connect(modGain).connect(o.frequency);
-  const g = audioCtx.createGain();
-  g.gain.setValueAtTime(0, t0);
-  g.gain.linearRampToValueAtTime(vol, t0 + 0.005);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.6);
+  g.gain.linearRampToValueAtTime(0.05, t0 + 0.9);
+  g.gain.linearRampToValueAtTime(0.0001, t0 + 1.8);
   o.connect(g).connect(masterGain);
-  track(o, t0, 1.7);
-  track(mod, t0, 1.7);
+  track(o, t0, 2.0);
 }
 
-function playTick(t0, vol) {
-  const len = Math.floor(audioCtx.sampleRate * 0.04);
-  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
-  const data = buf.getChannelData(0);
-  for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
-  const src = audioCtx.createBufferSource();
-  src.buffer = buf;
-  const hp = audioCtx.createBiquadFilter();
-  hp.type = "highpass";
-  hp.frequency.value = 6000;
-  const g = audioCtx.createGain();
-  g.gain.setValueAtTime(vol, t0);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.04);
-  src.connect(hp).connect(g).connect(masterGain);
-  track(src, t0, 0.05);
+// Soft glass bell at the emphasis moments: sine fundamental + 2nd partial,
+// quick decay. Quieter and brighter than a mallet, more like a glass tap.
+function playGlassBell(t0, freq, vol) {
+  const fund = audioCtx.createOscillator();
+  const partial = audioCtx.createOscillator();
+  fund.type = "sine";
+  partial.type = "sine";
+  fund.frequency.value = freq;
+  partial.frequency.value = freq * 2.01;
+  const g1 = audioCtx.createGain();
+  const g2 = audioCtx.createGain();
+  g1.gain.setValueAtTime(0, t0);
+  g1.gain.linearRampToValueAtTime(vol, t0 + 0.01);
+  g1.gain.exponentialRampToValueAtTime(0.0001, t0 + 2.4);
+  g2.gain.setValueAtTime(0, t0);
+  g2.gain.linearRampToValueAtTime(vol * 0.35, t0 + 0.01);
+  g2.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.6);
+  fund.connect(g1).connect(masterGain);
+  partial.connect(g2).connect(masterGain);
+  track(fund, t0, 2.5);
+  track(partial, t0, 1.7);
 }
 
 function scheduleScore(t0) {
   playPad(t0, 25);
   playSub(t0, 25);
-  [3, 6, 9, 12, 15, 18, 21].forEach(s => playSwell(t0 + s - 0.6));
-  playMallet(t0 + 12.0, 523.25, 0.22);
-  playMallet(t0 + 12.05, 392.00, 0.16);
-  playMallet(t0 + 21.0, 523.25, 0.22);
-  playMallet(t0 + 21.05, 659.25, 0.18);
-  playMallet(t0 + 22.5, 783.99, 0.18);
-  [0.6, 3.4, 3.8, 4.1, 4.4, 6.4, 9.4, 15.4, 15.8, 16.4, 18.4].forEach(s => {
-    playTick(t0 + s, 0.18);
+  // Subtle harmonic shimmers at scene boundaries on Cmaj9 chord tones —
+  // boundaries feel like the chord blooming, not a transition effect.
+  const shimmerNotes = [523.25, 659.25, 783.99, 987.77, 587.33, 659.25, 783.99];
+  [3, 6, 9, 12, 15, 18, 21].forEach((s, i) => {
+    playShimmer(t0 + s - 0.6, shimmerNotes[i]);
   });
+  // Soft glass bells at the two emphasis moments. Same sync points as v1.
+  playGlassBell(t0 + 12.0, 523.25, 0.18);
+  playGlassBell(t0 + 21.0, 523.25, 0.16);
+  playGlassBell(t0 + 22.5, 783.99, 0.14);
 }
 
 async function play() {
