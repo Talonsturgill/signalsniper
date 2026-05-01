@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Archon, deterministic AI coding harness by Cole Medin</title>
+<style>
+:root {
+  --bg: #08090B;
+  --ink: #E6E8EB;
+  --accent: #0F92F7;
+  --muted: #77787B;
+  --rule: #1E1F21;
+  --serif: 'Bitstream Charter', 'DejaVu Serif', Georgia, serif;
+  --sans: 'DejaVu Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #0d0d0e;
+  color: var(--ink);
+  font-family: var(--serif);
+  height: 100%;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.stage {
+  position: relative;
+  width: min(86vmin, calc(100vh - 100px));
+  aspect-ratio: 1 / 1;
+  background: var(--bg);
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.5),
+              0 0 0 1px rgba(255,255,255,0.04);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8%;
+}
+
+/* Per-scene alignment overrides — moves where words sit on screen */
+.scene[data-scene="title"]         { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="three_things"]  { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="problem"]       { align-items: center; text-align: center; }
+.scene[data-scene="specific_case"] { align-items: center; text-align: center; }
+.scene[data-scene="fix"]           { align-items: center; text-align: center; }
+.scene[data-scene="mechanism"]     { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="consequence"]   { align-items: center; text-align: center; }
+.scene[data-scene="close"]         { align-items: flex-end; text-align: right; padding-right: 11%; }
+
+.scene.active { pointer-events: auto; }
+
+.headline {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 10.2cqw;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.eyebrow-small {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 3cqw;
+  color: var(--muted);
+  margin-top: 2.4cqw;
+}
+.tt-eyebrow {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 2.4cqw;
+  letter-spacing: 0.36em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.tt-rule {
+  height: 2px;
+  background: var(--rule);
+  margin: 1.6cqw 0 5cqw;
+  width: 0;
+}
+.tt-item {
+  margin: 1cqw 0;
+}
+.tt-name {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 5.9cqw;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.tt-descriptor {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 2.05cqw;
+  color: var(--muted);
+  margin-top: 0.4cqw;
+}
+.problem-line {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 8.9cqw;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0.6cqw 0;
+}
+.problem-line.accent { color: var(--accent); }
+.case-line {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 5.9cqw;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0.6cqw 0;
+}
+.case-line.accent { color: var(--accent); font-weight: 700; }
+.fix-primary {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 13cqw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  display: inline-block;
+}
+.fix-primary .ch {
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(18px);
+}
+.fix-secondary {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 5.9cqw;
+  color: var(--muted);
+  margin-top: 4cqw;
+}
+.mech-line {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 5.2cqw;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0.6cqw 0;
+}
+.mech-line.accent {
+  font-weight: 700;
+  font-size: 6.7cqw;
+  color: var(--accent);
+}
+.cons-a {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 6.5cqw;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.cons-b {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 5.2cqw;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-top: 1.2cqw;
+}
+.cons-c {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 5.2cqw;
+  line-height: 1.15;
+  color: var(--muted);
+  margin-top: 1.2cqw;
+}
+.close-primary {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 9.3cqw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.close-accent {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 9.3cqw;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin-top: 2cqw;
+}
+.close-subtitle {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 2.4cqw;
+  color: var(--muted);
+  margin-top: 4.6cqw;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(86vmin, calc(100vh - 100px));
+  color: rgba(255,255,255,0.55);
+  font-family: var(--sans);
+  font-size: 11px;
+}
+.controls button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.85);
+  font: inherit;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.controls button:hover { border-color: var(--accent); color: var(--accent); }
+.progress {
+  flex: 1;
+  height: 2px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+.clock { font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); }
+
+.stage { container-type: inline-size; container-name: stage; }
+@container stage (min-width: 0px) {
+  .headline { font-size: 10.2cqw; }
+}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+<section class="scene" data-scene="title">
+  <div class="headline">Archon</div>
+  <div class="eyebrow-small">the harness builder for AI coding</div>
+</section>
+
+<section class="scene" data-scene="three_things">
+  <div class="tt-eyebrow">THREE PIECES</div>
+  <div class="tt-rule"></div>
+  <div class="tt-item">
+        <div class="tt-name">YAML workflow</div>
+        <div class="tt-descriptor">the recipe in code</div>
+      </div><div class="tt-item">
+        <div class="tt-name">DAG nodes</div>
+        <div class="tt-descriptor">deterministic plus AI</div>
+      </div><div class="tt-item">
+        <div class="tt-name">Worktrees</div>
+        <div class="tt-descriptor">isolated parallel runs</div>
+      </div>
+</section>
+
+<section class="scene" data-scene="problem">
+  <div class="problem-line">AI agents improvise.</div>
+  <div class="problem-line accent">That ships bugs.</div>
+</section>
+
+<section class="scene" data-scene="specific_case">
+  <div class="case-line">Same prompt, two runs,</div>
+  <div class="case-line accent">two different patches.</div>
+  <div class="case-line">One ships, one breaks.</div>
+</section>
+
+<section class="scene" data-scene="fix">
+  <div class="fix-primary" data-text="Ship the harness."></div>
+  <div class="fix-secondary">No more freestyle.</div>
+</section>
+
+<section class="scene" data-scene="mechanism">
+  <div class="mech-line">Plan, build, validate,</div>
+  <div class="mech-line">review, then PR.</div>
+  <div class="mech-line accent">Same DAG every time.</div>
+</section>
+
+<section class="scene" data-scene="consequence">
+  <div class="cons-a">Same input, same diff.</div>
+  <div class="cons-b">The randomness</div>
+  <div class="cons-c">is gone.</div>
+</section>
+
+<section class="scene" data-scene="close">
+  <div class="close-primary">Treat agents</div>
+  <div class="close-accent">as infra.</div>
+  <div class="close-subtitle">Archon by Cole Medin.</div>
+</section>
+</div>
+<div class="controls">
+  <button id="play">replay</button>
+  <button id="mute">sound: on</button>
+  <div class="progress"><div class="progress-fill" id="pf"></div></div>
+  <span class="clock" id="clock">00:00</span>
+</div>
+<script>
+// Timeline (seconds): [scene_name, start, end]
+const TL = [
+  ["title",         0.00,  3.00],
+  ["three_things",  3.00,  6.00],
+  ["problem",       6.00,  9.00],
+  ["specific_case", 9.00, 12.00],
+  ["fix",          12.00, 15.00],
+  ["mechanism",    15.00, 18.00],
+  ["consequence",  18.00, 21.00],
+  ["close",        21.00, 25.00],
+];
+const DURATION_S = 25.0;
+const FADE_IN_S = 0.4;
+const FADE_OUT_S = 0.27;
+
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+const sceneEls = $$(".scene");
+
+let startedAt = 0;
+let raf = null;
+
+// Pre-split the fix-primary into characters for letter-by-letter reveal.
+(function splitFixPrimary() {
+  const el = document.querySelector('.fix-primary');
+  if (!el) return;
+  const text = el.dataset.text || el.textContent;
+  el.textContent = "";
+  for (const ch of text) {
+    const span = document.createElement("span");
+    span.className = "ch";
+    span.textContent = ch;
+    el.appendChild(span);
+  }
+})();
+
+function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+function applySceneAnimations(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  let op = 1;
+  if (sceneT < FADE_IN_S) op = sceneT / FADE_IN_S;
+  else if (sceneT > dur - FADE_OUT_S) op = Math.max(0, (dur - sceneT) / FADE_OUT_S);
+  el.style.opacity = op.toFixed(3);
+
+  const name = el.dataset.scene;
+  const children = el.children;
+
+  if (name === "title") {
+    // Headline rises from below (24px), eyebrow slides in from LEFT after delay.
+    const delays = [0, 0.45];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = i === 0 ? "translateY(24px)" : "translateX(-40px)";
+        continue;
+      }
+      const t = Math.min(1, local / 0.6);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      if (i === 0) {
+        c.style.transform = `translateY(${(24 * (1 - eased)).toFixed(2)}px)`;
+      } else {
+        c.style.transform = `translateX(${(-40 * (1 - eased)).toFixed(2)}px)`;
+      }
+    }
+  } else if (name === "three_things") {
+    // Eyebrow + rule (grows from left), then items slide in from the LEFT with stagger.
+    const delays = [0, 0.15, 0.45, 0.75, 1.05];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = i >= 2 ? "translateX(-60px)" : "";
+        if (i === 1) c.style.width = "0vmin";
+        continue;
+      }
+      const t = Math.min(1, local / 0.55);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      if (i === 1) {
+        c.style.width = `${(14 * eased).toFixed(2)}vmin`;
+      } else if (i >= 2) {
+        c.style.transform = `translateX(${(-60 * (1 - eased)).toFixed(2)}px)`;
+      }
+    }
+  } else if (name === "problem") {
+    // Line A slides from RIGHT, Line B (accent) slides from LEFT.
+    const delays = [0, 0.4];
+    const fromX = [60, -60];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = `translateX(${fromX[i]}px)`;
+        continue;
+      }
+      const t = Math.min(1, local / 0.6);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = `translateX(${(fromX[i] * (1 - eased)).toFixed(2)}px)`;
+    }
+  } else if (name === "specific_case") {
+    // Line A from LEFT, Line B (accent) drops from ABOVE, Line C from RIGHT.
+    const delays = [0, 0.4, 0.85];
+    const transforms = [
+      (e) => `translateX(${(-50 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateY(${(-22 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateX(${(50 * (1 - e)).toFixed(2)}px)`,
+    ];
+    const init = ["translateX(-50px)", "translateY(-22px)", "translateX(50px)"];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = init[i];
+        continue;
+      }
+      const t = Math.min(1, local / 0.55);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = transforms[i](eased);
+    }
+  } else if (name === "fix") {
+    // Letter-by-letter character reveal for primary, then secondary slides up.
+    const primary = children[0];
+    const chars = primary.querySelectorAll(".ch");
+    const total = chars.length;
+    const perCharDelay = 0.045;
+    const charDur = 0.4;
+    chars.forEach((ch, i) => {
+      const local = sceneT - i * perCharDelay;
+      if (local < 0) {
+        ch.style.opacity = 0;
+        ch.style.transform = "translateY(18px)";
+        return;
+      }
+      const t = Math.min(1, local / charDur);
+      const eased = easeOutCubic(t);
+      ch.style.opacity = eased.toFixed(3);
+      ch.style.transform = `translateY(${(18 * (1 - eased)).toFixed(2)}px)`;
+    });
+    primary.style.opacity = 1;
+
+    const secondary = children[1];
+    const secondaryDelay = total * perCharDelay + 0.25;
+    const localS = sceneT - secondaryDelay;
+    if (localS < 0) {
+      secondary.style.opacity = 0;
+      secondary.style.transform = "translateY(14px)";
+    } else {
+      const t = Math.min(1, localS / 0.55);
+      const eased = easeOutCubic(t);
+      secondary.style.opacity = eased.toFixed(3);
+      secondary.style.transform = `translateY(${(14 * (1 - eased)).toFixed(2)}px)`;
+    }
+  } else if (name === "mechanism") {
+    // Lines slide in from LEFT with longer stagger; accent line gets a punch scale.
+    const delays = [0, 0.5, 1.0];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = "translateX(-50px)";
+        continue;
+      }
+      const t = Math.min(1, local / 0.55);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      const isAccent = c.classList.contains("accent");
+      if (isAccent) {
+        // After slide-in, do a brief punch (1.0 -> 1.06 -> 1.0) over 0.4s.
+        const punchT = local - 0.55;
+        let scale = 1.0;
+        if (punchT >= 0 && punchT < 0.4) {
+          const pt = punchT / 0.4;
+          scale = 1.0 + 0.06 * Math.sin(pt * Math.PI);
+        }
+        c.style.transform = `translateX(${(-50 * (1 - eased)).toFixed(2)}px) scale(${scale.toFixed(3)})`;
+        c.style.transformOrigin = "left center";
+      } else {
+        c.style.transform = `translateX(${(-50 * (1 - eased)).toFixed(2)}px)`;
+      }
+    }
+  } else if (name === "consequence") {
+    // Lines drop down from ABOVE.
+    const delays = [0, 0.4, 0.85];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = "translateY(-22px)";
+        continue;
+      }
+      const t = Math.min(1, local / 0.55);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = `translateY(${(-22 * (1 - eased)).toFixed(2)}px)`;
+    }
+  } else if (name === "close") {
+    // Right-aligned. Primary slides from LEFT, accent slides from RIGHT, subtitle fades up.
+    const delays = [0, 0.5, 1.3];
+    const transforms = [
+      (e) => `translateX(${(-60 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateX(${(60 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateY(${(14 * (1 - e)).toFixed(2)}px)`,
+    ];
+    const init = ["translateX(-60px)", "translateX(60px)", "translateY(14px)"];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) {
+        c.style.opacity = 0;
+        c.style.transform = init[i];
+        continue;
+      }
+      const t = Math.min(1, local / 0.6);
+      const eased = easeOutCubic(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = transforms[i](eased);
+    }
+  }
+}
+
+function resetScenes() {
+  sceneEls.forEach((el) => {
+    el.classList.remove("active");
+    el.style.opacity = 0;
+    Array.from(el.children).forEach(c => {
+      c.style.opacity = 0;
+      c.style.transform = "";
+      if (c.classList.contains("tt-rule")) c.style.width = "0vmin";
+    });
+    const chars = el.querySelectorAll(".ch");
+    chars.forEach((ch) => {
+      ch.style.opacity = 0;
+      ch.style.transform = "translateY(18px)";
+    });
+  });
+}
+
+function tick() {
+  const t = (performance.now() - startedAt) / 1000;
+  const clamped = Math.min(t, DURATION_S);
+
+  let idx = 0;
+  for (let i = 0; i < TL.length; i++) {
+    if (clamped >= TL[i][1] && clamped < TL[i][2]) { idx = i; break; }
+    if (clamped >= TL[i][2]) idx = i;
+  }
+  sceneEls.forEach((el, i) => el.classList.toggle("active", i === idx));
+  const [, start, end] = TL[idx];
+  applySceneAnimations(idx, clamped - start, end - start);
+
+  $("#pf").style.width = `${(clamped / DURATION_S * 100).toFixed(2)}%`;
+  const sec = Math.floor(clamped);
+  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
+  const ss = String(sec % 60).padStart(2, "0");
+  $("#clock").textContent = `${mm}:${ss}`;
+
+  if (t < DURATION_S) raf = requestAnimationFrame(tick);
+}
+
+// ---------- audio engine (unchanged from v1) ----------
+let audioCtx = null;
+let masterGain = null;
+let liveNodes = [];
+let soundEnabled = true;
+
+function initAudio() {
+  if (audioCtx) return;
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return;
+  audioCtx = new Ctx();
+  masterGain = audioCtx.createGain();
+  masterGain.gain.value = 0.6;
+  const lp = audioCtx.createBiquadFilter();
+  lp.type = "lowpass";
+  lp.frequency.value = 13000;
+  masterGain.connect(lp).connect(audioCtx.destination);
+}
+
+function stopAllAudio() {
+  liveNodes.forEach(n => { try { n.stop(); } catch (e) {} });
+  liveNodes = [];
+}
+
+function track(node, when, dur) {
+  node.start(when);
+  node.stop(when + dur + 0.1);
+  liveNodes.push(node);
+}
+
+function playPad(t0, totalDur) {
+  const freqs = [130.81, 164.81, 196.00, 246.94, 293.66];
+  freqs.forEach((f, i) => {
+    const o = audioCtx.createOscillator();
+    o.type = "sine";
+    o.frequency.value = f * (1 + (i - 2) * 0.0008);
+    const g = audioCtx.createGain();
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(0.03, t0 + 3.0);
+    g.gain.setValueAtTime(0.03, t0 + totalDur - 2.5);
+    g.gain.linearRampToValueAtTime(0.0001, t0 + totalDur);
+    const lfo = audioCtx.createOscillator();
+    const lfoGain = audioCtx.createGain();
+    lfo.frequency.value = 0.12;
+    lfoGain.gain.value = 0.008;
+    lfo.connect(lfoGain).connect(g.gain);
+    o.connect(g).connect(masterGain);
+    track(o, t0, totalDur);
+    track(lfo, t0, totalDur);
+  });
+  [65.41, 98.00].forEach((f) => {
+    const o = audioCtx.createOscillator();
+    o.type = "sine";
+    o.frequency.value = f;
+    const g = audioCtx.createGain();
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(0.025, t0 + 3.0);
+    g.gain.setValueAtTime(0.025, t0 + totalDur - 2.5);
+    g.gain.linearRampToValueAtTime(0.0001, t0 + totalDur);
+    o.connect(g).connect(masterGain);
+    track(o, t0, totalDur);
+  });
+}
+
+function playSub(t0, totalDur) {
+  [65.41, 130.81].forEach((f, i) => {
+    const o = audioCtx.createOscillator();
+    o.type = "sine";
+    o.frequency.value = f;
+    const g = audioCtx.createGain();
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(i === 0 ? 0.06 : 0.025, t0 + 2.0);
+    g.gain.setValueAtTime(i === 0 ? 0.06 : 0.025, t0 + totalDur - 2.5);
+    g.gain.linearRampToValueAtTime(0.0001, t0 + totalDur);
+    const lfo = audioCtx.createOscillator();
+    const lg = audioCtx.createGain();
+    lfo.frequency.value = 0.13;
+    lg.gain.value = 0.012;
+    lfo.connect(lg).connect(g.gain);
+    o.connect(g).connect(masterGain);
+    track(o, t0, totalDur);
+    track(lfo, t0, totalDur);
+  });
+}
+
+function playSwell(t0) {
+  const len = Math.floor(audioCtx.sampleRate * 1.4);
+  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) data[i] = (Math.random() * 2 - 1) * 0.4;
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  const bp = audioCtx.createBiquadFilter();
+  bp.type = "bandpass";
+  bp.frequency.value = 2200;
+  bp.Q.value = 0.7;
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(0.18, t0 + 1.2);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.4);
+  src.connect(bp).connect(g).connect(masterGain);
+  track(src, t0, 1.5);
+}
+
+function playMallet(t0, freq, vol) {
+  const o = audioCtx.createOscillator();
+  const mod = audioCtx.createOscillator();
+  const modGain = audioCtx.createGain();
+  o.type = "sine";
+  mod.type = "sine";
+  o.frequency.value = freq;
+  mod.frequency.value = freq * 3.2;
+  modGain.gain.value = freq * 1.4;
+  mod.connect(modGain).connect(o.frequency);
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0, t0);
+  g.gain.linearRampToValueAtTime(vol, t0 + 0.005);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.6);
+  o.connect(g).connect(masterGain);
+  track(o, t0, 1.7);
+  track(mod, t0, 1.7);
+}
+
+function playTick(t0, vol) {
+  const len = Math.floor(audioCtx.sampleRate * 0.04);
+  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  const hp = audioCtx.createBiquadFilter();
+  hp.type = "highpass";
+  hp.frequency.value = 6000;
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(vol, t0);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.04);
+  src.connect(hp).connect(g).connect(masterGain);
+  track(src, t0, 0.05);
+}
+
+function scheduleScore(t0) {
+  playPad(t0, 25);
+  playSub(t0, 25);
+  [3, 6, 9, 12, 15, 18, 21].forEach(s => playSwell(t0 + s - 0.6));
+  playMallet(t0 + 12.0, 523.25, 0.22);
+  playMallet(t0 + 12.05, 392.00, 0.16);
+  playMallet(t0 + 21.0, 523.25, 0.22);
+  playMallet(t0 + 21.05, 659.25, 0.18);
+  playMallet(t0 + 22.5, 783.99, 0.18);
+  [0.6, 3.4, 3.8, 4.1, 4.4, 6.4, 9.4, 15.4, 15.8, 16.4, 18.4].forEach(s => {
+    playTick(t0 + s, 0.18);
+  });
+}
+
+async function play() {
+  cancelAnimationFrame(raf);
+  resetScenes();
+  stopAllAudio();
+
+  if (soundEnabled) {
+    initAudio();
+    if (audioCtx) {
+      try { await audioCtx.resume(); } catch (e) {}
+      if (audioCtx.state === "running") {
+        scheduleScore(audioCtx.currentTime + 0.15);
+      }
+    }
+  }
+
+  startedAt = performance.now() + 150;
+  setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
+}
+
+document.getElementById("play").addEventListener("click", play);
+document.getElementById("mute").addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+  document.getElementById("mute").textContent = "sound: " + (soundEnabled ? "on" : "off");
+  if (!soundEnabled) stopAllAudio();
+});
+
+play();
+</script>
+</body>
+</html>
