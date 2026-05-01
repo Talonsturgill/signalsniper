@@ -60,20 +60,11 @@ body {
   opacity: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 8%;
 }
-
-/* Per-scene alignment overrides — moves where words sit on screen */
-.scene[data-scene="title"]         { align-items: flex-start; text-align: left; padding-left: 11%; }
-.scene[data-scene="three_things"]  { align-items: flex-start; text-align: left; padding-left: 11%; }
-.scene[data-scene="problem"]       { align-items: center; text-align: center; }
-.scene[data-scene="specific_case"] { align-items: center; text-align: center; }
-.scene[data-scene="fix"]           { align-items: center; text-align: center; }
-.scene[data-scene="mechanism"]     { align-items: flex-start; text-align: left; padding-left: 11%; }
-.scene[data-scene="consequence"]   { align-items: center; text-align: center; }
-.scene[data-scene="close"]         { align-items: flex-end; text-align: right; padding-right: 11%; }
-
 .scene.active { pointer-events: auto; }
 
 .headline {
@@ -102,12 +93,10 @@ body {
 .tt-rule {
   height: 2px;
   background: var(--rule);
-  margin: 1.6cqw 0 5cqw;
+  margin: 1.6cqw auto 5cqw;
   width: 0;
 }
-.tt-item {
-  margin: 1cqw 0;
-}
+.tt-item { margin: 1cqw 0; }
 .tt-name {
   font-family: var(--serif);
   font-weight: 700;
@@ -150,12 +139,7 @@ body {
   color: var(--ink);
   display: inline-block;
 }
-.fix-primary .ch {
-  display: inline-block;
-  white-space: pre;
-  opacity: 0;
-  transform: translateY(18px);
-}
+.fix-primary .ch { display: inline-block; white-space: pre; opacity: 0; }
 .fix-secondary {
   font-family: var(--serif);
   font-style: italic;
@@ -263,6 +247,11 @@ body {
 @container stage (min-width: 0px) {
   .headline { font-size: 10.2cqw; }
 }
+
+.scene[data-scene="title"]         { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="three_things"]  { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="mechanism"]     { align-items: flex-start; text-align: left; padding-left: 11%; }
+.scene[data-scene="close"]         { align-items: flex-end;   text-align: right; padding-right: 11%; }
 </style>
 </head>
 <body>
@@ -300,7 +289,7 @@ body {
 </section>
 
 <section class="scene" data-scene="fix">
-  <div class="fix-primary" data-text="Ship the harness."></div>
+  <div class="fix-primary" data-text="Ship the harness.">Ship the harness.</div>
   <div class="fix-secondary">No more freestyle.</div>
 </section>
 
@@ -329,7 +318,9 @@ body {
   <span class="clock" id="clock">00:00</span>
 </div>
 <script>
-// Timeline (seconds): [scene_name, start, end]
+const MOTION_VARIANT = "lateral";
+const AUDIO_VARIANT  = "minimal";
+
 const TL = [
   ["title",         0.00,  3.00],
   ["three_things",  3.00,  6.00],
@@ -351,34 +342,110 @@ const sceneEls = $$(".scene");
 let startedAt = 0;
 let raf = null;
 
-// Pre-split the fix-primary into characters for letter-by-letter reveal.
-(function splitFixPrimary() {
+const NEEDS_CHARS = ["lateral", "cascade", "stack"];
+if (NEEDS_CHARS.includes(MOTION_VARIANT)) {
+  // pre-split the fix-primary into per-character spans for the variants
+  // that animate the headline char-by-char
   const el = document.querySelector('.fix-primary');
-  if (!el) return;
-  const text = el.dataset.text || el.textContent;
-  el.textContent = "";
-  for (const ch of text) {
-    const span = document.createElement("span");
-    span.className = "ch";
-    span.textContent = ch;
-    el.appendChild(span);
+  if (el) {
+    const text = el.dataset.text || el.textContent;
+    el.textContent = "";
+    for (const ch of text) {
+      const span = document.createElement("span");
+      span.className = "ch";
+      span.textContent = ch;
+      el.appendChild(span);
+    }
   }
-})();
+}
 
-function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 
-function applySceneAnimations(idx, sceneT, dur) {
-  const el = sceneEls[idx];
+function envelope(el, sceneT, dur) {
   let op = 1;
   if (sceneT < FADE_IN_S) op = sceneT / FADE_IN_S;
   else if (sceneT > dur - FADE_OUT_S) op = Math.max(0, (dur - sceneT) / FADE_OUT_S);
   el.style.opacity = op.toFixed(3);
+}
 
+// ---------- motion variant: rise (default) ----------
+function applyRise(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  envelope(el, sceneT, dur);
   const name = el.dataset.scene;
   const children = el.children;
+  if (name === "three_things") {
+    const delays = [0, 0.1, 0.4, 0.65, 0.9];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const d = delays[i] || 0;
+      const local = sceneT - d;
+      if (local < 0) { c.style.opacity = 0; c.style.transform = "translateY(14px)"; continue; }
+      const t = Math.min(1, local / 0.5);
+      const eased = easeOut(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = `translateY(${(14 * (1 - eased)).toFixed(2)}px)`;
+      if (i === 1) c.style.width = `${(12 * eased).toFixed(2)}vmin`;
+    }
+  } else if (name === "fix") {
+    const delays = [0, 0.55];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - delays[i];
+      if (local < 0) { c.style.opacity = 0; continue; }
+      const t = Math.min(1, local / 0.55);
+      const eased = easeOut(t);
+      c.style.opacity = eased.toFixed(3);
+      if (i === 0) {
+        const scale = 0.95 + 0.05 * eased;
+        c.style.transform = `scale(${scale.toFixed(3)})`;
+      } else {
+        c.style.transform = `translateY(${(12 * (1 - eased)).toFixed(2)}px)`;
+      }
+    }
+  } else if (name === "mechanism" || name === "consequence" || name === "specific_case") {
+    const delays = [0, 0.4, 0.95];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - (delays[i] || 0);
+      if (local < 0) { c.style.opacity = 0; c.style.transform = "translateY(12px)"; continue; }
+      const t = Math.min(1, local / 0.5);
+      const eased = easeOut(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = `translateY(${(12 * (1 - eased)).toFixed(2)}px)`;
+    }
+  } else if (name === "close") {
+    const delays = [0, 0.45, 1.3];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - (delays[i] || 0);
+      if (local < 0) { c.style.opacity = 0; c.style.transform = "translateY(14px)"; continue; }
+      const t = Math.min(1, local / 0.6);
+      const eased = easeOut(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = `translateY(${(14 * (1 - eased)).toFixed(2)}px)`;
+    }
+  } else {
+    const delays = [0, 0.27];
+    for (let i = 0; i < children.length; i++) {
+      const c = children[i];
+      const local = sceneT - (delays[i] || 0);
+      if (local < 0) { c.style.opacity = 0; c.style.transform = "translateY(14px)"; continue; }
+      const t = Math.min(1, local / 0.6);
+      const eased = easeOut(t);
+      c.style.opacity = eased.toFixed(3);
+      c.style.transform = `translateY(${(14 * (1 - eased)).toFixed(2)}px)`;
+    }
+  }
+}
 
+// ---------- motion variant: lateral ----------
+function applyLateral(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  envelope(el, sceneT, dur);
+  const name = el.dataset.scene;
+  const children = el.children;
   if (name === "title") {
-    // Headline rises from below (24px), eyebrow slides in from LEFT after delay.
     const delays = [0, 0.45];
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
@@ -389,16 +456,13 @@ function applySceneAnimations(idx, sceneT, dur) {
         continue;
       }
       const t = Math.min(1, local / 0.6);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
-      if (i === 0) {
-        c.style.transform = `translateY(${(24 * (1 - eased)).toFixed(2)}px)`;
-      } else {
-        c.style.transform = `translateX(${(-40 * (1 - eased)).toFixed(2)}px)`;
-      }
+      c.style.transform = i === 0
+        ? `translateY(${(24 * (1 - eased)).toFixed(2)}px)`
+        : `translateX(${(-40 * (1 - eased)).toFixed(2)}px)`;
     }
   } else if (name === "three_things") {
-    // Eyebrow + rule (grows from left), then items slide in from the LEFT with stagger.
     const delays = [0, 0.15, 0.45, 0.75, 1.05];
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
@@ -410,33 +474,24 @@ function applySceneAnimations(idx, sceneT, dur) {
         continue;
       }
       const t = Math.min(1, local / 0.55);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
-      if (i === 1) {
-        c.style.width = `${(14 * eased).toFixed(2)}vmin`;
-      } else if (i >= 2) {
-        c.style.transform = `translateX(${(-60 * (1 - eased)).toFixed(2)}px)`;
-      }
+      if (i === 1) c.style.width = `${(14 * eased).toFixed(2)}vmin`;
+      else if (i >= 2) c.style.transform = `translateX(${(-60 * (1 - eased)).toFixed(2)}px)`;
     }
   } else if (name === "problem") {
-    // Line A slides from RIGHT, Line B (accent) slides from LEFT.
     const delays = [0, 0.4];
     const fromX = [60, -60];
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
       const local = sceneT - delays[i];
-      if (local < 0) {
-        c.style.opacity = 0;
-        c.style.transform = `translateX(${fromX[i]}px)`;
-        continue;
-      }
+      if (local < 0) { c.style.opacity = 0; c.style.transform = `translateX(${fromX[i]}px)`; continue; }
       const t = Math.min(1, local / 0.6);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
       c.style.transform = `translateX(${(fromX[i] * (1 - eased)).toFixed(2)}px)`;
     }
   } else if (name === "specific_case") {
-    // Line A from LEFT, Line B (accent) drops from ABOVE, Line C from RIGHT.
     const delays = [0, 0.4, 0.85];
     const transforms = [
       (e) => `translateX(${(-50 * (1 - e)).toFixed(2)}px)`,
@@ -447,18 +502,13 @@ function applySceneAnimations(idx, sceneT, dur) {
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
       const local = sceneT - delays[i];
-      if (local < 0) {
-        c.style.opacity = 0;
-        c.style.transform = init[i];
-        continue;
-      }
+      if (local < 0) { c.style.opacity = 0; c.style.transform = init[i]; continue; }
       const t = Math.min(1, local / 0.55);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
       c.style.transform = transforms[i](eased);
     }
   } else if (name === "fix") {
-    // Letter-by-letter character reveal for primary, then secondary slides up.
     const primary = children[0];
     const chars = primary.querySelectorAll(".ch");
     const total = chars.length;
@@ -466,47 +516,34 @@ function applySceneAnimations(idx, sceneT, dur) {
     const charDur = 0.4;
     chars.forEach((ch, i) => {
       const local = sceneT - i * perCharDelay;
-      if (local < 0) {
-        ch.style.opacity = 0;
-        ch.style.transform = "translateY(18px)";
-        return;
-      }
+      if (local < 0) { ch.style.opacity = 0; ch.style.transform = "translateY(18px)"; return; }
       const t = Math.min(1, local / charDur);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       ch.style.opacity = eased.toFixed(3);
       ch.style.transform = `translateY(${(18 * (1 - eased)).toFixed(2)}px)`;
     });
     primary.style.opacity = 1;
-
     const secondary = children[1];
     const secondaryDelay = total * perCharDelay + 0.25;
     const localS = sceneT - secondaryDelay;
-    if (localS < 0) {
-      secondary.style.opacity = 0;
-      secondary.style.transform = "translateY(14px)";
-    } else {
+    if (localS < 0) { secondary.style.opacity = 0; secondary.style.transform = "translateY(14px)"; }
+    else {
       const t = Math.min(1, localS / 0.55);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       secondary.style.opacity = eased.toFixed(3);
       secondary.style.transform = `translateY(${(14 * (1 - eased)).toFixed(2)}px)`;
     }
   } else if (name === "mechanism") {
-    // Lines slide in from LEFT with longer stagger; accent line gets a punch scale.
     const delays = [0, 0.5, 1.0];
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
       const local = sceneT - delays[i];
-      if (local < 0) {
-        c.style.opacity = 0;
-        c.style.transform = "translateX(-50px)";
-        continue;
-      }
+      if (local < 0) { c.style.opacity = 0; c.style.transform = "translateX(-50px)"; continue; }
       const t = Math.min(1, local / 0.55);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
       const isAccent = c.classList.contains("accent");
       if (isAccent) {
-        // After slide-in, do a brief punch (1.0 -> 1.06 -> 1.0) over 0.4s.
         const punchT = local - 0.55;
         let scale = 1.0;
         if (punchT >= 0 && punchT < 0.4) {
@@ -520,23 +557,17 @@ function applySceneAnimations(idx, sceneT, dur) {
       }
     }
   } else if (name === "consequence") {
-    // Lines drop down from ABOVE.
     const delays = [0, 0.4, 0.85];
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
       const local = sceneT - delays[i];
-      if (local < 0) {
-        c.style.opacity = 0;
-        c.style.transform = "translateY(-22px)";
-        continue;
-      }
+      if (local < 0) { c.style.opacity = 0; c.style.transform = "translateY(-22px)"; continue; }
       const t = Math.min(1, local / 0.55);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
       c.style.transform = `translateY(${(-22 * (1 - eased)).toFixed(2)}px)`;
     }
   } else if (name === "close") {
-    // Right-aligned. Primary slides from LEFT, accent slides from RIGHT, subtitle fades up.
     const delays = [0, 0.5, 1.3];
     const transforms = [
       (e) => `translateX(${(-60 * (1 - e)).toFixed(2)}px)`,
@@ -547,17 +578,256 @@ function applySceneAnimations(idx, sceneT, dur) {
     for (let i = 0; i < children.length; i++) {
       const c = children[i];
       const local = sceneT - delays[i];
-      if (local < 0) {
-        c.style.opacity = 0;
-        c.style.transform = init[i];
-        continue;
-      }
+      if (local < 0) { c.style.opacity = 0; c.style.transform = init[i]; continue; }
       const t = Math.min(1, local / 0.6);
-      const eased = easeOutCubic(t);
+      const eased = easeOut(t);
       c.style.opacity = eased.toFixed(3);
       c.style.transform = transforms[i](eased);
     }
   }
+}
+
+// ---------- motion variant: drop ----------
+function applyDrop(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  envelope(el, sceneT, dur);
+  const name = el.dataset.scene;
+  const children = el.children;
+
+  function dropLine(c, local, dur, dist) {
+    if (local < 0) { c.style.opacity = 0; c.style.transform = `translateY(${-dist}px)`; return; }
+    const t = Math.min(1, local / dur);
+    const eased = easeOut(t);
+    c.style.opacity = eased.toFixed(3);
+    c.style.transform = `translateY(${(-dist * (1 - eased)).toFixed(2)}px)`;
+  }
+
+  if (name === "three_things") {
+    const delays = [0, 0.12, 0.4, 0.7, 1.0];
+    for (let i = 0; i < children.length; i++) {
+      if (i === 1) {
+        const local = sceneT - delays[i];
+        if (local < 0) { children[i].style.width = "0vmin"; children[i].style.opacity = 0; continue; }
+        const t = Math.min(1, local / 0.5);
+        const eased = easeOut(t);
+        children[i].style.opacity = eased.toFixed(3);
+        children[i].style.width = `${(14 * eased).toFixed(2)}vmin`;
+      } else {
+        dropLine(children[i], sceneT - delays[i], 0.55, 18);
+      }
+    }
+  } else if (name === "fix") {
+    const primary = children[0];
+    if (sceneT < 0) primary.style.opacity = 0;
+    else {
+      const t = Math.min(1, sceneT / 0.6);
+      const eased = easeOut(t);
+      primary.style.opacity = eased.toFixed(3);
+      primary.style.transform = `scale(${(1.05 - 0.05 * eased).toFixed(3)})`;
+    }
+    dropLine(children[1], sceneT - 0.55, 0.55, 16);
+  } else if (children.length === 2) {
+    const delays = [0, 0.32];
+    for (let i = 0; i < children.length; i++) dropLine(children[i], sceneT - delays[i], 0.6, 20);
+  } else {
+    const delays = [0, 0.4, 0.85];
+    for (let i = 0; i < children.length; i++) dropLine(children[i], sceneT - delays[i], 0.55, 22);
+  }
+}
+
+// ---------- motion variant: cascade ----------
+function applyCascade(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  envelope(el, sceneT, dur);
+  const name = el.dataset.scene;
+  const children = el.children;
+
+  function lineIn(c, local, dur, dist) {
+    if (local < 0) { c.style.opacity = 0; c.style.transform = `translateX(${-dist}px)`; return; }
+    const t = Math.min(1, local / dur);
+    const eased = easeOut(t);
+    c.style.opacity = eased.toFixed(3);
+    c.style.transform = `translateX(${(-dist * (1 - eased)).toFixed(2)}px)`;
+  }
+
+  if (name === "three_things") {
+    const delays = [0, 0.12, 0.4, 0.7, 1.0];
+    for (let i = 0; i < children.length; i++) {
+      if (i === 1) {
+        const local = sceneT - delays[i];
+        if (local < 0) { children[i].style.width = "0vmin"; children[i].style.opacity = 0; continue; }
+        const t = Math.min(1, local / 0.5);
+        const eased = easeOut(t);
+        children[i].style.opacity = eased.toFixed(3);
+        children[i].style.width = `${(14 * eased).toFixed(2)}vmin`;
+      } else {
+        lineIn(children[i], sceneT - delays[i], 0.55, 30);
+      }
+    }
+  } else if (name === "fix") {
+    const primary = children[0];
+    const chars = primary.querySelectorAll(".ch");
+    const total = chars.length;
+    const perCharDelay = 0.04;
+    const charDur = 0.4;
+    chars.forEach((ch, i) => {
+      const local = sceneT - i * perCharDelay;
+      if (local < 0) { ch.style.opacity = 0; ch.style.transform = "translateX(-12px)"; return; }
+      const t = Math.min(1, local / charDur);
+      const eased = easeOut(t);
+      ch.style.opacity = eased.toFixed(3);
+      ch.style.transform = `translateX(${(-12 * (1 - eased)).toFixed(2)}px)`;
+    });
+    primary.style.opacity = 1;
+    const secondaryDelay = total * perCharDelay + 0.2;
+    lineIn(children[1], sceneT - secondaryDelay, 0.55, 24);
+  } else if (children.length === 2) {
+    const delays = [0, 0.32];
+    for (let i = 0; i < children.length; i++) lineIn(children[i], sceneT - delays[i], 0.5, 24);
+  } else {
+    const delays = [0, 0.3, 0.6];
+    for (let i = 0; i < children.length; i++) lineIn(children[i], sceneT - delays[i], 0.5, 24);
+  }
+}
+
+// ---------- motion variant: stack ----------
+function applyStack(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  envelope(el, sceneT, dur);
+  const name = el.dataset.scene;
+  const children = el.children;
+
+  function slideUp(c, local, dur, dist) {
+    if (local < 0) { c.style.opacity = 0; c.style.transform = `translateY(${dist}px)`; return; }
+    const t = Math.min(1, local / dur);
+    const eased = easeOut(t);
+    c.style.opacity = eased.toFixed(3);
+    c.style.transform = `translateY(${(dist * (1 - eased)).toFixed(2)}px)`;
+  }
+
+  if (name === "three_things") {
+    const delays = [0, 0.12, 0.4, 0.7, 1.0];
+    for (let i = 0; i < children.length; i++) {
+      if (i === 1) {
+        const local = sceneT - delays[i];
+        if (local < 0) { children[i].style.width = "0vmin"; children[i].style.opacity = 0; continue; }
+        const t = Math.min(1, local / 0.5);
+        const eased = easeOut(t);
+        children[i].style.opacity = eased.toFixed(3);
+        children[i].style.width = `${(14 * eased).toFixed(2)}vmin`;
+      } else {
+        slideUp(children[i], sceneT - delays[i], 0.55, 24);
+      }
+    }
+  } else if (name === "fix") {
+    const primary = children[0];
+    const chars = primary.querySelectorAll(".ch");
+    const total = chars.length;
+    const perCharDelay = 0.04;
+    const charDur = 0.4;
+    chars.forEach((ch, i) => {
+      const local = sceneT - i * perCharDelay;
+      if (local < 0) { ch.style.opacity = 0; ch.style.transform = "translateY(20px)"; return; }
+      const t = Math.min(1, local / charDur);
+      const eased = easeOut(t);
+      ch.style.opacity = eased.toFixed(3);
+      ch.style.transform = `translateY(${(20 * (1 - eased)).toFixed(2)}px)`;
+    });
+    primary.style.opacity = 1;
+    const secondaryDelay = total * perCharDelay + 0.2;
+    slideUp(children[1], sceneT - secondaryDelay, 0.55, 16);
+  } else if (children.length === 2) {
+    const delays = [0, 0.32];
+    for (let i = 0; i < children.length; i++) slideUp(children[i], sceneT - delays[i], 0.55, 24);
+  } else {
+    const delays = [0, 0.4, 0.85];
+    for (let i = 0; i < children.length; i++) slideUp(children[i], sceneT - delays[i], 0.55, 24);
+  }
+}
+
+// ---------- motion variant: split ----------
+function applySplit(idx, sceneT, dur) {
+  const el = sceneEls[idx];
+  envelope(el, sceneT, dur);
+  const name = el.dataset.scene;
+  const children = el.children;
+
+  function applyT(c, local, durIn, init, fn) {
+    if (local < 0) { c.style.opacity = 0; c.style.transform = init; return; }
+    const t = Math.min(1, local / durIn);
+    const eased = easeOut(t);
+    c.style.opacity = eased.toFixed(3);
+    c.style.transform = fn(eased);
+  }
+
+  if (name === "three_things") {
+    const eyebrow = children[0];
+    const rule = children[1];
+    const items = [children[2], children[3], children[4]];
+    applyT(eyebrow, sceneT, 0.55, "translateY(14px)",
+      (e) => `translateY(${(14 * (1 - e)).toFixed(2)}px)`);
+    {
+      const local = sceneT - 0.15;
+      if (local < 0) { rule.style.width = "0vmin"; rule.style.opacity = 0; }
+      else {
+        const t = Math.min(1, local / 0.5);
+        const eased = easeOut(t);
+        rule.style.opacity = eased.toFixed(3);
+        rule.style.width = `${(14 * eased).toFixed(2)}vmin`;
+      }
+    }
+    const itemDelays = [0.4, 0.6, 0.8];
+    const itemTransforms = [
+      (e) => `translateX(${(-50 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateY(${(14 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateX(${(50 * (1 - e)).toFixed(2)}px)`,
+    ];
+    const itemInits = ["translateX(-50px)", "translateY(14px)", "translateX(50px)"];
+    items.forEach((c, i) => {
+      applyT(c, sceneT - itemDelays[i], 0.55, itemInits[i], itemTransforms[i]);
+    });
+  } else if (name === "fix") {
+    const primary = children[0];
+    const secondary = children[1];
+    if (sceneT < 0) primary.style.opacity = 0;
+    else {
+      const t = Math.min(1, sceneT / 0.55);
+      const eased = easeOut(t);
+      primary.style.opacity = eased.toFixed(3);
+      primary.style.transform = `scale(${(0.95 + 0.05 * eased).toFixed(3)})`;
+    }
+    applyT(secondary, sceneT - 0.55, 0.55, "translateY(14px)",
+      (e) => `translateY(${(14 * (1 - e)).toFixed(2)}px)`);
+  } else if (children.length === 2) {
+    applyT(children[0], sceneT, 0.55, "translateX(-50px)",
+      (e) => `translateX(${(-50 * (1 - e)).toFixed(2)}px)`);
+    applyT(children[1], sceneT, 0.55, "translateX(50px)",
+      (e) => `translateX(${(50 * (1 - e)).toFixed(2)}px)`);
+  } else {
+    const transforms = [
+      (e) => `translateX(${(-50 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateY(${(14 * (1 - e)).toFixed(2)}px)`,
+      (e) => `translateX(${(50 * (1 - e)).toFixed(2)}px)`,
+    ];
+    const inits = ["translateX(-50px)", "translateY(14px)", "translateX(50px)"];
+    const delays = [0, 0.3, 0.6];
+    for (let i = 0; i < children.length; i++) {
+      applyT(children[i], sceneT - delays[i], 0.55, inits[i], transforms[i]);
+    }
+  }
+}
+
+const MOTION_DISPATCH = {
+  rise: applyRise,
+  lateral: applyLateral,
+  drop: applyDrop,
+  cascade: applyCascade,
+  stack: applyStack,
+  split: applySplit,
+};
+
+function applySceneAnimations(idx, sceneT, dur) {
+  (MOTION_DISPATCH[MOTION_VARIANT] || applyRise)(idx, sceneT, dur);
 }
 
 function resetScenes() {
@@ -570,17 +840,13 @@ function resetScenes() {
       if (c.classList.contains("tt-rule")) c.style.width = "0vmin";
     });
     const chars = el.querySelectorAll(".ch");
-    chars.forEach((ch) => {
-      ch.style.opacity = 0;
-      ch.style.transform = "translateY(18px)";
-    });
+    chars.forEach((ch) => { ch.style.opacity = 0; ch.style.transform = ""; });
   });
 }
 
 function tick() {
   const t = (performance.now() - startedAt) / 1000;
   const clamped = Math.min(t, DURATION_S);
-
   let idx = 0;
   for (let i = 0; i < TL.length; i++) {
     if (clamped >= TL[i][1] && clamped < TL[i][2]) { idx = i; break; }
@@ -599,7 +865,7 @@ function tick() {
   if (t < DURATION_S) raf = requestAnimationFrame(tick);
 }
 
-// ---------- audio engine (unchanged from v1) ----------
+// =================== AUDIO ENGINE ===================
 let audioCtx = null;
 let masterGain = null;
 let liveNodes = [];
@@ -629,8 +895,7 @@ function track(node, when, dur) {
   liveNodes.push(node);
 }
 
-function playPad(t0, totalDur) {
-  const freqs = [130.81, 164.81, 196.00, 246.94, 293.66];
+function playPad(t0, totalDur, freqs) {
   freqs.forEach((f, i) => {
     const o = audioCtx.createOscillator();
     o.type = "sine";
@@ -684,8 +949,61 @@ function playSub(t0, totalDur) {
   });
 }
 
-// Tonal shimmer at a scene boundary: pure sine on a chord tone, slow fade in
-// and out. Replaces the white-noise swoosh with a softer harmonic bloom.
+function playSwell(t0) {
+  const len = Math.floor(audioCtx.sampleRate * 1.4);
+  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) data[i] = (Math.random() * 2 - 1) * 0.4;
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  const bp = audioCtx.createBiquadFilter();
+  bp.type = "bandpass";
+  bp.frequency.value = 2200;
+  bp.Q.value = 0.7;
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.exponentialRampToValueAtTime(0.18, t0 + 1.2);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.4);
+  src.connect(bp).connect(g).connect(masterGain);
+  track(src, t0, 1.5);
+}
+
+function playMallet(t0, freq, vol) {
+  const o = audioCtx.createOscillator();
+  const mod = audioCtx.createOscillator();
+  const modGain = audioCtx.createGain();
+  o.type = "sine";
+  mod.type = "sine";
+  o.frequency.value = freq;
+  mod.frequency.value = freq * 3.2;
+  modGain.gain.value = freq * 1.4;
+  mod.connect(modGain).connect(o.frequency);
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(0, t0);
+  g.gain.linearRampToValueAtTime(vol, t0 + 0.005);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.6);
+  o.connect(g).connect(masterGain);
+  track(o, t0, 1.7);
+  track(mod, t0, 1.7);
+}
+
+function playTick(t0, vol) {
+  const len = Math.floor(audioCtx.sampleRate * 0.04);
+  const buf = audioCtx.createBuffer(1, len, audioCtx.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  const hp = audioCtx.createBiquadFilter();
+  hp.type = "highpass";
+  hp.frequency.value = 6000;
+  const g = audioCtx.createGain();
+  g.gain.setValueAtTime(vol, t0);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.04);
+  src.connect(hp).connect(g).connect(masterGain);
+  track(src, t0, 0.05);
+}
+
 function playShimmer(t0, freq) {
   const o = audioCtx.createOscillator();
   o.type = "sine";
@@ -698,13 +1016,10 @@ function playShimmer(t0, freq) {
   track(o, t0, 2.0);
 }
 
-// Soft glass bell at the emphasis moments: sine fundamental + 2nd partial,
-// quick decay. Quieter and brighter than a mallet, more like a glass tap.
 function playGlassBell(t0, freq, vol) {
   const fund = audioCtx.createOscillator();
   const partial = audioCtx.createOscillator();
-  fund.type = "sine";
-  partial.type = "sine";
+  fund.type = "sine"; partial.type = "sine";
   fund.frequency.value = freq;
   partial.frequency.value = freq * 2.01;
   const g1 = audioCtx.createGain();
@@ -721,26 +1036,99 @@ function playGlassBell(t0, freq, vol) {
   track(partial, t0, 1.7);
 }
 
-function scheduleScore(t0) {
-  playPad(t0, 25);
+function playLift(t0, freq) {
+  const o = audioCtx.createOscillator();
+  const o2 = audioCtx.createOscillator();
+  o.type = "sine"; o2.type = "sine";
+  o.frequency.value = freq;
+  o2.frequency.value = freq * 2;
+  const g = audioCtx.createGain();
+  const g2 = audioCtx.createGain();
+  g.gain.setValueAtTime(0.0001, t0);
+  g.gain.linearRampToValueAtTime(0.06, t0 + 1.1);
+  g.gain.linearRampToValueAtTime(0.0001, t0 + 2.2);
+  g2.gain.setValueAtTime(0.0001, t0);
+  g2.gain.linearRampToValueAtTime(0.012, t0 + 1.1);
+  g2.gain.linearRampToValueAtTime(0.0001, t0 + 2.2);
+  o.connect(g).connect(masterGain);
+  o2.connect(g2).connect(masterGain);
+  track(o, t0, 2.4);
+  track(o2, t0, 2.4);
+}
+
+function playFelted(t0, freq, vol) {
+  const o = audioCtx.createOscillator();
+  const o2 = audioCtx.createOscillator();
+  o.type = "sine"; o2.type = "sine";
+  o.frequency.value = freq;
+  o2.frequency.value = freq * 2;
+  const g = audioCtx.createGain();
+  const g2 = audioCtx.createGain();
+  g.gain.setValueAtTime(0, t0);
+  g.gain.linearRampToValueAtTime(vol, t0 + 0.04);
+  g.gain.exponentialRampToValueAtTime(0.0001, t0 + 2.6);
+  g2.gain.setValueAtTime(0, t0);
+  g2.gain.linearRampToValueAtTime(vol * 0.22, t0 + 0.04);
+  g2.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.6);
+  const lp = audioCtx.createBiquadFilter();
+  lp.type = "lowpass"; lp.frequency.value = 3200;
+  o.connect(g).connect(lp).connect(masterGain);
+  o2.connect(g2).connect(lp);
+  track(o, t0, 2.7);
+  track(o2, t0, 2.7);
+}
+
+function scheduleAmbient(t0) {
+  playPad(t0, 25, [130.81, 164.81, 196.00, 246.94, 293.66]);
   playSub(t0, 25);
-  // Subtle harmonic shimmers at scene boundaries on Cmaj9 chord tones —
-  // boundaries feel like the chord blooming, not a transition effect.
-  const shimmerNotes = [523.25, 659.25, 783.99, 987.77, 587.33, 659.25, 783.99];
-  [3, 6, 9, 12, 15, 18, 21].forEach((s, i) => {
-    playShimmer(t0 + s - 0.6, shimmerNotes[i]);
+  [3, 6, 9, 12, 15, 18, 21].forEach(s => playSwell(t0 + s - 0.6));
+  playMallet(t0 + 12.0, 523.25, 0.22);
+  playMallet(t0 + 12.05, 392.00, 0.16);
+  playMallet(t0 + 21.0, 523.25, 0.22);
+  playMallet(t0 + 21.05, 659.25, 0.18);
+  playMallet(t0 + 22.5, 783.99, 0.18);
+  [0.6, 3.4, 3.8, 4.1, 4.4, 6.4, 9.4, 15.4, 15.8, 16.4, 18.4].forEach(s => {
+    playTick(t0 + s, 0.18);
   });
-  // Soft glass bells at the two emphasis moments. Same sync points as v1.
+}
+
+function scheduleMinimal(t0) {
+  playPad(t0, 25, [130.81, 164.81, 196.00, 246.94, 293.66]);
+  playSub(t0, 25);
+  const shimmerNotes = [523.25, 659.25, 783.99, 987.77, 587.33, 659.25, 783.99];
+  [3, 6, 9, 12, 15, 18, 21].forEach((s, i) => playShimmer(t0 + s - 0.6, shimmerNotes[i]));
   playGlassBell(t0 + 12.0, 523.25, 0.18);
   playGlassBell(t0 + 21.0, 523.25, 0.16);
   playGlassBell(t0 + 22.5, 783.99, 0.14);
+}
+
+function scheduleWarm(t0) {
+  // Cmaj7 pad (drop the 9th D)
+  playPad(t0, 25, [130.81, 164.81, 196.00, 246.94]);
+  playSub(t0, 25);
+  const liftNotes = [130.81, 164.81, 196.00, 246.94, 146.83, 164.81, 196.00];
+  [3, 6, 9, 12, 15, 18, 21].forEach((s, i) => playLift(t0 + s - 0.8, liftNotes[i]));
+  playFelted(t0 + 12.0, 523.25, 0.18);
+  playFelted(t0 + 12.06, 392.00, 0.11);
+  playFelted(t0 + 21.0, 523.25, 0.16);
+  playFelted(t0 + 21.03, 659.25, 0.10);
+  playFelted(t0 + 22.5, 783.99, 0.14);
+}
+
+const AUDIO_DISPATCH = {
+  ambient: scheduleAmbient,
+  minimal: scheduleMinimal,
+  warm: scheduleWarm,
+};
+
+function scheduleScore(t0) {
+  (AUDIO_DISPATCH[AUDIO_VARIANT] || scheduleAmbient)(t0);
 }
 
 async function play() {
   cancelAnimationFrame(raf);
   resetScenes();
   stopAllAudio();
-
   if (soundEnabled) {
     initAudio();
     if (audioCtx) {
@@ -750,7 +1138,6 @@ async function play() {
       }
     }
   }
-
   startedAt = performance.now() + 150;
   setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
 }

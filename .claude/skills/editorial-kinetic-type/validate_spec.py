@@ -24,6 +24,9 @@ HARD_FORBIDDEN = {
     "arrow": ["→", "←", "↑", "↓"],
 }
 
+MOTION_VARIANTS = {"rise", "lateral", "drop", "cascade", "stack", "split"}
+AUDIO_VARIANTS = {"ambient", "minimal", "warm"}
+
 
 def check_string(path, text, allow_colon=False, errors=None):
     if errors is None:
@@ -126,6 +129,12 @@ def validate(spec_path):
     check_length(".scenes.close.primary", s["close"]["primary"], 18, "close.primary", errors)
     check_length(".scenes.close.accent", s["close"]["accent"], 18, "close.accent", errors)
     check_length(".scenes.close.subtitle", s["close"]["subtitle"], 40, "close.subtitle", errors)
+
+    # Motion / audio variants (optional)
+    if "motion_variant" in spec and spec["motion_variant"] not in MOTION_VARIANTS:
+        errors.append(f"  VARIANT: motion_variant {spec['motion_variant']!r} not in {sorted(MOTION_VARIANTS)}")
+    if "audio_variant" in spec and spec["audio_variant"] not in AUDIO_VARIANTS:
+        errors.append(f"  VARIANT: audio_variant {spec['audio_variant']!r} not in {sorted(AUDIO_VARIANTS)}")
 
     # Theme contrast (only for custom themes)
     if isinstance(spec.get("theme"), dict):

@@ -12,6 +12,11 @@ audio separately and mux it in.
 
 Usage:
     python record_mp4.py <html_path> <output.mp4>
+        [--audio-variant ambient|minimal|warm]
+        [--spec spec.json]
+
+If --spec is supplied, the audio_variant is read from spec.audio_variant
+unless --audio-variant overrides it. Otherwise defaults to ambient.
 
 Requires:
     - playwright (pip install playwright && playwright install chromium)
@@ -20,6 +25,7 @@ Requires:
 """
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
@@ -30,6 +36,7 @@ from pathlib import Path
 VIEWPORT = 1080
 DURATION_S = 25.0
 RECORD_S = 26.0  # add 1s tail to capture the fade out
+AUDIO_VARIANTS = ("ambient", "minimal", "warm")
 
 
 def ensure_playwright():
@@ -73,9 +80,12 @@ def record_webm(html_path: Path, out_dir: Path) -> Path:
     return webms[-1]
 
 
-def synth_wav(out_path: Path):
+def synth_wav(out_path: Path, audio_variant: str):
     script = Path(__file__).parent / "synth_audio.py"
-    subprocess.check_call([sys.executable, str(script), str(out_path)])
+    subprocess.check_call([
+        sys.executable, str(script), str(out_path),
+        "--audio-variant", audio_variant,
+    ])
 
 
 def mux(webm_path: Path, wav_path: Path, mp4_path: Path):
@@ -100,14 +110,30 @@ def mux(webm_path: Path, wav_path: Path, mp4_path: Path):
     subprocess.check_call(cmd)
 
 
+def resolve_audio_variant(args) -> str:
+    if args.audio_variant:
+        return args.audio_variant
+    if args.spec:
+        spec = json.loads(Path(args.spec).read_text())
+        return spec.get("audio_variant", "ambient")
+    return "ambient"
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("html", help="Path to the HTML video")
     parser.add_argument("output", help="Path to write the MP4")
+    parser.add_argument("--audio-variant", choices=AUDIO_VARIANTS, default=None,
+                        help="audio score (overrides spec.audio_variant; default ambient)")
+    parser.add_argument("--spec", help="Optional spec.json to read audio_variant from")
     args = parser.parse_args()
 
     if not shutil.which("ffmpeg"):
         raise SystemExit("ffmpeg not found in PATH")
+
+    audio_variant = resolve_audio_variant(args)
+    if audio_variant not in AUDIO_VARIANTS:
+        raise SystemExit(f"unknown audio_variant: {audio_variant!r}, expected one of {AUDIO_VARIANTS}")
 
     ensure_playwright()
 
@@ -119,13 +145,13 @@ def main():
         tmp_dir = Path(tmp)
         print(f"Recording {html_path.name} -> webm")
         webm = record_webm(html_path, tmp_dir / "video")
-        print(f"Synthesizing soundtrack")
+        print(f"Synthesizing {audio_variant} soundtrack")
         wav = tmp_dir / "soundtrack.wav"
-        synth_wav(wav)
+        synth_wav(wav, audio_variant)
         print(f"Muxing to {out_path}")
         mux(webm, wav, out_path)
 
-    print(f"Done. {out_path} ({out_path.stat().st_size / 1024:.0f} KB)")
+    print(f"Done. {out_path} ({out_path.stat().st_size / 1024:.0f} KB, audio={audio_variant})")
 
 
 if __name__ == "__main__":
