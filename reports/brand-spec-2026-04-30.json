@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-30",
+  "creator_handle": "@thdxr",
+  "project": "OpenCode",
+  "source_urls": [
+    "https://opencode.ai/",
+    "https://github.com/sst/opencode"
+  ],
+  "extracted": {
+    "background": "#F1ECEC",
+    "ink": "#211E1E",
+    "accent": "#656363",
+    "visual_tone": "minimal"
+  },
+  "theme": {
+    "background": "#F1ECEC",
+    "ink": "#211E1E",
+    "accent": "#656363",
+    "muted": "#7C7C7C",
+    "rule": "#DCD7D7",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "contrast_checks": {
+    "ink_on_background": "13.7:1 PASS",
+    "accent_on_background": "4.78:1 PASS",
+    "muted_on_background_derived": "2.91:1 FAIL (derived #898585)",
+    "muted_on_background_fallback": "3.26:1 PASS (default #7C7C7C)"
+  },
+  "fallback_notes": "muted fell back to default #7C7C7C; derived blend #898585 was 2.91:1 against #F1ECEC, just under 3.0:1 minimum. background, ink, accent, rule extracted from opencode.ai."
+}

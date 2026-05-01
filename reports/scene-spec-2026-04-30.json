@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-30",
+  "topic": "opencode vendor-neutral coding agent",
+  "theme": {
+    "background": "#F1ECEC",
+    "ink": "#211E1E",
+    "accent": "#656363",
+    "muted": "#7C7C7C",
+    "rule": "#DCD7D7",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "OpenCode",
+      "eyebrow": "Dax Raad's vendor-neutral coding agent"
+    },
+    "three_things": {
+      "eyebrow": "THREE PILLARS",
+      "items": [
+        {"name": "Open harness", "descriptor": "no vendor lock"},
+        {"name": "Any model", "descriptor": "75+ providers"},
+        {"name": "Client-server", "descriptor": "TUI, desktop, remote"}
+      ]
+    },
+    "problem": {
+      "line_a": "Closed harnesses",
+      "line_b": "lock the model in.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "Plug in your",
+      "line_b": "Copilot or ChatGPT plan.",
+      "line_c": "OpenCode runs the loop.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Open the harness.",
+      "secondary": "Bring your own model."
+    },
+    "mechanism": {
+      "line_a": "The server runs the loop.",
+      "line_b": "Clients are pluggable.",
+      "line_c": "Models are pluggable too.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "When pricing changes,",
+      "line_b": "you switch the model,",
+      "line_c": "not the harness."
+    },
+    "close": {
+      "primary": "Open the harness.",
+      "accent": "Own the loop.",
+      "subtitle": "what proprietary tools cannot ship."
+    }
+  }
+}
