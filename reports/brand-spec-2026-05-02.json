@@ -1,0 +1,31 @@
+{
+  "date": "2026-05-02",
+  "creator": "Matt Pocock",
+  "creator_handle": "@mattpocockuk",
+  "source_sites": [
+    "https://www.aihero.dev",
+    "https://www.mattpocock.com",
+    "https://totaltypescript.com"
+  ],
+  "visual_tone": "minimal, technical, high-contrast educational",
+  "raw_observed": {
+    "background": "#FFFFFF",
+    "ink": "#000000",
+    "accent_blue": "#0066FF"
+  },
+  "theme": {
+    "background": "#FFFFFF",
+    "ink": "#000000",
+    "accent": "#0066FF",
+    "muted": "#808080",
+    "rule": "#E6E6E6",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "contrast_notes": {
+    "ink_on_background": "21.0:1 PASS (>= 4.5)",
+    "accent_on_background": "4.83:1 PASS (>= 4.5)",
+    "muted_on_background": "3.95:1 PASS (>= 3.0)"
+  },
+  "fallbacks_applied": "none"
+}
