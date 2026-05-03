@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-03",
+  "topic": "agent-safehouse macOS sandbox for coding agents",
+  "theme": {
+    "background": "#0A0E1A",
+    "ink": "#DFE5EF",
+    "accent": "#F5C842",
+    "muted": "#747A84",
+    "rule": "#1F242F",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Agent Safehouse",
+      "eyebrow": "what eugene1g just shipped"
+    },
+    "three_things": {
+      "eyebrow": "THREE BUILT-INS",
+      "items": [
+        {"name": "Deny first", "descriptor": "default-deny posture"},
+        {"name": "sandbox-exec", "descriptor": "Apple Seatbelt wrapper"},
+        {"name": "One script", "descriptor": "brew or direct install"}
+      ]
+    },
+    "problem": {
+      "line_a": "Agents read",
+      "line_b": "your whole disk.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "An agent reads",
+      "line_b": "your ~/.aws keys",
+      "line_c": "and you never find out.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Deny by default.",
+      "secondary": "Grant only the path."
+    },
+    "mechanism": {
+      "line_a": "One sandbox-exec policy",
+      "line_b": "wraps every agent shell.",
+      "line_c": "Stray reads just fail.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "An agent can't leak",
+      "line_b": "what the kernel",
+      "line_c": "never let it see."
+    },
+    "close": {
+      "primary": "Deny by default.",
+      "accent": "Grant the path.",
+      "subtitle": "the part most builders skip."
+    }
+  }
+}
