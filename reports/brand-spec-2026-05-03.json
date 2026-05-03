@@ -1,0 +1,16 @@
+{
+  "background": "#0A0E1A",
+  "ink": "#DFE5EF",
+  "accent": "#F5C842",
+  "muted": "#747A84",
+  "rule": "#1F242F",
+  "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+  "sans": "'DejaVu Sans', sans-serif",
+  "_provenance": {
+    "source": "https://agent-safehouse.dev (VitePress custom :root override)",
+    "ink_on_background": "15.21:1 PASS",
+    "accent_on_background": "12.12:1 PASS",
+    "muted_on_background": "4.46:1 PASS",
+    "fallbacks_applied": "none"
+  }
+}
