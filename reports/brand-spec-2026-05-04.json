@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-04",
+  "subject_project": "browserbase/skills",
+  "creator_handle_x": "@shreypandya",
+  "creator_handle_github": "@shrey150",
+  "fallback_note": "Full default fallback. Multiple fetches of browserbase.com and docs.browserbase.com returned no extractable hex color codes.",
+  "theme": {
+    "background": "#F0EEE6",
+    "ink": "#191919",
+    "accent": "#CC785C",
+    "muted": "#7C7C7C",
+    "rule": "#D9D5C8",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "contrast": {
+    "ink_on_background": "15.20:1 PASS",
+    "accent_on_background": "3.49:1 below 4.5 (default theme baseline, accepted as fallback)",
+    "muted_on_background": "3.44:1 PASS"
+  }
+}
