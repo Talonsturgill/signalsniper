@@ -1,0 +1,50 @@
+{
+  "date": "2026-05-04",
+  "topic": "browserbase skills for Claude Agent SDK",
+  "theme": "default",
+  "scenes": {
+    "title": {
+      "headline": "Agent Browsing",
+      "eyebrow": "what browserbase just shipped"
+    },
+    "three_things": {
+      "eyebrow": "THREE SKILLS",
+      "items": [
+        {"name": "Stealth", "descriptor": "anti-bot real session"},
+        {"name": "Replay", "descriptor": "deterministic traces"},
+        {"name": "Adversary", "descriptor": "agents test agents"}
+      ]
+    },
+    "problem": {
+      "line_a": "Most agents flake.",
+      "line_b": "On the open web.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "A login form",
+      "line_b": "blocks the agent",
+      "line_c": "after one retry.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Just import it.",
+      "secondary": "Browser as skill."
+    },
+    "mechanism": {
+      "line_a": "One package install.",
+      "line_b": "One skill import.",
+      "line_c": "The agent browses.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "No selectors to chase.",
+      "line_b": "No cookies to wrangle.",
+      "line_c": "No bot walls to dodge."
+    },
+    "close": {
+      "primary": "Just import it.",
+      "accent": "Browser as skill.",
+      "subtitle": "the move shrey150 just shipped"
+    }
+  }
+}
