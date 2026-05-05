@@ -1,0 +1,20 @@
+{
+  "creator": "Hunter Bown",
+  "source": "DeepSeek-TUI README screenshot (assets/screenshot.png) — observed dark navy terminal background, cream ink, and an electric DeepSeek-style blue used for panel borders and headers. Translated to a light editorial palette per brief: warm paper ground, deep navy ink (echoing the TUI's background), and the DeepSeek blue accent darkened to meet AA contrast on the cream paper. Aleph and Hegelion repos use plain GitHub light theme — no custom branding contributed. Avatar is a personal photo, not a brand asset.",
+  "theme": {
+    "background": "#F2EEE3",
+    "ink": "#0F1A2E",
+    "accent": "#3A56D4",
+    "muted": "#808488",
+    "rule": "#DBD9D1",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "contrast": {
+    "ink_on_bg": "15.00:1 PASS",
+    "accent_on_bg": "5.23:1 PASS",
+    "muted_on_bg": "3.25:1 PASS"
+  },
+  "fallbacks_used": [],
+  "visual_tone": "technical-minimal — editorial paper translation of a dense, keyboard-driven dark terminal aesthetic; navy ink with sparing electric-blue accent for emphasis"
+}
