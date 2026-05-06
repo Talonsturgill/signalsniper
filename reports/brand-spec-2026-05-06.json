@@ -1,0 +1,19 @@
+{
+  "source_notes": "Sampled from blog.fsck.com /css/site.css: declared :root palette 'Locked palette: platinum-light cool gray ground, ink black type, oxblood (#7a1f24) + olive (#5e6a3d) accents'. Used oxblood as single accent.",
+  "fallbacks_applied": "none",
+  "visual_tone": "editorial, serif-driven, soft-technical, magazine-like restraint",
+  "contrast_ratios": {
+    "ink_on_background": "16.90:1",
+    "accent_on_background": "8.75:1",
+    "muted_on_background": "3.57:1"
+  },
+  "theme": {
+    "background": "#ECEDEF",
+    "ink": "#0A0A0A",
+    "accent": "#7A1F24",
+    "muted": "#7B7C7C",
+    "rule": "#D5D6D8",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  }
+}

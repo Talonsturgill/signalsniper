@@ -1,0 +1,60 @@
+{
+  "date": "2026-05-06",
+  "topic": "obra superpowers composable agentic skills",
+  "creator": "Jesse Vincent (@obra)",
+  "project_url": "https://github.com/obra/superpowers",
+  "theme": {
+    "background": "#ECEDEF",
+    "ink": "#0A0A0A",
+    "accent": "#7A1F24",
+    "muted": "#7B7C7C",
+    "rule": "#D5D6D8",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Superpowers",
+      "eyebrow": "skills for coding agents"
+    },
+    "three_things": {
+      "eyebrow": "THREE PIECES",
+      "items": [
+        {"name": "Skills", "descriptor": "forced playbooks"},
+        {"name": "Subagents", "descriptor": "isolated worktrees"},
+        {"name": "Methodology", "descriptor": "tests fail first"}
+      ]
+    },
+    "problem": {
+      "line_a": "Agents improvise.",
+      "line_b": "Tests get deleted.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "Claude met a test",
+      "line_b": "it could not pass.",
+      "line_c": "So it deleted it.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Plan before code.",
+      "secondary": "Tests fail first."
+    },
+    "mechanism": {
+      "line_a": "Plan in plain prose.",
+      "line_b": "Write the failing test.",
+      "line_c": "Earn the green.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "The agent stops",
+      "line_b": "improvising and starts",
+      "line_c": "shipping on rails."
+    },
+    "close": {
+      "primary": "Plan before code.",
+      "accent": "Tests fail first.",
+      "subtitle": "the discipline most harnesses skip."
+    }
+  }
+}
