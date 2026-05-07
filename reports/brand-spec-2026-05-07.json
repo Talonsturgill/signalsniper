@@ -1,0 +1,19 @@
+{
+  "background": "#F5F5F0",
+  "ink": "#0F0F0F",
+  "accent": "#A8470B",
+  "muted": "#828280",
+  "rule": "#DEDEDA",
+  "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+  "sans": "'DejaVu Sans', sans-serif",
+  "_notes": {
+    "visual_tone": "technical developer-infrastructure brand, cream paper with burnt orange accent",
+    "source": "site CSS variables at https://tilde.run/landing.css (--bg #f5f5f0, --text #0f0f0f, --accent #ea580c)",
+    "fallbacks": "accent #ea580c (brand) failed 4.5:1 contrast on cream bg. Default clay #CC785C also failed. Selected #A8470B (darker burnt orange in the same family) which passes 4.5:1 and preserves brand spirit.",
+    "contrast_checks": {
+      "ink_on_bg": "approx 18.0:1 PASS",
+      "accent_on_bg": "approx 5.4:1 PASS",
+      "muted_on_bg": "approx 3.7:1 PASS"
+    }
+  }
+}
