@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-07",
+  "topic": "Tilde.run versioned agent sandbox",
+  "theme": {
+    "background": "#F5F5F0",
+    "ink": "#0F0F0F",
+    "accent": "#A8470B",
+    "muted": "#828280",
+    "rule": "#DEDEDA",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Tilde for agents",
+      "eyebrow": "an agent sandbox you can roll back"
+    },
+    "three_things": {
+      "eyebrow": "THREE PRIMITIVES",
+      "items": [
+        {"name": "Sandbox", "descriptor": "isolated container"},
+        {"name": "Versioned FS", "descriptor": "lakeFS underneath"},
+        {"name": "Atomic commit", "descriptor": "or roll back to nothing"}
+      ]
+    },
+    "problem": {
+      "line_a": "Most agents touch",
+      "line_b": "production raw.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "One stray rm in a loop",
+      "line_b": "kills the workspace.",
+      "line_c": "No undo.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Runs are commits.",
+      "secondary": "Bad runs roll back."
+    },
+    "mechanism": {
+      "line_a": "Each run gets a branch.",
+      "line_b": "Scoped per-agent rights.",
+      "line_c": "Clean exit commits it.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "Failed runs leave",
+      "line_b": "no trace on disk.",
+      "line_c": "Just a closed branch."
+    },
+    "close": {
+      "primary": "Runs are commits.",
+      "accent": "Bad runs vanish.",
+      "subtitle": "the primitive every agent loop misses."
+    }
+  }
+}
