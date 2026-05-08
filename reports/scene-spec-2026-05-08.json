@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-08",
+  "topic": "agent-skills, senior-engineer workflows compiled for AI coding agents",
+  "theme": {
+    "background": "#151719",
+    "ink": "#FFFFFF",
+    "accent": "#F04688",
+    "muted": "#8A8B8C",
+    "rule": "#2C2E30",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Agent Skills",
+      "eyebrow": "what Addy Osmani just shipped"
+    },
+    "three_things": {
+      "eyebrow": "THREE PARTS",
+      "items": [
+        {"name": "Workflow", "descriptor": "the steps, in order"},
+        {"name": "Quality gate", "descriptor": "the bar you ship at"},
+        {"name": "Persona", "descriptor": "the reviewer's voice"}
+      ]
+    },
+    "problem": {
+      "line_a": "Prompts forget.",
+      "line_b": "Skills don't.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "Tell an agent to test.",
+      "line_b": "It writes one assertion.",
+      "line_c": "Skill writes the suite.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Skill it once.",
+      "secondary": "Run it forever."
+    },
+    "mechanism": {
+      "line_a": "Define the workflow.",
+      "line_b": "Encode the gates.",
+      "line_c": "Agent runs it cold.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "No more prompt drift.",
+      "line_b": "No more lost context.",
+      "line_c": "The bar, every time."
+    },
+    "close": {
+      "primary": "Skill it once.",
+      "accent": "Run it forever.",
+      "subtitle": "the part most builders miss"
+    }
+  }
+}
