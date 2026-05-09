@@ -1184,12 +1184,6 @@ function tick() {
     }
   }
 
-  $("#pf").style.width = `${(clamped / DURATION_S * 100).toFixed(2)}%`;
-  const sec = Math.floor(clamped);
-  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
-  const ss = String(sec % 60).padStart(2, "0");
-  $("#clock").textContent = `${mm}:${ss}`;
-
   if (t < DURATION_S) raf = requestAnimationFrame(tick);
 }
 
@@ -1281,12 +1275,6 @@ async function play() {
   setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
 }
 
-document.getElementById("play").addEventListener("click", play);
-document.getElementById("mute").addEventListener("click", () => {
-  soundEnabled = !soundEnabled;
-  document.getElementById("mute").textContent = "sound: " + (soundEnabled ? "on" : "off");
-  if (!soundEnabled) stopAll();
-});
 play();
 """
 
@@ -1332,12 +1320,6 @@ def build_html(spec):
     <div class="texture-vignette"></div>
     <div class="texture-halation"></div>
   </div>
-</div>
-<div class="controls">
-  <button id="play">replay</button>
-  <button id="mute">sound: on</button>
-  <div class="progress"><div class="progress-fill" id="pf"></div></div>
-  <span class="clock" id="clock">00:00</span>
 </div>
 <script>{js}</script>
 </body>

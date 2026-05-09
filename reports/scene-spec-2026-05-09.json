@@ -3,14 +3,12 @@
   "topic": "pi-mono, the anti-framework agent toolkit",
   "creator_handle": "@badlogicgames",
   "project_url": "https://github.com/badlogic/pi-mono",
-
   "design": {
     "brand_slug": null,
     "aesthetic_slug": "mono-terminal",
     "framework": "SCHEMATIC",
     "audio_palette": "electronic",
     "accent_contrast_min": 4.5,
-
     "tokens": {
       "canvas": "#0A0A0A",
       "ink": "#F0F0F0",
@@ -18,13 +16,11 @@
       "accent": "#37F712",
       "hairline": "#1F1F1F"
     },
-
     "fonts": {
       "display": "JetBrainsMono",
       "body": "JetBrainsMono",
       "italic": "JetBrainsMono"
     },
-
     "typography": {
       "display_weight": 600,
       "body_weight": 400,
@@ -32,70 +28,114 @@
       "case": "lower",
       "italic_descriptors": false
     },
-
     "motion": {
       "register": "cut",
       "scene_in_s": 0.06,
       "scene_out_s": 0.05,
-      "stagger_s": 0.10
+      "stagger_s": 0.1
     },
-
     "layout": {
       "padding_pct": 6,
       "rule_thickness_px": 1,
       "stage_radius_px": 0
     },
-
     "texture": {
       "grain": 0.05,
       "vignette": 0.22,
-      "halation": 0.0,
-      "lighting_arc": 0.18
+      "halation": 0.06,
+      "lighting_arc": 0.3
     }
   },
-
   "scenes": [
     {
       "template": "title",
       "headline": "pi-mono",
       "eyebrow": "agent toolkit, minus the framework",
-      "camera": "push_in",
+      "camera": "orbit",
       "duration_s": 3.0
     },
     {
       "template": "terminal",
       "title": "pi --provider claude-sonnet-4-6",
       "lines": [
-        {"text": "$ pi"},
-        {"text": "> trace the auth bug in api.ts", "accent": false},
-        {"text": "reading 14 files in src/..."},
-        {"text": "proposed patch ready to apply."}
+        {
+          "text": "$ pi"
+        },
+        {
+          "text": "> trace the auth bug in api.ts",
+          "accent": false
+        },
+        {
+          "text": "reading 14 files in src/..."
+        },
+        {
+          "text": "proposed patch ready to apply."
+        }
       ],
-      "camera": "static_breathe",
+      "camera": "parallax_drift",
       "duration_s": 4.0
     },
     {
       "template": "two_line",
-      "lines": ["most agent kits", "ship a framework."],
+      "lines": [
+        "most agent kits",
+        "ship a framework."
+      ],
       "accent_idx": 1,
-      "camera": "parallax_drift",
+      "camera": "ken_burns",
       "duration_s": 2.5
     },
     {
       "template": "diagram",
       "eyebrow": "THE WIRING",
       "nodes": [
-        {"label": "15 llms",    "x": 50, "y": 18},
-        {"label": "llm router", "x": 50, "y": 42, "accent": true},
-        {"label": "vllm pods",  "x": 20, "y": 42},
-        {"label": "agent core", "x": 50, "y": 66},
-        {"label": "coding cli", "x": 50, "y": 88, "filled": true}
+        {
+          "label": "15 llms",
+          "x": 50,
+          "y": 18
+        },
+        {
+          "label": "llm router",
+          "x": 50,
+          "y": 42,
+          "accent": true
+        },
+        {
+          "label": "vllm pods",
+          "x": 20,
+          "y": 42
+        },
+        {
+          "label": "agent core",
+          "x": 50,
+          "y": 66
+        },
+        {
+          "label": "coding cli",
+          "x": 50,
+          "y": 88,
+          "filled": true
+        }
       ],
       "edges": [
-        {"from": 0, "to": 1},
-        {"from": 2, "to": 1, "style": "dashed"},
-        {"from": 1, "to": 3, "accent": true},
-        {"from": 3, "to": 4}
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 2,
+          "to": 1,
+          "style": "dashed"
+        },
+        {
+          "from": 1,
+          "to": 3,
+          "accent": true
+        },
+        {
+          "from": 3,
+          "to": 4
+        }
       ],
       "camera": "orbit",
       "duration_s": 4.5
@@ -105,7 +145,7 @@
       "primary": "minimal core.",
       "secondary": "you wire the rest.",
       "emphasize": true,
-      "camera": "push_in",
+      "camera": "crash_zoom",
       "duration_s": 3.5
     },
     {

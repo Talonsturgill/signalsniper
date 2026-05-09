@@ -162,7 +162,7 @@ body {
 .texture-halation {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 35%, rgba(255,210,160,0.0) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 35%, rgba(255,210,160,0.06) 0%, transparent 60%);
   mix-blend-mode: screen;
 }
 
@@ -173,7 +173,7 @@ body {
   pointer-events: none;
   z-index: 40;
   mix-blend-mode: overlay;
-  opacity: 0.18;
+  opacity: 0.3;
   background: linear-gradient(135deg,
     rgba(255, 220, 180, 0.0) 0%,
     rgba(255, 220, 180, 0.4) 50%,
@@ -583,12 +583,12 @@ body {
 <div class="stage" id="stage">
   <div class="stage-inner">
 
-<section class="scene" data-idx="0" data-tpl="title" data-cam="push_in" style="--scene-dur: 3.0s;">
+<section class="scene" data-idx="0" data-tpl="title" data-cam="orbit" style="--scene-dur: 3.0s;">
   <div class="t-headline">pi-mono</div>
   <div class="eyebrow-small">agent toolkit, minus the framework</div>
 </section>
 
-<section class="scene" data-idx="1" data-tpl="terminal" data-cam="static_breathe" style="--scene-dur: 4.0s;">
+<section class="scene" data-idx="1" data-tpl="terminal" data-cam="parallax_drift" style="--scene-dur: 4.0s;">
   <div class="terminal-frame">
     <div class="terminal-bar">
       <div class="terminal-dot"></div>
@@ -600,7 +600,7 @@ body {
   </div>
 </section>
 
-<section class="scene" data-idx="2" data-tpl="two_line" data-cam="parallax_drift" style="--scene-dur: 2.5s;">
+<section class="scene" data-idx="2" data-tpl="two_line" data-cam="ken_burns" style="--scene-dur: 2.5s;">
   <div class="line size-2">most agent kits</div><div class="line size-2 accent">ship a framework.</div>
 </section>
 
@@ -612,7 +612,7 @@ body {
   </svg>
 </section>
 
-<section class="scene" data-idx="4" data-tpl="fix" data-cam="push_in" style="--scene-dur: 3.5s;">
+<section class="scene" data-idx="4" data-tpl="fix" data-cam="crash_zoom" style="--scene-dur: 3.5s;">
   <div class="f-primary">minimal core.</div>
   <div class="f-secondary">you wire the rest.</div>
 </section>
@@ -629,12 +629,6 @@ body {
     <div class="texture-vignette"></div>
     <div class="texture-halation"></div>
   </div>
-</div>
-<div class="controls">
-  <button id="play">replay</button>
-  <button id="mute">sound: on</button>
-  <div class="progress"><div class="progress-fill" id="pf"></div></div>
-  <span class="clock" id="clock">00:00</span>
 </div>
 <script>
 const TL = [{"idx": 0, "tpl": "title", "start": 0.0, "end": 3.0, "dur": 3.0, "emphasize": false}, {"idx": 1, "tpl": "terminal", "start": 3.0, "end": 7.0, "dur": 4.0, "emphasize": false}, {"idx": 2, "tpl": "two_line", "start": 7.0, "end": 9.5, "dur": 2.5, "emphasize": false}, {"idx": 3, "tpl": "diagram", "start": 9.5, "end": 14.0, "dur": 4.5, "emphasize": false}, {"idx": 4, "tpl": "fix", "start": 14.0, "end": 17.5, "dur": 3.5, "emphasize": true}, {"idx": 5, "tpl": "close", "start": 17.5, "end": 20.5, "dur": 3.0, "emphasize": true}];
@@ -869,12 +863,6 @@ function tick() {
     }
   }
 
-  $("#pf").style.width = `${(clamped / DURATION_S * 100).toFixed(2)}%`;
-  const sec = Math.floor(clamped);
-  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
-  const ss = String(sec % 60).padStart(2, "0");
-  $("#clock").textContent = `${mm}:${ss}`;
-
   if (t < DURATION_S) raf = requestAnimationFrame(tick);
 }
 
@@ -966,12 +954,6 @@ async function play() {
   setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
 }
 
-document.getElementById("play").addEventListener("click", play);
-document.getElementById("mute").addEventListener("click", () => {
-  soundEnabled = !soundEnabled;
-  document.getElementById("mute").textContent = "sound: " + (soundEnabled ? "on" : "off");
-  if (!soundEnabled) stopAll();
-});
 play();
 </script>
 </body>
