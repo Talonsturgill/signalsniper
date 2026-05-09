@@ -1,36 +1,26 @@
 {
   "date": "2026-05-09",
   "brand_slug": null,
-  "preset_slug": "mono-terminal",
-  "framework": "SCHEMATIC",
-  "rationale_one_line": "Mario Zechner ships terminal-native, anti-framework tooling. Mono-terminal mirrors the build-in-public hacker register and matrix-green accent matches the CLI surface pi-mono lives on.",
-  "writing_tone_notes": "Bold declarative peer voice. Build-in-public, anti-framework instinct. Dry, minimal, no marketing. Refrain on minimal core. Show the contrast between framework kits and a hand-wired monorepo. Admiring without compliments.",
+  "preset_slug": "subway-chrome",
+  "aesthetic_slug": "subway-chrome",
+  "framework": "RECEIPT",
+  "rationale_one_line": "agentmemory wins on benchmark numbers and ops-dashboard energy; subway-chrome's dark-steel canvas with icy cyan accent reads like an SRE metrics panel, and RECEIPT lets the 95.2 / 92 / 10 numbers do the proving.",
+  "writing_tone_notes": "DevRel-grade calm, numbers-first, contractions where natural. Show the receipt, don't editorialize. Keep adjectives out and let the percentages punch.",
   "do_rules": [
-    "Open with the project name and the angle in the same beat",
-    "Use the stack scene to enumerate the three real packages",
-    "Land the fix on minimal core and let it breathe",
-    "Close with a refrain that earns the rewatch"
+    "Lead with star velocity, never the version.",
+    "Burn two scenes on numbers. Big_number is a visual hero, use it twice.",
+    "Spend one scene on the triple-stream architecture so the spec doesn't read as receipt-only.",
+    "Land fix on memory persistence; close on the consequence."
   ],
   "dont_rules": [
-    "No questions, hooks, hashtags, em or en dashes, semicolons, arrows, or emojis",
-    "No flattery. The work flatters itself",
-    "No framework jargon (orchestration, runtime, harness as nouns)",
-    "No claims unverifiable from the README"
+    "No 'paradigm shift', 'changes everything', or 'next-gen'.",
+    "No mention of v0.9.5 or any release number.",
+    "No repeating the X caption's stat inside the scenes.",
+    "No revisiting mono-terminal, SCHEMATIC, or pi-mono; all shipped earlier today."
   ],
   "music": {
-    "title": "Tyrant",
-    "composer": "Kevin MacLeod",
-    "source": "incompetech.com",
-    "source_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Tyrant.mp3",
-    "license": "Creative Commons Attribution 4.0",
-    "license_url": "http://creativecommons.org/licenses/by/4.0/",
-    "feel": "Dark, Driving, Calm",
-    "instruments": "Synths, Percussion",
-    "slice_start_s": 30,
-    "slice_duration_s": 20,
-    "fade_in_s": 0.6,
-    "fade_out_s": 1.5,
-    "loudnorm": "I=-16:TP=-1.5:LRA=11",
-    "attribution_text": "Tyrant by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0"
+    "source": "synthesized",
+    "palette": "electronic",
+    "note": "Today's run uses synth_audio.py output (electronic palette per the subway-chrome preset). No external CC BY track in this repo's music/ catalog yet; no attribution reply needed."
   }
 }
