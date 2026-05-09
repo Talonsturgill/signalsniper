@@ -1,0 +1,52 @@
+{
+  "date": "2026-05-09",
+  "topic": "addyosmani agent-skills",
+  "creator_handle": "addyosmani",
+  "project_url": "https://github.com/addyosmani/agent-skills",
+  "theme": "default",
+  "scenes": {
+    "title": {
+      "headline": "Skills beat prompts.",
+      "eyebrow": "by addy osmani"
+    },
+    "three_things": {
+      "eyebrow": "THE WORKFLOW",
+      "items": [
+        {"name": "Plan", "descriptor": "decompose the spec"},
+        {"name": "Build", "descriptor": "ship in increments"},
+        {"name": "Review", "descriptor": "audit before ship"}
+      ]
+    },
+    "problem": {
+      "line_a": "Vibe coding ships",
+      "line_b": "fragile code.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "Without a workflow,",
+      "line_b": "agents loop, retry,",
+      "line_c": "and forget.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Workflow first.",
+      "secondary": "Prompts come last."
+    },
+    "mechanism": {
+      "line_a": "Define the spec,",
+      "line_b": "decompose the work,",
+      "line_c": "verify and ship.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "No workflow,",
+      "line_b": "no real engineering.",
+      "line_c": "just vibes."
+    },
+    "close": {
+      "primary": "Workflow first.",
+      "accent": "Prompts last.",
+      "subtitle": "what most builders miss."
+    }
+  }
+}

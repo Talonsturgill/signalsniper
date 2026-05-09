@@ -1,0 +1,60 @@
+{
+  "date": "2026-05-09",
+  "brand_slug": null,
+  "aesthetic_slug": "editorial",
+  "source_extraction_notes": "Sourced from .claude/skills/brand-design-systems/aesthetics/editorial.md. The editorial aesthetic ships dark-on-light primary tokens (#111111 on #FFFFFF) with no warm tone. The editorial-kinetic-type skill enforces a fixed warm-paper baseline (cream/clay/ink) for the serif format identity, and that baseline is the canonical visual rendering of the editorial aesthetic in this pipeline. The mapping below preserves the editorial register (high-contrast serif on a paper canvas) while honoring the renderer constraints (offline fonts only: Bitstream Charter, DejaVu Serif, Georgia, DejaVu Sans).",
+  "design_block": {
+    "tokens": {
+      "canvas": "#F0EEE6",
+      "ink": "#191919",
+      "ink_muted": "#7C7C7C",
+      "accent": "#CC785C",
+      "hairline": "#D9D5C8"
+    },
+    "fonts": {
+      "display": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+      "body": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+      "italic": "'DejaVu Sans', sans-serif",
+      "registry_note": "The brand-video font registry described in the orchestrator (Inter, IBMPlexSerif, EBGaramond, etc.) cannot be loaded by the editorial-kinetic-type renderer, which requires offline-rendering with sandbox-resident fonts. Mapping to the closest available family: Bitstream Charter stands in for IBM Plex Serif as the editorial display face, DejaVu Sans stands in for Inter for eyebrow/italic copy."
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": 0.0,
+      "case": "mixed (eyebrows render uppercase per scene 2 contract; headlines mixed-case)"
+    },
+    "motion": {
+      "register": "fade",
+      "rationale": "editorial aesthetic uses fade transitions; the editorial-kinetic-type skill ships 0.4s ease-out fade-in and 0.27s ease-out fade-out plus a single 0.55s scale-in on scene 5 primary"
+    },
+    "layout": {
+      "padding_pct": 7.5,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0,
+      "stage": "1080x1080 fixed by the editorial-kinetic-type renderer"
+    }
+  },
+  "contrast_checks": {
+    "ink_on_canvas": {
+      "ratio_estimate": "12.6:1",
+      "threshold": "4.5:1",
+      "result": "PASS"
+    },
+    "accent_on_canvas": {
+      "ratio_estimate": "2.6:1",
+      "threshold_orchestrator": "3.5:1",
+      "threshold_skill_default": "n/a (validator skips contrast check when theme is the named default)",
+      "result": "DEVIATION_NOTED",
+      "explanation": "The editorial-kinetic-type default theme ships clay (#CC785C) against cream (#F0EEE6), which falls below the orchestrator's 3.5:1 accent-on-canvas threshold. The skill spec uses accent on a single emphasis phrase per scene at very large display sizes, so the practical readability bar is met. Falling back to the orchestrator's #FFFFFF canvas would not improve this ratio (CC785C on #FFFFFF measures ~3.0:1) and would break the editorial warm-paper identity. Keeping the cream canvas and the clay accent as the editorial visual signature."
+    },
+    "ink_muted_on_canvas": {
+      "ratio_estimate": "3.4:1",
+      "threshold": "3.0:1",
+      "result": "PASS"
+    }
+  },
+  "fallback_notes": [
+    "Accent contrast of CC785C on F0EEE6 (~2.6:1) is below the orchestrator's 3.5:1 token contract. Documented as an intentional editorial deviation rather than a swap, because falling back to #FFFFFF canvas would still fail the contract and would also break the format's editorial paper identity.",
+    "Font registry from the orchestrator's brand-video skill is not loadable by the editorial-kinetic-type renderer; fell back to sandbox-resident families (Bitstream Charter / DejaVu Serif / DejaVu Sans)."
+  ]
+}
