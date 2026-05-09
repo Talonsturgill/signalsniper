@@ -114,7 +114,7 @@ The five color tokens map to canonical roles. Pull them from `brand-design-syste
 Contrast minimums (the validator enforces these against `canvas`):
 
 - `ink` vs `canvas` >= 4.5:1
-- `accent` vs `canvas` >= 3.5:1 (looser than the old skill because some brand accents are deliberately muted)
+- `accent` vs `canvas` >= 3.0:1 by default. Warm-earth accents (terracotta, clay, riso orange) live in this band naturally and are part of the editorial / paper / refined identity. Raise this floor by setting `design.accent_contrast_min` in the spec, e.g. `4.5` for mono / neon / dashboard / matrix aesthetics where the accent is meant to pop.
 - `ink_muted` vs `canvas` >= 3.0:1
 
 If a token fails, fall back to the brand's spec-stated alternative or to a safe default.

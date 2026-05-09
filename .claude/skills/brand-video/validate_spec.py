@@ -175,18 +175,23 @@ def validate(spec_path):
         if need not in tokens:
             errors.append(f"  TOKENS: design.tokens.{need} missing")
 
+    # Accent threshold defaults to 3.0:1 (warm-earth palettes need this floor).
+    # The spec can override per-aesthetic via design.accent_contrast_min, e.g.
+    # mono / neon / dashboard aesthetics raise it back to 4.5.
+    accent_min = float(design.get("accent_contrast_min", 3.0))
+
     if all(k in tokens for k in ("canvas", "ink", "accent", "ink_muted")):
         ink_bg = contrast(tokens["ink"], tokens["canvas"])
         ac_bg = contrast(tokens["accent"], tokens["canvas"])
         mu_bg = contrast(tokens["ink_muted"], tokens["canvas"])
         print(f"Token contrast:")
         print(f"  ink on canvas:        {ink_bg:5.2f}:1 (need 4.5+) {'PASS' if ink_bg >= 4.5 else 'FAIL'}")
-        print(f"  accent on canvas:     {ac_bg:5.2f}:1 (need 3.5+) {'PASS' if ac_bg >= 3.5 else 'FAIL'}")
+        print(f"  accent on canvas:     {ac_bg:5.2f}:1 (need {accent_min:.1f}+) {'PASS' if ac_bg >= accent_min else 'FAIL'}")
         print(f"  ink_muted on canvas:  {mu_bg:5.2f}:1 (need 3.0+) {'PASS' if mu_bg >= 3.0 else 'FAIL'}")
         if ink_bg < 4.5:
             errors.append(f"  CONTRAST: ink/canvas {ink_bg:.2f}:1 below 4.5:1")
-        if ac_bg < 3.5:
-            errors.append(f"  CONTRAST: accent/canvas {ac_bg:.2f}:1 below 3.5:1")
+        if ac_bg < accent_min:
+            errors.append(f"  CONTRAST: accent/canvas {ac_bg:.2f}:1 below {accent_min:.1f}:1")
         if mu_bg < 3.0:
             errors.append(f"  CONTRAST: ink_muted/canvas {mu_bg:.2f}:1 below 3.0:1")
 
