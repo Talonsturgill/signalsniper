@@ -151,11 +151,6 @@ def build_ambient(total_s, transitions, emphases):
     add(track, evolving_pad(pad_freqs, total_s, attack=3.0, release=4.0, lfo_rate=0.12), 0, gain=0.65)
     add(track, evolving_pad([n('C3'), n('G3')], total_s, attack=4.0, release=4.0, lfo_rate=0.09), 0, gain=0.5)
     add(track, sub_drone(n('C2'), total_s, attack=3.5, release=3.5), 0, gain=0.45)
-    for i, tr in enumerate(transitions):
-        if tr <= 0.05 or tr >= total_s:
-            continue
-        add(track, transition_swell(seed=int(tr * 1000) % 9999, dur=1.2, peak_at=0.83), tr - 1.0, gain=1.0)
-        add(track, soft_thump(dur=0.6), tr, gain=0.55)
     for em in emphases:
         if em < 0 or em >= total_s:
             continue
@@ -232,12 +227,6 @@ def build_electronic(total_s, transitions, emphases):
     # glitch texture every ~0.6s lightly
     for tt in np.arange(0.6, total_s - 0.5, 0.62):
         add(track, glitch_hit(int(tt * 1000) % 9999, dur=0.14), tt, gain=0.18)
-    for tr in transitions:
-        if tr <= 0.05 or tr >= total_s:
-            continue
-        add(track, transition_swell(seed=int(tr * 1000) % 9999, dur=0.9, peak_at=0.85, depth_freq=12000), tr - 0.7, gain=0.9)
-        add(track, glitch_hit(int(tr * 1000 + 7) % 9999, dur=0.16), tr, gain=0.45)
-        add(track, soft_thump(dur=0.5, freq_start=110, freq_end=55), tr, gain=0.50)
     for em in emphases:
         if em < 0 or em >= total_s:
             continue
@@ -322,11 +311,6 @@ def build_acoustic(total_s, transitions, emphases):
     add(track, piano_cluster(piano_freqs, total_s, attack=2.5, release=4.0), 0, gain=0.55)
     add(track, soft_strings([n('C3'), n('G3')], total_s, attack=4.0, release=4.0), 0, gain=0.50)
     add(track, sub_drone(n('C2'), total_s, attack=3.5, release=3.5), 0, gain=0.30)
-    for tr in transitions:
-        if tr <= 0.05 or tr >= total_s:
-            continue
-        add(track, paper_rustle(int(tr * 1000) % 9999, dur=0.45), tr - 0.35, gain=1.0)
-        add(track, soft_thump(dur=0.55, freq_start=70, freq_end=38), tr, gain=0.42)
     for em in emphases:
         if em < 0 or em >= total_s:
             continue
@@ -377,19 +361,13 @@ def typewriter_tick(seed, dur=0.06):
 
 def build_foley(total_s, transitions, emphases):
     track = np.zeros(int(SR * total_s))
-    for tr in transitions:
-        if tr <= 0.25 or tr >= total_s:
-            continue
-        add(track, whoosh(int(tr * 1000 + 1) % 9999, dur=0.40), tr - 0.20, gain=0.85)
-        add(track, thud(dur=0.35), tr, gain=0.60)
+    # No transition foley. Cuts are read by the pad shifting, not by a whoosh.
+    # No typewriter chatter. The music carries the rhythm.
+    # A single soft sub-thump on emphasized beats only, low gain, supports the visual hit.
     for em in emphases:
         if em < 0 or em >= total_s:
             continue
-        add(track, thud(dur=0.5), em, gain=0.45)
-    # typewriter ticks at evenly spaced UI moments
-    for tt in np.arange(0.4, total_s - 0.3, 0.5):
-        if not any(abs(tt - tr) < 0.25 for tr in transitions):
-            add(track, typewriter_tick(int(tt * 1000) % 9999), tt, gain=0.75)
+        add(track, thud(dur=0.45), em, gain=0.22)
     return track
 
 

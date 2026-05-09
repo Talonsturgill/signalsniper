@@ -13,7 +13,6 @@ Adds (per PLAYBOOK.md):
 - Lighting arc (full-stage gradient that shifts hue across the runtime)
 - New scene templates: diagram, flash, big_number, terminal, split
 - Audio palette pass-through to synth_audio.py via the bv-meta tag
-- Optional held-subject persistent corner wordmark
 
 Usage:
     python build_html.py <spec.json> <output.html>
@@ -236,12 +235,12 @@ body {{
 }}
 @keyframes camCrashZoom {{
   0%   {{ transform: scale(1.00); }}
-  18%  {{ transform: scale(1.85); }}
-  100% {{ transform: scale(1.85); }}
+  18%  {{ transform: scale(1.40); }}
+  100% {{ transform: scale(1.40); }}
 }}
 @keyframes camOrbit {{
-  from {{ transform: perspective(1400px) rotateY(-7deg) scale(1.02); }}
-  to   {{ transform: perspective(1400px) rotateY(7deg)  scale(1.02); }}
+  from {{ transform: perspective(1100px) rotateY(-12deg) scale(1.04); }}
+  to   {{ transform: perspective(1100px) rotateY(12deg)  scale(1.04); }}
 }}
 @keyframes camParallaxDrift {{
   from {{ transform: translate(0.6%, 0) scale(1.04); }}
@@ -260,6 +259,43 @@ body {{
 .scene[data-cam="parallax_drift"] {{ animation: camParallaxDrift var(--scene-dur, 3s) ease-in-out forwards; }}
 .scene[data-cam="static_breathe"] {{ animation: camBreathe       var(--scene-dur, 3s) ease-in-out forwards; }}
 .scene[data-cam="none"]           {{ animation: none; }}
+
+/* ---------------- particle background canvas ---------------- */
+.bg-particles {{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}}
+
+.bv-defs {{ position: absolute; width: 0; height: 0; pointer-events: none; }}
+
+/* ---------------- chromatic aberration on cuts ---------------- */
+.stage.chrom-cut .stage-inner {{
+  filter: url(#bvChromAb);
+}}
+
+/* ---------------- emphasize flash ---------------- */
+.emphasize-flash {{
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 45;
+  mix-blend-mode: screen;
+}}
+.emphasize-flash.fire {{
+  animation: bvEmpFlash 0.32s ease-out forwards;
+}}
+@keyframes bvEmpFlash {{
+  0%   {{ opacity: 0;   }}
+  18%  {{ opacity: 0.42; }}
+  100% {{ opacity: 0;   }}
+}}
 
 /* ---------------- texture overlay (always on) ---------------- */
 .texture {{
@@ -533,6 +569,40 @@ body {{
 }}
 .dg-label.on-filled {{ fill: var(--canvas); }}
 
+.dg-grid {{
+  color: var(--ink-muted);
+  opacity: 0;
+  animation: dgGridFade 0.9s ease-out 0.1s forwards, dgGridDrift 14s linear infinite;
+}}
+@keyframes dgGridFade {{ to {{ opacity: 0.18; }} }}
+@keyframes dgGridDrift {{
+  from {{ transform: translate(0,0); }}
+  to   {{ transform: translate(-6px, -6px); }}
+}}
+
+.dg-node.accent {{
+  filter: drop-shadow(0 0 1.4px var(--accent)) drop-shadow(0 0 2.8px var(--accent));
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: dgPulse 1.6s ease-in-out 0.6s infinite;
+}}
+.dg-edge.accent {{
+  filter: drop-shadow(0 0 0.8px var(--accent));
+}}
+@keyframes dgPulse {{
+  0%, 100% {{ transform: scale(1.00); }}
+  50%      {{ transform: scale(1.05); }}
+}}
+
+.dg-particle {{
+  fill: var(--ink-muted);
+  opacity: 0;
+}}
+.dg-particle.accent {{
+  fill: var(--accent);
+  filter: drop-shadow(0 0 1.4px var(--accent)) drop-shadow(0 0 2.4px var(--accent));
+}}
+
 /* ---- flash ---- */
 .scene[data-tpl="flash"] {{ background: var(--accent); }}
 .flash-word {{
@@ -671,32 +741,6 @@ body {{
   font-size: 7.5cqw;
   line-height: 1.05;
   letter-spacing: var(--tracking);
-}}
-
-/* ---- held subject (persistent corner wordmark, optional) ---- */
-.held-subject {{
-  position: absolute;
-  bottom: 4%;
-  left: 4%;
-  z-index: 30;
-  font-family: var(--body);
-  font-weight: 600;
-  font-variation-settings: "wght" 600;
-  font-size: 1.5cqw;
-  color: var(--ink-muted);
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  opacity: 0;
-  pointer-events: none;
-}}
-.held-subject .accent-dot {{
-  display: inline-block;
-  width: 0.6em;
-  height: 0.6em;
-  background: var(--accent);
-  border-radius: 50%;
-  margin-right: 0.7em;
-  vertical-align: 0.05em;
 }}
 
 /* ---- controls ---- */
@@ -867,12 +911,38 @@ def render_scene(idx, scene):
         eyebrow_div = (
             f'<div class="diagram-eyebrow">{esc(eyebrow)}</div>' if eyebrow else ""
         )
+
+        particles_svg = ""
+        for i, e in enumerate(edges):
+            if e.get("style") == "dashed":
+                continue
+            cls = "dg-particle"
+            if e.get("accent"):
+                cls += " accent"
+            # 2 staggered particles per edge so the flow reads as a stream not a single dot
+            for k in range(2):
+                particles_svg += (
+                    f'<circle class="{cls}" data-edge="{i}" data-phase="{k*0.5:.2f}" '
+                    f'r="1.4" cx="0" cy="0" />'
+                )
+
         return f"""
 <section class="scene" data-idx="{idx}" data-tpl="diagram"{extra_attrs}>
   {eyebrow_div}
   <svg class="diagram-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <filter id="dgGlow{idx}" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="0.9" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <pattern id="dgGrid{idx}" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+        <path d="M 6 0 L 0 0 0 6" fill="none" stroke="currentColor" stroke-width="0.12" />
+      </pattern>
+    </defs>
+    <rect class="dg-grid" x="0" y="0" width="100" height="100" fill="url(#dgGrid{idx})" />
     <g class="dg-edges">{edges_svg}</g>
     <g class="dg-nodes">{nodes_svg}</g>
+    <g class="dg-particles">{particles_svg}</g>
   </svg>
 </section>"""
 
@@ -1052,14 +1122,38 @@ function animateDiagram(el, t, dur) {
   if (svg) svg.style.opacity = 1;
   for (let g = 0; g < groups.length; g++) groups[g].style.opacity = 1;
 
+  // Phase 4: sub-shots inside the diagram (build / focus on accent edge / overview)
+  if (svg && dur >= 3.5) {
+    const tn = t / dur;
+    let scale = 1.0, ty = 0;
+    if (tn < 0.30) {
+      // build-up: hold a wide framing
+      scale = 1.0; ty = 0;
+    } else if (tn < 0.65) {
+      // focus phase: zoom toward router/core (y ~ 42 to 66 in viewBox -> push center down)
+      const k = (tn - 0.30) / 0.35;
+      const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      scale = 1.0 + 0.18 * e;
+      ty   = -3.0 * e;
+    } else {
+      // overview phase: settle back wide
+      const k = (tn - 0.65) / 0.35;
+      const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      scale = 1.18 - 0.18 * e;
+      ty   = -3.0 + 3.0 * e;
+    }
+    svg.style.transformOrigin = "50% 50%";
+    svg.style.transform = `translateY(${ty.toFixed(2)}%) scale(${scale.toFixed(3)})`;
+  }
+
   if (eyebrow) {
     const e = easeOut(Math.min(1, t / 0.30));
     eyebrow.style.opacity = e.toFixed(3);
     eyebrow.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
   }
 
-  const nodeStart = eyebrow ? 0.30 : 0.05;
-  const nodeStep = 0.18;
+  const nodeStart = eyebrow ? 0.18 : 0.04;
+  const nodeStep = 0.10;
   for (let i = 0; i < nodes.length; i++) {
     const local = t - nodeStart - i * nodeStep;
     if (local < 0) {
@@ -1072,11 +1166,13 @@ function animateDiagram(el, t, dur) {
     if (labels[i]) labels[i].style.opacity = e.toFixed(3);
   }
 
-  const edgeStart = nodeStart + nodes.length * nodeStep + 0.10;
-  const edgeStep = 0.18;
+  const edgeStart = nodeStart + nodes.length * nodeStep + 0.06;
+  const edgeStep = 0.10;
+  const edgeEndOffsets = [];
   for (let i = 0; i < edges.length; i++) {
     const local = t - edgeStart - i * edgeStep;
     const dashed = edges[i].classList.contains("dashed");
+    edgeEndOffsets[i] = edgeStart + i * edgeStep;
     if (local < 0) {
       edges[i].style.opacity = dashed ? 0 : 1;
       if (!dashed) edges[i].style.strokeDashoffset = 200;
@@ -1089,6 +1185,33 @@ function animateDiagram(el, t, dur) {
       edges[i].style.strokeDashoffset = (200 * (1 - e)).toFixed(2);
       edges[i].style.opacity = 1;
     }
+  }
+
+  // Particles: flow along each non-dashed edge after it draws on. Loop.
+  const particles = el.querySelectorAll(".dg-particle");
+  for (let p = 0; p < particles.length; p++) {
+    const edgeIdx = parseInt(particles[p].getAttribute("data-edge"), 10);
+    const phase = parseFloat(particles[p].getAttribute("data-phase") || "0");
+    const edge = edges[edgeIdx];
+    const startedAt = edgeEndOffsets[edgeIdx] + 0.35;
+    const local = t - startedAt;
+    if (!edge || local < 0) {
+      particles[p].style.opacity = 0;
+      continue;
+    }
+    const path = edge.getAttribute("d") || "";
+    const m = path.match(/M\s*([\-\d.]+)\s+([\-\d.]+)\s*L\s*([\-\d.]+)\s+([\-\d.]+)/);
+    if (!m) continue;
+    const ax = parseFloat(m[1]), ay = parseFloat(m[2]);
+    const bx = parseFloat(m[3]), by = parseFloat(m[4]);
+    const period = 1.1;
+    const tNorm = ((local + phase * period) % period) / period;
+    const cx = ax + (bx - ax) * tNorm;
+    const cy = ay + (by - ay) * tNorm;
+    particles[p].setAttribute("cx", cx.toFixed(2));
+    particles[p].setAttribute("cy", cy.toFixed(2));
+    const fade = Math.min(1, Math.min(tNorm, 1 - tNorm) * 5);
+    particles[p].style.opacity = (0.95 * fade).toFixed(3);
   }
 }
 
@@ -1199,32 +1322,122 @@ function walkReset(node) {
   }
 }
 
+// ---- Phase 4: chromatic aberration on scene boundaries + emphasize flash ----
+const SCENE_BOUNDARIES = TL.slice(1).map(s => s.start);
+let lastSceneIdx = -1;
+const CUT_FILTER_MS = 180;
+const stageEl = document.getElementById("stage");
+const empFlashEl = document.querySelector(".emphasize-flash");
+
+function fireChromCut() {
+  if (!stageEl) return;
+  stageEl.classList.add("chrom-cut");
+  setTimeout(() => stageEl.classList.remove("chrom-cut"), CUT_FILTER_MS);
+}
+function fireEmphasizeFlash() {
+  if (!empFlashEl) return;
+  empFlashEl.classList.remove("fire");
+  // force reflow so the animation re-runs
+  void empFlashEl.offsetWidth;
+  empFlashEl.classList.add("fire");
+}
+
 function tick() {
   const t = (performance.now() - startedAt) / 1000;
   const clamped = Math.min(t, DURATION_S);
+  let activeIdx = -1;
   for (let i = 0; i < TL.length; i++) {
     const sc = TL[i];
     if (clamped < sc.start || clamped >= sc.end) {
       hideScene(i);
     } else {
+      activeIdx = i;
       applySceneAnimations(i, clamped - sc.start, sc.end - sc.start);
     }
   }
 
-  const held = $(".held-subject");
-  if (held) {
-    if (clamped < 1.6) held.style.opacity = 0;
-    else held.style.opacity = Math.min(0.65, (clamped - 1.6) / 0.6).toFixed(3);
+  if (activeIdx !== -1 && activeIdx !== lastSceneIdx) {
+    if (lastSceneIdx !== -1) {
+      // scene boundary detected: flash chromatic aberration on the cut
+      fireChromCut();
+    }
+    if (activeIdx >= 0 && TL[activeIdx] && TL[activeIdx].emphasize) {
+      fireEmphasizeFlash();
+    }
+    lastSceneIdx = activeIdx;
   }
-
-  $("#pf").style.width = `${(clamped / DURATION_S * 100).toFixed(2)}%`;
-  const sec = Math.floor(clamped);
-  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
-  const ss = String(sec % 60).padStart(2, "0");
-  $("#clock").textContent = `${mm}:${ss}`;
 
   if (t < DURATION_S) raf = requestAnimationFrame(tick);
 }
+
+// ---- Phase 4: particle background canvas (parallax depth, accent-tinted) ----
+function startParticleBackground() {
+  const canvas = document.getElementById("bgParticles");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const dpr = Math.max(1, window.devicePixelRatio || 1);
+  const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#ffffff";
+  const inkMuted = getComputedStyle(document.documentElement).getPropertyValue("--ink-muted").trim() || "#888";
+
+  function fit() {
+    const r = canvas.getBoundingClientRect();
+    canvas.width = Math.floor(r.width * dpr);
+    canvas.height = Math.floor(r.height * dpr);
+  }
+  fit();
+  window.addEventListener("resize", fit);
+
+  const PARTICLE_COUNT = 220;
+  const ACCENT_RATIO = 0.18;
+  const particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const depth = Math.random();
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * (0.10 + depth * 0.40),
+      vy: (Math.random() - 0.5) * (0.10 + depth * 0.40),
+      r: (0.5 + depth * 1.8) * dpr,
+      depth: depth,
+      isAccent: Math.random() < ACCENT_RATIO,
+      tw: Math.random() * Math.PI * 2,
+    });
+  }
+
+  function pf() {
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.tw += 0.03 + p.depth * 0.04;
+      if (p.x < -8) p.x = w + 8;
+      if (p.x > w + 8) p.x = -8;
+      if (p.y < -8) p.y = h + 8;
+      if (p.y > h + 8) p.y = -8;
+      const twinkle = 0.55 + 0.45 * (Math.sin(p.tw) * 0.5 + 0.5);
+      const baseAlpha = (0.12 + p.depth * 0.55) * twinkle;
+      ctx.beginPath();
+      ctx.fillStyle = p.isAccent ? accent : inkMuted;
+      ctx.globalAlpha = baseAlpha;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (p.isAccent && p.depth > 0.7) {
+        ctx.globalAlpha = baseAlpha * 0.35;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(pf);
+  }
+  requestAnimationFrame(pf);
+}
+startParticleBackground();
 
 let audioCtx = null;
 let masterGain = null;
@@ -1314,15 +1527,13 @@ async function play() {
   setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
 }
 
-document.getElementById("play").addEventListener("click", play);
-document.getElementById("mute").addEventListener("click", () => {
-  soundEnabled = !soundEnabled;
-  document.getElementById("mute").textContent = "sound: " + (soundEnabled ? "on" : "off");
-  if (!soundEnabled) stopAll();
-});
-play();
+// Wait for fonts so the first paint isn't unstyled.
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => requestAnimationFrame(() => requestAnimationFrame(play)));
+} else {
+  requestAnimationFrame(() => requestAnimationFrame(play));
+}
 """
-
 
 def build_html(spec):
     timeline, total_s, emphases = build_timeline(spec)
@@ -1333,7 +1544,6 @@ def build_html(spec):
     title_text = spec.get("topic") or spec["scenes"][0].get("headline") or "video"
 
     audio_palette = spec["design"].get("audio_palette", "ambient")
-    held_subject_text = spec["design"].get("held_subject")
     framework = spec["design"].get("framework", None)
 
     bv_meta = json.dumps({
@@ -1343,13 +1553,6 @@ def build_html(spec):
         "audio_palette": audio_palette,
         "framework": framework,
     })
-
-    held_html = ""
-    if held_subject_text:
-        held_html = (
-            f'<div class="held-subject"><span class="accent-dot"></span>'
-            f'{esc(held_subject_text)}</div>'
-        )
 
     return f"""<!doctype html>
 <html lang="en">
@@ -1364,22 +1567,30 @@ def build_html(spec):
 </head>
 <body>
 <div class="stage" id="stage">
+  <canvas id="bgParticles" class="bg-particles" aria-hidden="true"></canvas>
   <div class="stage-inner">
 {scenes_html}
-    {held_html}
   </div>
   <div class="lighting-arc"></div>
+  <div class="emphasize-flash" aria-hidden="true"></div>
   <div class="texture">
     <div class="texture-grain"></div>
     <div class="texture-vignette"></div>
     <div class="texture-halation"></div>
   </div>
-</div>
-<div class="controls">
-  <button id="play">replay</button>
-  <button id="mute">sound: on</button>
-  <div class="progress"><div class="progress-fill" id="pf"></div></div>
-  <span class="clock" id="clock">00:00</span>
+  <svg class="bv-defs" aria-hidden="true" width="0" height="0">
+    <defs>
+      <filter id="bvChromAb" x="-5%" y="-5%" width="110%" height="110%">
+        <feColorMatrix in="SourceGraphic" result="r" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+        <feColorMatrix in="SourceGraphic" result="g" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+        <feColorMatrix in="SourceGraphic" result="b" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+        <feOffset in="r" dx="3.5" dy="0" result="rOff"/>
+        <feOffset in="b" dx="-3.5" dy="0" result="bOff"/>
+        <feBlend in="rOff" in2="g" mode="screen" result="rg"/>
+        <feBlend in="rg" in2="bOff" mode="screen"/>
+      </filter>
+    </defs>
+  </svg>
 </div>
 <script>{js}</script>
 </body>

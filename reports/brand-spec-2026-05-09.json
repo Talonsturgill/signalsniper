@@ -1,29 +1,45 @@
 {
-  "source": "https://mariozechner.at/style.css",
-  "extracted": {
-    "background_raw": "#fff",
-    "ink_raw": "oklch(0.145 0 0)",
-    "link_raw": "#0066cc",
-    "border_raw": "#aaa",
-    "dimmed_raw": "#777"
-  },
-  "theme": {
-    "background": "#FFFFFF",
-    "ink": "#252525",
-    "accent": "#0066CC",
-    "muted": "#929292",
-    "rule": "#E9E9E9",
-    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
-    "sans": "'DejaVu Sans', sans-serif"
-  },
-  "derivations": {
-    "muted": "50% blend of ink toward background per skill priority rule 4",
-    "rule": "90% blend of ink toward background per skill priority rule 4"
-  },
-  "contrast_expected": {
-    "ink_on_background": "approx 14.6:1 (need 4.5+) PASS",
-    "accent_on_background": "approx 5.6:1 (need 4.5+) PASS",
-    "muted_on_background": "approx 3.1:1 (need 3.0+) PASS"
-  },
-  "visual_tone": "minimal, technical, restrained typography, generous whitespace"
+  "preset_slug": "mono-terminal",
+  "framework": "SCHEMATIC",
+  "design_block": {
+    "tokens": {
+      "canvas": "#0A0A0A",
+      "ink": "#F0F0F0",
+      "ink_muted": "#7A7A7A",
+      "accent": "#37F712",
+      "hairline": "#1F1F1F"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.005,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.10
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.0,
+      "lighting_arc": 0.18
+    },
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "framework": "SCHEMATIC"
+  }
 }
