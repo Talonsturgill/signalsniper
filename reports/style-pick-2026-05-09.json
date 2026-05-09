@@ -2,7 +2,7 @@
   "date": "2026-05-09",
   "brand_slug": null,
   "preset_slug": "mono-terminal",
-  "framework": "CLASSIC",
+  "framework": "SCHEMATIC",
   "rationale_one_line": "Mario Zechner ships terminal-native, anti-framework tooling. Mono-terminal mirrors the build-in-public hacker register and matrix-green accent matches the CLI surface pi-mono lives on.",
   "writing_tone_notes": "Bold declarative peer voice. Build-in-public, anti-framework instinct. Dry, minimal, no marketing. Refrain on minimal core. Show the contrast between framework kits and a hand-wired monorepo. Admiring without compliments.",
   "do_rules": [

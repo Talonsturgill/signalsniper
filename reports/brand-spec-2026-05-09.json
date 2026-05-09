@@ -1,7 +1,6 @@
 {
   "preset_slug": "mono-terminal",
-  "framework": "CLASSIC",
-  "held_subject": "pi-mono",
+  "framework": "SCHEMATIC",
   "design_block": {
     "tokens": {
       "canvas": "#0A0A0A",
@@ -41,7 +40,6 @@
     },
     "audio_palette": "electronic",
     "accent_contrast_min": 4.5,
-    "framework": "CLASSIC",
-    "held_subject": "pi-mono"
+    "framework": "SCHEMATIC"
   }
 }

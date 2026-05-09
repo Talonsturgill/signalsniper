@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="bv-timeline" content='{"total_s": 20.0, "timeline": [{"idx": 0, "tpl": "title", "start": 0.0, "end": 3.0, "dur": 3.0, "emphasize": false}, {"idx": 1, "tpl": "stack", "start": 3.0, "end": 6.5, "dur": 3.5, "emphasize": false}, {"idx": 2, "tpl": "two_line", "start": 6.5, "end": 9.5, "dur": 3.0, "emphasize": false}, {"idx": 3, "tpl": "fix", "start": 9.5, "end": 13.0, "dur": 3.5, "emphasize": true}, {"idx": 4, "tpl": "three_line", "start": 13.0, "end": 16.5, "dur": 3.5, "emphasize": false}, {"idx": 5, "tpl": "close", "start": 16.5, "end": 20.0, "dur": 3.5, "emphasize": true}], "emphases": [9.5, 16.5], "audio_palette": "electronic", "framework": "CLASSIC"}' />
+<meta name="bv-timeline" content='{"total_s": 20.5, "timeline": [{"idx": 0, "tpl": "title", "start": 0.0, "end": 3.0, "dur": 3.0, "emphasize": false}, {"idx": 1, "tpl": "terminal", "start": 3.0, "end": 7.0, "dur": 4.0, "emphasize": false}, {"idx": 2, "tpl": "two_line", "start": 7.0, "end": 9.5, "dur": 2.5, "emphasize": false}, {"idx": 3, "tpl": "diagram", "start": 9.5, "end": 14.0, "dur": 4.5, "emphasize": false}, {"idx": 4, "tpl": "fix", "start": 14.0, "end": 17.5, "dur": 3.5, "emphasize": true}, {"idx": 5, "tpl": "close", "start": 17.5, "end": 20.5, "dur": 3.0, "emphasize": true}], "emphases": [14.0, 17.5], "audio_palette": "electronic", "framework": "SCHEMATIC"}' />
 <title>pi-mono, the anti-framework agent toolkit</title>
 <style>
 @font-face {
@@ -576,7 +576,7 @@ body {
 }
 .clock { font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); }
 
-.stage { --total-dur: 20.0s; }
+.stage { --total-dur: 20.5s; }
 </style>
 </head>
 <body>
@@ -588,26 +588,36 @@ body {
   <div class="eyebrow-small">agent toolkit, minus the framework</div>
 </section>
 
-<section class="scene" data-idx="1" data-tpl="stack" data-cam="static_breathe" style="--scene-dur: 3.5s;">
-  <div class="uc-eyebrow">THE STACK</div>
-  <div class="divider-rule"></div>
-  <div class="s-item"><div class="s-name">coding cli</div><div class="s-descriptor">terminal harness</div></div><div class="s-item"><div class="s-name">llm router</div><div class="s-descriptor">one api, fifteen llms</div></div><div class="s-item"><div class="s-name">vllm pods</div><div class="s-descriptor">self-host the model</div></div>
+<section class="scene" data-idx="1" data-tpl="terminal" data-cam="static_breathe" style="--scene-dur: 4.0s;">
+  <div class="terminal-frame">
+    <div class="terminal-bar">
+      <div class="terminal-dot"></div>
+      <div class="terminal-dot"></div>
+      <div class="terminal-dot"></div>
+      <div class="terminal-title">pi --provider claude-sonnet-4-6</div>
+    </div>
+    <div class="terminal-body"><span class="terminal-line"><span class="prompt">$</span>$ pi</span><span class="terminal-line"><span class="prompt">$</span>&gt; trace the auth bug in api.ts</span><span class="terminal-line"><span class="prompt">$</span>reading 14 files in src/...</span><span class="terminal-line"><span class="prompt">$</span>proposed patch ready to apply.<span class="terminal-cursor"></span></span></div>
+  </div>
 </section>
 
-<section class="scene" data-idx="2" data-tpl="two_line" data-cam="parallax_drift" style="--scene-dur: 3.0s;">
+<section class="scene" data-idx="2" data-tpl="two_line" data-cam="parallax_drift" style="--scene-dur: 2.5s;">
   <div class="line size-2">most agent kits</div><div class="line size-2 accent">ship a framework.</div>
 </section>
 
-<section class="scene" data-idx="3" data-tpl="fix" data-cam="push_in" style="--scene-dur: 3.5s;">
+<section class="scene" data-idx="3" data-tpl="diagram" data-cam="orbit" style="--scene-dur: 4.5s;">
+  <div class="diagram-eyebrow">THE WIRING</div>
+  <svg class="diagram-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    <g class="dg-edges"><path class="dg-edge" d="M50.00 18.00 L50.00 42.00" /><path class="dg-edge dashed" d="M20.00 42.00 L50.00 42.00" /><path class="dg-edge accent" d="M50.00 42.00 L50.00 66.00" /><path class="dg-edge" d="M50.00 66.00 L50.00 88.00" /></g>
+    <g class="dg-nodes"><rect class="dg-node" x="39.00" y="13.50" width="22.00" height="9.00" rx="0.6" /><text class="dg-label" x="50.00" y="18.00">15 llms</text><rect class="dg-node accent" x="39.00" y="37.50" width="22.00" height="9.00" rx="0.6" /><text class="dg-label" x="50.00" y="42.00">llm router</text><rect class="dg-node" x="9.00" y="37.50" width="22.00" height="9.00" rx="0.6" /><text class="dg-label" x="20.00" y="42.00">vllm pods</text><rect class="dg-node" x="39.00" y="61.50" width="22.00" height="9.00" rx="0.6" /><text class="dg-label" x="50.00" y="66.00">agent core</text><rect class="dg-node filled" x="39.00" y="83.50" width="22.00" height="9.00" rx="0.6" /><text class="dg-label on-filled" x="50.00" y="88.00">coding cli</text></g>
+  </svg>
+</section>
+
+<section class="scene" data-idx="4" data-tpl="fix" data-cam="push_in" style="--scene-dur: 3.5s;">
   <div class="f-primary">minimal core.</div>
   <div class="f-secondary">you wire the rest.</div>
 </section>
 
-<section class="scene" data-idx="4" data-tpl="three_line" data-cam="ken_burns" style="--scene-dur: 3.5s;">
-  <div class="line size-3">one api.</div><div class="line size-3">fifteen providers.</div><div class="line size-3 accent">zero opinions.</div>
-</section>
-
-<section class="scene" data-idx="5" data-tpl="close" data-cam="pull_back" style="--scene-dur: 3.5s;">
+<section class="scene" data-idx="5" data-tpl="close" data-cam="pull_back" style="--scene-dur: 3.0s;">
   <div class="c-primary">minimal core.</div>
   <div class="c-accent">you wire it.</div>
   <div class="c-subtitle">the part most kits skip.</div>
@@ -627,14 +637,14 @@ body {
   <span class="clock" id="clock">00:00</span>
 </div>
 <script>
-const TL = [{"idx": 0, "tpl": "title", "start": 0.0, "end": 3.0, "dur": 3.0, "emphasize": false}, {"idx": 1, "tpl": "stack", "start": 3.0, "end": 6.5, "dur": 3.5, "emphasize": false}, {"idx": 2, "tpl": "two_line", "start": 6.5, "end": 9.5, "dur": 3.0, "emphasize": false}, {"idx": 3, "tpl": "fix", "start": 9.5, "end": 13.0, "dur": 3.5, "emphasize": true}, {"idx": 4, "tpl": "three_line", "start": 13.0, "end": 16.5, "dur": 3.5, "emphasize": false}, {"idx": 5, "tpl": "close", "start": 16.5, "end": 20.0, "dur": 3.5, "emphasize": true}];
-const DURATION_S = 20.0;
+const TL = [{"idx": 0, "tpl": "title", "start": 0.0, "end": 3.0, "dur": 3.0, "emphasize": false}, {"idx": 1, "tpl": "terminal", "start": 3.0, "end": 7.0, "dur": 4.0, "emphasize": false}, {"idx": 2, "tpl": "two_line", "start": 7.0, "end": 9.5, "dur": 2.5, "emphasize": false}, {"idx": 3, "tpl": "diagram", "start": 9.5, "end": 14.0, "dur": 4.5, "emphasize": false}, {"idx": 4, "tpl": "fix", "start": 14.0, "end": 17.5, "dur": 3.5, "emphasize": true}, {"idx": 5, "tpl": "close", "start": 17.5, "end": 20.5, "dur": 3.0, "emphasize": true}];
+const DURATION_S = 20.5;
 const FADE_IN_S = 0.06;
 const FADE_OUT_S = 0.05;
 const STAGGER_S = 0.1;
 const Y_PX = 0;
 const SCALE_FROM = 1.0;
-const EMPHASES = [9.5, 16.5];
+const EMPHASES = [14.0, 17.5];
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));

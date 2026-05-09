@@ -7,7 +7,7 @@
   "design": {
     "brand_slug": null,
     "aesthetic_slug": "mono-terminal",
-    "framework": "CLASSIC",
+    "framework": "SCHEMATIC",
     "audio_palette": "electronic",
     "accent_contrast_min": 4.5,
 
@@ -63,22 +63,42 @@
       "duration_s": 3.0
     },
     {
-      "template": "stack",
-      "eyebrow": "THE STACK",
-      "items": [
-        {"name": "coding cli",  "descriptor": "terminal harness"},
-        {"name": "llm router",  "descriptor": "one api, fifteen llms"},
-        {"name": "vllm pods",   "descriptor": "self-host the model"}
+      "template": "terminal",
+      "title": "pi --provider claude-sonnet-4-6",
+      "lines": [
+        {"text": "$ pi"},
+        {"text": "> trace the auth bug in api.ts", "accent": false},
+        {"text": "reading 14 files in src/..."},
+        {"text": "proposed patch ready to apply."}
       ],
       "camera": "static_breathe",
-      "duration_s": 3.5
+      "duration_s": 4.0
     },
     {
       "template": "two_line",
       "lines": ["most agent kits", "ship a framework."],
       "accent_idx": 1,
       "camera": "parallax_drift",
-      "duration_s": 3.0
+      "duration_s": 2.5
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "THE WIRING",
+      "nodes": [
+        {"label": "15 llms",    "x": 50, "y": 18},
+        {"label": "llm router", "x": 50, "y": 42, "accent": true},
+        {"label": "vllm pods",  "x": 20, "y": 42},
+        {"label": "agent core", "x": 50, "y": 66},
+        {"label": "coding cli", "x": 50, "y": 88, "filled": true}
+      ],
+      "edges": [
+        {"from": 0, "to": 1},
+        {"from": 2, "to": 1, "style": "dashed"},
+        {"from": 1, "to": 3, "accent": true},
+        {"from": 3, "to": 4}
+      ],
+      "camera": "orbit",
+      "duration_s": 4.5
     },
     {
       "template": "fix",
@@ -89,20 +109,13 @@
       "duration_s": 3.5
     },
     {
-      "template": "three_line",
-      "lines": ["one api.", "fifteen providers.", "zero opinions."],
-      "accent_idx": 2,
-      "camera": "ken_burns",
-      "duration_s": 3.5
-    },
-    {
       "template": "close",
       "primary": "minimal core.",
       "accent": "you wire it.",
       "subtitle": "the part most kits skip.",
       "emphasize": true,
       "camera": "pull_back",
-      "duration_s": 3.5
+      "duration_s": 3.0
     }
   ]
 }
