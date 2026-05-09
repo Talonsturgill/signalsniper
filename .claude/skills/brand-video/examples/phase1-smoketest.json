@@ -1,0 +1,63 @@
+{
+  "date": "2026-05-09",
+  "topic": "phase1 smoketest with mono-terminal preset",
+  "creator_handle": "@badlogicgames",
+  "project_url": "https://github.com/badlogic/pi-mono",
+
+  "design": {
+    "framework": "SCHEMATIC",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "held_subject": "pi-mono",
+
+    "tokens":   {"canvas": "#0A0A0A", "ink": "#F0F0F0", "ink_muted": "#7A7A7A", "accent": "#37F712", "hairline": "#1F1F1F"},
+    "fonts":    {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.005, "case": "lower", "italic_descriptors": false},
+    "motion":   {"register": "cut", "scene_in_s": 0.06, "scene_out_s": 0.05, "stagger_s": 0.10},
+    "layout":   {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 0},
+    "texture":  {"grain": 0.05, "vignette": 0.22, "halation": 0.0, "lighting_arc": 0.18}
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "pi-mono", "eyebrow": "agent toolkit, no framework",
+     "duration_s": 3.0, "camera": "push_in"},
+
+    {"template": "diagram", "eyebrow": "the loop",
+     "nodes": [
+       {"label": "your prompt", "x": 50, "y": 18},
+       {"label": "agent", "x": 50, "y": 50},
+       {"label": "your tools", "x": 22, "y": 80},
+       {"label": "your runtime", "x": 78, "y": 80, "accent": true}
+     ],
+     "edges": [
+       {"from": 0, "to": 1},
+       {"from": 1, "to": 2},
+       {"from": 1, "to": 3, "accent": true},
+       {"from": 2, "to": 1, "style": "dashed"},
+       {"from": 3, "to": 1, "style": "dashed"}
+     ],
+     "duration_s": 4.0, "camera": "orbit"},
+
+    {"template": "big_number", "numeral": "15",
+     "caption": "providers behind one API",
+     "sub": "anthropic, openai, google, mistral, groq",
+     "duration_s": 3.0, "camera": "ken_burns"},
+
+    {"template": "fix", "primary": "minimal core.", "secondary": "you wire the rest.",
+     "emphasize": true, "duration_s": 3.0, "camera": "push_in"},
+
+    {"template": "terminal", "title": "pi --provider anthropic",
+     "lines": [
+       {"text": "init session"},
+       {"text": "load tools.yaml", "prompt": false},
+       {"text": "ready"},
+       {"text": "what most agent kits skip"}
+     ],
+     "accent_idx": 3,
+     "duration_s": 4.0, "camera": "static_breathe"},
+
+    {"template": "close", "primary": "minimal core.", "accent": "you wire the rest.",
+     "subtitle": "the part most agent kits skip.",
+     "emphasize": true, "duration_s": 3.5, "camera": "pull_back"}
+  ]
+}

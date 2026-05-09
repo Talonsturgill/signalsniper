@@ -7,12 +7,19 @@ description: Generate a short (12 to 32 second) 1080x1080 kinetic-typography vid
 
 > **Read `PLAYBOOK.md` first.** It is the strategy doc. The writer agent must consult it before drafting scenes; the critic agent must enforce it. The PLAYBOOK supersedes any conflict with this file.
 
-A flexible kinetic-typography video generator. Replaces the old fixed-format `editorial-kinetic-type`. Where that skill locked you to 8 scenes, 25 seconds, two fallback fonts, and one motion language, this one accepts:
+A flexible kinetic-typography video generator. Replaces the old fixed-format `editorial-kinetic-type`. The skill now ships:
 
-- 4 to 8 scenes from a library of 8 templates
-- 12 to 32 seconds total duration
-- Any of 8 bundled fonts (variable where possible)
-- Three motion registers: `fade`, `cut`, `scale`
+- **13 scene templates**: `title`, `stack`, `two_line`, `three_line`, `fix`, `mono_block`, `quote`, `close`, `diagram`, `flash`, `big_number`, `terminal`, `split`
+- **8 camera moves** per scene: `push_in`, `pull_back`, `ken_burns`, `crash_zoom`, `orbit`, `parallax_drift`, `static_breathe`, `none`
+- **3 motion registers**: `fade`, `cut`, `scale`
+- **3 audio palettes**: `ambient`, `electronic`, `acoustic`, plus an always-on foley layer (whoosh + thud at scene cuts, typewriter ticks, stamp on emphasized beats)
+- **Texture overlay** (configurable grain + vignette + halation, always on)
+- **Lighting arc** (full-stage hue drift across the runtime)
+- **Held subject** (persistent corner wordmark across all scenes)
+- **8 aesthetic preset packs** in `presets.json` (editorial-paper, mono-terminal, gallery, subway-chrome, cctv, editorial-90s, geominimal, claude)
+- **5 narrative frameworks** to rotate (CLASSIC, RECEIPT, SCHEMATIC, MANIFESTO, DISPATCH) — see PLAYBOOK
+- **3 to 8 scenes**, 12 to 32 seconds total
+- **8 bundled OFL fonts** (Inter, JetBrainsMono, IBMPlexSerif, EBGaramond, SpaceGrotesk, BricolageGrotesque, Fraunces) base64-embedded for offline rendering
 - Color tokens from any brand or aesthetic in `brand-design-systems`
 
 Two artifacts per run, same as before:
@@ -162,7 +169,20 @@ A spec sets `display`, `body`, and optional `italic` keys. The renderer base64-e
 ### Per-scene fields
 
 - `duration_s` (optional, default 3.0): seconds the scene holds. Total run = sum.
-- `emphasize` (optional, default false): tells the audio engine to drop a mallet hit at scene start.
+- `emphasize` (optional, default false): tells the audio engine to drop a mallet hit at scene start, and the foley layer to add a stamp.
+- `camera` (optional, default `static_breathe`): one of `push_in`, `pull_back`, `ken_burns`, `crash_zoom`, `orbit`, `parallax_drift`, `static_breathe`, `none`. The Higgsfield-style camera move applied to the scene as it plays.
+
+### Top-level design fields (new)
+
+- `design.framework`: one of `CLASSIC`, `RECEIPT`, `SCHEMATIC`, `MANIFESTO`, `DISPATCH`. Recorded in bv-meta and the style-history ledger; the routine rotates through these to keep videos from feeling templated. See PLAYBOOK Section "Narrative frameworks".
+- `design.audio_palette`: `ambient` (default), `electronic`, `acoustic`. Picks the music bed in `synth_audio.py`. Foley always plays on top.
+- `design.held_subject`: optional short string (e.g. project slug). Renders as a persistent wordmark in the lower-left corner across all scenes for visual continuity.
+- `design.texture`: optional sub-object with keys `grain` (0..0.20), `vignette` (0..0.40), `halation` (0..0.20), `lighting_arc` (0..0.50). Defaults: 0.06 / 0.20 / 0.0 / 0.30.
+- `design.accent_contrast_min`: float threshold (default 3.0). Raise to 4.5 for mono/neon/dashboard aesthetics that want hot accents. Validator enforces.
+
+### Preset packs
+
+`presets.json` ships 8 ready-made design blocks. The routine picks one based on aesthetic_slug and merges it into the spec, eliminating per-run hand-rolling of tokens/fonts/motion. See `presets.json` for the full table.
 
 ### Hard copy rules (validator-enforced)
 
