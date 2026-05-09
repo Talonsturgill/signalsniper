@@ -13,7 +13,6 @@ Adds (per PLAYBOOK.md):
 - Lighting arc (full-stage gradient that shifts hue across the runtime)
 - New scene templates: diagram, flash, big_number, terminal, split
 - Audio palette pass-through to synth_audio.py via the bv-meta tag
-- Optional held-subject persistent corner wordmark
 
 Usage:
     python build_html.py <spec.json> <output.html>
@@ -673,32 +672,6 @@ body {{
   letter-spacing: var(--tracking);
 }}
 
-/* ---- held subject (persistent corner wordmark, optional) ---- */
-.held-subject {{
-  position: absolute;
-  bottom: 4%;
-  left: 4%;
-  z-index: 30;
-  font-family: var(--body);
-  font-weight: 600;
-  font-variation-settings: "wght" 600;
-  font-size: 1.5cqw;
-  color: var(--ink-muted);
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  opacity: 0;
-  pointer-events: none;
-}}
-.held-subject .accent-dot {{
-  display: inline-block;
-  width: 0.6em;
-  height: 0.6em;
-  background: var(--accent);
-  border-radius: 50%;
-  margin-right: 0.7em;
-  vertical-align: 0.05em;
-}}
-
 /* ---- controls ---- */
 .controls {{
   display: flex;
@@ -1211,12 +1184,6 @@ function tick() {
     }
   }
 
-  const held = $(".held-subject");
-  if (held) {
-    if (clamped < 1.6) held.style.opacity = 0;
-    else held.style.opacity = Math.min(0.65, (clamped - 1.6) / 0.6).toFixed(3);
-  }
-
   $("#pf").style.width = `${(clamped / DURATION_S * 100).toFixed(2)}%`;
   const sec = Math.floor(clamped);
   const mm = String(Math.floor(sec / 60)).padStart(2, "0");
@@ -1333,7 +1300,6 @@ def build_html(spec):
     title_text = spec.get("topic") or spec["scenes"][0].get("headline") or "video"
 
     audio_palette = spec["design"].get("audio_palette", "ambient")
-    held_subject_text = spec["design"].get("held_subject")
     framework = spec["design"].get("framework", None)
 
     bv_meta = json.dumps({
@@ -1343,13 +1309,6 @@ def build_html(spec):
         "audio_palette": audio_palette,
         "framework": framework,
     })
-
-    held_html = ""
-    if held_subject_text:
-        held_html = (
-            f'<div class="held-subject"><span class="accent-dot"></span>'
-            f'{esc(held_subject_text)}</div>'
-        )
 
     return f"""<!doctype html>
 <html lang="en">
@@ -1366,7 +1325,6 @@ def build_html(spec):
 <div class="stage" id="stage">
   <div class="stage-inner">
 {scenes_html}
-    {held_html}
   </div>
   <div class="lighting-arc"></div>
   <div class="texture">

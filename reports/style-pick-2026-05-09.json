@@ -16,5 +16,21 @@
     "No flattery. The work flatters itself",
     "No framework jargon (orchestration, runtime, harness as nouns)",
     "No claims unverifiable from the README"
-  ]
+  ],
+  "music": {
+    "title": "Tyrant",
+    "composer": "Kevin MacLeod",
+    "source": "incompetech.com",
+    "source_url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Tyrant.mp3",
+    "license": "Creative Commons Attribution 4.0",
+    "license_url": "http://creativecommons.org/licenses/by/4.0/",
+    "feel": "Dark, Driving, Calm",
+    "instruments": "Synths, Percussion",
+    "slice_start_s": 30,
+    "slice_duration_s": 20,
+    "fade_in_s": 0.6,
+    "fade_out_s": 1.5,
+    "loudnorm": "I=-16:TP=-1.5:LRA=11",
+    "attribution_text": "Tyrant by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0"
+  }
 }
