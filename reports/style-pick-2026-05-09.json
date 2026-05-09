@@ -1,26 +1,28 @@
 {
   "date": "2026-05-09",
+  "iteration": 3,
   "brand_slug": null,
-  "preset_slug": "subway-chrome",
-  "aesthetic_slug": "subway-chrome",
-  "framework": "RECEIPT",
-  "rationale_one_line": "agentmemory wins on benchmark numbers and ops-dashboard energy; subway-chrome's dark-steel canvas with icy cyan accent reads like an SRE metrics panel, and RECEIPT lets the 95.2 / 92 / 10 numbers do the proving.",
-  "writing_tone_notes": "DevRel-grade calm, numbers-first, contractions where natural. Show the receipt, don't editorialize. Keep adjectives out and let the percentages punch.",
+  "preset_slug": "gallery",
+  "aesthetic_slug": "gallery",
+  "framework": "CLASSIC",
+  "rationale_one_line": "ProofShot diagnoses then prescribes; that's the CLASSIC arc verbatim. Gallery's white canvas + IBM Plex Serif gives it canonical-tool gravity, and a terminal scene as visual hero shows the verification flow instead of narrating it.",
+  "writing_tone_notes": "Calm declarative founder voice. Diagnosis first, then fix. Trust the reader. Contractions where natural. The verdict carries the praise.",
   "do_rules": [
-    "Lead with star velocity, never the version.",
-    "Burn two scenes on numbers. Big_number is a visual hero, use it twice.",
-    "Spend one scene on the triple-stream architecture so the spec doesn't read as receipt-only.",
-    "Land fix on memory persistence; close on the consequence."
+    "Lead the caption with 'topped Show HN', not stars (817 is modest, momentum is the story).",
+    "Use a terminal scene as the visual hero so the CLI flow reads viscerally.",
+    "Land 'before you trust' on the fix beat — that's the verification gate.",
+    "Cover the multi-agent compatibility (Claude Code / Cursor / Codex) in the caption."
   ],
   "dont_rules": [
-    "No 'paradigm shift', 'changes everything', or 'next-gen'.",
-    "No mention of v0.9.5 or any release number.",
-    "No repeating the X caption's stat inside the scenes.",
-    "No revisiting mono-terminal, SCHEMATIC, or pi-mono; all shipped earlier today."
+    "No 'paradigm shift', 'changes everything', 'finally', or 'next-gen'.",
+    "No mention of v1.6.0 or any release number.",
+    "No SCHEMATIC, RECEIPT, mono-terminal, subway-chrome (already shipped today).",
+    "No pi-mono, agentmemory, or addyosmani/agent-skills phrasing reuse."
   ],
   "music": {
-    "source": "synthesized",
-    "palette": "electronic",
-    "note": "Today's run uses synth_audio.py output (electronic palette per the subway-chrome preset). No external CC BY track in this repo's music/ catalog yet; no attribution reply needed."
+    "selection_method": "music_select.py",
+    "preset_arg": "gallery",
+    "framework_arg": "CLASSIC",
+    "expected_pick": "inspired (Kevin MacLeod, CC BY 4.0)"
   }
 }

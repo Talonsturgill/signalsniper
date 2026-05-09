@@ -8,7 +8,9 @@ script against the spec + the rendered MP4 + the rendered HTML. Exit 0 on
 pass, 1 on any FAIL. Warnings do not block.
 
 Checklist:
-  1. No-white-flash       Y luminance < 80 over the first 1.0s
+  1. No-flash             |Y(t) - canvas_Y| < 35 over the first 1.0s
+                          (canvas-aware: dark canvases fail on bright flashes,
+                          light canvases fail on dark flashes)
   2. No controls UI       HTML has zero .controls / #play / #mute / #pf / #clock
   3. Motion variance      >= 4 distinct camera moves across scenes
   4. 3D depth             >= 1 orbit camera in scenes
@@ -101,16 +103,28 @@ def check(spec_path, mp4_path, html_path):
     html = Path(html_path).read_text()
     errors = []
 
-    # 1. no-white-flash
-    for t in (0.0, 0.2, 0.5, 1.0):
-        y = yavg_at(mp4_path, t)
-        if y is None:
-            warn(f"could not read luminance at t={t}", errors)
-            continue
-        if y > 80:
-            fail(f"white-flash at t={t}: Y={y:.1f} > 80", errors)
-    if all(yavg_at(mp4_path, t) is not None and yavg_at(mp4_path, t) <= 80 for t in (0.0, 0.5, 1.0)):
-        print(f"  [PASS] no-white-flash")
+    # 1. no-flash (delta-based): the early frames should match the video's
+    # stable mid-portion luminance. Canvas-agnostic. Catches white-flashes on
+    # dark videos AND dark-flashes on light videos by measuring the natural
+    # baseline rather than assuming a fixed threshold.
+    total_dur = sum(float(sc.get("duration_s", 3.0)) for sc in spec["scenes"])
+    ref_y = yavg_at(mp4_path, total_dur / 2.0)
+    flash_threshold = 30.0
+    flash_fail = False
+    if ref_y is None:
+        warn("could not read mid-video reference luminance; skipping flash check", errors)
+    else:
+        for t in (0.0, 0.2, 0.5, 1.0):
+            y = yavg_at(mp4_path, t)
+            if y is None:
+                warn(f"could not read luminance at t={t}", errors)
+                continue
+            delta = abs(y - ref_y)
+            if delta > flash_threshold:
+                fail(f"flash at t={t}: Y={y:.1f}, mid-video ref={ref_y:.1f} (delta={delta:.1f} > {flash_threshold})", errors)
+                flash_fail = True
+        if not flash_fail:
+            print(f"  [PASS] no-flash (mid-video ref Y={ref_y:.1f}, threshold delta {flash_threshold})")
 
     # 2. no controls UI
     bad_markers = [
