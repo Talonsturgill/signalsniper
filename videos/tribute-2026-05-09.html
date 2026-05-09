@@ -128,6 +128,43 @@ body {
 .scene[data-cam="static_breathe"] { animation: camBreathe       var(--scene-dur, 3s) ease-in-out forwards; }
 .scene[data-cam="none"]           { animation: none; }
 
+/* ---------------- particle background canvas ---------------- */
+.bg-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.bv-defs { position: absolute; width: 0; height: 0; pointer-events: none; }
+
+/* ---------------- chromatic aberration on cuts ---------------- */
+.stage.chrom-cut .stage-inner {
+  filter: url(#bvChromAb);
+}
+
+/* ---------------- emphasize flash ---------------- */
+.emphasize-flash {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 45;
+  mix-blend-mode: screen;
+}
+.emphasize-flash.fire {
+  animation: bvEmpFlash 0.32s ease-out forwards;
+}
+@keyframes bvEmpFlash {
+  0%   { opacity: 0;   }
+  18%  { opacity: 0.42; }
+  100% { opacity: 0;   }
+}
+
 /* ---------------- texture overlay (always on) ---------------- */
 .texture {
   position: absolute;
@@ -615,6 +652,7 @@ body {
 </head>
 <body>
 <div class="stage" id="stage">
+  <canvas id="bgParticles" class="bg-particles" aria-hidden="true"></canvas>
   <div class="stage-inner">
 
 <section class="scene" data-idx="0" data-tpl="title" data-cam="orbit" style="--scene-dur: 3.0s;">
@@ -669,11 +707,25 @@ body {
 </section>
   </div>
   <div class="lighting-arc"></div>
+  <div class="emphasize-flash" aria-hidden="true"></div>
   <div class="texture">
     <div class="texture-grain"></div>
     <div class="texture-vignette"></div>
     <div class="texture-halation"></div>
   </div>
+  <svg class="bv-defs" aria-hidden="true" width="0" height="0">
+    <defs>
+      <filter id="bvChromAb" x="-5%" y="-5%" width="110%" height="110%">
+        <feColorMatrix in="SourceGraphic" result="r" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+        <feColorMatrix in="SourceGraphic" result="g" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
+        <feColorMatrix in="SourceGraphic" result="b" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+        <feOffset in="r" dx="3.5" dy="0" result="rOff"/>
+        <feOffset in="b" dx="-3.5" dy="0" result="bOff"/>
+        <feBlend in="rOff" in2="g" mode="screen" result="rg"/>
+        <feBlend in="rg" in2="bOff" mode="screen"/>
+      </filter>
+    </defs>
+  </svg>
 </div>
 <script>
 const TL = [{"idx": 0, "tpl": "title", "start": 0.0, "end": 3.0, "dur": 3.0, "emphasize": false}, {"idx": 1, "tpl": "terminal", "start": 3.0, "end": 7.0, "dur": 4.0, "emphasize": false}, {"idx": 2, "tpl": "two_line", "start": 7.0, "end": 9.5, "dur": 2.5, "emphasize": false}, {"idx": 3, "tpl": "diagram", "start": 9.5, "end": 14.0, "dur": 4.5, "emphasize": false}, {"idx": 4, "tpl": "fix", "start": 14.0, "end": 17.5, "dur": 3.5, "emphasize": true}, {"idx": 5, "tpl": "close", "start": 17.5, "end": 20.5, "dur": 3.0, "emphasize": true}];
@@ -748,6 +800,30 @@ function animateDiagram(el, t, dur) {
   // containers must be visible; their children are individually animated
   if (svg) svg.style.opacity = 1;
   for (let g = 0; g < groups.length; g++) groups[g].style.opacity = 1;
+
+  // Phase 4: sub-shots inside the diagram (build / focus on accent edge / overview)
+  if (svg && dur >= 3.5) {
+    const tn = t / dur;
+    let scale = 1.0, ty = 0;
+    if (tn < 0.30) {
+      // build-up: hold a wide framing
+      scale = 1.0; ty = 0;
+    } else if (tn < 0.65) {
+      // focus phase: zoom toward router/core (y ~ 42 to 66 in viewBox -> push center down)
+      const k = (tn - 0.30) / 0.35;
+      const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      scale = 1.0 + 0.18 * e;
+      ty   = -3.0 * e;
+    } else {
+      // overview phase: settle back wide
+      const k = (tn - 0.65) / 0.35;
+      const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      scale = 1.18 - 0.18 * e;
+      ty   = -3.0 + 3.0 * e;
+    }
+    svg.style.transformOrigin = "50% 50%";
+    svg.style.transform = `translateY(${ty.toFixed(2)}%) scale(${scale.toFixed(3)})`;
+  }
 
   if (eyebrow) {
     const e = easeOut(Math.min(1, t / 0.30));
@@ -925,20 +1001,122 @@ function walkReset(node) {
   }
 }
 
+// ---- Phase 4: chromatic aberration on scene boundaries + emphasize flash ----
+const SCENE_BOUNDARIES = TL.slice(1).map(s => s.start);
+let lastSceneIdx = -1;
+const CUT_FILTER_MS = 180;
+const stageEl = document.getElementById("stage");
+const empFlashEl = document.querySelector(".emphasize-flash");
+
+function fireChromCut() {
+  if (!stageEl) return;
+  stageEl.classList.add("chrom-cut");
+  setTimeout(() => stageEl.classList.remove("chrom-cut"), CUT_FILTER_MS);
+}
+function fireEmphasizeFlash() {
+  if (!empFlashEl) return;
+  empFlashEl.classList.remove("fire");
+  // force reflow so the animation re-runs
+  void empFlashEl.offsetWidth;
+  empFlashEl.classList.add("fire");
+}
+
 function tick() {
   const t = (performance.now() - startedAt) / 1000;
   const clamped = Math.min(t, DURATION_S);
+  let activeIdx = -1;
   for (let i = 0; i < TL.length; i++) {
     const sc = TL[i];
     if (clamped < sc.start || clamped >= sc.end) {
       hideScene(i);
     } else {
+      activeIdx = i;
       applySceneAnimations(i, clamped - sc.start, sc.end - sc.start);
     }
   }
 
+  if (activeIdx !== -1 && activeIdx !== lastSceneIdx) {
+    if (lastSceneIdx !== -1) {
+      // scene boundary detected: flash chromatic aberration on the cut
+      fireChromCut();
+    }
+    if (activeIdx >= 0 && TL[activeIdx] && TL[activeIdx].emphasize) {
+      fireEmphasizeFlash();
+    }
+    lastSceneIdx = activeIdx;
+  }
+
   if (t < DURATION_S) raf = requestAnimationFrame(tick);
 }
+
+// ---- Phase 4: particle background canvas (parallax depth, accent-tinted) ----
+function startParticleBackground() {
+  const canvas = document.getElementById("bgParticles");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const dpr = Math.max(1, window.devicePixelRatio || 1);
+  const accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#ffffff";
+  const inkMuted = getComputedStyle(document.documentElement).getPropertyValue("--ink-muted").trim() || "#888";
+
+  function fit() {
+    const r = canvas.getBoundingClientRect();
+    canvas.width = Math.floor(r.width * dpr);
+    canvas.height = Math.floor(r.height * dpr);
+  }
+  fit();
+  window.addEventListener("resize", fit);
+
+  const PARTICLE_COUNT = 220;
+  const ACCENT_RATIO = 0.18;
+  const particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const depth = Math.random();
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * (0.10 + depth * 0.40),
+      vy: (Math.random() - 0.5) * (0.10 + depth * 0.40),
+      r: (0.5 + depth * 1.8) * dpr,
+      depth: depth,
+      isAccent: Math.random() < ACCENT_RATIO,
+      tw: Math.random() * Math.PI * 2,
+    });
+  }
+
+  function pf() {
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.tw += 0.03 + p.depth * 0.04;
+      if (p.x < -8) p.x = w + 8;
+      if (p.x > w + 8) p.x = -8;
+      if (p.y < -8) p.y = h + 8;
+      if (p.y > h + 8) p.y = -8;
+      const twinkle = 0.55 + 0.45 * (Math.sin(p.tw) * 0.5 + 0.5);
+      const baseAlpha = (0.12 + p.depth * 0.55) * twinkle;
+      ctx.beginPath();
+      ctx.fillStyle = p.isAccent ? accent : inkMuted;
+      ctx.globalAlpha = baseAlpha;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (p.isAccent && p.depth > 0.7) {
+        ctx.globalAlpha = baseAlpha * 0.35;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(pf);
+  }
+  requestAnimationFrame(pf);
+}
+startParticleBackground();
 
 let audioCtx = null;
 let masterGain = null;
