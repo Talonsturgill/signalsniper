@@ -1,49 +1,55 @@
-# Creator dossier: Mario Zechner
+# Creator Dossier 2026-05-09
 
 ## Identity
-- Name: Mario Zechner
-- X handle: @badlogicgames (https://x.com/badlogicgames)
-- GitHub: https://github.com/badlogic
-- Site: https://mariozechner.at
-- Bluesky: https://bsky.app/profile/mariozechner.at
-- Mastodon: @badlogic on gamedev.place
-- Geography: Austria (.at domain, German-speaking gamedev community)
+- Name: Aiden Bai
+- X handle: @aidenybai (5.5k+ followers)
+- GitHub: https://github.com/aidenybai
+- Personal site: https://www.aidenybai.com
+- Email: aiden@million.dev
+- Location: San Francisco
+- Affiliation: Founder of Million Software Inc.
 
 ## One-line bio
-Independent software developer, coach, and angel investor with 15+ years across academia, startups, industry, and open-source software.
+Founder of Million.js who builds the React performance and verification stack independent developers actually ship.
 
-## Prior work
-- libGDX, the long-running cross-platform Java/Kotlin game framework. Mario built it and shepherded it for over a decade.
-- pi-mono, the AI agent toolkit that broke 46k stars in early 2026. Now hosted under the earendil-works org with pi.dev as the project domain.
-- Active angel investor and indie OSS maintainer.
-
-## Voice notes
-- Technical, candid, build-in-public.
-- Mixes dry humor with serious craft ("laugh at or pwn me" when publishing his own coding agent traces).
-- Anti-framework instinct. He explicitly favors minimal cores over opinionated harnesses.
-- Pragmatic about provider sprawl. pi-mono normalizes 15+ LLM APIs without picking favorites.
-- Ships and posts in tight cadence on X.
+## Notable work
+- Million.js: optimizing React compiler, founded at age 16
+- React Scan: runtime tool that surfaces React performance regressions
+- React Grab: extracts UI components for agent integration
+- React Doctor: CLI plus ESLint plugin plus GitHub Action that scans React codebases for the anti-patterns coding agents generate by default
+- bippy: React internals manipulation library
+- Combined GitHub footprint exceeds 50,000 stars across these projects
 
 ## What he cares about
-- Open source as practice, not marketing.
-- Provider-agnostic tooling.
-- Public traces for community-driven hardening (pi-share-hf publishes his sessions to Hugging Face with truffelhog secret-gating).
-- Builders owning their own harness.
+- Speed and accessibility. He has stated that making technology fast is how you make it accessible.
+- Performance optimization for the React ecosystem
+- React internals
+- Coding agents that produce shippable output rather than slop
+- Open source as the default delivery channel
 
-## Recent activity (last 48h)
-- May 8, 2026: Updated pi-share-hf to use truffelhog as a secondary gate before publishing pi-mono coding sessions.
-- May 7, 2026: Cut pi-mono v0.74.0.
-- May 7, 2026: Posted that pi-mono can read OPENCODE_API_KEY for users on alternative harnesses.
+## Voice notes for tribute copy
+- Lowercase posts, terminal-native phrasing
+- Direct and pragmatic with occasional profanity for emphasis
+- Likes "wild stat" openers and shipping numbers
+- Frames feature drops as imperatives ("run react doctor on your own codebase via terminal")
+- Build-in-public peer tone, not corporate
 
-## Project: pi-mono
-- Repo: https://github.com/badlogic/pi-mono (also github.com/earendil-works/pi)
-- Site: https://pi.dev
-- License: MIT
-- Language: TypeScript (96.5%)
-- Stars: 46.8k+
-- Tagline: "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods"
-- Core idea: minimal monorepo, 15+ LLM providers behind one API, no framework lock-in, terminal-native.
+## Voice samples
+- "you can now automatically run React Doctor via GitHub Actions"
+- "wild stat. React Doctor has scanned 84k+ projects in the past 24 hours"
+- "run react doctor on your own codebase via terminal. npx -y react-doctor@latest ."
+- "Introducing React Doctor. Scan your React codebase for anti-patterns. Run as a CLI or agent skill. Repeat until passing. Fully open source."
+
+## Today's signal
+React Doctor is trending on GitHub TypeScript daily at +636 stars in the last 24 hours and 7.1k total, on the back of the fresh GitHub Actions integration that lets agents auto-run the validator on every pull request. The tool sits exactly inside the agentic-pattern lane. It is the verifier loop coding agents iterate against until the codebase passes.
+
+## Project picked today
+- Repo: https://github.com/millionco/react-doctor
+- Tagline: "Your agent writes bad React. This catches it."
+- Surfaces: CLI, ESLint plugin, oxlint plugin, GitHub Action, agent skill format
+- Integrations: 50+ coding agents (Claude, Cursor, Copilot, Gemini, others)
+- Latest activity: 262 commits, GitHub Actions auto-run shipped recently
 
 ## What to tag
-- @badlogicgames in the X caption.
-- Project URL in the post is https://github.com/badlogic/pi-mono.
+- @aidenybai in the X caption
+- Project URL in the post is https://github.com/millionco/react-doctor

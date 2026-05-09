@@ -1,60 +1,95 @@
 {
   "date": "2026-05-09",
-  "topic": "pi-mono, the anti-framework agent toolkit",
-  "creator_handle": "@badlogicgames",
-  "project_url": "https://github.com/badlogic/pi-mono",
-  "theme": {
-    "background": "#FFFFFF",
-    "ink": "#252525",
-    "accent": "#0066CC",
-    "muted": "#929292",
-    "rule": "#E9E9E9",
-    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
-    "sans": "'DejaVu Sans', sans-serif"
+  "topic": "react-doctor, the verifier loop for coding agents",
+  "creator_handle": "@aidenybai",
+  "project_url": "https://github.com/millionco/react-doctor",
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "mono",
+    "tokens": {
+      "canvas": "#0A0A0A",
+      "ink": "#F5F5F5",
+      "ink_muted": "#8A8F98",
+      "accent": "#37F712",
+      "hairline": "#1F1F1F"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.05,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+    "accent_contrast_min": 4.5
   },
-  "scenes": {
-    "title": {
-      "headline": "pi-mono",
-      "eyebrow": "agent toolkit, minus the framework"
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "react doctor",
+      "eyebrow": "the verifier loop for agents",
+      "duration_s": 3.0
     },
-    "three_things": {
-      "eyebrow": "THE STACK",
-      "items": [
-        {"name": "Coding CLI", "descriptor": "terminal harness"},
-        {"name": "LLM router", "descriptor": "one API, fifteen LLMs"},
-        {"name": "vLLM pods", "descriptor": "self-host the model"}
-      ]
+    {
+      "template": "mono_block",
+      "lines": [
+        "scan starts here",
+        "useEffect bloat caught",
+        "prop drill flagged",
+        "a11y rules wired in"
+      ],
+      "accent_idx": 1,
+      "duration_s": 3.5
     },
-    "problem": {
-      "line_a": "Most agent kits",
-      "line_b": "ship a framework.",
-      "accent_line": "b"
+    {
+      "template": "two_line",
+      "lines": [
+        "the agent ships React",
+        "the doctor scans it"
+      ],
+      "accent_idx": 1,
+      "duration_s": 3.0
     },
-    "specific_case": {
-      "line_a": "They pick your tools",
-      "line_b": "and your runtime",
-      "line_c": "before you start.",
-      "accent_line": "b"
+    {
+      "template": "fix",
+      "primary": "catch it cold",
+      "secondary": "iterate until passing",
+      "emphasize": true,
+      "duration_s": 3.5
     },
-    "fix": {
-      "primary": "Minimal core.",
-      "secondary": "You wire the rest."
+    {
+      "template": "mono_block",
+      "lines": [
+        "84k+ codebases scanned",
+        "ships as cli, eslint, ci",
+        "wired into 50+ agents",
+        "open source by default"
+      ],
+      "accent_idx": 0,
+      "duration_s": 3.5
     },
-    "mechanism": {
-      "line_a": "One LLM router.",
-      "line_b": "Fifteen providers.",
-      "line_c": "Zero opinions.",
-      "accent_line": "c"
-    },
-    "consequence": {
-      "line_a": "The harness fits",
-      "line_b": "your terminal and",
-      "line_c": "your head."
-    },
-    "close": {
-      "primary": "Minimal core.",
-      "accent": "You wire the rest.",
-      "subtitle": "what most agent kits skip."
+    {
+      "template": "close",
+      "primary": "ship clean React",
+      "accent": "agent-checked",
+      "subtitle": "aiden bai built it. open source.",
+      "emphasize": true,
+      "duration_s": 4.0
     }
-  }
+  ]
 }
