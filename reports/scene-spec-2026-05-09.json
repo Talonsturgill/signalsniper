@@ -29,10 +29,10 @@
       "italic_descriptors": false
     },
     "motion": {
-      "register": "cut",
-      "scene_in_s": 0.06,
-      "scene_out_s": 0.05,
-      "stagger_s": 0.1
+      "register": "fade",
+      "scene_in_s": 0.55,
+      "scene_out_s": 0.45,
+      "stagger_s": 0.30
     },
     "layout": {
       "padding_pct": 6,
@@ -150,8 +150,8 @@
     },
     {
       "template": "close",
-      "primary": "minimal core.",
-      "accent": "you wire it.",
+      "primary": "the harness.",
+      "accent": "stays yours.",
       "subtitle": "the part most kits skip.",
       "emphasize": true,
       "camera": "pull_back",

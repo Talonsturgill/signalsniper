@@ -24,7 +24,7 @@ from pathlib import Path
 
 
 VIEWPORT = 1080
-TAIL_S = 1.0  # extra seconds captured to make sure final fade is recorded
+TAIL_S = 3.0  # extra seconds captured so trim can drop the warmup AND the final fade still records cleanly
 
 
 def ensure_playwright():
