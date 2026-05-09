@@ -5,6 +5,8 @@ description: Generate a short (12 to 32 second) 1080x1080 kinetic-typography vid
 
 # brand-video
 
+> **Read `PLAYBOOK.md` first.** It is the strategy doc. The writer agent must consult it before drafting scenes; the critic agent must enforce it. The PLAYBOOK supersedes any conflict with this file.
+
 A flexible kinetic-typography video generator. Replaces the old fixed-format `editorial-kinetic-type`. Where that skill locked you to 8 scenes, 25 seconds, two fallback fonts, and one motion language, this one accepts:
 
 - 4 to 8 scenes from a library of 8 templates
