@@ -5,5 +5,12 @@
     "aesthetic_slug": "mono-terminal",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/badlogic/pi-mono"
+  },
+  {
+    "date": "2026-05-09",
+    "brand_slug": null,
+    "aesthetic_slug": "subway-chrome",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/rohitg00/agentmemory"
   }
 ]

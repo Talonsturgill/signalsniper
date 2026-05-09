@@ -1,161 +1,111 @@
 {
   "date": "2026-05-09",
-  "topic": "pi-mono, the anti-framework agent toolkit",
-  "creator_handle": "@badlogicgames",
-  "project_url": "https://github.com/badlogic/pi-mono",
+  "topic": "agentmemory, the persistent memory layer for coding agents",
+  "creator_handle": "@ghumare64",
+  "project_url": "https://github.com/rohitg00/agentmemory",
   "design": {
     "brand_slug": null,
-    "aesthetic_slug": "mono-terminal",
-    "framework": "SCHEMATIC",
+    "aesthetic_slug": "subway-chrome",
+    "framework": "RECEIPT",
     "audio_palette": "electronic",
     "accent_contrast_min": 4.5,
+    "held_subject": "agentmemory",
     "tokens": {
-      "canvas": "#0A0A0A",
-      "ink": "#F0F0F0",
-      "ink_muted": "#7A7A7A",
-      "accent": "#37F712",
-      "hairline": "#1F1F1F"
+      "canvas": "#15171A",
+      "ink": "#F4F6FA",
+      "ink_muted": "#8B95A6",
+      "accent": "#7DD9FF",
+      "hairline": "#262A30"
     },
     "fonts": {
       "display": "JetBrainsMono",
-      "body": "JetBrainsMono",
-      "italic": "JetBrainsMono"
+      "body": "Inter",
+      "italic": "Inter"
     },
     "typography": {
       "display_weight": 600,
       "body_weight": 400,
-      "letter_spacing_em": -0.005,
-      "case": "lower",
+      "letter_spacing_em": -0.015,
+      "case": "preserve",
       "italic_descriptors": false
     },
     "motion": {
       "register": "fade",
-      "scene_in_s": 0.55,
-      "scene_out_s": 0.45,
-      "stagger_s": 0.30
+      "scene_in_s": 0.32,
+      "scene_out_s": 0.22,
+      "stagger_s": 0.22
     },
     "layout": {
-      "padding_pct": 6,
+      "padding_pct": 7,
       "rule_thickness_px": 1,
-      "stage_radius_px": 0
+      "stage_radius_px": 4
     },
     "texture": {
-      "grain": 0.05,
-      "vignette": 0.22,
-      "halation": 0.06,
-      "lighting_arc": 0.3
+      "grain": 0.04,
+      "vignette": 0.20,
+      "halation": 0.05,
+      "lighting_arc": 0.32
     }
   },
   "scenes": [
     {
       "template": "title",
-      "headline": "pi-mono",
-      "eyebrow": "agent toolkit, minus the framework",
-      "camera": "orbit",
-      "duration_s": 3.0
+      "headline": "agentmemory",
+      "eyebrow": "the layer your agent doesn't have",
+      "camera": "push_in",
+      "duration_s": 2.8
     },
     {
-      "template": "terminal",
-      "title": "pi --provider claude-sonnet-4-6",
-      "lines": [
-        {
-          "text": "$ pi"
-        },
-        {
-          "text": "> trace the auth bug in api.ts",
-          "accent": false
-        },
-        {
-          "text": "reading 14 files in src/..."
-        },
-        {
-          "text": "proposed patch ready to apply."
-        }
-      ],
-      "camera": "parallax_drift",
-      "duration_s": 4.0
-    },
-    {
-      "template": "two_line",
-      "lines": [
-        "most agent kits",
-        "ship a framework."
-      ],
-      "accent_idx": 1,
+      "template": "big_number",
+      "numeral": "95.2%",
+      "caption": "retrieval on LongMemEval-S.",
+      "sub": "hybrid search, no external db.",
       "camera": "ken_burns",
-      "duration_s": 2.5
+      "duration_s": 3.5
+    },
+    {
+      "template": "big_number",
+      "numeral": "92%",
+      "caption": "fewer tokens than built-in memory.",
+      "sub": "ten dollars a year, not five hundred.",
+      "camera": "ken_burns",
+      "duration_s": 3.5
     },
     {
       "template": "diagram",
-      "eyebrow": "THE WIRING",
+      "eyebrow": "TRIPLE STREAM",
       "nodes": [
-        {
-          "label": "15 llms",
-          "x": 50,
-          "y": 18
-        },
-        {
-          "label": "llm router",
-          "x": 50,
-          "y": 42,
-          "accent": true
-        },
-        {
-          "label": "vllm pods",
-          "x": 20,
-          "y": 42
-        },
-        {
-          "label": "agent core",
-          "x": 50,
-          "y": 66
-        },
-        {
-          "label": "coding cli",
-          "x": 50,
-          "y": 88,
-          "filled": true
-        }
+        {"label": "BM25",            "x": 18, "y": 30},
+        {"label": "vectors",         "x": 50, "y": 18},
+        {"label": "knowledge graph", "x": 82, "y": 30},
+        {"label": "RRF fuse",        "x": 50, "y": 62, "accent": true},
+        {"label": "agent context",   "x": 50, "y": 88, "filled": true}
       ],
       "edges": [
-        {
-          "from": 0,
-          "to": 1
-        },
-        {
-          "from": 2,
-          "to": 1,
-          "style": "dashed"
-        },
-        {
-          "from": 1,
-          "to": 3,
-          "accent": true
-        },
-        {
-          "from": 3,
-          "to": 4
-        }
+        {"from": 0, "to": 3},
+        {"from": 1, "to": 3},
+        {"from": 2, "to": 3},
+        {"from": 3, "to": 4, "accent": true}
       ],
       "camera": "orbit",
       "duration_s": 4.5
     },
     {
       "template": "fix",
-      "primary": "minimal core.",
-      "secondary": "you wire the rest.",
+      "primary": "memory persists.",
+      "secondary": "across every session.",
       "emphasize": true,
       "camera": "crash_zoom",
-      "duration_s": 3.5
+      "duration_s": 3.0
     },
     {
       "template": "close",
-      "primary": "the harness.",
-      "accent": "stays yours.",
-      "subtitle": "the part most kits skip.",
+      "primary": "your codebase.",
+      "accent": "stays loaded.",
+      "subtitle": "every tool, every tab, every restart.",
       "emphasize": true,
       "camera": "pull_back",
-      "duration_s": 3.0
+      "duration_s": 3.2
     }
   ]
 }
