@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-09",
+  "brand_slug": null,
+  "aesthetic_slug": "editorial",
+  "rationale_one_line": "Addy writes structured engineering essays about agents, so a magazine-edit serif voice on warm paper matches his register better than a hacker mono palette.",
+  "writing_tone_notes": "Pattern-recognition, builder POV, declarative. No hedging. Echoes Addy's essay voice (Beyond Vibe Coding, The Factory Model). Bold serif headlines, single accent phrase per scene, italic tag at the close.",
+  "do_rules": [
+    "use the warm-paper canvas and deep-ink serif of the editorial baseline",
+    "reserve the clay accent for one phrase per scene maximum",
+    "trim every line until each scene says one thing",
+    "keep cadence calm, declarative, builder-tone"
+  ],
+  "dont_rules": [
+    "do not switch to neon or hacker palettes (mono aesthetic was scored and rejected as off-register for Addy's voice)",
+    "do not stack accents across multiple lines in the same scene",
+    "do not add emojis, em or en dashes, semicolons, body colons, or arrows",
+    "do not introduce sycophancy or hype filler"
+  ],
+  "history_check": "reports/style-history.json was empty before this run, so no last-14 collision possible."
+}
