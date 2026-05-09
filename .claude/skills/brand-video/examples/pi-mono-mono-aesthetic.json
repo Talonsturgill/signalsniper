@@ -1,0 +1,59 @@
+{
+  "date": "2026-05-09",
+  "topic": "pi-mono, the anti-framework agent toolkit",
+  "creator_handle": "@badlogicgames",
+  "project_url": "https://github.com/badlogic/pi-mono",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "mono",
+
+    "tokens": {
+      "canvas":    "#0a0a0a",
+      "ink":       "#e8e8e8",
+      "ink_muted": "#888888",
+      "accent":    "#5e6ad2",
+      "hairline":  "#2a2a2a"
+    },
+
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body":    "JetBrainsMono",
+      "italic":  "JetBrainsMono"
+    },
+
+    "typography": {
+      "display_weight":      600,
+      "body_weight":         400,
+      "letter_spacing_em":  -0.005,
+      "case":               "preserve",
+      "italic_descriptors": false
+    },
+
+    "motion": {
+      "register":    "cut",
+      "scene_in_s":  0.08,
+      "scene_out_s": 0.05,
+      "stagger_s":   0.10
+    },
+
+    "layout": {
+      "padding_pct":       6,
+      "rule_thickness_px": 1,
+      "stage_radius_px":   4
+    }
+  },
+
+  "scenes": [
+    {"template": "title",       "headline": "pi-mono",         "eyebrow": "agent toolkit, minus the framework", "duration_s": 3.0},
+    {"template": "stack",       "eyebrow": "THE STACK",         "items": [
+      {"name": "Coding CLI",  "descriptor": "terminal harness"},
+      {"name": "LLM router",  "descriptor": "one API, fifteen LLMs"},
+      {"name": "vLLM pods",   "descriptor": "self-host the model"}
+    ], "duration_s": 3.5},
+    {"template": "two_line",    "lines": ["Most agent kits", "ship a framework."], "accent_idx": 1, "duration_s": 3.0},
+    {"template": "fix",         "primary": "Minimal core.", "secondary": "You wire the rest.", "emphasize": true, "duration_s": 3.0},
+    {"template": "mono_block",  "lines": ["one LLM router.", "fifteen providers.", "zero opinions."], "accent_idx": 2, "duration_s": 3.0},
+    {"template": "close",       "primary": "Minimal core.", "accent": "You wire the rest.", "subtitle": "what most agent kits skip.", "emphasize": true, "duration_s": 3.5}
+  ]
+}

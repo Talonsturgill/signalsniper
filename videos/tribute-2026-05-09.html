@@ -1,99 +1,41 @@
-#!/usr/bin/env python3
-"""
-editorial-kinetic-type HTML builder.
-
-Reads a scene-spec.json and emits a single self-contained HTML file that
-plays the 25-second editorial kinetic-typography video in any modern
-browser. CSS animations drive the typography, Web Audio API drives the
-soundtrack, no external assets.
-
-Usage:
-    python build_html.py <spec.json> <output.html> [--theme theme.json]
-
-Output is a 1080x1080 stage that scales to fit the viewport. Scene
-structure, timing, and audio composition follow SKILL.md exactly.
-"""
-
-import argparse
-import json
-from pathlib import Path
-
-
-SCENE_DURATIONS_S = {
-    "title": 3.0,
-    "three_things": 3.0,
-    "problem": 3.0,
-    "specific_case": 3.0,
-    "fix": 3.0,
-    "mechanism": 3.0,
-    "consequence": 3.0,
-    "close": 4.0,
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>pi-mono, the anti-framework agent toolkit</title>
+<style>
+:root {
+  --bg: #FFFFFF;
+  --ink: #252525;
+  --accent: #0066CC;
+  --muted: #929292;
+  --rule: #E9E9E9;
+  --serif: 'Bitstream Charter', 'DejaVu Serif', Georgia, serif;
+  --sans: 'DejaVu Sans', sans-serif;
 }
-TOTAL_S = sum(SCENE_DURATIONS_S.values())  # 25.0
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-def scene_starts():
-    starts = {}
-    cursor = 0.0
-    for name, dur in SCENE_DURATIONS_S.items():
-        starts[name] = (cursor, cursor + dur)
-        cursor += dur
-    return starts
-
-
-STARTS = scene_starts()
-
-
-def esc(s):
-    return (
-        s.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-    )
-
-
-def resolve_theme(spec, theme_arg):
-    if theme_arg:
-        return json.loads(Path(theme_arg).read_text())
-    if isinstance(spec.get("theme"), dict):
-        return spec["theme"]
-    default_path = Path(__file__).parent / "default_theme.json"
-    return json.loads(default_path.read_text())
-
-
-def build_css(theme):
-    return f"""
-:root {{
-  --bg: {theme['background']};
-  --ink: {theme['ink']};
-  --accent: {theme['accent']};
-  --muted: {theme['muted']};
-  --rule: {theme['rule']};
-  --serif: {theme['serif']};
-  --sans: {theme['sans']};
-}}
-
-* {{ box-sizing: border-box; margin: 0; padding: 0; }}
-
-html, body {{
+html, body {
   background: #0d0d0e;
   color: var(--ink);
   font-family: var(--serif);
   height: 100%;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
-}}
+}
 
-body {{
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 16px;
   padding: 16px;
-}}
+}
 
-.stage {{
+.stage {
   position: relative;
   width: min(86vmin, calc(100vh - 100px));
   aspect-ratio: 1 / 1;
@@ -102,18 +44,18 @@ body {{
   border-radius: 12px;
   box-shadow: 0 30px 80px -30px rgba(0,0,0,0.5),
               0 0 0 1px rgba(255,255,255,0.04);
-}}
+}
 
 /* All measurements use a 1080-unit virtual space; the stage scales it. */
-.canvas {{
+.canvas {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-}}
+}
 
-.scene {{
+.scene {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -123,84 +65,84 @@ body {{
   justify-content: center;
   text-align: center;
   padding: 8%;
-}}
+}
 
-.scene.active {{ pointer-events: auto; }}
+.scene.active { pointer-events: auto; }
 
 /* Each scene fades in over 0.4s and out over 0.27s when active. */
-@keyframes sceneIn {{
-  from {{ opacity: 0; }}
-  to   {{ opacity: 1; }}
-}}
-@keyframes sceneOut {{
-  from {{ opacity: 1; }}
-  to   {{ opacity: 0; }}
-}}
-@keyframes rise {{
-  from {{ opacity: 0; transform: translateY(14px); }}
-  to   {{ opacity: 1; transform: translateY(0); }}
-}}
-@keyframes riseSmall {{
-  from {{ opacity: 0; transform: translateY(8px); }}
-  to   {{ opacity: 1; transform: translateY(0); }}
-}}
-@keyframes growRule {{
-  from {{ width: 0; }}
-  to   {{ width: 12vmin; }}
-}}
-@keyframes scaleIn {{
-  from {{ opacity: 0; transform: scale(0.95); }}
-  to   {{ opacity: 1; transform: scale(1); }}
-}}
+@keyframes sceneIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes sceneOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes riseSmall {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes growRule {
+  from { width: 0; }
+  to   { width: 12vmin; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
 
 /* ---- typography (sized in cqw so they scale with the stage) ---- */
-.headline {{
+.headline {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 10.2cqw;
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
-}}
-.eyebrow-small {{
+}
+.eyebrow-small {
   font-family: var(--sans);
   font-weight: 400;
   font-size: 3cqw;
   color: var(--muted);
   margin-top: 2.4cqw;
-}}
-.tt-eyebrow {{
+}
+.tt-eyebrow {
   font-family: var(--sans);
   font-weight: 600;
   font-size: 2.4cqw;
   letter-spacing: 0.36em;
   color: var(--accent);
   text-transform: uppercase;
-}}
-.tt-rule {{
+}
+.tt-rule {
   height: 2px;
   background: var(--rule);
   margin: 1.6cqw auto 5cqw;
   width: 0;
-}}
-.tt-item {{
+}
+.tt-item {
   margin: 1cqw 0;
-}}
-.tt-name {{
+}
+.tt-name {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 5.9cqw;
   line-height: 1.1;
   color: var(--ink);
-}}
-.tt-descriptor {{
+}
+.tt-descriptor {
   font-family: var(--sans);
   font-style: italic;
   font-size: 2.05cqw;
   color: var(--muted);
   margin-top: 0.4cqw;
-}}
-.problem-line {{
+}
+.problem-line {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 8.9cqw;
@@ -208,77 +150,77 @@ body {{
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0.6cqw 0;
-}}
-.problem-line.accent {{ color: var(--accent); }}
-.case-line {{
+}
+.problem-line.accent { color: var(--accent); }
+.case-line {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 5.9cqw;
   line-height: 1.15;
   color: var(--ink);
   margin: 0.6cqw 0;
-}}
-.case-line.accent {{ color: var(--accent); font-weight: 700; }}
-.fix-primary {{
+}
+.case-line.accent { color: var(--accent); font-weight: 700; }
+.fix-primary {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 13cqw;
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--ink);
-}}
-.fix-secondary {{
+}
+.fix-secondary {
   font-family: var(--serif);
   font-style: italic;
   font-size: 5.9cqw;
   color: var(--muted);
   margin-top: 4cqw;
-}}
-.mech-line {{
+}
+.mech-line {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 5.2cqw;
   line-height: 1.1;
   color: var(--ink);
   margin: 0.6cqw 0;
-}}
-.mech-line.accent {{
+}
+.mech-line.accent {
   font-weight: 700;
   font-size: 6.7cqw;
   color: var(--accent);
-}}
-.cons-a {{
+}
+.cons-a {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 6.5cqw;
   line-height: 1.1;
   color: var(--ink);
-}}
-.cons-b {{
+}
+.cons-b {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 5.2cqw;
   line-height: 1.15;
   color: var(--ink);
   margin-top: 1.2cqw;
-}}
-.cons-c {{
+}
+.cons-c {
   font-family: var(--serif);
   font-style: italic;
   font-size: 5.2cqw;
   line-height: 1.15;
   color: var(--muted);
   margin-top: 1.2cqw;
-}}
-.close-primary {{
+}
+.close-primary {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 9.3cqw;
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--ink);
-}}
-.close-accent {{
+}
+.close-accent {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 9.3cqw;
@@ -286,17 +228,17 @@ body {{
   letter-spacing: -0.02em;
   color: var(--accent);
   margin-top: 2cqw;
-}}
-.close-subtitle {{
+}
+.close-subtitle {
   font-family: var(--sans);
   font-style: italic;
   font-size: 2.4cqw;
   color: var(--muted);
   margin-top: 4.6cqw;
-}}
+}
 
 /* ---- controls ---- */
-.controls {{
+.controls {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -304,8 +246,8 @@ body {{
   color: rgba(255,255,255,0.55);
   font-family: var(--sans);
   font-size: 11px;
-}}
-.controls button {{
+}
+.controls button {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.18);
   color: rgba(255,255,255,0.85);
@@ -315,116 +257,93 @@ body {{
   cursor: pointer;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}}
-.controls button:hover {{ border-color: var(--accent); color: var(--accent); }}
-.progress {{
+}
+.controls button:hover { border-color: var(--accent); color: var(--accent); }
+.progress {
   flex: 1;
   height: 2px;
   background: rgba(255,255,255,0.12);
   border-radius: 1px;
   overflow: hidden;
-}}
-.progress-fill {{
+}
+.progress-fill {
   height: 100%;
   width: 0%;
   background: var(--accent);
-}}
-.clock {{ font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); }}
+}
+.clock { font-variant-numeric: tabular-nums; color: rgba(255,255,255,0.85); }
 
 /* container queries so cqw works inside .stage */
-.stage {{ container-type: inline-size; container-name: stage; }}
-@container stage (min-width: 0px) {{
-  .headline {{ font-size: 10.2cqw; }}
-}}
-"""
+.stage { container-type: inline-size; container-name: stage; }
+@container stage (min-width: 0px) {
+  .headline { font-size: 10.2cqw; }
+}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
 
-
-def build_scene_html(spec):
-    s = spec["scenes"]
-    parts = []
-
-    # Scene 1: title
-    parts.append(f"""
 <section class="scene" data-scene="title">
-  <div class="headline">{esc(s['title']['headline'])}</div>
-  <div class="eyebrow-small">{esc(s['title']['eyebrow'])}</div>
-</section>""")
+  <div class="headline">pi-mono</div>
+  <div class="eyebrow-small">agent toolkit, minus the framework</div>
+</section>
 
-    # Scene 2: three things
-    items_html = "".join(
-        f"""<div class="tt-item">
-        <div class="tt-name">{esc(item['name'])}</div>
-        <div class="tt-descriptor">{esc(item['descriptor'])}</div>
-      </div>"""
-        for item in s["three_things"]["items"]
-    )
-    parts.append(f"""
 <section class="scene" data-scene="three_things">
-  <div class="tt-eyebrow">{esc(s['three_things']['eyebrow'])}</div>
+  <div class="tt-eyebrow">THE STACK</div>
   <div class="tt-rule"></div>
-  {items_html}
-</section>""")
+  <div class="tt-item">
+        <div class="tt-name">Coding CLI</div>
+        <div class="tt-descriptor">terminal harness</div>
+      </div><div class="tt-item">
+        <div class="tt-name">LLM router</div>
+        <div class="tt-descriptor">one API, fifteen LLMs</div>
+      </div><div class="tt-item">
+        <div class="tt-name">vLLM pods</div>
+        <div class="tt-descriptor">self-host the model</div>
+      </div>
+</section>
 
-    # Scene 3: problem
-    p = s["problem"]
-    accent_a = " accent" if p.get("accent_line") == "a" else ""
-    accent_b = " accent" if p.get("accent_line") == "b" else ""
-    parts.append(f"""
 <section class="scene" data-scene="problem">
-  <div class="problem-line{accent_a}">{esc(p['line_a'])}</div>
-  <div class="problem-line{accent_b}">{esc(p['line_b'])}</div>
-</section>""")
+  <div class="problem-line">Most agent kits</div>
+  <div class="problem-line accent">ship a framework.</div>
+</section>
 
-    # Scene 4: specific case
-    sc = s["specific_case"]
-    accent = sc.get("accent_line", "b")
-    parts.append(f"""
 <section class="scene" data-scene="specific_case">
-  <div class="case-line{' accent' if accent == 'a' else ''}">{esc(sc['line_a'])}</div>
-  <div class="case-line{' accent' if accent == 'b' else ''}">{esc(sc['line_b'])}</div>
-  <div class="case-line{' accent' if accent == 'c' else ''}">{esc(sc['line_c'])}</div>
-</section>""")
+  <div class="case-line">They pick your tools</div>
+  <div class="case-line accent">and your runtime</div>
+  <div class="case-line">before you start.</div>
+</section>
 
-    # Scene 5: fix
-    fx = s["fix"]
-    parts.append(f"""
 <section class="scene" data-scene="fix">
-  <div class="fix-primary">{esc(fx['primary'])}</div>
-  <div class="fix-secondary">{esc(fx['secondary'])}</div>
-</section>""")
+  <div class="fix-primary">Minimal core.</div>
+  <div class="fix-secondary">You wire the rest.</div>
+</section>
 
-    # Scene 6: mechanism
-    mc = s["mechanism"]
-    m_accent = mc.get("accent_line", "c")
-    parts.append(f"""
 <section class="scene" data-scene="mechanism">
-  <div class="mech-line{' accent' if m_accent == 'a' else ''}">{esc(mc['line_a'])}</div>
-  <div class="mech-line{' accent' if m_accent == 'b' else ''}">{esc(mc['line_b'])}</div>
-  <div class="mech-line{' accent' if m_accent == 'c' else ''}">{esc(mc['line_c'])}</div>
-</section>""")
+  <div class="mech-line">One LLM router.</div>
+  <div class="mech-line">Fifteen providers.</div>
+  <div class="mech-line accent">Zero opinions.</div>
+</section>
 
-    # Scene 7: consequence
-    cn = s["consequence"]
-    parts.append(f"""
 <section class="scene" data-scene="consequence">
-  <div class="cons-a">{esc(cn['line_a'])}</div>
-  <div class="cons-b">{esc(cn['line_b'])}</div>
-  <div class="cons-c">{esc(cn['line_c'])}</div>
-</section>""")
+  <div class="cons-a">The harness fits</div>
+  <div class="cons-b">your terminal and</div>
+  <div class="cons-c">your head.</div>
+</section>
 
-    # Scene 8: close
-    cl = s["close"]
-    parts.append(f"""
 <section class="scene" data-scene="close">
-  <div class="close-primary">{esc(cl['primary'])}</div>
-  <div class="close-accent">{esc(cl['accent'])}</div>
-  <div class="close-subtitle">{esc(cl['subtitle'])}</div>
-</section>""")
-
-    return "\n".join(parts)
-
-
-JS_DRIVER = r"""
+  <div class="close-primary">Minimal core.</div>
+  <div class="close-accent">You wire the rest.</div>
+  <div class="close-subtitle">what most agent kits skip.</div>
+</section>
+</div>
+<div class="controls">
+  <button id="play">replay</button>
+  <button id="mute">sound: on</button>
+  <div class="progress"><div class="progress-fill" id="pf"></div></div>
+  <span class="clock" id="clock">00:00</span>
+</div>
+<script>
 // Timeline (seconds): [scene_name, start, end]
 const TL = [
   ["title",         0.00,  3.00],
@@ -761,50 +680,6 @@ document.getElementById("mute").addEventListener("click", () => {
 });
 
 play();
-"""
-
-
-def build_html(spec, theme):
-    css = build_css(theme)
-    scenes_html = build_scene_html(spec)
-    title_text = spec.get("topic") or spec["scenes"]["title"]["headline"]
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>{esc(title_text)}</title>
-<style>{css}</style>
-</head>
-<body>
-<div class="stage" id="stage">
-{scenes_html}
-</div>
-<div class="controls">
-  <button id="play">replay</button>
-  <button id="mute">sound: on</button>
-  <div class="progress"><div class="progress-fill" id="pf"></div></div>
-  <span class="clock" id="clock">00:00</span>
-</div>
-<script>{JS_DRIVER}</script>
+</script>
 </body>
 </html>
-"""
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("spec", help="Path to scene-spec.json")
-    parser.add_argument("output", help="Path to write HTML output")
-    parser.add_argument("--theme", help="Path to theme.json (defaults to default_theme.json)")
-    args = parser.parse_args()
-
-    spec = json.loads(Path(args.spec).read_text())
-    theme = resolve_theme(spec, args.theme)
-    html = build_html(spec, theme)
-    Path(args.output).write_text(html)
-    print(f"Wrote {args.output} ({len(html):,} bytes)")
-
-
-if __name__ == "__main__":
-    main()
