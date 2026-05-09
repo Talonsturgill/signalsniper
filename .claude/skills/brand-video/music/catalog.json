@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "tracks": [
+    {
+      "slug": "tyrant",
+      "title": "Tyrant",
+      "file": "Tyrant.mp3",
+      "bpm": null,
+      "mood": "industrial / dark electronic",
+      "fits": "subway-chrome / mono-terminal / cctv / mono",
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal",
+        "cctv"
+      ],
+      "audio_palette": "electronic",
+      "duration_s": 341.7,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Tyrant",
+      "attribution_required": "Music. Tyrant by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.",
+      "default_offset_s": 30.0
+    },
+    {
+      "slug": "nightline",
+      "title": "Nightline",
+      "file": "nightline.mp3",
+      "bpm": 88,
+      "mood": "dub-techno",
+      "fits": "subway-chrome / mono-terminal / cctv",
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal",
+        "cctv"
+      ],
+      "audio_palette": "electronic",
+      "duration_s": 60.0,
+      "license": "in-house, public domain (no attribution required)",
+      "author": "signalsniper studio",
+      "default_offset_s": 1.5
+    },
+    {
+      "slug": "signal",
+      "title": "Signal",
+      "file": "signal.mp3",
+      "bpm": 112,
+      "mood": "minimal techno",
+      "fits": "geominimal / editorial-90s / bold launch",
+      "preset_packs": [
+        "geominimal",
+        "editorial-90s"
+      ],
+      "audio_palette": "electronic",
+      "duration_s": 60.0,
+      "license": "in-house, public domain (no attribution required)",
+      "author": "signalsniper studio",
+      "default_offset_s": 1.5
+    },
+    {
+      "slug": "paper-room",
+      "title": "Paper Room",
+      "file": "paper-room.mp3",
+      "bpm": 70,
+      "mood": "felt piano + room",
+      "fits": "editorial-paper / claude / cozy refined",
+      "preset_packs": [
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "audio_palette": "acoustic",
+      "duration_s": 60.0,
+      "license": "in-house, public domain (no attribution required)",
+      "author": "signalsniper studio",
+      "default_offset_s": 2.0
+    },
+    {
+      "slug": "dispatch",
+      "title": "Dispatch",
+      "file": "dispatch.mp3",
+      "bpm": 92,
+      "mood": "cinematic piano",
+      "fits": "gallery / claude / DISPATCH framework",
+      "preset_packs": [
+        "gallery",
+        "claude",
+        "editorial-paper"
+      ],
+      "audio_palette": "ambient",
+      "duration_s": 60.0,
+      "license": "in-house, public domain (no attribution required)",
+      "author": "signalsniper studio",
+      "default_offset_s": 2.0
+    }
+  ]
+}
