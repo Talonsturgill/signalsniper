@@ -1,0 +1,60 @@
+{
+  "date": "2026-05-09",
+  "topic": "pi-mono, the anti-framework agent toolkit",
+  "creator_handle": "@badlogicgames",
+  "project_url": "https://github.com/badlogic/pi-mono",
+  "theme": {
+    "background": "#FFFFFF",
+    "ink": "#252525",
+    "accent": "#0066CC",
+    "muted": "#929292",
+    "rule": "#E9E9E9",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "pi-mono",
+      "eyebrow": "agent toolkit, minus the framework"
+    },
+    "three_things": {
+      "eyebrow": "THE STACK",
+      "items": [
+        {"name": "Coding CLI", "descriptor": "terminal harness"},
+        {"name": "LLM router", "descriptor": "one API, fifteen LLMs"},
+        {"name": "vLLM pods", "descriptor": "self-host the model"}
+      ]
+    },
+    "problem": {
+      "line_a": "Most agent kits",
+      "line_b": "ship a framework.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "They pick your tools",
+      "line_b": "and your runtime",
+      "line_c": "before you start.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Minimal core.",
+      "secondary": "You wire the rest."
+    },
+    "mechanism": {
+      "line_a": "One LLM router.",
+      "line_b": "Fifteen providers.",
+      "line_c": "Zero opinions.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "The harness fits",
+      "line_b": "your terminal and",
+      "line_c": "your head."
+    },
+    "close": {
+      "primary": "Minimal core.",
+      "accent": "You wire the rest.",
+      "subtitle": "what most agent kits skip."
+    }
+  }
+}
