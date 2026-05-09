@@ -67,6 +67,14 @@ This is stricter than the previous "filter the last 4 entries" rule and replaces
 
 `(brand_slug, aesthetic_slug)` cannot match any entry within the last 14 history entries. When a creator's brand pack is in `brand-design-systems/brands/`, prefer that brand. Otherwise pick a preset pack from `presets.json` not in the last 14 entries.
 
+### Music rotation rule
+
+`.claude/skills/brand-video/music/catalog.json` lists every track available to the pipeline. Every successful run appends `{date, slug, project_url}` to `.claude/skills/brand-video/music/history.json`.
+
+The rule is **strict lifetime no-repeat**: once a slug ships, it can never ship again. `music_select.py` enforces this — it strips used slugs from the candidate pool before scoring, and exits non-zero if the catalog is exhausted. When the selector exits non-zero, the operator must add new tracks to `catalog.json` before the next run.
+
+`music_select.py --record` writes the chosen pick to `history.json`. The pipeline must call `--record` only AFTER the WOW gate passes, not before — a failed render shouldn't burn a track.
+
 ## Pre-flight check
 
 `anti_repeat_check.py` reads `style-history.json` and the current `style-pick-$DATE.json`, exits non-zero if any rule is violated. Build pipeline runs it before render.
