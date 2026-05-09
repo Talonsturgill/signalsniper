@@ -39,9 +39,17 @@ LIMITS = {
     "mono_block": {"line": 38},
     "quote":      {"quote": 80, "attribution": 28},
     "close":      {"primary": 20, "accent": 20, "subtitle": 44},
+    "diagram":    {"eyebrow": 24, "label": 18},
+    "flash":      {"word": 16, "caption": 36},
+    "big_number": {"numeral": 12, "caption": 36, "sub": 40},
+    "terminal":   {"title": 36, "line": 56},
+    "split":      {"label": 18, "value": 16},
 }
 
 VALID_TEMPLATES = set(LIMITS.keys())
+VALID_CAMERAS = {"push_in", "pull_back", "ken_burns", "crash_zoom", "orbit", "parallax_drift", "static_breathe", "none"}
+VALID_PALETTES = {"ambient", "electronic", "acoustic"}
+VALID_FRAMEWORKS = {"CLASSIC", "RECEIPT", "SCHEMATIC", "MANIFESTO", "DISPATCH"}
 
 
 def hex_to_rgb(h):
@@ -89,6 +97,10 @@ def validate_scene(idx, sc, errors):
         return
     base = f"scenes[{idx}].{tpl}"
     L = LIMITS[tpl]
+
+    cam = sc.get("camera", "static_breathe")
+    if cam not in VALID_CAMERAS:
+        errors.append(f"  CAMERA: scenes[{idx}].camera = {cam!r} (must be one of {sorted(VALID_CAMERAS)})")
 
     if tpl == "title":
         check_text(f"{base}.headline", sc["headline"], False, errors)
@@ -153,6 +165,65 @@ def validate_scene(idx, sc, errors):
             check_text(f"{base}.subtitle", sc["subtitle"], False, errors)
             check_len(f"{base}.subtitle", sc["subtitle"], L["subtitle"], "close.subtitle", errors)
 
+    elif tpl == "diagram":
+        if sc.get("eyebrow"):
+            check_text(f"{base}.eyebrow", sc["eyebrow"], True, errors)
+            check_len(f"{base}.eyebrow", sc["eyebrow"], L["eyebrow"], "diagram eyebrow", errors)
+        nodes = sc.get("nodes", [])
+        if not (2 <= len(nodes) <= 5):
+            errors.append(f"  STRUCTURE: {base}.nodes must have 2..5 entries, got {len(nodes)}")
+        for i, nd in enumerate(nodes):
+            for need in ("label", "x", "y"):
+                if need not in nd:
+                    errors.append(f"  STRUCTURE: {base}.nodes[{i}].{need} missing")
+            if "label" in nd:
+                check_text(f"{base}.nodes[{i}].label", nd["label"], False, errors)
+                check_len(f"{base}.nodes[{i}].label", nd["label"], L["label"], "node label", errors)
+        for i, ed in enumerate(sc.get("edges", [])):
+            if "from" not in ed or "to" not in ed:
+                errors.append(f"  STRUCTURE: {base}.edges[{i}] missing from/to")
+                continue
+            if not (0 <= ed["from"] < len(nodes)) or not (0 <= ed["to"] < len(nodes)):
+                errors.append(f"  STRUCTURE: {base}.edges[{i}] from/to out of range")
+
+    elif tpl == "flash":
+        check_text(f"{base}.word", sc["word"], False, errors)
+        check_len(f"{base}.word", sc["word"], L["word"], "flash word", errors)
+        if sc.get("caption"):
+            check_text(f"{base}.caption", sc["caption"], True, errors)
+            check_len(f"{base}.caption", sc["caption"], L["caption"], "flash caption", errors)
+
+    elif tpl == "big_number":
+        check_text(f"{base}.numeral", sc["numeral"], False, errors)
+        check_len(f"{base}.numeral", sc["numeral"], L["numeral"], "big_number numeral", errors)
+        check_text(f"{base}.caption", sc["caption"], False, errors)
+        check_len(f"{base}.caption", sc["caption"], L["caption"], "big_number caption", errors)
+        if sc.get("sub"):
+            check_text(f"{base}.sub", sc["sub"], False, errors)
+            check_len(f"{base}.sub", sc["sub"], L["sub"], "big_number sub", errors)
+
+    elif tpl == "terminal":
+        if sc.get("title"):
+            check_text(f"{base}.title", sc["title"], True, errors)
+            check_len(f"{base}.title", sc["title"], L["title"], "terminal title", errors)
+        lines = sc.get("lines", [])
+        if not (1 <= len(lines) <= 6):
+            errors.append(f"  STRUCTURE: {base}.lines must have 1..6 entries, got {len(lines)}")
+        for i, line in enumerate(lines):
+            text = line["text"] if isinstance(line, dict) else line
+            check_text(f"{base}.lines[{i}]", text, True, errors)
+            check_len(f"{base}.lines[{i}]", text, L["line"], "terminal line", errors)
+
+    elif tpl == "split":
+        for side in ("left", "right"):
+            if side not in sc:
+                errors.append(f"  STRUCTURE: {base}.{side} missing")
+                continue
+            check_text(f"{base}.{side}.label", sc[side]["label"], False, errors)
+            check_text(f"{base}.{side}.value", sc[side]["value"], False, errors)
+            check_len(f"{base}.{side}.label", sc[side]["label"], L["label"], "split label", errors)
+            check_len(f"{base}.{side}.value", sc[side]["value"], L["value"], "split value", errors)
+
 
 def validate(spec_path):
     spec = json.loads(Path(spec_path).read_text())
@@ -174,6 +245,14 @@ def validate(spec_path):
     for need in ("canvas", "ink", "accent", "ink_muted", "hairline"):
         if need not in tokens:
             errors.append(f"  TOKENS: design.tokens.{need} missing")
+
+    palette = design.get("audio_palette", "ambient")
+    if palette not in VALID_PALETTES:
+        errors.append(f"  AUDIO: design.audio_palette = {palette!r} (must be one of {sorted(VALID_PALETTES)})")
+
+    framework = design.get("framework")
+    if framework is not None and framework not in VALID_FRAMEWORKS:
+        errors.append(f"  FRAMEWORK: design.framework = {framework!r} (must be one of {sorted(VALID_FRAMEWORKS)} or null)")
 
     # Accent threshold defaults to 3.0:1 (warm-earth palettes need this floor).
     # The spec can override per-aesthetic via design.accent_contrast_min, e.g.

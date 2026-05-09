@@ -1,0 +1,91 @@
+{
+  "_comment": "Aesthetic preset packs (mirror Higgsfield SOUL bundles). Each pack is a complete design block the routine can drop into a spec. Keys here map to brand-design-systems aesthetic_slug values. The routine picks one based on the creator dossier and the framework, then applies it to scene-spec.json.",
+
+  "editorial-paper": {
+    "tokens":   {"canvas": "#F4EFE3", "ink": "#1A1815", "ink_muted": "#7C7264", "accent": "#9C3B2C", "hairline": "#D5CBB8"},
+    "fonts":    {"display": "EBGaramond", "body": "EBGaramond", "italic": "EBGaramond"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.012, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade",  "scene_in_s": 0.40, "scene_out_s": 0.27, "stagger_s": 0.27},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 1, "stage_radius_px": 8},
+    "texture":  {"grain": 0.07, "vignette": 0.18, "halation": 0.05, "lighting_arc": 0.32},
+    "audio_palette": "acoustic",
+    "accent_contrast_min": 3.0
+  },
+
+  "mono-terminal": {
+    "tokens":   {"canvas": "#0A0A0A", "ink": "#F0F0F0", "ink_muted": "#7A7A7A", "accent": "#37F712", "hairline": "#1F1F1F"},
+    "fonts":    {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.005, "case": "lower", "italic_descriptors": false},
+    "motion":   {"register": "cut", "scene_in_s": 0.06, "scene_out_s": 0.05, "stagger_s": 0.10},
+    "layout":   {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 0},
+    "texture":  {"grain": 0.05, "vignette": 0.22, "halation": 0.0, "lighting_arc": 0.18},
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5
+  },
+
+  "gallery": {
+    "tokens":   {"canvas": "#FFFFFF", "ink": "#0E0E0F", "ink_muted": "#7B7B7E", "accent": "#1B5BFF", "hairline": "#E5E5E8"},
+    "fonts":    {"display": "IBMPlexSerif", "body": "Inter", "italic": "IBMPlexSerif"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.018, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade", "scene_in_s": 0.42, "scene_out_s": 0.27, "stagger_s": 0.30},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture":  {"grain": 0.03, "vignette": 0.10, "halation": 0.0, "lighting_arc": 0.14},
+    "audio_palette": "acoustic",
+    "accent_contrast_min": 4.5
+  },
+
+  "subway-chrome": {
+    "tokens":   {"canvas": "#15171A", "ink": "#F4F6FA", "ink_muted": "#8B95A6", "accent": "#7DD9FF", "hairline": "#262A30"},
+    "fonts":    {"display": "JetBrainsMono", "body": "Inter", "italic": "Inter"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.015, "case": "preserve", "italic_descriptors": false},
+    "motion":   {"register": "fade", "scene_in_s": 0.32, "scene_out_s": 0.22, "stagger_s": 0.22},
+    "layout":   {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture":  {"grain": 0.04, "vignette": 0.20, "halation": 0.04, "lighting_arc": 0.32},
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5
+  },
+
+  "cctv": {
+    "tokens":   {"canvas": "#1B1B1B", "ink": "#E0E0E0", "ink_muted": "#909090", "accent": "#FF3B30", "hairline": "#2A2A2A"},
+    "fonts":    {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+    "typography": {"display_weight": 500, "body_weight": 400, "letter_spacing_em": 0.0, "case": "upper", "italic_descriptors": false},
+    "motion":   {"register": "cut", "scene_in_s": 0.05, "scene_out_s": 0.05, "stagger_s": 0.08},
+    "layout":   {"padding_pct": 5, "rule_thickness_px": 1, "stage_radius_px": 0},
+    "texture":  {"grain": 0.10, "vignette": 0.30, "halation": 0.0, "lighting_arc": 0.10},
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.5
+  },
+
+  "editorial-90s": {
+    "tokens":   {"canvas": "#F1E8D6", "ink": "#1F1A14", "ink_muted": "#8C7E68", "accent": "#D2371B", "hairline": "#D8CBB0"},
+    "fonts":    {"display": "Fraunces", "body": "Fraunces", "italic": "Fraunces"},
+    "typography": {"display_weight": 800, "body_weight": 400, "letter_spacing_em": -0.024, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "scale", "scene_in_s": 0.42, "scene_out_s": 0.25, "stagger_s": 0.30},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 2, "stage_radius_px": 6},
+    "texture":  {"grain": 0.10, "vignette": 0.22, "halation": 0.10, "lighting_arc": 0.36},
+    "audio_palette": "acoustic",
+    "accent_contrast_min": 3.0
+  },
+
+  "geominimal": {
+    "tokens":   {"canvas": "#F5F5F0", "ink": "#0F0F10", "ink_muted": "#7E7E7E", "accent": "#E84C2A", "hairline": "#E0E0DC"},
+    "fonts":    {"display": "SpaceGrotesk", "body": "SpaceGrotesk", "italic": "SpaceGrotesk"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.025, "case": "preserve", "italic_descriptors": false},
+    "motion":   {"register": "cut", "scene_in_s": 0.06, "scene_out_s": 0.05, "stagger_s": 0.12},
+    "layout":   {"padding_pct": 7, "rule_thickness_px": 2, "stage_radius_px": 0},
+    "texture":  {"grain": 0.04, "vignette": 0.10, "halation": 0.0, "lighting_arc": 0.22},
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.5
+  },
+
+  "claude": {
+    "tokens":   {"canvas": "#F5EFE3", "ink": "#191919", "ink_muted": "#7C7C7C", "accent": "#CC785C", "hairline": "#E2DAC8"},
+    "fonts":    {"display": "IBMPlexSerif", "body": "Inter", "italic": "IBMPlexSerif"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.018, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade", "scene_in_s": 0.40, "scene_out_s": 0.27, "stagger_s": 0.27},
+    "layout":   {"padding_pct": 8, "rule_thickness_px": 1, "stage_radius_px": 8},
+    "texture":  {"grain": 0.05, "vignette": 0.16, "halation": 0.04, "lighting_arc": 0.28},
+    "audio_palette": "ambient",
+    "accent_contrast_min": 3.0
+  }
+}
