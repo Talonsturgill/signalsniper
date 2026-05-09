@@ -3,58 +3,107 @@
   "topic": "pi-mono, the anti-framework agent toolkit",
   "creator_handle": "@badlogicgames",
   "project_url": "https://github.com/badlogic/pi-mono",
-  "theme": {
-    "background": "#FFFFFF",
-    "ink": "#252525",
-    "accent": "#0066CC",
-    "muted": "#929292",
-    "rule": "#E9E9E9",
-    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
-    "sans": "'DejaVu Sans', sans-serif"
-  },
-  "scenes": {
-    "title": {
-      "headline": "pi-mono",
-      "eyebrow": "agent toolkit, minus the framework"
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "CLASSIC",
+    "held_subject": "pi-mono",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+
+    "tokens": {
+      "canvas": "#0A0A0A",
+      "ink": "#F0F0F0",
+      "ink_muted": "#7A7A7A",
+      "accent": "#37F712",
+      "hairline": "#1F1F1F"
     },
-    "three_things": {
+
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.005,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.10
+    },
+
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.0,
+      "lighting_arc": 0.18
+    }
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "pi-mono",
+      "eyebrow": "agent toolkit, minus the framework",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "stack",
       "eyebrow": "THE STACK",
       "items": [
-        {"name": "Coding CLI", "descriptor": "terminal harness"},
-        {"name": "LLM router", "descriptor": "one API, fifteen LLMs"},
-        {"name": "vLLM pods", "descriptor": "self-host the model"}
-      ]
+        {"name": "coding cli",  "descriptor": "terminal harness"},
+        {"name": "llm router",  "descriptor": "one api, fifteen llms"},
+        {"name": "vllm pods",   "descriptor": "self-host the model"}
+      ],
+      "camera": "static_breathe",
+      "duration_s": 3.5
     },
-    "problem": {
-      "line_a": "Most agent kits",
-      "line_b": "ship a framework.",
-      "accent_line": "b"
+    {
+      "template": "two_line",
+      "lines": ["most agent kits", "ship a framework."],
+      "accent_idx": 1,
+      "camera": "parallax_drift",
+      "duration_s": 3.0
     },
-    "specific_case": {
-      "line_a": "They pick your tools",
-      "line_b": "and your runtime",
-      "line_c": "before you start.",
-      "accent_line": "b"
+    {
+      "template": "fix",
+      "primary": "minimal core.",
+      "secondary": "you wire the rest.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 3.5
     },
-    "fix": {
-      "primary": "Minimal core.",
-      "secondary": "You wire the rest."
+    {
+      "template": "three_line",
+      "lines": ["one api.", "fifteen providers.", "zero opinions."],
+      "accent_idx": 2,
+      "camera": "ken_burns",
+      "duration_s": 3.5
     },
-    "mechanism": {
-      "line_a": "One LLM router.",
-      "line_b": "Fifteen providers.",
-      "line_c": "Zero opinions.",
-      "accent_line": "c"
-    },
-    "consequence": {
-      "line_a": "The harness fits",
-      "line_b": "your terminal and",
-      "line_c": "your head."
-    },
-    "close": {
-      "primary": "Minimal core.",
-      "accent": "You wire the rest.",
-      "subtitle": "what most agent kits skip."
+    {
+      "template": "close",
+      "primary": "minimal core.",
+      "accent": "you wire it.",
+      "subtitle": "the part most kits skip.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
     }
-  }
+  ]
 }
