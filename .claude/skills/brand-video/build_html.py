@@ -235,12 +235,12 @@ body {{
 }}
 @keyframes camCrashZoom {{
   0%   {{ transform: scale(1.00); }}
-  18%  {{ transform: scale(1.85); }}
-  100% {{ transform: scale(1.85); }}
+  18%  {{ transform: scale(1.40); }}
+  100% {{ transform: scale(1.40); }}
 }}
 @keyframes camOrbit {{
-  from {{ transform: perspective(1400px) rotateY(-7deg) scale(1.02); }}
-  to   {{ transform: perspective(1400px) rotateY(7deg)  scale(1.02); }}
+  from {{ transform: perspective(1100px) rotateY(-12deg) scale(1.04); }}
+  to   {{ transform: perspective(1100px) rotateY(12deg)  scale(1.04); }}
 }}
 @keyframes camParallaxDrift {{
   from {{ transform: translate(0.6%, 0) scale(1.04); }}
@@ -531,6 +531,40 @@ body {{
   opacity: 0;
 }}
 .dg-label.on-filled {{ fill: var(--canvas); }}
+
+.dg-grid {{
+  color: var(--ink-muted);
+  opacity: 0;
+  animation: dgGridFade 0.9s ease-out 0.1s forwards, dgGridDrift 14s linear infinite;
+}}
+@keyframes dgGridFade {{ to {{ opacity: 0.18; }} }}
+@keyframes dgGridDrift {{
+  from {{ transform: translate(0,0); }}
+  to   {{ transform: translate(-6px, -6px); }}
+}}
+
+.dg-node.accent {{
+  filter: drop-shadow(0 0 1.4px var(--accent)) drop-shadow(0 0 2.8px var(--accent));
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: dgPulse 1.6s ease-in-out 0.6s infinite;
+}}
+.dg-edge.accent {{
+  filter: drop-shadow(0 0 0.8px var(--accent));
+}}
+@keyframes dgPulse {{
+  0%, 100% {{ transform: scale(1.00); }}
+  50%      {{ transform: scale(1.05); }}
+}}
+
+.dg-particle {{
+  fill: var(--ink-muted);
+  opacity: 0;
+}}
+.dg-particle.accent {{
+  fill: var(--accent);
+  filter: drop-shadow(0 0 1.4px var(--accent)) drop-shadow(0 0 2.4px var(--accent));
+}}
 
 /* ---- flash ---- */
 .scene[data-tpl="flash"] {{ background: var(--accent); }}
@@ -840,12 +874,38 @@ def render_scene(idx, scene):
         eyebrow_div = (
             f'<div class="diagram-eyebrow">{esc(eyebrow)}</div>' if eyebrow else ""
         )
+
+        particles_svg = ""
+        for i, e in enumerate(edges):
+            if e.get("style") == "dashed":
+                continue
+            cls = "dg-particle"
+            if e.get("accent"):
+                cls += " accent"
+            # 2 staggered particles per edge so the flow reads as a stream not a single dot
+            for k in range(2):
+                particles_svg += (
+                    f'<circle class="{cls}" data-edge="{i}" data-phase="{k*0.5:.2f}" '
+                    f'r="1.4" cx="0" cy="0" />'
+                )
+
         return f"""
 <section class="scene" data-idx="{idx}" data-tpl="diagram"{extra_attrs}>
   {eyebrow_div}
   <svg class="diagram-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <filter id="dgGlow{idx}" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="0.9" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <pattern id="dgGrid{idx}" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+        <path d="M 6 0 L 0 0 0 6" fill="none" stroke="currentColor" stroke-width="0.12" />
+      </pattern>
+    </defs>
+    <rect class="dg-grid" x="0" y="0" width="100" height="100" fill="url(#dgGrid{idx})" />
     <g class="dg-edges">{edges_svg}</g>
     <g class="dg-nodes">{nodes_svg}</g>
+    <g class="dg-particles">{particles_svg}</g>
   </svg>
 </section>"""
 
@@ -1031,8 +1091,8 @@ function animateDiagram(el, t, dur) {
     eyebrow.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
   }
 
-  const nodeStart = eyebrow ? 0.30 : 0.05;
-  const nodeStep = 0.18;
+  const nodeStart = eyebrow ? 0.18 : 0.04;
+  const nodeStep = 0.10;
   for (let i = 0; i < nodes.length; i++) {
     const local = t - nodeStart - i * nodeStep;
     if (local < 0) {
@@ -1045,11 +1105,13 @@ function animateDiagram(el, t, dur) {
     if (labels[i]) labels[i].style.opacity = e.toFixed(3);
   }
 
-  const edgeStart = nodeStart + nodes.length * nodeStep + 0.10;
-  const edgeStep = 0.18;
+  const edgeStart = nodeStart + nodes.length * nodeStep + 0.06;
+  const edgeStep = 0.10;
+  const edgeEndOffsets = [];
   for (let i = 0; i < edges.length; i++) {
     const local = t - edgeStart - i * edgeStep;
     const dashed = edges[i].classList.contains("dashed");
+    edgeEndOffsets[i] = edgeStart + i * edgeStep;
     if (local < 0) {
       edges[i].style.opacity = dashed ? 0 : 1;
       if (!dashed) edges[i].style.strokeDashoffset = 200;
@@ -1062,6 +1124,33 @@ function animateDiagram(el, t, dur) {
       edges[i].style.strokeDashoffset = (200 * (1 - e)).toFixed(2);
       edges[i].style.opacity = 1;
     }
+  }
+
+  // Particles: flow along each non-dashed edge after it draws on. Loop.
+  const particles = el.querySelectorAll(".dg-particle");
+  for (let p = 0; p < particles.length; p++) {
+    const edgeIdx = parseInt(particles[p].getAttribute("data-edge"), 10);
+    const phase = parseFloat(particles[p].getAttribute("data-phase") || "0");
+    const edge = edges[edgeIdx];
+    const startedAt = edgeEndOffsets[edgeIdx] + 0.35;
+    const local = t - startedAt;
+    if (!edge || local < 0) {
+      particles[p].style.opacity = 0;
+      continue;
+    }
+    const path = edge.getAttribute("d") || "";
+    const m = path.match(/M\s*([\-\d.]+)\s+([\-\d.]+)\s*L\s*([\-\d.]+)\s+([\-\d.]+)/);
+    if (!m) continue;
+    const ax = parseFloat(m[1]), ay = parseFloat(m[2]);
+    const bx = parseFloat(m[3]), by = parseFloat(m[4]);
+    const period = 1.1;
+    const tNorm = ((local + phase * period) % period) / period;
+    const cx = ax + (bx - ax) * tNorm;
+    const cy = ay + (by - ay) * tNorm;
+    particles[p].setAttribute("cx", cx.toFixed(2));
+    particles[p].setAttribute("cy", cy.toFixed(2));
+    const fade = Math.min(1, Math.min(tNorm, 1 - tNorm) * 5);
+    particles[p].style.opacity = (0.95 * fade).toFixed(3);
   }
 }
 
@@ -1275,9 +1364,13 @@ async function play() {
   setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
 }
 
-play();
+// Wait for fonts so the first paint isn't unstyled.
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => requestAnimationFrame(() => requestAnimationFrame(play)));
+} else {
+  requestAnimationFrame(() => requestAnimationFrame(play));
+}
 """
-
 
 def build_html(spec):
     timeline, total_s, emphases = build_timeline(spec)
