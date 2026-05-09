@@ -1,45 +1,21 @@
 {
-  "preset_slug": "subway-chrome",
-  "framework": "RECEIPT",
-  "design_block": {
-    "tokens": {
-      "canvas": "#15171A",
-      "ink": "#F4F6FA",
-      "ink_muted": "#8B95A6",
-      "accent": "#7DD9FF",
-      "hairline": "#262A30"
-    },
-    "fonts": {
-      "display": "JetBrainsMono",
-      "body": "Inter",
-      "italic": "Inter"
-    },
-    "typography": {
-      "display_weight": 600,
-      "body_weight": 400,
-      "letter_spacing_em": -0.015,
-      "case": "preserve",
-      "italic_descriptors": false
-    },
-    "motion": {
-      "register": "fade",
-      "scene_in_s": 0.32,
-      "scene_out_s": 0.22,
-      "stagger_s": 0.22
-    },
-    "layout": {
-      "padding_pct": 7,
-      "rule_thickness_px": 1,
-      "stage_radius_px": 4
-    },
-    "texture": {
-      "grain": 0.04,
-      "vignette": 0.20,
-      "halation": 0.05,
-      "lighting_arc": 0.32
-    },
-    "audio_palette": "electronic",
-    "accent_contrast_min": 4.5,
-    "framework": "RECEIPT"
-  }
+  "date": "2026-05-09",
+  "iteration": 3,
+  "preset_slug": "gallery",
+  "framework": "CLASSIC",
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "gallery",
+    "framework": "CLASSIC",
+    "audio_palette": "ambient",
+    "held_subject": "proofshot",
+    "tokens":   {"canvas": "#FFFFFF", "ink": "#0E0E0F", "ink_muted": "#7B7B7E", "accent": "#1B5BFF", "hairline": "#E5E5E8"},
+    "fonts":    {"display": "IBMPlexSerif", "body": "Inter", "italic": "IBMPlexSerif"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.018, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade", "scene_in_s": 0.42, "scene_out_s": 0.27, "stagger_s": 0.30},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture":  {"grain": 0.03, "vignette": 0.10, "halation": 0.04, "lighting_arc": 0.22},
+    "accent_contrast_min": 4.5
+  },
+  "notes": "Gallery preset tokens lifted verbatim. Bumped halation from 0.0 -> 0.04 and lighting_arc from 0.14 -> 0.22 to clear the WOW gate's WARN floors (>= 0.20 lighting, > 0 halation). Audio palette ambient suits gallery's IBM Plex Serif gravity; music_select.py picked 'inspired' for the gallery/CLASSIC pairing."
 }

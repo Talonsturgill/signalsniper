@@ -1,111 +1,74 @@
 {
   "date": "2026-05-09",
-  "topic": "agentmemory, the persistent memory layer for coding agents",
-  "creator_handle": "@ghumare64",
-  "project_url": "https://github.com/rohitg00/agentmemory",
+  "topic": "ProofShot, eyes for AI coding agents",
+  "creator_handle": "@JBerthom",
+  "project_url": "https://github.com/AmElmo/proofshot",
+
   "design": {
     "brand_slug": null,
-    "aesthetic_slug": "subway-chrome",
-    "framework": "RECEIPT",
-    "audio_palette": "electronic",
-    "accent_contrast_min": 4.5,
-    "held_subject": "agentmemory",
-    "tokens": {
-      "canvas": "#15171A",
-      "ink": "#F4F6FA",
-      "ink_muted": "#8B95A6",
-      "accent": "#7DD9FF",
-      "hairline": "#262A30"
-    },
-    "fonts": {
-      "display": "JetBrainsMono",
-      "body": "Inter",
-      "italic": "Inter"
-    },
-    "typography": {
-      "display_weight": 600,
-      "body_weight": 400,
-      "letter_spacing_em": -0.015,
-      "case": "preserve",
-      "italic_descriptors": false
-    },
-    "motion": {
-      "register": "fade",
-      "scene_in_s": 0.32,
-      "scene_out_s": 0.22,
-      "stagger_s": 0.22
-    },
-    "layout": {
-      "padding_pct": 7,
-      "rule_thickness_px": 1,
-      "stage_radius_px": 4
-    },
-    "texture": {
-      "grain": 0.04,
-      "vignette": 0.20,
-      "halation": 0.05,
-      "lighting_arc": 0.32
-    }
+    "aesthetic_slug": "gallery",
+    "framework": "CLASSIC",
+    "audio_palette": "ambient",
+    "held_subject": "proofshot",
+    "tokens":   {"canvas": "#FFFFFF", "ink": "#0E0E0F", "ink_muted": "#7B7B7E", "accent": "#1B5BFF", "hairline": "#E5E5E8"},
+    "fonts":    {"display": "IBMPlexSerif", "body": "Inter", "italic": "IBMPlexSerif"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.018, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade", "scene_in_s": 0.42, "scene_out_s": 0.27, "stagger_s": 0.30},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture":  {"grain": 0.03, "vignette": 0.10, "halation": 0.04, "lighting_arc": 0.22},
+    "accent_contrast_min": 4.5
   },
+
   "scenes": [
     {
       "template": "title",
-      "headline": "agentmemory",
-      "eyebrow": "the layer your agent doesn't have",
-      "camera": "push_in",
-      "duration_s": 2.8
-    },
-    {
-      "template": "big_number",
-      "numeral": "95.2%",
-      "caption": "retrieval on LongMemEval-S.",
-      "sub": "hybrid search, no external db.",
-      "camera": "ken_burns",
-      "duration_s": 3.5
-    },
-    {
-      "template": "big_number",
-      "numeral": "92%",
-      "caption": "fewer tokens than built-in memory.",
-      "sub": "ten dollars a year, not five hundred.",
-      "camera": "ken_burns",
-      "duration_s": 3.5
-    },
-    {
-      "template": "diagram",
-      "eyebrow": "TRIPLE STREAM",
-      "nodes": [
-        {"label": "BM25",            "x": 18, "y": 30},
-        {"label": "vectors",         "x": 50, "y": 18},
-        {"label": "knowledge graph", "x": 82, "y": 30},
-        {"label": "RRF fuse",        "x": 50, "y": 62, "accent": true},
-        {"label": "agent context",   "x": 50, "y": 88, "filled": true}
-      ],
-      "edges": [
-        {"from": 0, "to": 3},
-        {"from": 1, "to": 3},
-        {"from": 2, "to": 3},
-        {"from": 3, "to": 4, "accent": true}
-      ],
+      "headline": "ProofShot",
+      "eyebrow": "eyes for coding agents",
       "camera": "orbit",
-      "duration_s": 4.5
-    },
-    {
-      "template": "fix",
-      "primary": "memory persists.",
-      "secondary": "across every session.",
-      "emphasize": true,
-      "camera": "crash_zoom",
       "duration_s": 3.0
     },
     {
+      "template": "terminal",
+      "title": "$ proofshot install",
+      "lines": [
+        "> recording session for /onboarding",
+        "> 14 frames written",
+        "> 2 console errors flagged",
+        "> proof.html bundle ready"
+      ],
+      "camera": "static_breathe",
+      "duration_s": 4.0
+    },
+    {
+      "template": "two_line",
+      "lines": ["AI coders build UI", "without seeing it."],
+      "accent_idx": 1,
+      "camera": "parallax_drift",
+      "duration_s": 3.0
+    },
+    {
+      "template": "fix",
+      "primary": "Now they look.",
+      "secondary": "before you trust.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "three_line",
+      "lines": ["the run, on video.", "the bugs, on the wall.", "the proof, in the PR."],
+      "accent_idx": 2,
+      "camera": "ken_burns",
+      "duration_s": 3.5
+    },
+    {
       "template": "close",
-      "primary": "your codebase.",
-      "accent": "stays loaded.",
-      "subtitle": "every tool, every tab, every restart.",
+      "primary": "Coders, with eyes.",
+      "accent": "and receipts.",
+      "subtitle": "verification for any agent.",
       "emphasize": true,
       "camera": "pull_back",
-      "duration_s": 3.2
+      "duration_s": 3.5
     }
   ]
 }
