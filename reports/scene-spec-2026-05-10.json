@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-10",
+  "topic": "react doctor agent skill, the diagnostic for agent-written react",
+  "creator_handle": "@aidenybai",
+  "project_url": "https://github.com/millionco/react-doctor",
+
+  "design": {
+    "framework": "MANIFESTO",
+    "audio_palette": "acoustic",
+    "accent_contrast_min": 3.0,
+    "held_subject": "react doctor",
+
+    "tokens":   {"canvas": "#F1E8D6", "ink": "#1F1A14", "ink_muted": "#8C7E68", "accent": "#D2371B", "hairline": "#D8CBB0"},
+    "fonts":    {"display": "Fraunces", "body": "Fraunces", "italic": "Fraunces"},
+    "typography": {"display_weight": 800, "body_weight": 400, "letter_spacing_em": -0.024, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "scale", "scene_in_s": 0.42, "scene_out_s": 0.25, "stagger_s": 0.30},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 2, "stage_radius_px": 6},
+    "texture":  {"grain": 0.10, "vignette": 0.22, "halation": 0.10, "lighting_arc": 0.36}
+  },
+
+  "scenes": [
+    {"template": "title",
+     "headline": "react doctor",
+     "eyebrow": "diagnostic for react codebases",
+     "duration_s": 3.0, "camera": "orbit"},
+
+    {"template": "big_number",
+     "numeral": "84K",
+     "caption": "projects scanned in 24 hours",
+     "sub": "47 rules across perf, a11y, dead code.",
+     "duration_s": 3.6, "camera": "ken_burns"},
+
+    {"template": "flash",
+     "word": "diagnose",
+     "caption": "0 to 100. one command.",
+     "duration_s": 2.8, "camera": "crash_zoom"},
+
+    {"template": "fix",
+     "primary": "bad react ships.",
+     "secondary": "this catches it.",
+     "emphasize": true,
+     "duration_s": 3.6, "camera": "push_in"},
+
+    {"template": "flash",
+     "word": "fix",
+     "caption": "scan. score. ship.",
+     "duration_s": 2.8, "camera": "crash_zoom"},
+
+    {"template": "close",
+     "primary": "scan, score, fix.",
+     "accent": "now an agent skill.",
+     "subtitle": "react doctor by aidenybai.",
+     "emphasize": true,
+     "duration_s": 3.6, "camera": "pull_back"}
+  ]
+}

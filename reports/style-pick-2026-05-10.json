@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-10",
+  "brand_slug": null,
+  "preset_slug": "editorial-90s",
+  "aesthetic_slug": "editorial-90s",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "Editorial-90s cream-and-red reads as medical journal / diagnostic chart, the right visual metaphor for a 'doctor' tool, and MANIFESTO color-burst beats sell the bold launch claim.",
+  "writing_tone_notes": "Builder-tier, declarative, lowercase where natural. Two-act punchlines (pain, then catch). Numbers do the proving. Short sentences. No sycophancy.",
+  "do_rules": [
+    "lead with the velocity number (84k scanned in 24h)",
+    "use color-burst flash beats to punctuate the manifesto claim",
+    "let the npm command be implied by the agent-skill close",
+    "credit aidenybai by handle in the close subtitle, not the title"
+  ],
+  "dont_rules": [
+    "don't repeat the project's own tagline verbatim in the X post AND the fix scene",
+    "don't lead the X caption with a version number",
+    "don't use react-doctor twice in scene copy outside the held-subject title",
+    "don't use the 47-rules phrasing in both the tweet and the big_number sub"
+  ]
+}
