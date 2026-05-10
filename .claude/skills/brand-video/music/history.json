@@ -8,5 +8,10 @@
     "date": "2026-05-09",
     "slug": "inspired",
     "project_url": "https://github.com/AmElmo/proofshot"
+  },
+  {
+    "date": "2026-05-10",
+    "slug": "local-forecast-elevator",
+    "project_url": "https://github.com/millionco/react-doctor"
   }
 ]
