@@ -1,0 +1,28 @@
+{
+  "source": "https://addyosmani.com",
+  "sampling_notes": [
+    "background sampled from site body (#151719, near-black charcoal)",
+    "ink set to white #FFFFFF for AAA contrast on the dark canvas",
+    "accent derived from site theme-color meta (#eb298c hot pink) bumped to #f04688 to clear WCAG AA against background",
+    "muted derived as 50% blend of ink toward background",
+    "rule derived as 90% blend of ink toward background"
+  ],
+  "visual_tone": "minimal-technical, dark-canvas, hot-pink accent, editorial",
+  "fallbacks_applied": [
+    "accent: #eb298c original brand pink failed contrast (4.46:1 below 4.5 minimum). Substituted #f04688 (5.08:1)."
+  ],
+  "theme": {
+    "background": "#151719",
+    "ink": "#FFFFFF",
+    "accent": "#F04688",
+    "muted": "#8A8B8C",
+    "rule": "#2C2E30",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "contrast_check": {
+    "ink_on_background": "17.97:1 (need 4.5)",
+    "accent_on_background": "5.08:1 (need 4.5)",
+    "muted_on_background": "5.27:1 (need 3.0)"
+  }
+}
