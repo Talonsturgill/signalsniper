@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-11",
+  "brand_slug": null,
+  "preset_slug": "claude",
+  "aesthetic_slug": "claude",
+  "framework": "DISPATCH",
+  "rationale_one_line": "Anti-repeat forces DISPATCH (the one unused framework), and it actually fits oMLX as a wire-report from the Apple Silicon local-LLM lane where peers credit Jun's cache design. The claude preset honors the Anthropic + Claude Code integration without copying yesterday's MANIFESTO register.",
+  "writing_tone_notes": "Build-in-public peer-to-peer, reportorial. Contractions where natural. The persistence is the headline, not the star count. Specifics over adjectives. Read like a field note, not a launch post.",
+  "do_rules": [
+    "Use the terminal scene as the wire-dispatch hero. Render a real-looking oMLX status snapshot.",
+    "Lead with the persistence claim, not the star count.",
+    "Include the peer-endorsement angle in the quote scene to honor the DISPATCH form."
+  ],
+  "dont_rules": [
+    "No version numbers anywhere in copy.",
+    "No 'fastest local LLM' superlative.",
+    "No repeating the tweet phrasing in scene copy or the Why-this-one."
+  ]
+}

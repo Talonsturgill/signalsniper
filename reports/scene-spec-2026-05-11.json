@@ -1,0 +1,71 @@
+{
+  "date": "2026-05-11",
+  "topic": "oMLX, the inference layer Apple Silicon was missing",
+  "creator_handle": "@jundotkim",
+  "project_url": "https://github.com/jundot/omlx",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "DISPATCH",
+    "audio_palette": "ambient",
+    "held_subject": "omlx",
+    "tokens":   {"canvas": "#F5EFE3", "ink": "#191919", "ink_muted": "#7C7C7C", "accent": "#A85A3F", "hairline": "#E2DAC8"},
+    "fonts":    {"display": "IBMPlexSerif", "body": "Inter", "italic": "IBMPlexSerif"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.018, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade", "scene_in_s": 0.40, "scene_out_s": 0.27, "stagger_s": 0.27},
+    "layout":   {"padding_pct": 8, "rule_thickness_px": 1, "stage_radius_px": 8},
+    "texture":  {"grain": 0.05, "vignette": 0.16, "halation": 0.04, "lighting_arc": 0.28},
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "oMLX",
+      "eyebrow": "dispatch from the Apple Silicon lane",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "terminal",
+      "title": "omlx status / localhost:8000",
+      "lines": [
+        "$ omlx launch claude",
+        "engine pool   ready  llm vlm embed rerank",
+        "kv cache      hot 14.2GB  cold 86GB ssd",
+        "prefix cache  rebuilt across restart  ok",
+        "decode        22.66 tok/s after warm cache"
+      ],
+      "camera": "parallax_drift",
+      "duration_s": 4.5
+    },
+    {
+      "template": "quote",
+      "quote": "L1 RAM. L2 SSD snapshot cache. Inspired by oMLX.",
+      "attribution": "bstn, dflash-mlx changelog",
+      "camera": "ken_burns",
+      "duration_s": 4.0
+    },
+    {
+      "template": "three_line",
+      "lines": [
+        "Hot RAM tier.",
+        "Cold SSD tier.",
+        "Cache survives a restart."
+      ],
+      "accent_idx": 2,
+      "camera": "orbit",
+      "duration_s": 4.0
+    },
+    {
+      "template": "close",
+      "primary": "Built in Seoul.",
+      "accent": "Shipped for your Mac",
+      "subtitle": "the inference layer Apple Silicon needed.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 4.5
+    }
+  ]
+}

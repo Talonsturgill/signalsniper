@@ -1,0 +1,13 @@
+{
+  "date": "2026-05-11",
+  "preset_slug": "claude",
+  "framework": "DISPATCH",
+  "tokens":   {"canvas": "#F5EFE3", "ink": "#191919", "ink_muted": "#7C7C7C", "accent": "#A85A3F", "hairline": "#E2DAC8"},
+  "fonts":    {"display": "IBMPlexSerif", "body": "Inter", "italic": "IBMPlexSerif"},
+  "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.018, "case": "preserve", "italic_descriptors": true},
+  "motion":   {"register": "fade", "scene_in_s": 0.40, "scene_out_s": 0.27, "stagger_s": 0.27},
+  "layout":   {"padding_pct": 8, "rule_thickness_px": 1, "stage_radius_px": 8},
+  "texture":  {"grain": 0.05, "vignette": 0.16, "halation": 0.04, "lighting_arc": 0.28},
+  "audio_palette": "ambient",
+  "accent_contrast_min": 3.0
+}
