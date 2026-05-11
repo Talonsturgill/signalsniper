@@ -35,5 +35,12 @@
     "aesthetic_slug": "editorial-90s",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/millionco/react-doctor"
+  },
+  {
+    "date": "2026-05-11",
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "DISPATCH",
+    "project_url": "https://github.com/jundot/omlx"
   }
 ]
