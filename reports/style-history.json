@@ -42,5 +42,12 @@
     "aesthetic_slug": "claude",
     "framework": "DISPATCH",
     "project_url": "https://github.com/jundot/omlx"
+  },
+  {
+    "date": "2026-05-12",
+    "brand_slug": null,
+    "aesthetic_slug": "geominimal",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/tinyhumansai/openhuman"
   }
 ]
