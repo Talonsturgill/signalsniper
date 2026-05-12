@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-12",
+  "brand_slug": null,
+  "preset_slug": "geominimal",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "OpenHuman's value is structural (the subconscious loop + memory tree), so the diagram-led SCHEMATIC framework carries it; geominimal's bold color blocks read as confident builder-tier infra, the opposite of cozy lab-bench, which fits Steven's deep-tech-engineer voice.",
+  "writing_tone_notes": "Bold declarative. No mascot cuteness. Honor the architecture. Contractions where natural. Lead with the loop, land on ownership.",
+  "do_rules": [
+    "Diagram beat is the visual hero. Show the loop, not the mascot.",
+    "Use 'memory tree' and 'subconscious loop' as named primitives.",
+    "Close on ownership, not on stars or downloads."
+  ],
+  "dont_rules": [
+    "No version number in any copy surface.",
+    "No mascot, no Google Meets gimmick in the scenes. That's for the dossier and the why-this-one only.",
+    "No phrase overlap between tweet, why-this-one, and scene copy.",
+    "No claim that OpenHuman is the first or the only of anything."
+  ],
+  "music_constraint_notes": "Available unused tracks: backed-vibes-clean (preset hit on geominimal), decisions (preset hit on geominimal). Both work; selector will pick by score. SCHEMATIC isn't in either track's frameworks list, so the tiebreaker is preset hit + duration, which favors backed-vibes-clean (228.4s vs 88.6s)."
+}
