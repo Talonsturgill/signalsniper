@@ -1,0 +1,13 @@
+[
+  {
+    "issue": 1,
+    "week_start": "2026-05-07",
+    "week_end": "2026-05-13",
+    "hero_project": "needle",
+    "hero_creator": "@hmunachii",
+    "through_line": "On-device AI crossed an architectural threshold, not just a marketing one.",
+    "final_grader_total": 89,
+    "shipped_under_bar": false,
+    "revision_passes_used": 3
+  }
+]

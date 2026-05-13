@@ -1,0 +1,31 @@
+[
+  {
+    "pass": 1,
+    "edits_made": 8,
+    "filler_cut": 4,
+    "vague_replaced": 0,
+    "lines_before": 108,
+    "lines_after": 107,
+    "voice_improvements": [
+      "Cold open: tightened temporal framing",
+      "Pattern paragraph: cut throat-clearing opener, replaced with direct attribution sentences",
+      "Pattern paragraph: 'What this obscures' clause promoted to its own sentence",
+      "Watching section: trimmed 'explicitly credits' to 'credits'",
+      "Watching section: removed 'just' as a softening hedge",
+      "Closing: cut 'All reachable online' as redundant after 'Five builders'",
+      "Code section: cut 'in order' as redundant",
+      "Manual user revision applied independently — kept current file state as authoritative"
+    ]
+  },
+  {
+    "pass": 2,
+    "edits_made": 1,
+    "filler_cut": 0,
+    "vague_replaced": 0,
+    "lines_before": 107,
+    "lines_after": 107,
+    "voice_improvements": [
+      "OpenHuman card: corrected version range claim per Fact Validator (REVISE on disputed claim). Was 'v0.53.35 through v0.53.43, merging 130+ PRs' which implied a contiguous range and attributed all PRs across all three releases. Now 'v0.53.35, v0.53.40, v0.53.43, with v0.53.35 merging 130+ PRs' which matches the research data exactly."
+    ]
+  }
+]

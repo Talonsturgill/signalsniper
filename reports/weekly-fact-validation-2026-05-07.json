@@ -1,0 +1,42 @@
+{
+  "verdict": "APPROVED",
+  "passes": [
+    {
+      "pass": 1,
+      "verdict": "REVISE",
+      "claims_total": 30,
+      "verified": 29,
+      "disputed": 1,
+      "disputed_claims": [
+        {
+          "claim": "Three releases dropped May 13 alone (v0.53.35 through v0.53.43, merging 130+ PRs)",
+          "location": "OpenHuman card",
+          "suggested_fix": "Change to '(v0.53.35, v0.53.40, v0.53.43), with v0.53.35 alone merging 130+ PRs' — the 130+ PR count applies only to v0.53.35, and the actual releases are not a contiguous range."
+        }
+      ]
+    },
+    {
+      "pass": 2,
+      "verdict": "REVISE",
+      "claims_total": 18,
+      "verified": 17,
+      "disputed": 1,
+      "disputed_claims": [
+        {
+          "claim": "53 models published on the Cactus-Compute Hugging Face org, including LFM2.5-VL multimodal, Parakeet and Whisper speech variants, and Qwen3 conversions",
+          "location": "Forward-looker, Cactus bullet",
+          "suggested_fix": "Remove the specific model name enumeration; keep only the verified '53 models' count."
+        }
+      ]
+    },
+    {
+      "pass": 3,
+      "verdict": "APPROVED",
+      "claims_total": 11,
+      "verified": 11,
+      "disputed": 0,
+      "summary": "Both prior DISPUTED claims fixed. All 11 spot-checked facts (Needle stars/HN, oMLX decode/release, OpenHuman release range, agentmemory metadata) verified against research JSON. Six opinion statements properly marked with 'I' or 'My' framing."
+    }
+  ],
+  "final_summary": "Three passes, two DISPUTED claims caught and corrected, final SHIP-state: zero unverified factual claims remain in the published post."
+}

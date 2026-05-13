@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "date": "2026-05-13",
+    "project_slug": "needle",
+    "score": 28,
+    "breakdown": {"momentum": 9, "novelty": 10, "resonance": 9},
+    "scoring_notes": "444 HN points + top AI/ML story of the day + 795→1300 stars in 18h (momentum 9). No feedforward layers in a 26M distilled function-calling model is a genuine architectural research bet, not a config tweak (novelty 10). 4x ICLR + YC S25 + Cactus 4.8k-star backing puts the creator in the highest credibility tier for the on-device/research lane (resonance 9)."
+  },
+  "mentions": [
+    {
+      "rank": 2,
+      "date": "2026-05-11",
+      "project_slug": "omlx",
+      "score": 24,
+      "breakdown": {"momentum": 7, "novelty": 9, "resonance": 8},
+      "scoring_notes": "13.5k stars + daily trending (momentum 7 — strong base but slower velocity than Needle). SSD KV cache persistence across restarts is genuinely novel in the Apple Silicon inference lane (novelty 9). Infra + on-device lane fit is clean; solo Seoul builder with peer-citation from dflash-mlx (resonance 8)."
+    },
+    {
+      "rank": 3,
+      "date": "2026-05-10",
+      "project_slug": "react-doctor",
+      "score": 23,
+      "breakdown": {"momentum": 8, "novelty": 7, "resonance": 8},
+      "scoring_notes": "84k projects scanned in 24h + 806 new stars/day is the strongest raw velocity in the set (momentum 8). Agent-skill integration is a fresh angle but React auditing itself isn't novel (novelty 7). Tooling + agents lane, @aidenybai has 67k followers (resonance 8)."
+    },
+    {
+      "rank": 4,
+      "date": "2026-05-12",
+      "project_slug": "openhuman",
+      "score": 22,
+      "breakdown": {"momentum": 7, "novelty": 8, "resonance": 7},
+      "scoring_notes": "+366 stars in 24h, v0.53.22 release cadence (momentum 7). Subconscious loop + Obsidian-readable memory is architecturally distinct from request/response agents (novelty 8). Local-first + agents lane, but GPL3 limits enterprise adoption discussion (resonance 7)."
+    },
+    {
+      "rank": 5,
+      "date": "2026-05-09",
+      "project_slug": "proofshot",
+      "score": 20,
+      "breakdown": {"momentum": 7, "novelty": 6, "resonance": 7},
+      "scoring_notes": "161 HN upvotes + topped Show HN is strong signal but 817 stars is the smallest base in the set (momentum 7). Agent verification is useful but the category exists (novelty 6). Agents + tooling lane, Singapore solo builder fits the voice (resonance 7)."
+    }
+  ],
+  "no_hero_this_week": false
+}
