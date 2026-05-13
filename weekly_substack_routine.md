@@ -36,6 +36,41 @@ Substack auto-embeds when you paste a URL **alone on its own line** for these do
 
 Substack does **not** allow custom HTML/CSS in the editor. Do not generate `<div>`, `<iframe>`, or `<style>` tags. The post is pure markdown plus URL-on-its-own-line embeds plus code fences.
 
+## Substack Scorecard (the bar to ship)
+
+Every issue is graded against this 100-point scorecard by the Grader (Step 13). **The post does not ship until the Grader returns `SHIP` (total ≥ 85 AND no single axis below 50% of its max).** Below the bar, the routine loops back to the Editor with the Grader's specific failures. Maximum 4 revision passes. After pass 4 still below 85, the routine ships the best-scoring draft and prepends a `## DID NOT MEET BAR` block to the **Gmail body only — never the post itself**. The user decides whether to publish, hold, or rewrite by hand.
+
+**Hard rule on failure-note placement.** The `## DID NOT MEET BAR` block, any Critic failures, the full Grader scorecard, and the revision-loop history live in the **Gmail body only**. They never appear in `reports/weekly-$WEEK_START.md`. The Substack-ready post stays clean. The user sees the grading; the readers don't.
+
+The rubric is built from how the top performers actually win: Stratechery (specificity + anticipation), Lenny's Newsletter (frameworks + data + no fluff), Casey Newton's Platformer ("do work for readers" — original analysis over aggregation), Latent Space (single technical voice), AlphaSignal (compact signal-density), Ben Thompson (visuals + anticipation). The weights below reflect what these newsletters share, not generic best-practice.
+
+| # | Axis | Weight | What earns points | Echoes |
+|---|---|---|---|---|
+| 1 | **Hook strength** | 12 | Subject line + cold open work as one unit. Sentence 1 of the cold open is a concrete observation — a number, a named moment, a contradiction. Reader can't skip to the hero without losing context. | AlphaSignal data-leading; Stratechery specificity |
+| 2 | **Single-voice authority** | 14 | All original prose (cold open, pattern, closing) reads as one specific human. Consistent register. The reader knows who's writing every sentence. Voice trust is what converts free → paid. | Casey Newton; Latent Space; Ben Thompson |
+| 3 | **Original analysis over aggregation** | 16 | The Pattern Paragraph carries an insight the reader could not get by following the same X accounts. Not "look at these 7 things" — "here's what these 7, taken together, mean." Single biggest predictor of paid conversion. | Casey Newton "do work for readers"; Ben Thompson |
+| 4 | **Specificity & evidence** | 14 | Named handles, repo names, commit hashes, dates, real numbers throughout. Each section ≥ 3 concrete data points. Every generic claim either gets replaced with a verifiable one or cut. | Lenny's data-driven; Stratechery |
+| 5 | **Curator's edge** | 12 | The 7 picks tell a coherent story. There's a defensible reason why these 7 and not 70 others. The Hero pick earns its slot with cited reasoning. The Lede is a moment (date + action + consequence), not a description. | Casey Newton "lighthouse" |
+| 6 | **Anticipation** | 10 | "What I'm watching this week" makes concrete, contestable predictions. Reader leaves with a usable mental model, not a list of facts. The forward look feels like a real bet. | Stratechery's anticipation |
+| 7 | **Anti-mush & variety** | 12 | Zero banned phrases (full list below). No filler transitions. Mention cards open with varied verbs. No card paraphrases its corresponding daily X caption. Each banned-phrase instance: −2 (capped at axis max). | Lenny's "fluff-free" |
+| 8 | **Structural craft & embeds** | 6 | Scannable structure. MP4 + GIF + Gist + Datawrapper all render and reinforce the editorial. Each visual carries one specific idea, not decoration. Subheads earn their lines. | Ben Thompson's diagrams |
+| 9 | **Closing landing** | 4 | One clear ask, not three. Zero begging ("subscribe", "share", "like"). Lands on a concrete forward-look or a direct reader instruction. | Casey Newton "do a job for the reader" |
+|   | **TOTAL** | **100** | **Bar: 85, no single axis < 50% of its max** | |
+
+### Banned phrases (Anti-mush axis deductions)
+
+The Grader penalizes each instance in **editorial copy** (cold open, pattern paragraph, hero dossier writing, mention cards, closing). **Carve-out: direct quotes from creators in the Hero Quote section are exempt** — a creator saying "this is amazing" is their voice, not ours.
+
+- **Genre-cliché openers:** "this week", "in this issue", "welcome back", "another week of", "it's been", "friends,", "happy [day]"
+- **AI-smell phrases:** "let's dive in", "let's explore", "buckle up", "without further ado", "join me", "dive into", "deep dive", "in this post", "throughout this article", "as we'll see", "stay tuned", "spoiler alert"
+- **Hype words:** revolutionary, game-changing, paradigm, unprecedented, watershed, breathtaking, mind-blowing, incredible, amazing, impressive, stunning, remarkable, extraordinary, exceptional
+- **Vague verbs:** leverages, utilizes, enables, empowers, facilitates, harnesses, unlocks, drives, fosters, cultivates
+- **Vague quantifiers:** many, various, several, a number of, a few, some, tons of, a lot of, multiple, numerous
+- **Filler transitions:** furthermore, moreover, additionally, in conclusion, to summarize, it's worth noting, interestingly, notably, indeed, in fact
+- **Prediction filler:** "the future of", "what's next for", "this is just the beginning", "we're entering an era", "this changes everything"
+
+The Voice Editor (Step 8) writes original prose toward this scorecard. The Editor (Step 11) line-edits against it. The Grader (Step 13) enforces it.
+
 ## Inputs available from the daily routine
 
 Per day in the last 7-day window, the daily routine has produced:
@@ -357,31 +392,83 @@ If you cannot find 3 strong candidates, surface 2. Better short and tight than p
 
 **Role.** You are the Voice Editor. You write the only fully-original prose in the post: the cold open, the pattern-of-the-week paragraph, and the closing.
 
-**These three sections carry the editorial voice.** If they sound like AI mush, the whole post deflates. Budget real attention here.
+**These three sections carry the editorial voice.** If they sound like AI mush, the whole post deflates. You are writing toward the Substack Scorecard from the top of this routine — specifically the Hook (12), Single-voice authority (14), Original analysis (16), Specificity (14), and Anti-mush (12) axes. Out of 100 total points, your three sections account for the majority of grading exposure. Budget real attention.
 
 ### A. Cold open (≤ 110 words)
 
-Forbidden openers: "This week", "Welcome back", "In this issue", "It's been", "Another week of", "Friends,", any greeting at all.
+**The move that earns this section.** One concrete, specific observation in sentence one — a number, a counted fact, a named moment, a contradiction. The reader has to feel "wait, what?" within five seconds.
 
-Required: open on a concrete observation, a number, or a tension. Examples that work:
-- "Three of the seven projects we tributed this week were built by people under 25."
-- "The week's most-starred AI repo wasn't an agent framework. It was a 26M-parameter model that fits on a phone."
-- "Six of seven creators we featured this week shipped from outside the Bay Area."
+**Forbidden openers** (instant Grader Hook-axis loss):
+- Any greeting ("Friends,", "Hey there,", "Happy Sunday")
+- Any meta-frame ("This week", "In this issue", "Welcome back", "Another week of", "It's been")
+- Any "let's" construction ("Let's dive in", "Let's talk about", "Let's start with")
 
-Then 2–3 sentences that frame the week's tension or theme. End with one sentence that names the All-Star without yet revealing why.
+**Structural requirements:**
+1. Sentence 1: one concrete observation. Number, named moment, or contradiction.
+2. Sentences 2–4: frame the week's tension or theme.
+3. Final sentence: name the All-Star by project + @handle, but do NOT yet reveal why. The reveal lives in the Hero section.
+
+**Examples that pass (write toward these):**
+
+> Three of the seven projects we tributed this week were built by people under 25. Two shipped from outside the United States. None used a frontier lab's API. The week's most-starred AI repo wasn't an agent framework. It was a 26M-parameter model that fits on a phone. That one belongs to @hmunachii.
+
+> Star velocity is a lagging indicator. By the time a repo trends, the bet is half-made. This week, four of our seven picks had under 500 stars at tribute time and two have crossed 5,000 since. We watched the inflection in real time. The clearest case is @senamakel's OpenHuman.
+
+**Examples that fail (and what kills them):**
+
+> Welcome to another week of AI All Stars Weekly! This week was incredible, with so many amazing projects to share. Let's dive into what we covered...
+
+Failure: greeting + meta-frame + two hype words + "let's dive". Costs Hook, Voice, and Anti-mush axes simultaneously. ~12 points gone in one paragraph.
 
 ### B. Pattern of the week (≤ 130 words)
 
-Take the through-line from Step 3 (the Trend Analyst). Restate it in the user's voice, weave in 2–3 of the supporting picks by name, and end with the counter-signal (what this trend obscures or what's NOT in the data). If Step 3 returned `through_line: null`, write a 90-word "observations without a thesis" paragraph instead — and own that framing explicitly.
+**The move that earns this section.** One contestable observation that someone could disagree with — supported by evidence from three specific picks and one counter-signal (what this trend obscures or what's NOT in the data).
+
+This is the section that earns the Original Analysis axis (16 pts) — by far the biggest weight. The Pattern paragraph is what makes the issue worth more than the X feed it summarizes.
+
+**Structural requirements:**
+1. Sentence 1: the through-line from the Trend Analyst (Step 3), in the user's voice. ≤ 16 words. Declarative.
+2. Sentences 2–4: weave in 2–3 of the supporting picks by name + @handle + one concrete fact each.
+3. Final sentence: the counter-signal.
+
+If Step 3 returned `through_line: null`, write an "observations without a thesis" paragraph instead — own the framing explicitly ("There wasn't a clear through-line this week. Here's what stood out individually:").
+
+**Examples that pass:**
+
+> The agent-tooling layer is consolidating around MCP. Three of the seven picks shipped MCP servers this week. @hmunachii's Needle wraps it for on-device. @JBerthom's ProofShot adopted it as primary transport. @senamakel's OpenHuman makes MCP the default integration surface. What this obscures: the protocol itself is six months old, and the consolidation is happening before anyone has measured whether it's actually a good API.
+
+**Examples that fail:**
+
+> This week had a lot of interesting trends in AI. Many builders are working on agents, which is exciting. The future of AI looks bright as we see more innovation in this space.
+
+Failure: vague quantifier + two hype words + prediction filler + no specific picks named + no counter-signal. ~13 points gone.
 
 ### C. Closing (≤ 70 words)
 
-One paragraph. Acknowledge the work the seven creators did, point to the Forward-Looker section, and one direct ask: "Forward this to one builder who'd appreciate it" or "Reply with a project we missed." Pick one ask, not both — the post is not a CTA carnival.
+**The move that earns this section.** One direct, specific ask — not a CTA carnival.
 
-**Hard rules.**
-- All three sections written in the user's voice — contractions, no superlatives, no em dashes, no semicolons.
-- Zero phrase overlap with the Hero Dossier or Honorable Mentions (the Critic checks).
-- No platform plugs in the closing ("subscribe", "share", "like" — all banned). The forward ask is the only CTA.
+**Structural requirements:**
+1. Sentence 1–2: acknowledge the work, point to the Forward-Looker section.
+2. Final sentence: ONE ask. Either "Forward this to one builder who'd appreciate it" OR "Reply with a project we missed." Pick one.
+
+**Forbidden in closings:**
+- "Subscribe", "share", "like", "follow", "join us"
+- Multi-CTA stacks
+- Generic sign-offs ("Until next week", "Talk soon", "Stay safe")
+- Em dashes, semicolons
+
+**Example that passes:**
+
+> Seven builders shipped this week's picks. They're all online and reachable, so go say something useful to them. The Forward-Looker section names three more I'm watching for next Sunday. Reply with a project we missed.
+
+**Hard rules across all three sections:**
+- All written in the user's voice — contractions, no superlatives, no em dashes, no semicolons.
+- Zero phrase overlap with the Hero Dossier or Honorable Mentions (Critic checks; Grader also penalizes).
+- Vary sentence length within each section. Don't write three short sentences in a row; don't write three long ones.
+- Every section must contain at least one concrete number, date, or @handle. The Fact Validator (Step 13) will verify them against primary sources.
+- Read each section aloud (in your head) before passing to the Assembler. If it sounds like AI wrote it, rewrite.
+
+**Output.** Stage the three sections in memory; the Assembler will compose the final post.
 
 ## Step 9 — Visualizer
 
@@ -521,37 +608,296 @@ $GIST_URL
 }
 ```
 
-## Step 11 — Critic `[PARALLEL SUBAGENT × 1]`
+## Step 11 — Editor `[PARALLEL SUBAGENT × 1]`
 
-**Role.** You are the Critic. You read the final post with fresh eyes and refuse to ship anything that fails the checks.
+**Role.** You are the Editor. The Voice Editor (Step 8) wrote the original prose; the Assembler (Step 10) stitched everything together. Your job is to line-edit the assembled post for voice integrity, specificity, and AI-smell removal before the Critic, Fact Validator, and Grader see it. The bar is professional: edit the way a Substack editor at a real publication would edit, not the way an AI would auto-suggest improvements.
 
-**Procedure.** Spawn one subagent via `Agent` (subagent_type: `general-purpose`) and pass it `reports/weekly-$WEEK_START.md` plus the manifest and ranking JSONs.
+**Procedure.** Spawn one subagent via `Agent` (subagent_type: `general-purpose`).
 
 **Subagent prompt template:**
 
-> You are the Critic for AI All Stars Weekly. Read `reports/weekly-$WEEK_START.md`. Run these checks:
+> You are the Editor for AI All Stars Weekly. Read `reports/weekly-$WEEK_START.md`. Your job is four explicit passes.
 >
-> 1. **Phrase-overlap.** No three-or-more-word phrase appears in both the cold open and the hero section, or the hero section and any mention card, or the pattern paragraph and the closing. Flag every offender with section pair + phrase.
+> **Pass 1 — Voice.** Read the cold open, pattern paragraph, and closing in your head. Does each sound like one specific human wrote it, or does it have AI-smell? AI-smell signatures:
+> - Smooth transitions that don't earn themselves ("Furthermore", "Additionally", "In conclusion", "Moreover")
+> - Filler that adds words without information ("It's worth noting that", "Interestingly", "Importantly", "Notably")
+> - Genre conventions ("Let's dive in", "Buckle up", "Without further ado", "Stay tuned")
+> - Vague verbs (leverages, utilizes, empowers, drives, fosters, harnesses)
+> - Predictions ("The future of X is", "We're entering an era of", "This changes everything")
 >
-> 2. **Sycophancy.** Search for: amazing, incredible, impressive, mind-blowing, game-changing, revolutionary, paradigm, unprecedented, watershed, breathtaking, stunning. Each occurrence is a failure.
+> For each instance: rewrite the sentence to be more direct, more specific, or more concrete. Cut filler entirely. Do not soften or rephrase. Cut.
 >
-> 3. **Punctuation.** No em dashes (—), no en dashes (–), no semicolons (;). Asterisks for emphasis are OK. Flag every offender.
+> **Pass 2 — Specificity.** For every vague claim, replace with a concrete one:
+> - "many builders" → name them with @handles
+> - "a lot of momentum" → cite the actual number
+> - "several projects" → use the actual count ("three" or "five")
+> - "various lanes" → name the lanes
+> - "interesting work" → say specifically what is interesting and to whom
 >
-> 4. **Version numbers in headlines.** Any heading or first sentence of a section that contains a version number (`v0.74`, `4.5.2`, etc.) fails.
+> If you can't replace a vague phrase with a concrete one (because the data isn't in the manifest or research blob), cut the sentence entirely.
 >
-> 5. **Embed compliance.** Every line that is a URL alone must be a Substack-supported embed domain (see embed contract in the routine). Flag any standalone URL that won't auto-embed.
+> **Pass 3 — Cadence.** Vary sentence length. Three short sentences in a row create rhythm; four create monotony. Three long sentences in a row lose the reader. Mix short and long deliberately. If the prose has a metronomic quality, break it up.
 >
-> 6. **Factual claims.** Star counts, HN points, dates, and creator handles appear verifiable. Spot-check 3 random claims by WebFetch and report mismatches.
+> **Pass 4 — Cuts.** Cut any sentence that doesn't earn its place. Cut adjectives that don't add information ("really interesting" → "interesting"). Cut adverbs ("really", "very", "quite", "actually", "literally", "basically"). Cut hedges ("perhaps", "it seems", "arguably") unless the hedge carries real meaning.
 >
-> 7. **Voice integrity.** Read the cold open, the pattern paragraph, and the closing. Does each sound like one person wrote them — not a template? Each section should have one distinct concrete detail or specific phrasing that AI mush would not produce. Flag any section that reads as generic.
+> **Goal:** the post should be shorter when you finish, not longer. If the post grew, you did it wrong.
 >
-> 8. **Length budget.** Total post 1,400–2,400 words. Cold open ≤ 110 words. Hero section ≤ 350 words. Each mention card ≤ 80 words. Closing ≤ 70 words.
+> **Output.** Return the full revised markdown as the file content (not a diff). Plus a JSON summary at the end:
 >
-> Return: `{"verdict": "APPROVED" | "REVISE", "failures": [{"check": "...", "location": "...", "details": "..."}]}`.
+> ```json
+> {
+>   "edits_made": N,
+>   "filler_cut": N,
+>   "vague_replaced": N,
+>   "lines_before": N,
+>   "lines_after": N,
+>   "voice_improvements": ["one-line description per improvement"]
+> }
+> ```
 
-If `verdict: REVISE`, apply the fixes — phrase rewrites, embedding swaps, length cuts — and re-run the Critic up to 2 more times. After 3 failed passes, ship the latest version with a `## Known issues` block at the bottom of the Gmail body (NOT the post itself), and proceed.
+**On revision passes (after pass 1):** the orchestrator routes Grader / Validator / Critic failures back to the Editor with a targeted prompt — "Address these specific failures: [list]." On revision passes the Editor focuses ONLY on the named failures and does not re-edit content that already passed.
 
-## Step 12 — Notes Generator
+**Output.** Overwrite `reports/weekly-$WEEK_START.md` with the Editor's revision. Append the JSON summary to `reports/weekly-editor-pass-$WEEK_START.json` (one entry per pass, in order).
+
+## Step 12 — Critic `[PARALLEL SUBAGENT × 1]`
+
+**Role.** You are the Critic. You check the post for **mechanical rule violations** only. Quality judgment (voice, specificity, original analysis) lives with the Grader in Step 14. Factual accuracy lives with the Fact Validator in Step 13. Your job is fast, surgical, and disqualification-only — if a rule is broken, the post cannot ship until it's fixed.
+
+**Procedure.** Spawn one subagent via `Agent` (subagent_type: `general-purpose`).
+
+**Subagent prompt template:**
+
+> You are the Critic for AI All Stars Weekly. Read `reports/weekly-$WEEK_START.md`. Run these six checks and ONLY these checks. Quality and factual accuracy are graded separately by other agents.
+>
+> 1. **Phrase-overlap.** No three-or-more-word phrase appears in both the cold open and the hero section, the hero section and any mention card, or the pattern paragraph and the closing. Flag every offender with section pair + phrase.
+>
+> 2. **Punctuation.** No em dashes (—), no en dashes (–), no semicolons (;). Asterisks for emphasis are OK. Flag every offender with line number.
+>
+> 3. **Version numbers in headlines.** Any H1/H2/H3 heading or first sentence of a section that contains a version number (v0.74, 4.5.2, etc.) fails.
+>
+> 4. **Embed compliance.** Every line that is a URL alone must be a Substack-supported embed domain (see embed contract in routine). Flag any standalone URL that won't auto-embed.
+>
+> 5. **Length budget.** Total post 1,400–2,400 words. Cold open ≤ 110 words. Hero section ≤ 350 words. Each mention card ≤ 80 words. Closing ≤ 70 words. Flag any overrun with the actual count.
+>
+> 6. **Structural integrity.** Required sections present in correct order: cold open, hero, pattern, mention cards (6), code highlights, what I'm watching, closing. Required embeds: hero MP4, 6 mention GIFs, Datawrapper placeholder, Gist URL.
+>
+> Return JSON:
+>
+> ```json
+> {
+>   "verdict": "APPROVED" | "REVISE",
+>   "failures": [
+>     {"check": "phrase-overlap | punctuation | versions | embeds | length | structure",
+>      "location": "section name or line number",
+>      "details": "what specifically failed"}
+>   ]
+> }
+> ```
+
+If `verdict: REVISE`, route to the Editor (Step 11) with the failures as targeted prompt. Re-run Critic. Counts as one revision pass against the 4-pass cap (managed in Step 14).
+
+## Step 13 — Fact Validator `[PARALLEL SUBAGENT × 1, STRICT]`
+
+**Role.** You are the Fact Validator. You re-verify every factual claim in the post against primary sources. The bar: every numeric, dated, quoted, or attributed claim must trace to a live URL. Unverifiable claims must be cut or hedged. Disputed claims are hard fails.
+
+**Why this matters.** The newsletter's authority compounds across issues. One bad star-count cited as fact destroys trust faster than ten great paragraphs build it. The user also publishes the source list publicly (see Step 16 Gmail delivery) — every claim must be defendable to a reader who clicks the source.
+
+**Procedure.** Spawn one subagent via `Agent` (subagent_type: `general-purpose`).
+
+**Subagent prompt template:**
+
+> You are the Fact Validator for AI All Stars Weekly. Read `reports/weekly-$WEEK_START.md`.
+>
+> **Extract every factual claim** in editorial copy. Direct quotes from creators are exempt from claim-truth verification (verify the quote is accurate and the source URL is real, not whether the quoted creator's claim is objectively true). Build a claims list covering:
+>
+> - Star counts ("3,400 stars", "crossed 50k")
+> - Star velocity ("added 800 stars this week")
+> - HN points ("444 points on Hacker News")
+> - Dates and times ("Thursday at 2:14am", "shipped this week", "merged Oct 17")
+> - Version numbers and release names
+> - Creator metadata (location, employer, prior work, title)
+> - Repository facts (file count, language, license, contributors, commit hashes)
+> - Quote attributions — verify the quote AND that the source URL resolves AND the quote actually appears on the source page
+> - Funding / company claims ("YC W24", "$3M raised") — highest-risk; require primary source
+> - Any "first" / "biggest" / "smallest" claim
+>
+> **Verify each claim against a primary source:**
+>
+> - GitHub: WebFetch the repo or use GitHub MCP tools to verify stars, commits, file paths, releases, contributors
+> - HN: WebFetch the HN thread URL or `hn.algolia.com`
+> - Creator quotes: WebFetch the source URL the Hero Dossier Writer cited; confirm the quote appears verbatim
+> - X claims: search and verify with a live tweet URL
+> - Company / funding: primary source only (YC profile, official announcement, SEC filing). Decline to verify TechCrunch-style secondary claims; flag UNVERIFIABLE and recommend hedge.
+>
+> **Output JSON, exactly:**
+>
+> ```json
+> {
+>   "verdict": "APPROVED" | "REVISE",
+>   "claims": [
+>     {
+>       "claim": "verbatim phrase from the post",
+>       "location": "section name + approximate line",
+>       "status": "VERIFIED" | "DISPUTED" | "UNVERIFIABLE",
+>       "source_url": "https://...",
+>       "source_evidence": "what the source actually says (one sentence)",
+>       "suggested_fix": "if DISPUTED: corrected value. If UNVERIFIABLE: 'cut this sentence' or 'hedge to roughly X'."
+>     }
+>   ],
+>   "summary": {"total": N, "verified": N, "disputed": N, "unverifiable": N}
+> }
+> ```
+>
+> **Verdict rules:**
+> - APPROVED: every claim is VERIFIED. Zero exceptions.
+> - REVISE: any claim is DISPUTED or UNVERIFIABLE.
+
+**Output files.**
+- `reports/weekly-fact-validation-$WEEK_START.json` — the full claims list
+- `reports/weekly-sources-$WEEK_START.md` — formatted source list for the Gmail / public comment dump:
+
+```markdown
+# Sources cited — AI All Stars Weekly Issue $ISSUE_NUMBER
+
+Every factual claim in this issue is sourced. Drop this list as a comment under the published Substack post (or as a reply on X) to make the issue fully auditable.
+
+## Star counts and momentum
+- $CLAIM_1 — [$source_label_1]($URL_1)
+- $CLAIM_2 — [$source_label_2]($URL_2)
+
+## Creator metadata
+- ...
+
+## Quotes
+- "..." attributed to @creator — [source]($URL)
+
+## Other facts
+- ...
+
+— Generated by the Fact Validator on $WEEK_END.
+```
+
+If `verdict: REVISE`, route failing claims back to the Editor (Step 11) with: "These claims failed verification: [list with suggested_fix per claim]. Apply the fix or cut the sentence." Re-run Critic, then Fact Validator. Counts as one revision pass.
+
+**Hard rule.** No SHIP without Fact Validator APPROVED. Even if the writing scores 100/100 from the Grader, an unverified claim blocks shipping. Truth is a gating check, not a quality axis.
+
+## Step 14 — Grader `[PARALLEL SUBAGENT × 1, HARSH]`
+
+**Role.** You are the Grader. You score the post against the Substack Scorecard at the top of this routine. **You are harsh by default. Your job is to refuse mediocre work, not to find reasons to ship it.** Default assumption: this is below the bar. Make the post earn each point with specific quoted evidence.
+
+**Bar.** Total ≥ 85/100 AND no single axis below 50% of its max → SHIP.
+
+**Procedure.** Spawn one subagent via `Agent` (subagent_type: `general-purpose`).
+
+**Subagent prompt template:**
+
+> You are the Grader for AI All Stars Weekly. You are NOT the cheerleader. You are an editor who's read a thousand newsletters and refuses to subscribe to most of them. The default verdict is "this is below the bar." Make the post earn each point with specific quoted evidence.
+>
+> Read `reports/weekly-$WEEK_START.md`. Reference the Substack Scorecard from the routine spec (9-axis 100-point rubric). For each axis return:
+> - Earned score (out of axis max)
+> - 2 specific quotes from the post that earned points
+> - 2 specific quotes (or absences) that lost points, with reason
+>
+> **Calibration anchors (apply strictly):**
+> - **95–100**: I'd subscribe based on this single issue and forward it to a friend the same day. Every section has a craft moment. The cold open made me re-read it. The closing landed.
+> - **85–94**: I'd read it. I'd consider subscribing if I saw two issues like this. Good, not great.
+> - **70–84**: I'd skim it. Competent. Does not stand out from the 15 other AI newsletters I get. Voice is generic in 1–2 sections.
+> - **50–69**: It reads like AI wrote it. The voice is generic, the specifics are thin, the closing is a CTA carnival, or the pattern paragraph is a list-of-features dressed up as analysis.
+> - **<50**: Paint-by-numbers content. Recommend the user not publish this issue. The week's data deserves a better edit.
+>
+> **Rules of grading:**
+> 1. Each axis scored independently. Carve-out: direct quoted material from creators is exempt from Anti-mush.
+> 2. Single-voice authority penalizes if cold open / pattern / closing read like three different ghostwriters.
+> 3. Specificity: count concrete data points (numbers, handles, dates, repo names, commit hashes, file paths). Each section needs ≥ 3.
+> 4. Original analysis: if the pattern paragraph is "lots of projects shipped X," that's not insight. Penalize. Insight requires a contestable observation supported by evidence.
+> 5. Mention card variety: if more than two cards open with the same verb, lose points.
+> 6. Curator's Edge depends on the Hero pick's reasoning. If the Hero is poorly defended by the Lede, lose points here even if the writing is clean.
+>
+> **Output JSON:**
+>
+> ```json
+> {
+>   "total": N,
+>   "verdict": "SHIP" | "REVISE" | "DO_NOT_SHIP",
+>   "axes": {
+>     "hook_strength":     {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "single_voice":      {"score": N, "max": 14, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "original_analysis": {"score": N, "max": 16, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "specificity":       {"score": N, "max": 14, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "curator_edge":      {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "anticipation":      {"score": N, "max": 10, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "anti_mush":         {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "structural_craft":  {"score": N, "max":  6, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "closing_landing":   {"score": N, "max":  4, "earned": ["quote"], "lost": ["quote + reason"]}
+>   },
+>   "top_3_fixes": ["specific instruction 1", "specific instruction 2", "specific instruction 3"],
+>   "honest_one_liner": "one sentence: would you subscribe based on this issue?"
+> }
+> ```
+>
+> **Verdict thresholds:**
+> - **SHIP**: total ≥ 85 AND no axis < 50% of its max
+> - **REVISE**: total < 85 OR any axis < 50%, but fixable in ≤ 4 passes
+> - **DO_NOT_SHIP**: total < 60 — recommend the user skip publishing this week
+>
+> **Hard rule on consistency:** you cannot revise a score upward across passes for the same content. If a phrase lost points in pass 1, it loses the same points in pass 4 unless it was actually cut or rewritten. Read the prior pass's scorecard (in `reports/weekly-grading-history-$WEEK_START.json`) before scoring — same offenders, same penalties.
+
+### Revision loop logic (the full chain)
+
+```
+pass_num = 1
+best_total = 0
+best_draft = None
+grading_history = []
+
+while pass_num <= 4:
+    run_step_11_editor(targeted_failures=prior_failures if pass_num > 1 else None)
+
+    critic = run_step_12_critic()
+    if critic.verdict != "APPROVED":
+        prior_failures = critic.failures
+        pass_num += 1
+        continue   # back to editor, don't waste validator/grader budget on broken structure
+
+    validator = run_step_13_fact_validator()
+    if validator.verdict != "APPROVED":
+        prior_failures = validator.failing_claims
+        pass_num += 1
+        continue   # back to editor with validation failures
+
+    grader = run_step_14_grader()
+    grading_history.append(grader)
+
+    if grader.total > best_total:
+        best_total = grader.total
+        best_draft = current_markdown
+
+    if grader.verdict == "SHIP":
+        proceed_to_step_15_notes_generator()
+        break
+
+    if grader.verdict == "DO_NOT_SHIP":
+        # Total < 60: skip publishing entirely
+        send_gmail_skip(grader, validator, all_state)
+        exit_routine()
+
+    # REVISE: feed top_3_fixes + per-axis lost quotes back to Editor
+    prior_failures = grader.top_3_fixes + grader.per_axis_lost_quotes
+    pass_num += 1
+
+if pass_num > 4 and best_total < 85:
+    # 4-pass cap hit, still under bar
+    restore(best_draft)
+    proceed_to_step_15_notes_generator(with_did_not_meet_bar_block=True)
+
+write_json("reports/weekly-grading-history-$WEEK_START.json", grading_history)
+```
+
+**Outputs.**
+- `reports/weekly-grading-history-$WEEK_START.json` — array of every Grader scorecard pass, in order
+- Final draft of `reports/weekly-$WEEK_START.md` (whatever scored best)
+
+## Step 15 — Notes Generator
 
 **Role.** You are the Notes Generator. Your output is 5 pre-drafted Substack Notes the user can post across the week. Notes drive ~70% of newsletter growth — this is the highest-leverage non-post artifact in the routine.
 
@@ -587,7 +933,7 @@ One sentence on what you're watching for next week.
 - Zero phrase overlap with the post itself — these are companions, not excerpts.
 - Notes 2 and 4 should each include one URL (post link or GIF) so they render visually in feed.
 
-## Step 13 — Publish
+## Step 16 — Publish
 
 ### A. Stage and commit
 
@@ -598,11 +944,15 @@ git add -f reports/weekly-manifest-$WEEK_START.json \
   reports/weekly-trend-$WEEK_START.csv \
   reports/weekly-ranking-$WEEK_START.json \
   reports/weekly-code-highlights-$WEEK_START.md \
+  reports/weekly-editor-pass-$WEEK_START.json \
+  reports/weekly-fact-validation-$WEEK_START.json \
+  reports/weekly-sources-$WEEK_START.md \
+  reports/weekly-grading-history-$WEEK_START.json \
   reports/weekly-notes-$WEEK_START.md \
   reports/weekly-$WEEK_START.md \
   reports/weekly-$WEEK_START.json
 
-# Append to the cross-week ledger
+# Append to the cross-week ledger (this is the file that NEEDS to land on main for next week)
 python3 -c "
 import json, pathlib
 hist = pathlib.Path('reports/weekly-history.json')
@@ -611,7 +961,9 @@ data.append({
     'issue': $ISSUE_NUMBER,
     'week_start': '$WEEK_START',
     'hero_project': '$HERO_PROJECT_SLUG',
-    'through_line': '$THROUGH_LINE'
+    'through_line': '$THROUGH_LINE',
+    'final_grader_total': $FINAL_GRADER_TOTAL,
+    'shipped_under_bar': $BAR_NOT_MET_FLAG
 })
 hist.write_text(json.dumps(data[-30:], indent=2))
 "
@@ -623,7 +975,7 @@ git push -u origin claude/$ISSUE_SLUG
 
 If push fails for network reasons, retry up to 4 times with exponential backoff (2s, 4s, 8s, 16s). If still failing, Gmail subject `Weekly push failed $WEEK_START` with the local commit SHA.
 
-### B. Open PR and merge
+### B. Open PR — draft, manual merge
 
 ```
 mcp__github__create_pull_request(
@@ -634,13 +986,27 @@ mcp__github__create_pull_request(
 )
 ```
 
-PR description template:
+**Merge policy — read this carefully.**
+
+The routine **never auto-merges the weekly PR**. The PR opens as draft and stays draft until the user publishes the Substack post and comes back to merge it manually.
+
+The only reason to merge at all: `reports/weekly-history.json` needs to land on `main` so next week's Trend Analyst (Step 3) can read the last 4 weeks' through-lines for anti-repeat. **If you never merge, the routine still produces good posts** — you just lose cross-week deduplication of trend observations and the post artifacts only live on the branch.
+
+Recommended sequence:
+1. Routine runs Sunday, pushes branch, opens draft PR.
+2. User opens the PR, reviews `reports/weekly-$WEEK_START.md` and the Gmail.
+3. User pastes into Substack, publishes the issue, drops the source list into a comment.
+4. User comes back, marks PR ready, merges to `main` (squash).
+5. Next Sunday's routine sees the merged history file and avoids repeating last week's trend.
+
+**PR description template:**
 
 ```markdown
 ## AI All Stars Weekly · Issue $ISSUE_NUMBER
 
 **Hero:** $HERO_PROJECT by @$HERO_HANDLE
 **Through-line:** $THROUGH_LINE
+**Final Grader score:** $FINAL_GRADER_TOTAL / 100 ($GRADER_VERDICT)
 **Word count:** $WORD_COUNT (~$READ_MIN min read)
 
 ### Paste-ready post
@@ -649,6 +1015,13 @@ PR description template:
 - [Datawrapper one-click upload]($DATAWRAPPER_UPLOAD_URL) — open, click Publish, paste share URL into post
 - [Code highlights Gist]($GIST_URL) — already public
 - [Notes draft (5 ready)]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-notes-$WEEK_START.md)
+- [Source list — drop as a comment]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-sources-$WEEK_START.md)
+
+### Quality-gate state
+
+- [Editor pass summary]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-editor-pass-$WEEK_START.json)
+- [Fact Validator results]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-fact-validation-$WEEK_START.json) — $VERIFIED / $TOTAL_CLAIMS verified
+- [Grader history]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-grading-history-$WEEK_START.json) — $REVISION_PASS_COUNT passes used
 
 ### Specialists' outputs
 
@@ -656,11 +1029,6 @@ PR description template:
 - [Deep research]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-research-$WEEK_START.json)
 - [Trend analysis]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-trend-$WEEK_START.json)
 - [Ranking]($GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-ranking-$WEEK_START.json)
-
-### Critic verdict
-
-$CRITIC_VERDICT
-$CRITIC_FAILURES_OR_EMPTY
 
 ### Picks featured
 
@@ -671,36 +1039,44 @@ $CRITIC_FAILURES_OR_EMPTY
 ...
 ```
 
-Merging is **not automatic** for the weekly. The user reviews the post before merge — there is human judgment in the editorial voice that the Critic cannot fully enforce. PR stays draft until the user marks ready.
-
 ### C. Compose and send the Gmail delivery
 
-Use the same dark-navy / cream-card briefing template as the daily, but with these sections:
+Use the same dark-navy / cream-card briefing template as the daily, with these sections in order:
 
 1. **Header:** `AI ALL STARS WEEKLY · ISSUE $ISSUE_NUMBER · $WEEK_END_HUMAN`
-2. **Hero of the week:** $HERO_PROJECT by @$HERO_HANDLE — 2-line summary + Watch button to $MP4_URL.
-3. **One-click actions:**
+2. **Quality state at a glance:**
+   - Final Grader: $FINAL_GRADER_TOTAL / 100 ($GRADER_VERDICT)
+   - Fact Validator: $VERIFIED / $TOTAL_CLAIMS verified
+   - Revision passes used: $REVISION_PASS_COUNT / 4
+   - If shipped under bar: prominent `## DID NOT MEET BAR` block at the very top of the body with the Grader's `top_3_fixes` and `honest_one_liner`.
+3. **Hero of the week:** $HERO_PROJECT by @$HERO_HANDLE — 2-line summary + Watch button to $MP4_URL.
+4. **One-click actions:**
    - Big button: **"Open Datawrapper upload"** → $DATAWRAPPER_UPLOAD_URL
    - Big button: **"View code highlights Gist"** → $GIST_URL
    - Big button: **"Open the draft post"** → `$GITHUB_URL/blob/claude/$ISSUE_SLUG/reports/weekly-$WEEK_START.md`
-4. **Paste sequence for Substack** (numbered, ≤ 7 steps):
+5. **Paste sequence for Substack** (numbered, ≤ 8 steps):
    1. Open a new Substack post.
-   2. Paste the markdown from the file above.
-   3. Open the Datawrapper link, click Publish, paste the share URL where `<!-- DATAWRAPPER_URL_HERE -->` is in the markdown.
-   4. Upload the 7 daily MP4s from your phone, or accept the GitHub raw embeds.
-   5. Review the cold open and the pattern paragraph — those are where AI mush hides.
+   2. Paste the markdown from the draft-post file.
+   3. Open the Datawrapper link, click Publish, paste the share URL where `<!-- DATAWRAPPER_URL_HERE -->` is.
+   4. Upload the daily MP4s from your phone, or accept the GitHub raw embeds.
+   5. Review the cold open and pattern paragraph for any last-mile mush.
    6. Schedule for Sunday 9pm ET (or your preferred time).
-   7. Post the 5 drafted Notes across the next 7 days (file linked above).
-5. **The 5 Notes** (verbatim, code-block formatted, copy-paste ready).
-6. **The Critic's notes** (if any failures remained after 3 passes).
-7. **Footer:** Issue $ISSUE_NUMBER signature.
+   7. After publishing: copy the **Source list** block below into a comment under the post.
+   8. Post the 5 drafted Notes across the next 7 days. Come back to PR #$N and merge.
+6. **Source list** — copy-paste-ready block, verbatim contents of `reports/weekly-sources-$WEEK_START.md`. This is the "drop in comments" payload that forces public auditability.
+7. **The 5 Notes** — verbatim, code-block formatted, copy-paste ready.
+8. **Critic failures** — any that remained after 3 Critic passes (should be zero at ship time, but include for transparency).
+9. **Fact Validator hedges** — any claims that were softened or cut, original phrasing → final phrasing, so the user can choose to override.
+10. **Grader's full scorecard** — all 9 axes, score / max, earned + lost quotes, honest_one_liner.
+11. **Merge reminder:** "After you've published on Substack and dropped the source list into a comment, come back to PR #$N and click Merge. That writes this week's trend to main so next week avoids it."
+12. **Footer:** Issue $ISSUE_NUMBER signature.
 
 Send via:
 
 ```
 mcp__d91189ac-..._create_draft(
   to=["talon.sturgill@gmail.com"],
-  subject=f"AI All Stars Weekly · Issue {ISSUE_NUMBER} · ready for review",
+  subject=f"AI All Stars Weekly · Issue {ISSUE_NUMBER} · {GRADER_VERDICT} ({FINAL_GRADER_TOTAL}/100)",
   body=plain_text_fallback,
   htmlBody=briefing_html
 )
@@ -710,22 +1086,36 @@ mcp__d91189ac-..._create_draft(
 
 Verify all of:
 
+### Content artifacts
 - [ ] `reports/weekly-manifest-$WEEK_START.json` exists, ≥ 5 picks
 - [ ] `reports/weekly-research-$WEEK_START.json` exists, one entry per pick
 - [ ] `reports/weekly-trend-$WEEK_START.json` has either `through_line` or `fallback_observation`
 - [ ] `reports/weekly-ranking-$WEEK_START.json` has a hero (or `no_hero_this_week: true`)
 - [ ] `reports/weekly-$WEEK_START.md` exists, 1,400–2,400 words
-- [ ] Critic verdict is APPROVED or fixes documented
+
+### Quality gates (all three must pass before SHIP)
+- [ ] **Editor:** `reports/weekly-editor-pass-$WEEK_START.json` exists with at least one pass logged
+- [ ] **Critic:** final verdict APPROVED (mechanical violations: phrase overlap, punctuation, embeds, length, structure)
+- [ ] **Fact Validator:** final verdict APPROVED — every claim VERIFIED, no DISPUTED or UNVERIFIABLE claims left in the post
+- [ ] **Grader:** final verdict SHIP (total ≥ 85 AND no axis < 50% of max) — OR `## DID NOT MEET BAR` block prepended to Gmail body with full scorecard and `honest_one_liner`
+- [ ] `reports/weekly-grading-history-$WEEK_START.json` written with every Grader pass in order
+
+### Public-auditability
+- [ ] `reports/weekly-fact-validation-$WEEK_START.json` written with full claims list
+- [ ] `reports/weekly-sources-$WEEK_START.md` written, formatted for paste-as-comment delivery
+- [ ] Every numeric, dated, quoted, or attributed claim in the post has a verifiable source URL
+
+### Visuals and embeds
 - [ ] Hero MP4 URL embeds correctly (resolves to a real .mp4 on `main` or branch raw URL)
 - [ ] Every honorable mention card has a GIF URL on its own line
 - [ ] Gist created and URL captured (or fallback noted)
 - [ ] Datawrapper CSV committed and upload URL constructed
+
+### Distribution artifacts
 - [ ] `reports/weekly-notes-$WEEK_START.md` has exactly 5 Notes
 - [ ] `reports/weekly-history.json` appended (last 30 entries)
-- [ ] Branch pushed, PR opened as draft
-- [ ] Gmail draft `AI All Stars Weekly · Issue N · ready for review` exists
-- [ ] Zero phrase overlap across cold open / hero / mentions / closing (Critic check passed)
-- [ ] Zero superlatives, em dashes, semicolons in the post
+- [ ] Branch pushed, PR opened as **draft** (never auto-merged)
+- [ ] Gmail draft `AI All Stars Weekly · Issue N · $GRADER_VERDICT ($FINAL_GRADER_TOTAL/100)` exists with: quality state, paste sequence, source list block, 5 Notes, Grader scorecard, merge reminder
 
 If any item is unchecked, send a Gmail with subject `Weekly partial $WEEK_START` listing what's missing. Do not silently ship a degraded post.
 
@@ -739,7 +1129,11 @@ If any item is unchecked, send a Gmail with subject `Weekly partial $WEEK_START`
 | Deep Researcher subagent fails for a pick | Re-spawn once; if still failing, use only the daily dossier for that pick + flag in Gmail |
 | `gh gist create` unavailable | Commit highlights markdown to repo, embed via `raw/main/...` URL |
 | Datawrapper one-click URL too long | Commit CSV to repo; Gmail tells user to manually upload at datawrapper.de/create/chart |
-| Critic fails after 3 passes | Ship best version + put failures in Gmail (NOT post); user decides whether to publish |
+| Critic returns REVISE | Route to Editor with failures as targeted prompt, re-run Critic. Counts as 1 revision pass. |
+| Fact Validator returns REVISE (claim DISPUTED or UNVERIFIABLE) | Route failing claims to Editor with `suggested_fix` per claim. Re-run Critic + Validator. Counts as 1 revision pass. **No SHIP without Validator APPROVED — even at 100/100 Grader score.** |
+| Grader returns REVISE (total < 85 or any axis < 50%) | Route `top_3_fixes` + per-axis `lost` quotes to Editor as targeted prompt. Re-run Critic + Validator + Grader. Counts as 1 revision pass. |
+| Grader returns DO_NOT_SHIP (total < 60) at any pass | Skip publishing this week. Send Gmail with full scorecard + recommendation. Save grading history. Do not commit a `weekly-history.json` entry — this week didn't happen. |
+| 4 revision passes consumed without SHIP | Ship best-scoring draft. Prepend `## DID NOT MEET BAR` block to Gmail body (never the post). Mark `shipped_under_bar: true` in `weekly-history.json`. User decides whether to publish or hold. |
 | Push fails | Retry 4x exponential backoff; if still failing, Gmail with local SHA |
 
 ---
@@ -756,14 +1150,30 @@ If any item is unchecked, send a Gmail with subject `Weekly partial $WEEK_START`
 | "shipped", "landed", "broke", "crossed" | "launched" (overused) |
 | one declarative sentence | rhetorical questions in body copy |
 
-## Subscribe-worthy test
+## Source citation discipline
 
-Before the routine exits, ask itself: would a person who reads 5 AI newsletters per week subscribe to THIS issue if it landed in their inbox? If the honest answer is no, the routine writes a `## Honest critique` block to the Gmail (NOT the post) explaining why this issue is weaker than the bar — so the user can decide whether to publish, hold, or rewrite the cold open by hand before scheduling.
+Every numeric, dated, quoted, or attributed claim in the post has a primary-source URL traceable through the Fact Validator's output. The Gmail delivery includes a copy-paste-ready Source list (formatted from `reports/weekly-sources-$WEEK_START.md`) that the user drops as the first comment under the published Substack post. This is non-negotiable — it forces public auditability and makes the newsletter's authority compound across issues.
 
-The bar is not "this week's content is mediocre, ship it anyway." The bar is the editorial floor, every week.
+Reader sees a claim → clicks the comment → finds the source. Any reader who wants to second-guess a number can. That trust is what converts free readers to paid.
+
+---
+
+## Sources for this routine's editorial bar
+
+The Substack Scorecard weights were calibrated against how these newsletters actually win, not generic best-practice:
+
+- [Stratechery (Ben Thompson)](https://stratechery.com) — specificity, anticipation, visual craft, single-voice authority
+- [Platformer (Casey Newton)](https://www.platformer.news) — "do work for readers," original analysis over aggregation, lighthouse positioning
+- [Lenny's Newsletter (Lenny Rachitsky)](https://www.lennysnewsletter.com) — framework-oriented, data-driven, fluff-free
+- [Latent Space (swyx + Alessio)](https://www.latent.space) — single technical voice for AI engineers
+- [AlphaSignal](https://alphasignal.ai) — compact signal-density, data-leading hooks, ML-ranked curation
+- [The Batch (Andrew Ng / DeepLearning.AI)](https://www.deeplearning.ai/the-batch/) — educator's framing, schedule reliability
+- Casey Newton on craft: [What writers can do for readers](https://on.substack.com/p/what-writers-can-do-for-readers-casey-newton)
+- Newsletter benchmarks 2026: [newsletter operator benchmarks](https://www.newsletteroperator.com/p/newsletter-benchmarks), [ClickMinded benchmarks](https://www.clickminded.com/newsletter-statistics/)
 
 ---
 
 ## Changelog from v0
 
-- v1: initial routine, 12 specialists (Bootstrapper, Archivist, Deep Researcher × N, Trend Analyst, Hero Selector, Hero Dossier Writer, Honorable Mention Curator, Forward-Looker, Voice Editor, Visualizer, Critic, Notes Generator). Parallel subagents for Deep Research and Critic. Datawrapper one-click + GitHub Gist embeds as the two coded-up Substack tricks. Hard floors on data quantity, hero score, and Critic verdict before shipping.
+- **v1**: initial routine, 12 specialists (Bootstrapper, Archivist, Deep Researcher × N, Trend Analyst, Hero Selector, Hero Dossier Writer, Honorable Mention Curator, Forward-Looker, Voice Editor, Visualizer, Critic, Notes Generator). Parallel subagents for Deep Research and Critic. Datawrapper one-click + GitHub Gist embeds as the two coded-up Substack tricks. Hard floors on data quantity, hero score, and Critic verdict before shipping.
+- **v1.1**: writing-quality hardening + factual auditability. Added Substack Scorecard (100 points, 9 axes, research-backed weights). Expanded Step 8 Voice Editor with concrete pass / fail examples and banned-phrase enforcement. Inserted Step 11 Editor (four-pass line edit). Tightened Step 12 Critic to mechanical violations only. Inserted Step 13 Fact Validator (strict; every claim must trace to a primary source; outputs `weekly-sources-$WEEK_START.md` for public drop-as-comment auditability). Inserted Step 14 Grader (harsh; default verdict "below bar"; calibration anchors baked into prompt). Wired revision loop: Editor → Critic → Validator → Grader, max 4 passes, ship best draft with `## DID NOT MEET BAR` block in Gmail (never the post) if all fail. Steps 15 (Notes) and 16 (Publish) renumbered. Merge policy clarified: PR opens draft, user merges manually after publishing — the only reason to merge is the cross-week ledger landing on main. Removed the standalone Subscribe-worthy test; the Grader subsumes it.
