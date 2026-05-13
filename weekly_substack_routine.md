@@ -38,7 +38,7 @@ Substack does **not** allow custom HTML/CSS in the editor. Do not generate `<div
 
 ## Substack Scorecard (the bar to ship)
 
-Every issue is graded against this 100-point scorecard by the Grader (Step 13). **The post does not ship until the Grader returns `SHIP` (total ≥ 85 AND no single axis below 50% of its max).** Below the bar, the routine loops back to the Editor with the Grader's specific failures. Maximum 4 revision passes. After pass 4 still below 85, the routine ships the best-scoring draft and prepends a `## DID NOT MEET BAR` block to the **Gmail body only — never the post itself**. The user decides whether to publish, hold, or rewrite by hand.
+Every issue is graded against this 100-point scorecard by the Grader (Step 14). **The post does not ship until the Grader returns `SHIP` (total ≥ 85 AND no single axis below 50% of its max).** Below the bar, the routine loops back to the Editor with the Grader's specific failures. Maximum 4 revision passes. After pass 4 still below 85, the routine ships the best-scoring draft and prepends a `## DID NOT MEET BAR` block to the **Gmail body only — never the post itself**. The user decides whether to publish, hold, or rewrite by hand.
 
 **Hard rule on failure-note placement.** The `## DID NOT MEET BAR` block, any Critic failures, the full Grader scorecard, and the revision-loop history live in the **Gmail body only**. They never appear in `reports/weekly-$WEEK_START.md`. The Substack-ready post stays clean. The user sees the grading; the readers don't.
 
