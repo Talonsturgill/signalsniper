@@ -49,5 +49,12 @@
     "aesthetic_slug": "geominimal",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/tinyhumansai/openhuman"
+  },
+  {
+    "date": "2026-05-13",
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-paper",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/cactus-compute/needle"
   }
 ]
