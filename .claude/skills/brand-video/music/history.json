@@ -23,5 +23,10 @@
     "date": "2026-05-12",
     "slug": "backed-vibes-clean",
     "project_url": "https://github.com/tinyhumansai/openhuman"
+  },
+  {
+    "date": "2026-05-13",
+    "slug": "decisions",
+    "project_url": "https://github.com/cactus-compute/needle"
   }
 ]

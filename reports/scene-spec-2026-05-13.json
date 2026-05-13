@@ -1,0 +1,63 @@
+{
+  "date": "2026-05-13",
+  "topic": "Needle, a 26M function-call model distilled from Gemini",
+  "creator_handle": "@hmunachii",
+  "project_url": "https://github.com/cactus-compute/needle",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-paper",
+    "framework": "MANIFESTO",
+    "audio_palette": "acoustic",
+    "held_subject": "needle",
+    "tokens":   {"canvas": "#F4EFE3", "ink": "#1A1815", "ink_muted": "#7C7264", "accent": "#9C3B2C", "hairline": "#D5CBB8"},
+    "fonts":    {"display": "EBGaramond", "body": "EBGaramond", "italic": "EBGaramond"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.012, "case": "preserve", "italic_descriptors": true},
+    "motion":   {"register": "fade", "scene_in_s": 0.40, "scene_out_s": 0.27, "stagger_s": 0.27},
+    "layout":   {"padding_pct": 9, "rule_thickness_px": 1, "stage_radius_px": 8},
+    "texture":  {"grain": 0.07, "vignette": 0.18, "halation": 0.05, "lighting_arc": 0.32},
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "Needle",
+      "eyebrow": "for phones and watches",
+      "camera": "orbit",
+      "duration_s": 3.0
+    },
+    {
+      "template": "big_number",
+      "numeral": "26M",
+      "caption": "parameters. that's the whole model.",
+      "sub": "distilled from Gemini 3.1.",
+      "camera": "ken_burns",
+      "duration_s": 3.5
+    },
+    {
+      "template": "fix",
+      "primary": "no feedforward.",
+      "secondary": "only attention.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 3.5
+    },
+    {
+      "template": "flash",
+      "word": "for a watch.",
+      "caption": "and phones. and glasses.",
+      "camera": "crash_zoom",
+      "duration_s": 3.0
+    },
+    {
+      "template": "close",
+      "primary": "tiny. specialist.",
+      "accent": "by design.",
+      "subtitle": "the agent runs on the watch.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}

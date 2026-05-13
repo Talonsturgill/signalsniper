@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-13",
+  "brand_slug": null,
+  "preset_slug": "editorial-paper",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "Needle is a research bet (no FFN, only attention, distilled from a frontier model into 26M params), so MANIFESTO carries it; editorial-paper reads as paper-of-record, which is the right register for a 4x ICLR author shipping the artifact, not the pitch.",
+  "writing_tone_notes": "Calm conviction. No exclamation. The numbers do the lifting. Contractions where natural. Lead with the size collapse, land on the stake-in-the-ground for on-device specialists.",
+  "do_rules": [
+    "Make the 26M figure a hero beat. big_number scene is the visual anchor.",
+    "Name what was distilled (Gemini 3.1) and what was distilled into (Simple Attention Network).",
+    "Honor the deployment surface. Phones, watches, glasses are the point.",
+    "Close on the position, not on the stars. The MANIFESTO ends with a stance."
+  ],
+  "dont_rules": [
+    "No version numbers in any copy surface.",
+    "No exclamation points, no superlatives, no 'first ever' claims.",
+    "No phrase overlap between tweet, why-this-one, and scene copy.",
+    "No on-screen mention of YC, no benchmark name dumps, no 'beats X, Y, Z' grocery list. Pick one comparison or none."
+  ],
+  "music_constraint_notes": "Catalog is down to one unused track: 'decisions' (88.6s, MANIFESTO/CLASSIC/DISPATCH, fits gallery/geominimal/editorial-paper). MANIFESTO + editorial-paper gives a clean 150-point score. After this run the catalog must be expanded before the next run."
+}
