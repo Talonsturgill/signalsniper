@@ -1,4 +1,4 @@
-# AI All Stars Weekly Routine — v1 (paste into automation config)
+# AI All Stars Weekly Routine — v1.2 (paste into automation config)
 
 You are the orchestrator of a weekly editorial pipeline. One run produces one Substack-ready post for **AI All Stars Weekly**, packaged for the user to paste into Substack with minimal editing. Output medium is Substack only. The routine runs autonomously on Anthropic infrastructure every Sunday at 18:00 UTC. The routine cannot ask for input. If a decision is ambiguous, pick the lane-aligned default and note it in the Gmail delivery.
 
@@ -42,34 +42,39 @@ Every issue is graded against this 100-point scorecard by the Grader (Step 13). 
 
 **Hard rule on failure-note placement.** The `## DID NOT MEET BAR` block, any Critic failures, the full Grader scorecard, and the revision-loop history live in the **Gmail body only**. They never appear in `reports/weekly-$WEEK_START.md`. The Substack-ready post stays clean. The user sees the grading; the readers don't.
 
-The rubric is built from how the top performers actually win: Stratechery (specificity + anticipation), Lenny's Newsletter (frameworks + data + no fluff), Casey Newton's Platformer ("do work for readers" — original analysis over aggregation), Latent Space (single technical voice), AlphaSignal (compact signal-density), Ben Thompson (visuals + anticipation). The weights below reflect what these newsletters share, not generic best-practice.
+The rubric is **calibrated against actual recent issues** of seven top AI newsletters — read, audited, and quoted verbatim (sources at the bottom of the routine). Patterns that 7 of 7 newsletters share are weighted high. Patterns that vary by author (warm-educator vs combative-practitioner vs operator-third-person) are voice choices, not rubric items — the rubric rewards coherence within an issue, not adherence to one style.
 
-| # | Axis | Weight | What earns points | Echoes |
+| # | Axis | Weight | What earns points | Real-issue evidence |
 |---|---|---|---|---|
-| 1 | **Hook strength** | 12 | Subject line + cold open work as one unit. Sentence 1 of the cold open is a concrete observation — a number, a named moment, a contradiction. Reader can't skip to the hero without losing context. | AlphaSignal data-leading; Stratechery specificity |
-| 2 | **Single-voice authority** | 14 | All original prose (cold open, pattern, closing) reads as one specific human. Consistent register. The reader knows who's writing every sentence. Voice trust is what converts free → paid. | Casey Newton; Latent Space; Ben Thompson |
-| 3 | **Original analysis over aggregation** | 16 | The Pattern Paragraph carries an insight the reader could not get by following the same X accounts. Not "look at these 7 things" — "here's what these 7, taken together, mean." Single biggest predictor of paid conversion. | Casey Newton "do work for readers"; Ben Thompson |
-| 4 | **Specificity & evidence** | 14 | Named handles, repo names, commit hashes, dates, real numbers throughout. Each section ≥ 3 concrete data points. Every generic claim either gets replaced with a verifiable one or cut. | Lenny's data-driven; Stratechery |
-| 5 | **Curator's edge** | 12 | The 7 picks tell a coherent story. There's a defensible reason why these 7 and not 70 others. The Hero pick earns its slot with cited reasoning. The Lede is a moment (date + action + consequence), not a description. | Casey Newton "lighthouse" |
-| 6 | **Anticipation** | 10 | "What I'm watching this week" makes concrete, contestable predictions. Reader leaves with a usable mental model, not a list of facts. The forward look feels like a real bet. | Stratechery's anticipation |
-| 7 | **Anti-mush & variety** | 12 | Zero banned phrases (full list below). No filler transitions. Mention cards open with varied verbs. No card paraphrases its corresponding daily X caption. Each banned-phrase instance: −2 (capped at axis max). | Lenny's "fluff-free" |
-| 8 | **Structural craft & embeds** | 6 | Scannable structure. MP4 + GIF + Gist + Datawrapper all render and reinforce the editorial. Each visual carries one specific idea, not decoration. Subheads earn their lines. | Ben Thompson's diagrams |
-| 9 | **Closing landing** | 4 | One clear ask, not three. Zero begging ("subscribe", "share", "like"). Lands on a concrete forward-look or a direct reader instruction. | Casey Newton "do a job for the reader" |
+| 1 | **Hook strength** | 12 | Sentence 1 of the cold open does work — a falsifiable claim, a probability with a number, a contrarian definitional move, a named moment. Zero throat-clearing. | The Batch #352 opens "There will be no AI jobpocalypse." Import AI 455 opens with a "60%+ probability" claim. Interconnects opens "'Distillation attacks' is a horrible term for what is happening." Three newsletters, three angles, all sentence-one thesis. |
+| 2 | **Single-voice authority** | 16 | "I" used precisely when staking a contestable position (not autobiography). Practitioner present tense ("we've built at Ai2", "this morning I installed"). Plain-text conflict/stake disclosures ("Anton now works with me at Anthropic", "I'm American, and that's an honest preference"). Contractions natural. Named entities, no honorifics. | Lambert, Clark, Raschka, Tossell — all 4 single-author curators converge on first-person editorial marking. Authority comes from operating the thing, not commenting on it. |
+| 3 | **Original analysis over aggregation** | 16 | The Pattern Paragraph carries an insight a reader could not get from following the same X accounts. Coining a frame (Latent Space "War on Slop", "Vibe Physics") is valid as long as the issue earns it. Not "look at these 7 things" but "here's what they mean together". | Latent Space's coined frames; AlphaSignal's "the runtime layer" parallelism positioning a thing inside a layered stack; Lambert's contrarian definitional moves. |
+| 4 | **Specificity & verdict** | 16 | Concrete data points (numbers, handles, dates, repo names, commit hashes, file paths) PLUS a stated judgment. The credibility move across all 7 newsletters is specificity that ends in verdict, not data dumps. Each section ≥ 3 concrete data points AND ≥ 1 stated position. | AlphaSignal closes "Acceptable for prototyping, not yet a production dependency. 7 commits, two-day-old repo, single maintainer, Apache-2.0." Specificity + verdict in one sentence. The Batch's "There will be no AI jobpocalypse" is verdict with the data underneath. |
+| 5 | **Curator's edge** (incl. anti-recommendation) | 14 | The 7 picks tell a coherent story. The Hero pick earns its slot with cited reasoning. The Lede is a moment (date + action + consequence), not a description. **Bonus criterion**: an explicit anti-recommendation ("Who should skip this", "If you're not building agents, ignore this") earns up to +2 within the axis. | AlphaSignal's "Who benefits / Who should skip" subsection. Ben's Bites' "I would've been more online if Codex had a mobile app" — user-of-the-tool sentence no observer can fake. |
+| 6 | **Anti-mush & variety** | 12 | Zero banned phrases (full list below). No filler transitions. Mention cards open with varied verbs. No card paraphrases its corresponding daily X caption. Each banned-phrase instance: −2 (capped at axis max). | Across ~15 issues of 7 top newsletters audited, "incredible" appeared zero times. "Deep dive" appeared once (in a linked third-party headline). The bar is real and currently being held. |
+| 7 | **Structural craft & embeds** | 6 | A consistent issue skeleton readers learn week-to-week. MP4 + GIF + Gist + Datawrapper all render and reinforce the editorial. Each visual carries one specific idea, not decoration. Subheads earn their lines. | The Batch: letter + 4 news stories every issue. Ben's Bites: Headlines / My feed / Afters / Discussion every issue. Import AI: news items + Tech Tales fiction every issue. Predictable structure, unpredictable content. |
+| 8 | **Closing landing** | 4 | One clear ask, not three. Zero begging ("subscribe", "share", "like"). Lands on a forward-looking claim, a topic-matched imperative ("Keep building!"), or a direct reader instruction. | The Batch closes "Keep prompting! Andrew" — topic-matched imperative. AlphaSignal closes "The next useful jump may not be a smarter model. It may be the runtime that keeps the work alive." Forward claim, not a CTA. |
+| 9 | **Anticipation** | 4 | "What I'm watching this week" makes concrete, contestable predictions. **Light weight on purpose**: research showed top newsletters don't tease — they deliver. Reward when present, but small. | All 7 newsletters audited: zero "stay tuned", zero "in next week's issue". They ship now. |
 |   | **TOTAL** | **100** | **Bar: 85, no single axis < 50% of its max** | |
+
+Compared to v1.1: **Single-voice authority** +2 (14→16), **Specificity** renamed to **Specificity & verdict** +2 (14→16), **Curator's edge** +2 (12→14) with explicit anti-recommendation sub-criterion, **Anticipation** −6 (10→4) — research showed top newsletters don't lean on forward-tease.
 
 ### Banned phrases (Anti-mush axis deductions)
 
 The Grader penalizes each instance in **editorial copy** (cold open, pattern paragraph, hero dossier writing, mention cards, closing). **Carve-out: direct quotes from creators in the Hero Quote section are exempt** — a creator saying "this is amazing" is their voice, not ours.
 
+Confirmed by audit across ~15 issues of 7 top AI newsletters (Latent Space, The Batch, AlphaSignal, Import AI, Interconnects, Ahead of AI, Ben's Bites) — none of the strong issues used any of the phrases below.
+
 - **Genre-cliché openers:** "this week", "in this issue", "welcome back", "another week of", "it's been", "friends,", "happy [day]"
-- **AI-smell phrases:** "let's dive in", "let's explore", "buckle up", "without further ado", "join me", "dive into", "deep dive", "in this post", "throughout this article", "as we'll see", "stay tuned", "spoiler alert"
-- **Hype words:** revolutionary, game-changing, paradigm, unprecedented, watershed, breathtaking, mind-blowing, incredible, amazing, impressive, stunning, remarkable, extraordinary, exceptional
-- **Vague verbs:** leverages, utilizes, enables, empowers, facilitates, harnesses, unlocks, drives, fosters, cultivates
+- **AI-smell phrases:** "let's dive in", "let's explore", "we'll explore", "we'll dive into", "buckle up", "without further ado", "join me", "dive into", "deep dive", "in this post", "throughout this article", "as we'll see", "stay tuned", "spoiler alert"
+- **Hype words:** revolutionary, game-changing, game-changer, paradigm, unprecedented, watershed, breathtaking, mind-blowing, incredible, amazing, impressive, stunning, remarkable, extraordinary, exceptional
+- **Empty-action verbs:** leverages, utilizes, enables, empowers, facilitates, harnesses, unlocks, drives, fosters, cultivates, supercharges, "power up", "unlock the power of"
 - **Vague quantifiers:** many, various, several, a number of, a few, some, tons of, a lot of, multiple, numerous
 - **Filler transitions:** furthermore, moreover, additionally, in conclusion, to summarize, it's worth noting, interestingly, notably, indeed, in fact
 - **Prediction filler:** "the future of", "what's next for", "this is just the beginning", "we're entering an era", "this changes everything"
+- **Adjective-noun-noun stacks** (the clearest AI-aggregator tell): "AI-powered solution", "next-generation framework", "cutting-edge model", "state-of-the-art system", "best-in-class tool". Any "[buzzword] + [buzzword] + [noun]" formation where the adjectives add zero information fails.
 
-The Voice Editor (Step 8) writes original prose toward this scorecard. The Editor (Step 11) line-edits against it. The Grader (Step 13) enforces it.
+The Voice Editor (Step 8) writes original prose toward this scorecard. The Editor (Step 11) line-edits against it. The Grader (Step 14) enforces it.
 
 ## Inputs available from the daily routine
 
@@ -392,7 +397,33 @@ If you cannot find 3 strong candidates, surface 2. Better short and tight than p
 
 **Role.** You are the Voice Editor. You write the only fully-original prose in the post: the cold open, the pattern-of-the-week paragraph, and the closing.
 
-**These three sections carry the editorial voice.** If they sound like AI mush, the whole post deflates. You are writing toward the Substack Scorecard from the top of this routine — specifically the Hook (12), Single-voice authority (14), Original analysis (16), Specificity (14), and Anti-mush (12) axes. Out of 100 total points, your three sections account for the majority of grading exposure. Budget real attention.
+**These three sections carry the editorial voice.** If they sound like AI mush, the whole post deflates. You are writing toward the Substack Scorecard from the top of this routine — specifically the Hook (12), Single-voice authority (16), Original analysis (16), Specificity & verdict (16), and Anti-mush (12) axes. Out of 100 total points, your three sections account for the majority of grading exposure. Budget real attention.
+
+### Patterns observed in top AI newsletters (study these, don't copy them)
+
+The Scorecard's "Hook strength" and "Single-voice authority" axes were calibrated against actual recent issues of 7 top AI newsletters. Read each opener below and notice what's NOT in them: no greeting, no "this week", no hype adjective. Every opener stakes a position the reader could disagree with.
+
+| Newsletter (issue) | Opener (verbatim) | What the opener does |
+|---|---|---|
+| **The Batch #352** (Andrew Ng) | "There will be no AI jobpocalypse." | Falsifiable thesis as sentence one. Commits before throat-clearing. |
+| **Import AI 455** (Jack Clark) | "I'm writing this post because when I look at all the publicly available information I reluctantly come to the view that there's a likely chance (60%+) that no-human-involved AI R&D... happens by the end of 2028." | Probability + first-person epistemic hedge. Calibrated authority. |
+| **Interconnects** (Nathan Lambert) | "'Distillation attacks' is a horrible term for what is happening right now." | Contrarian definitional move. Reader must take a side by sentence one. |
+| **AlphaSignal — Hermes Agent** | "Cheap 1M-context models changed the model layer. Claude Code and Codex changed the coding layer. Hermes is starting to look like the runtime layer." | Three-clause parallelism. Positions the thing inside a layered stack. |
+| **Latent Space — Vibe Physics** (swyx) | "Some people are going crazy over GPT 5.5. *Some* people." | Two-sentence taunt. Second sentence undoes the first. Higher info density than 50 words of setup. |
+| **Ahead of AI** (Sebastian Raschka) | "A lot of apparent 'model quality' is really context quality." | Frame-shifting one-liner. Reframes the reader's mental model in 11 words. |
+| **Ben's Bites** (Ben Tossell) | "I'm a professional procrastinator — I need to ship this course and re-write my fundraising deck for fund II, buuuut yesterday I finally built something I've wanted for a while." | Personal stake + present-tense practitioner ("yesterday I built"). Founder-in-public voice. |
+
+**The seven openers above use seven different angles** (thesis claim, probability, contrarian definition, parallelism, taunt, frame-shift, personal admission). The rubric doesn't impose one — it rewards any opener that does the same kind of work in your voice.
+
+### The "Who should skip" move (Curator's Edge bonus, +2 within axis)
+
+AlphaSignal's structural credibility move: explicitly tell readers who should NOT read or use the thing. Examples observed:
+
+> "Maintenance health: 7 commits, two-day-old repo, single maintainer (wjn1996), Apache-2.0. **Acceptable for prototyping, not yet a production dependency.**"
+
+> "Who benefits / Who should skip" (an actual subsection heading).
+
+In the weekly post: this can appear in the Hero section ("Skip the rest of this section unless you're shipping agents") or in mention cards ("Ignore this if you're not on iOS"). Each instance grist for the Curator's Edge axis. Don't force it — but when it fits, it's the single fastest credibility move in the rubric.
 
 ### A. Cold open (≤ 110 words)
 
@@ -807,11 +838,13 @@ If `verdict: REVISE`, route failing claims back to the Editor (Step 11) with: "T
 >
 > **Rules of grading:**
 > 1. Each axis scored independently. Carve-out: direct quoted material from creators is exempt from Anti-mush.
-> 2. Single-voice authority penalizes if cold open / pattern / closing read like three different ghostwriters.
-> 3. Specificity: count concrete data points (numbers, handles, dates, repo names, commit hashes, file paths). Each section needs ≥ 3.
-> 4. Original analysis: if the pattern paragraph is "lots of projects shipped X," that's not insight. Penalize. Insight requires a contestable observation supported by evidence.
-> 5. Mention card variety: if more than two cards open with the same verb, lose points.
-> 6. Curator's Edge depends on the Hero pick's reasoning. If the Hero is poorly defended by the Lede, lose points here even if the writing is clean.
+> 2. **Single-voice authority** penalizes if cold open / pattern / closing read like three different ghostwriters. Reward concrete signatures observed in top newsletters: "I" used as editorial marker (taking a contestable stake, not autobiography); practitioner present tense ("we've built", "this morning I installed"); plain-text conflict/stake disclosures ("I'm American, that's an honest preference").
+> 3. **Specificity & verdict** counts concrete data points (numbers, handles, dates, repo names, commit hashes, file paths) AND requires a stated position per section. Each section needs ≥ 3 concrete data points AND ≥ 1 verdict / judgment / contestable claim. Data without a verdict is half-credit at best.
+> 4. **Original analysis**: if the pattern paragraph is "lots of projects shipped X," that's not insight. Penalize. Insight requires a contestable observation supported by evidence. Coining a frame (Latent Space-style "War on Slop") earns full marks if the issue defends it.
+> 5. **Mention card variety**: if more than two cards open with the same verb, lose points.
+> 6. **Curator's Edge** depends on the Hero pick's reasoning. If the Hero is poorly defended by the Lede, lose points even if writing is clean. **Bonus +2 within this axis**: explicit anti-recommendation ("Who should skip", "If you're not building X, ignore") — AlphaSignal's structural credibility move.
+> 7. **Anti-mush**: scan editorial copy for every banned-phrase category. Score deduction = number of instances × 2, capped at axis max. Adjective-noun-noun stacks ("AI-powered solution", "next-generation framework") are explicit fail patterns.
+> 8. **Anticipation** is intentionally low-weight (4 pts max). Real top newsletters don't tease — they deliver. Don't reward "stay tuned" or "in next week's issue". Reward only when forward picks name specific projects + creators + concrete triggers.
 >
 > **Output JSON:**
 >
@@ -820,15 +853,15 @@ If `verdict: REVISE`, route failing claims back to the Editor (Step 11) with: "T
 >   "total": N,
 >   "verdict": "SHIP" | "REVISE" | "DO_NOT_SHIP",
 >   "axes": {
->     "hook_strength":     {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
->     "single_voice":      {"score": N, "max": 14, "earned": ["quote"], "lost": ["quote + reason"]},
->     "original_analysis": {"score": N, "max": 16, "earned": ["quote"], "lost": ["quote + reason"]},
->     "specificity":       {"score": N, "max": 14, "earned": ["quote"], "lost": ["quote + reason"]},
->     "curator_edge":      {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
->     "anticipation":      {"score": N, "max": 10, "earned": ["quote"], "lost": ["quote + reason"]},
->     "anti_mush":         {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
->     "structural_craft":  {"score": N, "max":  6, "earned": ["quote"], "lost": ["quote + reason"]},
->     "closing_landing":   {"score": N, "max":  4, "earned": ["quote"], "lost": ["quote + reason"]}
+>     "hook_strength":         {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "single_voice":          {"score": N, "max": 16, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "original_analysis":     {"score": N, "max": 16, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "specificity_verdict":   {"score": N, "max": 16, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "curator_edge":          {"score": N, "max": 14, "earned": ["quote"], "lost": ["quote + reason"], "anti_recommendation_bonus": "+0 or +2 if present"},
+>     "anti_mush":             {"score": N, "max": 12, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "structural_craft":      {"score": N, "max":  6, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "closing_landing":       {"score": N, "max":  4, "earned": ["quote"], "lost": ["quote + reason"]},
+>     "anticipation":          {"score": N, "max":  4, "earned": ["quote"], "lost": ["quote + reason"]}
 >   },
 >   "top_3_fixes": ["specific instruction 1", "specific instruction 2", "specific instruction 3"],
 >   "honest_one_liner": "one sentence: would you subscribe based on this issue?"
@@ -1160,14 +1193,40 @@ Reader sees a claim → clicks the comment → finds the source. Any reader who 
 
 ## Sources for this routine's editorial bar
 
-The Substack Scorecard weights were calibrated against how these newsletters actually win, not generic best-practice:
+The Substack Scorecard weights were **calibrated against actual recent issues** of 7 top AI newsletters, read and audited verbatim in May 2026. Patterns that 7 of 7 newsletters share are rubric-weighted high. Patterns that vary by author are voice choices, not rubric items.
 
-- [Stratechery (Ben Thompson)](https://stratechery.com) — specificity, anticipation, visual craft, single-voice authority
-- [Platformer (Casey Newton)](https://www.platformer.news) — "do work for readers," original analysis over aggregation, lighthouse positioning
-- [Lenny's Newsletter (Lenny Rachitsky)](https://www.lennysnewsletter.com) — framework-oriented, data-driven, fluff-free
-- [Latent Space (swyx + Alessio)](https://www.latent.space) — single technical voice for AI engineers
-- [AlphaSignal](https://alphasignal.ai) — compact signal-density, data-leading hooks, ML-ranked curation
-- [The Batch (Andrew Ng / DeepLearning.AI)](https://www.deeplearning.ai/the-batch/) — educator's framing, schedule reliability
+**Real issues studied:**
+
+- **The Batch (Andrew Ng / DeepLearning.AI):** [issue 352](https://www.deeplearning.ai/the-batch/issue-352), [issue 351](https://www.deeplearning.ai/the-batch/issue-351), [issue 350](https://www.deeplearning.ai/the-batch/issue-350)
+- **Latent Space (swyx + Alessio):** [Scaling without Slop](https://www.latent.space/p/2026), [Doing Vibe Physics](https://www.latent.space/p/lupsasca)
+- **AlphaSignal (Lior Sinclair):** [Hermes Agent](https://alphasignalai.substack.com/p/you-should-install-hermes-agent-this), [HeavySkill](https://alphasignalai.substack.com/p/how-heavyskill-turns-agentic-harness), [Karpathy CLAUDE.md](https://alphasignalai.substack.com/p/karpathy-inspired-claudemd-how-to)
+- **Import AI (Jack Clark):** [Issue 456](https://jack-clark.net/2026/05/11/import-ai-456-rsi-and-economic-growth-radical-optionality-for-ai-regulation-and-a-neural-computer/), [Issue 455](https://jack-clark.net/2026/05/04/import-ai-455-automating-ai-research/)
+- **Interconnects (Nathan Lambert):** [The distillation panic](https://www.interconnects.ai/p/the-distillation-panic), [Notes from inside China's AI labs](https://www.interconnects.ai/p/notes-from-inside-chinas-ai-labs)
+- **Ahead of AI (Sebastian Raschka):** [Components of A Coding Agent](https://magazine.sebastianraschka.com/p/components-of-a-coding-agent)
+- **Ben's Bites (Ben Tossell):** [Learn the system](https://www.bensbites.com/p/learn-the-system), [Elon doubled limits](https://www.bensbites.com/p/elon-doubled-limits), [Codex is gaining steam](https://www.bensbites.com/p/codex-is-gaining-steam)
+
+**Cross-newsletter convergence (the rubric-validated patterns):**
+
+1. **No throat-clearing openers.** Every opener does work — a thesis claim, a probability, a contrarian definitional move, a personal admission, or a named moment.
+2. **First-person + contractions + named entities without honorifics.** Authority comes from a specific person operating the thing.
+3. **Authority via operational detail, not adjectives.** "Incredible" appeared zero times across ~15 issues read.
+4. **Structural consistency week-to-week.** Each newsletter has a recognizable skeleton (readers learn the room).
+5. **Specificity ends in verdict.** Numbers + names + a stated position, not data dumps.
+
+**Author divergences (these are voice choices, not rubric items — pick what fits your voice):**
+
+- **Warm educator** (Andrew Ng / The Batch): "I" + topic-matched imperative sign-off ("Keep building!")
+- **Combative practitioner** (Lambert / Interconnects): contrarian definitional opener, plain-text stake disclosure ("I'm American, that's an honest preference")
+- **Calibrated forecaster** (Clark / Import AI): probabilities, gratitude lists, fiction coda
+- **Patient teacher** (Raschka / Ahead of AI): frame-shifting one-liners, numbered components
+- **Operator** (AlphaSignal): third-person, parallel triplets, "Who should skip"
+- **Insider** (swyx / Latent Space): coined frames, italics-snark, full names + roles
+- **Founder-in-public** (Tossell / Ben's Bites): lowercase, emoji, ships in public
+
+The Grader rewards coherence within an issue — pick one register and stay there.
+
+**Supporting research:**
+
 - Casey Newton on craft: [What writers can do for readers](https://on.substack.com/p/what-writers-can-do-for-readers-casey-newton)
 - Newsletter benchmarks 2026: [newsletter operator benchmarks](https://www.newsletteroperator.com/p/newsletter-benchmarks), [ClickMinded benchmarks](https://www.clickminded.com/newsletter-statistics/)
 
@@ -1177,3 +1236,4 @@ The Substack Scorecard weights were calibrated against how these newsletters act
 
 - **v1**: initial routine, 12 specialists (Bootstrapper, Archivist, Deep Researcher × N, Trend Analyst, Hero Selector, Hero Dossier Writer, Honorable Mention Curator, Forward-Looker, Voice Editor, Visualizer, Critic, Notes Generator). Parallel subagents for Deep Research and Critic. Datawrapper one-click + GitHub Gist embeds as the two coded-up Substack tricks. Hard floors on data quantity, hero score, and Critic verdict before shipping.
 - **v1.1**: writing-quality hardening + factual auditability. Added Substack Scorecard (100 points, 9 axes, research-backed weights). Expanded Step 8 Voice Editor with concrete pass / fail examples and banned-phrase enforcement. Inserted Step 11 Editor (four-pass line edit). Tightened Step 12 Critic to mechanical violations only. Inserted Step 13 Fact Validator (strict; every claim must trace to a primary source; outputs `weekly-sources-$WEEK_START.md` for public drop-as-comment auditability). Inserted Step 14 Grader (harsh; default verdict "below bar"; calibration anchors baked into prompt). Wired revision loop: Editor → Critic → Validator → Grader, max 4 passes, ship best draft with `## DID NOT MEET BAR` block in Gmail (never the post) if all fail. Steps 15 (Notes) and 16 (Publish) renumbered. Merge policy clarified: PR opens draft, user merges manually after publishing — the only reason to merge is the cross-week ledger landing on main. Removed the standalone Subscribe-worthy test; the Grader subsumes it.
+- **v1.2**: Scorecard recalibrated against real recent issues of 7 top AI newsletters (The Batch, Latent Space, AlphaSignal, Import AI, Interconnects, Ahead of AI, Ben's Bites — sources at bottom of routine). Weight changes: Single-voice authority 14 → 16; Specificity renamed to Specificity & verdict 14 → 16; Curator's edge 12 → 14 with explicit anti-recommendation sub-criterion (+2 bonus within axis for "Who should skip" moves, observed in AlphaSignal); Anticipation 10 → 4 (research showed top newsletters don't tease — they deliver). Total still 100. Added 7 verbatim opener examples to Step 8 Voice Editor (one per studied newsletter), drawn from actual issues so the routine writes toward observed-craft patterns rather than fabricated examples. Expanded banned-phrases list: "we'll explore" / "we'll dive into", empty-action verbs ("supercharges", "power up", "unlock the power of"), and adjective-noun-noun stacks ("AI-powered solution", "next-generation framework", "cutting-edge model") confirmed as zero-occurrence in audited issues. Grader rules tightened: data without a verdict is half-credit; anti-recommendation is an explicit bonus path. Sources section rewritten to list the specific issues studied rather than generic newsletter URLs.
