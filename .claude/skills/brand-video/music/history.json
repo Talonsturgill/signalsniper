@@ -28,5 +28,10 @@
     "date": "2026-05-13",
     "slug": "decisions",
     "project_url": "https://github.com/cactus-compute/needle"
+  },
+  {
+    "date": "2026-05-14",
+    "slug": "investigations",
+    "project_url": "https://github.com/mattpocock/skills"
   }
 ]
