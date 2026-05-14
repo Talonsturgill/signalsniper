@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-14",
+  "brand_slug": null,
+  "preset_slug": "cctv",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "Matt Pocock's skills are an observability layer over agent behavior (diagnose, triage, grill-with-docs, git-guardrails), so the cctv preset reframes as engineer-ops, not surveillance; SCHEMATIC honors the loop structure (intent, inner loop, codebase audit) the 17 skills compose into; cctv is the only preset not used in the last 14 entries.",
+  "writing_tone_notes": "Engineer-to-engineer. Direct, pragmatic, no marketing. Contractions where natural. The numbers earn the claim. Lead with the diagram (the skills compose). Land on a stake about feedback loops, not on stars.",
+  "do_rules": [
+    "Make the SCHEMATIC diagram the hero. 4 nodes, named after real skills. The composition IS the argument.",
+    "Name two specific skills in copy (diagnose, grill-with-docs) so the reader has concrete handles.",
+    "Honor the install ritual. The npx one-liner is the proof of frictionless adoption.",
+    "Close on the loop, not the count. The framework ends with the position, not the metric."
+  ],
+  "dont_rules": [
+    "No version numbers in any copy surface.",
+    "No exclamation points, no superlatives, no 'first ever' claims.",
+    "No phrase overlap between tweet, why-this-one, and scene copy.",
+    "No exhaustive skill grocery list. Pick the two or three that carry the loop.",
+    "No surveillance/spy framing. The cctv preset reads as ops-center, not panopticon."
+  ],
+  "music_constraint_notes": "Catalog expanded today with 6 new Kevin MacLeod CC BY tracks. 'investigations' (pizzicato strings, suspenseful walk) scores 150 on (cctv, SCHEMATIC) and fits the 'audit the agent's output' angle of Matt's skills."
+}

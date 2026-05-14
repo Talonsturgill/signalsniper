@@ -56,5 +56,12 @@
     "aesthetic_slug": "editorial-paper",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/cactus-compute/needle"
+  },
+  {
+    "date": "2026-05-14",
+    "brand_slug": null,
+    "aesthetic_slug": "cctv",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/mattpocock/skills"
   }
 ]
