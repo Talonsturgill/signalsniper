@@ -1,0 +1,146 @@
+{
+  "week_start": "2026-05-09",
+  "scoring_notes": "Momentum (1-10) + Novelty (1-10) + Resonance (1-10). Sanity floor 22 for All-Star.",
+  "scores": [
+    {
+      "date": "2026-05-14",
+      "project_slug": "skills",
+      "creator_handle": "@mattpocockuk",
+      "momentum": 10,
+      "novelty": 6,
+      "resonance": 10,
+      "total": 26,
+      "momentum_rationale": "+3,392 stars in one day, highest single-day velocity on GitHub trending this week",
+      "novelty_rationale": "Composable skills as a composable feedback loop is not new, but open-sourcing a working senior engineer's actual .claude directory is a strong and rare signal",
+      "resonance_rationale": "Matt Pocock has ~67k X followers in the TypeScript community; the install hook (npx one-liner) and the composition story resonated immediately"
+    },
+    {
+      "date": "2026-05-10",
+      "project_slug": "react-doctor",
+      "creator_handle": "@aidenybai",
+      "momentum": 9,
+      "novelty": 7,
+      "resonance": 9,
+      "total": 25,
+      "momentum_rationale": "84k+ projects scanned in 24 hours is a velocity receipt, not just a star count",
+      "novelty_rationale": "First React audit tool to ship as a coding-agent skill; the agent-generated-code target is a genuine new use case",
+      "resonance_rationale": "React ecosystem is large; the agent-skill angle caught both the React and the agent-engineering communities"
+    },
+    {
+      "date": "2026-05-15",
+      "project_slug": "hermes-agent",
+      "creator_handle": "@Teknium",
+      "momentum": 9,
+      "novelty": 8,
+      "resonance": 8,
+      "total": 25,
+      "momentum_rationale": "151k stars cumulative, +1,728 today \u2014 massive absolute even if not top daily velocity",
+      "novelty_rationale": "Built-in learning loop that accumulates skills from experience and a Hermes Curator skill-management subsystem are genuinely novel agent primitives",
+      "resonance_rationale": "Nous Research has a strong open-weights following; v0.13.0 dropped May 7 and is still driving traffic"
+    },
+    {
+      "date": "2026-05-13",
+      "project_slug": "needle",
+      "creator_handle": "@hmunachii",
+      "momentum": 6,
+      "novelty": 10,
+      "resonance": 7,
+      "total": 23,
+      "momentum_rationale": "444 HN points (top AI/ML story) but only 795 total stars \u2014 momentum is real but modest in absolute terms",
+      "novelty_rationale": "26M parameters with no feedforward layers at all (only attention), distilled from Gemini 3.1, sized for a watch \u2014 the architectural bet is the most novel of the week",
+      "resonance_rationale": "Strong in the on-device / tiny model research lane; YC S25 adds credibility signal"
+    },
+    {
+      "date": "2026-05-11",
+      "project_slug": "omlx",
+      "creator_handle": "@jundotkim",
+      "momentum": 7,
+      "novelty": 9,
+      "resonance": 7,
+      "total": 23,
+      "momentum_rationale": "13.5k stars, +185 in 24h trending \u2014 solid but modest daily velocity compared to leaders",
+      "novelty_rationale": "First tiered SSD KV cache for Apple Silicon that survives restarts; solve a specific infrastructure gap that the entire lane had lived with",
+      "resonance_rationale": "Strong in the Apple Silicon / local LLM niche; inspired at least one parallel project (dflash-mlx) that credits the design"
+    },
+    {
+      "date": "2026-05-09",
+      "project_slug": "proofshot",
+      "creator_handle": "@JBerthom",
+      "momentum": 9,
+      "novelty": 8,
+      "resonance": 7,
+      "total": 23,
+      "momentum_rationale": "+6,800 in 72 hours from a 1.9k base (1.9k to 8.7k) \u2014 strongest percentage velocity of the week",
+      "resonance_rationale": "Good HN reception from the agent-engineering community but small install base vs the week's leaders"
+    },
+    {
+      "date": "2026-05-12",
+      "project_slug": "openhuman",
+      "creator_handle": "@senamakel",
+      "momentum": 5,
+      "novelty": 7,
+      "resonance": 5,
+      "total": 17,
+      "momentum_rationale": "+366 stars in 24h is solid for 1.9k total; but the weakest velocity of the week",
+      "novelty_rationale": "Subconscious loop + TokenJuice is novel but the local-agent space has multiple competitors"
+    }
+  ],
+  "hero": {
+    "date": "2026-05-14",
+    "project_slug": "skills",
+    "creator_handle": "@mattpocockuk",
+    "total_score": 26,
+    "above_sanity_floor": true
+  },
+  "finalists": [
+    {
+      "rank": 2,
+      "date": "2026-05-10",
+      "project_slug": "react-doctor",
+      "creator_handle": "@aidenybai",
+      "total_score": 25
+    },
+    {
+      "rank": 3,
+      "date": "2026-05-15",
+      "project_slug": "hermes-agent",
+      "creator_handle": "@Teknium",
+      "total_score": 25
+    },
+    {
+      "rank": 4,
+      "date": "2026-05-13",
+      "project_slug": "needle",
+      "creator_handle": "@hmunachii",
+      "total_score": 23
+    },
+    {
+      "rank": 5,
+      "date": "2026-05-12",
+      "project_slug": "openhuman",
+      "creator_handle": "@senamakel",
+      "total_score": 23
+    }
+  ],
+  "no_hero_this_week": false,
+  "tiebreaker_notes": {
+    "react-doctor_vs_hermes-agent": "Both 25. react-doctor ranked #2 on stronger 24h velocity signal (84k scans receipt vs 1,728 stars), and the agent-first quality tooling angle maps tightly to this week's theme. hermes-agent ranked #3 on absolute star weight and research depth.",
+    "needle_vs_omlx": "Both 23. needle ranked #4 on stronger HN reception (444 points, top AI/ML story) and higher novelty ceiling. omlx ranked #5 on higher absolute star count.",
+    "needle_vs_openhuman": "Both 23 post-research. needle ranked #4 on stronger HN traction (738 points vs minor openhuman HN). openhuman ranked #5 on strongest percentage velocity of the week (+358% from 1.9k to 8.7k in 72h). Both above openhuman creator-quote tiebreaker (You can't trust a memory you can't read).",
+    "omlx_excluded": "omlx originally ranked #5 at 23 pre-research. Post-research: openhuman displaced omlx based on stronger post-tribute velocity (+6,800 in 72h vs +700 in 4 days for omlx) and the stronger creator quote criterion. omlx remains excellent and ships in What I'm watching."
+  },
+  "excluded": [
+    {
+      "date": "2026-05-09",
+      "project_slug": "proofshot",
+      "total_score": 20,
+      "reason": "Below sanity floor (20 < 22); verification tooling lane is underrepresented this week but the week's story is more about self-improving systems and feedback loops"
+    },
+    {
+      "date": "2026-05-12",
+      "project_slug": "openhuman",
+      "total_score": 17,
+      "reason": "Weakest velocity of the week (17 < 22); local-agent memory covered more strongly by hermes-agent's learning loop"
+    }
+  ]
+}

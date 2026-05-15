@@ -1,0 +1,23 @@
+[
+  {
+    "issue": 1,
+    "week_start": "2026-05-02",
+    "hero_project": "[from prior issue PR]",
+    "through_line": "On-device AI crossed an architectural threshold, not just a marketing one.",
+    "final_grader_total": null,
+    "shipped_under_bar": false,
+    "note": "Recovered from prior weekly PR via Trend Analyst lookup; full Grader score not in scope for backfill"
+  },
+  {
+    "issue": 2,
+    "week_start": "2026-05-09",
+    "hero_project": "skills (mattpocock/skills)",
+    "hero_creator": "@mattpocockuk",
+    "through_line": "Agents are gaining persistent memory and self-composing skill loops between sessions.",
+    "lesson_headline": "Persist agent skills as composable text files before the next run",
+    "final_grader_total": 91,
+    "shipped_under_bar": false,
+    "revision_passes": 3,
+    "finalists": ["skills (@mattpocockuk)", "react-doctor (@aidenybai)", "hermes-agent (@Teknium)", "needle (@hmunachii)", "openhuman (@senamakel)"]
+  }
+]

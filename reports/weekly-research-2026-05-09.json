@@ -1,0 +1,98 @@
+{
+  "week_start": "2026-05-09",
+  "picks": {
+    "2026-05-09": {
+      "date": "2026-05-09",
+      "project_slug": "proofshot",
+      "momentum_delta": {"stars_then": 817, "stars_now": 819, "velocity_window": "+2 in ~6 days (May 9 to May 15)", "hn_followups": ["https://news.ycombinator.com/item?id=47507229 — follow-on thread questioning differentiation from VSCode and Antigravity"], "newsletter_mentions": []},
+      "shipped_since": [],
+      "sibling_work": [
+        {"name": "BrowserAct", "url": "https://github.com/browser-act/skills", "one_line": "Open-sourced May 14: stealth browser runtime plus an automation-factory skill for Claude Code, Cursor, and Codex — same target market as proofshot"},
+        {"name": "vercel-labs/agent-browser", "url": "https://github.com/vercel-labs/agent-browser", "one_line": "The upstream Rust CLI that proofshot wraps for headless Chromium sessions; v0.27.0 shipped May 7, 33.1k stars"},
+        {"name": "microsoft/agent-governance-toolkit", "url": "https://github.com/microsoft/agent-governance-toolkit", "one_line": "Policy-enforcement and zero-trust identity layer for autonomous agents (1.6k stars, v3.5.0 May 2026)"}
+      ],
+      "shipping_next": ["Desktop and mobile browser support (top community request, confirmed in Show HN thread)", "GitLab merge-request artifact upload (issue #22, labeled considering)", "Raspberry Pi / ARM support (issue #33, labeled enhancement)"],
+      "creator_quote": {"text": "The agent writes code but never sees what it actually looks like in the browser. It can't tell if the layout is broken or if the console is throwing errors.", "source_url": "https://news.ycombinator.com/item?id=47499672"},
+      "reading_list_candidate": {"title": "vercel-labs/agent-browser — Browser automation CLI for AI agents", "url": "https://github.com/vercel-labs/agent-browser", "why": "The upstream Rust CLI that proofshot wraps — understanding the session model (start, action, stop, trace) illuminates exactly what proofshot layers on top"}
+    },
+    "2026-05-10": {
+      "date": "2026-05-10",
+      "project_slug": "react-doctor",
+      "momentum_delta": {"stars_then": 7400, "stars_now": 9700, "velocity_window": "+2,300 in 5 days (May 10 to May 15)", "hn_followups": ["https://news.ycombinator.com/item?id=47051257"], "newsletter_mentions": []},
+      "shipped_since": ["React Doctor v2 released ~May 8: added Next.js, Vite, React Native support (source: x.com/aidenybai/status/2052780632510775469)", "Agent Skill announced May 9: npx react-doctor@latest install writes SKILL.md/AGENTS.md/.cursorrules for 50+ coding agents (source: x.com/aidenybai/status/2053153019366363387)", "GitHub Actions marketplace integration shipped: --annotations flag emits inline PR annotations", "react-doctor-benchmarks repo updated May 11: weekly automated scans of 27 popular React repos at react.doctor/leaderboard", "0.2.0-beta.3 and 0.2.0-beta.4 released May 15: false-positive fixes for barrel imports, React 19/18 compat, monorepo duplicate diagnostics"],
+      "sibling_work": [
+        {"name": "Vercel react-best-practices agent skill", "url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices", "one_line": "Vercel's open-source agent skill packaging 40+ React/Next.js performance rules for Claude Code, Cursor, Codex and 18+ agents, shipped February 2026"},
+        {"name": "Expo Skills (SDK 55)", "url": "https://docs.expo.dev/skills/", "one_line": "Expo's native agent-skill layer for React Native, bundled into SDK 55, teaching AI agents Expo-specific build/deploy/debug workflows with MCP integration"}
+      ],
+      "shipping_next": ["False-positive reduction is the dominant active signal: open issues #241 (async-defer-await), #239 (auth gating), #254 (React 19 rules on React 18 codebases)", "Architecture refactor underway: codegen-based auto-registration of rules signals rule-count expansion is imminent"],
+      "creator_quote": {"text": "Your agent writes bad React code, this catches it.", "source_url": "https://www.linkedin.com/posts/aidenbai_introducing-react-doctor-v2-your-agent-writes-activity-7458546260426399745-z3BX"},
+      "reading_list_candidate": {"title": "Keeping Replit Agent Reliable Through Decision-Time Guidance (Securing AI-Generated Code)", "url": "https://blog.replit.com/securing-ai-generated-code", "why": "Replit's January 2026 white paper demonstrates that AI-only code scans are nondeterministic and that deterministic static analysis must run alongside LLM reasoning — the structural argument that makes react-doctor's rule-based scoring necessary"}
+    },
+    "2026-05-11": {
+      "date": "2026-05-11",
+      "project_slug": "omlx",
+      "momentum_delta": {"stars_then": 13500, "stars_now": 14200, "velocity_window": "+700 in 4 days (May 11 to May 15)", "hn_followups": ["https://news.ycombinator.com/item?id=47247294 — Show HN from early March 2026 (pre-tribute)", "https://news.ycombinator.com/item?id=47661697 — 'I've jumped over to oMLX. A ton of rough edges but I think it's the future.' (~early April 2026)"], "newsletter_mentions": []},
+      "shipped_since": ["v0.3.9.dev2 (May 12): Gemma 4 MTP on vision path, DFlash engine support, ParoQuant quantization, omlx launch copilot (one-click access to Claude/Codex/OpenClaw), admin Restart Server button, French localization, ~40 bug fixes", "v0.3.9.dev1 (May 6, pre-tribute): DeepSeek V4 Pro/Flash with SSD cache, native MTP for Qwen3.5/3.6, omlx launch claude one-liner"],
+      "sibling_work": [
+        {"name": "Rapid-MLX", "url": "https://github.com/raullenchai/Rapid-MLX", "one_line": "Claims 4.2x faster than Ollama on Apple Silicon with 0.08s cached TTFT and DFlash speculative decoding; 2.4k stars, v0.6.50 shipped May 15"},
+        {"name": "vllm-mlx", "url": "https://github.com/waybarrios/vllm-mlx", "one_line": "OpenAI + Anthropic-compatible MLX inference server with paged KV cache and SSD-tiered cache; v0.3.0 shipped May 9, 1.2k stars"}
+      ],
+      "shipping_next": ["Native reasoning support for the Responses API (open PR #1245)", "Draft-model-free self-scoring for single-request TTFT via SpecPrefill (open PR #1225)", "DFlash Path A double-engine expansion (open PR #1185)"],
+      "creator_quote": {"text": "Every LLM server I tried made me choose between convenience and control. I wanted to pin everyday models in memory, auto-swap heavier ones on demand — that's why I built it.", "source_url": "https://github.com/jundot/omlx/blob/main/README.md"},
+      "reading_list_candidate": {"title": "Tutti: Making SSD-Backed KV Cache Practical for Long-Context LLM Serving", "url": "https://arxiv.org/abs/2605.03375", "why": "Published May 5 2026, the closest academic peer to oMLX's core bet: GPU-centric KV object store on NVMe SSD eliminating CPU from the I/O critical path, cutting TTFT by 78.3% vs GDS-backed LMCache"}
+    },
+    "2026-05-12": {
+      "date": "2026-05-12",
+      "project_slug": "openhuman",
+      "momentum_delta": {"stars_then": 1900, "stars_now": 8700, "velocity_window": "+6,800 in 72 hours (May 12 to May 15)", "hn_followups": ["https://news.ycombinator.com/item?id=47839564 — submitted by enamakel, 3 points"], "newsletter_mentions": []},
+      "shipped_since": ["v0.53.35 (May 13 10:19 UTC): transcript-to-memory ingestion, seed-phrase onboarding with multi-chain wallet setup, memory-tree summarization scaling for cloud, tool-scoped memory with durable rule capture, floating mascot for macOS, Google Meet integration", "v0.53.40 (May 13 13:44 UTC): mic input device selector for voice composition, Windows window-closure fix, unified memory embeddings with cloud Voyage as default plus local toggle", "v0.53.43 (May 13 20:10 UTC): Sentry skip for transient errors, unified memory embeddings, clear-app-data recovery on login decryption failure"],
+      "sibling_work": [
+        {"name": "remnic", "url": "https://github.com/joshuaswarren/remnic", "one_line": "Local-first memory plugin for Claude Code using plain markdown storage and hybrid QMD semantic search; 73 stars, v9.3.394 shipped May 14"},
+        {"name": "ReMe (AgentScope)", "url": "https://github.com/agentscope-ai/ReMe", "one_line": "Alibaba's Memory Management Kit for Agents — auto-compacts long conversations, persists semantic history across stateless sessions, 2.7k stars"},
+        {"name": "agentmemory", "url": "https://github.com/rohitg00/agentmemory", "one_line": "Persistent memory MCP toolkit for AI coding agents with 51 tools and local markdown storage, last pushed May 12"}
+      ],
+      "shipping_next": ["Local-first connector mode (#1819) — user-owned tool connections without backend dependency", "Discord integration (#1806) — mascot answering questions and escalating to moderators", "Multiple agent profiles (#1758) — distinct agent configurations per use-case", "Configurable mascot voices (#1762) — ElevenLabs voice ID integration"],
+      "creator_quote": {"text": "You can't trust a memory you can't read.", "source_url": "https://github.com/tinyhumansai/openhuman/blob/main/gitbooks/README.md"},
+      "reading_list_candidate": {"title": "State of AI Agent Memory 2026: Benchmarks, Architectures and Production Gaps", "url": "https://mem0.ai/blog/state-of-ai-agent-memory-2026", "why": "Maps episodic vs semantic storage, temporal queries, cross-session identity with benchmark data (LoCoMo, LongMemEval) that contextualizes why openhuman's memory-tree-plus-subconscious-loop makes concrete tradeoff choices"}
+    },
+    "2026-05-13": {
+      "date": "2026-05-13",
+      "project_slug": "needle",
+      "momentum_delta": {"stars_then": 795, "stars_now": 1800, "velocity_window": "+1,005 in ~48 hours (May 13 to May 15)", "hn_followups": ["https://news.ycombinator.com/item?id=48111896 — grew from 444 to 738 points and 154 to 207 comments between May 13 and May 15", "Community ONNX playground launched on HuggingFace Spaces: https://huggingface.co/spaces/shreyask/needle-playground"], "newsletter_mentions": ["GIGAZINE coverage 2026-05-14: https://gigazine.net/gsc_news/en/20260514-needle-tool-calling--distilled-gemini/", "Startup Fortune: https://startupfortune.com/needle-shows-tiny-models-can-move-ai-agents-onto-devices/"]},
+      "shipped_since": ["Commit 34861f3 on May 15: 'Add finetune data format docs and per-tool warning; align tool schema across codebase (#26)' — adds fine-tune documentation and standardizes tool schema", "Multiple quantized model uploads to HuggingFace Cactus-Compute org post-launch: Qwen3-0.6B-cq, LFM2.5-VL-1.6B-cq, LFM2.5-VL-450M-cq, gemma-4-e2b-it-cq"],
+      "sibling_work": [
+        {"name": "FunctionGemma-270M", "url": "https://blog.google/technology/developers/functiongemma/", "one_line": "Google's 270M-parameter Gemma 3 variant fine-tuned for on-device function calling, released December 2025 — the direct benchmark Needle outperforms"},
+        {"name": "TinyAgent", "url": "https://github.com/SqueezeAILab/TinyAgent", "one_line": "Berkeley EMNLP 2024 demo — 1.1B and 7B SLMs fine-tuned with curated tool-calling data that beat GPT-4-Turbo on function calling while running on MacBooks"}
+      ],
+      "shipping_next": ["Android support being explored (issue #17 'Needle available on Android possibility', opened May 13)", "Custom dataset fine-tuning pipeline (issues #20 and #19, both opened May 13, active groundwork with May 15 schema commit)"],
+      "creator_quote": {"text": "Tool calling is fundamentally retrieval-and-assembly (match query to tool name, extract argument values, emit JSON), not reasoning.", "source_url": "https://www.linkedin.com/posts/henry-ndubuaku-7b6350b8_we-open-sourced-needle-a-26m-parameter-tool-activity-7460027492444098560-t5CD"},
+      "reading_list_candidate": {"title": "TinyAgent: Function Calling at the Edge (EMNLP 2024)", "url": "https://arxiv.org/abs/2409.00608", "why": "Berkeley SqueezeAI Lab paper that first proved sub-7B SLMs can beat GPT-4-Turbo on function calling when trained on curated tool-call datasets — the conceptual ancestor of Needle's bet that specialization beats scale for single-shot tool routing"}
+    },
+    "2026-05-14": {
+      "date": "2026-05-14",
+      "project_slug": "skills",
+      "momentum_delta": {"stars_then": 80296, "stars_now": 84400, "velocity_window": "+4,104 in ~25 hours (May 14 to May 15)", "hn_followups": [], "newsletter_mentions": []},
+      "shipped_since": ["May 13 commit: 'Clarify purpose of CONTEXT.md to emphasize it as a glossary' (e74f006)", "May 11: 'Enhance writing-fragments skill to capture initial user prompts' + 'Add handoff skill to improve workflow documentation'", "May 10: 'Add review skill to facilitate two-axis code reviews'", "May 6-7: handoff and prototype skills fully landed with associated SKILL.md files"],
+      "sibling_work": [
+        {"name": "ComposioHQ/awesome-claude-skills", "url": "https://github.com/ComposioHQ/awesome-claude-skills", "one_line": "60k-star curated collection of 1000+ production-ready Claude skills with a connect-apps plugin for 500+ real-world integrations via Composio"},
+        {"name": "VoltAgent/awesome-agent-skills", "url": "https://github.com/VoltAgent/awesome-agent-skills", "one_line": "21.7k-star community registry of 1000+ agent skills compatible with Claude Code, Codex, Gemini CLI, Cursor, and Windsurf"}
+      ],
+      "shipping_next": ["Issue #197: Skill orchestrator for choosing skill workflows — meta-skill that selects and chains other skills", "Issue #188: /visualize-architecture skill — new planned skill for architectural visualization", "Issue #170: Making the project a valid npm package — infrastructure work to improve installability"],
+      "creator_quote": {"text": "1. /grill-with-docs 2. 'Oh, I need to prototype some UI' 3. /handoff to /prototype 4. Create prototype, /handoff back to grilling session 5. /to-prd, /to-issues 6. npm run sandcastle 7. /improve-codebase-architecture I love this shit", "source_url": "https://x.com/mattpocockuk/status/2052042499053453330"},
+      "reading_list_candidate": {"title": "Equipping agents for the real world with Agent Skills", "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills", "why": "The canonical Anthropic Engineering spec (Oct 2025) that defined the SKILL.md format and progressive-disclosure architecture underpinning every composable skill in mattpocock/skills"}
+    },
+    "2026-05-15": {
+      "date": "2026-05-15",
+      "project_slug": "hermes-agent",
+      "momentum_delta": {"stars_then": 151000, "stars_now": 152000, "velocity_window": "+1,000 in ~8 days (151k on May 7 to 152k on May 15)", "hn_followups": ["https://news.ycombinator.com/item?id=47786673 — follow-up thread: users discussing Hermes vs OpenClaw with real-world VPS deployment stories", "Original launch thread https://news.ycombinator.com/item?id=47264225 reached #1 with 1,064 points and 811 comments"], "newsletter_mentions": ["NVIDIA Blog feature 2026-05-13: https://blogs.nvidia.com/blog/rtx-ai-garage-hermes-agent-dgx-spark/"]},
+      "shipped_since": ["26 commits merged to main on May 15: SimpleX Chat added as 21st supported messaging platform; HuggingFace/skills added as trusted default tap for skills hub (#2549); hermes acp --setup-browser bootstraps browser tools; feat(cron) name-based job lookup; feat(image-gen) FAL backend diagnostics; YOLO mode warning in banner; multiple security/stability fixes across TUI, MCP, Slack, WhatsApp, Langfuse observability"],
+      "sibling_work": [
+        {"name": "EvoSkill", "url": "https://github.com/sentient-agi/EvoSkill", "one_line": "Sentient Labs' open-source framework (751 stars) that auto-discovers reusable coding skills from failed agent trajectories, improving Claude Code accuracy by up to 12 points on SealQA"},
+        {"name": "OpenSpace", "url": "https://github.com/HKUDS/OpenSpace", "one_line": "HKUDS self-evolving skill engine (6.2k stars) where agents share evolved skills via a cloud community, achieving 46% token reduction on GDPVal benchmark"}
+      ],
+      "shipping_next": ["Computer Use (early preview, any model) — announced May 11 by Teknium, powered by @trycua (source: https://x.com/Teknium/status/2053961675985113404)", "SimpleX Chat plugin already landed on main May 15 ahead of formal release — 21st supported messaging platform", "HuggingFace/skills as a trusted default tap for the skills hub (landed May 15, PR #2549)", "v0.14.0 expected around May 14-21 based on weekly cadence (v0.11.0 Apr 23, v0.12.0 Apr 30, v0.13.0 May 7)"],
+      "creator_quote": {"text": "Hermes starts off as any other agent does, inefficient and often not sure how to complete a task that its training didn't have priors for. However, solve it once and you unlock huge efficiency gains. I sometimes call this linearized RL.", "source_url": "https://x.com/Teknium/status/2046001396819067008"},
+      "reading_list_candidate": {"title": "EvoSkill: Automated Skill Discovery for Multi-Agent Systems", "url": "https://arxiv.org/html/2603.02766v1", "why": "Direct complement to hermes-agent's Hermes Curator subsystem: shows how agents can synthesize and transfer reusable skills from failure traces across tasks and models — the academic backing for why the skill-accumulation loop generalizes"}
+    }
+  }
+}

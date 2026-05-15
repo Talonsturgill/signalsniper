@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>This Week in AI Issue 2</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">This Week in AI Issue 2</h1>
+</header>
+<h1 id="this-week-in-ai--3392-stars-one-claude-directory-one-day">This
+Week in AI · 3,392 Stars, One .claude Directory, One Day</h1>
+<p><em>Issue 2 · May 9 to May 15, 2026 · ~6 min read</em></p>
+<p>Five finalists made this week's cut. Three ship tools or agents that
+persist state between sessions, treating memory as infrastructure. One
+compressed a frontier model to 26 million parameters and targeted a
+wristwatch. Another's repository drew +3,392 stars in a single day from
+a single commit documenting one new skill named <code>caveman</code>.
+The All-Star is skills by <a
+href="https://x.com/mattpocockuk">@mattpocockuk</a>.</p>
+<hr />
+<h2 id="the-all-star--skills-by-mattpocockuk">The All-Star · skills by
+<a href="https://x.com/mattpocockuk">@mattpocockuk</a></h2>
+<h3 id="the-lede">The Lede</h3>
+<p>On May 14, 2026, Matt Pocock pushed documentation for a new skill
+called <code>caveman</code> to his public GitHub repository. That commit
+pulled +3,392 stars in 24 hours, leading GitHub trending that week for
+single-day velocity. Pocock didn't announce a product or publish a
+launch thread. He opened the <code>.claude/</code> directory he runs
+Total TypeScript with, named the failure modes each skill fixes, and let
+the install command be the punchline.</p>
+<h3 id="the-build">The Build</h3>
+<p><strong>What it does.</strong> skills ships 17 composable Claude Code
+skill files, installed with one command,
+<code>npx skills@latest add mattpocock/skills</code>. Each skill
+addresses one named failure mode in agent-driven development.
+<code>grill-me</code> sets intent before a session begins.
+<code>tdd</code> runs the inner development loop. <code>diagnose</code>
+triages errors without losing context. <code>zoom-out</code> reframes
+when the agent is stuck. <code>improve-codebase-architecture</code>
+audits entropy on a longer horizon. <code>caveman</code> strips the
+agent's output to its essentials. The output of each skill feeds the
+input of the next. That's a loop, not a list.</p>
+<p><strong>Where it came from.</strong> Pocock founded Total TypeScript
+as a course platform and served as devrel for XState. The skills repo
+began as his private <code>.claude/</code> directory and accumulated 78
+commits across skills including handoff, prototype, review, and
+writing-fragments before he made it public.</p>
+<p><strong>What changed this week.</strong> The <code>caveman</code>
+skill documentation landed on May 14. Within 24 hours the repo went from
+80,296 to 84,400 stars. The velocity held through May 15, outpacing
+every other project on GitHub trending for percentage climb during the
+window.</p>
+<h3 id="the-quote">The Quote</h3>
+<blockquote>
+<p>"1. /grill-with-docs 2. 'Oh, I need to prototype some UI' 3. /handoff
+to /prototype 4. Create prototype, /handoff back to grilling session 5.
+/to-prd, /to-issues 6. npm run sandcastle 7.
+/improve-codebase-architecture I love this shit"</p>
+<p><a href="https://x.com/mattpocockuk">@mattpocockuk</a> on X, <a
+href="https://x.com/mattpocockuk/status/2052042499053453330">https://x.com/mattpocockuk/status/2052042499053453330</a></p>
+</blockquote>
+<p><a
+href="https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-S1nW3/reports/tribute-2026-05-14.mp4">https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-S1nW3/reports/tribute-2026-05-14.mp4</a></p>
+<hr />
+<h2 id="the-pattern-this-week">The pattern this week</h2>
+<p>Agents are gaining persistent memory and self-composing skill loops
+between sessions. hermes-agent (<a
+href="https://x.com/Teknium">@Teknium</a>) shipped its v0.13.0 Hermes
+Curator on May 7, a subsystem that distills new skills from completed
+runs and writes them to disk for reuse. openhuman (<a
+href="https://twitter.com/senamakel">@senamakel</a>) runs a continuous
+background process that re-reads its stored notes between requests,
+writing everything as Obsidian-compatible markdown on the user's
+machine. skills (<a href="https://x.com/mattpocockuk">@mattpocockuk</a>)
+makes the structural bet concrete, 17 Claude Code skill files in
+<code>.claude/skills/</code>, each feeding the next in a closed loop.
+The counter signal is react-doctor and proofshot, both of which built
+their audiences this week on the opposite premise. Agents still can't
+reliably audit their own output.</p>
+<hr />
+<h2 id="quick-stats">Quick stats</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Project</th>
+<th>Creator</th>
+<th>Stars</th>
+<th>Velocity</th>
+<th>Language</th>
+<th>License</th>
+<th>Lane</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>#1 All-Star</td>
+<td>skills</td>
+<td><a href="https://x.com/mattpocockuk">@mattpocockuk</a></td>
+<td>84,400</td>
+<td>+4,104 in 25h</td>
+<td>Shell</td>
+<td>MIT</td>
+<td>tooling</td>
+</tr>
+<tr class="even">
+<td>#2</td>
+<td>react-doctor</td>
+<td><a href="https://x.com/aidenybai">@aidenybai</a></td>
+<td>9,700</td>
+<td>+2,300 in 5 days</td>
+<td>TypeScript</td>
+<td>MIT</td>
+<td>tooling</td>
+</tr>
+<tr class="odd">
+<td>#3</td>
+<td>hermes-agent</td>
+<td><a href="https://x.com/Teknium">@Teknium</a></td>
+<td>152,000</td>
+<td>+1,000 in 8 days</td>
+<td>Python</td>
+<td>MIT</td>
+<td>agents</td>
+</tr>
+<tr class="even">
+<td>#4</td>
+<td>needle</td>
+<td><a href="https://twitter.com/hmunachii">@hmunachii</a></td>
+<td>1,800</td>
+<td>+1,005 in 48h</td>
+<td>Python</td>
+<td>MIT</td>
+<td>on-device</td>
+</tr>
+<tr class="odd">
+<td>#5</td>
+<td>openhuman</td>
+<td><a href="https://twitter.com/senamakel">@senamakel</a></td>
+<td>8,700</td>
+<td>+6,800 in 72h</td>
+<td>Rust</td>
+<td>GPL-3.0</td>
+<td>agents</td>
+</tr>
+</tbody>
+</table>
+<p>Stars as of May 15, 2026.</p>
+<hr />
+<h2 id="four-more-finalists">Four more finalists</h2>
+<h3 id="2-finalist--react-doctor-by-aidenybai">#2 Finalist ·
+react-doctor by <a href="https://x.com/aidenybai">@aidenybai</a></h3>
+<p><strong>Why it's here.</strong> Scanned 84k+ projects within a day of
+shipping as an agent skill on May 9. A React codebase gets a 0-100
+health score across rules covering performance, accessibility, dead
+code, and security.</p>
+<p><strong>The number.</strong> 9,700 stars | +2,300 in 5 days |
+tooling</p>
+<p><strong>The verdict.</strong> The 84k-project receipt beats the star
+count as a signal. It belongs in CI before agent-written React
+ships.</p>
+<p><a href="https://github.com/millionco/react-doctor">See the project
+→</a> · <a href="https://x.com/aidenybai">Follow @aidenybai</a></p>
+<hr />
+<h3 id="3-finalist--hermes-agent-by-teknium">#3 Finalist · hermes-agent
+by <a href="https://x.com/Teknium">@Teknium</a></h3>
+<p><strong>Why it's here.</strong> Gained a Hermes Curator that
+synthesizes new skills from completed runs and persists them for reuse.
+The subsystem shipped May 7 with v0.13.0. 152k stars, 200+ models via
+OpenRouter, runs on a $5 VPS.</p>
+<p><strong>The number.</strong> 152,000 stars | +1,000 in 8 days |
+agents</p>
+<p><strong>The verdict.</strong> Most open-source agents are stateless.
+This one accumulates. Teknium calls it linearized RL.</p>
+<p><a href="https://github.com/NousResearch/hermes-agent">See the
+project →</a> · <a href="https://x.com/Teknium">Follow @Teknium</a></p>
+<hr />
+<h3 id="4-finalist--needle-by-hmunachii">#4 Finalist · needle by <a
+href="https://twitter.com/hmunachii">@hmunachii</a></h3>
+<p><strong>Why it's here.</strong> Stripped feedforward layers,
+distilled a 26M parameter model from a Gemini frontier teacher, scoped
+to single-shot function calling on a wristwatch. HN agreed, 738 points
+by May 15.</p>
+<p><strong>The number.</strong> 1,800 stars | +1,005 in 48h | on-device
+research</p>
+<p><strong>The verdict.</strong> Targeting wearable hardware with
+FFN-stripped attention is a defensible architectural position. Tool
+calling is retrieval-and-assembly, not reasoning.</p>
+<p><a href="https://github.com/cactus-compute/needle">See the project
+→</a> · <a href="https://twitter.com/hmunachii">Follow
+@hmunachii</a></p>
+<hr />
+<h3 id="5-finalist--openhuman-by-senamakel">#5 Finalist · openhuman by
+<a href="https://twitter.com/senamakel">@senamakel</a></h3>
+<p><strong>Why it's here.</strong> Jumped from 1.9k to 8.7k stars in 72
+hours. Runs a background loop that re-reads its own memory tree between
+requests and persists everything as Obsidian-compatible markdown on the
+user's machine.</p>
+<p><strong>The number.</strong> 8,700 stars | +6,800 in 72h | agents</p>
+<p><strong>The verdict.</strong> An agent that summarizes its own memory
+tree is a different class of tool. Steven says you can't trust a memory
+you can't read.</p>
+<p><a href="https://github.com/tinyhumansai/openhuman">See the project
+→</a> · <a href="https://twitter.com/senamakel">Follow
+@senamakel</a></p>
+<hr />
+<h2
+id="the-lesson-this-week--persist-agent-skills-as-composable-text-files-before-the-next-run">The
+lesson this week · Persist agent skills as composable text files before
+the next run</h2>
+<p>Both skills and hermes-agent landed this week with the same
+architectural instinct. Skills are files, not runtime config.</p>
+<p>skills (<a href="https://x.com/mattpocockuk">@mattpocockuk</a>) drops
+17 files into <code>.claude/skills/</code> with one npx command. Each
+file defines the behavior for one step in the feedback loop.
+hermes-agent (<a href="https://x.com/Teknium">@Teknium</a>) takes that
+further. Its v0.13.0 Hermes Curator writes new skills to disk after each
+completed run, building the agent's capability library over time.</p>
+<p>An agent loop that doesn't persist the skills it discovers isn't
+learning. It's running in place. The skill file is the unit of
+composition.</p>
+<pre class="bash"><code># From skills by @mattpocockuk
+npx skills@latest add mattpocock/skills
+# Installs to .claude/skills/ - versionable, composable, survives restarts
+
+# The composable loop (each step feeds the next)
+# grill-me -&gt; tdd -&gt; diagnose -&gt; zoom-out -&gt; improve-codebase-architecture</code></pre>
+<p>This pattern applies to agents that run across more than one session.
+One-shot tasks where state persistence adds overhead without return
+don't need it.</p>
+<hr />
+<h2 id="code-from-the-week">Code from the week</h2>
+<p><strong>skills by <a
+href="https://x.com/mattpocockuk">@mattpocockuk</a></strong></p>
+<pre class="bash"><code>npx skills@latest add mattpocock/skills
+
+# grill-me -&gt; tdd -&gt; diagnose -&gt; zoom-out -&gt; improve-codebase-architecture
+# Each skill is a plain text file in .claude/skills/</code></pre>
+<p><strong>react-doctor by <a
+href="https://x.com/aidenybai">@aidenybai</a></strong></p>
+<pre class="bash"><code>npx react-doctor@latest install
+# Writes SKILL.md, AGENTS.md, .cursorrules for 50+ coding agents
+
+npx react-doctor@latest scan ./src --annotations
+# 0-100 health score; --annotations emits ::error:: for GitHub Actions CI</code></pre>
+<p><strong>hermes-agent by <a
+href="https://x.com/Teknium">@Teknium</a></strong></p>
+<pre class="bash"><code>hermes-agent --provider openrouter --model hermes-4
+hermes acp --setup-browser   # bootstraps browser tools
+# v0.13.0: Hermes Curator writes new skills to ~/.hermes/skills/ after each run</code></pre>
+<p><strong>needle by <a
+href="https://twitter.com/hmunachii">@hmunachii</a></strong></p>
+<pre class="python"><code>from cactus import load_model
+model = load_model(&quot;Cactus-Compute/needle-26m&quot;)
+# 26M parameters, no feedforward layers, only attention
+result = model.function_call(tools=tools, prompt=user_query)
+# Output: {&quot;tool&quot;: &quot;get_weather&quot;, &quot;args&quot;: {&quot;city&quot;: &quot;London&quot;}}</code></pre>
+<p><strong>openhuman by <a
+href="https://twitter.com/senamakel">@senamakel</a></strong></p>
+<pre class="bash"><code># Memory tree lives on disk at ~/.openhuman/memory/ as Obsidian-compatible markdown
+# Subconscious loop re-reads and summarizes the tree between requests
+# TokenJuice compresses tool outputs before any paid API call</code></pre>
+<hr />
+<h2 id="what-im-watching-this-week">What I'm watching this week</h2>
+<ul>
+<li><strong><a
+href="https://github.com/mattpocock/skills/issues/197">Skill
+orchestrator</a></strong> by <a
+href="https://x.com/mattpocockuk">@mattpocockuk</a>. Issue #197 proposes
+a meta-skill that selects and chains other skills based on session
+context. If it ships, it takes the skill loop from manual assembly to
+automatic.</li>
+<li><strong><a
+href="https://x.com/Teknium/status/2053961675985113404">hermes-agent
+Computer Use</a></strong> by <a
+href="https://x.com/Teknium">@Teknium</a>. Early preview announced May
+11, any LLM controls a desktop via <a
+href="https://x.com/trycua">@trycua</a> without a full PC takeover.
+First stable release is the trigger.</li>
+<li><strong><a href="https://github.com/jundot/omlx">omlx
+SpecPrefill</a></strong> by <a
+href="https://x.com/jundotkim">@jundotkim</a>. Draft-model-free
+self-scoring for single-request TTFT (open PR #1225). If it lands, it
+drops the first-token wait on Apple Silicon without a speculative
+decoding model.</li>
+</ul>
+<hr />
+<h2 id="reading-list">Reading list</h2>
+<ul>
+<li><strong><a
+href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Equipping
+agents for the real world with Agent Skills</a></strong>. The Anthropic
+Engineering spec (Oct 2025) that defined the SKILL.md format and
+progressive-disclosure architecture underpinning every composable skill
+in mattpocock/skills.</li>
+<li><strong><a
+href="https://arxiv.org/html/2603.02766v1">EvoSkill</a></strong>, a
+Virginia Tech and Sentient paper on automated skill discovery for
+multi-agent systems. Shows that agents can synthesize and transfer
+reusable skills from failure traces, the academic backing for why the
+skill-accumulation loop in hermes-agent generalizes.</li>
+<li><strong><a
+href="https://mem0.ai/blog/state-of-ai-agent-memory-2026">State of AI
+Agent Memory 2026</a></strong> by mem0.ai. Maps episodic vs semantic
+storage, temporal queries, and cross-session identity with benchmark
+data from LoCoMo and LongMemEval, contextualizing the tradeoffs
+openhuman and hermes-agent are both making.</li>
+</ul>
+<hr />
+<p>Three of this week's five finalists build on persistent agent memory.
+The architectural pattern compounds with each run for the cost of one
+install line. Forward this to a builder still running stateless agent
+loops.</p>
+<hr />
+<p><em>AI All Stars Weekly is curated and edited by Talon Sturgill. Each
+project was first profiled in a daily tribute. See the <a
+href="https://github.com/Talonsturgill/signalsniper">daily
+archive</a>.</em></p>
+</body>
+</html>
