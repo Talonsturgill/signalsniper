@@ -63,5 +63,12 @@
     "aesthetic_slug": "cctv",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/mattpocock/skills"
+  },
+  {
+    "date": "2026-05-15",
+    "brand_slug": "voltagent",
+    "aesthetic_slug": "voltagent",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/NousResearch/hermes-agent"
   }
 ]

@@ -1,0 +1,94 @@
+{
+  "date": "2026-05-15",
+  "topic": "hermes-agent, the open-source agent with a built-in learning loop",
+  "creator_handle": "@Teknium",
+  "project_url": "https://github.com/NousResearch/hermes-agent",
+
+  "design": {
+    "brand_slug": "voltagent",
+    "aesthetic_slug": "voltagent",
+    "tokens": {
+      "canvas": "#050507",
+      "ink": "#f2f2f2",
+      "ink_muted": "#b8b3b0",
+      "accent": "#00d992",
+      "hairline": "#3d3a39"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.015,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.08,
+      "scene_out_s": 0.06,
+      "stagger_s": 0.12
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.06,
+      "lighting_arc": 0.18
+    },
+    "framework": "RECEIPT",
+    "audio_palette": "electronic",
+    "held_subject": "hermes",
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "Hermes Agent",
+      "eyebrow": "the agent that grows with you",
+      "duration_s": 3.0,
+      "camera": "orbit"
+    },
+    {
+      "template": "big_number",
+      "numeral": "151k",
+      "caption": "stars and counting",
+      "sub": "open source, indie built",
+      "duration_s": 3.5,
+      "camera": "ken_burns"
+    },
+    {
+      "template": "big_number",
+      "numeral": "200+",
+      "caption": "LLMs supported",
+      "sub": "any provider, any gateway",
+      "duration_s": 3.5,
+      "camera": "parallax_drift"
+    },
+    {
+      "template": "fix",
+      "primary": "Learns from use.",
+      "secondary": "Saves what works.",
+      "emphasize": true,
+      "duration_s": 3.5,
+      "camera": "push_in"
+    },
+    {
+      "template": "close",
+      "primary": "Memory persists.",
+      "accent": "Skills stack.",
+      "subtitle": "every run carries forward.",
+      "emphasize": true,
+      "duration_s": 3.5,
+      "camera": "pull_back"
+    }
+  ]
+}

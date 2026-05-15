@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-15",
+  "brand_slug": "voltagent",
+  "preset_slug": null,
+  "aesthetic_slug": "voltagent",
+  "framework": "RECEIPT",
+  "rationale_one_line": "Hermes Agent is an AI-agent engineering platform; VoltAgent's deep-space command-terminal identity (carbon-black + emerald signal green) is the closest brand-design-systems match and lets the numbers in RECEIPT glow as power-on signals.",
+  "writing_tone_notes": "Terse, build-in-public peer voice. Compressed power blocks. Show the metric, then the consequence. Use contractions where natural. The accent green is reserved for the numbers and the close beat.",
+  "do_rules": [
+    "Lead with the velocity / total metric and let it sit alone for a full beat.",
+    "Pair every number with a so-what caption that explains why it matters to a builder.",
+    "Reserve the emerald green for big_number numerals and the close.accent — never the whole headline.",
+    "Use cut transitions so the metrics land with engineering precision.",
+    "Keep the held-subject wordmark anchored bottom-left across every scene."
+  ],
+  "dont_rules": [
+    "Don't repeat the X caption's phrasing in any scene. The caption sells velocity + the learning-loop hook; scenes sell the 151k + 200+ specifics.",
+    "Don't introduce warm colors. The palette is strictly green + warm neutrals on near-black.",
+    "Don't use version numbers in any scene copy (per WRITING_RULES; v0.13.0 is fine in the Why-this-one only).",
+    "Don't drop the accent green on a flash or full-bleed surface — it's an accent, never a fill."
+  ]
+}

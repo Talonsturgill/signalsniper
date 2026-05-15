@@ -33,5 +33,10 @@
     "date": "2026-05-14",
     "slug": "investigations",
     "project_url": "https://github.com/mattpocock/skills"
+  },
+  {
+    "date": "2026-05-15",
+    "slug": "faceoff",
+    "project_url": "https://github.com/NousResearch/hermes-agent"
   }
 ]
