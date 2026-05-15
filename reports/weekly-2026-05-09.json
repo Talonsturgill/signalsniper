@@ -1,0 +1,22 @@
+{
+  "issue": 2,
+  "title": "This Week in AI · 3,392 Stars, One .claude Directory, One Day",
+  "week_start": "2026-05-09",
+  "week_end": "2026-05-15",
+  "hero": {
+    "date": "2026-05-14",
+    "project_slug": "skills",
+    "creator_handle": "@mattpocockuk",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-S1nW3/reports/tribute-2026-05-14.mp4"
+  },
+  "finalists": [
+    {"date": "2026-05-10", "rank": 2, "project_slug": "react-doctor", "creator_handle": "@aidenybai"},
+    {"date": "2026-05-15", "rank": 3, "project_slug": "hermes-agent", "creator_handle": "@Teknium"},
+    {"date": "2026-05-13", "rank": 4, "project_slug": "needle", "creator_handle": "@hmunachii"},
+    {"date": "2026-05-12", "rank": 5, "project_slug": "openhuman", "creator_handle": "@senamakel"}
+  ],
+  "through_line": "Agents are gaining persistent memory and self-composing skill loops between sessions.",
+  "lesson_headline": "Persist agent skills as composable text files before the next run",
+  "word_count": 1450,
+  "estimated_read_minutes": 6
+}

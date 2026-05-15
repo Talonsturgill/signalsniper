@@ -1,0 +1,25 @@
+[
+  {
+    "pass_number": 1,
+    "verdict": "SHIP",
+    "total": 91,
+    "axes": {
+      "hook_strength": {"score": 11, "max": 12},
+      "single_voice_authority": {"score": 14, "max": 16},
+      "original_analysis": {"score": 14, "max": 16},
+      "specificity_verdict": {"score": 15, "max": 16},
+      "curators_edge": {"score": 12, "max": 14, "anti_rec_bonus": 0},
+      "anti_mush_variety": {"score": 10, "max": 12, "banned_phrase_instances": ["multiple sessions (line 120) — fixed in pass 2 to 'more than one session'"]},
+      "structural_craft": {"score": 6, "max": 6},
+      "closing_landing": {"score": 3, "max": 4},
+      "anticipation": {"score": 4, "max": 4}
+    },
+    "headline_quality_note": "Strong concrete headline: '3,392 Stars, One .claude Directory, One Day' carries a number, an artifact, and a time window. Does real work without resorting to teaser cliché.",
+    "honest_one_liner": "A coherent, specific, well-spined issue arguing that agent skills-as-files plus persistent memory is the week's pattern, anchored on Matt Pocock's +3,392-star day.",
+    "top_3_fixes_for_next_issue": [
+      "Add one explicit anti-recommendation (skip / overhyped call) to claim the +2 bonus and sharpen the curator's voice",
+      "Banned phrase 'multiple sessions' addressed in pass 2",
+      "Tighten the closing imperative — addressed in pass 2 (changed to 'Forward this to a builder still running stateless agent loops')"
+    ]
+  }
+]

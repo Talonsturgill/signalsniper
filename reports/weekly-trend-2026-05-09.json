@@ -1,0 +1,7 @@
+{
+  "through_line": "Agents are gaining persistent memory and self-composing skill loops between sessions.",
+  "prior_through_lines": ["On-device AI crossed an architectural threshold, not just a marketing one."],
+  "supporting_picks": ["2026-05-15 @Teknium", "2026-05-12 @senamakel", "2026-05-14 @mattpocockuk"],
+  "evidence_paragraph": "hermes-agent ships a built-in learning loop that synthesizes skills from completed tasks and persists them across runs; openhuman stores a full memory tree in Obsidian-compatible markdown with a background subconscious loop that updates between sessions; skills frames 17 Claude Code skills as a closed feedback system where diagnose, zoom-out, and improve-codebase-architecture feed each other. All three treat memory and composability as first-class infrastructure, not add-ons.",
+  "counter_signal": "proofshot and react-doctor show that external, human-readable verification is still needed because agents cannot reliably audit their own output."
+}

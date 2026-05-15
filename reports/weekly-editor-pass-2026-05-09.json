@@ -1,0 +1,53 @@
+[
+  {
+    "pass_number": 1,
+    "description": "Initial editor four-pass on assembled draft",
+    "changes": [
+      "Replaced 'triggered' with 'pulled' in hero lede for active verb strength",
+      "Removed redundant adverb 'back' from hero build section",
+      "Rewrote needle and openhuman verdicts to eliminate colons after author names",
+      "Fixed 'Early preview announced May 11:' colon in watching section",
+      "Removed unearned adjective 'canonical' from reading list",
+      "Rewrote second-person and imperative constructions to declarative third-person",
+      "Cut superlatives 'highest single-day velocity' and 'highest percentage climb'",
+      "Varied phrasing to avoid hero/lesson section word-for-word repetition"
+    ]
+  },
+  {
+    "pass_number": 2,
+    "description": "Targeted fixes after Critic REVISE and Validator REVISE on Pass 1",
+    "critic_failures_addressed": [
+      "Phrase overlap 'in 24 hours' (hero + Card #2) \u2014 changed Card #2 to 'within a day'",
+      "Phrase overlap 'one npx command' (lesson + closing) \u2014 changed closing to 'one install line'",
+      "Em dash on line 27 (quote attribution) \u2014 changed to '@mattpocockuk on X,'",
+      "Em dash on line 103 (lesson heading) \u2014 changed to middle-dot separator",
+      "Colon in EvoSkill reading list title \u2014 restructured to put title as link only",
+      "Colon in mem0.ai reading list title \u2014 restructured to put title as link only",
+      "Version number v0.13.0 in first sentence of Card #3 \u2014 moved to second sentence",
+      "Version number Gemini 3.1 in first sentence of Card #4 \u2014 replaced with 'Gemini frontier teacher'",
+      "Card #2 word count 92 \u2192 72 (trimmed why and verdict)",
+      "Card #4 word count 88 \u2192 68 (trimmed why and verdict, removed 'up front' filler)"
+    ],
+    "validator_failures_addressed": [
+      "CRITICAL: Million.js misattributed to Pocock (Million.js is Aiden Bai's project, 17.6k stars not 80k) \u2014 entire sentence removed",
+      "'200+ LLM providers' for hermes-agent \u2014 corrected to '200+ models via OpenRouter' per the README phrasing",
+      "needle license Apache-2.0 \u2014 corrected to MIT per the LICENSE file",
+      "react-doctor '47 rules' \u2014 softened to 'rules covering performance, accessibility, dead code, and security' since 47 not directly enumerated in current repo state",
+      "EvoSkill attribution 'Sentient Labs paper' \u2014 corrected to 'Virginia Tech and Sentient paper' per arxiv author affiliations"
+    ],
+    "validator_notes": [
+      "MP4 URL flagged UNVERIFIABLE because branch claude/loving-albattani-S1nW3 not yet pushed \u2014 expected, resolves after Step 16 push"
+    ]
+  },
+  {
+    "pass_number": 3,
+    "description": "Targeted card length fixes after Critic re-check still flagged needle (90 words) and openhuman (84 words)",
+    "changes": [
+      "needle card #4: trimmed why (removed 'The README owns the trade, bad at conversation, built for tool calls.') and verdict (changed to 'Targeting wearable hardware with FFN-stripped attention is a defensible architectural position. Tool calling is retrieval-and-assembly, not reasoning.') \u2014 total now 70 words",
+      "openhuman card #5: trimmed verdict (changed 'Steven's read is that you can't trust' to 'Steven says you can't trust') \u2014 total now 80 words exactly"
+    ],
+    "final_critic_state": "All 6 mechanical checks now pass; total post 1,545 words (within 1,400-2,400 range)",
+    "final_validator_state": "APPROVED at pass 2 \u2014 5 verified, 1 UNVERIFIABLE (MP4 URL pending push)",
+    "final_grader_state": "SHIP at 91/100 on pass 1; post-fixes only improve mechanical/factual axes, content quality maintained"
+  }
+]
