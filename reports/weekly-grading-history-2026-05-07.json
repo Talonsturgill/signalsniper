@@ -1,0 +1,52 @@
+[
+  {
+    "pass": 1,
+    "total": 78,
+    "verdict": "REVISE",
+    "delta_from_previous": null,
+    "axes": {
+      "hook_strength": {"score": 9, "max": 12},
+      "single_voice": {"score": 10, "max": 16},
+      "original_analysis": {"score": 12, "max": 16},
+      "specificity_verdict": {"score": 13, "max": 16},
+      "curator_edge": {"score": 10, "max": 14, "anti_recommendation_bonus": "+2"},
+      "anti_mush": {"score": 9, "max": 12},
+      "structural_craft": {"score": 4, "max": 6},
+      "closing_landing": {"score": 3, "max": 4},
+      "anticipation": {"score": 3, "max": 4}
+    },
+    "top_3_fixes": [
+      "Replace cold open with a moment, not a count",
+      "Put the writer in the post — add 'I' positions on contestable calls",
+      "Delete the DATAWRAPPER placeholder; add stated verdicts to react-doctor and proofshot cards"
+    ],
+    "honest_one_liner": "I'd skim it and bookmark Needle, but the missing chart placeholder, the absent first-person, and the pattern paragraph that doesn't actually cover four of the seven picks keep this below the subscribe line for issue 1."
+  },
+  {
+    "pass": 2,
+    "total": 89,
+    "verdict": "SHIP",
+    "delta_from_previous": 11,
+    "axes": {
+      "hook_strength": {"score": 11, "max": 12},
+      "single_voice": {"score": 15, "max": 16},
+      "original_analysis": {"score": 14, "max": 16},
+      "specificity_verdict": {"score": 15, "max": 16},
+      "curator_edge": {"score": 13, "max": 14, "anti_recommendation_bonus": "+2"},
+      "anti_mush": {"score": 11, "max": 12},
+      "structural_craft": {"score": 6, "max": 6},
+      "closing_landing": {"score": 3, "max": 4},
+      "anticipation": {"score": 4, "max": 4}
+    },
+    "top_3_fixes": [
+      "Give the OpenHuman mention card a forward-looking 'My X' verdict alongside its 'Skip this if' anti-rec",
+      "Vary the per-card labels ('Why it's here' / 'The number' repeats four times)",
+      "Add one closing-line callback to the Wednesday-scroll opener"
+    ],
+    "honest_one_liner": "The four pass-1 deductions are genuinely fixed: the cold open is a named moment, 'I' carries contestable verdicts in five places, every mention card lands a stance, and the Datawrapper placeholder is gone — earning the issue 11 points back and clearing the SHIP bar with margin.",
+    "post_grader_mechanical_fixes": [
+      "Critic flagged oMLX card at 82 words (need ≤80) — trimmed 5 words to 77",
+      "Critic flagged 'The All-Star' 3-word phrase in cold open + hero heading — cold open rewritten to end on 'The pick is @hmunachii' instead"
+    ]
+  }
+]

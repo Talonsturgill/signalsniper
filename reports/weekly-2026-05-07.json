@@ -1,0 +1,37 @@
+{
+  "issue": 1,
+  "week_start": "2026-05-07",
+  "week_end": "2026-05-13",
+  "title": "AI All Stars Weekly · Issue 1",
+  "hero": {
+    "date": "2026-05-13",
+    "project_slug": "needle",
+    "creator_handle": "@hmunachii",
+    "creator_name": "Henry Ndubuaku",
+    "project_url": "https://github.com/cactus-compute/needle",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-05-13.mp4"
+  },
+  "mentions": [
+    {"date": "2026-05-11", "rank": 2, "project_slug": "omlx", "creator_handle": "@jundotkim"},
+    {"date": "2026-05-10", "rank": 3, "project_slug": "react-doctor", "creator_handle": "@aidenybai"},
+    {"date": "2026-05-12", "rank": 4, "project_slug": "openhuman", "creator_handle": "@senamakel"},
+    {"date": "2026-05-09", "rank": 5, "project_slug": "proofshot", "creator_handle": "@JBerthom"}
+  ],
+  "through_line": "On-device AI crossed an architectural threshold, not just a marketing one.",
+  "gist_url": null,
+  "gist_fallback_url": "https://github.com/Talonsturgill/signalsniper/blob/main/reports/weekly-code-highlights-2026-05-07.md",
+  "code_highlights_inlined": true,
+  "datawrapper_csv_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/weekly-trend-2026-05-07.csv",
+  "datawrapper_upload_url": "https://app.datawrapper.de/create/chart?upload=https://github.com/Talonsturgill/signalsniper/raw/main/reports/weekly-trend-2026-05-07.csv",
+  "word_count": 1422,
+  "estimated_read_minutes": 7,
+  "quality_gates": {
+    "editor_passes": 2,
+    "critic_verdict": "APPROVED (after mechanical fixes)",
+    "fact_validator_verdict": "APPROVED",
+    "grader_total": 89,
+    "grader_verdict": "SHIP",
+    "revision_passes_used": 3,
+    "bar_met": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "through_line": "On-device AI crossed an architectural threshold, not just a marketing one.",
+  "supporting_picks": ["2026-05-11", "2026-05-12", "2026-05-13"],
+  "evidence_paragraph": "oMLX introduces a tiered SSD KV cache that survives server restarts — local inference finally behaves like a real backend. OpenHuman stores a billion-token memory tree in Obsidian-readable markdown on your own disk, with TokenJuice compression to keep it usable. Needle strips out all feedforward layers so a 26M-parameter model compiles cleanly to the GEMMs already on mobile NPUs, targeting watches and glasses. Three builders, three different layers — inference, memory, model weight — each solving a concrete constraint that kept on-device AI feeling like a demo.",
+  "counter_signal": "None of the three picks benchmarks on-device capability against a cloud equivalent on the same task, so the threshold crossed is size and persistence, not yet parity."
+}

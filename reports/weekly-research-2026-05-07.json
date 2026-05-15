@@ -1,0 +1,192 @@
+{
+  "2026-05-09": {
+    "date": "2026-05-09",
+    "project_slug": "proofshot",
+    "momentum_delta": {
+      "stars_then": 817,
+      "stars_now": 819,
+      "stars_now_source": "https://github.com/AmElmo/proofshot (two independent WebFetch calls, 2026-05-13)",
+      "hn_followups": [
+        {
+          "url": "https://news.ycombinator.com/item?id=47499672",
+          "title": "Show HN: ProofShot — Give AI coding agents eyes to verify the UI they build",
+          "score": 161,
+          "comments": 106,
+          "note": "Original submission ~April 1, 2026; no new score increase observed since tribute"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=47507229",
+          "title": "VSCode and Antigravity already do this. What am I missing?",
+          "note": "Follow-up challenging differentiation vs IDE-native tools; creator defended CLI-first value for terminal agent workflows"
+        }
+      ],
+      "newsletter_mentions": [
+        {"source": "daily.dev", "url": "https://app.daily.dev/posts/github---amelmo-proofshot-t6lz0cpbo", "note": "Listed March 24, 2026, 2 upvotes — pre-tribute, low engagement"},
+        {"source": "EveryDev.ai", "url": "https://www.everydev.ai/tools/proofshot", "note": "Tool listing, no engagement metrics"}
+      ]
+    },
+    "shipped_since": [
+      {"note": "No new commits or releases since v1.6.0 on 2026-04-14. No new repos by the creator post-May 9.", "latest_release": "v1.6.0", "latest_release_date": "2026-04-14"}
+    ],
+    "sibling_work": [
+      {"name": "agenttrace", "url": "https://github.com/luoyuctl/agenttrace", "one_line": "Terminal UI for AI coding agent session history — tracks cost, tokens, tool failures, latency, diffs, and CI gates across Claude Code, Codex CLI, Gemini CLI; v0.4.6 shipped May 10, 2026."},
+      {"name": "Dunetrace", "url": "https://github.com/dunetrace/dunetrace", "one_line": "Runtime observability for AI agents — watches structural run patterns, fires Slack alerts within 15 seconds of anomalous completion."},
+      {"name": "opentrace", "url": "https://github.com/adham90/opentrace", "one_line": "Observability engine for AI coding agents using columnar log store and MCP-native integration; self-hostable."}
+    ],
+    "shipping_next": [
+      {"signal": "Desktop and mobile support — creator flagged as #1 request in HN thread", "source": "https://news.ycombinator.com/item?id=47499672"},
+      {"signal": "GitLab MR support (issue #22, labeled 'considering')", "source": "https://github.com/AmElmo/proofshot/issues/22"},
+      {"signal": "Raspberry Pi support (issue #33, labeled 'enhancement')", "source": "https://github.com/AmElmo/proofshot/issues/33"}
+    ],
+    "creator_quote": {
+      "text": "My AI agents kept telling me 'Done!' while the page was blank and the console had 47 errors.",
+      "source_url": "https://dev.to/julien_berthomier_33cb099/forcing-ai-agents-to-actually-prove-they-did-the-work-4ocj"
+    }
+  },
+  "2026-05-10": {
+    "date": "2026-05-10",
+    "project_slug": "react-doctor",
+    "momentum_delta": {
+      "stars_then": 7400,
+      "stars_now": 9247,
+      "stars_now_source": "https://github.com/millionco (org repo listing, fetched 2026-05-13)",
+      "hn_followups": [],
+      "newsletter_mentions": [
+        {"outlet": "This Week In React #269", "url": "https://thisweekinreact.com/newsletter/269", "note": "Original mention Feb 2026"},
+        {"outlet": "TLDR Dev", "url": "https://tldr.tech/dev/2026-02-19", "note": "Featured 2026-02-19"},
+        {"outlet": "midudev X (May 11 2026)", "url": "https://x.com/midudev/status/2053821625783464301", "note": "Spanish-language amplification of v2 launch"}
+      ]
+    },
+    "shipped_since": [
+      {"item": "React Doctor v2 launch (May 8, 2026)", "detail": "Agent-first reframe: 'Your agent writes bad React. This catches it.' Next.js, Vite, React Native support.", "source": "https://x.com/aidenybai/status/2052780632510775469"},
+      {"item": "Agent Skill (May 9, 2026)", "detail": "npx react-doctor@latest install wires the CLI into 50+ coding agents.", "source": "https://x.com/aidenybai/status/2053153019366363387"},
+      {"item": "GitHub Actions integration", "detail": "React Doctor GitHub Action runs automatically on PRs.", "source": "https://github.com/marketplace/actions/react-doctor"},
+      {"item": "Active refactor May 10-13", "detail": "286 total commits; May 13: major restructure splitting CLI, rules, and runner into per-file architecture (PRs #218-#228).", "source": "https://github.com/millionco/react-doctor/commits/main"}
+    ],
+    "sibling_work": [
+      {"name": "millionco/expect", "url": "https://github.com/millionco/expect", "one_line": "Agent skill that reads git diffs and runs automated Playwright browser tests; 3,470 stars, shipped ~March 2026 — complements react-doctor as the runtime QA layer."},
+      {"name": "millionco/debug-agent", "url": "https://github.com/millionco/debug-agent", "one_line": "Debugging skill for AI agents that instruments code with NDJSON logs and validates hypotheses from runtime evidence before applying a fix; 264 stars."}
+    ],
+    "shipping_next": [
+      {"signal": "False-positive reduction push — open issues #205/#206; commit #208 (May 12) addressed some", "source": "https://github.com/millionco/react-doctor/issues"},
+      {"signal": "Lint-staged / Husky integration docs requested (issue #203, opened May 10)", "source": "https://github.com/millionco/react-doctor/issues/203"},
+      {"signal": "No public roadmap found", "source": "https://github.com/millionco/react-doctor/blob/main/packages/react-doctor/README.md"}
+    ],
+    "creator_quote": {
+      "text": "React Doctor v2 is here. Your agent writes bad React code, this catches it. Works with Next.js, Vite, React Native. Fix your app in minutes.",
+      "source_url": "https://x.com/aidenybai/status/2052780632510775469"
+    }
+  },
+  "2026-05-11": {
+    "date": "2026-05-11",
+    "project_slug": "omlx",
+    "momentum_delta": {
+      "stars_then": 13500,
+      "stars_now": 14000,
+      "stars_now_source": "https://github.com/jundot/omlx, fetched 2026-05-13",
+      "hn_followups": [
+        {"title": "I've jumped over to oMLX. A ton of rough edges but I think it's the future.", "url": "https://news.ycombinator.com/item?id=47661697", "note": "Active thread; notable: Qwen3-Coder on M5 Max handles 100k+ token contexts well via prompt decode caching"}
+      ],
+      "newsletter_mentions": [
+        {"outlet": "AIToolly", "url": "https://aitoolly.com/ai-news/article/2026-05-12-omlx-a-high-performance-llm-inference-server-for-apple-silicon-featuring-continuous-batching-and-ssd", "date": "2026-05-12"},
+        {"outlet": "Better Stack Community", "url": "https://betterstack.com/community/guides/ai/omlx-apple-silicon/", "date": "2026"}
+      ],
+      "x_discourse": [
+        {"author": "@bstnxbt", "url": "https://x.com/bstnxbt/status/2050981997749666214", "note": "dflash-mlx v0.1.5 explicitly credits oMLX cache design: L1 RAM + L2 SSD snapshot inspired by @jundotkim"},
+        {"author": "@ivanfioravanti", "url": "https://x.com/ivanfioravanti/status/2054292601528877277", "note": "oMLX working well as single-machine inference engine for coding agents; oQ quantization strong"}
+      ]
+    },
+    "shipped_since": [
+      {"version": "v0.3.9.dev2", "date": "2026-05-12", "source": "https://github.com/jundot/omlx/releases/tag/v0.3.9.dev2", "highlights": ["Gemma 4 MTP on vision path", "DFlash engine expanded to Gemma 4", "omlx launch copilot command added", "Admin UI server restart button", "oQ auto-proxy building", "ParoQuant support", "French admin localization", "HTTP 503 + Retry-After from SchedulerQueueFullError", "phys_footprint enforcer + admission control"]},
+      {"version": "main branch May 13 commits", "date": "2026-05-13", "source": "https://github.com/jundot/omlx/commits/main/", "highlights": ["chunked prefill (#1224)", "word_timestamps on audio transcriptions (#1214)", "forward extra CLI args to claude binary (#1223)"]}
+    ],
+    "sibling_work": [
+      {"name": "dflash-mlx", "url": "https://github.com/bstnxbt/dflash-mlx", "one_line": "Speculative decoding for MLX with L1 RAM + L2 SSD snapshot cache explicitly inspired by oMLX's tiered KV design; v0.1.5.1, 684 stars."},
+      {"name": "Rapid-MLX", "url": "https://github.com/raullenchai/Rapid-MLX", "one_line": "Claims 4.2x faster than Ollama with 0.08s cached TTFT; 17 tool parsers, multimodal; v0.6.46 shipped May 13, 2.3k stars."},
+      {"name": "macMLX", "url": "https://github.com/magicnight/mac-mlx", "one_line": "Zero-Python native macOS SwiftUI LLM app with OpenAI-compatible API and tiered KV cache; v0.5.0 shipped May 10, 19 stars."}
+    ],
+    "shipping_next": [
+      {"signal": "PFlash and DDTree speculative prefill support (open issue #1212)", "source": "https://github.com/jundot/omlx/issues/1212"},
+      {"signal": "Gemma 4 assistant draft model support for speculative decoding (open issue #1071)", "source": "https://github.com/jundot/omlx/issues/1071"},
+      {"signal": "Thread migration: _global_mlx_executor to per-engine threads (open issue #1248)", "source": "https://github.com/jundot/omlx/issues"},
+      {"signal": "Response format JSON schema enforcement (open issue #1241)", "source": "https://github.com/jundot/omlx/issues"}
+    ],
+    "creator_quote": {
+      "text": "Every LLM server I tried made me choose between convenience and control. I wanted to pin everyday models in memory, auto-swap heavier ones on demand, set context limits, and manage it all from a menu bar.",
+      "source_url": "https://github.com/jundot/omlx/blob/main/README.md"
+    }
+  },
+  "2026-05-12": {
+    "date": "2026-05-12",
+    "project_slug": "openhuman",
+    "momentum_delta": {
+      "stars_then": 1900,
+      "stars_now": 5300,
+      "stars_now_source": "https://github.com/tinyhumansai/openhuman (WebFetch, 2026-05-13)",
+      "hn_followups": [
+        {"title": "Show HN: OpenHuman, an AI agent with a subconscious loop", "url": "https://news.ycombinator.com/item?id=47876182", "score": 2, "note": "Creator-submitted, low organic traction"},
+        {"title": "OpenClaw is toast. OpenHuman just landed", "url": "https://news.ycombinator.com/item?id=47839564", "score": 3}
+      ],
+      "newsletter_mentions": [
+        {"source": "AIToolly AI News", "url": "https://aitoolly.com/ai-news/article/2026-05-13-openhuman-a-new-private-and-powerful-personal-ai-superintelligence-project-emerges-on-github", "date": "2026-05-13", "note": "Triggered by GitHub Trending pickup"}
+      ]
+    },
+    "shipped_since": [
+      {"version": "v0.53.35", "date": "2026-05-13", "highlights": ["Transcript-to-memory ingestion pipeline", "Seed phrase onboarding and multi-chain wallet setup", "Tool-scoped memory with durable rule capture", "130+ pull requests merged"], "url": "https://github.com/tinyhumansai/openhuman/releases"},
+      {"version": "v0.53.40", "date": "2026-05-13", "highlights": ["Microphone device selector", "Windows close behavior fixed", "Hidden worker threads from UI"], "url": "https://github.com/tinyhumansai/openhuman/releases"},
+      {"version": "v0.53.43", "date": "2026-05-13", "highlights": ["Sentry observability", "Unified memory embeddings with cloud Voyage defaults", "'Clear app data' recovery option"], "url": "https://github.com/tinyhumansai/openhuman/releases"}
+    ],
+    "sibling_work": [
+      {"name": "agentmemory", "url": "https://github.com/rohitg00/agentmemory", "stars": "7500", "one_line": "Local-first persistent memory for Claude Code, Cursor, Gemini CLI using 4-tier consolidation and hybrid BM25+vector+KG retrieval; v0.9.12 shipped 2026-05-13."},
+      {"name": "Hermes Agent (NousResearch)", "url": "https://github.com/NousResearch/hermes-agent", "stars": "149000", "one_line": "Self-improving agent with closed learning loop; v0.13.0 released 2026-05-07, 149k stars."},
+      {"name": "QwenPaw", "url": "https://github.com/agentscope-ai/QwenPaw", "stars": "16600", "one_line": "Personal AI assistant with memory-evolving, proactive local deployment; v1.1.6 released 2026-05-09, 16.6k stars."}
+    ],
+    "shipping_next": [
+      {"signal": "Add optional agentmemory backend (open issue #1664)", "source": "https://github.com/tinyhumansai/openhuman/issues/1664"},
+      {"signal": "Add LM Studio as a local model provider alongside Ollama (open issue #1673)", "source": "https://github.com/tinyhumansai/openhuman/issues/1673"},
+      {"signal": "Subagent UI surface to show worker threads (open issue #1624)", "source": "https://github.com/tinyhumansai/openhuman/issues/1624"}
+    ],
+    "creator_quote": {
+      "text": "I'm building OpenHuman because I want AI to contribute positively to humankind.",
+      "source_url": "https://dev.to/neocortexdev/i-am-building-the-first-ai-agent-with-big-data-capabilities-70e"
+    }
+  },
+  "2026-05-13": {
+    "date": "2026-05-13",
+    "project_slug": "needle",
+    "momentum_delta": {
+      "stars_then": 795,
+      "stars_now": 1300,
+      "stars_now_source": "https://github.com/cactus-compute/needle (WebFetch, 2026-05-13)",
+      "hn_points_now": 627,
+      "hn_comments_now": 179,
+      "hn_followups": [
+        {"user": "kgeist", "note": "Corroborated no-FFN finding from own Qwen experiments", "thread_url": "https://news.ycombinator.com/item?id=48111896"},
+        {"user": "efskap", "note": "Called it 'Attention Is ACTUALLY All You Need'", "thread_url": "https://news.ycombinator.com/item?id=48111896"},
+        {"user": "jumploops", "note": "Noted smaller models make better agentic harnesses — drew parallel to Claude Code where Sonnet called tools faster than Opus", "thread_url": "https://news.ycombinator.com/item?id=48111896"},
+        {"user": "meander_water", "note": "Reported disappointment with Gemma4 edge models on tool-use; requested Needle benchmarks", "thread_url": "https://news.ycombinator.com/item?id=48111896"}
+      ],
+      "newsletter_mentions": []
+    },
+    "shipped_since": [
+      {"what": "Commit b4a4d5b: 'update configs'", "author": "HenryNdubuaku", "date": "2026-05-13", "source": "https://github.com/cactus-compute/needle/commits/main"},
+      {"what": "Commit 375a4a0: 'Fix tokenizer bug'", "author": "HenryNdubuaku", "date": "2026-05-13", "source": "https://github.com/cactus-compute/needle/commits/main"},
+      {"what": "PR merged: 'added python3.14 as candidate (#16)'", "author": "csskevin", "sha": "40c779e", "date": "2026-05-13", "source": "https://github.com/cactus-compute/needle/commits/main"},
+      {"what": "PR merged: 'fix ToolConstraints (#15)'", "author": "jakmro", "sha": "2f2d958", "date": "2026-05-13", "source": "https://github.com/cactus-compute/needle/commits/main"},
+      {"what": "Needle model weights updated on Hugging Face", "source": "https://huggingface.co/Cactus-Compute/needle"}
+    ],
+    "sibling_work": [
+      {"name": "FunctionGemma (google/functiongemma-270m-it)", "url": "https://huggingface.co/google/functiongemma-270m-it", "one_line": "Google's 270M-parameter Gemma 3 variant fine-tuned for on-device function calling; Needle's own docs claim superior single-shot function call accuracy despite being 10x smaller."},
+      {"name": "TinyAgent", "url": "https://arxiv.org/html/2409.00608v1", "one_line": "Edge function-calling agent framework pairing small LLMs with retrieval-augmented tool selection for on-device deployment."}
+    ],
+    "shipping_next": [
+      {"signal": "Android deployment via cactus-react-native (community issue #17, opened 2026-05-13)", "source": "https://github.com/cactus-compute/needle/issues/17"},
+      {"signal": "Cactus engine roadmap: wearables optimizations + Cactus@ICML (August 2026); full paper + chip manufacturer partners (September 2026)", "source": "https://github.com/cactus-compute/cactus"},
+      {"signal": "53 models already published on Hugging Face under Cactus-Compute, active model conversion pipeline", "source": "https://huggingface.co/Cactus-Compute"}
+    ],
+    "creator_quote": {
+      "text": "Needle doesn't compete with those tools though and the distillation process did not access the weights.",
+      "source_url": "https://news.ycombinator.com/item?id=48111896"
+    }
+  }
+}

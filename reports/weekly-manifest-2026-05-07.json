@@ -1,0 +1,127 @@
+{
+  "week_start": "2026-05-07",
+  "week_end": "2026-05-13",
+  "issue_slug": "weekly-2026-05-07",
+  "picks": [
+    {
+      "date": "2026-05-09",
+      "project_slug": "proofshot",
+      "project_url": "https://github.com/AmElmo/proofshot",
+      "creator_name": "Julien Berthomier",
+      "creator_handle": "@JBerthom",
+      "creator_x_url": "https://x.com/jberthom",
+      "headline_metric": "817 stars | 161 HN upvotes (topped Show HN)",
+      "tribute_angle": "ProofShot is an open-source CLI that records browser sessions, captures screenshots at every step, collects console and server errors across 10+ languages, and bundles everything into an interactive HTML proof artifact. AI coding agents build UI blind — they write code but can't verify the result looks right or throws no errors. ProofShot gives them the verification workflow. Install once, plug into Claude Code, Cursor, Codex, Windsurf, or Gemini CLI. Solo Singapore-based builder, quiet shipper — SpecWright for PRDs, Storial for component stories, and now the verification layer the rest of us forget to write.",
+      "voice_notes": [
+        "Diagnosis first, fix second — Julien's README opens with the problem (agents build blind) before the solution",
+        "CLASSIC framework arc: setup the blindness, deliver the eyes, name the consequence",
+        "Gallery aesthetic: production-ready, flagship feel, not a side project"
+      ],
+      "prior_work": ["SpecWright — AI orchestrator for writing PRDs and tech specs", "storial — AI-powered component stories for React and Next.js", "pointa — Chrome extension for app annotation and bug reporting"],
+      "framework": "CLASSIC",
+      "aesthetic": "gallery",
+      "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-05-09.mp4",
+      "gif_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-preview-2026-05-09.gif",
+      "x_caption": "@JBerthom ProofShot just topped Show HN. Open-source CLI that records browser sessions, captures the screen at every step, and bundles proof artifacts so humans can verify what AI agents actually built. Plug it into Claude Code, Cursor, or Codex. https://github.com/AmElmo/proofshot",
+      "why_this_one": "He's a solo founder in Singapore who's been quietly shipping agent tools all year — SpecWright for PRDs, Storial for component stories, now this. The pattern is clear. He builds the verification layer the rest of us forget to write.",
+      "dossier_path": "reports/creator-dossier-2026-05-09.md",
+      "lane_tags": ["agents", "tooling"]
+    },
+    {
+      "date": "2026-05-10",
+      "project_slug": "react-doctor",
+      "project_url": "https://github.com/millionco/react-doctor",
+      "creator_name": "Aiden Bai",
+      "creator_handle": "@aidenybai",
+      "creator_x_url": "https://x.com/aidenybai",
+      "headline_metric": "84k+ projects scanned in 24h | ~806 new stars on 7.4k base | 47 rules",
+      "tribute_angle": "react-doctor is a CLI that grades any React codebase 0–100 across 47 rules (performance, accessibility, dead code, security, architecture), then ships as a coding-agent skill via npx react-doctor@latest install. On 2026-05-09 Aiden launched the agent-skill version; within 24 hours react-doctor had scanned 84k+ projects. Aiden started Million.js at 16 because the web felt slow — Scan saw what re-rendered, Grab pulled tree state, Doctor diagnoses. The whole line is a single-noun verb pattern: compile, scan, grab, diagnose.",
+      "voice_notes": [
+        "Builder-tier, terse, declarative — posts working code in the screenshot",
+        "Frames pitches around what the tool does in one command, not what it could become",
+        "Lowercase prose where it sounds natural"
+      ],
+      "prior_work": ["Million.js — optimizing compiler for React, started at age 16 (2021–present)", "React Scan — sees which components re-rendered and why (2024)", "React Grab — pulls component-tree state during a session (2025)"],
+      "framework": "MANIFESTO",
+      "aesthetic": "editorial-90s",
+      "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-05-10.mp4",
+      "gif_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-preview-2026-05-10.gif",
+      "x_caption": "@aidenybai react-doctor is climbing. 800 new stars today on a 7k base. The CLI grades any React codebase, then ships as a skill your coding agent runs. https://github.com/millionco/react-doctor",
+      "why_this_one": "Aiden started Million at 16 because the web felt slow. He keeps turning each React idiom into a tool you can run. React-scan saw what re-rendered. React-grab pulled tree state. React-doctor is the audit. Pattern over hype, every release.",
+      "dossier_path": "reports/creator-dossier-2026-05-10.md",
+      "lane_tags": ["tooling", "agents"]
+    },
+    {
+      "date": "2026-05-11",
+      "project_slug": "omlx",
+      "project_url": "https://github.com/jundot/omlx",
+      "creator_name": "Jun Kim",
+      "creator_handle": "@jundotkim",
+      "creator_x_url": "https://x.com/jundotkim",
+      "headline_metric": "13.5k stars | +185 stars in 24h | 22.66 tok/s decode after warm cache",
+      "tribute_angle": "oMLX is an LLM inference server with continuous batching and paged SSD KV caching for Apple Silicon, managed from the macOS menu bar. The novel move: a tiered KV cache (hot RAM + cold SSD in safetensors format) where the prefix cache survives server restarts. mlx-lm worked for demos but redid full prefill on every request — oMLX fixes the inference layer that everyone else skipped. Drop-in OpenAI and Anthropic API compatible at localhost:8000. Jun Kim, data engineer by day, AI dreamer by night, building from Seoul since the MLX ecosystem needed it.",
+      "voice_notes": [
+        "Build-in-public engineer, doesn't oversell — lets the cache stats speak",
+        "The hook is the persistence model: KV cache survives restarts",
+        "Frame as the inference layer Apple Silicon was missing, not another inference server"
+      ],
+      "prior_work": ["mlx-lm ecosystem contributions (indirect — oMLX built atop mlx-lm BatchGenerator)"],
+      "framework": "DISPATCH",
+      "aesthetic": "claude",
+      "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-05-11.mp4",
+      "gif_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-preview-2026-05-11.gif",
+      "x_caption": "@jundotkim oMLX is trending today at 13.5k stars. The macOS menu bar inference server that finally reuses your KV cache across requests and restarts. Local LLMs that act like a real backend. https://github.com/jundot/omlx",
+      "why_this_one": "Jun's bio reads 'Data engineer by day, AI dreamer by night.' He's been shipping from Seoul, solo, on an open-source cadence. The next wave of MLX inference servers already cites his cache design as the part worth copying.",
+      "dossier_path": "reports/creator-dossier-2026-05-11.md",
+      "lane_tags": ["on-device", "infra"]
+    },
+    {
+      "date": "2026-05-12",
+      "project_slug": "openhuman",
+      "project_url": "https://github.com/tinyhumansai/openhuman",
+      "creator_name": "Steven Enamakel",
+      "creator_handle": "@senamakel",
+      "creator_x_url": "https://twitter.com/senamakel",
+      "headline_metric": "~1.9k stars | +366 stars in 24h | 118 connectors | v0.53.22",
+      "tribute_angle": "OpenHuman is a local-first AI agent with three structural bets: a subconscious loop that re-reads its own memory tree and nudges itself to persist what's worth keeping; an Obsidian-compatible markdown mirror so the user can grep their own memory; and TokenJuice, a compression layer that claims up to 80% reduction on tool outputs before they touch a paid API. 118 third-party connectors wired by default. v0.53.22 is the 530-something published release — Steven Enamakel has been shipping from Dubai under the TinyHumans label, builder-first and founder-second.",
+      "voice_notes": [
+        "Self-deprecating about scope, treats infra detail as the romance",
+        "Build-in-public cadence is real — v0.53.22 signals hundreds of releases",
+        "Privacy-as-stance, not buzzword"
+      ],
+      "prior_work": ["Web3 deep-tech engineering before the AI pivot", "5 public GitHub repos; OpenHuman is the pinned one"],
+      "framework": "SCHEMATIC",
+      "aesthetic": "geominimal",
+      "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-05-12.mp4",
+      "gif_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-preview-2026-05-12.gif",
+      "x_caption": "@senamakel OpenHuman just crossed 1.9k stars. Local-first AI agent that holds a billion tokens of memory, ships 118 integrations, and runs entirely on your machine. https://github.com/tinyhumansai/openhuman",
+      "why_this_one": "Steven's a builder first, founder second. He ships from Dubai. OpenHuman's pitch is agents you actually own, not cloud rentals. There's a Rust core, an Obsidian-shaped wiki under the hood, and a desktop mascot that drops into Google Meets.",
+      "dossier_path": "reports/creator-dossier-2026-05-12.md",
+      "lane_tags": ["agents", "on-device"]
+    },
+    {
+      "date": "2026-05-13",
+      "project_slug": "needle",
+      "project_url": "https://github.com/cactus-compute/needle",
+      "creator_name": "Henry Ndubuaku",
+      "creator_handle": "@hmunachii",
+      "creator_x_url": "https://twitter.com/hmunachii",
+      "headline_metric": "795 stars | 444 HN points (top AI/ML story) | 26M parameters",
+      "tribute_angle": "Needle is a 26M-parameter Simple Attention Network distilled from Gemini 3.1, designed to run on watches, phones, and glasses, and scoped exclusively to single-shot function calling. The architecture strips out all feedforward layers — only attention — because attention compiles to GEMMs that mobile NPUs already handle. The win is not conversation; the README says so. The win is function call accuracy at a size no one else is targeting. Henry Ndubuaku, 4x ICLR author, YC S25, built Cactus (4.8k stars on-device inference engine) first. Needle is the research artifact that justifies the product.",
+      "voice_notes": [
+        "Plainspoken about scale — names competitors and their trade-offs directly",
+        "Architectural honesty: Simple Attention Network is literally no feedforward, only attention",
+        "MANIFESTO framework: the project itself is a position, a stake in the ground"
+      ],
+      "prior_work": ["Cactus — low-latency mobile inference engine (4.8k stars)", "Maths-CS-AI Compendium — curriculum repo (3.7k stars)", "4x ICLR papers: quantization, mobile optimization, efficient architectures"],
+      "framework": "MANIFESTO",
+      "aesthetic": "editorial-paper",
+      "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-05-13.mp4",
+      "gif_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-preview-2026-05-13.gif",
+      "x_caption": "@hmunachii Top of HN today. He shrunk a frontier model into something small enough to fit on a wristwatch, kept only the function-calling, and trained it in 27 hours. A real stake in the ground. https://github.com/cactus-compute/needle",
+      "why_this_one": "Henry's a 4x ICLR author who pivoted to YC. Cactus is the product, an on-device inference engine. This release is the research artifact that justifies the product. London-based, ships open-weight, no hype thread. The work earns its own quiet.",
+      "dossier_path": "reports/creator-dossier-2026-05-13.md",
+      "lane_tags": ["on-device", "research"]
+    }
+  ]
+}
