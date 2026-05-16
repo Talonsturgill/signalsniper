@@ -1,0 +1,46 @@
+{
+  "design": {
+    "brand_slug": "linear.app",
+    "aesthetic_slug": "mono",
+    "tokens": {
+      "canvas": "#010102",
+      "ink": "#f7f8f8",
+      "ink_muted": "#8a8f98",
+      "accent": "#5e6ad2",
+      "hairline": "#23252a"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.02,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.32,
+      "scene_out_s": 0.22,
+      "stagger_s": 0.22
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.20,
+      "halation": 0.05,
+      "lighting_arc": 0.26
+    },
+    "framework": "CLASSIC",
+    "audio_palette": "ambient",
+    "held_subject": "career-ops",
+    "accent_contrast_min": 3.0
+  }
+}

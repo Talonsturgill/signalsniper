@@ -70,5 +70,12 @@
     "aesthetic_slug": "voltagent",
     "framework": "RECEIPT",
     "project_url": "https://github.com/NousResearch/hermes-agent"
+  },
+  {
+    "date": "2026-05-16",
+    "brand_slug": "linear.app",
+    "aesthetic_slug": "mono",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/santifer/career-ops"
   }
 ]
