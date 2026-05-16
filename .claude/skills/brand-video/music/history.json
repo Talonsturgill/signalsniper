@@ -38,5 +38,10 @@
     "date": "2026-05-15",
     "slug": "faceoff",
     "project_url": "https://github.com/NousResearch/hermes-agent"
+  },
+  {
+    "date": "2026-05-16",
+    "slug": "sovereign",
+    "project_url": "https://github.com/santifer/career-ops"
   }
 ]

@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-16",
+  "brand_slug": "linear.app",
+  "preset_slug": null,
+  "aesthetic_slug": "mono",
+  "framework": "CLASSIC",
+  "rationale_one_line": "career-ops turns a coding CLI into a job-search command center; Linear's deepest-dark developer-tool identity (#010102 canvas, lavender-blue accent, measured negative tracking) reads as software-craft documentation and frames a well-known 45k-star repo with restraint via the CLASSIC explainer.",
+  "writing_tone_notes": "Build-in-public peer voice, terse and operator-confident. Lead with the recency-velocity metric, then the structural so-what. Contractions where natural. The lavender accent is reserved for one node, one accent line, and the close — never a fill or a flash.",
+  "do_rules": [
+    "Open on the recency-by-velocity metric and let it hold a full beat before the system explanation.",
+    "Show the human-in-the-loop gate as the loudest beat — the differentiator is that it never hits submit.",
+    "Reserve Linear lavender for the diagram's human node, the three_line accent line, and close.accent.",
+    "Use fade transitions and tight negative tracking so the piece reads as quietly-luxurious dev documentation.",
+    "Keep the held-subject wordmark anchored across every scene for continuity."
+  ],
+  "dont_rules": [
+    "Do not claim prompt-injection defense or agentic RAG anywhere — the dossier confirmed those reported features are false.",
+    "Do not repeat the X caption's velocity phrasing in any scene or the Why-this-one.",
+    "Do not use the version number in scene copy or the caption (v1.8.0 may appear only in the Why-this-one or PR).",
+    "Do not drop the accent on a full-bleed surface — CLASSIC has no flash here and the accent stays chromatic punctuation."
+  ]
+}
