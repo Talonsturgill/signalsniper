@@ -1,0 +1,46 @@
+{
+  "design": {
+    "brand_slug": "hashicorp",
+    "aesthetic_slug": "hashicorp",
+    "tokens": {
+      "canvas": "#000000",
+      "ink": "#ffffff",
+      "ink_muted": "#b2b6bd",
+      "accent": "#911ced",
+      "hairline": "#3b3d45"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.022,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.34,
+      "scene_out_s": 0.24,
+      "stagger_s": 0.22
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.05,
+      "lighting_arc": 0.26
+    },
+    "framework": "SCHEMATIC",
+    "audio_palette": "electronic",
+    "held_subject": "statewright",
+    "accent_contrast_min": 3.0
+  }
+}
