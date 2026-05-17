@@ -43,5 +43,10 @@
     "date": "2026-05-16",
     "slug": "sovereign",
     "project_url": "https://github.com/santifer/career-ops"
+  },
+  {
+    "date": "2026-05-17",
+    "slug": "hyperfun",
+    "project_url": "https://github.com/statewright/statewright"
   }
 ]

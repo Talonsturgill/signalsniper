@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-17",
+  "brand_slug": "hashicorp",
+  "preset_slug": null,
+  "aesthetic_slug": "hashicorp",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "All eight presets are inside the 14-entry anti-repeat window, so a brand pack is required. HashiCorp's identity is deterministic infrastructure, state and policy-as-code on a near-black ground with chromatic product accents. Statewright is policy/state guardrails for coding agents. Terraform purple on black carries a state-machine schematic.",
+  "writing_tone_notes": "Peer-to-peer build-in-public engineer voice. Declarative and structural. Show the phase-gated machine, then the consequence. Contractions where natural. Contrast carries the praise, never superlatives. Reserve Terraform purple for the accent line, the diagnose node and the close accent only.",
+  "do_rules": [
+    "Lead the diagram with the plan -> implement -> test pipeline governed by a single state engine node.",
+    "State the thesis as a flat contrast: prompts are advice, the engine is law.",
+    "Land the 2-of-10 -> 10-of-10 result as the loudest beat, framed as determinism over scale.",
+    "Keep the 'statewright' held-subject wordmark anchored across every scene.",
+    "Use the fade register so the schematic reads as a calm technical exposition, not a hype cut."
+  ],
+  "dont_rules": [
+    "Don't repeat the X caption's phrasing in any scene or in the Why-this-one.",
+    "Don't say 'Agents are suggestions, states are laws' verbatim anywhere (it's the project's own line) — paraphrase the idea.",
+    "Don't use a version number in any scene copy.",
+    "Don't flood the frame with purple — it's a single accent on black, never a fill.",
+    "Don't claim a benchmark number the dossier doesn't support; the only hard number is 2/10 -> 10/10 on the 5-task subset."
+  ]
+}

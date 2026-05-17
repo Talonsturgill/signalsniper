@@ -1,0 +1,104 @@
+{
+  "date": "2026-05-17",
+  "topic": "Statewright, deterministic state-machine guardrails for AI coding agents",
+  "creator_handle": "@azurewraith",
+  "project_url": "https://github.com/statewright/statewright",
+
+  "design": {
+    "brand_slug": "hashicorp",
+    "aesthetic_slug": "hashicorp",
+    "framework": "SCHEMATIC",
+    "audio_palette": "electronic",
+    "held_subject": "statewright",
+    "tokens": {
+      "canvas": "#000000",
+      "ink": "#ffffff",
+      "ink_muted": "#b2b6bd",
+      "accent": "#911ced",
+      "hairline": "#3b3d45"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.022,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.34,
+      "scene_out_s": 0.24,
+      "stagger_s": 0.22
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.05,
+      "lighting_arc": 0.26
+    },
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "Statewright",
+      "eyebrow": "state machine guardrails for agents",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "tools change per phase",
+      "nodes": [
+        {"label": "plan", "x": 18, "y": 34},
+        {"label": "implement", "x": 50, "y": 34},
+        {"label": "test", "x": 82, "y": 34},
+        {"label": "state engine", "x": 50, "y": 76, "accent": true}
+      ],
+      "edges": [
+        {"from": 0, "to": 1},
+        {"from": 1, "to": 2},
+        {"from": 3, "to": 0, "style": "dashed"},
+        {"from": 3, "to": 1, "accent": true, "style": "dashed"},
+        {"from": 3, "to": 2, "style": "dashed"}
+      ],
+      "camera": "orbit",
+      "duration_s": 4.5
+    },
+    {
+      "template": "two_line",
+      "lines": ["Prompts are advice.", "The engine is law."],
+      "accent_idx": 1,
+      "camera": "ken_burns",
+      "duration_s": 3.0
+    },
+    {
+      "template": "fix",
+      "primary": "Determinism wins.",
+      "secondary": "The model just asks.",
+      "emphasize": true,
+      "camera": "orbit",
+      "duration_s": 3.5
+    },
+    {
+      "template": "close",
+      "primary": "Reliable by design.",
+      "accent": "not by luck.",
+      "subtitle": "tool access the model can't talk past.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}

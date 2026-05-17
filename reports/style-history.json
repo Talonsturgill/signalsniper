@@ -77,5 +77,12 @@
     "aesthetic_slug": "mono",
     "framework": "CLASSIC",
     "project_url": "https://github.com/santifer/career-ops"
+  },
+  {
+    "date": "2026-05-17",
+    "brand_slug": "hashicorp",
+    "aesthetic_slug": "hashicorp",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/statewright/statewright"
   }
 ]
