@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-18",
+  "brand_slug": "cohere",
+  "preset_slug": null,
+  "aesthetic_slug": "cohere",
+  "framework": "RECEIPT",
+  "rationale_one_line": "All eight presets are inside the 14-entry anti-repeat window, so a brand pack is required. Cohere is an enterprise retrieval and agent-infrastructure brand whose identity is a near-black agent-console field with white type and a single coral editorial accent. semble is CPU-only retrieval built for coding agents, so the Cohere command-center surface and RECEIPT (numbers do the proving) frame the efficiency story without hype.",
+  "writing_tone_notes": "Peer-to-peer build-in-public engineer voice. Calm, declarative, restrained, research-lab cadence. The numbers carry the praise, never superlatives. Contractions where natural. Coral is a single accent on near-black, never a fill. State the grep-to-retrieval contrast as fact, not opinion.",
+  "do_rules": [
+    "Lead the receipt with the 98%-fewer-tokens-than-grep-and-read number as the first big hit.",
+    "Follow with the 11x-faster-than-a-transformer-index number as the second hit.",
+    "Land the so-what as the loudest beat: stop grepping, start retrieving.",
+    "Keep the 'semble' held-subject wordmark anchored across every scene.",
+    "Use the fade register and one coral accent so it reads as a sober command center, not a launch hype cut."
+  ],
+  "dont_rules": [
+    "Don't repeat the X caption's phrasing (Hacker News momentum, code search written for coding agents, CPU only, no API) in any scene or in the Why-this-one.",
+    "Don't name Model2Vec or cite NDCG 0.854 or the 50x/500x lineage numbers in scene copy — those belong only to the Why-this-one.",
+    "Don't use a version number anywhere.",
+    "Don't flood the frame with coral — it's a single accent on near-black, never a fill.",
+    "Don't claim a benchmark the dossier doesn't support; the hard scene numbers are 98% and 11x only."
+  ]
+}

@@ -84,5 +84,12 @@
     "aesthetic_slug": "hashicorp",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/statewright/statewright"
+  },
+  {
+    "date": "2026-05-18",
+    "brand_slug": "cohere",
+    "aesthetic_slug": "cohere",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/MinishLab/semble"
   }
 ]

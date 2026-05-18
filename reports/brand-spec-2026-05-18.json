@@ -1,0 +1,46 @@
+{
+  "design": {
+    "brand_slug": "cohere",
+    "aesthetic_slug": "cohere",
+    "tokens": {
+      "canvas": "#17171c",
+      "ink": "#ffffff",
+      "ink_muted": "#93939f",
+      "accent": "#ff7759",
+      "hairline": "#2c2c34"
+    },
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.02,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.36,
+      "scene_out_s": 0.24,
+      "stagger_s": 0.22
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.20,
+      "halation": 0.05,
+      "lighting_arc": 0.28
+    },
+    "framework": "RECEIPT",
+    "audio_palette": "ambient",
+    "held_subject": "semble",
+    "accent_contrast_min": 3.0
+  }
+}
