@@ -1,0 +1,94 @@
+{
+  "date": "2026-05-18",
+  "topic": "semble, CPU-only code search built for AI coding agents",
+  "creator_handle": "@TvDongen",
+  "project_url": "https://github.com/MinishLab/semble",
+
+  "design": {
+    "brand_slug": "cohere",
+    "aesthetic_slug": "cohere",
+    "framework": "RECEIPT",
+    "audio_palette": "ambient",
+    "held_subject": "semble",
+    "tokens": {
+      "canvas": "#17171c",
+      "ink": "#ffffff",
+      "ink_muted": "#93939f",
+      "accent": "#ff7759",
+      "hairline": "#2c2c34"
+    },
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.02,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.36,
+      "scene_out_s": 0.24,
+      "stagger_s": 0.22
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.20,
+      "halation": 0.05,
+      "lighting_arc": 0.28
+    },
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "semble",
+      "eyebrow": "the agent reads less, finds more",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "big_number",
+      "numeral": "98%",
+      "caption": "fewer tokens than grep and read",
+      "sub": "on every lookup your agent makes",
+      "camera": "ken_burns",
+      "duration_s": 3.5
+    },
+    {
+      "template": "big_number",
+      "numeral": "11x",
+      "caption": "faster than a transformer index",
+      "sub": "and it runs without a GPU",
+      "camera": "orbit",
+      "duration_s": 3.5
+    },
+    {
+      "template": "fix",
+      "primary": "Stop grepping.",
+      "secondary": "Start retrieving.",
+      "emphasize": true,
+      "camera": "crash_zoom",
+      "duration_s": 3.5
+    },
+    {
+      "template": "close",
+      "primary": "Search like it knows",
+      "accent": "not like it scans.",
+      "subtitle": "code retrieval that fits an agent's budget.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
