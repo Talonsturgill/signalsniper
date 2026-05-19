@@ -91,5 +91,12 @@
     "aesthetic_slug": "cohere",
     "framework": "RECEIPT",
     "project_url": "https://github.com/MinishLab/semble"
+  },
+  {
+    "date": "2026-05-19",
+    "brand_slug": "sentry",
+    "aesthetic_slug": "sentry",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/tech-leads-club/agent-skills"
   }
 ]

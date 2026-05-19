@@ -177,6 +177,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hyperfun",
       "attribution_required": "Music. Hyperfun by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "crypto",
+      "title": "Crypto",
+      "file": "Crypto.mp3",
+      "duration_s": 204.1,
+      "mood": "driving dark electronic, tense systems pulse",
+      "register": "electronic",
+      "fits": "sentry, mono-terminal, cctv, MANIFESTO, SCHEMATIC",
+      "preset_packs": ["sentry", "mono-terminal", "cctv"],
+      "frameworks": ["MANIFESTO", "SCHEMATIC", "RECEIPT"],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Crypto",
+      "attribution_required": "Music. Crypto by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

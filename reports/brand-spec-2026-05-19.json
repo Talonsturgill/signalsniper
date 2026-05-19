@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-19",
+  "brand_slug": "sentry",
+  "aesthetic_slug": "sentry",
+  "framework": "MANIFESTO",
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "tokens": {
+    "canvas": "#150F23",
+    "ink": "#FFFFFF",
+    "ink_muted": "#BDB8C0",
+    "accent": "#C2EF4E",
+    "hairline": "#362D59"
+  },
+  "fonts": {
+    "display": "BricolageGrotesque",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.02,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "scale",
+    "scene_in_s": 0.45,
+    "scene_out_s": 0.27,
+    "stagger_s": 0.3
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 4
+  },
+  "texture": {
+    "grain": 0.06,
+    "vignette": 0.22,
+    "halation": 0.08,
+    "lighting_arc": 0.3
+  },
+  "held_subject": "agent-skills",
+  "notes": "Sentry brand pack: deep violet-midnight canvas (#150F23, surface-night), pure-white ink, electric-lime accent (#C2EF4E, accent-lime) reserved for the loudest beats so it reads like a security warning light, violet hairline (#362D59). BricolageGrotesque display gives the chunky, slightly subversive Sentry display voice; Inter carries body in the Rubik-adjacent register. scale motion + electronic palette match the Crypto bed and the MANIFESTO color-burst arc."
+}

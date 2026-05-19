@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-19",
+  "brand_slug": "sentry",
+  "preset_slug": null,
+  "aesthetic_slug": "sentry",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "All 8 presets are inside the 14-entry anti-repeat window, so the lane-aligned default is a brand pack: Sentry's dark violet plus electric-lime security-console identity is the cleanest visual translation of a vulnerability-scanned, lockfile-pinned hardened registry, and MANIFESTO carries the contrarian 'stop trusting marketplace skills' thesis.",
+  "writing_tone_notes": "Practitioner, opinionated, build-in-public peer voice. Security-as-craft, not fear-mongering. Bold declarative opens, contractions where natural, specifics over adjectives. The contrast (13% vulnerable vs verified-and-pinned) carries the praise. No superlatives.",
+  "do_rules": [
+    "Lead the video on the supply-chain claim, not the tool name",
+    "Use the electric-lime accent only on the loudest beats (flash, fix, close)",
+    "Keep one verbatim hard number from the README (the 13% figure) in exactly one surface",
+    "Hold a high-contrast dark canvas so the lime reads as a warning light"
+  ],
+  "dont_rules": [
+    "No version numbers anywhere in the X caption (v0.14.3 forbidden)",
+    "Do not reuse any preset slug (all 8 are inside the 14-entry window)",
+    "Do not repeat the star-velocity phrase between the tweet and the Why-this-one",
+    "No fear-mongering, no superlatives, no question hooks"
+  ],
+  "anti_repeat_notes": "brand_slug 'sentry' not in {voltagent, linear.app, hashicorp, cohere}; aesthetic_slug 'sentry' not in any prior aesthetic_slug; framework MANIFESTO != most-recent entry (RECEIPT, 2026-05-18). Deviation noted: routine Step 5 prefers a preset when the creator's own brand is absent, but every preset is blocked by the 14-entry rule, so a fitting brand pack is the lane-aligned default. Recorded in the Gmail."
+}
