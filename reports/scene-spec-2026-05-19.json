@@ -1,0 +1,99 @@
+{
+  "date": "2026-05-19",
+  "topic": "Agent Skills, the security-scanned skill registry for coding agents",
+  "creator_handle": "@waldemarnt",
+  "project_url": "https://github.com/tech-leads-club/agent-skills",
+
+  "design": {
+    "brand_slug": "sentry",
+    "aesthetic_slug": "sentry",
+    "framework": "MANIFESTO",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+
+    "tokens": {
+      "canvas": "#150F23",
+      "ink": "#FFFFFF",
+      "ink_muted": "#BDB8C0",
+      "accent": "#C2EF4E",
+      "hairline": "#362D59"
+    },
+
+    "fonts": {
+      "display": "BricolageGrotesque",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.02,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.45,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.3
+    },
+
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+
+    "texture": {
+      "grain": 0.06,
+      "vignette": 0.22,
+      "halation": 0.08,
+      "lighting_arc": 0.22
+    },
+
+    "held_subject": "agent-skills"
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "Agent Skills",
+      "eyebrow": "a verified registry for coding agents",
+      "camera": "orbit",
+      "duration_s": 3.4
+    },
+    {
+      "template": "flash",
+      "word": "Unseen",
+      "caption": "13% ship a critical vulnerability",
+      "camera": "crash_zoom",
+      "duration_s": 3.0
+    },
+    {
+      "template": "fix",
+      "primary": "Trust is built.",
+      "secondary": "not downloaded.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "flash",
+      "word": "Sealed",
+      "caption": "defense in depth, by default",
+      "camera": "ken_burns",
+      "duration_s": 3.0
+    },
+    {
+      "template": "close",
+      "primary": "Skills ship as code.",
+      "accent": "treat them like it.",
+      "subtitle": "the registry that scans before you ship.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 4.0
+    }
+  ]
+}
