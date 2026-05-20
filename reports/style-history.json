@@ -98,5 +98,12 @@
     "aesthetic_slug": "sentry",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/tech-leads-club/agent-skills"
+  },
+  {
+    "date": "2026-05-20",
+    "brand_slug": "opencode.ai",
+    "aesthetic_slug": "opencode.ai",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/tirth8205/code-review-graph"
   }
 ]

@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-20",
+  "brand_slug": "opencode.ai",
+  "aesthetic_slug": "opencode.ai",
+  "framework": "SCHEMATIC",
+  "audio_palette": "acoustic",
+  "accent_contrast_min": 4.5,
+  "tokens": {
+    "canvas": "#FDFCFC",
+    "ink": "#201D1D",
+    "ink_muted": "#646262",
+    "accent": "#0056B3",
+    "hairline": "#E0DAD9"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "JetBrainsMono",
+    "italic": "JetBrainsMono"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": 0.0,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "cut",
+    "scene_in_s": 0.10,
+    "scene_out_s": 0.08,
+    "stagger_s": 0.12
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 0
+  },
+  "texture": {
+    "grain": 0.04,
+    "vignette": 0.12,
+    "halation": 0.0,
+    "lighting_arc": 0.18
+  },
+  "held_subject": "code-review-graph",
+  "notes": "OpenCode brand pack: warm cream canvas (#FDFCFC), near-black ink (#201D1D), Apple-darker blue accent (#0056B3) used as the in-product TUI signal. JetBrainsMono substitutes Berkeley Mono across display + body + italic (the brand's whole identity is one monospaced face). cut register, near-zero stagger, sharp 0px radius — matches the manpage / static-site rhythm. Acoustic palette pairs with Long Stroll's jazz walking bass; SCHEMATIC framework lets the diagram scene carry the structural thesis."
+}
