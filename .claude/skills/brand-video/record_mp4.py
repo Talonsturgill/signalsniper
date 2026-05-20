@@ -84,11 +84,13 @@ def synth_wav(wav_path: Path, meta: dict):
 
 
 def mux(webm_path: Path, wav_path: Path, mp4_path: Path, total_s: float):
+    # Output an extra 2s up front so the next mux can -ss 1.5 the warmup and
+    # still hand back total_s of real content.
     cmd = [
         "ffmpeg", "-y",
         "-i", str(webm_path),
         "-i", str(wav_path),
-        "-t", f"{total_s}",
+        "-t", f"{total_s + 2.0}",
         "-c:v", "libx264",
         "-profile:v", "baseline",
         "-level", "3.1",
@@ -99,7 +101,6 @@ def mux(webm_path: Path, wav_path: Path, mp4_path: Path, total_s: float):
         "-b:a", "128k",
         "-ar", "44100",
         "-movflags", "+faststart",
-        "-shortest",
         str(mp4_path),
     ]
     subprocess.check_call(cmd)

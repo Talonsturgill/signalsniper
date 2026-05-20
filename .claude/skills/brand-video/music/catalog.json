@@ -193,6 +193,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Crypto",
       "attribution_required": "Music. Crypto by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "long-stroll",
+      "title": "Long Stroll",
+      "file": "Long_Stroll.mp3",
+      "duration_s": 254.7,
+      "mood": "jazz walking bass and warm piano, methodical detective groove",
+      "register": "acoustic",
+      "fits": "opencode.ai, editorial-paper, claude, gallery, SCHEMATIC, DISPATCH",
+      "preset_packs": ["opencode.ai", "editorial-paper", "claude", "gallery"],
+      "frameworks": ["SCHEMATIC", "DISPATCH", "CLASSIC"],
+      "default_offset_s": 10.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Long+Stroll",
+      "attribution_required": "Music. Long Stroll by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

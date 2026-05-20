@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-20",
+  "brand_slug": "opencode.ai",
+  "preset_slug": null,
+  "aesthetic_slug": "opencode.ai",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "code-review-graph is a structural project (a knowledge graph for AI agents); OpenCode's monospace-on-cream identity matches the terminal-native register of the tool, and SCHEMATIC lets the diagram scene carry the thesis instead of words.",
+  "writing_tone_notes": "Engineer-to-engineer. State the numbers, name the tradeoff. No marketing voice. Contractions where natural. Lower-case scene copy preserves the monospaced manpage feel of OpenCode chrome.",
+  "do_rules": [
+    "Render every scene in JetBrainsMono (Berkeley Mono substitute).",
+    "Hold the cream canvas (#FDFCFC) and ink near-black (#201D1D). One blue accent, reserved.",
+    "Use the diagram scene as the visual hero — nodes and edges sell the project, not adjectives.",
+    "Let the close subtitle name a different angle (MIT, London) than the X caption."
+  ],
+  "dont_rules": [
+    "Don't repeat star count, 49x, or the words 'blast radius' anywhere except where each is assigned.",
+    "Don't introduce a sans-serif body — OpenCode is one font.",
+    "Don't use MANIFESTO (yesterday's framework).",
+    "Don't recycle any preset already in the last 14 history entries."
+  ]
+}
