@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-21",
+  "brand_slug": null,
+  "preset_slug": "mono-terminal",
+  "aesthetic_slug": "mono-terminal",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "Shen-Backpressure is a typed-Lisp + compiler thesis with a bold opinionated claim, which is exactly what MANIFESTO is for; mono-terminal (matrix-green on near-black, JetBrainsMono, cut motion) is the native register for formal-methods builders and the only preset out of the 14-entry lookback window.",
+  "writing_tone_notes": "Essayistic-engineer. No superlatives. Plain declaratives. Lower-case everything (mono-terminal preset enforces case: lower). Contractions where natural. Short sentences. The contrast carries the praise — the thesis is the flattery.",
+  "do_rules": [
+    "Render every scene in JetBrainsMono on near-black canvas with matrix-green accent.",
+    "Use both flash scenes as the visual heroes — one bold word per beat, all lowercase.",
+    "Land the thesis on the first flash; land the result on the second.",
+    "Let the close subtitle name a different angle (language footprint) than the X caption.",
+    "Camera moves: orbit on title, crash_zoom on both flashes, push_in on fix, pull_back on close — four distinct moves with the required orbit."
+  ],
+  "dont_rules": [
+    "Don't repeat 'structural backpressure beats smarter agents' inside scene copy (the X caption owns that quote).",
+    "Don't repeat 'the model has to satisfy' inside scene copy.",
+    "Don't introduce a serif body — mono-terminal is one font.",
+    "Don't use SCHEMATIC (yesterday's framework).",
+    "Don't claim MIT or any specific license — the repo ships no LICENSE file.",
+    "Don't claim Shen is a 1970s language — Shen itself is recent; sequent calculus is the older substrate."
+  ]
+}

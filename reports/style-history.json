@@ -105,5 +105,12 @@
     "aesthetic_slug": "opencode.ai",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/tirth8205/code-review-graph"
+  },
+  {
+    "date": "2026-05-21",
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/pyrex41/Shen-Backpressure"
   }
 ]
