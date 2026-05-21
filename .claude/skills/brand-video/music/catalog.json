@@ -209,6 +209,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Long+Stroll",
       "attribution_required": "Music. Long Stroll by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "hidden-agenda",
+      "title": "Hidden Agenda",
+      "file": "Hidden_Agenda.mp3",
+      "duration_s": 135.0,
+      "mood": "tense electronic synth groove, surveillance-room pulse, deterministic ticking",
+      "register": "electronic",
+      "fits": "mono-terminal, cctv, subway-chrome, MANIFESTO, SCHEMATIC, RECEIPT",
+      "preset_packs": ["mono-terminal", "cctv", "subway-chrome"],
+      "frameworks": ["MANIFESTO", "SCHEMATIC", "RECEIPT"],
+      "default_offset_s": 12.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hidden+Agenda",
+      "attribution_required": "Music. Hidden Agenda by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

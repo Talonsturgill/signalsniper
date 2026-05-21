@@ -1,0 +1,99 @@
+{
+  "date": "2026-05-21",
+  "topic": "Shen-Backpressure, formal verification gates for AI coding loops",
+  "creator_handle": "@reubbr",
+  "project_url": "https://github.com/pyrex41/Shen-Backpressure",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "MANIFESTO",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+
+    "tokens": {
+      "canvas": "#0A0A0A",
+      "ink": "#F0F0F0",
+      "ink_muted": "#7A7A7A",
+      "accent": "#37F712",
+      "hairline": "#1F1F1F"
+    },
+
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.005,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.10
+    },
+
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+
+    "texture": {
+      "grain": 0.06,
+      "vignette": 0.24,
+      "halation": 0.04,
+      "lighting_arc": 0.24
+    },
+
+    "held_subject": "shen-backpressure"
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "shen-backpressure",
+      "eyebrow": "formal gates for the agent loop",
+      "camera": "orbit",
+      "duration_s": 3.0
+    },
+    {
+      "template": "flash",
+      "word": "backpressure",
+      "caption": "no probability layer.",
+      "camera": "crash_zoom",
+      "duration_s": 3.0
+    },
+    {
+      "template": "fix",
+      "primary": "won't compile.",
+      "secondary": "the model can't slip.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "flash",
+      "word": "verify",
+      "caption": "before it ships, not after.",
+      "camera": "crash_zoom",
+      "duration_s": 3.0
+    },
+    {
+      "template": "close",
+      "primary": "type the spec.",
+      "accent": "compile the proof.",
+      "subtitle": "one shen file. four target languages.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
