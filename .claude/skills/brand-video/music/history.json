@@ -68,5 +68,10 @@
     "date": "2026-05-21",
     "slug": "hidden-agenda",
     "project_url": "https://github.com/pyrex41/Shen-Backpressure"
+  },
+  {
+    "date": "2026-05-22",
+    "slug": "voltaic",
+    "project_url": "https://github.com/karpathy/autoresearch"
   }
 ]

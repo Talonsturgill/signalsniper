@@ -225,6 +225,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hidden+Agenda",
       "attribution_required": "Music. Hidden Agenda by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "voltaic",
+      "title": "Voltaic",
+      "file": "Voltaic.mp3",
+      "duration_s": 196.1,
+      "mood": "driving electronic synth pulse, energetic four-on-the-floor groove, optimistic propulsive",
+      "register": "electronic",
+      "fits": "subway-chrome, mono-terminal, geominimal, RECEIPT, SCHEMATIC, CLASSIC",
+      "preset_packs": ["subway-chrome", "mono-terminal", "geominimal"],
+      "frameworks": ["RECEIPT", "SCHEMATIC", "CLASSIC"],
+      "default_offset_s": 16.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voltaic",
+      "attribution_required": "Music. Voltaic by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
