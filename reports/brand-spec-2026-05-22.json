@@ -1,0 +1,45 @@
+{
+  "date": "2026-05-22",
+  "brand_slug": null,
+  "aesthetic_slug": "subway-chrome",
+  "framework": "RECEIPT",
+  "tokens": {
+    "canvas": "#15171A",
+    "ink": "#F4F6FA",
+    "ink_muted": "#8B95A6",
+    "accent": "#7DD9FF",
+    "hairline": "#262A30"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 600,
+    "body_weight": 400,
+    "letter_spacing_em": -0.015,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.32,
+    "scene_out_s": 0.22,
+    "stagger_s": 0.22
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 4
+  },
+  "texture": {
+    "grain": 0.04,
+    "vignette": 0.20,
+    "halation": 0.04,
+    "lighting_arc": 0.32
+  },
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "held_subject": "autoresearch"
+}

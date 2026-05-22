@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-22",
+  "brand_slug": null,
+  "preset_slug": "subway-chrome",
+  "aesthetic_slug": "subway-chrome",
+  "framework": "RECEIPT",
+  "rationale_one_line": "Numbers carry the story (100 experiments overnight, 5-minute budget, 82k stars), and the dark-steel subway-chrome surface reads as the all-night compute room the project lives in.",
+  "writing_tone_notes": "Karpathy voice. Compressed, declarative, one-clause sentences. Use contractions. Show contrasts, never adjectives. Lean on concrete nouns: train.py, val_bpb, 5 minutes, 100 runs. No frontier-lab gloss. Treat the reader as a builder who already knows nanochat.",
+  "do_rules": [
+    "Open the first scene with a concrete number, not a positioning line",
+    "Land at least one big_number scene with 100 and one with 12/hour or 5 min",
+    "Use lowercase where the preset case rule says so",
+    "Keep technical handle (val_bpb) in body once for credibility"
+  ],
+  "dont_rules": [
+    "No paraphrase of the meat-computers line in the video itself (save flavor for the dossier; tribute is its own voice)",
+    "No corporate-launch language (no 'introducing', no 'unveils')",
+    "No repetition of 82k stars across the X caption AND the Why-this-one",
+    "No version numbers anywhere"
+  ]
+}
