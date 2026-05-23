@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-23",
+  "brand_slug": "warp",
+  "aesthetic_slug": "warp",
+  "preset_slug": "warp",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "Warp (warm campfire terminal aesthetic) maps directly to oh-my-pi (terminal agent) and gives Can Bolu the restrained, low-color register a reverse engineer would write his own product page in; SCHEMATIC gives the hash-anchored-edits idea a center-stage diagram.",
+  "writing_tone_notes": "Lowercase by default. Terse declaratives. No marketing adjectives. Treat the reader as a peer who's already built one of these. The voice is the secret-club blog tone applied to a tribute.",
+  "do_rules": [
+    "Lead the diagram with the content-hash anchor as the pivot node.",
+    "Use Rust and TypeScript stack details as flavor in the terminal scene, not in the headline beats.",
+    "Keep the reverse-engineer pivot for the close, not the caption (caption leads with star velocity).",
+    "Hold to lowercase except for proper nouns and the close's primary line.",
+    "Camera moves: at least four distinct, one orbit on the diagram scene."
+  ],
+  "dont_rules": [
+    "Do NOT repeat 'hash-anchored edits' verbatim across caption + scene copy (caption gets the phrase; the diagram says 'anchors by content hash').",
+    "Do NOT echo 'reverse engineer' in the caption AND the close subtitle (close gets it).",
+    "Do NOT reuse 'harness' as a phrase across more than one surface.",
+    "Do NOT cite v15.2.4 or any version number in the caption (growth metric only).",
+    "Do NOT use em or en dashes anywhere in copy."
+  ]
+}

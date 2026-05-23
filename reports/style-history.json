@@ -119,5 +119,12 @@
     "aesthetic_slug": "subway-chrome",
     "framework": "RECEIPT",
     "project_url": "https://github.com/karpathy/autoresearch"
+  },
+  {
+    "date": "2026-05-23",
+    "brand_slug": "warp",
+    "aesthetic_slug": "warp",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/can1357/oh-my-pi"
   }
 ]

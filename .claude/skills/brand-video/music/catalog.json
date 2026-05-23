@@ -241,6 +241,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voltaic",
       "attribution_required": "Music. Voltaic by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "the-builder",
+      "title": "The Builder",
+      "file": "The_Builder.mp3",
+      "duration_s": 117.6,
+      "mood": "warm methodical electronic build, patient layered groove, craftsperson at work",
+      "register": "electronic",
+      "fits": "warp, claude, editorial-paper, mono-terminal, SCHEMATIC, CLASSIC, DISPATCH",
+      "preset_packs": ["warp", "claude", "mono-terminal", "editorial-paper", "gallery"],
+      "frameworks": ["SCHEMATIC", "CLASSIC", "DISPATCH"],
+      "default_offset_s": 12.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Builder",
+      "attribution_required": "Music. The Builder by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
