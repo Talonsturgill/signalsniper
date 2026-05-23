@@ -1,0 +1,46 @@
+{
+  "date": "2026-05-23",
+  "brand_slug": "warp",
+  "aesthetic_slug": "warp",
+  "framework": "SCHEMATIC",
+  "audio_palette": "electronic",
+  "accent_contrast_min": 3.0,
+  "tokens": {
+    "canvas": "#171411",
+    "ink": "#FAF9F6",
+    "ink_muted": "#AFAEAC",
+    "accent": "#D9A35C",
+    "hairline": "#353534"
+  },
+  "fonts": {
+    "display": "BricolageGrotesque",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 500,
+    "body_weight": 400,
+    "letter_spacing_em": -0.022,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.36,
+    "scene_out_s": 0.24,
+    "stagger_s": 0.24
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 6
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.24,
+    "halation": 0.06,
+    "lighting_arc": 0.30
+  },
+  "held_subject": "omp",
+  "notes": "Warp brand pack: warm deep-void canvas (#171411), warm-parchment ink (#FAF9F6) instead of pure white for that campfire-in-a-forest cream tone, ash-gray muted for body, warm campfire-amber accent (#D9A35C) reserved for the loudest beats (Warp's marketing palette is almost monochromatic but the campfire metaphor justifies a warm amber for emphasis), earth-gray hairline. BricolageGrotesque display at weight 500 stands in for Matter Regular (geometric sans with humanist softness, the closest match available); Inter for body. fade motion + electronic palette for the SCHEMATIC orbit."
+}

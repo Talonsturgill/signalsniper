@@ -1,0 +1,122 @@
+{
+  "date": "2026-05-23",
+  "topic": "oh-my-pi, a reverse engineer's terminal coding agent with hash-anchored edits",
+  "creator_handle": "@_can1357",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+
+  "design": {
+    "brand_slug": "warp",
+    "aesthetic_slug": "warp",
+    "framework": "SCHEMATIC",
+    "audio_palette": "electronic",
+    "held_subject": "omp",
+
+    "tokens": {
+      "canvas":    "#171411",
+      "ink":       "#FAF9F6",
+      "ink_muted": "#AFAEAC",
+      "accent":    "#D9A35C",
+      "hairline":  "#353534"
+    },
+
+    "fonts": {
+      "display": "BricolageGrotesque",
+      "body":    "Inter",
+      "italic":  "Inter"
+    },
+
+    "typography": {
+      "display_weight":      500,
+      "body_weight":         400,
+      "letter_spacing_em":  -0.022,
+      "case":               "preserve",
+      "italic_descriptors": false
+    },
+
+    "motion": {
+      "register":    "fade",
+      "scene_in_s":  0.36,
+      "scene_out_s": 0.24,
+      "stagger_s":   0.24
+    },
+
+    "layout": {
+      "padding_pct":       8,
+      "rule_thickness_px": 1,
+      "stage_radius_px":   6
+    },
+
+    "texture": {
+      "grain":        0.05,
+      "vignette":     0.24,
+      "halation":     0.06,
+      "lighting_arc": 0.30
+    },
+
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "oh-my-pi",
+      "eyebrow":  "ai coding agent for the terminal",
+      "camera":   "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "terminal",
+      "title":    "$ omp",
+      "lines": [
+        "> typescript front, rust core",
+        "> 13 lsp ops, 27 dap ops",
+        "> 32 tools registered",
+        "> subagent ready"
+      ],
+      "camera":   "parallax_drift",
+      "duration_s": 3.5
+    },
+    {
+      "template": "diagram",
+      "eyebrow":  "anchors by content hash",
+      "nodes": [
+        {"label": "model edit",     "x": 20, "y": 28},
+        {"label": "anchor by hash", "x": 50, "y": 58, "accent": true},
+        {"label": "clean apply",    "x": 80, "y": 28}
+      ],
+      "edges": [
+        {"from": 0, "to": 1, "accent": true},
+        {"from": 1, "to": 2, "accent": true}
+      ],
+      "camera":   "orbit",
+      "duration_s": 4.5
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "rust does the surgery",
+        "the surface is bun"
+      ],
+      "accent_idx": 0,
+      "camera":   "parallax_drift",
+      "duration_s": 3.0
+    },
+    {
+      "template":  "fix",
+      "primary":   "the surgery holds",
+      "secondary": "no whitespace battles",
+      "emphasize": true,
+      "camera":    "push_in",
+      "duration_s": 3.5
+    },
+    {
+      "template":  "close",
+      "primary":   "A reverse engineer",
+      "accent":    "wrote your agent",
+      "subtitle":  "and the low-level brain runs every layer",
+      "emphasize": true,
+      "camera":    "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
