@@ -1,0 +1,343 @@
+{
+  "2026-05-17": {
+    "date": "2026-05-17",
+    "project_slug": "statewright",
+    "momentum_delta": {
+      "stars_then": 314,
+      "stars_now": 349,
+      "velocity_window": "+35 stars over 6 days (2026-05-17 to 2026-05-23); source: github.com/statewright/statewright",
+      "hn_followups": [
+        {
+          "url": "https://news.ycombinator.com/item?id=48118287",
+          "summary": "Follow-up thread debating managed cloud gateway vs local enforcement; azurewraith clarified engine runs locally"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=48115169",
+          "summary": "Community attempt to independently reproduce 2/10\u219210/10 SWE-bench result"
+        }
+      ],
+      "newsletter_mentions": []
+    },
+    "shipped_since": [
+      "v1 release (tag: v1, commit 71226fa) \u2014 2026-05-20, 6 binary assets with arm64 cross-compile support",
+      "Per-state model routing (commit 430091d) \u2014 2026-05-21, enables different LLMs per workflow state",
+      "Oh My Codex (OMX) plugin (commit c333415) \u2014 2026-05-18, TypeScript hook with 48 tests",
+      "Self-hosted Docker Compose stack \u2014 2026-05-19, full stack with gateway, PocketBase, Vue UI",
+      "MCP gateway crate published (commit 0d4ad8f) \u2014 2026-05-19"
+    ],
+    "sibling_work": [
+      {
+        "name": "LlamaFirewall",
+        "url": "https://arxiv.org/abs/2505.03574",
+        "one_line": "Meta's open-source agent security framework using PromptGuard 2, chain-of-thought alignment auditing, and CodeShield static analysis"
+      },
+      {
+        "name": "htekdev/agent-harness",
+        "url": "https://github.com/htekdev/agent-harness",
+        "one_line": "TypeScript library wrapping LLM agents with budget caps, output filtering, retry logic, and human escalation"
+      },
+      {
+        "name": "nwyin/tau",
+        "url": "https://github.com/nwyin/tau",
+        "one_line": "Minimal hackable coding-agent harness in Rust with allow/deny/ask tool permission policies"
+      }
+    ],
+    "shipping_next": [
+      "SWE-bench experiment harness publication \u2014 stated by azurewraith in HN thread as forthcoming",
+      "Windsurf editor plugin \u2014 listed in HN Show HN discussion roadmap items",
+      "Cursor hard enforcement \u2014 README marks Cursor as advisory only; hard enforcement pending",
+      "Fork/join parallel execution \u2014 commit 3f53a6f scaffold implies full implementation pending"
+    ],
+    "creator_quote": {
+      "text": "The state engine is the part that can't hallucinate \u2014 it enforces with code and not transformers.",
+      "source_url": "https://news.ycombinator.com/item?id=48108778"
+    },
+    "reading_list_candidate": {
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "url": "https://arxiv.org/abs/2310.06770",
+      "why": "The benchmark underlying statewright's headline metric (2/10\u219210/10 on a 5-task subset)"
+    }
+  },
+  "2026-05-18": {
+    "date": "2026-05-18",
+    "project_slug": "semble",
+    "momentum_delta": {
+      "stars_then": 1800,
+      "stars_now": 3800,
+      "velocity_window": "~2k stars gained May 18-23; HN Show HN post climbed from 312 pts/107 comments to 442 pts/150 comments over same window",
+      "hn_followups": [],
+      "newsletter_mentions": [
+        {
+          "outlet": "Medium \u2013 Mohammed Ouasli",
+          "title": "Claude Code + Semble: The 98% Token-Saving Hack You Need",
+          "url": "https://medium.com/@mohammedouasli7/claude-code-semble-the-98-token-saving-hack-you-need-9971a990ad7e"
+        }
+      ]
+    },
+    "shipped_since": [
+      "v0.1.8 \u2014 2026-05-18: improved file-walker indexing speed, deterministic file ordering",
+      "v0.1.9/v0.1.10 \u2014 2026-05-19: more subagents support via semble init, expanded installation docs",
+      "v0.2.0 \u2014 2026-05-21: index persistence, JSON output, --content flag, non-blocking MCP model loading"
+    ],
+    "sibling_work": [
+      {
+        "name": "Veles",
+        "url": "https://github.com/julymetodiev/Veles",
+        "one_line": "Pure-Rust port of semble's hybrid BM25+semantic recipe with persistent on-disk index, tree-sitter symbol awareness"
+      },
+      {
+        "name": "codesearch",
+        "url": "https://github.com/flupkede/codesearch",
+        "one_line": "Rust MCP server doing hybrid vector+BM25+RRF across multiple repos with AST chunking, 27 stars"
+      }
+    ],
+    "shipping_next": [
+      "Text document search support (issue #143, opened 2026-05-21)",
+      "Optional API-endpoint backend for heavier models (issue #148, opened 2026-05-22)",
+      "NixOS/flake packaging support (issue #109)"
+    ],
+    "creator_quote": {
+      "text": "Everything runs on CPU since there's no transformers involved.",
+      "source_url": "https://news.ycombinator.com/item?id=48169874"
+    },
+    "reading_list_candidate": {
+      "title": "How We Improved Agentic Search (entire.io)",
+      "url": "https://entire.io/blog/improving-agentic-search-in-coding-agents",
+      "why": "Cited by HN commenters in the semble thread; argues that better result ranking meaningfully improves agent Hit@1, contextualizing semble's RRF+reranking design"
+    }
+  },
+  "2026-05-19": {
+    "date": "2026-05-19",
+    "project_slug": "agent-skills",
+    "momentum_delta": {
+      "stars_then": 5444,
+      "stars_now": 4400,
+      "velocity_window": "Current reading ~4,388-4,400 across multiple sources as of 2026-05-23; the tribute-day +1,244 surge figure cannot be reconciled with current count \u2014 flag for fact validation",
+      "hn_followups": [],
+      "newsletter_mentions": []
+    },
+    "shipped_since": [],
+    "sibling_work": [
+      {
+        "name": "qualixar/skillfortify",
+        "url": "https://github.com/qualixar/skillfortify",
+        "one_line": "First formal static-analysis security scanner for agent skills across 22 frameworks including MCP, LangChain, CrewAI, with SBOM generation"
+      },
+      {
+        "name": "skillctl (skillimage.dev)",
+        "url": "https://skillimage.dev/",
+        "one_line": "OCI-based skill distribution layer that packages, signs, and ships agent skills through container registries"
+      }
+    ],
+    "shipping_next": [
+      "CI-level environment security scanning step (issue #122, 2026-05-22)",
+      "Skill Integrations table documentation fix (issue #120, 2026-05-21)"
+    ],
+    "creator_quote": {
+      "text": null,
+      "source_url": null
+    },
+    "reading_list_candidate": {
+      "title": "Agent Skills in the Wild: An Empirical Study of Security Vulnerabilities at Scale",
+      "url": "https://arxiv.org/abs/2601.10338",
+      "why": "Scanned 42,447 skills, found 26.1% contain at least one vulnerability \u2014 the broader empirical context for the 13% premise in agent-skills' README"
+    }
+  },
+  "2026-05-20": {
+    "date": "2026-05-20",
+    "project_slug": "code-review-graph",
+    "momentum_delta": {
+      "stars_then": 17000,
+      "stars_now": 17210,
+      "velocity_window": "~42 stars/week as of 2026-05-23 (down from +123/day at tribute); source: star-history.com and skillsllm.com showing 17,210 as of 2026-05-23",
+      "hn_followups": [
+        {
+          "url": "https://news.ycombinator.com/item?id=47314090",
+          "points": 12,
+          "comments": 2,
+          "note": "Minimal discussion; one user reported install failure, creator responded"
+        }
+      ],
+      "newsletter_mentions": []
+    },
+    "shipped_since": [],
+    "sibling_work": [
+      {
+        "name": "colbymchenry/codegraph",
+        "url": "https://github.com/colbymchenry/codegraph",
+        "one_line": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor \u2014 100% local, v0.9.3 on 2026-05-22, 17.6k stars"
+      },
+      {
+        "name": "CodeGraphContext/CodeGraphContext",
+        "url": "https://github.com/CodeGraphContext/CodeGraphContext",
+        "one_line": "MCP server plus CLI indexing local code into graph database for AI assistant context; 3.4k stars"
+      },
+      {
+        "name": "harshkedia177/axon",
+        "url": "https://github.com/harshkedia177/axon",
+        "one_line": "Graph-powered code intelligence with call-graph blast-radius analysis via MCP and CLI; 706 stars"
+      }
+    ],
+    "shipping_next": [
+      "Body/docstring embedding for vector search (currently function signatures only \u2014 README follow-up enhancement)",
+      "CodeBuddy IDE support (issue #504, 2026-05-21)",
+      "Codex PostToolUse hook stdin drain fix (issue #493, 2026-05-19)"
+    ],
+    "creator_quote": {
+      "text": "Every time Claude Code reviews your code, it reads your entire codebase. I was watching my token budget drain during a code review session. That's when I started building code-review-graph.",
+      "source_url": "https://tirthkanani18.medium.com/i-built-a-knowledge-graph-that-cuts-claude-codes-token-usage-by-49x-ca73ef078981"
+    },
+    "reading_list_candidate": {
+      "title": "Codebase-Memory: Tree-Sitter-Based Knowledge Graphs for LLM Code Exploration via MCP",
+      "url": "https://arxiv.org/abs/2603.27277",
+      "why": "Peer-reviewed independent validation of the same architectural bet: Tree-sitter knowledge graphs over MCP achieve 10x token reduction and 2.1x fewer tool calls versus file-exploration agents"
+    }
+  },
+  "2026-05-21": {
+    "date": "2026-05-21",
+    "project_slug": "shen-backpressure",
+    "momentum_delta": {
+      "stars_then": 44,
+      "stars_now": 60,
+      "velocity_window": "+16 stars in 2 days (2026-05-21 \u2192 2026-05-23); source: github.com/pyrex41/Shen-Backpressure fetched 2026-05-23",
+      "hn_followups": [],
+      "newsletter_mentions": []
+    },
+    "shipped_since": [
+      "2026-05-23: 7 commits merged (PRs #13\u2013#19) including JWT proof chain hardening, predicate lowering improvements, richer counterexamples, docs/trust model/AUDIT.md; total main commits now 172 (was 165)"
+    ],
+    "sibling_work": [
+      {
+        "name": "vercel-labs/zerolang",
+        "url": "https://github.com/vercel-labs/zerolang",
+        "one_line": "Experimental systems language emitting structured JSON with typed repair IDs so AI agents can act on compiler failures without parsing English prose; ~900 stars in 24h (2026-05-15)"
+      },
+      {
+        "name": "AgentVerify",
+        "url": "https://www.preprints.org/manuscript/202604.1029",
+        "one_line": "April 2026 preprint defining compositional LTL model-checking specs for AI agent memory integrity and tool-call protocols"
+      }
+    ],
+    "shipping_next": [
+      "Mixed-evidence reports (design prompts in research directory)",
+      "Differential verification",
+      "Counterexample traces",
+      "Gate 4 (shen tc+) requires a Shen runtime \u2014 listed as open prerequisite"
+    ],
+    "creator_quote": {
+      "text": "Do not ask an agent to remember the invariant if you can move the invariant into a structure the agent cannot bypass.",
+      "source_url": "https://reubenbrooks.dev/projects/shen-backpressure/"
+    },
+    "reading_list_candidate": {
+      "title": "Don't Waste Your Backpressure",
+      "url": "https://banay.me/dont-waste-your-backpressure/",
+      "why": "Directly cited by @reubbr in the companion blog post as foundational; argues that agents need automated feedback infrastructure \u2014 type systems, compilers, proof checkers \u2014 to handle longer-horizon tasks"
+    }
+  },
+  "2026-05-22": {
+    "date": "2026-05-22",
+    "project_slug": "autoresearch",
+    "momentum_delta": {
+      "stars_then": 82700,
+      "stars_now": 82800,
+      "velocity_window": "~100 net new stars 2026-05-22 to 2026-05-23; source: github.com/karpathy/autoresearch showing 82.8k as of fetch on 2026-05-23",
+      "hn_followups": [
+        {
+          "title": "Scaling Karpathy's Autoresearch: What Happens When the Agent Gets a GPU Cluster",
+          "url": "https://news.ycombinator.com/item?id=47442435",
+          "comments": 94
+        },
+        {
+          "title": "The Karpathy Loop: 700 experiments, 2 days",
+          "url": "https://news.ycombinator.com/item?id=47494216"
+        }
+      ],
+      "newsletter_mentions": [
+        {
+          "source": "adlrocha Substack",
+          "title": "Auto-research: The Lab that runs while you sleep",
+          "url": "https://adlrocha.substack.com/p/adlrocha-auto-research-the-lab-that"
+        }
+      ]
+    },
+    "shipped_since": [
+      "No new Karpathy commits since launch; ecosystem proliferation includes Shopify 93-commit PR #2056 against Liquid templating (53% parse-render speedup, unmerged), Red Hat 198-experiment OpenShift AI session, Vector Institute 910-experiment 16-GPU parallelization run",
+      "uditgoenka/autoresearch adaptation: packaged as Claude Code skill with slash commands and file-level access controls"
+    ],
+    "sibling_work": [
+      {
+        "name": "AutoKernel (RightNow-AI)",
+        "url": "https://github.com/RightNow-AI/autokernel",
+        "one_line": "Applies the autoresearch keep-or-revert loop to GPU kernel optimization; profiles a PyTorch model, iterates Triton/CUDA rewrites overnight; 5.29x speedup over PyTorch eager; arXiv 2603.21331"
+      },
+      {
+        "name": "autoresearch@home (mutable-state-inc)",
+        "url": "https://github.com/mutable-state-inc/autoresearch-at-home",
+        "one_line": "Distributed fork where any agent on the internet contributes a GPU to a shared research swarm; 488 stars as of 2026-05-23"
+      }
+    ],
+    "shipping_next": [
+      "Karpathy's stated next direction: asynchronously massively collaborative agents (SETI@home style) \u2014 no commit yet (source: https://x.com/karpathy/status/2030705271627284816)"
+    ],
+    "creator_quote": {
+      "text": "The goal is not to emulate a single PhD student, it's to emulate a research community of them.",
+      "source_url": "https://x.com/karpathy/status/2030705271627284816"
+    },
+    "reading_list_candidate": {
+      "title": "AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search",
+      "url": "https://arxiv.org/abs/2603.21331",
+      "why": "Directly extends the autoresearch loop pattern to GPU kernel tuning, formalizes the keep-or-revert loop with a five-stage correctness harness, and benchmarks rigorously \u2014 the closest peer-reviewed treatment of the architecture Karpathy popularized"
+    }
+  },
+  "2026-05-23": {
+    "date": "2026-05-23",
+    "project_slug": "oh-my-pi",
+    "momentum_delta": {
+      "stars_then": 6500,
+      "stars_now": null,
+      "velocity_window": "386 total releases shipped since project start (Dec 31 2025); v15.2.4 published May 22 2026 09:20 UTC; npm package last published 11 hours before tribute as of May 23 2026; ecosyste.ms last synced May 3 2026 showed 3,840 stars consistent with rapid growth to 6,500+",
+      "hn_followups": [
+        {
+          "url": "https://news.ycombinator.com/item?id=47034377",
+          "note": "Active discussion on hash-anchored edits and subagent configuration"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=47148695",
+          "note": "User reports switching from gemini-cli/claude-code to oh-my-pi as primary coding harness"
+        }
+      ],
+      "newsletter_mentions": []
+    },
+    "shipped_since": [
+      "v15.2.4 \u2014 2026-05-22T09:20Z: fix Codex OAuth 403 from port-fallback redirect_uri mismatch",
+      "v15.2.3 \u2014 2026-05-22T05:01Z: patch release",
+      "v15.2.2 \u2014 2026-05-22T02:59Z: Google retry hints, RULES.md loading, browser null-head handling, Vertex endpoint configuration"
+    ],
+    "sibling_work": [
+      {
+        "name": "Dirac",
+        "url": "https://github.com/dirac-run/dirac",
+        "one_line": "Open-source coding agent using hash-anchored edits and AST-native manipulation; topped TerminalBench-2 at 65.2% on Gemini 3 Flash Preview; claims 50-80% API cost reduction vs competing agents"
+      },
+      {
+        "name": "oh-pi",
+        "url": "https://github.com/ifiokjr/oh-pi",
+        "one_line": "Community layer on top of pi-coding-agent \u2014 extensions, themes, prompts, skills, and ant-colony swarm; positioned as 'oh-my-zsh for pi'"
+      }
+    ],
+    "shipping_next": [
+      "iOS app and worktree integration (issue #1309)",
+      "--json flag for omp update to support scripted proxy/mirror configuration (issue #1298)",
+      "Explicit cache_control support for DashScope qwen3.6-plus provider (issue #1290)"
+    ],
+    "creator_quote": {
+      "text": "The gap between 'cool demo' and 'reliable tool' isn't model magic. It's careful, rather boring, empirical engineering.",
+      "source_url": "https://blog.can.ac/2026/02/12/the-harness-problem/"
+    },
+    "reading_list_candidate": {
+      "title": "Hash anchors plus Myers diff plus single-token anchors: 60% cheaper AI code edits",
+      "url": "https://dirac.run/posts/hash-anchors-myers-diff-single-token",
+      "why": "Extends Can B\u00f6l\u00fck's hashline concept; explains the stateful backend that reassigns anchors only to changed lines via Myers diff, reducing output tokens from O(search-block + replacement) to O(replacement-only); oh-my-pi listed as comparative benchmark. Published Apr 26 2026."
+    }
+  }
+}

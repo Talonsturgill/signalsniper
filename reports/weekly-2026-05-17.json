@@ -1,0 +1,42 @@
+{
+  "issue": 3,
+  "title": "This Week in AI \u00b7 The Agent Loop Got Five Fixes in Seven Days",
+  "week_start": "2026-05-17",
+  "week_end": "2026-05-23",
+  "hero": {
+    "date": "2026-05-22",
+    "project_slug": "autoresearch",
+    "creator_handle": "karpathy",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-22.mp4"
+  },
+  "finalists": [
+    {
+      "date": "2026-05-23",
+      "rank": 2,
+      "project_slug": "oh-my-pi",
+      "creator_handle": "_can1357"
+    },
+    {
+      "date": "2026-05-20",
+      "rank": 3,
+      "project_slug": "code-review-graph",
+      "creator_handle": "tirth_8205"
+    },
+    {
+      "date": "2026-05-17",
+      "rank": 4,
+      "project_slug": "statewright",
+      "creator_handle": "azurewraith"
+    },
+    {
+      "date": "2026-05-18",
+      "rank": 5,
+      "project_slug": "semble",
+      "creator_handle": "TvDongen"
+    }
+  ],
+  "through_line": "Open-source builders spent this week fixing the agent harness, not the model.",
+  "lesson_headline": "Address by content, not by position",
+  "word_count": 1438,
+  "estimated_read_minutes": 8
+}

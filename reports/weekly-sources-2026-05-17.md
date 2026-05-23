@@ -1,0 +1,21 @@
+# Fact-Check Sources — AI All Stars Weekly Issue 3 (2026-05-17)
+
+- [karpathy/autoresearch](https://github.com/karpathy/autoresearch) · GitHub repo · verified: 82.8k stars, MIT, Python, 12 exp/hr, 100 exp overnight, 5-min wall clock, val_bpb, nanochat, single NVIDIA GPU
+- [karpathy/nanoGPT](https://github.com/karpathy/nanoGPT) · GitHub repo · DISPUTED: 58.6k stars (article says 39k)
+- [karpathy/llm.c](https://github.com/karpathy/llm.c) · GitHub repo · verified: 30k stars
+- [karpathy/nanochat](https://github.com/karpathy/nanochat) · GitHub repo · verified: 54k stars, MIT, Python
+- [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi) · GitHub repo · verified: 6.5k stars, TypeScript/Rust, MIT, ~27k lines Rust, 40+ providers, lldb/dlv/debugpy
+- [oh-my-pi README](https://github.com/can1357/oh-my-pi/blob/main/README.md) · GitHub README · verified: Grok 4 Fast −61% tokens on hashline feature
+- [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph) · GitHub repo · verified: 17.2k stars, Python, MIT, 27,732-file monorepo, 15 files, 49x token reduction, 100% recall, 0.54 F1, 12 editors
+- [statewright/statewright](https://github.com/statewright/statewright) · GitHub repo · verified: 349 stars, Rust; DISPUTED: license is Apache-2.0 / FSL-1.1-ALv2 (not FSL-1.1)
+- [MinishLab/semble](https://github.com/MinishLab/semble) · GitHub repo · verified: 3.8k stars, Python, MIT, BM25+RRF, CPU-only, 218x faster indexing vs CodeRankEmbed, NDCG@10 0.854, ~98% fewer tokens
+- [Show HN: Semble](https://news.ycombinator.com/item?id=48169874) · Hacker News thread · verified: 442 points and 150 comments at week's end; 312 launch score UNVERIFIABLE
+- [Show HN: Statewright](https://news.ycombinator.com/item?id=48108778) · Hacker News thread · DISPUTED: 126 points (article says 124)
+- [Andrej Karpathy tweet](https://x.com/karpathy/status/2030705271627284816) · X (Twitter) · verified: tweet exists, quote "The goal is not to emulate a single PhD student, it's to emulate a research community of them." is verbatim
+- [Scaling Karpathy's Autoresearch — SkyPilot Blog](https://blog.skypilot.co/scaling-autoresearch/) · Blog post · DISPUTED: 910-experiment 16-GPU run is by SkyPilot team (Alex Kim, Romil Bhardwaj), not the Vector Institute
+- [Codebase-Memory arXiv 2603.27277](https://arxiv.org/abs/2603.27277) · arXiv preprint · verified: title correct, submitted 2026-03-28, 10x token reduction, 2.1x fewer tool calls
+- [AutoKernel arXiv 2603.21331](https://arxiv.org/abs/2603.21331) · arXiv preprint · verified: title correct, submitted 2026-03-22, Triton/CUDA, H100, 5.29x speedup over PyTorch eager
+- [Don't Waste Your Backpressure](https://banay.me/dont-waste-your-backpressure/) · Blog post · verified: article exists, argues for automated feedback infrastructure (type systems, compilers, proof checkers) for autonomous agents
+- [mutable-state-inc/autoresearch-at-home](https://github.com/mutable-state-inc/autoresearch-at-home) · GitHub repo · verified: exists, 488 stars, SETI@home-style distributed coordination
+- [RightNow-AI/autokernel](https://github.com/RightNow-AI/autokernel) · GitHub repo · verified: exists, keep-or-revert loop for GPU kernels, Triton/CUDA, H100
+- [vercel-labs/zerolang](https://github.com/vercel-labs/zerolang) · GitHub repo · verified: exists, structured JSON diagnostics with typed repair IDs, launched 2026-05-15, ~900 stars in first 24h

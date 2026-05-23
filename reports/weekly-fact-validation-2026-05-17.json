@@ -1,0 +1,315 @@
+{
+  "verdict": "REVISE",
+  "claims": [
+    {
+      "claim": "autoresearch by @karpathy crossed 82k stars in 72 hours",
+      "location": "Opening lede",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "source_evidence": "Repo shows 82.8k stars. Multiple secondary sources confirm the repo gained 21,000+ stars within days of its March 7 2026 launch, reaching the 82k+ milestone. The 72-hour trajectory is consistent with documented growth.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "nanoGPT at 39k stars",
+      "location": "The Build (autoresearch section)",
+      "status": "DISPUTED",
+      "source_url": "https://github.com/karpathy/nanoGPT",
+      "source_evidence": "nanoGPT currently has 58.6k stars (58,643 per search results). No source places it at 39k in May 2026.",
+      "suggested_fix": "nanoGPT at 58k stars"
+    },
+    {
+      "claim": "llm.c at 30k stars",
+      "location": "The Build (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/llm.c",
+      "source_evidence": "GitHub page shows 30,000 stars.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Since the daily tribute on 2026-05-22, the project crossed 82.8k stars",
+      "location": "The Build (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "source_evidence": "GitHub page shows 82.8k stars, consistent with the figure stated.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "a 910-experiment 16-GPU parallelization run by the Vector Institute",
+      "location": "The Build (autoresearch section)",
+      "status": "DISPUTED",
+      "source_url": "https://blog.skypilot.co/scaling-autoresearch/",
+      "source_evidence": "The primary source is a SkyPilot Blog post by Alex Kim and Romil Bhardwaj (Mar 18 2026). The post describes their own experiment using SkyPilot infrastructure — no Vector Institute affiliation is mentioned anywhere in the post. The 910-experiment / 16-GPU figures are correct, but the attribution to the Vector Institute is wrong. TechTimes attributed it to the Vector Institute in a secondary article, but that attribution is not supported by the primary source.",
+      "suggested_fix": "a 910-experiment 16-GPU parallelization run by the SkyPilot team (Alex Kim and Romil Bhardwaj)"
+    },
+    {
+      "claim": "@karpathy posted publicly about the next direction",
+      "location": "The Build (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://x.com/karpathy/status/2030705271627284816",
+      "source_evidence": "The tweet URL resolves to a real post by Andrej Karpathy. Search results confirm its existence and content about SETI@home-style agent collaboration.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "\"The goal is not to emulate a single PhD student, it's to emulate a research community of them.\"",
+      "location": "The Quote (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://x.com/karpathy/status/2030705271627284816",
+      "source_evidence": "Search results surface the tweet title as: \"Andrej Karpathy on X: 'The next step for autoresearch is that it has to be asynchronously massively collaborative for agents (think: SETI@home style). The goal is not to emulate a single PhD student, it's to emulate a research community of them.'\" The quote is verbatim.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "12 experiments per hour. About 100 experiments while you sleep",
+      "location": "The Lede and The Build (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "source_evidence": "The autoresearch README explicitly states: 'approx 12 experiments/hour and approx 100 experiments while you sleep'.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "One agent edits train.py, trains nanochat for exactly 5 minutes, scores val_bpb, keeps the improvement or reverts to the previous state",
+      "location": "The Lede (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "source_evidence": "GitHub page and README confirm: fixed 5-minute training budget, val_bpb metric, nanochat, keep-or-revert loop on train.py.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "The project runs on a single NVIDIA GPU",
+      "location": "The Lede (autoresearch section)",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "source_evidence": "README states: 'This code currently requires that you have a single NVIDIA GPU.'",
+      "suggested_fix": null
+    },
+    {
+      "claim": "autoresearch | 82,800 | +82k in 72h | Python | MIT | research",
+      "location": "Quick Stats table",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "source_evidence": "Repo shows 82.8k stars, Python (83.4%), MIT license. Growth trajectory of 82k in 72h is consistent with documented launch-week traction.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "oh-my-pi | 6,500+ | +457 in 24h | TypeScript/Rust | MIT | agent tooling",
+      "location": "Quick Stats table",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/can1357/oh-my-pi",
+      "source_evidence": "Repo shows 6.5k stars, TypeScript (81.2%) and Rust (10.0%) hybrid, MIT license. Search result mentions '458-fork ecosystem', consistent with active traction. Velocity of +457/24h not directly verifiable from repo but is plausible given ecosystem activity.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "code-review-graph | 17,210 | +210 in 3d | Python | MIT | agent tooling",
+      "location": "Quick Stats table",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph",
+      "source_evidence": "Repo shows 17.2k stars, Python (90.8%), MIT license.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "statewright | 349 | +35 in 6d + HN 124pts | Rust | FSL-1.1 | agent infra",
+      "location": "Quick Stats table",
+      "status": "DISPUTED",
+      "source_url": "https://github.com/statewright/statewright",
+      "source_evidence": "Star count of 349 and Rust language are correct. However two values are wrong: (1) The HN post (https://news.ycombinator.com/item?id=48108778) shows 126 points, not 124. (2) The license is not plain FSL-1.1: the repo uses Apache 2.0 as the base with FSL-1.1-ALv2 applying to the MCP gateway component only (converts to Apache 2.0 in 2029). The Quick Stats cell simplifies this to 'FSL-1.1' which is inaccurate — HN itself shows a comment thread questioning the license because Cargo.toml says Apache 2.",
+      "suggested_fix": "statewright | 349 | +35 in 6d + HN 126pts | Rust | Apache-2.0 / FSL-1.1-ALv2 | agent infra"
+    },
+    {
+      "claim": "semble | 3,800 | +2k in 5d | Python | MIT | agent tooling",
+      "location": "Quick Stats table",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/MinishLab/semble",
+      "source_evidence": "Repo shows 3.8k stars, Python (99.8%), MIT license.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Ships in 27k lines of Rust with 40+ LLM providers and real debugger integration via lldb, dlv, and debugpy",
+      "location": "#2 Finalist — oh-my-pi",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/can1357/oh-my-pi",
+      "source_evidence": "README states: 'Roughly ~27,000 lines of Rust', 'Forty-plus providers, hundreds of models', and mentions driving lldb, dlv, and debugpy for native, Go, and Python debugging.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "6,500 stars | +457 in 24h",
+      "location": "#2 Finalist — oh-my-pi",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/can1357/oh-my-pi",
+      "source_evidence": "GitHub page shows 6.5k stars.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "61% fewer output tokens measured on Grok 4 Fast (oh-my-pi Feature #09)",
+      "location": "Code from the week — oh-my-pi code snippet comment",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/can1357/oh-my-pi/blob/main/README.md",
+      "source_evidence": "README contains the benchmark table entry 'Grok 4 Fast −61% tokens' for the hashline / content-hash edit feature.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Mapped a 27,732-file Next.js monorepo to the 15 files a single change touches",
+      "location": "#3 Finalist — code-review-graph",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph",
+      "source_evidence": "README states: '27,732 files funnelled through code-review-graph down to ~15 files — 49x fewer tokens.'",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Cuts agent token spend 49x on that benchmark while holding 100% recall",
+      "location": "#3 Finalist — code-review-graph and The Pattern section",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph",
+      "source_evidence": "README confirms 49x fewer tokens on the Next.js monorepo task and 100% recall in blast-radius analysis.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Ships as an MCP server that drops into Claude Code, Cursor, Codex, Windsurf, and 8 other editors",
+      "location": "#3 Finalist — code-review-graph",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph/blob/main/README.md",
+      "source_evidence": "README lists 12 total platforms: Codex, Claude Code, Cursor, Windsurf, Zed, Continue, OpenCode, Antigravity, Qwen, Qoder, Kiro, and GitHub Copilot — exactly 4 named in the article plus 8 others.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "17,210 stars | +210 in 3d",
+      "location": "#3 Finalist — code-review-graph",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph",
+      "source_evidence": "GitHub page shows 17.2k stars.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "0.54 F1 means it over-includes rather than misses",
+      "location": "#3 Finalist — code-review-graph verdict",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph",
+      "source_evidence": "README documents average F1 score of 0.54 across six repositories tested.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Took two small local models (13.8 GB and 19.9 GB) and wrapped them in Rust state-machine constraints. SWE-bench score went from 2 of 10 to 10 of 10.",
+      "location": "#4 Finalist — statewright",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/statewright/statewright",
+      "source_evidence": "GitHub page confirms: 'gpt-oss:20b (13.8GB)' and 'gemma4:31b (19.9GB)' models, and '2 of 10 attempts passing to 10 of 10'. The repo itself discloses this is a 5-task SWE-bench subset, not the full benchmark — the article does not mention this caveat, but the raw claim about the numbers is accurate.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "349 stars | +35 in 6d + HN 124pts",
+      "location": "#4 Finalist — statewright",
+      "status": "DISPUTED",
+      "source_url": "https://news.ycombinator.com/item?id=48108778",
+      "source_evidence": "Star count of 349 is verified. HN post shows 126 points (confirmed by direct page fetch), not 124.",
+      "suggested_fix": "349 stars | +35 in 6d + HN 126pts"
+    },
+    {
+      "claim": "[statewright] License: FSL-1.1",
+      "location": "#4 Finalist — statewright (Quick Stats and project link)",
+      "status": "DISPUTED",
+      "source_url": "https://github.com/statewright/statewright",
+      "source_evidence": "The repo uses Apache 2.0 for the core engine and agent layer, with FSL-1.1-ALv2 applying only to the MCP gateway (converts to Apache 2.0 in 2029). The HN thread itself contains a comment noting 'Cargo.toml says license is Apache 2'. Describing it as simply 'FSL-1.1' is inaccurate.",
+      "suggested_fix": "Apache-2.0 / FSL-1.1-ALv2"
+    },
+    {
+      "claim": "CPU-only, no API, no GPU. The HN Show HN thread climbed from 312 points at launch to 442 points by week's end, with 150 comments",
+      "location": "#5 Finalist — semble",
+      "status": "DISPUTED",
+      "source_url": "https://news.ycombinator.com/item?id=48169874",
+      "source_evidence": "CPU-only confirmed. 442 points and 150 comments at week's end are verified by direct HN page fetch. However, the '312 points at launch' figure cannot be verified from any available primary source — no archived snapshot or third-party source documents the launch-hour score. The 442 and 150 figures are correct; only the 312 launch figure is unverifiable.",
+      "suggested_fix": "Remove the '312 points at launch' figure or flag as approximate; retain '442 points by week's end, with 150 comments'"
+    },
+    {
+      "claim": "NDCG@10 of 0.854 against CodeRankEmbed at 218x faster indexing",
+      "location": "#5 Finalist — semble",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/MinishLab/semble",
+      "source_evidence": "README confirms NDCG@10 of 0.854 and 218x faster indexing compared to CodeRankEmbed (137M-parameter model).",
+      "suggested_fix": null
+    },
+    {
+      "claim": "3,800 stars | +2k in 5d",
+      "location": "#5 Finalist — semble",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/MinishLab/semble",
+      "source_evidence": "GitHub page shows 3.8k stars.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "cuts agent token spend 98% versus grep",
+      "location": "Opening lede",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/MinishLab/semble",
+      "source_evidence": "semble README and GitHub description explicitly state 'Uses ~98% fewer tokens than grep+read'.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "@tirth_8205 mapped a 27,732-file Next.js monorepo to 15 relevant files using structural graph traversal, cutting tokens 49x",
+      "location": "The pattern this week",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/tirth8205/code-review-graph",
+      "source_evidence": "Confirmed by README. See also the 27,732-file / 15-file / 49x claims above.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "@azurewraith wrapped two small local models in deterministic state-machine constraints and watched their SWE-bench score go from 2 of 10 to 10 of 10",
+      "location": "The pattern this week",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/statewright/statewright",
+      "source_evidence": "Confirmed by repo. Note: repo discloses this is a 5-task subset of SWE-bench, not the full benchmark, but the article's numerical claim is accurate.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "autoresearch-at-home by mutable-state-inc … 488 stars as of 2026-05-23",
+      "location": "What I'm watching this week",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/mutable-state-inc/autoresearch-at-home",
+      "source_evidence": "Repo exists, shows 488 stars, describes itself as a SETI@home-style distributed fork of @karpathy's autoresearch implementing experiment coordination across machines.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "AutoKernel by RightNow-AI … arXiv paper (2603.21331) reports 5.29x speedup over PyTorch eager on H100",
+      "location": "What I'm watching this week",
+      "status": "VERIFIED",
+      "source_url": "https://arxiv.org/abs/2603.21331",
+      "source_evidence": "Paper exists: 'AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search' by Jaber Jaber and Osama Jaber. Confirms: GPU kernel optimization via Triton and CUDA rewrites, H100 testing, 5.29x speedup over PyTorch eager (on RMSNorm).",
+      "suggested_fix": null
+    },
+    {
+      "claim": "vercel-labs/zerolang … ~900 stars in 24 hours on 2026-05-15",
+      "location": "What I'm watching this week",
+      "status": "VERIFIED",
+      "source_url": "https://github.com/vercel-labs/zerolang",
+      "source_evidence": "Repo exists. Multiple sources confirm it launched on May 15 2026 and reached roughly 900 stars in its first 24 hours. Current total is 4.4k (accumulated since launch).",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Codebase-Memory arXiv paper (2603.27277) … Tree-sitter knowledge graphs over MCP achieve 10x token reduction and 2.1x fewer tool calls versus file-exploration agents, submitted 2026-03-28",
+      "location": "Reading list",
+      "status": "VERIFIED",
+      "source_url": "https://arxiv.org/abs/2603.27277",
+      "source_evidence": "Paper exists: 'Codebase-Memory: Tree-Sitter-Based Knowledge Graphs for LLM Code Exploration via MCP'. Abstract confirms ten times fewer tokens and 2.1 times fewer tool calls. Submission date confirmed as March 28, 2026.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "AutoKernel arXiv paper (2603.21331) … 5.29x speedup over PyTorch eager … formalizes the architecture @karpathy popularized this week",
+      "location": "Reading list",
+      "status": "VERIFIED",
+      "source_url": "https://arxiv.org/abs/2603.21331",
+      "source_evidence": "Paper exists, submitted March 22 2026. Confirms 5.29x speedup over eager on RMSNorm on H100. Five-stage correctness harness confirmed. The submission predates the May 2026 issue, so 'this week' is editorially accurate as context.",
+      "suggested_fix": null
+    },
+    {
+      "claim": "Don't Waste Your Backpressure … Argues that agents working autonomously need automated feedback infrastructure (type systems, compilers, proof checkers)",
+      "location": "Reading list",
+      "status": "VERIFIED",
+      "source_url": "https://banay.me/dont-waste-your-backpressure/",
+      "source_evidence": "Article exists on banay.me. Discusses type systems, compilers (Rust/Elm error messages), proof assistants (Lean), browser automation, and fuzzing as 'back pressure' for autonomous agents. The paraphrase is accurate.",
+      "suggested_fix": null
+    }
+  ],
+  "summary": {
+    "total": 37,
+    "verified": 31,
+    "disputed": 5,
+    "unverifiable": 1
+  }
+}

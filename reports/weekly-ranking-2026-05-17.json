@@ -1,0 +1,145 @@
+{
+  "hero": {
+    "date": "2026-05-22",
+    "project_slug": "autoresearch",
+    "creator_handle": "karpathy",
+    "total_score": 28,
+    "scores": {
+      "momentum": 10,
+      "novelty": 9,
+      "resonance": 9
+    },
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-22.mp4"
+  },
+  "finalists": [
+    {
+      "date": "2026-05-23",
+      "project_slug": "oh-my-pi",
+      "creator_handle": "_can1357",
+      "rank": 2,
+      "total": 25
+    },
+    {
+      "date": "2026-05-20",
+      "project_slug": "code-review-graph",
+      "creator_handle": "tirth_8205",
+      "rank": 3,
+      "total": 25
+    },
+    {
+      "date": "2026-05-17",
+      "project_slug": "statewright",
+      "creator_handle": "azurewraith",
+      "rank": 4,
+      "total": 25
+    },
+    {
+      "date": "2026-05-18",
+      "project_slug": "semble",
+      "creator_handle": "TvDongen",
+      "rank": 5,
+      "total": 24
+    }
+  ],
+  "excluded": [
+    {
+      "date": "2026-05-19",
+      "project_slug": "agent-skills",
+      "total": 24,
+      "reason": "Strong velocity but security angle doesn't fit the agent-harness-infrastructure through-line as cleanly as the five selected."
+    },
+    {
+      "date": "2026-05-21",
+      "project_slug": "shen-backpressure",
+      "total": 22,
+      "reason": "Lowest momentum score (44 stars, 123 HN pts); the formal-verification angle is covered as a counter-signal in the Pattern section."
+    }
+  ],
+  "no_hero_this_week": false,
+  "all_picks_scored": [
+    {
+      "date": "2026-05-22",
+      "project_slug": "autoresearch",
+      "creator_handle": "karpathy",
+      "scores": {
+        "momentum": 10,
+        "novelty": 9,
+        "resonance": 9
+      },
+      "total": 28,
+      "rationale": "Momentum 10: 82.7k stars in 72h, trending #1 Python. Novelty 9: autonomous research loop as a closed-loop primitive. Resonance 9: Karpathy + autonomous research = maximum builder interest."
+    },
+    {
+      "date": "2026-05-20",
+      "project_slug": "code-review-graph",
+      "creator_handle": "tirth_8205",
+      "scores": {
+        "momentum": 8,
+        "novelty": 8,
+        "resonance": 9
+      },
+      "total": 25,
+      "rationale": "Momentum 8: 17k+ stars, +123/day. Novelty 8: knowledge graph for code context, well-executed. Resonance 9: 49x token reduction on monorepo is a huge number."
+    },
+    {
+      "date": "2026-05-23",
+      "project_slug": "oh-my-pi",
+      "creator_handle": "_can1357",
+      "scores": {
+        "momentum": 8,
+        "novelty": 9,
+        "resonance": 8
+      },
+      "total": 25,
+      "rationale": "Momentum 8: +457 in 24h, 6.5k stars. Novelty 9: hash-anchored edits solve a real and painful agent problem. Resonance 8: builders who use coding agents face this exact issue."
+    },
+    {
+      "date": "2026-05-17",
+      "project_slug": "statewright",
+      "creator_handle": "azurewraith",
+      "scores": {
+        "momentum": 7,
+        "novelty": 9,
+        "resonance": 9
+      },
+      "total": 25,
+      "rationale": "Momentum 7: 314 stars, HN 124pts, now 6 days old. Novelty 9: deterministic Rust state engine is a genuine primitive. Resonance 9: directly addresses doom loops and mass-edit reversions."
+    },
+    {
+      "date": "2026-05-19",
+      "project_slug": "agent-skills",
+      "creator_handle": "waldemarnt",
+      "scores": {
+        "momentum": 9,
+        "novelty": 7,
+        "resonance": 8
+      },
+      "total": 24,
+      "rationale": "Momentum 9: +1244 stars/day is very high velocity. Novelty 7: security scanning of skills is important but not technically groundbreaking. Resonance 8: supply-chain security is timely."
+    },
+    {
+      "date": "2026-05-18",
+      "project_slug": "semble",
+      "creator_handle": "TvDongen",
+      "scores": {
+        "momentum": 8,
+        "novelty": 8,
+        "resonance": 8
+      },
+      "total": 24,
+      "rationale": "Momentum 8: 1.8k stars, HN 312pts, 107 comments. Novelty 8: static embeddings + BM25 + RRF for code search is solid but builds on Model2Vec. Resonance 8: agent efficiency is top of mind."
+    },
+    {
+      "date": "2026-05-21",
+      "project_slug": "shen-backpressure",
+      "creator_handle": "reubbr",
+      "scores": {
+        "momentum": 6,
+        "novelty": 9,
+        "resonance": 7
+      },
+      "total": 22,
+      "rationale": "Momentum 6: 44 stars day 1, HN 123pts \u2014 velocity not absolute. Novelty 9: typed Lisp lowering to guard types is genuinely innovative. Resonance 7: formal methods for agents is important but niche."
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "date": "2026-05-17",
+    "project_slug": "statewright",
+    "project_url": "https://github.com/statewright/statewright",
+    "creator_name": "Ben Cochran",
+    "creator_handle": "azurewraith",
+    "creator_x_url": "https://x.com/azurewraith",
+    "headline_metric": "2/10 to 10/10 on 5-task SWE-bench subset with state-machine constraints; 314 GitHub stars; HN 124 pts",
+    "tribute_angle": "Rules in a prompt are advice the model can rationalize away. Statewright moves enforcement into deterministic Rust \u2014 the engine evaluates guards, not the transformer.",
+    "voice_notes": "Dry, precise, low ego. Declarative, structural. Contrast carries the praise \u2014 no superlatives. Peer-to-peer build-in-public engineer.",
+    "prior_work": "20+ years full-stack, DevOps, HPC and ML. Stints at NVIDIA and AMD as distinguished engineer.",
+    "framework": "SCHEMATIC",
+    "aesthetic": "hashicorp",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-17.mp4",
+    "x_caption": "momentum off HN debut + 2/10 to 10/10 result + positioning",
+    "why_this_one": "Creator pedigree (NVIDIA/AMD distinguished engineer) and build-in-public discipline (open-sourced engine, answered everything, shipped same-day corrections).",
+    "dossier_path": "reports/creator-dossier-2026-05-17.md",
+    "lane_tags": [
+      "agents",
+      "infra",
+      "open-source"
+    ]
+  },
+  {
+    "date": "2026-05-18",
+    "project_slug": "semble",
+    "project_url": "https://github.com/MinishLab/semble",
+    "creator_name": "Thomas van Dongen",
+    "creator_handle": "TvDongen",
+    "creator_x_url": "https://x.com/TvDongen",
+    "headline_metric": "98% fewer tokens than grep+read; 218x faster indexing; 11x faster queries; NDCG@10 0.854; 1.8k stars; HN 312 pts",
+    "tribute_angle": "Static embeddings + BM25 + reciprocal rank fusion as a code-search layer purpose-built for coding agents. CPU-only, no API, no GPU.",
+    "voice_notes": "Two-person lab build-in-public. CPU-first, local-first, verified with benchmarks not vibes.",
+    "prior_work": "MinishLab. Model2Vec static embeddings (50x smaller, 500x faster than sentence-transformers). semhash multimodal dedup.",
+    "framework": "RECEIPT",
+    "aesthetic": "cohere",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-18.mp4",
+    "x_caption": "HN momentum + code search written for coding agents + local/CPU-only/no-API + retrieval layer your agent was missing",
+    "why_this_one": "Model2Vec lineage (50x smaller / 500x faster), NDCG@10 0.854, MIT, two-person-lab build-in-public discipline.",
+    "dossier_path": "reports/creator-dossier-2026-05-18.md",
+    "lane_tags": [
+      "agents",
+      "tooling",
+      "open-source"
+    ]
+  },
+  {
+    "date": "2026-05-19",
+    "project_slug": "agent-skills",
+    "project_url": "https://github.com/tech-leads-club/agent-skills",
+    "creator_name": "Waldemar Neto",
+    "creator_handle": "waldemarnt",
+    "creator_x_url": "https://x.com/waldemarnt",
+    "headline_metric": "+1,244 stars in last day on 4.2k base; 56 releases; over 13% of marketplace skills contain critical vulnerabilities (premise)",
+    "tribute_angle": "Security counter-move: a CI-scanned, lockfile-pinned registry that exists because over 13% of marketplace skills ship with critical vulnerabilities.",
+    "voice_notes": "Practitioner, opinionated, team-lead register. Security-as-craft framing. Brazil-based community.",
+    "prior_work": "TechLeads.club: engineering leadership, software quality at scale, spec-driven development, multi-country team practice.",
+    "framework": "MANIFESTO",
+    "aesthetic": "sentry",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-19.mp4",
+    "x_caption": "star velocity / trending now + security thesis",
+    "why_this_one": "Security thesis and timing (agent supply-chain security dominated the AI timeline the same day). Not another 'what are skills' explainer \u2014 the security counter-move.",
+    "dossier_path": "reports/creator-dossier-2026-05-19.md",
+    "lane_tags": [
+      "agents",
+      "tooling",
+      "infra"
+    ]
+  },
+  {
+    "date": "2026-05-20",
+    "project_slug": "code-review-graph",
+    "project_url": "https://github.com/tirth8205/code-review-graph",
+    "creator_name": "Tirth Kanani",
+    "creator_handle": "tirth_8205",
+    "creator_x_url": "https://x.com/tirth_8205",
+    "headline_metric": "17k+ stars; +123/day; 8.2x average token reduction; 49x on Next.js monorepo; 100% recall; sub-2s updates; 24 languages; 28 MCP tools",
+    "tribute_angle": "Local knowledge graph that lets AI coding agents read only the files an edit actually touches. Context efficiency through structure, not statistics.",
+    "voice_notes": "Engineer-to-engineer tone. State numbers, name tradeoffs. 100% recall, conservative on precision. London-based individual builder.",
+    "prior_work": "CrumbleUX (real-time visual language model for design critique). GraphMinds. SupplyMinds (1st place Epiminds Multi-Agent Hackathon 2025). University of Birmingham HCI and AI Lab on GNNs.",
+    "framework": "SCHEMATIC",
+    "aesthetic": "opencode.ai",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-20.mp4",
+    "x_caption": "star velocity + 49x reduction on Next.js monorepo",
+    "why_this_one": "Through-line from CrumbleUX to code-review-graph: same instinct, narrower problem, sharper result. London builder, MIT, Tree-sitter under the hood.",
+    "dossier_path": "reports/creator-dossier-2026-05-20.md",
+    "lane_tags": [
+      "agents",
+      "tooling",
+      "open-source"
+    ]
+  },
+  {
+    "date": "2026-05-21",
+    "project_slug": "shen-backpressure",
+    "project_url": "https://github.com/pyrex41/Shen-Backpressure",
+    "creator_name": "Reuben Brooks",
+    "creator_handle": "reubbr",
+    "creator_x_url": "https://x.com/reubbr",
+    "headline_metric": "HN front page 123 pts in first 24h; 44 stars day 1; 165 commits on main; 4 target languages",
+    "tribute_angle": "Formal-methods constraints on AI coding loops. A typed Lisp (Shen) spec lowers to guard types the model must satisfy \u2014 compilers refuse what tests only complain about.",
+    "voice_notes": "Essayistic-engineer. Reads compiler papers not LinkedIn posts. Quiet, declarative, refuses superlatives. 'The proof travels with the value.'",
+    "prior_work": "reubenbrooks.dev essays on substrate-level invariants and deductive systems. Active GitHub under pyrex41.",
+    "framework": "MANIFESTO",
+    "aesthetic": "mono-terminal",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-21.mp4",
+    "x_caption": "HN front page 123 pts day 1 + structural backpressure beats smarter agents + typed Lisp specs to guard types",
+    "why_this_one": "Compilers refuse what tests just complain about. Guard types carry invariants with every value. Capability and certainty aren't the same axis.",
+    "dossier_path": "reports/creator-dossier-2026-05-21.md",
+    "lane_tags": [
+      "research",
+      "evals",
+      "agents"
+    ]
+  },
+  {
+    "date": "2026-05-22",
+    "project_slug": "autoresearch",
+    "project_url": "https://github.com/karpathy/autoresearch",
+    "creator_name": "Andrej Karpathy",
+    "creator_handle": "karpathy",
+    "creator_x_url": "https://x.com/karpathy",
+    "headline_metric": "82.7k stars in first 72 hours; trending #1 Python; ~12 experiments/hour; ~100 experiments overnight; 5-min fixed wall-clock per experiment",
+    "tribute_angle": "Autonomous research loop on one GPU. Agent edits train.py, trains nanochat 5 minutes, scores val_bpb, keeps win or reverts, repeats. 100 experiments overnight.",
+    "voice_notes": "Small, self-contained, declarative. One or two readable files. Dry and observational with single contrasts. Short clauses, concrete nouns, no jargon padding.",
+    "prior_work": "nanoGPT (39k stars), llm.c (30k stars), micrograd, nanochat, Zero to Hero YouTube series.",
+    "framework": "RECEIPT",
+    "aesthetic": "subway-chrome",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-22.mp4",
+    "x_caption": "82k stars in 72 hours + autonomous research loop + 100 experiments overnight",
+    "why_this_one": "The next move in the one-file-kernel direction: keep the trainer tiny, push the iteration loop outside it. Not a demo \u2014 a research method.",
+    "dossier_path": "reports/creator-dossier-2026-05-22.md",
+    "lane_tags": [
+      "research",
+      "agents",
+      "open-source"
+    ]
+  },
+  {
+    "date": "2026-05-23",
+    "project_slug": "oh-my-pi",
+    "project_url": "https://github.com/can1357/oh-my-pi",
+    "creator_name": "Can B\u00f6l\u00fck",
+    "creator_handle": "_can1357",
+    "creator_x_url": "https://x.com/_can1357",
+    "headline_metric": "6,500+ stars total; +457 in 24h; v15.2.4 shipped 2026-05-22; 27k lines Rust core; 40+ LLM providers; 32 built-in tools; 13 LSP + 27 DAP operations",
+    "tribute_angle": "Hash-anchored edits: the model points at content hashes not line numbers, eliminating the string-not-found loops that plague every coding agent.",
+    "voice_notes": "Terse, technical, low-key. Doesn't market \u2014 drops releases. Reverse-engineer background (VMProtect devirtualizer, VTIL). Determinism, content addressing, debugger primitives over heuristics.",
+    "prior_work": "VTIL (Virtual-machine Translation Intermediate Language). VMProtect devirtualizer (3.x). Hex-Rays microcode plugins. Secret Club blog author.",
+    "framework": "SCHEMATIC",
+    "aesthetic": "warp",
+    "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/loving-albattani-Cp44X/reports/tribute-2026-05-23.mp4",
+    "x_caption": "+457 stars in 24h + hash-anchored edits eliminate string-not-found loops",
+    "why_this_one": "Pivot story: reverse engineer who built devirtualizers for years is now pushing the harness layer of coding agents forward with the same instincts that made VTIL work.",
+    "dossier_path": "reports/creator-dossier-2026-05-23.md",
+    "lane_tags": [
+      "agents",
+      "tooling",
+      "open-source"
+    ]
+  }
+]
