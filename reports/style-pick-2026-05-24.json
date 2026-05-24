@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-24",
+  "brand_slug": null,
+  "aesthetic_slug": "gallery",
+  "preset_slug": "gallery",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "Gallery (museum-white, IBM Plex Serif, blue accent) is the calm research-paper register that matches Nakajima's haiku-meets-systems voice; MANIFESTO punches the single thesis ('the log is the agent') with two flash beats, which earns the bold ActiveGraph claim without overselling 200 stars.",
+  "writing_tone_notes": "Terse declarative cadence. Short sentences. Treat the reader as someone who already knows what an agent loop is. The triplet 'graph / behaviors / trace' is Yohei's own; let him keep two of the three (scenes), and put the third somewhere else (caption or close). No marketing adjectives. No exclamation. The video should feel like a Sunday-evening blog post he might have written himself.",
+  "do_rules": [
+    "Caption opens with the handle and leads with the 200-star + arxiv-paper combo, then lands the BabyAGI lineage hook.",
+    "Scenes own the 'replay / fork / trace' mechanism vocabulary; caption owns 'deterministic / auditable / forkable' adjective vocabulary.",
+    "Close subtitle owns 'calmer hands, harder problem.' — do NOT echo it in the tweet or the why-this-one.",
+    "Camera moves: at least four distinct, with one orbit on the fix scene (3D depth around the central thesis).",
+    "Why-this-one covers the personal arc (NYC, Untapped Capital, 220-line while-true loop history); the caption stays on the project."
+  ],
+  "dont_rules": [
+    "Do NOT say 'the log is the agent' verbatim in scene copy. Caption owns that phrase; scenes paraphrase via 'append / replay / fork' mechanics.",
+    "Do NOT cite v1.0 or any version number in the caption (growth metric only).",
+    "Do NOT repeat the Nakajima triplet ('graph is the world / behaviors are physics / trace is the proof') in full anywhere. Two of three across scenes is the limit.",
+    "Do NOT echo 'BabyAGI' more than once across caption and why-this-one combined; the close subtitle should not say BabyAGI at all.",
+    "Do NOT use em or en dashes, semicolons, question marks, or body colons anywhere in copy."
+  ]
+}

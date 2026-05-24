@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-24",
+  "topic": "ActiveGraph, an event-sourced reactive graph runtime for auditable agents",
+  "creator_handle": "@yoheinakajima",
+  "project_url": "https://github.com/yoheinakajima/activegraph",
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "gallery",
+    "framework": "MANIFESTO",
+    "audio_palette": "ambient",
+    "held_subject": "activegraph",
+    "tokens": {
+      "canvas": "#FFFFFF",
+      "ink": "#0E0E0F",
+      "ink_muted": "#7B7B7E",
+      "accent": "#1B5BFF",
+      "hairline": "#E5E5E8"
+    },
+    "fonts": {
+      "display": "IBMPlexSerif",
+      "body": "Inter",
+      "italic": "IBMPlexSerif"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.018,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.42,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.30
+    },
+    "layout": {
+      "padding_pct": 9,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.16,
+      "halation": 0.05,
+      "lighting_arc": 0.26
+    },
+    "accent_contrast_min": 4.5
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "ActiveGraph",
+      "eyebrow": "the agent runtime, rebuilt",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "flash",
+      "word": "BEHAVIORS",
+      "caption": "react to the graph.",
+      "camera": "crash_zoom",
+      "duration_s": 2.8
+    },
+    {
+      "template": "fix",
+      "primary": "Replay any event.",
+      "secondary": "Fork from any point.",
+      "emphasize": true,
+      "camera": "orbit",
+      "duration_s": 3.5
+    },
+    {
+      "template": "flash",
+      "word": "TRACE",
+      "caption": "is the proof.",
+      "camera": "pull_back",
+      "duration_s": 2.8
+    },
+    {
+      "template": "close",
+      "primary": "From while-true",
+      "accent": "to event-sourced.",
+      "subtitle": "calmer hands, harder problem.",
+      "emphasize": true,
+      "camera": "ken_burns",
+      "duration_s": 3.5
+    }
+  ]
+}

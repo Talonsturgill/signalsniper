@@ -257,6 +257,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Builder",
       "attribution_required": "Music. The Builder by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "floating-cities",
+      "title": "Floating Cities",
+      "file": "Floating_Cities.mp3",
+      "duration_s": 184.1,
+      "mood": "atmospheric ambient cinematic pad, slow-drifting chord wash, hushed wonder",
+      "register": "ambient",
+      "fits": "gallery, claude, editorial-paper, cctv, DISPATCH, CLASSIC, MANIFESTO observational",
+      "preset_packs": ["gallery", "claude", "editorial-paper", "cctv"],
+      "frameworks": ["DISPATCH", "CLASSIC", "MANIFESTO"],
+      "default_offset_s": 24.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Floating+Cities",
+      "attribution_required": "Music. Floating Cities by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
