@@ -78,5 +78,10 @@
     "date": "2026-05-23",
     "slug": "the-builder",
     "project_url": "https://github.com/can1357/oh-my-pi"
+  },
+  {
+    "date": "2026-05-24",
+    "slug": "floating-cities",
+    "project_url": "https://github.com/yoheinakajima/activegraph"
   }
 ]

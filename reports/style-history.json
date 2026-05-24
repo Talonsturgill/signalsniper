@@ -126,5 +126,12 @@
     "aesthetic_slug": "warp",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/can1357/oh-my-pi"
+  },
+  {
+    "date": "2026-05-24",
+    "brand_slug": null,
+    "aesthetic_slug": "gallery",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/yoheinakajima/activegraph"
   }
 ]
