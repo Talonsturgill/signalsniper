@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-25",
+  "brand_slug": null,
+  "preset_slug": "editorial-90s",
+  "framework": "RECEIPT",
+  "rationale_one_line": "Numbers carry the story. ai-hedge-fund proved the demo, dexter ships the product, yesterday's release proves cadence. Editorial-90s gives the buy-side memo a magazine spread, RECEIPT lets the metrics land.",
+  "writing_tone_notes": "Buy-side memo voice. Confident, declarative, numerical. Treat the agent like a junior analyst that doesn't sleep. Avoid hype words like 'revolutionary' or 'game-changing'. Specifics over adjectives. The metric IS the headline.",
+  "do_rules": [
+    "Lead each beat with a concrete number where possible",
+    "Use 'dexter' lowercased in headlines, the way the repo names it",
+    "Honor the editorial-90s preset's halation by writing copy that has a single hot word per scene",
+    "Keep the close as a thesis restatement, not a tagline",
+    "Use contractions ('it's', 'doesn't')"
+  ],
+  "dont_rules": [
+    "Don't say 'revolutionary', 'game-changing', 'next-gen', 'powerful', 'state of the art'",
+    "Don't mention the version string v2026.5.24 in scene copy (version numbers belong nowhere)",
+    "Don't repeat any specific number across the tweet, the Gmail Why-this-one, and the scene copy",
+    "Don't compare to Claude Code by name in scene text (the comparison goes in dossier and Gmail)",
+    "Don't use the framework MANIFESTO (matches yesterday's entry)",
+    "Don't use editorial-paper, gallery, claude, mono-terminal, subway-chrome, cctv, or geominimal aesthetics (each in the last 14 entries)"
+  ]
+}
