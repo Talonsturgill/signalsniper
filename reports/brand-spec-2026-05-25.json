@@ -1,0 +1,50 @@
+{
+  "date": "2026-05-25",
+  "topic": "dexter, the autonomous financial research agent",
+  "creator_handle": "@virattt",
+  "project_url": "https://github.com/virattt/dexter",
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-90s",
+    "framework": "RECEIPT",
+    "audio_palette": "acoustic",
+    "held_subject": "dexter",
+    "tokens": {
+      "canvas": "#F1E8D6",
+      "ink": "#1F1A14",
+      "ink_muted": "#8C7E68",
+      "accent": "#D2371B",
+      "hairline": "#D8CBB0"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Fraunces",
+      "italic": "Fraunces"
+    },
+    "typography": {
+      "display_weight": 800,
+      "body_weight": 400,
+      "letter_spacing_em": -0.024,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.42,
+      "scene_out_s": 0.25,
+      "stagger_s": 0.30
+    },
+    "layout": {
+      "padding_pct": 9,
+      "rule_thickness_px": 2,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.10,
+      "vignette": 0.22,
+      "halation": 0.10,
+      "lighting_arc": 0.36
+    },
+    "accent_contrast_min": 3.0
+  }
+}

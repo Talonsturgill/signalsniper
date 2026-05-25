@@ -133,5 +133,12 @@
     "aesthetic_slug": "gallery",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/yoheinakajima/activegraph"
+  },
+  {
+    "date": "2026-05-25",
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-90s",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/virattt/dexter"
   }
 ]
