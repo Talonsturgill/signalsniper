@@ -1,0 +1,99 @@
+{
+  "date": "2026-05-26",
+  "topic": "ECC, the agent harness performance optimization system",
+  "creator_handle": "@affaanmustafa",
+  "project_url": "https://github.com/affaan-m/ECC",
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "DISPATCH",
+    "audio_palette": "ambient",
+    "held_subject": "ECC",
+    "tokens": {
+      "canvas": "#F5EFE3",
+      "ink": "#191919",
+      "ink_muted": "#7C7C7C",
+      "accent": "#BC684D",
+      "hairline": "#E2DAC8"
+    },
+    "fonts": {
+      "display": "IBMPlexSerif",
+      "body": "Inter",
+      "italic": "IBMPlexSerif"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.018,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.40,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.27
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.16,
+      "halation": 0.04,
+      "lighting_arc": 0.28
+    },
+    "accent_contrast_min": 3.0
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "from the desk",
+      "eyebrow": "operator dispatch, sf, 26 may",
+      "camera": "orbit",
+      "duration_s": 3.5
+    },
+    {
+      "template": "terminal",
+      "title": "FIELD DISPATCH / 04:12 PT",
+      "lines": [
+        "subject: affaan mustafa",
+        "trade: agent harness operator",
+        "filed: san francisco",
+        "ledger: 116 skills. 28 agents. 57 cmds."
+      ],
+      "camera": "parallax_drift",
+      "duration_s": 4.5
+    },
+    {
+      "template": "quote",
+      "quote": "build the thing you needed daily.",
+      "attribution": "operator's principle",
+      "camera": "ken_burns",
+      "duration_s": 4.0
+    },
+    {
+      "template": "three_line",
+      "lines": [
+        "skills grow from sessions.",
+        "instincts hold the memory.",
+        "the loop sharpens itself."
+      ],
+      "accent_idx": 2,
+      "emphasize": true,
+      "camera": "parallax_drift",
+      "duration_s": 4.0
+    },
+    {
+      "template": "close",
+      "primary": "the operator system",
+      "accent": "shipped, daily.",
+      "subtitle": "yours becomes everyone's.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}

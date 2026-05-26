@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-26",
+  "brand_slug": null,
+  "preset_slug": "claude",
+  "framework": "DISPATCH",
+  "rationale_one_line": "ECC is Anthropic-adjacent harness territory; warm-parchment Claude preset earns the lane, and a DISPATCH (last used 15 days ago) treats Affaan's ten-month build like a field report on the operator pattern winning.",
+  "writing_tone_notes": "Cool, reportorial, dateline framing. Build-in-public peer-to-peer voice. Show the loop (ten months daily, one harness, now everyone's). Contractions where natural. Specifics over adjectives. Trust the reader.",
+  "do_rules": [
+    "Lead the dispatch with a dateline frame (place + filing time)",
+    "Use a quote scene that sounds like the operator, not a marketing tagline",
+    "Land the fix beat at scene 4 (60-65% of total)",
+    "Treat numbers as evidence inside the dispatch, not the headline"
+  ],
+  "dont_rules": [
+    "Don't repeat star counts in scene copy (those land in the X caption)",
+    "Don't echo any tweet phrase verbatim in scene copy or Why-this-one",
+    "Don't break the wire-service register with hype words (superlatives, version numbers)",
+    "Don't use 'one harness' or 'ten months' identically in both tweet and scene copy"
+  ],
+  "project_url": "https://github.com/affaan-m/ECC"
+}
