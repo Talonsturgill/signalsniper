@@ -147,5 +147,12 @@
     "aesthetic_slug": "claude",
     "framework": "DISPATCH",
     "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-05-28",
+    "brand_slug": null,
+    "aesthetic_slug": "geominimal",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/thedotmack/claude-mem"
   }
 ]
