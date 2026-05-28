@@ -93,5 +93,10 @@
     "date": "2026-05-26",
     "slug": "penumbra",
     "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-05-28",
+    "slug": "cheery-monday",
+    "project_url": "https://github.com/thedotmack/claude-mem"
   }
 ]
