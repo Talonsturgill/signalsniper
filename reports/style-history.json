@@ -1,158 +1,165 @@
 [
-  {
-    "date": "2026-05-09",
-    "brand_slug": null,
-    "aesthetic_slug": "mono-terminal",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/badlogic/pi-mono"
-  },
-  {
-    "date": "2026-05-09",
-    "brand_slug": null,
-    "aesthetic_slug": "subway-chrome",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/rohitg00/agentmemory"
-  },
-  {
-    "date": "2026-05-09",
-    "brand_slug": null,
-    "aesthetic_slug": null,
-    "framework": null,
-    "project_url": "https://github.com/addyosmani/agent-skills",
-    "skipped": true,
-    "skipped_reason": "already covered in a prior tribute; recorded here so future scouting filters it out via the project_url match in lane-filter Step 2."
-  },
-  {
-    "date": "2026-05-09",
-    "brand_slug": null,
-    "aesthetic_slug": "gallery",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/AmElmo/proofshot"
-  },
-  {
-    "date": "2026-05-10",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-90s",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/millionco/react-doctor"
-  },
-  {
-    "date": "2026-05-11",
-    "brand_slug": null,
-    "aesthetic_slug": "claude",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/jundot/omlx"
-  },
-  {
-    "date": "2026-05-12",
-    "brand_slug": null,
-    "aesthetic_slug": "geominimal",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/tinyhumansai/openhuman"
-  },
-  {
-    "date": "2026-05-13",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-paper",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/cactus-compute/needle"
-  },
-  {
-    "date": "2026-05-14",
-    "brand_slug": null,
-    "aesthetic_slug": "cctv",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/mattpocock/skills"
-  },
-  {
-    "date": "2026-05-15",
-    "brand_slug": "voltagent",
-    "aesthetic_slug": "voltagent",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/NousResearch/hermes-agent"
-  },
-  {
-    "date": "2026-05-16",
-    "brand_slug": "linear.app",
-    "aesthetic_slug": "mono",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/santifer/career-ops"
-  },
-  {
-    "date": "2026-05-17",
-    "brand_slug": "hashicorp",
-    "aesthetic_slug": "hashicorp",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/statewright/statewright"
-  },
-  {
-    "date": "2026-05-18",
-    "brand_slug": "cohere",
-    "aesthetic_slug": "cohere",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/MinishLab/semble"
-  },
-  {
-    "date": "2026-05-19",
-    "brand_slug": "sentry",
-    "aesthetic_slug": "sentry",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/tech-leads-club/agent-skills"
-  },
-  {
-    "date": "2026-05-20",
-    "brand_slug": "opencode.ai",
-    "aesthetic_slug": "opencode.ai",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/tirth8205/code-review-graph"
-  },
-  {
-    "date": "2026-05-21",
-    "brand_slug": null,
-    "aesthetic_slug": "mono-terminal",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/pyrex41/Shen-Backpressure"
-  },
-  {
-    "date": "2026-05-22",
-    "brand_slug": null,
-    "aesthetic_slug": "subway-chrome",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/karpathy/autoresearch"
-  },
-  {
-    "date": "2026-05-23",
-    "brand_slug": "warp",
-    "aesthetic_slug": "warp",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/can1357/oh-my-pi"
-  },
-  {
-    "date": "2026-05-24",
-    "brand_slug": null,
-    "aesthetic_slug": "gallery",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/yoheinakajima/activegraph"
-  },
-  {
-    "date": "2026-05-25",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-90s",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/virattt/dexter"
-  },
-  {
-    "date": "2026-05-26",
-    "brand_slug": null,
-    "aesthetic_slug": "claude",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/affaan-m/ECC"
-  },
-  {
-    "date": "2026-05-28",
-    "brand_slug": null,
-    "aesthetic_slug": "geominimal",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/thedotmack/claude-mem"
-  }
+    {
+        "date": "2026-05-09",
+        "brand_slug": null,
+        "aesthetic_slug": "mono-terminal",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/badlogic/pi-mono"
+    },
+    {
+        "date": "2026-05-09",
+        "brand_slug": null,
+        "aesthetic_slug": "subway-chrome",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/rohitg00/agentmemory"
+    },
+    {
+        "date": "2026-05-09",
+        "brand_slug": null,
+        "aesthetic_slug": null,
+        "framework": null,
+        "project_url": "https://github.com/addyosmani/agent-skills",
+        "skipped": true,
+        "skipped_reason": "already covered in a prior tribute; recorded here so future scouting filters it out via the project_url match in lane-filter Step 2."
+    },
+    {
+        "date": "2026-05-09",
+        "brand_slug": null,
+        "aesthetic_slug": "gallery",
+        "framework": "CLASSIC",
+        "project_url": "https://github.com/AmElmo/proofshot"
+    },
+    {
+        "date": "2026-05-10",
+        "brand_slug": null,
+        "aesthetic_slug": "editorial-90s",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/millionco/react-doctor"
+    },
+    {
+        "date": "2026-05-11",
+        "brand_slug": null,
+        "aesthetic_slug": "claude",
+        "framework": "DISPATCH",
+        "project_url": "https://github.com/jundot/omlx"
+    },
+    {
+        "date": "2026-05-12",
+        "brand_slug": null,
+        "aesthetic_slug": "geominimal",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/tinyhumansai/openhuman"
+    },
+    {
+        "date": "2026-05-13",
+        "brand_slug": null,
+        "aesthetic_slug": "editorial-paper",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/cactus-compute/needle"
+    },
+    {
+        "date": "2026-05-14",
+        "brand_slug": null,
+        "aesthetic_slug": "cctv",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/mattpocock/skills"
+    },
+    {
+        "date": "2026-05-15",
+        "brand_slug": "voltagent",
+        "aesthetic_slug": "voltagent",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/NousResearch/hermes-agent"
+    },
+    {
+        "date": "2026-05-16",
+        "brand_slug": "linear.app",
+        "aesthetic_slug": "mono",
+        "framework": "CLASSIC",
+        "project_url": "https://github.com/santifer/career-ops"
+    },
+    {
+        "date": "2026-05-17",
+        "brand_slug": "hashicorp",
+        "aesthetic_slug": "hashicorp",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/statewright/statewright"
+    },
+    {
+        "date": "2026-05-18",
+        "brand_slug": "cohere",
+        "aesthetic_slug": "cohere",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/MinishLab/semble"
+    },
+    {
+        "date": "2026-05-19",
+        "brand_slug": "sentry",
+        "aesthetic_slug": "sentry",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/tech-leads-club/agent-skills"
+    },
+    {
+        "date": "2026-05-20",
+        "brand_slug": "opencode.ai",
+        "aesthetic_slug": "opencode.ai",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/tirth8205/code-review-graph"
+    },
+    {
+        "date": "2026-05-21",
+        "brand_slug": null,
+        "aesthetic_slug": "mono-terminal",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/pyrex41/Shen-Backpressure"
+    },
+    {
+        "date": "2026-05-22",
+        "brand_slug": null,
+        "aesthetic_slug": "subway-chrome",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/karpathy/autoresearch"
+    },
+    {
+        "date": "2026-05-23",
+        "brand_slug": "warp",
+        "aesthetic_slug": "warp",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/can1357/oh-my-pi"
+    },
+    {
+        "date": "2026-05-24",
+        "brand_slug": null,
+        "aesthetic_slug": "gallery",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/yoheinakajima/activegraph"
+    },
+    {
+        "date": "2026-05-25",
+        "brand_slug": null,
+        "aesthetic_slug": "editorial-90s",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/virattt/dexter"
+    },
+    {
+        "date": "2026-05-26",
+        "brand_slug": null,
+        "aesthetic_slug": "claude",
+        "framework": "DISPATCH",
+        "project_url": "https://github.com/affaan-m/ECC"
+    },
+    {
+        "date": "2026-05-28",
+        "brand_slug": null,
+        "aesthetic_slug": "geominimal",
+        "framework": "CLASSIC",
+        "project_url": "https://github.com/thedotmack/claude-mem"
+    },
+    {
+        "date": "2026-05-29",
+        "brand_slug": null,
+        "aesthetic_slug": "editorial-paper",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/Lum1104/Understand-Anything"
+    }
 ]

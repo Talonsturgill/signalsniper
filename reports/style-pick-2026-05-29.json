@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-29",
+  "brand_slug": null,
+  "preset_slug": "editorial-paper",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "editorial-paper is the warm-craft preset outside the last 14 aesthetics, and SCHEMATIC is the diagram-led framework for a project whose value IS the diagram (last SCHEMATIC ran 5/23 with the warp brand).",
+  "writing_tone_notes": "Build-in-public solo voice. Declarative, no superlatives, contractions where natural. The contrast (deterministic structure / agent intent) carries the praise. Lead the X caption with star velocity, never a version number. Editorial-paper's Garamond and cream stage should feel like a library card, not a dashboard.",
+  "do_rules": [
+    "open the X caption with @YuxiangLin_Lum then a star velocity metric (+3.7k in 24h)",
+    "use the diagram scene as the visual hero (4.5s with orbit sub-shot phases)",
+    "let the tree-sitter plus multi-agent pairing carry the technical claim, not adjectives",
+    "use contractions in scene copy and gmail body where natural"
+  ],
+  "dont_rules": [
+    "never name the version (v2.7.3 is banned in the caption per the routine rule)",
+    "don't repeat any scene line verbatim in the tweet or in why-this-one",
+    "no superlatives, no question hooks, no hashtags, no em dashes",
+    "don't claim affiliation or location beyond what the dossier confirms (GA Tech MS, Shenzhen)"
+  ]
+}

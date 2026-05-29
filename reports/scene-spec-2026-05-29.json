@@ -1,0 +1,103 @@
+{
+  "date": "2026-05-29",
+  "topic": "Understand-Anything, tree-sitter plus multi-agent reads producing a reproducible code knowledge graph",
+  "creator_handle": "@YuxiangLin_Lum",
+  "project_url": "https://github.com/Lum1104/Understand-Anything",
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-paper",
+    "framework": "SCHEMATIC",
+    "audio_palette": "acoustic",
+    "held_subject": "Understand-Anything",
+    "tokens": {
+      "canvas": "#F4EFE3",
+      "ink": "#1A1815",
+      "ink_muted": "#7C7264",
+      "accent": "#9C3B2C",
+      "hairline": "#D5CBB8"
+    },
+    "fonts": {
+      "display": "EBGaramond",
+      "body": "EBGaramond",
+      "italic": "EBGaramond"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.012,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.40,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.27
+    },
+    "layout": {
+      "padding_pct": 9,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.07,
+      "vignette": 0.18,
+      "halation": 0.05,
+      "lighting_arc": 0.32
+    },
+    "accent_contrast_min": 3.0
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "the codebase, mapped.",
+      "eyebrow": "the cartography dispatch, 29 may 2026",
+      "camera": "push_in",
+      "duration_s": 3.5
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "code in. map out.",
+      "nodes": [
+        {"label": "scan the repo", "x": 16, "y": 50},
+        {"label": "tag each node", "x": 40, "y": 50},
+        {"label": "wire the edges", "x": 64, "y": 50},
+        {"label": "ask the map", "x": 88, "y": 50, "accent": true}
+      ],
+      "edges": [
+        {"from": 0, "to": 1},
+        {"from": 1, "to": 2},
+        {"from": 2, "to": 3}
+      ],
+      "camera": "orbit",
+      "duration_s": 4.5
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "Function. Class. File.",
+        "Every node holds why."
+      ],
+      "accent_idx": 1,
+      "camera": "ken_burns",
+      "duration_s": 3.0
+    },
+    {
+      "template": "fix",
+      "primary": "The map holds.",
+      "secondary": "across every refactor.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 3.5
+    },
+    {
+      "template": "close",
+      "primary": "Understand-Anything",
+      "accent": "the map you walk.",
+      "subtitle": "yuxiang lin, shipping in public.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
