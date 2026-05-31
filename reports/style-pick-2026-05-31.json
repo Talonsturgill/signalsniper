@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-31",
+  "brand_slug": null,
+  "preset_slug": "cctv",
+  "framework": "RECEIPT",
+  "rationale_one_line": "RuView reads rooms through walls with no camera, so the surveillance-room cctv pack is the literal aesthetic, and RECEIPT lets the numbers (0 cameras, sub-200ms, 6 channels) carry the proof.",
+  "writing_tone_notes": "Cool, observational, declarative. Surveillance-room calm. Let the numbers land hard and quiet. Contractions where natural. No superlatives; the no-camera contrast carries the praise.",
+  "do_rules": [
+    "Lead the video with concrete numbers, not adjectives.",
+    "Keep the star count for the X caption only; scenes use other numbers.",
+    "Stay in the surveillance/sensing metaphor: signal, room, walls, presence.",
+    "At least one orbit move; flash beat in accent red for the stop-scroll."
+  ],
+  "dont_rules": [
+    "No version numbers in the X caption.",
+    "Do not reuse the phrase 'through walls' in the caption (it is a scene flash word).",
+    "No creepy framing; the honest story is privacy without a lens.",
+    "No framework repeat of SCHEMATIC (most recent on 2026-05-29)."
+  ]
+}
