@@ -337,6 +337,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Penumbra",
       "attribution_required": "Music. Penumbra by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "mechanolith",
+      "title": "Mechanolith",
+      "file": "Mechanolith.mp3",
+      "duration_s": 55.4,
+      "mood": "slow brooding industrial pulse, mechanical surveillance-room tension, deliberate machine groove",
+      "register": "electronic",
+      "fits": "cctv, mono-terminal, subway-chrome, RECEIPT, SCHEMATIC, MANIFESTO",
+      "preset_packs": ["cctv", "mono-terminal", "subway-chrome"],
+      "frameworks": ["RECEIPT", "SCHEMATIC", "MANIFESTO"],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mechanolith",
+      "attribution_required": "Music. Mechanolith by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

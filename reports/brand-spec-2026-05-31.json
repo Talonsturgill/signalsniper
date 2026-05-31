@@ -1,0 +1,15 @@
+{
+  "date": "2026-05-31",
+  "preset_slug": "cctv",
+  "brand_slug": null,
+  "framework": "RECEIPT",
+  "tokens":   {"canvas": "#1B1B1B", "ink": "#E0E0E0", "ink_muted": "#909090", "accent": "#FF3B30", "hairline": "#2A2A2A"},
+  "fonts":    {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+  "typography": {"display_weight": 500, "body_weight": 400, "letter_spacing_em": 0.0, "case": "upper", "italic_descriptors": false},
+  "motion":   {"register": "cut", "scene_in_s": 0.05, "scene_out_s": 0.05, "stagger_s": 0.08},
+  "layout":   {"padding_pct": 5, "rule_thickness_px": 1, "stage_radius_px": 0},
+  "texture":  {"grain": 0.10, "vignette": 0.30, "halation": 0.05, "lighting_arc": 0.24},
+  "audio_palette": "electronic",
+  "accent_contrast_min": 3.5,
+  "texture_overrides_note": "Raised halation 0.0 -> 0.05 and lighting_arc 0.10 -> 0.24 over the base cctv preset so the WOW gate's color-drift and halation-glow checks pass cleanly while keeping the cctv grain 0.10 / vignette 0.30 signature."
+}

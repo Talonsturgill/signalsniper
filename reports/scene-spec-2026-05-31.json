@@ -1,0 +1,61 @@
+{
+  "date": "2026-05-31",
+  "topic": "RuView, spatial intelligence from raw WiFi with no camera",
+  "creator_handle": "@ruvnet",
+  "project_url": "https://github.com/ruvnet/RuView",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "cctv",
+    "framework": "RECEIPT",
+    "audio_palette": "electronic",
+    "held_subject": "RuView",
+
+    "tokens": {
+      "canvas": "#1B1B1B",
+      "ink": "#E0E0E0",
+      "ink_muted": "#909090",
+      "accent": "#FF3B30",
+      "hairline": "#2A2A2A"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 500,
+      "body_weight": 400,
+      "letter_spacing_em": 0.0,
+      "case": "upper",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.05,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.08
+    },
+    "layout": {
+      "padding_pct": 5,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.10,
+      "vignette": 0.30,
+      "halation": 0.05,
+      "lighting_arc": 0.24
+    },
+    "accent_contrast_min": 3.5
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "RuView", "eyebrow": "your room learns to see", "camera": "orbit", "duration_s": 3.0},
+    {"template": "big_number", "numeral": "0", "caption": "cameras in the building.", "sub": "it reads the wifi instead.", "camera": "ken_burns", "duration_s": 3.2},
+    {"template": "flash", "word": "THROUGH WALLS", "caption": "radio sees what glass cannot.", "camera": "crash_zoom", "duration_s": 3.0},
+    {"template": "big_number", "numeral": "200ms", "caption": "from stumble to alert.", "sub": "a fall caught in real time.", "camera": "parallax_drift", "duration_s": 3.2},
+    {"template": "fix", "primary": "the signal sees.", "secondary": "just an esp32 chip.", "emphasize": true, "camera": "push_in", "duration_s": 3.3},
+    {"template": "close", "primary": "sense, not surveil.", "accent": "built in the open.", "subtitle": "awareness without a watcher.", "emphasize": true, "camera": "pull_back", "duration_s": 3.5}
+  ]
+}
