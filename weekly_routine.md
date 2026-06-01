@@ -39,7 +39,7 @@ You are the orchestrator of a weekly editorial pipeline. One run produces one Su
 - **No phrase repeats** across the cold open, hero section, Finalist cards, Pattern paragraph, Tactical Lesson, and "what I'm watching." The Critic checks all surface pairs. Project proper-noun names plus @handles are exempt where the template requires them in two places (the cold open names the All-Star, the hero heading repeats it).
 - **No superlatives, no sycophancy, no em or en dashes, no semicolons, no colons in editorial copy, no question hooks, no hashtags, no emojis** anywhere in the post. Code fences and `https://` URL strings exempt the colon rule. The `·` middot and table `|` pipes are allowed.
 - **No version numbers** in the title or hooks, or in the first sentence of any section. Lead with momentum.
-- **Hero MP4 only.** No GIFs anywhere in the post. The MP4 embeds via the **branch** `raw/$BRANCH/...` URL on its own line.
+- **Hero video only.** No GIFs anywhere in the post. The post marks the video spot with a conspicuous upload marker (see Step 5 Section D) so the operator drops the MP4 straight into Substack with the native uploader. The branch raw MP4 URL is carried in the Gmail as the download source. If `HERO_VIDEO_EMBED_URL` is set (an unlisted YouTube, Vimeo, or X link the operator pre-uploaded), the Assembler instead writes that URL alone on its own line for auto-embed.
 - **No image hosted outside `Talonsturgill/signalsniper` raw URLs.**
 - **The cold open is human-written via the Voice Editor.** It must seat the issue in a "this week's finalists" frame and may not start with "This week" as a meta-frame, "In this issue," "Welcome back," or any newsletter-cliche opener.
 
@@ -160,7 +160,13 @@ Write the editorial centerpiece, a long-form profile of the All-Star, in plain m
 - **Section A, The Lede (<= 90 words).** The moment that earned the All-Star slot. Date, action, consequence.
 - **Section B, The Build (<= 220 words).** What it does (technical), where it came from (prior work with real repo names + star counts), what changed this week (concrete numbers).
 - **Section C, The Quote.** Markdown blockquote with the source as an inline link after (a bare project-site URL on its own line is forbidden unless it is a supported embed domain).
-- **Section D, The Video.** The branch MP4 URL alone on its own line. No GIF.
+- **Section D, The Video.** Substack does not reliably auto-embed a raw GitHub MP4 link, and the easiest reliable path is the native uploader. Write this marker block alone where the video belongs, with no surrounding prose:
+
+  ```
+  >>> UPLOAD VIDEO HERE — download tribute-$DATE.mp4 from the link in the Gmail <<<
+  ```
+
+  The operator deletes the marker line and uses Substack's `+` to `Video` to upload the file in one drag. If `HERO_VIDEO_EMBED_URL` is set, skip the marker and write that URL alone on its own line instead (it auto-embeds). No GIF.
 
 Hard rules: no colons in prose, coherent register, no phrases verbatim from the daily X caption or daily "Why this one", contractions natural.
 
@@ -231,7 +237,7 @@ $HEADLINE
 
 ## The All-Star · $HERO_PROJECT by @$HERO_HANDLE
 
-[ Lede, Build, Quote, then the branch MP4 URL on its own line ]
+[ Lede, Build, Quote, then the Step 5 Section D video marker (or the HERO_VIDEO_EMBED_URL on its own line) ]
 
 ---
 
@@ -359,7 +365,7 @@ Squash-merge is the default. If branch protection or a required check blocks the
 
 Dark-navy / cream-card briefing. Sections in order:
 1. **Header.** `THIS WEEK IN AI · $HOOK · ISSUE $ISSUE_NUMBER · $WEEK_END_HUMAN`
-2. **Publish in 7 steps.** Lead with the reality that Substack does not import `.md` files: copy the raw post text, paste into a new Substack post, confirm the MP4 renders, reread the cold open / headline / lesson, schedule, paste the source list as the first comment, post the 5 Notes across the week.
+2. **Publish in 4 steps.** Lead with the reality that Substack does not import `.md` files and does not reliably embed a raw GitHub MP4. The easiest path: (1) copy the raw post text and paste it into a new Substack post, (2) delete the `>>> UPLOAD VIDEO HERE <<<` marker line and use Substack's `+` to `Video` to upload `tribute-$DATE.mp4` (download it from the branch raw link given here), (3) paste the source list as the first comment, (4) schedule. The Gmail's Hero section carries the MP4 download link (Gmail drafts can't hold attachments).
 3. **Quality state.** Final Grader $TOTAL/100 ($VERDICT), Fact Validator $VERIFIED/$TOTAL, revision passes $N/4, merge state (merged / open with reason). If shipped under bar, a prominent `## DID NOT MEET BAR` block at the top with top_3_fixes and honest_one_liner.
 4. **Hero of the week.** $HERO_PROJECT by @$HERO_HANDLE, 2-line summary + Watch button to the branch MP4 URL.
 5. **One-click actions.** Open the draft post (blob), Copy source (raw), PR #$N.
