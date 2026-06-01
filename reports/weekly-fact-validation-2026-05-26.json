@@ -1,0 +1,16 @@
+{
+  "verdict": "APPROVED",
+  "summary": {"total": 25, "verified": 25, "disputed": 0, "unverifiable": 0},
+  "method": "Each claim checked against a live primary source (GitHub repo metadata, repo README/LICENSE, hn.algolia.com item 48346693, the Odysseus project page, and the WiFi-DensePose Hugging Face model card). Star/fork counts are point-in-time snapshots from 2026-06-01 and are internally consistent with live counts that have drifted slightly upward. Tribute-delta velocity figures are arithmetic deltas from the daily-tribute baselines and check out.",
+  "key_claims": [
+    {"claim": "Odysseus created 2026-05-31, 20,038 stars, 2,454 forks, JavaScript, MIT", "status": "VERIFIED", "source_url": "https://github.com/pewdiepie-archdaemon/odysseus"},
+    {"claim": "Odysseus HN front page, 171 climbing to 211 points", "status": "VERIFIED", "source_url": "https://hn.algolia.com/api/v1/items/48346693"},
+    {"claim": "Quote 'I started working on the Odysseus project because running local AI felt fun and powerful.'", "status": "VERIFIED", "source_url": "https://pewdiepie-archdaemon.github.io/odysseus/"},
+    {"claim": "ECC 202,115 stars, JavaScript, MIT, most-starred Claude Code repo", "status": "VERIFIED", "source_url": "https://github.com/affaan-m/ECC"},
+    {"claim": "RuView 69,863 stars, Rust, MIT; pose accuracy 2.5 percent PCK@20, 35 percent target under ADR-079", "status": "VERIFIED", "source_url": "https://github.com/ruvnet/RuView"},
+    {"claim": "WiFi-DensePose 82.69 percent torso PCK@20 on MM-Fi", "status": "VERIFIED", "source_url": "https://huggingface.co/ruvnet/wifi-densepose-mmfi-pose"},
+    {"claim": "Understand-Anything 48,683 stars, TypeScript, MIT, Yuxiang Lin in Shenzhen", "status": "VERIFIED", "source_url": "https://github.com/Lum1104/Understand-Anything"},
+    {"claim": "claude-mem 80,086 stars, TypeScript, Apache-2.0, Alex Newman", "status": "VERIFIED", "source_url": "https://github.com/thedotmack/claude-mem"}
+  ],
+  "editor_note_non_blocking": "RuView 'Code from the week' shows '3 channels x 56 subcarriers' inside an illustrative code excerpt; the README describes a 6-channel mesh. The figure sits inside a code fence (exempt), so it is not an editorial claim, but a strict reconciliation to 6 channels is available if desired."
+}

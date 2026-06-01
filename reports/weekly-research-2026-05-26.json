@@ -1,0 +1,67 @@
+{
+  "2026-05-26": {
+    "date": "2026-05-26",
+    "project_slug": "ECC",
+    "momentum_delta": {"stars_then": 97000, "stars_now": 202115, "velocity_window": "+105k in ~6 days", "notes": "Tribute logged ~97k (+2,025/24h); live GitHub 202,115 stars / 31,017 forks, roughly doubling in under a week."},
+    "shipped_since": ["v2.0.0-rc.1 (2026-05-25): first release candidate as a cross-harness operating system, 243 public skills, 2,568 tests passing, new optimization skills", "React language track added (agents, skills, rules, commands), warn-only PreToolUse hook surfacing, public-metadata neutralization (commits 2026-05-28)"],
+    "sibling_work": [{"name": "agentshield", "url": "https://github.com/affaan-m/agentshield", "one_line": "AI-agent security scanner (758 stars, MIT) bundled into ECC as the security layer with 102 rules."}],
+    "shipping_next": ["ECC 2.0 Rust control-plane operator surface (prototype in ecc2/), dashboard/sessions/daemon commands, alpha", "Desktop dashboard GUI layered on the reusable skills/agents core"],
+    "creator_quote": {"text": "The goal is simple, stop rewriting the same prompts, stop relying on fragile local habits, and turn working agent behavior into portable infrastructure.", "source_url": "https://github.com/affaan-m/ECC/releases/tag/v2.0.0-rc.1"},
+    "reading_list_candidate": {"title": "Eval-Driven Development with Everything Claude Code", "url": "https://claudeskills.info/blog/everything-claude-code-hackathon-eval-driven/", "why": "Explains the eval-driven methodology behind the hackathon-winning harness."},
+    "code_snippet": {"lang": "bash", "path": "README.md", "code": "npx ecc consult \"security reviews\" --target claude", "caption": "Natural-language component discovery, ECC matches intent to the right skills and installs into a target harness."},
+    "license": "MIT",
+    "language": "JavaScript"
+  },
+  "2026-05-28": {
+    "date": "2026-05-28",
+    "project_slug": "claude-mem",
+    "momentum_delta": {"stars_then": 79300, "stars_now": 80086, "velocity_window": "+786 in ~4 days", "notes": "Tribute baseline 79.3k (+671/24h); live 80,086 stars / 6,892 forks. Pace cooling but net-positive."},
+    "shipped_since": ["v13.4.0 (2026-05-29): defect-clearing release, test suite 46 to 0 failing, typecheck 24 to 0 errors, SQLite self-healing recovery added", "Configurable OpenAI-compatible base URL for the OpenRouter provider, point claude-mem at DeepSeek, LM Studio, or custom endpoints", "Windows hardening for canonical plugin-root spawn resolution and worker-lifecycle PID-reuse guard"],
+    "sibling_work": [{"name": "claude-mem-docs", "url": "https://github.com/thedotmack/claude-mem-docs", "one_line": "Source behind docs.claude-mem.ai, documenting the hook lifecycle and MCP tools."}],
+    "shipping_next": ["Broader cross-platform parity across Codex, Gemini CLI, OpenCode, Copilot", "Provider abstraction expansion following the OpenRouter base-URL config (self-hosted endpoints)"],
+    "creator_quote": {"text": "Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions.", "source_url": "https://github.com/thedotmack/claude-mem"},
+    "reading_list_candidate": {"title": "Hook Lifecycle, Claude-Mem docs", "url": "https://docs.claude-mem.ai/architecture/hooks", "why": "Primary-source breakdown of how the plugin wires into Claude Code lifecycle hooks and async capture."},
+    "code_snippet": {"lang": "json", "path": "plugin/hooks/hooks.json", "code": "{\n  \"SessionStart\": [{\n    \"matcher\": \"startup|clear|compact\",\n    \"hooks\": [\n      { \"type\": \"command\", \"command\": \"bun ${CLAUDE_PLUGIN_ROOT}/scripts/worker-service.cjs start\", \"timeout\": 60 },\n      { \"type\": \"command\", \"command\": \"bun ${CLAUDE_PLUGIN_ROOT}/scripts/context-hook.js\", \"timeout\": 60 }\n    ]\n  }],\n  \"PostToolUse\": [{\n    \"matcher\": \"*\",\n    \"hooks\": [{ \"type\": \"command\", \"command\": \"node ${CLAUDE_PLUGIN_ROOT}/scripts/save-hook.js\", \"timeout\": 120 }]\n  }]\n}", "caption": "Lifecycle-hook registration, SessionStart boots the worker and injects context, PostToolUse queues every observation."},
+    "license": "Apache-2.0",
+    "language": "TypeScript"
+  },
+  "2026-05-29": {
+    "date": "2026-05-29",
+    "project_slug": "Understand-Anything",
+    "momentum_delta": {"stars_then": 43600, "stars_now": 48683, "velocity_window": "+5,083 in ~3 days", "notes": "Tribute-day rate +3,776/24h, trending #1 TypeScript. Live 48,683 stars / 3,954 forks."},
+    "shipped_since": ["Trae (ByteDance AI IDE) platform support added (2026-05-26)", "Phase 7 scan-result preservation so incremental runs do not re-scan (PR #332 merged 2026-06-01)", "Non-ASCII path handling fixed via git ls-files -z (2026-05-25)"],
+    "sibling_work": [{"name": "MER-Factory", "url": "https://github.com/Lum1104/MER-Factory", "one_line": "Pipeline for constructing multimodal emotion recognition and reasoning datasets."}, {"name": "EIBench", "url": "https://github.com/Lum1104/EIBench", "one_line": "Benchmark for vision-language emotion interpretation across modalities."}],
+    "shipping_next": ["Broader platform install coverage following Trae, KIMI CLI, Cline", "Incremental auto-update pipeline hardening via structural fingerprinting"],
+    "creator_quote": {"text": "Code is everywhere, and will be powerful if we can understand them!", "source_url": "https://www.producthunt.com/products/understand-anything"},
+    "reading_list_candidate": {"title": "Understand-Anything README, Graphs that teach over graphs that impress", "url": "https://github.com/Lum1104/Understand-Anything/blob/main/README.md", "why": "Primary explainer of the tree-sitter plus 6-agent hybrid pipeline and the understand command suite."},
+    "code_snippet": {"lang": "bash", "path": "CLAUDE.md", "code": "pnpm --filter @understand-anything/core build\npnpm --filter @understand-anything/skill build\npnpm dev:dashboard\n\n# in Claude Code on a target repo, deterministic parse plus multi-agent read\n/understand --full\n# writes .understand-anything/knowledge-graph.json", "caption": "The fusion entrypoint, tree-sitter WASM structural parse plus a 6-agent semantic pass emit a reproducible knowledge-graph.json."},
+    "license": "MIT",
+    "language": "TypeScript"
+  },
+  "2026-05-31": {
+    "date": "2026-05-31",
+    "project_slug": "RuView",
+    "momentum_delta": {"stars_then": 69100, "stars_now": 69863, "velocity_window": "+763 in ~1 day", "notes": "Tribute baseline 69.1k vs live 69,863 stars / 9,339 forks, GitHub-trending."},
+    "shipped_since": ["v1506 (2026-05-30): ADR-149 evaluation harness in pure Rust, GDOP plus bootstrap CI, noise-sweep evaluator, 116 default tests passing", "v1528 (2026-05-31): merged ADR-149 spatial-intelligence benchmark, Aether Arena scorer plus CI harness gate", "v1484 (2026-05-30): new ruview-swarm crate, drone swarm control with hierarchical mesh and Raft consensus"],
+    "sibling_work": [{"name": "RuVector", "url": "https://github.com/ruvnet/ruvector", "one_line": "Real-time AI vector plus graph neural-network database in Rust that RuView's signal AI is built on."}, {"name": "ruflo", "url": "https://github.com/ruvnet/ruflo", "one_line": "rUv's agent meta-harness for Claude, multi-agent swarms and autonomous workflows."}],
+    "shipping_next": ["Camera-ground-truth pose training (ADR-079 phases P7-P9) targeting 35%+ PCK@20 from a ~2.5% proxy baseline", "JSONL-to-binary RVF model-format adapter and a Tauri v2 desktop app for mesh visualization"],
+    "creator_quote": {"text": "Turn ordinary WiFi into a spatial intelligence sensing system. Detect people, measure breathing and heart rate, track movement, through walls, in the dark, with no cameras or wearables. Just physics.", "source_url": "https://github.com/ruvnet/RuView"},
+    "reading_list_candidate": {"title": "ruvnet/wifi-densepose-mmfi-pose, WiFi pose model card (MM-Fi)", "url": "https://huggingface.co/ruvnet/wifi-densepose-mmfi-pose", "why": "Auditable WiFi-CSI pose model reporting 82.69 percent torso-PCK@20 on MM-Fi, beating prior SOTA."},
+    "code_snippet": {"lang": "text", "path": "README.md", "code": "ESP32 mesh captures CSI on channels 1/6/11 via TDM\nMulti-band fusion, 3 channels x 56 subcarriers = 168 virtual subcarriers per link\nMultistatic fusion, N x (N-1) links into an attention-weighted cross-view embedding\nFall detection, phase-acceleration threshold plus 3-frame debounce plus 5s cooldown, under 200ms", "caption": "Multi-band CSI fusion (168 virtual subcarriers) plus the sub-200ms fall-detection rule."},
+    "license": "MIT",
+    "language": "Rust"
+  },
+  "2026-06-01": {
+    "date": "2026-06-01",
+    "project_slug": "Odysseus",
+    "momentum_delta": {"stars_then": 12000, "stars_now": 20038, "velocity_window": "+20k in ~2 days", "hn_points": 211, "hn_url": "https://news.ycombinator.com/item?id=48346693", "notes": "Repo created 2026-05-31, so all 20,038 stars accrued within ~2 days. Live HN 211 points, up from 171 at tribute."},
+    "shipped_since": ["v1.0 self-hosted AI workspace launched 2026-05-31 (chat, agents, tools, model serving, research, email/calendar/docs, memory)", "Cookbook hardware scanner that detects GPU VRAM and one-click recommends/downloads from 270+ catalogued models", "Self-evolving Skills/Memory layer on ChromaDB that crystallizes what works into the agent's own instructions"],
+    "sibling_work": [{"name": "PewDiePie, I now use 100% Self-Hosted AI", "url": "https://www.youtube.com/@PewDiePie", "one_line": "The on-camera self-hosting journey that became Odysseus."}],
+    "shipping_next": ["Cookbook reliability testing across machines, GPUs, drivers, shells, and Python envs plus fresh Docker smoke tests", "Provider probing audit across Anthropic, Gemini, Groq, xAI, OpenRouter, OpenAI, DeepSeek and an accessibility pass"],
+    "creator_quote": {"text": "I started working on the Odysseus project because running local AI felt fun and powerful.", "source_url": "https://pewdiepie-archdaemon.github.io/odysseus/"},
+    "reading_list_candidate": {"title": "Odysseus, self-hosted AI workspace (Hacker News)", "url": "https://news.ycombinator.com/item?id=48346693", "why": "211-point front-page thread debating local-first AI workspaces and a celebrity open-source launch."},
+    "code_snippet": {"lang": "python", "path": "routes/hwfit_routes.py", "code": "@router.get(\"/system\")\ndef get_system(host: str = \"\", ssh_port: str = \"\", platform: str = \"\", fresh: bool = False):\n    \"\"\"Detect and return current system hardware info.\"\"\"\n    from services.hwfit.hardware import detect_system\n    return detect_system(host=host, ssh_port=ssh_port, platform=platform, fresh=fresh)\n# get_models() then calls rank_models(system, ...) using gpu_vram_gb\n# to score which catalogued models actually fit the detected GPU.", "caption": "Cookbook's hardware-fit endpoint, scans GPU VRAM then ranks which of 270+ models the machine can run."},
+    "license": "MIT",
+    "language": "JavaScript"
+  }
+}

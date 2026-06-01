@@ -1,0 +1,18 @@
+{
+  "no_hero_this_week": false,
+  "hero": {
+    "date": "2026-06-01",
+    "project_slug": "Odysseus",
+    "creator_handle": "@pewdiepie",
+    "scores": {"momentum": 9, "novelty": 8, "resonance": 10, "total": 27},
+    "rationale": "The week's clearest moment plus the purest expression of the through-line. A v1.0 self-hosted workspace from a creator with planetary reach hit the HN front page and 20k stars inside two days."
+  },
+  "finalists": [
+    {"rank": 2, "date": "2026-05-26", "project_slug": "ECC", "creator_handle": "@affaanmustafa", "scores": {"momentum": 10, "novelty": 6, "resonance": 9, "total": 25}},
+    {"rank": 3, "date": "2026-05-31", "project_slug": "RuView", "creator_handle": "@ruvnet", "scores": {"momentum": 7, "novelty": 10, "resonance": 7, "total": 24}},
+    {"rank": 4, "date": "2026-05-29", "project_slug": "Understand-Anything", "creator_handle": "@YuxiangLin_Lum", "scores": {"momentum": 8, "novelty": 8, "resonance": 7, "total": 23}},
+    {"rank": 5, "date": "2026-05-28", "project_slug": "claude-mem", "creator_handle": "@Claude_Memory", "scores": {"momentum": 6, "novelty": 8, "resonance": 7, "total": 21}}
+  ],
+  "tiebreakers_applied": "Odysseus over ECC on resonance and the named moment; ECC over RuView on momentum (202k stars, +105k in a week).",
+  "sanity_floor": "Hero total 27 clears the 22 floor."
+}
