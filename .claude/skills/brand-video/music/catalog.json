@@ -353,6 +353,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mechanolith",
       "attribution_required": "Music. Mechanolith by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "the-complex",
+      "title": "The Complex",
+      "file": "The_Complex.mp3",
+      "duration_s": 267.8,
+      "mood": "driving dark electronic, steady systems pulse, command-terminal propulsion",
+      "register": "electronic",
+      "fits": "voltagent, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
+      "preset_packs": ["voltagent", "mono-terminal", "subway-chrome", "cctv"],
+      "frameworks": ["MANIFESTO", "SCHEMATIC", "RECEIPT"],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Complex",
+      "attribution_required": "Music. The Complex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

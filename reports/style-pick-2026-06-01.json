@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-01",
+  "brand_slug": "voltagent",
+  "preset_slug": "voltagent",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "Odysseus is a local-first, self-hosting AI agent workspace, so VoltAgent's deep-space command-terminal palette (near-black with emerald pulse) is the literal aesthetic, and MANIFESTO carries the bold anti-cloud, you-own-the-hardware declaration in PewDiePie's contrarian register.",
+  "writing_tone_notes": "Irreverent, anti-corporate, declarative. Build-in-public peer voice. Bold short lines, color-burst punctuation. Contractions where natural. No superlatives; the no-cloud, your-hardware contrast carries the praise. Keep it about the work and the move, not the celebrity.",
+  "do_rules": [
+    "Open on the project, not the fame; let the local-first stance be the hook.",
+    "Reserve the star-velocity metric for the X caption only; scenes stay qualitative.",
+    "Stay in the ownership metaphor: your hardware, your models, your data, no cloud.",
+    "Two flash beats in emerald for the stop-scroll; at least one orbit move."
+  ],
+  "dont_rules": [
+    "No version numbers in the X caption.",
+    "No reuse of scene phrases (NO CLOUD, your machine, your models, it evolves, private by default) in the caption or Why-this-one.",
+    "No superlatives and no celebrity gushing; admire the build, not the subscriber count.",
+    "No framework repeat of RECEIPT (most recent on 2026-05-31)."
+  ]
+}

@@ -168,5 +168,12 @@
         "aesthetic_slug": "cctv",
         "framework": "RECEIPT",
         "project_url": "https://github.com/ruvnet/RuView"
+    },
+    {
+        "date": "2026-06-01",
+        "brand_slug": "voltagent",
+        "aesthetic_slug": "voltagent",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
     }
 ]

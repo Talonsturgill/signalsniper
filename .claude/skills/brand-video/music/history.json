@@ -108,5 +108,10 @@
     "date": "2026-05-31",
     "slug": "mechanolith",
     "project_url": "https://github.com/ruvnet/RuView"
+  },
+  {
+    "date": "2026-06-01",
+    "slug": "the-complex",
+    "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
   }
 ]
