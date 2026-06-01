@@ -1,0 +1,16 @@
+{
+  "through_line": "Open-source builders spent this week fixing the agent harness, not the model.",
+  "prior_through_lines": [
+    "Agents are gaining persistent memory and self-composing skill loops between sessions.",
+    "On-device AI crossed an architectural threshold, not just a marketing one."
+  ],
+  "supporting_picks": [
+    "2026-05-17 @azurewraith",
+    "2026-05-18 @TvDongen",
+    "2026-05-20 @tirth_8205",
+    "2026-05-22 @karpathy",
+    "2026-05-23 @_can1357"
+  ],
+  "evidence_paragraph": "Five of seven picks target the scaffolding around the model, not the model itself. Statewright (@azurewraith) moves state enforcement into Rust so the transformer cannot rationalize past a constraint. Semble (@TvDongen) replaces grep with a CPU-only hybrid index, cutting 98% of tokens before the model sees them. Code-review-graph (@tirth_8205) sends the agent only the files an edit touches — 49x reduction on a Next.js monorepo. Autoresearch (@karpathy) fixes the experiment loop, not the trainer, running 100 keep-or-revert cycles overnight. Oh-my-pi (@_can1357) replaces line-number addressing with content hashes, ending string-not-found loops.",
+  "counter_signal": "Shen-backpressure (@reubbr, 2026-05-21) and agent-skills (@waldemarnt, 2026-05-19) point in a different direction — formal type-level invariants and supply-chain security — suggesting a parallel thread where the constraint moves into the specification language, not just the runtime."
+}

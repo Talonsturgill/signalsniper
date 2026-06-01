@@ -1,0 +1,34 @@
+{
+  "pass_number": 1,
+  "changes_made": [
+    "Pass 1 (Voice): Replaced 'The loop is simple:' with 'The loop is tight.' to eliminate colon in prose and cut weak filler word 'simple'",
+    "Pass 1 (Voice): Replaced 'The lineage is visible in the repo list:' with 'The lineage is visible in the repo list.' — colon removed, list follows as separate sentence",
+    "Pass 1 (Voice): Replaced 'which takes a different route:' with 'which takes a different route.' in pattern section — colon in prose removed",
+    "Pass 1 (Voice): Renamed '## What I'm watching this week' to '## On the radar' — eliminated first-person register inconsistency with declarative third-person editorial voice",
+    "Pass 1 (Voice): Replaced all semicolons in 'On the radar' and 'Reading list' sections with periods, splitting run-on constructions into two sentences",
+    "Pass 2 (Specificity): Trimmed 'built specifically for coding agents' to 'built for coding agents' in semble Why it's here — 'specifically' is vague emphasis",
+    "Pass 2 (Specificity): Replaced 'by the end of the week' with 'by week's end' in semble Why it's here — tighter phrasing",
+    "Pass 2 (Specificity): Replaced 'Karpathy' with '@karpathy' in AutoKernel reading list entry — handle is more specific and consistent",
+    "Pass 3 (Cadence): Split 'The loop is simple: one agent edits...' into two sentences to break run of similar-length sentences in The Lede",
+    "Pass 4 (Cuts): Removed 'rigorously' adverb from AutoKernel reading list entry ('benchmarks rigorously on H100' became 'Benchmarks on H100')",
+    "Pass 4 (Cuts): Fixed em dash in '## The lesson this week — Address by content, not by position' heading, replacing with period to comply with no-em-dash rule"
+  ],
+  "word_count_before": 1764,
+  "word_count_after": 1757,
+  "ai_smell_removed": [
+    "'The loop is simple' — weak qualifier masking a strong claim; replaced with 'The loop is tight'",
+    "'benchmarks rigorously' — adverb adding no information; cut"
+  ],
+  "rule_violations_fixed": [
+    "Em dash in heading line '## The lesson this week — Address by content, not by position' — replaced with period",
+    "Colon in prose line 19: 'The loop is simple: one agent edits...' — fixed to 'The loop is tight.'",
+    "Colon in prose line 25: 'The lineage is visible in the repo list:' — fixed to period",
+    "Colon in prose line 45: 'which takes a different route:' — fixed to period",
+    "Semicolon in prose line 196 (autoresearch-at-home bullet) — replaced with period",
+    "Semicolon in prose line 197 (AutoKernel bullet) — replaced with period",
+    "Semicolon in prose line 198 (zerolang bullet) — replaced with period",
+    "Semicolon in prose line 205 (Don't Waste Your Backpressure bullet) — replaced with period",
+    "Semicolon in prose line 206 (AutoKernel reading list bullet) — replaced with period",
+    "First-person heading '## What I'm watching this week' — renamed to '## On the radar' to maintain declarative third-person register"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "issues": [
+    {
+      "issue": 1,
+      "week_start": "2026-05-03",
+      "week_end": "2026-05-09",
+      "through_line": "Agents are gaining persistent memory and self-composing skill loops between sessions.",
+      "lesson_headline": null,
+      "hero_project": null
+    },
+    {
+      "issue": 2,
+      "week_start": "2026-05-10",
+      "week_end": "2026-05-16",
+      "through_line": "On-device AI crossed an architectural threshold, not just a marketing one.",
+      "lesson_headline": null,
+      "hero_project": null
+    },
+    {
+      "issue": 3,
+      "week_start": "2026-05-17",
+      "week_end": "2026-05-23",
+      "through_line": "Open-source builders spent this week fixing the agent harness, not the model.",
+      "lesson_headline": "Address by content, not by position",
+      "hero_project": "autoresearch",
+      "hero_creator": "karpathy",
+      "finalists": ["oh-my-pi", "code-review-graph", "statewright", "semble"],
+      "grader_score": 93,
+      "post_file": "reports/weekly-2026-05-17.md"
+    }
+  ],
+  "last_updated": "2026-05-23"
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "issue": 3,
+    "issue_date": "2026-05-17",
+    "graded_date": "2026-05-23",
+    "verdict": "SHIP",
+    "total": 89,
+    "axes": {
+      "hook_strength": {
+        "score": 10,
+        "max": 12,
+        "earned": [
+          "All five are fixing the layer between the model and the task, not the model itself.",
+          "autoresearch by @karpathy crossed 82k stars in 72 hours. The other four finalists shipped a state-machine constraint engine, a knowledge graph for code context, a hash-anchor system for precise edits, and a CPU-only retrieval layer that cuts agent token spend 98% versus grep."
+        ],
+        "lost": [
+          {
+            "quote": "Five finalists this week.",
+            "reason": "Sentence 1 is a mild setup rather than the contrarian claim itself. The falsifiable directional claim ('not the model itself') lands in sentence 2, not sentence 1. Costs 2 points — the hook would score higher if the contrarian claim led."
+          }
+        ]
+      },
+      "single_voice_authority": {
+        "score": 15,
+        "max": 16,
+        "earned": [
+          "Declarative third-person maintained throughout all body prose — pattern paragraph, build section, verdict cards, tactical lesson.",
+          "Declarative one-liners land clean: 'The protocol, not the model, is the contribution.' / 'Both systems make incorrect addresses impossible rather than unlikely.'",
+          "'What I’m watching' first-person heading with third-person bullets accepted per newsletter convention."
+        ],
+        "lost": [
+          {
+            "quote": "What I’m watching this week",
+            "reason": "The first-person heading is a minor seam against an otherwise fully third-person piece. Rules explicitly permit the convention, so only 1 point docked for the slight register discontinuity."
+          }
+        ]
+      },
+      "original_analysis": {
+        "score": 13,
+        "max": 16,
+        "earned": [
+          "Pattern paragraph correctly identifies 'fixing the harness, not the model' as the week’s through-line with named evidence for all five finalists.",
+          "Counter-signal (Shen-Backpressure / @reubbr) is analytically distinct — formal verification in the specification language versus runtime constraint — not just a contrarian pick.",
+          "Tactical Lesson 'Address by content, not by position' is a genuine cross-pick primitive backed by oh-my-pi and code-review-graph with a clear scope boundary (skip for open-ended research loops).",
+          "'Both systems make incorrect addresses impossible rather than unlikely' is original compression a reader couldn’t lift from the source repos."
+        ],
+        "lost": [
+          {
+            "quote": "Two of the five finalists converge on the same primitive.",
+            "reason": "The tactical lesson explicitly links only 2 of 5 finalists. statewright (state-machine guards) and semble (retrieval fusion) fit the 'fix the harness' theme but are not connected to the 'address by content' lesson. The lesson’s scope is narrower than the week’s evidence, leaving the connection between the full finalist slate and the lesson partially undefended. Costs 3 points."
+          }
+        ]
+      },
+      "specificity_verdict": {
+        "score": 15,
+        "max": 16,
+        "earned": [
+          "All-Star section: 82k stars, 72h, 2026-05-22, single NVIDIA GPU, 5-min wall clock, 12 experiments/hour, ~100/night, val_bpb metric, 82.8k milestone, 910-experiment 16-GPU run (Vector Institute), Claude Code skill package (uditgoenka).",
+          "oh-my-pi: 27k lines of Rust, 40+ LLM providers, lldb/dlv/debugpy cited, 6,500 stars, +457/24h. Verdict: 'Hash-anchored edits are a genuine primitive.'",
+          "code-review-graph: 27,732-file monorepo, 15 files identified, 49x token reduction, 100% recall, 0.54 F1, 11 editors named. Verdict stated and defended.",
+          "statewright: 13.8 GB and 19.9 GB model sizes, 2/10 to 10/10 SWE-bench, 349 stars, HN 124pts. Verdict includes community reproduction signal.",
+          "semble: NDCG@10 0.854, CodeRankEmbed comparison, 218x faster indexing, 312→442 HN points, 150 comments. All sections exceed 3 data points with positions."
+        ],
+        "lost": [
+          {
+            "quote": "This is the retrieval layer most agent stacks are missing.",
+            "reason": "semble’s verdict is a position but softer than the other cards (no buy/skip/watch framing). Minor dock of 1 point."
+          }
+        ]
+      },
+      "curators_edge": {
+        "score": 11,
+        "max": 14,
+        "earned": [
+          "Five finalists tell a coherent story: all fix the agent harness layer, not the model.",
+          "All-Star defense is strong: 82k stars in 72h cited, lineage traced (nanoGPT → llm.c → nanochat → autoresearch), quote sourced to a specific X URL.",
+          "Lede is a moment: '82k stars in 72 hours of going public. By 2026-05-22 it was trending number one in Python on GitHub.' Date + action + consequence all present."
+        ],
+        "lost": [
+          {
+            "quote": "The counter-signal is Shen-Backpressure by @reubbr",
+            "reason": "Counter-signal appears only in the pattern paragraph and is dropped without a verdict card or finalist slot. It’s introduced and abandoned, weakening the curator’s authority on it. Costs 1 point."
+          },
+          {
+            "quote": "(no verdict card with anti-recommendation)",
+            "reason": "No anti-recommendation appears in any finalist verdict card. The +2 bonus within this axis is not earned."
+          }
+        ]
+      },
+      "anti_mush_variety": {
+        "score": 12,
+        "max": 12,
+        "earned": [
+          "Zero banned phrases found across the full document.",
+          "Zero colons in editorial prose outside code fences and URLs.",
+          "All four finalist card openers use distinct verbs: 'Rebuilt' (#2), 'Mapped' (#3), 'Took' (#4), 'Fused' (#5).",
+          "Code comments inside fences with colons and banned-adjacent language are exempt per rules."
+        ],
+        "lost": []
+      },
+      "structural_craft": {
+        "score": 6,
+        "max": 6,
+        "earned": [
+          "Headline 'The Agent Loop Got Five Fixes in Seven Days' does work: specific count (five), specific window (seven days), active verb.",
+          "Quick Stats table present with 8 columns: Rank, Project, Creator, Stars, Velocity, Language, License, Lane.",
+          "Tactical Lesson present: 'The lesson this week. Address by content, not by position' — period-instead-of-em-dash noted per rules, not penalized.",
+          "Code section present with 5 code blocks covering all 5 finalists in appropriate languages (bash, bash, Python, JSON, Python).",
+          "MP4 embed present and solo on its own line after the X URL."
+        ],
+        "lost": []
+      },
+      "closing_landing": {
+        "score": 4,
+        "max": 4,
+        "earned": [
+          "'Reply with a project we missed.' — single clear ask, no begging, topic-matched imperative.",
+          "Closing summary ('The harness isn’t solved, but builders are clearly aligned on the direction now') reinforces the week’s thesis without re-listing content."
+        ],
+        "lost": []
+      },
+      "anticipation": {
+        "score": 3,
+        "max": 4,
+        "earned": [
+          "autoresearch-at-home: named project, GitHub URL, 488 stars (2026-05-23), trigger tied to @karpathy’s stated next direction.",
+          "AutoKernel: named project, GitHub URL, arXiv 2603.21331, 5.29x H100 speedup cited.",
+          "vercel-labs/zerolang: named project, GitHub URL, ~900 stars in 24h, date 2026-05-15."
+        ],
+        "lost": [
+          {
+            "quote": "all three 'What I’m watching' picks",
+            "reason": "Items describe things that already happened (landed, published, forked) rather than true forward picks with explicit release triggers or expected dates. The watch items are retrospective signals dressed as forward picks. Costs 1 point."
+          }
+        ]
+      }
+    },
+    "headline_quality_note": "'The Agent Loop Got Five Fixes in Seven Days' earns its headline. It’s specific (five, seven days), uses an active verb, and frames the week’s story as a count of fixes rather than a celebration. Does not oversell. Would work as a subject line.",
+    "honest_one_liner": "A tightly written, data-heavy issue with a genuine cross-pick insight and clean prose — held back only by a tactical lesson that covers 2 of 5 finalists and 'What I’m watching' picks that are already in the rearview mirror.",
+    "top_3_fixes": [
+      "Extend the tactical lesson to all five finalists or narrow its claim: 'Address by content, not by position' only explicitly links oh-my-pi and code-review-graph. Either show how statewright’s guard evaluation and semble’s RRF ranking are also content-addressing primitives, or retitle the lesson to match its actual scope ('Two finalists found the same primitive').",
+      "Move the counter-signal (Shen-Backpressure / @reubbr) into a proper verdict card or cut it. Right now it’s introduced in the pattern paragraph and dropped — readers get the name and thesis but no verdict, no stars, no data. Either give it a #6 Honorable Mention card with a verdict or remove it so the pattern paragraph doesn’t leave a loose thread.",
+      "Make 'What I’m watching' picks genuinely forward-looking: replace or augment items that have already shipped with explicit triggers and expected dates (e.g., 'watch for the first multi-machine autoresearch-at-home benchmark — @karpathy signaled this is the next milestone, no date yet'). The current picks read as a second reading list, not an anticipation section."
+    ]
+  }
+]
