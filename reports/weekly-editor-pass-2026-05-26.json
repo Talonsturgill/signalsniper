@@ -1,0 +1,8 @@
+{
+  "passes": [
+    {"pass": 1, "focus": "Critic mechanical failures", "changes": ["Differentiated claude-mem/Odysseus/RuView phrasing between Pattern and Tactical Lesson", "Removed 'never shipped open source before' from closing", "Renamed 'ECC 2.0 control plane' to 'ECC control plane' to clear version-in-first-sentence"]},
+    {"pass": 2, "focus": "Residual overlaps + length floor + Grader specificity note", "changes": ["Cold open final line changed to '@pewdiepie's Odysseus' to clear the 'Odysseus by @pewdiepie' / 'The All-Star' overlaps", "'RuView does its math' to 'RuView keeps its math'", "Replaced vague quantifiers in hero ('dwarfs any developer launch', 'plenty of self-hosted interfaces') with concrete figures (110M subscribers, two-year front-end history, weekend-vs-months scale)", "Added claude-mem total-vs-momentum line to cold open and a forward analytical sentence to the Pattern"]}
+  ],
+  "final_word_count": 1455,
+  "final_verdict": "SHIP"
+}

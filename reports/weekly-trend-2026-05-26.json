@@ -1,0 +1,12 @@
+{
+  "through_line": "This week's breakout repos pulled AI off the cloud and onto hardware the user owns.",
+  "prior_through_lines": [
+    "Issue 1: On-device AI crossed an architectural threshold, not just a marketing one.",
+    "Issue 2: Agents are gaining persistent memory and self-composing skill loops between sessions.",
+    "Issue 3: Open-source builders spent this week fixing the agent harness, not the model."
+  ],
+  "supporting_picks": ["2026-06-01", "2026-05-31", "2026-05-28"],
+  "evidence_paragraph": "Odysseus (@pewdiepie) runs entirely on your own GPU, no cloud backend, and crossed 20,000 stars within two days of its v1.0. RuView (@ruvnet) reads spatial intelligence off raw WiFi on a pocket-priced ESP32, calibrating locally in 30 seconds with zero camera and zero server. claude-mem (@Claude_Memory) keeps every agent observation in a local SQLite plus Chroma store on disk, not a hosted memory API. The common move isn't a smaller model, it's relocating the workspace, the sensor, and the memory onto silicon the builder controls.",
+  "counter_signal": "ECC and Understand-Anything still lean on cloud model calls, so the harness layer hasn't followed the data layer home yet.",
+  "non_repeat_check": "Distinct from Issue 1 (on-device model architecture), Issue 2 (persistent agent memory), and Issue 3 (agent harness fixes). This thesis is about ownership and distribution of the full stack, not the model or the harness."
+}

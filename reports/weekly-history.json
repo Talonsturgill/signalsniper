@@ -1,0 +1,11 @@
+[
+  {
+    "issue": 4,
+    "week_start": "2026-05-26",
+    "hero_project": "Odysseus",
+    "through_line": "This week's breakout repos pulled AI off the cloud and onto hardware the user owns.",
+    "lesson_headline": "Pin your state to local disk before you reach for a hosted API",
+    "final_grader_total": 97,
+    "shipped_under_bar": false
+  }
+]

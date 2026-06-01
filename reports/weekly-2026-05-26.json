@@ -1,0 +1,22 @@
+{
+  "issue": 4,
+  "title": "# This Week in AI · The Two-Day-Old Repo That Won The Week",
+  "hook": "The Two-Day-Old Repo That Won The Week",
+  "week_start": "2026-05-26",
+  "week_end": "2026-06-01",
+  "hero": {"date": "2026-06-01", "project_slug": "Odysseus", "creator_handle": "@pewdiepie", "mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/main/reports/tribute-2026-06-01.mp4"},
+  "finalists": [
+    {"date": "2026-05-26", "project_slug": "ECC", "rank": 2},
+    {"date": "2026-05-31", "project_slug": "RuView", "rank": 3},
+    {"date": "2026-05-29", "project_slug": "Understand-Anything", "rank": 4},
+    {"date": "2026-05-28", "project_slug": "claude-mem", "rank": 5}
+  ],
+  "through_line": "This week's breakout repos pulled AI off the cloud and onto hardware the user owns.",
+  "lesson_headline": "Pin your state to local disk before you reach for a hosted API",
+  "word_count": 1455,
+  "estimated_read_minutes": 6,
+  "final_grader_total": 97,
+  "final_grader_verdict": "SHIP",
+  "revision_passes_used": 3,
+  "fact_validation": "APPROVED (25/25 verified)"
+}

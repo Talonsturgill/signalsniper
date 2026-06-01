@@ -1,0 +1,27 @@
+[
+  {
+    "pass": 1,
+    "critic_verdict": "REVISE",
+    "critic_failures": ["phrase-overlap pattern/lesson (claude-mem, Odysseus descriptions)", "phrase-overlap cold open/closing (never shipped open source before)", "version-number ECC 2.0 in section first sentence"],
+    "validator_verdict": "APPROVED",
+    "grader_total": 90,
+    "grader_verdict": "SHIP",
+    "note": "Grader scored 90 SHIP on the first complete draft, but Critic REVISE blocked shipping until mechanical fixes landed."
+  },
+  {
+    "pass": 2,
+    "critic_verdict": "REVISE",
+    "critic_failures": ["phrase-overlap cold open/hero (The All-Star)", "phrase-overlap pattern/lesson (RuView does its)", "length below 1400 floor after trims"],
+    "validator_verdict": "APPROVED",
+    "note": "Re-ran Critic after pass-1 edits. Two residual overlaps plus an under-length total from over-trimming. Added specific content (110M subscriber reach, claude-mem total vs momentum, weekend-vs-months scale) and reworded overlaps."
+  },
+  {
+    "pass": 3,
+    "critic_verdict": "APPROVED",
+    "validator_verdict": "APPROVED",
+    "grader_total": 97,
+    "grader_verdict": "SHIP",
+    "word_count": 1455,
+    "note": "All gates pass. Shipped. Grader rose from 90 to 97 after the specificity additions and overlap fixes."
+  }
+]
