@@ -1,0 +1,60 @@
+{
+  "date": "2026-06-01",
+  "topic": "Odysseus, the self-hosted AI workspace that runs entirely on your own hardware",
+  "creator_handle": "@pewdiepie",
+  "project_url": "https://github.com/pewdiepie-archdaemon/odysseus",
+
+  "design": {
+    "brand_slug": "voltagent",
+    "aesthetic_slug": "voltagent",
+    "framework": "MANIFESTO",
+    "audio_palette": "electronic",
+    "held_subject": "Odysseus",
+
+    "tokens": {
+      "canvas": "#050507",
+      "ink": "#f2f2f2",
+      "ink_muted": "#b8b3b0",
+      "accent": "#00d992",
+      "hairline": "#3d3a39"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 800,
+      "body_weight": 400,
+      "letter_spacing_em": -0.018,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.08,
+      "scene_out_s": 0.06,
+      "stagger_s": 0.12
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.07,
+      "lighting_arc": 0.24
+    },
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "Odysseus", "eyebrow": "self-hosted, self-evolving AI", "camera": "orbit", "duration_s": 3.5},
+    {"template": "flash", "word": "NO CLOUD", "caption": "it runs on hardware you own.", "camera": "crash_zoom", "duration_s": 2.5},
+    {"template": "fix", "primary": "Your machine.", "secondary": "Your models.", "emphasize": true, "camera": "push_in", "duration_s": 4.5},
+    {"template": "flash", "word": "IT EVOLVES", "caption": "the agent writes its own rules.", "camera": "ken_burns", "duration_s": 2.5},
+    {"template": "close", "primary": "Private by default.", "accent": "Open by design.", "subtitle": "the workspace big labs won't ship.", "emphasize": true, "camera": "pull_back", "duration_s": 3.0}
+  ]
+}
