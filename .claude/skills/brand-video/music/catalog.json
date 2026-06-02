@@ -369,6 +369,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Complex",
       "attribution_required": "Music. The Complex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "volatile-reaction",
+      "title": "Volatile Reaction",
+      "file": "Volatile_Reaction.mp3",
+      "duration_s": 165.4,
+      "mood": "driving propulsive electronic, urgent systems pulse, precise machine momentum",
+      "register": "electronic",
+      "fits": "clickhouse, subway-chrome, mono-terminal, geominimal, SCHEMATIC, RECEIPT, MANIFESTO",
+      "preset_packs": ["clickhouse", "subway-chrome", "mono-terminal", "geominimal"],
+      "frameworks": ["SCHEMATIC", "RECEIPT", "MANIFESTO"],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Volatile+Reaction",
+      "attribution_required": "Music. Volatile Reaction by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

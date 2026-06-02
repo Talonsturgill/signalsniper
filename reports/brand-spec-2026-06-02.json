@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-02",
+  "preset_slug": "clickhouse",
+  "brand_slug": "clickhouse",
+  "framework": "SCHEMATIC",
+  "tokens":   {"canvas": "#0a0a0a", "ink": "#ffffff", "ink_muted": "#9a9a9a", "accent": "#faff69", "hairline": "#2a2a2a"},
+  "fonts":    {"display": "Inter", "body": "Inter", "italic": "Inter"},
+  "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.022, "case": "preserve", "italic_descriptors": false},
+  "motion":   {"register": "fade", "scene_in_s": 0.30, "scene_out_s": 0.20, "stagger_s": 0.20},
+  "layout":   {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 12},
+  "texture":  {"grain": 0.04, "vignette": 0.20, "halation": 0.06, "lighting_arc": 0.28},
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "texture_overrides_note": "Bumped ink_muted from ClickHouse's #888888 to #9a9a9a so ink_muted/canvas clears the 3.0:1 floor with margin on the #0a0a0a canvas. Halation 0.06 lets the electric-yellow #faff69 stat number bloom for the WOW halation-glow check; lighting_arc 0.28 gives the SCHEMATIC color-drift over the diagram orbit. Inter 700 with -0.022 tracking is ClickHouse's engineered display register; yellow reserved for the big_number numeral and the close accent."
+}

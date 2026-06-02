@@ -175,5 +175,12 @@
         "aesthetic_slug": "voltagent",
         "framework": "MANIFESTO",
         "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
+    },
+    {
+        "date": "2026-06-02",
+        "brand_slug": "clickhouse",
+        "aesthetic_slug": "clickhouse",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/D4Vinci/Scrapling"
     }
 ]
