@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-02",
+  "brand_slug": "clickhouse",
+  "preset_slug": "clickhouse",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "Scrapling is a speed-and-scale web-scraping framework whose headline is a structural trick (self-healing element relocation), so ClickHouse's near-black canvas with electric-yellow stat-number voltage carries the benchmark credibility while SCHEMATIC lets a node diagram show the relocation loop as the hero beat.",
+  "writing_tone_notes": "Engineer-first, build-in-public peer. Plain declarative. Frame it as keeping scrapers alive as the web changes, not novelty. Contractions where natural. No superlatives; the broken-selector contrast carries the praise. Yellow reserved for the one stat number and the close accent, ClickHouse-style.",
+  "do_rules": [
+    "Open on the maintenance problem the tool solves, not the star count.",
+    "Reserve the star-velocity metric for the X caption only; scenes stay qualitative or use the speed benchmark.",
+    "Use one big yellow stat number ClickHouse-style for the proof beat.",
+    "Make the diagram the visual hero: show the relocation loop, at least one orbit move."
+  ],
+  "dont_rules": [
+    "No version numbers in the X caption.",
+    "No reuse of scene phrases (heals itself, re-finds it, site redesigns, write it once) in the caption or Why-this-one.",
+    "No superlatives and no fastest-ever claims; cite the benchmark range honestly.",
+    "No framework repeat of MANIFESTO (most recent on 2026-06-01)."
+  ]
+}
