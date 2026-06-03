@@ -118,5 +118,10 @@
     "date": "2026-06-02",
     "slug": "volatile-reaction",
     "project_url": "https://github.com/D4Vinci/Scrapling"
+  },
+  {
+    "date": "2026-06-03",
+    "slug": "ouroboros",
+    "project_url": "https://github.com/jlowin/fastmcp"
   }
 ]

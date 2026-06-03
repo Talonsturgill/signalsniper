@@ -1,0 +1,103 @@
+{
+  "date": "2026-06-03",
+  "topic": "FastMCP, the Pythonic framework that turns an ordinary function into a Model Context Protocol server with one decorator",
+  "creator_handle": "@jlowin",
+  "project_url": "https://github.com/jlowin/fastmcp",
+
+  "design": {
+    "brand_slug": "composio",
+    "aesthetic_slug": "composio",
+    "framework": "CLASSIC",
+    "audio_palette": "electronic",
+    "held_subject": "FastMCP",
+
+    "tokens": {
+      "canvas": "#0f0f0f",
+      "ink": "#ffffff",
+      "ink_muted": "#a8a8a8",
+      "accent": "#4f8bff",
+      "hairline": "#222222"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.022,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.30,
+      "scene_out_s": 0.20,
+      "stagger_s": 0.20
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 12
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.07,
+      "lighting_arc": 0.28
+    },
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "FastMCP",
+      "eyebrow": "the shortest path to an MCP server",
+      "camera": "orbit",
+      "duration_s": 3.5
+    },
+    {
+      "template": "terminal",
+      "title": "server.py",
+      "lines": [
+        {"text": "from fastmcp import FastMCP", "prompt": false},
+        {"text": "mcp = FastMCP(\"demo\")", "prompt": false},
+        {"text": "@mcp.tool", "prompt": false},
+        {"text": "def add(a, b): return a + b", "prompt": false},
+        {"text": "mcp.run()", "prompt": false}
+      ],
+      "accent_idx": 2,
+      "camera": "parallax_drift",
+      "duration_s": 4.0
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "Raw MCP is plumbing.",
+        "Glue code, not logic."
+      ],
+      "accent_idx": 1,
+      "camera": "ken_burns",
+      "duration_s": 3.5
+    },
+    {
+      "template": "fix",
+      "primary": "One decorator.",
+      "secondary": "The server is done.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "close",
+      "primary": "Write the function.",
+      "accent": "Skip the protocol.",
+      "subtitle": "MCP servers, minus the ceremony.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}

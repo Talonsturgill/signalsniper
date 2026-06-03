@@ -385,6 +385,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Volatile+Reaction",
       "attribution_required": "Music. Volatile Reaction by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "ouroboros",
+      "title": "Ouroboros",
+      "file": "Ouroboros.mp3",
+      "duration_s": 161.6,
+      "mood": "dark cyclical electronic, brooding systems loop, deliberate machine propulsion",
+      "register": "electronic",
+      "fits": "composio, mono-terminal, cctv, subway-chrome, voltagent, CLASSIC, SCHEMATIC, MANIFESTO",
+      "preset_packs": ["composio", "mono-terminal", "cctv", "subway-chrome", "voltagent"],
+      "frameworks": ["CLASSIC", "SCHEMATIC", "MANIFESTO", "DISPATCH"],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Ouroboros",
+      "attribution_required": "Music. Ouroboros by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

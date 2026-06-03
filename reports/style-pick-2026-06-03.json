@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-03",
+  "brand_slug": "composio",
+  "preset_slug": "composio",
+  "framework": "CLASSIC",
+  "rationale_one_line": "FastMCP is agent-tooling infrastructure whose whole pitch is collapsing MCP's protocol boilerplate into a single Python decorator, so Composio's dark developer-infrastructure canvas with its terminal-mockup signature and one electric-blue voltage is the on-theme brand match, and CLASSIC frames an already-known tool by its angle while a terminal code-reveal carries the visual hero.",
+  "writing_tone_notes": "Engineer-to-engineer, build-in-public peer. Plain declarative. Respect the API design, not the person. No superlatives; the boilerplate-versus-decorator contrast carries the praise. Reserve the star-velocity metric for the X caption only. Electric blue is scarce, reserved for the decorator line in the terminal and the close accent, Composio-style.",
+  "do_rules": [
+    "Open on what an MCP server used to cost in boilerplate, not the star count.",
+    "Make the terminal the visual hero: show real FastMCP code, accent the decorator line, at least one orbit move elsewhere.",
+    "Reserve the 25k-stars metric for the X caption; scenes stay qualitative.",
+    "Use contractions where natural. Keep electric blue scarce."
+  ],
+  "dont_rules": [
+    "No version numbers anywhere in the X caption.",
+    "No reuse of scene phrases (plumbing, glue code, one decorator, write the function, skip the protocol, minus the ceremony) in the caption or Why-this-one.",
+    "No superlatives and no fastest-ever claims; lead with the star metric instead.",
+    "No framework repeat of SCHEMATIC (most recent on 2026-06-02)."
+  ]
+}
