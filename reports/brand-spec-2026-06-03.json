@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-03",
+  "preset_slug": "composio",
+  "brand_slug": "composio",
+  "framework": "CLASSIC",
+  "tokens":   {"canvas": "#0f0f0f", "ink": "#ffffff", "ink_muted": "#a8a8a8", "accent": "#4f8bff", "hairline": "#222222"},
+  "fonts":    {"display": "Inter", "body": "Inter", "italic": "Inter"},
+  "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.022, "case": "preserve", "italic_descriptors": false},
+  "motion":   {"register": "fade", "scene_in_s": 0.30, "scene_out_s": 0.20, "stagger_s": 0.20},
+  "layout":   {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 12},
+  "texture":  {"grain": 0.05, "vignette": 0.22, "halation": 0.07, "lighting_arc": 0.28},
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "texture_overrides_note": "Composio's signature is a near-black #0f0f0f canvas carrying white type with a single deep-electric-blue voltage (#0007cd) reserved for CTAs and spotlight glows; abcDiatype substitutes to Inter at -0.022 tracking per the brand's own font note. The literal #0007cd / #1a26ff blue is too dark on #0f0f0f to clear the contrast floor, so the accent is brightened to #4f8bff (5.91:1 on canvas, clears the 4.5 floor) while staying unmistakably Composio electric-blue rather than cyan. Halation 0.07 lets that blue bloom on the accented decorator line for the WOW halation-glow check; lighting_arc 0.28 gives CLASSIC its color drift; grain 0.05 plus vignette 0.22 hold the dark technical atmosphere. Blue is scarce: the @mcp.tool decorator line and the close accent only."
+}
