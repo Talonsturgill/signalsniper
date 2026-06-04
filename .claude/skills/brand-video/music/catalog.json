@@ -401,6 +401,22 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Ouroboros",
       "attribution_required": "Music. Ouroboros by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "exhilarate",
+      "title": "Exhilarate",
+      "file": "Exhilarate.mp3",
+      "duration_s": 145.5,
+      "mood": "energetic uplifting electronic, driving cinematic build, propulsive optimism",
+      "register": "electronic",
+      "fits": "supabase, subway-chrome, geominimal, mono-terminal, RECEIPT, MANIFESTO, CLASSIC",
+      "preset_packs": ["supabase", "subway-chrome", "geominimal", "mono-terminal"],
+      "frameworks": ["RECEIPT", "MANIFESTO", "CLASSIC"],
+      "default_offset_s": 28.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Exhilarate",
+      "attribution_required": "Music. Exhilarate by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

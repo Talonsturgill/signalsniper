@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-04",
+  "preset_slug": "supabase",
+  "brand_slug": "supabase",
+  "framework": "RECEIPT",
+  "tokens":   {"canvas": "#1c1c1c", "ink": "#ffffff", "ink_muted": "#9a9a9a", "accent": "#3ecf8e", "hairline": "#333333"},
+  "fonts":    {"display": "Inter", "body": "Inter", "italic": "Inter"},
+  "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.02, "case": "preserve", "italic_descriptors": false},
+  "motion":   {"register": "fade", "scene_in_s": 0.30, "scene_out_s": 0.20, "stagger_s": 0.18},
+  "layout":   {"padding_pct": 8, "rule_thickness_px": 1, "stage_radius_px": 12},
+  "texture":  {"grain": 0.05, "vignette": 0.20, "halation": 0.08, "lighting_arc": 0.26},
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "texture_overrides_note": "Supabase commits to a white marketing canvas, but its developer DNA lives on the canvas-night #1c1c1c surface it uses for code blocks, the featured pricing tier, and card-feature-dark. The tribute uses that dark variant so the single emerald event (#3ecf8e, 8.54:1 on canvas, clears the 4.5 floor) glows for the WOW halation gate and the RECEIPT hero numerals carry weight. Inter at weight 600 with -0.02 tracking substitutes for the proprietary Circular per the brand's own font note (it caps marketing display at 500; nudged to 600 only for motion legibility of huge numerals). White ink is 17.04:1 and the #9a9a9a muted ladder is 6.06:1, both comfortable. Emerald is scarce by brand rule: it accents the two big_number numerals and the close line only, nowhere else. halation 0.08 blooms that green; lighting_arc 0.26 gives RECEIPT its color drift; grain 0.05 plus vignette 0.20 hold the quiet-technical atmosphere."
+}

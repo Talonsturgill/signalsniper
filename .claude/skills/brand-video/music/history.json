@@ -123,5 +123,10 @@
     "date": "2026-06-03",
     "slug": "ouroboros",
     "project_url": "https://github.com/jlowin/fastmcp"
+  },
+  {
+    "date": "2026-06-04",
+    "slug": "exhilarate",
+    "project_url": "https://github.com/chopratejas/headroom"
   }
 ]

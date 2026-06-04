@@ -1,0 +1,95 @@
+{
+  "date": "2026-06-04",
+  "topic": "headroom, the reversible context-compression layer that shrinks an agent's tool outputs, logs, files and RAG chunks before they reach the LLM",
+  "creator_handle": "@chopra_tejas",
+  "project_url": "https://github.com/chopratejas/headroom",
+
+  "design": {
+    "brand_slug": "supabase",
+    "aesthetic_slug": "supabase",
+    "framework": "RECEIPT",
+    "audio_palette": "electronic",
+    "held_subject": "headroom",
+
+    "tokens": {
+      "canvas": "#1c1c1c",
+      "ink": "#ffffff",
+      "ink_muted": "#9a9a9a",
+      "accent": "#3ecf8e",
+      "hairline": "#333333"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.02,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.30,
+      "scene_out_s": 0.20,
+      "stagger_s": 0.18
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 12
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.20,
+      "halation": 0.08,
+      "lighting_arc": 0.26
+    },
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "headroom",
+      "eyebrow": "the context compression layer",
+      "camera": "orbit",
+      "duration_s": 3.0
+    },
+    {
+      "template": "big_number",
+      "numeral": "92%",
+      "caption": "fewer tokens to the model",
+      "sub": "17,765 in, 1,408 out",
+      "camera": "ken_burns",
+      "duration_s": 3.6
+    },
+    {
+      "template": "big_number",
+      "numeral": "0.870",
+      "caption": "accuracy holds at baseline",
+      "sub": "cut the noise, keep the signal",
+      "camera": "parallax_drift",
+      "duration_s": 3.6
+    },
+    {
+      "template": "fix",
+      "primary": "Trim the reads.",
+      "secondary": "Not the results.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "close",
+      "primary": "Less in the window.",
+      "accent": "More left to spend.",
+      "subtitle": "library, proxy, or MCP server.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
