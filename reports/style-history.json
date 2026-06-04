@@ -189,5 +189,12 @@
         "aesthetic_slug": "composio",
         "framework": "CLASSIC",
         "project_url": "https://github.com/jlowin/fastmcp"
+    },
+    {
+        "date": "2026-06-04",
+        "brand_slug": "supabase",
+        "aesthetic_slug": "supabase",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/chopratejas/headroom"
     }
 ]
