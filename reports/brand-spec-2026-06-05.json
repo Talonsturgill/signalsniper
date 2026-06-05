@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-05",
+  "preset_slug": "linear.app",
+  "brand_slug": "linear.app",
+  "framework": "SCHEMATIC",
+  "tokens":   {"canvas": "#010102", "ink": "#f7f8f8", "ink_muted": "#8a8f98", "accent": "#828fff", "hairline": "#23252a"},
+  "fonts":    {"display": "Inter", "body": "Inter", "italic": "Inter"},
+  "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.022, "case": "preserve", "italic_descriptors": false},
+  "motion":   {"register": "fade", "scene_in_s": 0.32, "scene_out_s": 0.22, "stagger_s": 0.20},
+  "layout":   {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 12},
+  "texture":  {"grain": 0.05, "vignette": 0.20, "halation": 0.06, "lighting_arc": 0.26},
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "texture_overrides_note": "Linear's marketing canvas is the deepest dark in the brand library: #010102, near-pure black with a faint blue tint. Ink is the brand's light gray #f7f8f8 (17.7:1 on canvas) and the muted ladder uses ink-subtle #8a8f98 (6.1:1). The signature lavender accent is #5e6ad2, but on near-black it measures 4.4:1, a hair under the 4.5 floor, so the motion accent uses Linear's documented brighter lavender-hover #828fff (7.3:1) which keeps the exact hue family while clearing the WOW contrast gate and giving halation something to bloom. Per Linear's brand rule the lavender stays scarce: one accent diagram node, one accent edge, and the close accent line only, never as a fill or second color. Inter at 600 with -0.022 tracking substitutes for the proprietary Linear Display cut (the brand's own documented free fallback). grain 0.05 plus vignette 0.20 hold the quiet command-center atmosphere, halation 0.06 blooms the lavender on emphasis, lighting_arc 0.26 gives the SCHEMATIC its color drift."
+}

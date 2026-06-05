@@ -196,5 +196,12 @@
         "aesthetic_slug": "supabase",
         "framework": "RECEIPT",
         "project_url": "https://github.com/chopratejas/headroom"
+    },
+    {
+        "date": "2026-06-05",
+        "brand_slug": "linear.app",
+        "aesthetic_slug": "linear.app",
+        "framework": "SCHEMATIC",
+        "project_url": "https://boxes.dev"
     }
 ]

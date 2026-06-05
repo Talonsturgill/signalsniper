@@ -10,8 +10,16 @@
       "mood": "industrial / dark electronic",
       "register": "electronic",
       "fits": "subway-chrome, mono-terminal, cctv, MANIFESTO, RECEIPT",
-      "preset_packs": ["subway-chrome", "mono-terminal", "cctv"],
-      "frameworks": ["MANIFESTO", "RECEIPT", "SCHEMATIC"],
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal",
+        "cctv"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "RECEIPT",
+        "SCHEMATIC"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -26,8 +34,16 @@
       "mood": "hip-hop instrumental, smooth, modern",
       "register": "electronic",
       "fits": "subway-chrome, geominimal, mono-terminal, dispatch-style",
-      "preset_packs": ["subway-chrome", "geominimal", "mono-terminal"],
-      "frameworks": ["DISPATCH", "RECEIPT", "CLASSIC"],
+      "preset_packs": [
+        "subway-chrome",
+        "geominimal",
+        "mono-terminal"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "RECEIPT",
+        "CLASSIC"
+      ],
       "default_offset_s": 8.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -42,8 +58,16 @@
       "mood": "uplifting cinematic strings, hopeful",
       "register": "ambient",
       "fits": "editorial-paper, claude, gallery, MANIFESTO bold launches",
-      "preset_packs": ["editorial-paper", "claude", "gallery"],
-      "frameworks": ["MANIFESTO", "CLASSIC", "RECEIPT"],
+      "preset_packs": [
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "CLASSIC",
+        "RECEIPT"
+      ],
       "default_offset_s": 6.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -58,8 +82,16 @@
       "mood": "atmospheric dark cinematic, brooding pad",
       "register": "ambient",
       "fits": "cctv, claude, gallery, DISPATCH, observational pieces",
-      "preset_packs": ["cctv", "claude", "gallery"],
-      "frameworks": ["DISPATCH", "SCHEMATIC", "MANIFESTO"],
+      "preset_packs": [
+        "cctv",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "SCHEMATIC",
+        "MANIFESTO"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -74,8 +106,16 @@
       "mood": "dramatic cinematic build, decisive piano + strings",
       "register": "ambient",
       "fits": "gallery, geominimal, MANIFESTO bold positions",
-      "preset_packs": ["gallery", "geominimal", "editorial-paper"],
-      "frameworks": ["MANIFESTO", "CLASSIC", "DISPATCH"],
+      "preset_packs": [
+        "gallery",
+        "geominimal",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "CLASSIC",
+        "DISPATCH"
+      ],
       "default_offset_s": 4.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -90,8 +130,15 @@
       "mood": "retro playful electronic, optimistic groove",
       "register": "electronic",
       "fits": "editorial-90s, geominimal, signal-lane bold launches",
-      "preset_packs": ["editorial-90s", "geominimal"],
-      "frameworks": ["RECEIPT", "CLASSIC", "MANIFESTO"],
+      "preset_packs": [
+        "editorial-90s",
+        "geominimal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "CLASSIC",
+        "MANIFESTO"
+      ],
       "default_offset_s": 14.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -106,8 +153,16 @@
       "mood": "tense electronic, sharp pulses, urgent",
       "register": "electronic",
       "fits": "cctv, subway-chrome, mono-terminal, RECEIPT, SCHEMATIC",
-      "preset_packs": ["cctv", "subway-chrome", "mono-terminal"],
-      "frameworks": ["RECEIPT", "SCHEMATIC", "MANIFESTO"],
+      "preset_packs": [
+        "cctv",
+        "subway-chrome",
+        "mono-terminal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "SCHEMATIC",
+        "MANIFESTO"
+      ],
       "default_offset_s": 4.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -122,8 +177,16 @@
       "mood": "pizzicato strings, suspenseful detective walk",
       "register": "ambient",
       "fits": "cctv, claude, gallery, DISPATCH wire-style",
-      "preset_packs": ["cctv", "claude", "gallery"],
-      "frameworks": ["DISPATCH", "SCHEMATIC", "CLASSIC"],
+      "preset_packs": [
+        "cctv",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "SCHEMATIC",
+        "CLASSIC"
+      ],
       "default_offset_s": 6.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -138,8 +201,16 @@
       "mood": "contemplative acoustic guitar and piano, melancholic patience",
       "register": "acoustic",
       "fits": "editorial-paper, claude, gallery, CLASSIC quiet stories",
-      "preset_packs": ["editorial-paper", "claude", "gallery"],
-      "frameworks": ["CLASSIC", "DISPATCH", "MANIFESTO"],
+      "preset_packs": [
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "DISPATCH",
+        "MANIFESTO"
+      ],
       "default_offset_s": 10.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -154,8 +225,16 @@
       "mood": "orchestral epic, slow regal build, brass and strings",
       "register": "ambient",
       "fits": "gallery, editorial-paper, claude, MANIFESTO bold positions",
-      "preset_packs": ["gallery", "editorial-paper", "claude"],
-      "frameworks": ["MANIFESTO", "CLASSIC", "DISPATCH"],
+      "preset_packs": [
+        "gallery",
+        "editorial-paper",
+        "claude"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "CLASSIC",
+        "DISPATCH"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -170,8 +249,16 @@
       "mood": "upbeat playful electronic, bouncy positive groove",
       "register": "electronic",
       "fits": "geominimal, editorial-90s, subway-chrome, RECEIPT launches",
-      "preset_packs": ["geominimal", "editorial-90s", "subway-chrome"],
-      "frameworks": ["RECEIPT", "CLASSIC", "MANIFESTO"],
+      "preset_packs": [
+        "geominimal",
+        "editorial-90s",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "CLASSIC",
+        "MANIFESTO"
+      ],
       "default_offset_s": 8.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -186,8 +273,16 @@
       "mood": "driving dark electronic, tense systems pulse",
       "register": "electronic",
       "fits": "sentry, mono-terminal, cctv, MANIFESTO, SCHEMATIC",
-      "preset_packs": ["sentry", "mono-terminal", "cctv"],
-      "frameworks": ["MANIFESTO", "SCHEMATIC", "RECEIPT"],
+      "preset_packs": [
+        "sentry",
+        "mono-terminal",
+        "cctv"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "SCHEMATIC",
+        "RECEIPT"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -202,8 +297,17 @@
       "mood": "jazz walking bass and warm piano, methodical detective groove",
       "register": "acoustic",
       "fits": "opencode.ai, editorial-paper, claude, gallery, SCHEMATIC, DISPATCH",
-      "preset_packs": ["opencode.ai", "editorial-paper", "claude", "gallery"],
-      "frameworks": ["SCHEMATIC", "DISPATCH", "CLASSIC"],
+      "preset_packs": [
+        "opencode.ai",
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "DISPATCH",
+        "CLASSIC"
+      ],
       "default_offset_s": 10.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -218,8 +322,16 @@
       "mood": "tense electronic synth groove, surveillance-room pulse, deterministic ticking",
       "register": "electronic",
       "fits": "mono-terminal, cctv, subway-chrome, MANIFESTO, SCHEMATIC, RECEIPT",
-      "preset_packs": ["mono-terminal", "cctv", "subway-chrome"],
-      "frameworks": ["MANIFESTO", "SCHEMATIC", "RECEIPT"],
+      "preset_packs": [
+        "mono-terminal",
+        "cctv",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "SCHEMATIC",
+        "RECEIPT"
+      ],
       "default_offset_s": 12.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -234,8 +346,16 @@
       "mood": "driving electronic synth pulse, energetic four-on-the-floor groove, optimistic propulsive",
       "register": "electronic",
       "fits": "subway-chrome, mono-terminal, geominimal, RECEIPT, SCHEMATIC, CLASSIC",
-      "preset_packs": ["subway-chrome", "mono-terminal", "geominimal"],
-      "frameworks": ["RECEIPT", "SCHEMATIC", "CLASSIC"],
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal",
+        "geominimal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "SCHEMATIC",
+        "CLASSIC"
+      ],
       "default_offset_s": 16.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -250,8 +370,18 @@
       "mood": "warm methodical electronic build, patient layered groove, craftsperson at work",
       "register": "electronic",
       "fits": "warp, claude, editorial-paper, mono-terminal, SCHEMATIC, CLASSIC, DISPATCH",
-      "preset_packs": ["warp", "claude", "mono-terminal", "editorial-paper", "gallery"],
-      "frameworks": ["SCHEMATIC", "CLASSIC", "DISPATCH"],
+      "preset_packs": [
+        "warp",
+        "claude",
+        "mono-terminal",
+        "editorial-paper",
+        "gallery"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "CLASSIC",
+        "DISPATCH"
+      ],
       "default_offset_s": 12.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -266,8 +396,17 @@
       "mood": "atmospheric ambient cinematic pad, slow-drifting chord wash, hushed wonder",
       "register": "ambient",
       "fits": "gallery, claude, editorial-paper, cctv, DISPATCH, CLASSIC, MANIFESTO observational",
-      "preset_packs": ["gallery", "claude", "editorial-paper", "cctv"],
-      "frameworks": ["DISPATCH", "CLASSIC", "MANIFESTO"],
+      "preset_packs": [
+        "gallery",
+        "claude",
+        "editorial-paper",
+        "cctv"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "CLASSIC",
+        "MANIFESTO"
+      ],
       "default_offset_s": 24.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -282,8 +421,17 @@
       "mood": "cheerful acoustic ukulele and whistle, bright optimistic stroll",
       "register": "acoustic",
       "fits": "editorial-90s, editorial-paper, gallery, claude, CLASSIC, RECEIPT, DISPATCH",
-      "preset_packs": ["editorial-90s", "editorial-paper", "gallery", "claude"],
-      "frameworks": ["CLASSIC", "RECEIPT", "DISPATCH"],
+      "preset_packs": [
+        "editorial-90s",
+        "editorial-paper",
+        "gallery",
+        "claude"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "RECEIPT",
+        "DISPATCH"
+      ],
       "default_offset_s": 8.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -298,8 +446,17 @@
       "mood": "light playful acoustic guitar groove, optimistic morning energy",
       "register": "acoustic",
       "fits": "editorial-90s, gallery, editorial-paper, RECEIPT, CLASSIC bold launches",
-      "preset_packs": ["editorial-90s", "gallery", "editorial-paper", "geominimal"],
-      "frameworks": ["RECEIPT", "CLASSIC", "DISPATCH"],
+      "preset_packs": [
+        "editorial-90s",
+        "gallery",
+        "editorial-paper",
+        "geominimal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "CLASSIC",
+        "DISPATCH"
+      ],
       "default_offset_s": 4.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -314,8 +471,16 @@
       "mood": "tense electronic pulse, ticking suspense, surveillance-room groove",
       "register": "electronic",
       "fits": "mono-terminal, cctv, subway-chrome, SCHEMATIC, RECEIPT, MANIFESTO",
-      "preset_packs": ["mono-terminal", "cctv", "subway-chrome"],
-      "frameworks": ["SCHEMATIC", "RECEIPT", "MANIFESTO"],
+      "preset_packs": [
+        "mono-terminal",
+        "cctv",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "RECEIPT",
+        "MANIFESTO"
+      ],
       "default_offset_s": 16.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -330,8 +495,17 @@
       "mood": "atmospheric dark cinematic pad, brooding observational drift",
       "register": "ambient",
       "fits": "cctv, claude, gallery, editorial-paper, DISPATCH, SCHEMATIC",
-      "preset_packs": ["cctv", "claude", "gallery", "editorial-paper"],
-      "frameworks": ["DISPATCH", "SCHEMATIC", "CLASSIC"],
+      "preset_packs": [
+        "cctv",
+        "claude",
+        "gallery",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "SCHEMATIC",
+        "CLASSIC"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -346,8 +520,16 @@
       "mood": "slow brooding industrial pulse, mechanical surveillance-room tension, deliberate machine groove",
       "register": "electronic",
       "fits": "cctv, mono-terminal, subway-chrome, RECEIPT, SCHEMATIC, MANIFESTO",
-      "preset_packs": ["cctv", "mono-terminal", "subway-chrome"],
-      "frameworks": ["RECEIPT", "SCHEMATIC", "MANIFESTO"],
+      "preset_packs": [
+        "cctv",
+        "mono-terminal",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "SCHEMATIC",
+        "MANIFESTO"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -362,8 +544,17 @@
       "mood": "driving dark electronic, steady systems pulse, command-terminal propulsion",
       "register": "electronic",
       "fits": "voltagent, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
-      "preset_packs": ["voltagent", "mono-terminal", "subway-chrome", "cctv"],
-      "frameworks": ["MANIFESTO", "SCHEMATIC", "RECEIPT"],
+      "preset_packs": [
+        "voltagent",
+        "mono-terminal",
+        "subway-chrome",
+        "cctv"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "SCHEMATIC",
+        "RECEIPT"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -378,8 +569,17 @@
       "mood": "driving propulsive electronic, urgent systems pulse, precise machine momentum",
       "register": "electronic",
       "fits": "clickhouse, subway-chrome, mono-terminal, geominimal, SCHEMATIC, RECEIPT, MANIFESTO",
-      "preset_packs": ["clickhouse", "subway-chrome", "mono-terminal", "geominimal"],
-      "frameworks": ["SCHEMATIC", "RECEIPT", "MANIFESTO"],
+      "preset_packs": [
+        "clickhouse",
+        "subway-chrome",
+        "mono-terminal",
+        "geominimal"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "RECEIPT",
+        "MANIFESTO"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -394,8 +594,19 @@
       "mood": "dark cyclical electronic, brooding systems loop, deliberate machine propulsion",
       "register": "electronic",
       "fits": "composio, mono-terminal, cctv, subway-chrome, voltagent, CLASSIC, SCHEMATIC, MANIFESTO",
-      "preset_packs": ["composio", "mono-terminal", "cctv", "subway-chrome", "voltagent"],
-      "frameworks": ["CLASSIC", "SCHEMATIC", "MANIFESTO", "DISPATCH"],
+      "preset_packs": [
+        "composio",
+        "mono-terminal",
+        "cctv",
+        "subway-chrome",
+        "voltagent"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "SCHEMATIC",
+        "MANIFESTO",
+        "DISPATCH"
+      ],
       "default_offset_s": 30.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
@@ -410,13 +621,48 @@
       "mood": "energetic uplifting electronic, driving cinematic build, propulsive optimism",
       "register": "electronic",
       "fits": "supabase, subway-chrome, geominimal, mono-terminal, RECEIPT, MANIFESTO, CLASSIC",
-      "preset_packs": ["supabase", "subway-chrome", "geominimal", "mono-terminal"],
-      "frameworks": ["RECEIPT", "MANIFESTO", "CLASSIC"],
+      "preset_packs": [
+        "supabase",
+        "subway-chrome",
+        "geominimal",
+        "mono-terminal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "MANIFESTO",
+        "CLASSIC"
+      ],
       "default_offset_s": 28.0,
       "license": "CC BY 4.0",
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Exhilarate",
       "attribution_required": "Music. Exhilarate by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "quasi-motion",
+      "title": "Quasi Motion",
+      "file": "Quasi_Motion.mp3",
+      "duration_s": 151.6,
+      "mood": "driving minimal electronic, deliberate mechanical motif, command-center momentum",
+      "register": "electronic",
+      "fits": "linear.app, mono-terminal, subway-chrome, cctv, SCHEMATIC, CLASSIC, MANIFESTO",
+      "preset_packs": [
+        "linear.app",
+        "mono-terminal",
+        "subway-chrome",
+        "cctv"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "CLASSIC",
+        "MANIFESTO",
+        "DISPATCH"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Quasi+Motion",
+      "attribution_required": "Music. Quasi Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
