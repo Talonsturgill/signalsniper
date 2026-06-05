@@ -1,0 +1,58 @@
+{
+  "date": "2026-05-02",
+  "topic": "mattpocock/skills as engineering methodology",
+  "theme": {
+    "background": "#FFFFFF",
+    "ink": "#000000",
+    "accent": "#0066FF",
+    "muted": "#808080",
+    "rule": "#E6E6E6",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Skills, not vibes.",
+      "eyebrow": "Matt Pocock's claude skills repo"
+    },
+    "three_things": {
+      "eyebrow": "THREE MOVES",
+      "items": [
+        {"name": "CONTEXT.md", "descriptor": "shared domain language"},
+        {"name": "ADRs", "descriptor": "decisions that survive"},
+        {"name": "Auto-fired skills", "descriptor": "no opt-in needed"}
+      ]
+    },
+    "problem": {
+      "line_a": "Vibes-based prompts",
+      "line_b": "ship sloppy code.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "Three rounds in,",
+      "line_b": "the agent forgets",
+      "line_c": "the bug it just fixed.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Skills are rails.",
+      "secondary": "Not optional hints."
+    },
+    "mechanism": {
+      "line_a": "Skills auto-activate",
+      "line_b": "based on task context.",
+      "line_c": "Each runs a real protocol.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "What gets enforced",
+      "line_b": "stays enforced.",
+      "line_c": "The agent stops drift."
+    },
+    "close": {
+      "primary": "Skills are rails.",
+      "accent": "Not vibes.",
+      "subtitle": "the part most builders miss."
+    }
+  }
+}
