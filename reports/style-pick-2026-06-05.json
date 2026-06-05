@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-05",
+  "brand_slug": "linear.app",
+  "preset_slug": "linear.app",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "boxes.dev's value is structural (one isolated cloud box per agent), so SCHEMATIC carries it, and Linear's near-black command-center canvas with scarce lavender reads like the dev tool it is.",
+  "writing_tone_notes": "Measured product-engineer register. Bold declarative opens, contrast over adjectives, contractions where natural. No superlatives, no hype. Let the diagram do the proving.",
+  "do_rules": [
+    "Keep lavender (#828fff) scarce: one accent node, one accent edge, the close accent line only.",
+    "Lead the schematic with the fan-out (one laptop, many boxes) as the visual hero.",
+    "Hold a single chromatic accent against the near-black canvas, no second color."
+  ],
+  "dont_rules": [
+    "No second chromatic accent, no atmospheric gradients (Linear brand rule).",
+    "No version numbers anywhere in copy.",
+    "No phrase repeated verbatim across tweet, Why-this-one, and scene copy."
+  ]
+}
