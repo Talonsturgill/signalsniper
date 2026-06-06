@@ -1,0 +1,11 @@
+{
+  "through_line": "This week's builds were connective tissue for agents, not new models.",
+  "prior_through_lines": [
+    "Issue 2: Agents are gaining persistent memory and self-composing skill loops between sessions.",
+    "Issue 4: This week's breakout repos pulled AI off the cloud and onto hardware the user owns."
+  ],
+  "supporting_picks": ["2026-06-02", "2026-06-03", "2026-06-04"],
+  "evidence_paragraph": "Three of the five picks build the same layer from different angles. @jlowin's FastMCP (2026-06-03) shipped v3.4 Remote Control, a bridge that lets stdio-only hosts reach HTTP and SSE MCP servers. @chopra_tejas's headroom (2026-06-04) ships a library, a proxy, and an MCP server that compress what an agent reads by 60 to 95 percent before it hits the model. @D4Vinci1's Scrapling (2026-06-02) carries a built-in MCP server so agents scrape the live web natively. None trained a model. Each one widened what an agent can reach, read, or run.",
+  "counter_signal": "The surface isn't always open or standardized; @nbushak's boxes.dev is a closed hosted product and @mvanhorn's last30days ships as a portable skill, not a server.",
+  "candidate_through_line_for_hero_tiebreak": "The agent's reach layer, what it can touch, read, and run on, was the week's main build."
+}

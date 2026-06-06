@@ -1,0 +1,65 @@
+{
+  "week_start": "2026-05-31",
+  "pulled_at": "2026-06-06",
+  "source": "mcp__github__search_repositories minimal_output=false",
+  "picks": {
+    "2026-06-02": {
+      "project_slug": "Scrapling",
+      "repo": "D4Vinci/Scrapling",
+      "stars_now": 61387,
+      "forks": 5937,
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "created_at": "2024-10-13",
+      "pushed_at": "2026-06-04",
+      "open_issues": 25,
+      "note": "Dossier baseline ~58.5k on 2026-06-02; now 61,387 stars."
+    },
+    "2026-06-03": {
+      "project_slug": "FastMCP",
+      "repo": "jlowin/fastmcp",
+      "stars_now": null,
+      "forks": null,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "created_at": "2025-05",
+      "pushed_at": null,
+      "note": "GitHub search index did not surface jlowin/fastmcp in the batch pull. Deep Researcher must confirm live stars. Dossier baseline ~25.5k on 2026-06-03."
+    },
+    "2026-06-04": {
+      "project_slug": "headroom",
+      "repo": "chopratejas/headroom",
+      "stars_now": 15045,
+      "forks": 958,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "created_at": "2026-01-07",
+      "pushed_at": "2026-06-06",
+      "open_issues": 210,
+      "note": "Dossier baseline ~11k on 2026-06-04; now 15,045 stars."
+    },
+    "2026-06-05": {
+      "project_slug": "boxes.dev",
+      "repo": null,
+      "stars_now": null,
+      "forks": null,
+      "language": null,
+      "license": null,
+      "created_at": null,
+      "pushed_at": null,
+      "note": "Hosted product, no public GitHub repo. Momentum is launch-day traction (Show HN front page 2026-06-04 ~89 points, Product Hunt ~107 upvotes), not stars."
+    },
+    "2026-06-06": {
+      "project_slug": "last30days-skill",
+      "repo": "mvanhorn/last30days-skill",
+      "stars_now": 28392,
+      "forks": 2405,
+      "language": "Python",
+      "license": "MIT",
+      "created_at": "2026-01-23",
+      "pushed_at": "2026-06-01",
+      "open_issues": 97,
+      "note": "Dossier baseline ~28.4k on 2026-06-06; now 28,392 stars, roughly flat day-over-day."
+    }
+  }
+}

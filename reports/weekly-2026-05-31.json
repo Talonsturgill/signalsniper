@@ -1,0 +1,22 @@
+{
+  "issue": 5,
+  "title": "This Week in AI · Five Builds, Not One New Model",
+  "hook": "Five Builds, Not One New Model",
+  "week_start": "2026-05-31",
+  "week_end": "2026-06-06",
+  "week_human": "May 31 to June 6, 2026",
+  "hero": {"project_slug": "headroom", "creator_handle": "@chopra_tejas", "date": "2026-06-04"},
+  "finalists": [
+    {"rank": "#2", "project_slug": "FastMCP", "creator_handle": "@jlowin", "date": "2026-06-03"},
+    {"rank": "#3", "project_slug": "Scrapling", "creator_handle": "@D4Vinci1", "date": "2026-06-02"},
+    {"rank": "#4", "project_slug": "boxes.dev", "creator_handle": "@nbushak", "date": "2026-06-05"},
+    {"rank": "#5", "project_slug": "last30days-skill", "creator_handle": "@mvanhorn", "date": "2026-06-06"}
+  ],
+  "through_line": "This week's builds were connective tissue for agents, not new models.",
+  "lesson_headline": "Ship the MCP server next to your library, not after it",
+  "word_count": 1410,
+  "estimated_read_minutes": 7,
+  "grader_total": 91,
+  "grader_verdict": "SHIP",
+  "hero_mp4_url": "https://github.com/Talonsturgill/signalsniper/raw/claude/stoic-cannon-nYfvL/reports/tribute-2026-06-04.mp4"
+}
