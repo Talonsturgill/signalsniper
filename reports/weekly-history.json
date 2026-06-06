@@ -7,5 +7,14 @@
     "lesson_headline": "Pin your state to local disk before you reach for a hosted API",
     "final_grader_total": 97,
     "shipped_under_bar": false
+  },
+  {
+    "issue": 5,
+    "week_start": "2026-05-31",
+    "hero_project": "headroom",
+    "through_line": "This week's builds were connective tissue for agents, not new models.",
+    "lesson_headline": "Ship the MCP server next to your library, not after it",
+    "final_grader_total": 91,
+    "shipped_under_bar": false
   }
 ]

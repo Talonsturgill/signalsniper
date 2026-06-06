@@ -1,0 +1,19 @@
+{
+  "week_start": "2026-05-31",
+  "no_hero_this_week": false,
+  "scoring_note": "Momentum + Novelty + Resonance, 1-10 each. Sanity floor 22. Two window picks (RuView 05-31, Odysseus 06-01) excluded as already featured in Issue 4.",
+  "scores": [
+    {"date": "2026-06-04", "project_slug": "headroom", "creator_handle": "@chopra_tejas", "momentum": 9, "novelty": 8, "resonance": 8, "total": 25, "rank": "All-Star", "rationale": "+4,045 stars in 2 days (~2k/day), HN and press run, v0.23 shipped June 4. Reversible CCR compression is a real differentiator. Netflix storage engineer applying a storage-budget instinct to the context window is the cleanest narrative of the week, and it embodies the connective-tissue through-line."},
+    {"date": "2026-06-03", "project_slug": "FastMCP", "creator_handle": "@jlowin", "momentum": 6, "novelty": 7, "resonance": 9, "total": 22, "rank": "#2", "rationale": "Flat stars but the actual shipping-now story (v3.4 Remote Control, June 2-6). The framework the rest of the week's MCP servers are built on, folded into the official SDK. The thesis spine."},
+    {"date": "2026-06-02", "project_slug": "Scrapling", "creator_handle": "@D4Vinci1", "momentum": 7, "novelty": 6, "resonance": 6, "total": 19, "rank": "#3", "rationale": "+2,887 stars in 4 days on a 61k base. Adaptive relocation is clever, and the built-in MCP server puts it squarely in the agent-reach lane, but the project predates the wave (Oct 2024)."},
+    {"date": "2026-06-05", "project_slug": "boxes.dev", "creator_handle": "@nbushak", "momentum": 5, "novelty": 6, "resonance": 6, "total": 17, "rank": "#4", "rationale": "Show HN front page (100 points, 74 comments) and ~109 Product Hunt upvotes on launch day. A cloud machine per agent is a real pain fix, but it's a closed hosted product with no open repo."},
+    {"date": "2026-06-06", "project_slug": "last30days-skill", "creator_handle": "@mvanhorn", "momentum": 4, "novelty": 6, "resonance": 6, "total": 16, "rank": "#5", "rationale": "28,392 stars but the +731/day tribute velocity has cooled to flat; the trending badge is lagging. Cross-platform convergence detection is the novel idea. Anti-recommendation candidate on momentum."}
+  ],
+  "hero": {"date": "2026-06-04", "project_slug": "headroom", "creator_handle": "@chopra_tejas"},
+  "finalists": [
+    {"rank": "#2", "date": "2026-06-03", "project_slug": "FastMCP", "creator_handle": "@jlowin"},
+    {"rank": "#3", "date": "2026-06-02", "project_slug": "Scrapling", "creator_handle": "@D4Vinci1"},
+    {"rank": "#4", "date": "2026-06-05", "project_slug": "boxes.dev", "creator_handle": "@nbushak"},
+    {"rank": "#5", "date": "2026-06-06", "project_slug": "last30days-skill", "creator_handle": "@mvanhorn"}
+  ]
+}

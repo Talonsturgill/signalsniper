@@ -1,0 +1,16 @@
+{
+  "week_start": "2026-05-31",
+  "passes": [
+    {
+      "pass": 1,
+      "by": "orchestrator-authored + Voice Editor pass",
+      "focus": "voice, AI-smell, specificity, cadence, cuts",
+      "notes": "Single declarative third-person register sustained across cold open, pattern, lesson, closing. Cold open seats the five-finalist frame and names @chopra_tejas without revealing why. Pattern diagnoses (value collected at the model's edges); Lesson prescribes (ship the MCP server on day one) with a stated exception. Removed vague quantifier 'a lot of' in the hero Lede during pre-flight."
+    }
+  ],
+  "preflight": {
+    "emdash": 0, "endash": 0, "semicolon": 0, "question": 0, "arrow": 0,
+    "colon_lines_editorial": 0, "banned_hits": [], "total_words_excl_code": 1454,
+    "result": "clean"
+  }
+}

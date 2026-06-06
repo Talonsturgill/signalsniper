@@ -1,0 +1,61 @@
+{
+  "2026-06-02": {
+    "date": "2026-06-02",
+    "project_slug": "Scrapling",
+    "momentum_delta": {"stars_then": 58500, "stars_now": 61387, "velocity_window": "+2,887 in 4 days (2026-06-02 to 2026-06-06)", "hn_followups": [], "newsletter_mentions": []},
+    "shipped_since": ["No new release in 7 days; latest remains v0.4.8 (2026-05-11). Last-7-day commits are docs/sponsor-only. Source: https://github.com/D4Vinci/Scrapling/releases"],
+    "sibling_work": [{"name": "Crawl4AI", "url": "https://github.com/unclecode/crawl4ai", "one_line": "Open-source LLM-friendly crawler/scraper in the same self-healing, agent-ready lane."}],
+    "shipping_next": ["No public roadmap section found as of 2026-06-06; active issue triage but no labeled next/roadmap milestone."],
+    "creator_quote": {"text": "An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!", "source_url": "https://github.com/D4Vinci/Scrapling"},
+    "reading_list_candidate": {"title": "Scrapling: Adaptive Python web scraping library that handles website structure changes", "url": "https://www.scrapingbee.com/blog/scrapling-adaptive-python-web-scraping/", "why": "Third-party walkthrough of the auto_save fingerprint then adaptive=True re-find model."},
+    "code_snippet": {"lang": "python", "path": "README.md", "code": "StealthyFetcher.adaptive = True\np = StealthyFetcher.fetch('https://example.com', headless=True, network_idle=True)\nproducts = p.css('.product', auto_save=True)   # save a fingerprint of the element\nproducts = p.css('.product', adaptive=True)    # later, re-find it after the HTML changes", "caption": "Fingerprint elements once with auto_save, then re-find them after a redesign with adaptive."}
+  },
+  "2026-06-03": {
+    "date": "2026-06-03",
+    "project_slug": "FastMCP",
+    "momentum_delta": {"stars_then": 25500, "stars_now": 25500, "stars_now_source": "github.com/jlowin/fastmcp repo header rendered 2026-06-06 via WebFetch shows 25.5k stars, 2.1k forks. Exact integer not confirmable (REST 403, MCP scoped to signalsniper).", "velocity_window": "Flat at 1k-rounding resolution: ~25.5k on 2026-06-03 and still 25.5k on 2026-06-06", "hn_followups": [], "newsletter_mentions": []},
+    "shipped_since": [
+      "v3.4.0 Remote Control (2026-06-02/03): ships fastmcp-remote, a standalone bridge connecting stdio-only MCP hosts to HTTP/SSE servers with OAuth auto-enabled for HTTPS; proxies fail loudly on misconfigured upstreams; token-lifetime decoupling. Source: gofastmcp.com/updates, github.com/jlowin/fastmcp/releases",
+      "v3.4.1 (2026-06-05): security patch pinning Starlette >=1.0.1 for CVE-2026-48710. Source: gofastmcp.com/updates",
+      "v3.4.2 (2026-06-06, latest): JWT compatibility fix for private non-critical JWS header params (e.g. Clerk). Source: github.com/jlowin/fastmcp/releases"
+    ],
+    "sibling_work": [{"name": "FastAPI-MCP", "url": "https://github.com/tadata-org/fastapi_mcp", "one_line": "Turns an existing FastAPI app into an MCP server with one import; the closest same-lane Python competitor."}],
+    "shipping_next": [],
+    "creator_quote": {"text": "FastMCP 3.0 is that framework. It is the platform MCP deserves in 2026, built to be as durable as it is future-proof.", "source_url": "https://jlowin.dev/blog/fastmcp-3"},
+    "reading_list_candidate": {"title": "FastMCP 3.0: From Tool Servers to Context Applications (HN discussion)", "url": "https://news.ycombinator.com/item?id=46699037", "why": "HN thread on the 3.0 architectural reframe (Components / Providers / Transforms)."},
+    "code_snippet": {"lang": "python", "path": "README.md", "code": "from fastmcp import FastMCP\n\nmcp = FastMCP(\"Demo\")\n\n@mcp.tool\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers\"\"\"\n    return a + b\n\nif __name__ == \"__main__\":\n    mcp.run()", "caption": "The bare mcp.tool decorator turns a typed Python function into a full MCP server, schema auto-generated."}
+  },
+  "2026-06-04": {
+    "date": "2026-06-04",
+    "project_slug": "headroom",
+    "momentum_delta": {"stars_then": 11000, "stars_now": 15045, "velocity_window": "~4,045 in 2 days (~2,000/day), peak +3,150 on 2026-06-01 at HN/press spike (ranked #2 on GitHub daily trending)", "hn_followups": [{"title": "Show HN: Headroom (Jan 2026 original, no fresh June front-page thread)", "url": "https://news.ycombinator.com/item?id=46628278"}], "newsletter_mentions": [{"source": "The Register", "url": "https://www.theregister.com/ai-ml/2026/05/31/netflix-wiz-creates-app-to-slash-ai-bills-then-open-sources-it/", "date": "2026-05-31"}, {"source": "AIToolly", "url": "https://aitoolly.com/ai-news/article/2026-06-05-headroom-innovative-compression-tool-reduces-llm-token-consumption-by-up-to-95-percent", "date": "2026-06-05"}]},
+    "shipped_since": [{"version": "v0.23.0", "date": "2026-06-04", "summary": "GitHub Copilot subscription mode through Headroom; cross-project memory-leak and UTF-8 fixes; dependency security bumps. Source: https://github.com/chopratejas/headroom/releases"}],
+    "sibling_work": [{"name": "Microsoft LLMLingua-2", "url": "https://github.com/microsoft/LLMLingua", "one_line": "Task-agnostic prompt compression via token classification, up to 20x; Headroom interoperates with it."}, {"name": "SWE-Pruner", "url": "https://arxiv.org/abs/2601.16746", "one_line": "Self-adaptive context pruning for coding agents (arXiv, Jan 2026)."}],
+    "shipping_next": [{"signal": "Creator tweet", "detail": "An OSS model specific for agentic compression (Headroom currently works with LLMLingua-2)", "url": "https://x.com/chopra_tejas/status/2031543876633383055"}],
+    "creator_quote": {"text": "Remember, a model is no longer a moat! Headroom OSS works with LLMLingua-2, but you know what's coming? Our own OSS model, specific for agentic compression.", "source_url": "https://x.com/chopra_tejas/status/2031543876633383055"},
+    "reading_list_candidate": {"title": "SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents", "url": "https://arxiv.org/abs/2601.16746", "why": "Academic counterpart to Headroom's pitch, a learned task-adaptive way to strip context before the model."},
+    "code_snippet": {"lang": "python", "path": "docs (Quick preview)", "code": "from headroom import compress\n\nresult = compress(messages, model=\"gpt-4o\")\nresponse = client.messages.create(\n    model=\"gpt-4o\",\n    messages=result.messages,\n)\nprint(f\"Saved {result.tokens_saved} tokens ({result.compression_ratio:.0%})\")", "caption": "One wrap of the message list returns compressed messages plus tokens_saved and compression_ratio."}
+  },
+  "2026-06-05": {
+    "date": "2026-06-05",
+    "project_slug": "boxes.dev",
+    "momentum_delta": {"stars_then": null, "stars_now": null, "velocity_window": "launch-day traction, no stars (hosted product)", "hn_followups": [], "newsletter_mentions": [], "launch_metrics": {"show_hn_points": 100, "show_hn_comments": 74, "product_hunt_upvotes": 109, "product_hunt_rank": "#13 for the day"}},
+    "shipped_since": [{"item": "EU/GDPR availability", "note": "Founders said on Show HN they would enable EU access in a few days; planned.", "source_url": "https://news.ycombinator.com/item?id=48399358"}],
+    "sibling_work": [{"name": "Replicas", "url": "https://www.producthunt.com/products/replicas", "one_line": "Runs Claude Code and Codex in isolated cloud VMs, triggerable from Slack/Linear/GitHub; launched same week."}, {"name": "rivet-dev/sandbox-agent", "url": "https://github.com/rivet-dev/sandbox-agent", "one_line": "Open-source tool to run coding agents in sandboxes and control them over HTTP."}],
+    "shipping_next": [{"item": "Windows/Linux desktop apps", "note": "Mac desktop app only at launch.", "source_url": "https://news.ycombinator.com/item?id=48399358"}, {"item": "OpenCode support, self-hosted models, customer-owned compute", "note": "Stated as future support in the Show HN post.", "source_url": "https://news.ycombinator.com/item?id=48399358"}],
+    "creator_quote": {"text": "Hi HN, we're Nick and Drew, and we're building boxes.dev, the first cloud-only agentic dev environment.", "source_url": "https://news.ycombinator.com/item?id=48399358"},
+    "reading_list_candidate": {"title": "List of coding agent sandboxes (2026-05)", "url": "https://gist.github.com/wincent/2752d8d97727577050c043e4ff9e386e", "why": "A curated landscape of cloud sandboxed coding-agent environments situating boxes.dev among its peers."},
+    "code_snippet": {"lang": "", "path": "https://boxes.dev/", "code": "", "caption": "Hosted product, no public repo or CLI snippet; boxes.dev mirrors the native Claude Code / Codex UX inside a forked cloud VM."}
+  },
+  "2026-06-06": {
+    "date": "2026-06-06",
+    "project_slug": "last30days-skill",
+    "momentum_delta": {"stars_then": 28400, "stars_now": 28392, "velocity_window": "Roughly flat over the tribute window; the tribute-era +731/day velocity has cooled to approximately flat. Forks 2405. Source: https://github.com/mvanhorn/last30days-skill", "hn_followups": [], "newsletter_mentions": ["Aggregator/listing coverage only (daily.dev, VoltAgent awesome-agent-skills); no fresh editorial in the last 7 days."]},
+    "shipped_since": ["No new release in 7 days; latest tagged release remains v3.3.0 (17 May 2026). Latest commit dated 1 June 2026. Source: https://github.com/mvanhorn/last30days-skill/commits/main"],
+    "sibling_work": [{"name": "social-media-research-skill", "url": "https://github.com/skainguyen1412/social-media-research-skill", "one_line": "Closest in-lane peer (analyzes live Reddit + X opinion), explicitly cites last30days as inspiration; not a this-week launch."}],
+    "shipping_next": ["README notes more sources in the engine, naming Truth Social and Xiaohongshu (RED) as in-progress. Source: https://github.com/mvanhorn/last30days-skill/blob/main/README.md", "ClawHub publishing of the official skill pending. Source: https://x.com/mvanhorn/status/2023080614795374926"],
+    "creator_quote": {"text": "Tell your bot, install the last30days skill. That's it. One message.", "source_url": "https://x.com/mvanhorn/status/2023080614795374926"},
+    "reading_list_candidate": {"title": "awesome-ai-agent-papers (VoltAgent), curated 2026 agent research incl. RAG reranking/fusion", "url": "https://github.com/VoltAgent/awesome-ai-agent-papers", "why": "Complements last30days' multi-signal scoring + RRF fusion pipeline with the retrieval/reranking research it builds on."},
+    "code_snippet": {"lang": "text", "path": "skills/last30days/SKILL.md", "code": "1. Weight Reddit/X sources HIGHER (engagement: upvotes, likes)\n2. Weight YouTube/TikTok HIGH (views, likes, viral signal)\n3. Weight WebSearch LOWER (no engagement data)\n4. Multi-source clusters (3+ platforms) are strongest signals\n5. Polymarket odds (real money outcomes) override opinion", "caption": "The engagement-scoring hierarchy from SKILL.md, the rank-by-engagement-not-SEO logic, with real-money odds on top."}
+  }
+}

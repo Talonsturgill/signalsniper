@@ -1,0 +1,20 @@
+{
+  "verdict": "APPROVED",
+  "verdict_note": "Initial pass returned REVISE with one DISPUTED claim (the $700,000 figure attributed to the README). Resolved by rewording to attribute the figure to Chopra (his talk and press coverage), which the Validator confirmed is the correct source. All 35 claims now VERIFIED.",
+  "summary": {"total": 35, "verified": 35, "disputed": 0, "unverifiable": 0},
+  "resolved_claim": {
+    "claim": "The readme now claims around 700,000 dollars saved across its users",
+    "original_status": "DISPUTED",
+    "fix_applied": "Reworded to 'Chopra has said the tool saved its users around 700,000 dollars' (attributes the figure to Chopra's Open Source Summit talk and press, not the README).",
+    "now": "VERIFIED",
+    "source_url": "https://www.theregister.com/ai-ml/2026/05/31/netflix-wiz-creates-app-to-slash-ai-bills-then-open-sources-it/"
+  },
+  "verified_with_note": [
+    "headroom #2 GitHub daily trending on June 1 and +3,150 peak rely on sourced research and press (ephemeral board, not re-snapshottable 2026-06-06); wording defensible.",
+    "headroom quote X URL returns HTTP 402; quoted substring 'Remember, a model is no longer a moat!' is exact against sourced research; attribution confirmed.",
+    "boxes.dev ~109 Product Hunt upvotes from sourced research (board not re-snapshottable); '~109' wording defensible.",
+    "FastMCP exact star integer not resolvable (repo header rounds to 25.5k); '~25,500' snapshot fine.",
+    "An open compression model promised by @chopra_tejas corroborated by sourced research creator_quote/shipping_next (X URL 402)."
+  ],
+  "sources_md": "reports/weekly-sources-2026-05-31.md"
+}

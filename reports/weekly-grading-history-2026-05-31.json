@@ -1,0 +1,29 @@
+[
+  {
+    "pass": 1,
+    "critic_verdict": "REVISE then APPROVED after targeted fixes (this-week phrase overlap removed from closing, four finalist cards trimmed under 80 words, pattern trimmed under 130)",
+    "grader": {
+      "total": 91,
+      "verdict": "SHIP",
+      "axes": {
+        "hook_strength": {"earned": 11, "max": 12},
+        "single_voice": {"earned": 15, "max": 16},
+        "original_analysis": {"earned": 13, "max": 16},
+        "specificity_verdict": {"earned": 15, "max": 16},
+        "curators_edge": {"earned": 13, "max": 14},
+        "anti_mush_variety": {"earned": 10, "max": 12},
+        "structural_craft": {"earned": 6, "max": 6},
+        "closing_landing": {"earned": 4, "max": 4},
+        "anticipation": {"earned": 4, "max": 4}
+      },
+      "headline_quality_note": "Headline 'Five Builds, Not One New Model' states the count, the thesis (no new model), and the edges-not-models frame the issue pays off.",
+      "top_3_fixes": [
+        "Resolve the UPLOAD VIDEO HERE placeholder before publishing (this is the intended Section D upload marker, by design, not a real defect).",
+        "Strengthen the All-Star Lede's contrarian defense of why headroom beats FastMCP/Scrapling for the crown.",
+        "Keep the lede creator name (Karim Shoair) consistent with the @D4Vinci1 credit in card #3."
+      ],
+      "honest_one_liner": "A sharp, single-voiced edges-not-models issue with real numbers and earned anti-recs, held back from a clean ship only by a (by-design) video marker and a slightly soft All-Star defense.",
+      "no_axis_below_50pct": true
+    }
+  }
+]
