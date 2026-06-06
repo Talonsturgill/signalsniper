@@ -1,0 +1,16 @@
+{
+  "date": "2026-06-06",
+  "preset_slug": "wired",
+  "brand_slug": "wired",
+  "framework": "DISPATCH",
+  "tokens":   {"canvas": "#ffffff", "ink": "#1a1a1a", "ink_muted": "#757575", "accent": "#057dbc", "hairline": "#e2e8f0"},
+  "fonts":    {"display": "Fraunces", "body": "Inter", "italic": "Fraunces"},
+  "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.012, "case": "preserve", "italic_descriptors": true},
+  "motion":   {"register": "fade", "scene_in_s": 0.34, "scene_out_s": 0.24, "stagger_s": 0.22},
+  "layout":   {"padding_pct": 8, "rule_thickness_px": 2, "stage_radius_px": 0},
+  "texture":  {"grain": 0.03, "vignette": 0.10, "halation": 0.03, "lighting_arc": 0.22},
+  "audio_palette": "ambient",
+  "accent_contrast_min": 3.0,
+  "held_subject": "last30days",
+  "texture_overrides_note": "WIRED's homepage is a broadsheet plugged into a wall socket: committed paper-white canvas (#ffffff) with no cards and no shadows, near-black Page Ink (#1a1a1a, 17.4:1) for headlines and body, Caption Gray (#757575, 4.6:1) for the muted ladder, and exactly one accent that matters, the saturated Link Blue (#057dbc, 4.5:1 on white, clearing the 3.0 editorial floor). Per WIRED's rule the blue stays scarce, one interactive cue per beat, never a fill or second color, and the page stays in pure grayscale otherwise. Fraunces at 600 substitutes for the proprietary WiredDisplay serif (a high-contrast didone face with the same newsstand presence) and carries the headline and italic pull-quote; Inter substitutes for Apercu on body and UI; the terminal and any mono block render in JetBrains Mono, which stands in for the WiredMono uppercase kickers and timestamps. Corners are square (stage_radius 0, border-radius 0 is law) and rules are the printerly 2px. Texture is deliberately restrained because WIRED is flat by religion: grain 0.03 for a faint newsprint tooth, vignette 0.10 for a soft edge on the white stock, halation 0.03 so emphasis beats still bloom faintly, lighting_arc 0.22 for the time-of-day drift the WOW gate wants without breaking the paper-white contract."
+}

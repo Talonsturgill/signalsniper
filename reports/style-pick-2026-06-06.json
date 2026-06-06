@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-06",
+  "brand_slug": "wired",
+  "preset_slug": "wired",
+  "framework": "DISPATCH",
+  "rationale_one_line": "last30days reads the live conversation across every feed, so a wire-service DISPATCH framed in WIRED's broadsheet identity (paper-white grid, mono kickers, single ink-blue accent) makes the tribute feel like a field report filed from the agent lane.",
+  "writing_tone_notes": "Cool, reportorial, dateline register. Bold declarative opens, contrast over adjectives, contractions where natural. No superlatives. Let the method and the terminal do the proving, not adjectives.",
+  "do_rules": [
+    "Keep the link-blue (#057dbc) accent scarce: one accent line per beat at most, the way WIRED reserves blue for a single interactive cue.",
+    "Lead the body with the terminal hero (the command, then the ranked output) so a non-text scene carries the explainer.",
+    "Use mono uppercase only where it reads as a kicker or timestamp, serif/sans elsewhere, never mix roles."
+  ],
+  "dont_rules": [
+    "No second chromatic accent and no gradients, glow scrims, or rounded cards (WIRED is flat by religion).",
+    "No version numbers anywhere in copy.",
+    "No phrase repeated verbatim across the tweet, the Why-this-one, and the scene copy."
+  ]
+}

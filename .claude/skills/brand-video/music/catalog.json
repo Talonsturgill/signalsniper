@@ -663,6 +663,32 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Quasi+Motion",
       "attribution_required": "Music. Quasi Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "marty-gots-a-plan",
+      "title": "Marty Gots a Plan",
+      "file": "Marty_Gots_a_Plan.mp3",
+      "duration_s": 168.1,
+      "mood": "pizzicato strings suspense, investigative newsroom walk, methodical reportorial groove",
+      "register": "ambient",
+      "fits": "wired, cctv, claude, gallery, editorial-paper, DISPATCH, SCHEMATIC, CLASSIC",
+      "preset_packs": [
+        "wired",
+        "cctv",
+        "claude",
+        "gallery",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "SCHEMATIC",
+        "CLASSIC"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Marty+Gots+a+Plan",
+      "attribution_required": "Music. Marty Gots a Plan by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
