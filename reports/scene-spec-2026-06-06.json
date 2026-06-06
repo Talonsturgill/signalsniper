@@ -1,0 +1,104 @@
+{
+  "date": "2026-06-06",
+  "topic": "last30days, the agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, GitHub and the web and ranks it by real engagement instead of SEO",
+  "creator_handle": "@mvanhorn",
+  "project_url": "https://github.com/mvanhorn/last30days-skill",
+
+  "design": {
+    "brand_slug": "wired",
+    "aesthetic_slug": "wired",
+    "framework": "DISPATCH",
+    "audio_palette": "ambient",
+    "held_subject": "last30days",
+
+    "tokens": {
+      "canvas": "#ffffff",
+      "ink": "#1a1a1a",
+      "ink_muted": "#757575",
+      "accent": "#057dbc",
+      "hairline": "#e2e8f0"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Inter",
+      "italic": "Fraunces"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.012,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.34,
+      "scene_out_s": 0.24,
+      "stagger_s": 0.22
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 2,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.03,
+      "vignette": 0.10,
+      "halation": 0.03,
+      "lighting_arc": 0.22
+    },
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "last30days",
+      "eyebrow": "field dispatch from the agent lane",
+      "camera": "orbit",
+      "duration_s": 3.5
+    },
+    {
+      "template": "terminal",
+      "title": "the research desk",
+      "lines": [
+        "$ /last30days \"mcp servers\"",
+        "reading reddit, x, hn, youtube, polymarket",
+        "ranked by upvotes, not page rank",
+        "one brief, every citation real"
+      ],
+      "camera": "parallax_drift",
+      "duration_s": 4.5
+    },
+    {
+      "template": "quote",
+      "quote": "Indexes don't tell you what the room is actually talking about. People do.",
+      "camera": "ken_burns",
+      "duration_s": 3.5
+    },
+    {
+      "template": "three_line",
+      "lines": ["Every feed, all at once.", "Weighted by real reach.", "Overlap gets flagged hot."],
+      "accent_idx": 1,
+      "camera": "parallax_drift",
+      "duration_s": 3.5
+    },
+    {
+      "template": "fix",
+      "primary": "Skip the scroll.",
+      "secondary": "The crowd sorted it.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "close",
+      "primary": "Point it at a topic.",
+      "accent": "Get the live read.",
+      "subtitle": "thirty days of the internet, distilled.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
