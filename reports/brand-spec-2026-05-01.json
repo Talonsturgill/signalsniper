@@ -1,0 +1,17 @@
+{
+  "source": "Archon frontend CSS, packages/web/src/index.css, OKLCH theme",
+  "tone": "minimal technical dark",
+  "background": "#08090B",
+  "ink": "#E6E8EB",
+  "accent": "#0F92F7",
+  "muted": "#77787B",
+  "rule": "#1E1F21",
+  "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+  "sans": "'DejaVu Sans', sans-serif",
+  "contrast": {
+    "ink_on_background": "16.23:1",
+    "accent_on_background": "6.14:1",
+    "muted_on_background": "4.51:1"
+  },
+  "fallbacks_used": []
+}
