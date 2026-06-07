@@ -689,6 +689,31 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Marty+Gots+a+Plan",
       "attribution_required": "Music. Marty Gots a Plan by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "voxel-revolution",
+      "title": "Voxel Revolution",
+      "file": "Voxel_Revolution.mp3",
+      "duration_s": 129.9,
+      "mood": "driving energetic electronic, defiant chiptune-edged groove, propulsive build",
+      "register": "electronic",
+      "fits": "mono-terminal, subway-chrome, cctv, geominimal, MANIFESTO, SCHEMATIC, RECEIPT",
+      "preset_packs": [
+        "mono-terminal",
+        "subway-chrome",
+        "cctv",
+        "geominimal"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "SCHEMATIC",
+        "RECEIPT"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voxel+Revolution",
+      "attribution_required": "Music. Voxel Revolution by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-07",
+  "brand_slug": null,
+  "preset_slug": "mono-terminal",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "taste-skill is an opinionated, install-via-CLI agent skill whose whole argument is rules over vibes, so a mono-terminal canvas (matrix-green on near-black, the screen an agent actually runs in) carrying a MANIFESTO of color-burst declarations is the truest translation of the project's stance.",
+  "writing_tone_notes": "Bold declarative, build-in-public, a touch defiant to match a 16-year-old vibecoder. Contractions where natural. No superlatives. Let the contrast carry the praise: slop versus taste, the statistical mean versus explicit rules, be-creative vibes versus written-down constraints. Lowercase rendering is part of the aesthetic, so copy should read well in lowercase.",
+  "do_rules": [
+    "Keep the matrix-green accent scarce and deliberate, one charged line per beat, the way a terminal highlights a single token.",
+    "Let a non-text beat carry the explainer: the install command in a real terminal frame, and the color-burst flash words doing the punctuation.",
+    "Frame taste as constraints, not encouragement, which is the creator's own diagnosis of why models default to generic output."
+  ],
+  "dont_rules": [
+    "No version number anywhere in copy (taste-skill is on v2; never say it).",
+    "Do not reuse the standout tokens across surfaces: 'slop' and 'statistical mean' live only in the scenes, '35k stars' and 'design sense' live only in the tweet.",
+    "No second chromatic accent, no gradients, no rounded cards. mono-terminal is square corners and one green."
+  ]
+}
