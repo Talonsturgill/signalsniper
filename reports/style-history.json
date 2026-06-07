@@ -210,5 +210,12 @@
         "aesthetic_slug": "wired",
         "framework": "DISPATCH",
         "project_url": "https://github.com/mvanhorn/last30days-skill"
+    },
+    {
+        "date": "2026-06-07",
+        "brand_slug": null,
+        "aesthetic_slug": "mono-terminal",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/Leonxlnx/taste-skill"
     }
 ]

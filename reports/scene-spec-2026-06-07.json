@@ -1,0 +1,105 @@
+{
+  "date": "2026-06-07",
+  "topic": "taste-skill, the anti-slop agent skill that hands AI coding agents real design sense so the UIs they ship stop looking templated",
+  "creator_handle": "@LexnLin",
+  "project_url": "https://github.com/Leonxlnx/taste-skill",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "MANIFESTO",
+    "audio_palette": "electronic",
+    "held_subject": "taste skill",
+
+    "tokens": {
+      "canvas": "#0A0A0A",
+      "ink": "#F0F0F0",
+      "ink_muted": "#7A7A7A",
+      "accent": "#37F712",
+      "hairline": "#1F1F1F"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.005,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.10
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.04,
+      "lighting_arc": 0.22
+    },
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "taste skill",
+      "eyebrow": "opinionated design, on tap",
+      "camera": "orbit",
+      "duration_s": 3.3
+    },
+    {
+      "template": "flash",
+      "word": "slop",
+      "caption": "the statistical mean of every ui.",
+      "camera": "crash_zoom",
+      "duration_s": 2.8
+    },
+    {
+      "template": "terminal",
+      "title": "add the skill",
+      "lines": [
+        "$ npx skills add Leonxlnx/taste-skill",
+        "design rules wired into the agent",
+        "cursor, claude code, codex, opencode"
+      ],
+      "accent_idx": 0,
+      "camera": "parallax_drift",
+      "duration_s": 4.2
+    },
+    {
+      "template": "fix",
+      "primary": "rules over vibes.",
+      "secondary": "taste, written down.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 3.6
+    },
+    {
+      "template": "flash",
+      "word": "taste",
+      "caption": "now it ships in the prompt.",
+      "camera": "crash_zoom",
+      "duration_s": 2.8
+    },
+    {
+      "template": "close",
+      "primary": "hand it an opinion.",
+      "accent": "watch it ship.",
+      "subtitle": "strong defaults, every screen.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-06-07",
+  "preset_slug": "mono-terminal",
+  "brand_slug": null,
+  "framework": "MANIFESTO",
+  "tokens":   {"canvas": "#0A0A0A", "ink": "#F0F0F0", "ink_muted": "#7A7A7A", "accent": "#37F712", "hairline": "#1F1F1F"},
+  "fonts":    {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+  "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.005, "case": "lower", "italic_descriptors": false},
+  "motion":   {"register": "cut", "scene_in_s": 0.06, "scene_out_s": 0.05, "stagger_s": 0.10},
+  "layout":   {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 0},
+  "texture":  {"grain": 0.05, "vignette": 0.22, "halation": 0.04, "lighting_arc": 0.22},
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "held_subject": "taste skill",
+  "texture_overrides_note": "Straight mono-terminal preset with two deliberate texture overrides. halation goes 0.0 -> 0.04 so the matrix-green (#37F712, ~13.6:1 on the #0A0A0A canvas) blooms faintly on the two emphasize beats and the WOW halation check passes; the bloom stays tiny so the screen still reads as a clean console, not neon. lighting_arc goes 0.18 -> 0.22 to clear the WOW color-drift floor (>=0.20) and give the runtime a subtle time-of-day push without breaking the flat black canvas. Everything else is the preset verbatim: JetBrains Mono throughout at 600/400, lowercase case rule, hard cut motion (scene_in 0.06, scene_out 0.05) for terminal snap, square corners (stage_radius 0), 1px rules, grain 0.05 and vignette 0.22 for the faint CRT tooth. Audio palette electronic to match the Voxel Revolution bed. Framework MANIFESTO: title -> flash -> terminal -> fix -> flash -> close, the canonical color-burst arc with one terminal hero inserted so the install ritual carries a non-text beat."
+}
