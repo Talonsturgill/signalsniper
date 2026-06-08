@@ -2,20 +2,6 @@
     {
         "date": "2026-05-09",
         "brand_slug": null,
-        "aesthetic_slug": "mono-terminal",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/badlogic/pi-mono"
-    },
-    {
-        "date": "2026-05-09",
-        "brand_slug": null,
-        "aesthetic_slug": "subway-chrome",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/rohitg00/agentmemory"
-    },
-    {
-        "date": "2026-05-09",
-        "brand_slug": null,
         "aesthetic_slug": null,
         "framework": null,
         "project_url": "https://github.com/addyosmani/agent-skills",
@@ -217,5 +203,12 @@
         "aesthetic_slug": "mono-terminal",
         "framework": "MANIFESTO",
         "project_url": "https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+        "date": "2026-06-08",
+        "brand_slug": null,
+        "aesthetic_slug": "subway-chrome",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/Panniantong/Agent-Reach"
     }
 ]
