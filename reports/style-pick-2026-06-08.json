@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-08",
+  "brand_slug": null,
+  "preset_slug": "subway-chrome",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "Agent Reach is dark-infrastructure plumbing (an agent wired into 14+ platform CLIs), so subway-chrome's steel canvas + icy cyan + JetBrains Mono carries it, and SCHEMATIC's diagram hero shows the not-a-framework architecture better than any line of copy.",
+  "writing_tone_notes": "Build-in-public, peer-to-peer. Cool and reportorial, matching subway-chrome. Show the structure, don't narrate it. Bold short declaratives. Contractions where natural. The contrast (framework vs glue) carries the praise, no superlatives.",
+  "do_rules": [
+    "Lead the video with the architecture: agent at the hub, platforms on the spokes.",
+    "Let the diagram and the $0 big_number do the proving; keep copy terse.",
+    "Use the framework-vs-glue contrast as the spine of the thesis beats.",
+    "Keep the icy cyan accent for the one thing that should pop per scene."
+  ],
+  "dont_rules": [
+    "No superlatives, no 'revolutionary', no sycophancy.",
+    "No version numbers anywhere (v1.4.0 is banned in the caption).",
+    "Don't repeat the same claim across tweet, why-this-one, and scene copy.",
+    "No em/en dashes, semicolons, question marks, arrows, or emojis."
+  ]
+}

@@ -714,6 +714,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voxel+Revolution",
       "attribution_required": "Music. Voxel Revolution by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "static-motion",
+      "title": "Static Motion",
+      "file": "Static_Motion.mp3",
+      "duration_s": 188.8,
+      "mood": "tense synth drone with sharp percussive clicks, surveillance-room motion, deterministic ticking pulse",
+      "register": "electronic",
+      "fits": "subway-chrome, cctv, mono-terminal, SCHEMATIC, RECEIPT, MANIFESTO",
+      "preset_packs": [
+        "subway-chrome",
+        "cctv",
+        "mono-terminal"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "RECEIPT",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 24.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Static+Motion",
+      "attribution_required": "Music. Static Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
