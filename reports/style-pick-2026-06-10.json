@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-10",
+  "brand_slug": "raycast",
+  "preset_slug": null,
+  "aesthetic_slug": "raycast",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "fast-agent is a dark, CLI-first MCP-native dev tool, so Raycast's command-palette dark system carries it and MANIFESTO turns the MCP-first stance into a bold declaration.",
+  "writing_tone_notes": "Dry, spec-literate, peer-to-peer. Show the command, name the hard MCP features, let the contrast carry the praise. No hype words, no superlatives. Contractions where natural.",
+  "do_rules": [
+    "Open on the project name with a 3D orbit; keep the whole video in one continuous near-black mode.",
+    "Use the Raycast red only for the flash beats and accents, never as body fill.",
+    "Anchor a terminal scene as the CLI proof - real install and run commands.",
+    "Land the MCP-first thesis once in the close, reframed from the flash beats."
+  ],
+  "dont_rules": [
+    "No light mode and no drop shadows - depth is the dark surface ladder.",
+    "No version numbers anywhere in the copy.",
+    "Do not repeat the flash word in the fix or close.",
+    "No emojis, arrows, em or en dashes, semicolons, or body colons."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "date": "2026-06-10",
+  "topic": "fast-agent, the MCP-native agent framework",
+  "creator_handle": "@evalstate",
+  "project_url": "https://github.com/evalstate/fast-agent",
+  "design": {
+    "brand_slug": "raycast",
+    "aesthetic_slug": "raycast",
+    "framework": "MANIFESTO",
+    "audio_palette": "electronic",
+    "held_subject": "fast-agent",
+    "tokens": {
+      "canvas": "#07080a",
+      "ink": "#f4f4f6",
+      "ink_muted": "#9c9c9d",
+      "accent": "#ff6161",
+      "hairline": "#242728"
+    },
+    "fonts": {
+      "display": "Inter",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.012,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.34,
+      "scene_out_s": 0.24,
+      "stagger_s": 0.20
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.26,
+      "halation": 0.06,
+      "lighting_arc": 0.30
+    },
+    "accent_contrast_min": 4.5
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "fast-agent",
+      "eyebrow": "the MCP-native agent framework",
+      "camera": "orbit",
+      "duration_s": 3.2
+    },
+    {
+      "template": "flash",
+      "word": "BOLTED ON.",
+      "caption": "how most kits meet MCP.",
+      "camera": "crash_zoom",
+      "duration_s": 2.8
+    },
+    {
+      "template": "terminal",
+      "title": "agent.py",
+      "lines": [
+        {"text": "uv pip install fast-agent-mcp", "prompt": true},
+        {"text": "fast-agent go", "prompt": true},
+        {"text": "two commands to a live agent", "prompt": false}
+      ],
+      "camera": "parallax_drift",
+      "duration_s": 4.2
+    },
+    {
+      "template": "fix",
+      "primary": "MCP, built in.",
+      "secondary": "Not strapped on later.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 3.4
+    },
+    {
+      "template": "flash",
+      "word": "NATIVE.",
+      "caption": "the whole spec, end to end.",
+      "camera": "ken_burns",
+      "duration_s": 2.6
+    },
+    {
+      "template": "close",
+      "primary": "Agents, MCP-first.",
+      "accent": "Not framework-first.",
+      "subtitle": "one builder, shipping daily.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.6
+    }
+  ]
+}

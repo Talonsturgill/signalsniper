@@ -2,15 +2,6 @@
     {
         "date": "2026-05-09",
         "brand_slug": null,
-        "aesthetic_slug": null,
-        "framework": null,
-        "project_url": "https://github.com/addyosmani/agent-skills",
-        "skipped": true,
-        "skipped_reason": "already covered in a prior tribute; recorded here so future scouting filters it out via the project_url match in lane-filter Step 2."
-    },
-    {
-        "date": "2026-05-09",
-        "brand_slug": null,
         "aesthetic_slug": "gallery",
         "framework": "CLASSIC",
         "project_url": "https://github.com/AmElmo/proofshot"
@@ -210,5 +201,12 @@
         "aesthetic_slug": "subway-chrome",
         "framework": "SCHEMATIC",
         "project_url": "https://github.com/Panniantong/Agent-Reach"
+    },
+    {
+        "date": "2026-06-10",
+        "brand_slug": "raycast",
+        "aesthetic_slug": "raycast",
+        "framework": "MANIFESTO",
+        "project_url": "https://github.com/evalstate/fast-agent"
     }
 ]

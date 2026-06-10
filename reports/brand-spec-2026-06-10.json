@@ -1,0 +1,53 @@
+{
+  "date": "2026-06-10",
+  "brand_slug": "raycast",
+  "aesthetic_slug": "raycast",
+  "framework": "MANIFESTO",
+  "audio_palette": "electronic",
+  "held_subject": "fast-agent",
+  "tokens": {
+    "canvas": "#07080a",
+    "ink": "#f4f4f6",
+    "ink_muted": "#9c9c9d",
+    "accent": "#ff6161",
+    "hairline": "#242728"
+  },
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 600,
+    "body_weight": 400,
+    "letter_spacing_em": -0.012,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "scale",
+    "scene_in_s": 0.34,
+    "scene_out_s": 0.24,
+    "stagger_s": 0.20
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 8
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.26,
+    "halation": 0.06,
+    "lighting_arc": 0.30
+  },
+  "accent_contrast_min": 4.5,
+  "audio_track": {
+    "slug": "mistake-the-getaway",
+    "title": "Mistake the Getaway",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "default_offset_s": 30.0
+  },
+  "notes": "Raycast command-palette dark system: near-black canvas (#07080a), hairline borders (#242728), off-white ink (#f4f4f6). Signature Raycast launch-banner red (#ff6161) reserved for the MANIFESTO flash beats and accents. Inter throughout. scale register for the bold declaration energy."
+}
