@@ -148,5 +148,10 @@
     "date": "2026-06-08",
     "slug": "static-motion",
     "project_url": "https://github.com/Panniantong/Agent-Reach"
+  },
+  {
+    "date": "2026-06-10",
+    "slug": "mistake-the-getaway",
+    "project_url": "https://github.com/evalstate/fast-agent"
   }
 ]

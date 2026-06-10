@@ -738,6 +738,32 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Static+Motion",
       "attribution_required": "Music. Static Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "mistake-the-getaway",
+      "title": "Mistake the Getaway",
+      "file": "Mistake_the_Getaway.mp3",
+      "duration_s": 122.6,
+      "mood": "tense propulsive electronic heist groove, defiant driving synth, command-center momentum",
+      "register": "electronic",
+      "fits": "raycast, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
+      "preset_packs": [
+        "raycast",
+        "mono-terminal",
+        "subway-chrome",
+        "cctv",
+        "geominimal"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "SCHEMATIC",
+        "RECEIPT"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mistake+the+Getaway",
+      "attribution_required": "Music. Mistake the Getaway by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
