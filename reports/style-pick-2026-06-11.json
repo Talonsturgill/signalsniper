@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-11",
+  "brand_slug": null,
+  "preset_slug": "gallery",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "agentsview is refined builder-tier infrastructure from the pandas and Arrow creator, so gallery's museum-white canvas, IBM Plex Serif and one cool blue accent carry the authority, and SCHEMATIC's diagram hero shows the many-agents-into-one-local-index structure better than any sentence.",
+  "writing_tone_notes": "Build-in-public, peer-to-peer, but quiet and exact like Wes himself. Measured declaratives, no hype, no superlatives. Show the structure, let the contrast (the dataframe legend now indexing agent sessions) carry the praise. Contractions where natural.",
+  "do_rules": [
+    "Open on the structure: every coding agent feeding one local index.",
+    "Let the diagram and the 100x big_number prove it, keep copy terse.",
+    "Anchor the close in Wes's dataframe instinct without naming a product he is famous for.",
+    "Reserve the cool blue accent for the one element that should pop per scene."
+  ],
+  "dont_rules": [
+    "No superlatives, no 'revolutionary', no sycophancy.",
+    "No version numbers anywhere (v0.32.1 is banned in the caption).",
+    "Don't repeat a claim across the tweet, the why-this-one, and the scene copy.",
+    "No em or en dashes, semicolons, question marks, arrows, or emojis."
+  ]
+}
