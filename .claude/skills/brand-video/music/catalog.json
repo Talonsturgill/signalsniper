@@ -764,6 +764,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mistake+the+Getaway",
       "attribution_required": "Music. Mistake the Getaway by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "gymnopedie-no-1",
+      "title": "Gymnopedie No. 1",
+      "file": "Gymnopedie_No_1.mp3",
+      "duration_s": 187.1,
+      "mood": "refined chamber piano, contemplative and unhurried, museum-quiet elegance",
+      "register": "acoustic",
+      "fits": "gallery, claude, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH refined explainers",
+      "preset_packs": [
+        "gallery",
+        "claude",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "CLASSIC",
+        "DISPATCH"
+      ],
+      "default_offset_s": 6.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gymnopedie",
+      "attribution_required": "Music. Gymnopedie No. 1 by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

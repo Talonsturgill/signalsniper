@@ -208,5 +208,12 @@
         "aesthetic_slug": "raycast",
         "framework": "MANIFESTO",
         "project_url": "https://github.com/evalstate/fast-agent"
+    },
+    {
+        "date": "2026-06-11",
+        "brand_slug": null,
+        "aesthetic_slug": "gallery",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/kenn-io/agentsview"
     }
 ]

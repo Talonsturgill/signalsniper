@@ -153,5 +153,10 @@
     "date": "2026-06-10",
     "slug": "mistake-the-getaway",
     "project_url": "https://github.com/evalstate/fast-agent"
+  },
+  {
+    "date": "2026-06-11",
+    "slug": "gymnopedie-no-1",
+    "project_url": "https://github.com/kenn-io/agentsview"
   }
 ]
