@@ -215,5 +215,12 @@
         "aesthetic_slug": "gallery",
         "framework": "SCHEMATIC",
         "project_url": "https://github.com/kenn-io/agentsview"
+    },
+    {
+        "date": "2026-06-12",
+        "brand_slug": "cursor",
+        "aesthetic_slug": "cursor",
+        "framework": "CLASSIC",
+        "project_url": "https://github.com/trycua/cua"
     }
 ]

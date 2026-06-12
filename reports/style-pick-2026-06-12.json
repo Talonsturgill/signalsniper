@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-12",
+  "brand_slug": "cursor",
+  "preset_slug": "cursor",
+  "framework": "CLASSIC",
+  "rationale_one_line": "cua is the agentic operator layer for real desktops, so Cursor's warm editorial-cream canvas, warm near-black ink and single orange voltage carry builder-tier confidence without going dark-cliche, and CLASSIC frames the angle (agents finally get a real, sandboxed machine) for a project that is climbing but already on the radar.",
+  "writing_tone_notes": "Build-in-public, peer-to-peer, calm and exact like Francesco himself. Measured declaratives, no hype, no superlatives. Show the structure (agent into a sandboxed desktop), let the contrast (a real computer, but isolated) carry the praise. Contractions where natural. JetBrains Mono on the terminal beat, Inter substitute for CursorGothic everywhere else.",
+  "do_rules": [
+    "Open on the object: agents get their own computer, sandboxed.",
+    "Let the diagram (agent into sandbox into live desktop) and the terminal beat prove the operator loop.",
+    "Reserve the orange voltage for the one element that should pop per scene.",
+    "Anchor the close in the operator-layer idea agents have been missing, restated once."
+  ],
+  "dont_rules": [
+    "No superlatives, no 'revolutionary', no sycophancy.",
+    "No version numbers anywhere (lume-v0.3.10 is banned in the caption).",
+    "Don't land the same idea twice (star count, OS list, one-SDK) across tweet, why-this-one and scene copy.",
+    "No em or en dashes, semicolons, question marks, colons in body, arrows, or emojis."
+  ]
+}

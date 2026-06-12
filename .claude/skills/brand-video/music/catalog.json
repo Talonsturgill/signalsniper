@@ -788,6 +788,56 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gymnopedie",
       "attribution_required": "Music. Gymnopedie No. 1 by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "wholesome",
+      "title": "Wholesome",
+      "file": "Wholesome.mp3",
+      "duration_s": 363.8,
+      "mood": "warm earnest acoustic build, hopeful confident strings and piano, sincere craftsperson optimism",
+      "register": "acoustic",
+      "fits": "cursor, claude, editorial-paper, gallery, CLASSIC, DISPATCH, MANIFESTO sincere tributes",
+      "preset_packs": [
+        "cursor",
+        "claude",
+        "editorial-paper",
+        "gallery"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "DISPATCH",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Wholesome",
+      "attribution_required": "Music. Wholesome by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "pamgaea",
+      "title": "Pamgaea",
+      "file": "Pamgaea.mp3",
+      "duration_s": 168.6,
+      "mood": "uplifting world-cinematic build, warm ethnic percussion and strings, expansive optimistic horizon",
+      "register": "ambient",
+      "fits": "gallery, claude, editorial-paper, cursor, MANIFESTO, CLASSIC, DISPATCH bold warm launches",
+      "preset_packs": [
+        "gallery",
+        "claude",
+        "editorial-paper",
+        "cursor"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "CLASSIC",
+        "DISPATCH"
+      ],
+      "default_offset_s": 20.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Pamgaea",
+      "attribution_required": "Music. Pamgaea by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
