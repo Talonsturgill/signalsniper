@@ -1,0 +1,53 @@
+{
+  "date": "2026-06-12",
+  "brand_slug": "cursor",
+  "aesthetic_slug": "cursor",
+  "framework": "CLASSIC",
+  "audio_palette": "acoustic",
+  "held_subject": "cua",
+  "tokens": {
+    "canvas": "#f7f7f4",
+    "ink": "#26251e",
+    "ink_muted": "#807d72",
+    "accent": "#d04200",
+    "hairline": "#cfcdc4"
+  },
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 500,
+    "body_weight": 400,
+    "letter_spacing_em": -0.02,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.40,
+    "scene_out_s": 0.27,
+    "stagger_s": 0.27
+  },
+  "layout": {
+    "padding_pct": 9,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 12
+  },
+  "texture": {
+    "grain": 0.04,
+    "vignette": 0.10,
+    "halation": 0.05,
+    "lighting_arc": 0.24
+  },
+  "accent_contrast_min": 3.5,
+  "audio_track": {
+    "slug": "wholesome",
+    "title": "Wholesome",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "default_offset_s": 30.0
+  },
+  "notes": "Cursor editorial-cream system applied to cua, the agentic operator layer for real desktops. Warm cream canvas (#f7f7f4), warm near-black ink (#26251e), single Cursor Orange voltage held at the press-state shade (#d04200) for contrast safety on cream, reserved for the one element that pops per scene. Inter substitutes for licensed CursorGothic, JetBrains Mono carries the terminal beat. Calm fade register and generous editorial padding match Cursor's magazine voice. CLASSIC framework frames the angle rather than introducing an unknown."
+}
