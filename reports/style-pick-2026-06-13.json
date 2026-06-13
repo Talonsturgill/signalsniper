@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-13",
+  "brand_slug": null,
+  "preset_slug": "claude",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "A cross-vendor agent loop is a structural idea, so SCHEMATIC diagrams the loop; the warm Claude-adjacent parchment palette fits a Claude Code skill that orchestrates Anthropic's Fable model.",
+  "writing_tone_notes": "Terse, evidence-first, dry. Show the loop, let the discipline carry the praise. No superlatives, no hype. Contractions where natural. Specifics over adjectives. Three short beats beat one long one.",
+  "do_rules": [
+    "Lead the diagram with the actual loop: architect specs, builder builds, gates run, repo remembers.",
+    "Keep the fix beat about evidence gating the merge.",
+    "Mirror his security-researcher register: verification, not vibes."
+  ],
+  "dont_rules": [
+    "No version numbers anywhere in copy.",
+    "No superlatives or sycophancy.",
+    "Do not reuse the same phrase across tweet, Why-this-one, and scene copy.",
+    "Do not call it a framework war; it is adversarial collaboration."
+  ]
+}
