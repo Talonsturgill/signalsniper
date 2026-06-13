@@ -163,5 +163,10 @@
     "date": "2026-06-12",
     "slug": "wholesome",
     "project_url": "https://github.com/trycua/cua"
+  },
+  {
+    "date": "2026-06-13",
+    "slug": "pamgaea",
+    "project_url": "https://github.com/DanMcInerney/architect-loop"
   }
 ]

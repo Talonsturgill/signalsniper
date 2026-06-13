@@ -1,0 +1,53 @@
+{
+  "date": "2026-06-13",
+  "brand_slug": null,
+  "aesthetic_slug": "claude",
+  "framework": "SCHEMATIC",
+  "audio_palette": "ambient",
+  "held_subject": "architect-loop",
+  "tokens": {
+    "canvas": "#F5EFE3",
+    "ink": "#191919",
+    "ink_muted": "#7C7C7C",
+    "accent": "#C0552E",
+    "hairline": "#E2DAC8"
+  },
+  "fonts": {
+    "display": "IBMPlexSerif",
+    "body": "Inter",
+    "italic": "IBMPlexSerif"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.018,
+    "case": "preserve",
+    "italic_descriptors": true
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.40,
+    "scene_out_s": 0.27,
+    "stagger_s": 0.27
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 8
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.16,
+    "halation": 0.04,
+    "lighting_arc": 0.28
+  },
+  "accent_contrast_min": 3.0,
+  "audio_track": {
+    "slug": "pamgaea",
+    "title": "Pamgaea",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "default_offset_s": 20.0
+  },
+  "notes": "Claude warm-parchment system applied to architect-loop, Dan McInerney's cross-vendor agent loop. Canvas warm ivory (#F5EFE3), slate ink (#191919), and a single burnt-terracotta clay accent darkened to #C0552E so it clears the 3.0:1 contrast floor on cream (the preset default #CC785C lands at 2.86:1 and fails). IBM Plex Serif display over Inter body matches the Anthropic-adjacent editorial register, which is fitting since the skill orchestrates Claude Fable. Ambient palette and calm fade motion suit a sincere builder tribute. SCHEMATIC framework diagrams the loop rather than narrating it. Music bed: Pamgaea, the last unused CC BY 4.0 track, warm and expansive, scored a clean preset hit (claude is in its preset_packs)."
+}

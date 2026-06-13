@@ -1,0 +1,107 @@
+{
+  "date": "2026-06-13",
+  "topic": "architect-loop, a cross-vendor agent loop where Claude Fable plans and reviews and GPT-5.5 Codex builds",
+  "creator_handle": "@DanHMcInerney",
+  "project_url": "https://github.com/DanMcInerney/architect-loop",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "SCHEMATIC",
+    "audio_palette": "ambient",
+    "held_subject": "architect-loop",
+    "accent_contrast_min": 3.0,
+
+    "tokens": {
+      "canvas": "#F5EFE3",
+      "ink": "#191919",
+      "ink_muted": "#7C7C7C",
+      "accent": "#C0552E",
+      "hairline": "#E2DAC8"
+    },
+    "fonts": {
+      "display": "IBMPlexSerif",
+      "body": "Inter",
+      "italic": "IBMPlexSerif"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.018,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.40,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.27
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.16,
+      "halation": 0.04,
+      "lighting_arc": 0.28
+    }
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "architect-loop",
+      "eyebrow": "the cross-vendor build loop",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "INSIDE THE LOOP",
+      "nodes": [
+        {"label": "Fable specs", "x": 22, "y": 28, "accent": true, "filled": true},
+        {"label": "Codex builds", "x": 78, "y": 28},
+        {"label": "gates run", "x": 78, "y": 72},
+        {"label": "repo as memory", "x": 22, "y": 72}
+      ],
+      "edges": [
+        {"from": 0, "to": 1, "accent": true},
+        {"from": 1, "to": 2},
+        {"from": 2, "to": 3},
+        {"from": 3, "to": 0, "accent": true}
+      ],
+      "camera": "orbit",
+      "duration_s": 4.5
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "gates before any code.",
+        "each lane runs fresh."
+      ],
+      "accent_idx": 0,
+      "camera": "ken_burns",
+      "duration_s": 3.2
+    },
+    {
+      "template": "fix",
+      "primary": "Earn the merge.",
+      "secondary": "the gate has the say.",
+      "emphasize": true,
+      "camera": "crash_zoom",
+      "duration_s": 3.3
+    },
+    {
+      "template": "close",
+      "primary": "One architect.",
+      "accent": "one builder.",
+      "subtitle": "the loop that reviews its own work.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.4
+    }
+  ]
+}

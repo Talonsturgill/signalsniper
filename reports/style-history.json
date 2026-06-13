@@ -1,26 +1,5 @@
 [
     {
-        "date": "2026-05-09",
-        "brand_slug": null,
-        "aesthetic_slug": "gallery",
-        "framework": "CLASSIC",
-        "project_url": "https://github.com/AmElmo/proofshot"
-    },
-    {
-        "date": "2026-05-10",
-        "brand_slug": null,
-        "aesthetic_slug": "editorial-90s",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/millionco/react-doctor"
-    },
-    {
-        "date": "2026-05-11",
-        "brand_slug": null,
-        "aesthetic_slug": "claude",
-        "framework": "DISPATCH",
-        "project_url": "https://github.com/jundot/omlx"
-    },
-    {
         "date": "2026-05-12",
         "brand_slug": null,
         "aesthetic_slug": "geominimal",
@@ -222,5 +201,12 @@
         "aesthetic_slug": "cursor",
         "framework": "CLASSIC",
         "project_url": "https://github.com/trycua/cua"
+    },
+    {
+        "date": "2026-06-13",
+        "brand_slug": null,
+        "aesthetic_slug": "claude",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/DanMcInerney/architect-loop"
     }
 ]
