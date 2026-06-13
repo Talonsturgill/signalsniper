@@ -1,0 +1,11 @@
+{
+  "through_line": "The repos that climbed this week stayed thin and stood on tools that already worked.",
+  "prior_through_lines": [
+    "Agents are gaining persistent memory and self-composing skill loops between sessions. (Issue 2)",
+    "This week's breakout repos pulled AI off the cloud and onto hardware the user owns. (Issue 4)",
+    "This week's builds were connective tissue for agents, not new models. (Issue 5)"
+  ],
+  "supporting_picks": ["2026-06-07", "2026-06-08", "2026-06-10", "2026-06-11"],
+  "evidence_paragraph": "taste-skill (@LexnLin) ships its design sense as plain SKILL.md rule files registered in a Bash lookup table, and crossed 42,647 stars on a +6,847 week. Agent-Reach (@Neo_Reidlab) is thin CLI glue over tools engineers already trust, Jina Reader, yt-dlp and gh, and added 3,397 stars. fast-agent (@evalstate) conforms to the MCP spec rather than wrapping it, shipping v0.7.16 and v0.7.17 inside one week. agentsview (@wesmckinn) is one Go binary that reads the JSONL coding agents already write, and gained 722 stars in two days. None of the four built a new abstraction; each won by standing on something that already existed.",
+  "counter_signal": "cua (@francedot) went the other way, building heavyweight new sandbox infrastructure to give agents a real but isolated machine, and still held 17,874 stars."
+}
