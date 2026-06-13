@@ -1,0 +1,17 @@
+{
+  "no_hero_this_week": false,
+  "hero": {
+    "date": "2026-06-07",
+    "project_slug": "taste-skill",
+    "creator_handle": "LexnLin",
+    "scores": {"momentum": 10, "novelty": 8, "resonance": 9, "total": 27},
+    "rationale": "Largest scale and fastest absolute growth of the week (+6,847 to 42,647 stars), a sharp constraint-over-vibes frame, and a 16-year-old's first shipped skill outrunning the field. Best embodies the through-line: taste shipped as plain rule files, not an app."
+  },
+  "finalists": [
+    {"rank": 2, "date": "2026-06-11", "project_slug": "agentsview", "creator_handle": "wesmckinn", "scores": {"momentum": 8, "novelty": 7, "resonance": 9, "total": 24}, "rationale": "The pandas and Arrow creator turning infrastructure instincts on the agent era; +722 stars in two days for a six-week-old Go binary."},
+    {"rank": 3, "date": "2026-06-08", "project_slug": "Agent-Reach", "creator_handle": "Neo_Reidlab", "scores": {"momentum": 8, "novelty": 8, "resonance": 7, "total": 23}, "rationale": "Scaffolding not framework; +3,397 stars and a v1.5.0 that turned the doctor command into live diagnostics."},
+    {"rank": 4, "date": "2026-06-12", "project_slug": "cua", "creator_handle": "francedot", "scores": {"momentum": 6, "novelty": 8, "resonance": 8, "total": 22}, "rationale": "Sandboxed cross-OS computer for agents; flat stars this week but heavy shipping cadence and the week's counter-signal."},
+    {"rank": 5, "date": "2026-06-10", "project_slug": "fast-agent", "creator_handle": "evalstate", "scores": {"momentum": 6, "novelty": 8, "resonance": 7, "total": 21}, "rationale": "MCP-native from the first commit; star count flat near 3,822 but release velocity is the signal, two point releases inside the tribute window."}
+  ],
+  "tiebreak_notes": "taste-skill clears the 22 sanity floor at 27. Within-2-point clusters resolved by through-line fit and momentum; cua kept above fast-agent on resonance and shipping cadence."
+}

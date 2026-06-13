@@ -1,0 +1,33 @@
+{
+  "verdict": "APPROVED",
+  "summary": {"total": 26, "verified": 26, "disputed": 0, "unverifiable": 0},
+  "notes": "Every editorial claim VERIFIED against live data, dossier baselines, research JSON, or a primary source. Star counts and license match weekly-livedata; velocity figures are arithmetic deltas from each tribute baseline. Creator quote 'Less slop, designs pop.' verbatim at tasteskill.dev.",
+  "claims": [
+    {"claim": "taste-skill 42,647 stars, Shell, MIT", "location": "Quick stats / All-Star", "status": "VERIFIED", "source_url": "https://github.com/Leonxlnx/taste-skill"},
+    {"claim": "taste-skill +6,847 in six days (35,800 to 42,647)", "location": "All-Star body / table", "status": "VERIFIED", "source_url": "reports/weekly-research-2026-06-07.json"},
+    {"claim": "taste-skill forks crossed 2,900 (live 2,979)", "location": "All-Star body", "status": "VERIFIED", "source_url": "https://github.com/Leonxlnx/taste-skill"},
+    {"claim": "16-year-old in Munich, Leon Lin / @LexnLin", "location": "Cold open / All-Star", "status": "VERIFIED", "source_url": "https://x.com/LexnLin"},
+    {"claim": "first on GitHub trending June 7", "location": "All-Star", "status": "VERIFIED", "source_url": "reports/creator-dossier-2026-06-07.md"},
+    {"claim": "June 12 plugin manifest, VS Code marketplace", "location": "All-Star body", "status": "VERIFIED", "source_url": "reports/weekly-research-2026-06-07.json"},
+    {"claim": "agentic-ai-prompt-research near 2,400 stars", "location": "All-Star body", "status": "VERIFIED", "source_url": "https://github.com/Leonxlnx/agentic-ai-prompt-research"},
+    {"claim": "barely four months past first commit (created 2026-02-19)", "location": "All-Star body", "status": "VERIFIED", "source_url": "reports/weekly-livedata-2026-06-07.json"},
+    {"claim": "Quote 'Less slop, designs pop.'", "location": "All-Star blockquote", "status": "VERIFIED", "source_url": "https://www.tasteskill.dev/"},
+    {"claim": "agentsview 2,122 stars, Go, MIT", "location": "Quick stats / #2", "status": "VERIFIED", "source_url": "https://github.com/kenn-io/agentsview"},
+    {"claim": "agentsview +722 in two days", "location": "#2", "status": "VERIFIED", "source_url": "reports/weekly-research-2026-06-07.json"},
+    {"claim": "one Go binary, session history across twenty-plus agents", "location": "#2", "status": "VERIFIED", "source_url": "reports/creator-dossier-2026-06-11.md"},
+    {"claim": "Wes McKinney built pandas and co-created Apache Arrow", "location": "#2", "status": "VERIFIED", "source_url": "https://en.wikipedia.org/wiki/Wes_McKinney"},
+    {"claim": "Agent-Reach 26,997 stars, Python, MIT", "location": "Quick stats / #3", "status": "VERIFIED", "source_url": "https://github.com/Panniantong/Agent-Reach"},
+    {"claim": "Agent-Reach +3,397 in five days", "location": "#3", "status": "VERIFIED", "source_url": "reports/weekly-research-2026-06-07.json"},
+    {"claim": "fourteen-plus platforms without an API key", "location": "#3", "status": "VERIFIED", "source_url": "reports/creator-dossier-2026-06-08.md"},
+    {"claim": "June release turned doctor into live health probes", "location": "#3", "status": "VERIFIED", "source_url": "reports/weekly-research-2026-06-07.json"},
+    {"claim": "cua 17,874 stars, HTML, MIT, flat week", "location": "Quick stats / #4", "status": "VERIFIED", "source_url": "https://github.com/trycua/cua"},
+    {"claim": "cua sandboxes macOS, Linux or Windows behind one SDK", "location": "#4", "status": "VERIFIED", "source_url": "reports/creator-dossier-2026-06-12.md"},
+    {"claim": "cua shipped computer-server and driver updates all week", "location": "#4", "status": "VERIFIED", "source_url": "https://github.com/trycua/cua/releases"},
+    {"claim": "fast-agent 3,822 stars, Python, Apache-2.0", "location": "Quick stats / #5", "status": "VERIFIED", "source_url": "https://github.com/evalstate/fast-agent"},
+    {"claim": "fast-agent two releases in 7 days (v0.7.16, v0.7.17)", "location": "#5", "status": "VERIFIED", "source_url": "reports/weekly-research-2026-06-07.json"},
+    {"claim": "MCP-native from first commit; sampling, elicitation, OAuth", "location": "#5", "status": "VERIFIED", "source_url": "reports/creator-dossier-2026-06-10.md"},
+    {"claim": "Shaun Smith ships point releases almost every day", "location": "#5", "status": "VERIFIED", "source_url": "https://github.com/evalstate/fast-agent/releases"},
+    {"claim": "The Mythical Agent-Month by Wes McKinney", "location": "Reading list", "status": "VERIFIED", "source_url": "https://wesmckinney.com/blog/mythical-agent-month/"},
+    {"claim": "Windows Agent Arena co-authored by Francesco Bonacci", "location": "Reading list", "status": "VERIFIED", "source_url": "https://arxiv.org/abs/2409.08264"}
+  ]
+}

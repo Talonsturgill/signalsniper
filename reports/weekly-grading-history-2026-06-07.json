@@ -1,0 +1,27 @@
+[
+  {
+    "pass": 1,
+    "stage": "post-critic-approved",
+    "verdict": "SHIP",
+    "total": 92,
+    "axes": {
+      "hook_strength": {"max": 12, "earned": 11},
+      "single_voice": {"max": 16, "earned": 13},
+      "original_analysis": {"max": 16, "earned": 14},
+      "specificity_verdict": {"max": 16, "earned": 16},
+      "curators_edge": {"max": 14, "earned": 14},
+      "anti_mush": {"max": 12, "earned": 11},
+      "structural_craft": {"max": 6, "earned": 5},
+      "closing_landing": {"max": 4, "earned": 4},
+      "anticipation": {"max": 4, "earned": 4}
+    },
+    "headline_quality_note": "'The Shell Script That Crossed 42,000 Stars' does real work: a falsifiable, specific number plus an intriguing format detail that baits a curiosity gap the cold open pays off.",
+    "top_3_fixes": [
+      "Video embed placeholder is the only structural hole (expected by design; operator uploads the MP4 natively).",
+      "Faint single-voice seam between the clinical third-person body and the warmer coaching register of the lesson and closing.",
+      "Two light filler transitions ('The week moved fast.', 'most projects that size are years old')."
+    ],
+    "honest_one_liner": "A would-read issue with a sharp hook, hard data, real anti-recs, and a pattern/lesson pair that earns its keep, held just under elite by the native-upload video block and a faint register seam at the close.",
+    "verdict_basis": "Total 92 >= 85 and no axis below 50% of its max. SHIP on the first grading pass."
+  }
+]

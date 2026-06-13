@@ -1,0 +1,57 @@
+{
+  "2026-06-07": {
+    "date": "2026-06-07",
+    "project_slug": "taste-skill",
+    "momentum_delta": {"stars_then": 35800, "stars_now": 42647, "velocity_window": "+6,847 in 6 days (~1,141/day)", "hn_followups": [], "newsletter_mentions": [{"title": "Taste Skills Are Turning Agent Review Into Infrastructure", "url": "https://www.developersdigest.tech/blog/taste-skills-ai-agents-design-review"}]},
+    "shipped_since": ["2026-06-12 added a .claude-plugin/ manifest enabling VS Code marketplace support", "2026-06-09 fixed a dead Google Stitch prerequisite link in stitch-skill", "No tagged release in the window; v2 remains the experimental default while community PRs land"],
+    "sibling_work": [{"name": "Hallmark", "url": "https://awesomeclaude.ai/awesome-claude-skills", "one_line": "An anti-slop design skill for Claude Code, Cursor and Codex in the same encoded-taste lane, not tributed this week."}],
+    "shipping_next": ["Taste Skill v2 public launch (currently the experimental default, waitlist closed while preparing launch)", "Open-sourcing the anti-repetition research that feeds v2"],
+    "creator_quote": {"text": "Less slop, designs pop.", "source_url": "https://www.tasteskill.dev/"},
+    "reading_list_candidate": {"title": "Taste Skills Are Turning Agent Review Into Infrastructure", "url": "https://www.developersdigest.tech/blog/taste-skills-ai-agents-design-review", "why": "Frames taste skills as durable review infrastructure for agents rather than one-off prompts."},
+    "code_snippet": {"lang": "bash", "path": "skill.sh", "code": "declare -A SKILLS=(\n[taste-skill]=\"skills/taste-skill/SKILL.md\"\n[gpt-taste]=\"skills/gpt-tasteskill/SKILL.md\"\n[redesign-skill]=\"skills/redesign-skill/SKILL.md\"\n[minimalist-skill]=\"skills/minimalist-skill/SKILL.md\"\n[brutalist-skill]=\"skills/brutalist-skill/SKILL.md\"\n[stitch-skill]=\"skills/stitch-skill/SKILL.md\"\n)", "caption": "The whole framework is a Bash registry mapping skill names to plain SKILL.md rule files."}
+  },
+  "2026-06-08": {
+    "date": "2026-06-08",
+    "project_slug": "Agent-Reach",
+    "momentum_delta": {"stars_then": 23600, "stars_now": 26997, "velocity_window": "+3,397 in 5 days (~680/day)", "hn_followups": [], "newsletter_mentions": [{"title": "Agent-Reach Review", "url": "https://andrew.ooo/posts/agent-reach-ai-agent-internet-cli-review/"}]},
+    "shipped_since": ["2026-06-11 v1.5.0 repositioned from tool collection to a capability layer with ordered per-platform backend fallbacks and a live-probing doctor", "Bilibili dropped yt-dlp for bili-cli after 412 blocking", "2026-06-12 README clarified the browser-action boundary"],
+    "sibling_work": [{"name": "Stagehand", "url": "https://github.com/browserbase/stagehand", "one_line": "TypeScript framework giving agents browser act/extract/observe primitives, the framework counterpoint to Agent-Reach's CLI glue."}, {"name": "Skyvern", "url": "https://github.com/Skyvern-AI/skyvern", "one_line": "Computer-vision agent swarm that operates unseen sites without selectors."}],
+    "shipping_next": ["Incremental per-platform channel additions on request, no formal roadmap section"],
+    "creator_quote": {"text": "I'll add new channels and requested platforms gradually.", "source_url": "https://raw.githubusercontent.com/Panniantong/Agent-Reach/main/README.md"},
+    "reading_list_candidate": {"title": "Browser Tools for AI Agents Part 2: The Framework Wars", "url": "https://dev.to/stevengonsalvez/browser-tools-for-ai-agents-part-2-the-framework-wars-browser-use-stagehand-skyvern-4gn", "why": "Maps the heavyweight browser-agent frameworks Agent-Reach deliberately is not."},
+    "code_snippet": {"lang": "bash", "path": "docs/README_en.md", "code": "$ agent-reach doctor\n\nAgent Reach Status\n========================================\nReady to use:\n  GitHub repos and code -- public repos readable and searchable\n  Twitter/X tweets -- readable, cookie unlocks search and posting\n  YouTube video subtitles -- yt-dlp\n  Bilibili search and video detail -- bili-cli\n  RSS/Atom feeds -- feedparser\n  Web pages (any URL) -- Jina Reader API", "caption": "The doctor command runs live per-platform health probes and prints the active backend for each channel."}
+  },
+  "2026-06-10": {
+    "date": "2026-06-10",
+    "project_slug": "fast-agent",
+    "momentum_delta": {"stars_then": 3800, "stars_now": 3822, "velocity_window": "near-daily point releases; v0.7.16 (2026-06-06) and v0.7.17 (2026-06-10) both shipped in the tribute window", "hn_followups": [{"title": "Show HN: Fast-agent", "url": "https://news.ycombinator.com/item?id=43282093"}], "newsletter_mentions": ["Cited as MCP-native in ClickHouse's framework comparison"]},
+    "shipped_since": ["2026-06-10 v0.7.17 added Anthropic Fable model support and a safety-warning update", "2026-06-06 v0.7.16 added a harness API and Batch/GEPA adapters", "2026-06-12 version bumped to v0.7.18 with continuous commits"],
+    "sibling_work": [{"name": "mcp-agent", "url": "https://github.com/lastmile-ai/mcp-agent", "one_line": "Composable agent framework built for MCP from day one, modeled on Anthropic's effective-agents patterns."}, {"name": "Pydantic AI", "url": "https://ai.pydantic.dev/", "one_line": "Type-safe agent framework whose MCP integration enforces runtime schema validation."}],
+    "shipping_next": ["v0.7.18 release imminent (version already bumped, GEPA packaging fixes)", "Roadmap and contributing guide coming per the README"],
+    "creator_quote": {"text": "I've created fast-agent to make building my own products easier and remove the friction between defining Prompts, MCP Servers and their composition.", "source_url": "https://news.ycombinator.com/item?id=43282093"},
+    "reading_list_candidate": {"title": "How to build AI agents with MCP: a 12-framework comparison", "url": "https://clickhouse.com/blog/how-to-build-ai-agents-mcp-12-frameworks", "why": "Situates fast-agent among MCP-native frameworks and why MCP-first design beats bolted-on."},
+    "code_snippet": {"lang": "python", "path": "examples/workflows/chaining.py", "code": "@fast.agent(\n    \"url_fetcher\",\n    instruction=\"Given a URL, provide a complete and comprehensive summary\",\n    servers=[\"fetch\"],\n)\n@fast.chain(\n    name=\"post_writer\",\n    sequence=[\"url_fetcher\", \"social_media\"],\n    default=True,\n)", "caption": "An agent wired to an MCP server composed into a chain workflow as a first-class primitive."}
+  },
+  "2026-06-11": {
+    "date": "2026-06-11",
+    "project_slug": "agentsview",
+    "momentum_delta": {"stars_then": 1400, "stars_now": 2122, "velocity_window": "+722 in ~2 days (~360/day)", "hn_followups": [], "newsletter_mentions": [{"title": "AgentsView: A New Tool for Monitoring Agent Interactions", "url": "https://www.machinebrief.com/news/agentsview-a-new-tool-for-monitoring-agent-interactions-3xf4"}]},
+    "shipped_since": ["2026-06-12 v0.33.0 added a DuckDB mirror backend, Command Code and Zed support, native Windows ARM64 binaries", "2026-06-12 v0.33.1 fixed double-counting of replayed Codex history in forked sessions"],
+    "sibling_work": [{"name": "roborev", "url": "https://github.com/kenn-io/roborev", "one_line": "Continuous background code-review database for agent-written code."}, {"name": "msgvault", "url": "https://github.com/kenn-io/msgvault", "one_line": "Offline-searchable archive of a lifetime of email and chat, DuckDB-powered."}, {"name": "kata", "url": "https://github.com/kenn-io/kata", "one_line": "Local-first issue tracking for AI-assisted work with an agent-friendly CLI."}],
+    "shipping_next": ["Continued database-backend expansion (DuckDB mirror landed in v0.33.0) and broader agent-format coverage"],
+    "creator_quote": {"text": "I built my dream next-gen session viewer (in Go obviously, with a slick Svelte frontend), supporting Claude, Codex, and Gemini", "source_url": "https://www.linkedin.com/posts/wesmckinn_agentsview-activity-7431693909841309696-paBN"},
+    "reading_list_candidate": {"title": "The Mythical Agent-Month", "url": "https://wesmckinney.com/blog/mythical-agent-month/", "why": "McKinney's own essay reframing Brooks's law for the era of coding agents, the backdrop to his agent tooling."},
+    "code_snippet": {"lang": "bash", "path": "README.md", "code": "# Daily cost summary (default last 30 days)\nagentsview usage daily\n\n# Per-model breakdown\nagentsview usage daily --breakdown\n\n# Filter by agent and date range\nagentsview usage daily --agent claude --since 2026-04-01", "caption": "The usage CLI queries the pre-indexed local SQLite archive instead of re-parsing session files."}
+  },
+  "2026-06-12": {
+    "date": "2026-06-12",
+    "project_slug": "cua",
+    "momentum_delta": {"stars_then": 17900, "stars_now": 17874, "velocity_window": "stars flat day-over-day; ~20 commits and three component releases in the trailing 7 days", "hn_followups": [{"title": "Launch HN: Cua (YC X25)", "url": "https://news.ycombinator.com/item?id=43773563"}], "newsletter_mentions": []},
+    "shipped_since": ["2026-06-12 cua-computer-server v0.3.40 served MCP at both /mcp and /mcp/ and fixed single-keypress handling", "2026-06-13 README overhaul routing the coding-agent path to Cua Drivers", "2026-06-11 added Linux background drag and held-button tools"],
+    "sibling_work": [{"name": "E2B Desktop Sandbox", "url": "https://github.com/e2b-dev/desktop", "one_line": "Open-source sandboxed virtual desktop on Firecracker microVMs for secure computer-use."}, {"name": "Windows Agent Arena", "url": "https://github.com/microsoft/WindowsAgentArena", "one_line": "Scalable real-Windows benchmark of 150+ tasks for desktop agents, co-authored by Cua's founder."}],
+    "shipping_next": ["BYOI (.qcow2, .iso) support on Cloud, marked soon in the README", "Multi-agent computer-use orchestration across sandboxes, showcased at ClawCon"],
+    "creator_quote": {"text": "a Docker-style container runtime that lets AI agents drive full operating systems in lightweight, isolated VMs.", "source_url": "https://news.ycombinator.com/item?id=43773563"},
+    "reading_list_candidate": {"title": "Windows Agent Arena: Evaluating Multi-Modal OS Agents at Scale", "url": "https://arxiv.org/abs/2409.08264", "why": "Co-authored by Cua's founder; the benchmark work the sandbox-and-eval thesis grew out of."},
+    "code_snippet": {"lang": "python", "path": "README.md", "code": "import asyncio\nfrom cua import Sandbox, Image, ComputerAgent\n\nasync def main():\n    async with Sandbox.ephemeral(Image.linux()) as sb:\n        agent = ComputerAgent(\n            model=\"cua/anthropic/claude-sonnet-4.5\",\n            tools=[sb]\n        )\n        messages = [{\"role\": \"user\", \"content\": \"Take a screenshot\"}]\n        async for result in agent.run(messages):\n            print(result)\n\nasyncio.run(main())", "caption": "One ComputerAgent loop over an ephemeral, swappable Sandbox, the same call whether the OS is Linux, macOS or Windows."}
+  }
+}

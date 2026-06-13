@@ -1,0 +1,4 @@
+[
+  {"pass": 1, "focus": "assembly + pre-flight", "actions": ["Composed all sections from researcher blobs and the trend analysis.", "Local pre-flight scan clean for em/en dashes, semicolons, question marks, arrows, colons.", "Replaced banned vague quantifiers 'several' and 'a few'.", "Removed trigram overlaps 'in six days', 'its first commit', 'and it's' across surfaces."]},
+  {"pass": 2, "focus": "critic length fixes", "actions": ["Trimmed cold open from 122 to 107 words.", "Trimmed Finalist cards #2, #3, #4 under the 80-word cap.", "Re-ran Critic: APPROVED, total 1,500 words, all sections within budget."]}
+]

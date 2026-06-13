@@ -16,5 +16,14 @@
     "lesson_headline": "Ship the MCP server next to your library, not after it",
     "final_grader_total": 91,
     "shipped_under_bar": false
+  },
+  {
+    "issue": 6,
+    "week_start": "2026-06-07",
+    "hero_project": "taste-skill",
+    "through_line": "The repos that climbed this week stayed thin and stood on tools that already worked.",
+    "lesson_headline": "Ship against an interface the agent already understands",
+    "final_grader_total": 92,
+    "shipped_under_bar": false
   }
 ]
