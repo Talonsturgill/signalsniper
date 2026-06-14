@@ -838,6 +838,32 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Pamgaea",
       "attribution_required": "Music. Pamgaea by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "retrofuture-clean",
+      "title": "RetroFuture Clean",
+      "file": "RetroFuture_Clean.mp3",
+      "duration_s": 206.2,
+      "mood": "driving synthwave, clean propulsive retro-future groove, precise systems momentum",
+      "register": "electronic",
+      "fits": "geominimal, subway-chrome, mono-terminal, RECEIPT, SCHEMATIC, CLASSIC",
+      "preset_packs": [
+        "geominimal",
+        "subway-chrome",
+        "mono-terminal",
+        "cctv"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "SCHEMATIC",
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=RetroFuture+Clean",
+      "attribution_required": "Music. RetroFuture Clean by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
