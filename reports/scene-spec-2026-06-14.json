@@ -1,0 +1,95 @@
+{
+  "date": "2026-06-14",
+  "topic": "LMCache, the open-source KV cache layer that stores and reuses LLM key-value caches across queries and serving engines so warm caches get pulled instead of recomputed",
+  "creator_handle": "@ChengYihuaA",
+  "project_url": "https://github.com/LMCache/LMCache",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "geominimal",
+    "framework": "RECEIPT",
+    "audio_palette": "electronic",
+    "held_subject": "lmcache",
+
+    "tokens": {
+      "canvas": "#F5F5F0",
+      "ink": "#0F0F10",
+      "ink_muted": "#7E7E7E",
+      "accent": "#D8421C",
+      "hairline": "#E0E0DC"
+    },
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "SpaceGrotesk",
+      "italic": "SpaceGrotesk"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.025,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.12
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 2,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.12,
+      "halation": 0.05,
+      "lighting_arc": 0.24
+    },
+    "accent_contrast_min": 3.5
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "LMCache",
+      "eyebrow": "the open KV cache layer",
+      "camera": "orbit",
+      "duration_s": 3.0
+    },
+    {
+      "template": "big_number",
+      "numeral": "8x",
+      "caption": "faster first token",
+      "sub": "warm the cache, skip the recompute",
+      "camera": "ken_burns",
+      "duration_s": 3.6
+    },
+    {
+      "template": "big_number",
+      "numeral": "15x",
+      "caption": "throughput on repeat reads",
+      "sub": "RAG and multi turn, all cached",
+      "camera": "parallax_drift",
+      "duration_s": 3.6
+    },
+    {
+      "template": "fix",
+      "primary": "Cache it once.",
+      "secondary": "Serve it anywhere.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 4.0
+    },
+    {
+      "template": "close",
+      "primary": "KV cache, set free.",
+      "accent": "Off the GPU, reused.",
+      "subtitle": "vLLM, TGI, or NVIDIA Dynamo.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.6
+    }
+  ]
+}

@@ -168,5 +168,10 @@
     "date": "2026-06-13",
     "slug": "pamgaea",
     "project_url": "https://github.com/DanMcInerney/architect-loop"
+  },
+  {
+    "date": "2026-06-14",
+    "slug": "retrofuture-clean",
+    "project_url": "https://github.com/LMCache/LMCache"
   }
 ]

@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-14",
+  "brand_slug": null,
+  "preset_slug": "geominimal",
+  "framework": "RECEIPT",
+  "rationale_one_line": "A KV-cache performance story is carried by hard numbers, so RECEIPT lets the speedups do the proving, and geominimal's Space Grotesk hard-cut grid reads like systems infrastructure.",
+  "writing_tone_notes": "Bold declarative, peer-to-peer, build-in-public. Contractions where natural. Show the mechanism (cache reused, not recomputed), let the 8x and 15x land without superlatives. The contrast carries the praise.",
+  "do_rules": [
+    "Lead the numbers honestly as the project's own benchmark claims",
+    "Frame the novelty as engine-independent cache reuse, not just a faster server",
+    "Keep each surface (tweet, why-this-one, scenes) on a different phrase"
+  ],
+  "dont_rules": [
+    "No version numbers in the caption",
+    "No superlatives or hype adjectives",
+    "Do not reuse 'off the GPU' or 'warm cache' phrasing across surfaces"
+  ]
+}

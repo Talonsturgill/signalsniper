@@ -1,12 +1,5 @@
 [
     {
-        "date": "2026-05-12",
-        "brand_slug": null,
-        "aesthetic_slug": "geominimal",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/tinyhumansai/openhuman"
-    },
-    {
         "date": "2026-05-13",
         "brand_slug": null,
         "aesthetic_slug": "editorial-paper",
@@ -208,5 +201,12 @@
         "aesthetic_slug": "claude",
         "framework": "SCHEMATIC",
         "project_url": "https://github.com/DanMcInerney/architect-loop"
+    },
+    {
+        "date": "2026-06-14",
+        "brand_slug": null,
+        "aesthetic_slug": "geominimal",
+        "framework": "RECEIPT",
+        "project_url": "https://github.com/LMCache/LMCache"
     }
 ]
