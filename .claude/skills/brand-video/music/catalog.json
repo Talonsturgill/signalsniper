@@ -864,6 +864,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=RetroFuture+Clean",
       "attribution_required": "Music. RetroFuture Clean by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "clean-soul",
+      "title": "Clean Soul",
+      "file": "Clean_Soul.mp3",
+      "duration_s": 306.7,
+      "mood": "calm / reflective / light piano",
+      "register": "acoustic",
+      "fits": "editorial-paper, claude, gallery, MANIFESTO, CLASSIC",
+      "preset_packs": [
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "CLASSIC",
+        "DISPATCH"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Clean+Soul",
+      "attribution_required": "Music. Clean Soul by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

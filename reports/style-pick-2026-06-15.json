@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-15",
+  "brand_slug": null,
+  "preset_slug": "editorial-paper",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "obsidian-wiki is about knowledge living in human-readable Obsidian notes, so editorial-paper's warm-cream EB Garamond page reads like the vault itself, and MANIFESTO lets the thesis (compile once, stop re-explaining) land in bold flashes while an inserted diagram still shows the four-stage loop.",
+  "writing_tone_notes": "Terminal-native, understated, build-in-public peer-to-peer. Contractions where natural. Credit Karpathy's LLM-Wiki pattern, spotlight the execution. Show the mechanism (agent as librarian, contradictions tracked, delta updates) and let the contrast carry the praise. No superlatives.",
+  "do_rules": [
+    "Lead the X caption with star velocity, never the release tag",
+    "Credit the LLM-Wiki pattern as named prior art, frame novelty as the agent doing the maintaining",
+    "Keep each surface (tweet, why-this-one, scenes) on a different phrase and a different angle"
+  ],
+  "dont_rules": [
+    "No version numbers in the caption",
+    "No superlatives or hype adjectives",
+    "Do not reuse 'knowledge base' or 'Karpathy' phrasing in the why-this-one",
+    "Do not state geography (creator location is not public)"
+  ]
+}
