@@ -1,0 +1,111 @@
+{
+  "date": "2026-06-15",
+  "topic": "obsidian-wiki, a framework that lets AI coding agents build and maintain their own Obsidian knowledge vault using Karpathy's LLM Wiki pattern",
+  "creator_handle": "@_ar9av",
+  "project_url": "https://github.com/Ar9av/obsidian-wiki",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-paper",
+    "framework": "MANIFESTO",
+    "audio_palette": "acoustic",
+    "held_subject": "obsidian-wiki",
+    "accent_contrast_min": 3.0,
+
+    "tokens": {
+      "canvas": "#F4EFE3",
+      "ink": "#1A1815",
+      "ink_muted": "#7C7264",
+      "accent": "#9C3B2C",
+      "hairline": "#D5CBB8"
+    },
+    "fonts": {
+      "display": "EBGaramond",
+      "body": "EBGaramond",
+      "italic": "EBGaramond"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.012,
+      "case": "preserve",
+      "italic_descriptors": true
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.40,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.27
+    },
+    "layout": {
+      "padding_pct": 9,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 8
+    },
+    "texture": {
+      "grain": 0.07,
+      "vignette": 0.18,
+      "halation": 0.05,
+      "lighting_arc": 0.32
+    }
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "obsidian-wiki",
+      "eyebrow": "the wiki your agents maintain",
+      "camera": "push_in",
+      "duration_s": 3.0
+    },
+    {
+      "template": "flash",
+      "word": "ASK ONCE.",
+      "caption": "then stop re-explaining it",
+      "camera": "crash_zoom",
+      "duration_s": 3.0
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "HOW THE BRAIN GROWS",
+      "nodes": [
+        {"label": "ingest", "x": 22, "y": 28, "accent": true, "filled": true},
+        {"label": "extract", "x": 78, "y": 28},
+        {"label": "merge", "x": 78, "y": 72},
+        {"label": "maintain", "x": 22, "y": 72}
+      ],
+      "edges": [
+        {"from": 0, "to": 1, "accent": true},
+        {"from": 1, "to": 2},
+        {"from": 2, "to": 3},
+        {"from": 3, "to": 0, "accent": true}
+      ],
+      "camera": "orbit",
+      "duration_s": 4.5
+    },
+    {
+      "template": "fix",
+      "primary": "It edits itself.",
+      "secondary": "tracks contradictions.",
+      "emphasize": true,
+      "camera": "crash_zoom",
+      "duration_s": 3.3
+    },
+    {
+      "template": "flash",
+      "word": "IT PERSISTS.",
+      "caption": "the context that outlives the chat",
+      "camera": "ken_burns",
+      "duration_s": 3.0
+    },
+    {
+      "template": "close",
+      "primary": "One vault.",
+      "accent": "every agent.",
+      "subtitle": "the same brain across every tool you run.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.4
+    }
+  ]
+}
