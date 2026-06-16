@@ -178,5 +178,10 @@
     "date": "2026-06-15",
     "slug": "clean-soul",
     "project_url": "https://github.com/Ar9av/obsidian-wiki"
+  },
+  {
+    "date": "2026-06-16",
+    "slug": "darkest-child",
+    "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
   }
 ]

@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-16",
+  "brand_slug": null,
+  "preset_slug": "cctv",
+  "framework": "DISPATCH",
+  "rationale_one_line": "A terminal-native security agent earns the cctv surveillance pack and a cool reportorial DISPATCH spine; both are fresh against the ledger.",
+  "writing_tone_notes": "Operator voice. Terse, scope-disciplined, runbook cadence. Cool and reportorial, not hyped. Specifics over adjectives. Lowercase shell beats inside the terminal hero; uppercase elsewhere from the cctv case rule. The contrast carries the praise.",
+  "do_rules": [
+    "Lead the hero with a real terminal session: recon, test, gate.",
+    "Land the novel claim on the 7-Question Gate (signal over noise).",
+    "Keep the authorized-scope framing visible in the quote beat.",
+    "At least one orbit camera and a terminal visual hero."
+  ],
+  "dont_rules": [
+    "No version numbers in the X caption.",
+    "No phrase repeated across tweet, Why-this-one, and scene copy.",
+    "No operational exploit detail; stay high-level and scope-bound.",
+    "No superlatives or sycophancy."
+  ]
+}

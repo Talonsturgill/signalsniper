@@ -888,6 +888,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Clean+Soul",
       "attribution_required": "Music. Clean Soul by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "darkest-child",
+      "title": "Darkest Child",
+      "file": "Darkest_Child.mp3",
+      "duration_s": 238.7,
+      "mood": "eerie suspense, tense surveillance, brooding",
+      "register": "electronic",
+      "fits": "cctv, mono-terminal, subway-chrome, DISPATCH, SCHEMATIC, surveillance pieces",
+      "preset_packs": [
+        "cctv",
+        "mono-terminal",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "SCHEMATIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Darkest+Child",
+      "attribution_required": "Music. Darkest Child by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

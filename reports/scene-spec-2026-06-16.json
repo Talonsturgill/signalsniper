@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-16",
+  "topic": "claude-bug-bounty, the terminal-native authorized bounty agent",
+  "creator_handle": "@shuvonsec",
+  "project_url": "https://github.com/shuvonsec/claude-bug-bounty",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "cctv",
+    "framework": "DISPATCH",
+    "audio_palette": "electronic",
+    "held_subject": "claude-bug-bounty",
+
+    "tokens": {"canvas": "#1B1B1B", "ink": "#E0E0E0", "ink_muted": "#909090", "accent": "#FF3B30", "hairline": "#2A2A2A"},
+    "fonts": {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+    "typography": {"display_weight": 500, "body_weight": 400, "letter_spacing_em": 0.0, "case": "upper", "italic_descriptors": false},
+    "motion": {"register": "cut", "scene_in_s": 0.05, "scene_out_s": 0.05, "stagger_s": 0.08},
+    "layout": {"padding_pct": 5, "rule_thickness_px": 1, "stage_radius_px": 0},
+    "texture": {"grain": 0.10, "vignette": 0.30, "halation": 0.0, "lighting_arc": 0.10},
+    "accent_contrast_min": 3.5
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "claude-bug-bounty", "eyebrow": "autonomous bounty recon, in the shell", "camera": "orbit", "duration_s": 3.0},
+
+    {"template": "terminal", "title": "scope locked. hunting.", "accent_idx": 3, "camera": "parallax_drift", "duration_s": 4.0, "lines": [
+      {"text": "bounty hunt --scope acme.io", "prompt": true},
+      {"text": "recon   412 subdomains  87 live", "prompt": false},
+      {"text": "test    idor xss ssrf sqli ssti", "prompt": false},
+      {"text": "gate    7 questions per finding", "prompt": false}
+    ]},
+
+    {"template": "quote", "quote": "Only test what the program says you can.", "attribution": "@shuvonsec", "camera": "ken_burns", "duration_s": 3.5},
+
+    {"template": "three_line", "lines": ["Recon to filed report.", "One loop. One operator.", "Scope is the fence."], "accent_idx": 2, "camera": "parallax_drift", "duration_s": 3.5},
+
+    {"template": "fix", "primary": "Seven questions.", "secondary": "Or the finding's cut.", "emphasize": true, "camera": "push_in", "duration_s": 3.5},
+
+    {"template": "close", "primary": "Less noise.", "accent": "More signal.", "subtitle": "the bounty agent that filters itself.", "emphasize": true, "camera": "pull_back", "duration_s": 3.5}
+  ]
+}
