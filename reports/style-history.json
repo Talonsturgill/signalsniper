@@ -1,12 +1,5 @@
 [
     {
-        "date": "2026-05-15",
-        "brand_slug": "voltagent",
-        "aesthetic_slug": "voltagent",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/NousResearch/hermes-agent"
-    },
-    {
         "date": "2026-05-16",
         "brand_slug": "linear.app",
         "aesthetic_slug": "mono",
@@ -208,5 +201,12 @@
         "aesthetic_slug": "cctv",
         "framework": "DISPATCH",
         "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
+    },
+    {
+        "date": "2026-06-17",
+        "brand_slug": null,
+        "aesthetic_slug": "editorial-90s",
+        "framework": "SCHEMATIC",
+        "project_url": "https://github.com/stevesolun/ctx"
     }
 ]

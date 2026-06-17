@@ -1,0 +1,45 @@
+{
+  "date": "2026-06-17",
+  "topic": "ctx, the recommendation engine that scores a 100k-node tool graph and loads only the minimal bundle",
+  "creator_handle": "@SteveSolun",
+  "project_url": "https://github.com/stevesolun/ctx",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-90s",
+    "framework": "SCHEMATIC",
+    "audio_palette": "acoustic",
+    "held_subject": "ctx",
+
+    "tokens": {"canvas": "#F1E8D6", "ink": "#1F1A14", "ink_muted": "#8C7E68", "accent": "#D2371B", "hairline": "#D8CBB0"},
+    "fonts": {"display": "Fraunces", "body": "Fraunces", "italic": "Fraunces"},
+    "typography": {"display_weight": 800, "body_weight": 400, "letter_spacing_em": -0.024, "case": "preserve", "italic_descriptors": true},
+    "motion": {"register": "scale", "scene_in_s": 0.42, "scene_out_s": 0.25, "stagger_s": 0.30},
+    "layout": {"padding_pct": 9, "rule_thickness_px": 2, "stage_radius_px": 6},
+    "texture": {"grain": 0.10, "vignette": 0.22, "halation": 0.10, "lighting_arc": 0.36},
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "ctx", "eyebrow": "context engineering, by subtraction", "camera": "push_in", "duration_s": 3.0},
+
+    {"template": "big_number", "numeral": "102,928", "caption": "nodes Steve indexed", "sub": "one graph of every agent tool", "camera": "ken_burns", "duration_s": 3.2},
+
+    {"template": "diagram", "eyebrow": "many in, a few out", "camera": "orbit", "duration_s": 4.5, "nodes": [
+      {"label": "your repo", "x": 12, "y": 50},
+      {"label": "the graph", "x": 40, "y": 50, "accent": true, "filled": true},
+      {"label": "scored", "x": 65, "y": 50},
+      {"label": "a dozen", "x": 88, "y": 50, "accent": true, "filled": true}
+    ], "edges": [
+      {"from": 0, "to": 1},
+      {"from": 1, "to": 2, "accent": true},
+      {"from": 2, "to": 3, "accent": true}
+    ]},
+
+    {"template": "two_line", "lines": ["Most agents bolt on", "every tool they find."], "accent_idx": 1, "camera": "parallax_drift", "duration_s": 3.0},
+
+    {"template": "fix", "primary": "Less context.", "secondary": "Sharper output.", "emphasize": true, "camera": "crash_zoom", "duration_s": 3.4},
+
+    {"template": "close", "primary": "The graph picks.", "accent": "You skip the rest.", "subtitle": "skill rot, scored out of the way.", "emphasize": true, "camera": "pull_back", "duration_s": 3.5}
+  ]
+}

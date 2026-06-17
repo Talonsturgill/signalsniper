@@ -912,6 +912,32 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Darkest+Child",
       "attribution_required": "Music. Darkest Child by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "frost-waltz",
+      "title": "Frost Waltz",
+      "file": "Frost_Waltz.mp3",
+      "duration_s": 135.5,
+      "mood": "elegant classical waltz, refined orchestral lilt, clever methodical poise",
+      "register": "acoustic",
+      "fits": "editorial-90s, editorial-paper, gallery, claude, SCHEMATIC, CLASSIC, DISPATCH refined explainers",
+      "preset_packs": [
+        "editorial-90s",
+        "editorial-paper",
+        "gallery",
+        "claude"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "CLASSIC",
+        "DISPATCH",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Frost+Waltz",
+      "attribution_required": "Music. Frost Waltz by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
