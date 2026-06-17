@@ -183,5 +183,10 @@
     "date": "2026-06-16",
     "slug": "darkest-child",
     "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
+  },
+  {
+    "date": "2026-06-17",
+    "slug": "frost-waltz",
+    "project_url": "https://github.com/stevesolun/ctx"
   }
 ]

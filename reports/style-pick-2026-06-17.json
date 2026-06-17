@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-17",
+  "brand_slug": null,
+  "preset_slug": "editorial-90s",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "ctx is a structural idea (walk a 100k-node graph, load a scored minimal subset), so SCHEMATIC puts the graph diagram at the center, and editorial-90s is the only preset clean of the last 14 entries while its bold-launch register fits the anti-bloat thesis.",
+  "writing_tone_notes": "Build-in-public peer voice. Confident and a little contrarian. The inversion carries the praise. Everyone bolts on more context. Steve scored it instead. Specifics over adjectives. Short declaratives. Contractions where natural.",
+  "do_rules": [
+    "Lead the diagram scene with the graph-to-minimal-subset walk.",
+    "Let the numbers (102,928 nodes vs a 12-item bundle) prove the scale.",
+    "Frame the novelty as selective context loading, not another catalog.",
+    "Keep the close on the inversion, reframed from the fix."
+  ],
+  "dont_rules": [
+    "No version numbers anywhere (v1.0.11 is banned in copy).",
+    "No superlatives or sycophancy.",
+    "No phrase repeated across tweet, Why-this-one, and scene copy.",
+    "No em dashes, semicolons, question marks, arrows."
+  ]
+}
