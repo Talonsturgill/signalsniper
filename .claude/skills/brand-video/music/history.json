@@ -188,5 +188,10 @@
     "date": "2026-06-17",
     "slug": "frost-waltz",
     "project_url": "https://github.com/stevesolun/ctx"
+  },
+  {
+    "date": "2026-06-18",
+    "slug": "digital-lemonade",
+    "project_url": "https://github.com/alexzhang13/rlm"
   }
 ]

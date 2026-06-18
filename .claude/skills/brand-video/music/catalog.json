@@ -938,6 +938,31 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Frost+Waltz",
       "attribution_required": "Music. Frost Waltz by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "digital-lemonade",
+      "title": "Digital Lemonade",
+      "file": "Digital_Lemonade.mp3",
+      "duration_s": 180.1,
+      "mood": "bright clean electronic, crisp propulsive groove, modern builder optimism",
+      "register": "electronic",
+      "fits": "vercel, geominimal, subway-chrome, gallery, RECEIPT, CLASSIC, MANIFESTO clean infra launches",
+      "preset_packs": [
+        "vercel",
+        "geominimal",
+        "subway-chrome",
+        "gallery"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Digital+Lemonade",
+      "attribution_required": "Music. Digital Lemonade by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

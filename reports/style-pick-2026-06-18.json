@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-18",
+  "brand_slug": "vercel",
+  "preset_slug": "vercel",
+  "framework": "RECEIPT",
+  "rationale_one_line": "RLM's whole story is a number (a small model recursing over its own context beats a much bigger one at the same cost), so RECEIPT lets the metric carry the praise, and the vercel brand pack gives the clean engineered-infrastructure register that fits a drop-in inference library while clearing the last-14 anti-repeat window where every preset is spent.",
+  "writing_tone_notes": "Build-in-public peer voice. Confident, plain, a little understated. The inversion does the bragging. Specifics over adjectives. Short declaratives. Contractions where natural. Let the numbers and the recursion loop prove the claim instead of superlatives.",
+  "do_rules": [
+    "Lead the receipt scenes with the +34 points at same cost result.",
+    "Show the recursion as a loop the model spawns on itself, not a longer window.",
+    "Frame the novelty as a one-line drop-in swap, not a new framework.",
+    "Close on the inversion reframed from the fix, not repeated."
+  ],
+  "dont_rules": [
+    "No version numbers anywhere in copy.",
+    "No superlatives or sycophancy.",
+    "No phrase repeated across the tweet, the Why-this-one, and scene copy.",
+    "No em dashes, semicolons, question marks, arrows, or colons in body lines."
+  ]
+}
