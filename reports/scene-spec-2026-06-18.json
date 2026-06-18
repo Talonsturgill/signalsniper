@@ -1,0 +1,46 @@
+{
+  "date": "2026-06-18",
+  "topic": "RLM, the recursive language model that parks the whole prompt in a REPL and lets a small model call itself to beat a bigger one on long context at the same cost",
+  "creator_handle": "@a1zhang",
+  "project_url": "https://github.com/alexzhang13/rlm",
+
+  "design": {
+    "brand_slug": "vercel",
+    "aesthetic_slug": "vercel",
+    "framework": "RECEIPT",
+    "audio_palette": "electronic",
+    "held_subject": "RLM",
+
+    "tokens": {"canvas": "#FFFFFF", "ink": "#171717", "ink_muted": "#4D4D4D", "accent": "#0062D6", "hairline": "#EBEBEB"},
+    "fonts": {"display": "Inter", "body": "Inter", "italic": "Inter"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.03, "case": "preserve", "italic_descriptors": false},
+    "motion": {"register": "fade", "scene_in_s": 0.34, "scene_out_s": 0.22, "stagger_s": 0.20},
+    "layout": {"padding_pct": 8, "rule_thickness_px": 1, "stage_radius_px": 6},
+    "texture": {"grain": 0.04, "vignette": 0.10, "halation": 0.05, "lighting_arc": 0.24},
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "RLM", "eyebrow": "the model that calls itself", "camera": "push_in", "duration_s": 3.0},
+
+    {"template": "big_number", "numeral": "+34", "caption": "points over GPT-5", "sub": "same total API cost", "camera": "ken_burns", "duration_s": 3.2},
+
+    {"template": "diagram", "eyebrow": "context lives in a REPL", "camera": "orbit", "duration_s": 4.5, "nodes": [
+      {"label": "prompt", "x": 12, "y": 54},
+      {"label": "REPL", "x": 44, "y": 54, "accent": true, "filled": true},
+      {"label": "sub-call", "x": 44, "y": 20, "accent": true, "filled": true},
+      {"label": "output", "x": 86, "y": 54}
+    ], "edges": [
+      {"from": 0, "to": 1},
+      {"from": 1, "to": 2, "accent": true},
+      {"from": 2, "to": 1, "accent": true},
+      {"from": 1, "to": 3}
+    ]},
+
+    {"template": "big_number", "numeral": "10M", "caption": "tokens it reads through", "sub": "where big models fall off", "camera": "static_breathe", "duration_s": 3.2},
+
+    {"template": "fix", "primary": "Small model.", "secondary": "Bigger answers.", "emphasize": true, "camera": "crash_zoom", "duration_s": 3.4},
+
+    {"template": "close", "primary": "One call.", "accent": "Unbounded context.", "subtitle": "Swap the function, keep the cost.", "emphasize": true, "camera": "pull_back", "duration_s": 3.5}
+  ]
+}

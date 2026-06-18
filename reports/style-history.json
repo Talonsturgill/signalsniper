@@ -1,212 +1,212 @@
 [
-    {
-        "date": "2026-05-16",
-        "brand_slug": "linear.app",
-        "aesthetic_slug": "mono",
-        "framework": "CLASSIC",
-        "project_url": "https://github.com/santifer/career-ops"
-    },
-    {
-        "date": "2026-05-17",
-        "brand_slug": "hashicorp",
-        "aesthetic_slug": "hashicorp",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/statewright/statewright"
-    },
-    {
-        "date": "2026-05-18",
-        "brand_slug": "cohere",
-        "aesthetic_slug": "cohere",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/MinishLab/semble"
-    },
-    {
-        "date": "2026-05-19",
-        "brand_slug": "sentry",
-        "aesthetic_slug": "sentry",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/tech-leads-club/agent-skills"
-    },
-    {
-        "date": "2026-05-20",
-        "brand_slug": "opencode.ai",
-        "aesthetic_slug": "opencode.ai",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/tirth8205/code-review-graph"
-    },
-    {
-        "date": "2026-05-21",
-        "brand_slug": null,
-        "aesthetic_slug": "mono-terminal",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/pyrex41/Shen-Backpressure"
-    },
-    {
-        "date": "2026-05-22",
-        "brand_slug": null,
-        "aesthetic_slug": "subway-chrome",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/karpathy/autoresearch"
-    },
-    {
-        "date": "2026-05-23",
-        "brand_slug": "warp",
-        "aesthetic_slug": "warp",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/can1357/oh-my-pi"
-    },
-    {
-        "date": "2026-05-24",
-        "brand_slug": null,
-        "aesthetic_slug": "gallery",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/yoheinakajima/activegraph"
-    },
-    {
-        "date": "2026-05-25",
-        "brand_slug": null,
-        "aesthetic_slug": "editorial-90s",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/virattt/dexter"
-    },
-    {
-        "date": "2026-05-26",
-        "brand_slug": null,
-        "aesthetic_slug": "claude",
-        "framework": "DISPATCH",
-        "project_url": "https://github.com/affaan-m/ECC"
-    },
-    {
-        "date": "2026-05-28",
-        "brand_slug": null,
-        "aesthetic_slug": "geominimal",
-        "framework": "CLASSIC",
-        "project_url": "https://github.com/thedotmack/claude-mem"
-    },
-    {
-        "date": "2026-05-29",
-        "brand_slug": null,
-        "aesthetic_slug": "editorial-paper",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/Lum1104/Understand-Anything"
-    },
-    {
-        "date": "2026-05-31",
-        "brand_slug": null,
-        "aesthetic_slug": "cctv",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/ruvnet/RuView"
-    },
-    {
-        "date": "2026-06-01",
-        "brand_slug": "voltagent",
-        "aesthetic_slug": "voltagent",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
-    },
-    {
-        "date": "2026-06-02",
-        "brand_slug": "clickhouse",
-        "aesthetic_slug": "clickhouse",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/D4Vinci/Scrapling"
-    },
-    {
-        "date": "2026-06-03",
-        "brand_slug": "composio",
-        "aesthetic_slug": "composio",
-        "framework": "CLASSIC",
-        "project_url": "https://github.com/jlowin/fastmcp"
-    },
-    {
-        "date": "2026-06-04",
-        "brand_slug": "supabase",
-        "aesthetic_slug": "supabase",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/chopratejas/headroom"
-    },
-    {
-        "date": "2026-06-05",
-        "brand_slug": "linear.app",
-        "aesthetic_slug": "linear.app",
-        "framework": "SCHEMATIC",
-        "project_url": "https://boxes.dev"
-    },
-    {
-        "date": "2026-06-06",
-        "brand_slug": "wired",
-        "aesthetic_slug": "wired",
-        "framework": "DISPATCH",
-        "project_url": "https://github.com/mvanhorn/last30days-skill"
-    },
-    {
-        "date": "2026-06-07",
-        "brand_slug": null,
-        "aesthetic_slug": "mono-terminal",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/Leonxlnx/taste-skill"
-    },
-    {
-        "date": "2026-06-08",
-        "brand_slug": null,
-        "aesthetic_slug": "subway-chrome",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/Panniantong/Agent-Reach"
-    },
-    {
-        "date": "2026-06-10",
-        "brand_slug": "raycast",
-        "aesthetic_slug": "raycast",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/evalstate/fast-agent"
-    },
-    {
-        "date": "2026-06-11",
-        "brand_slug": null,
-        "aesthetic_slug": "gallery",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/kenn-io/agentsview"
-    },
-    {
-        "date": "2026-06-12",
-        "brand_slug": "cursor",
-        "aesthetic_slug": "cursor",
-        "framework": "CLASSIC",
-        "project_url": "https://github.com/trycua/cua"
-    },
-    {
-        "date": "2026-06-13",
-        "brand_slug": null,
-        "aesthetic_slug": "claude",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/DanMcInerney/architect-loop"
-    },
-    {
-        "date": "2026-06-14",
-        "brand_slug": null,
-        "aesthetic_slug": "geominimal",
-        "framework": "RECEIPT",
-        "project_url": "https://github.com/LMCache/LMCache"
-    },
-    {
-        "date": "2026-06-15",
-        "brand_slug": null,
-        "aesthetic_slug": "editorial-paper",
-        "framework": "MANIFESTO",
-        "project_url": "https://github.com/Ar9av/obsidian-wiki"
-    },
-    {
-        "date": "2026-06-16",
-        "brand_slug": null,
-        "aesthetic_slug": "cctv",
-        "framework": "DISPATCH",
-        "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
-    },
-    {
-        "date": "2026-06-17",
-        "brand_slug": null,
-        "aesthetic_slug": "editorial-90s",
-        "framework": "SCHEMATIC",
-        "project_url": "https://github.com/stevesolun/ctx"
-    }
+  {
+    "date": "2026-05-17",
+    "brand_slug": "hashicorp",
+    "aesthetic_slug": "hashicorp",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/statewright/statewright"
+  },
+  {
+    "date": "2026-05-18",
+    "brand_slug": "cohere",
+    "aesthetic_slug": "cohere",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/MinishLab/semble"
+  },
+  {
+    "date": "2026-05-19",
+    "brand_slug": "sentry",
+    "aesthetic_slug": "sentry",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/tech-leads-club/agent-skills"
+  },
+  {
+    "date": "2026-05-20",
+    "brand_slug": "opencode.ai",
+    "aesthetic_slug": "opencode.ai",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/tirth8205/code-review-graph"
+  },
+  {
+    "date": "2026-05-21",
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/pyrex41/Shen-Backpressure"
+  },
+  {
+    "date": "2026-05-22",
+    "brand_slug": null,
+    "aesthetic_slug": "subway-chrome",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/karpathy/autoresearch"
+  },
+  {
+    "date": "2026-05-23",
+    "brand_slug": "warp",
+    "aesthetic_slug": "warp",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/can1357/oh-my-pi"
+  },
+  {
+    "date": "2026-05-24",
+    "brand_slug": null,
+    "aesthetic_slug": "gallery",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/yoheinakajima/activegraph"
+  },
+  {
+    "date": "2026-05-25",
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-90s",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/virattt/dexter"
+  },
+  {
+    "date": "2026-05-26",
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "DISPATCH",
+    "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-05-28",
+    "brand_slug": null,
+    "aesthetic_slug": "geominimal",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/thedotmack/claude-mem"
+  },
+  {
+    "date": "2026-05-29",
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-paper",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/Lum1104/Understand-Anything"
+  },
+  {
+    "date": "2026-05-31",
+    "brand_slug": null,
+    "aesthetic_slug": "cctv",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/ruvnet/RuView"
+  },
+  {
+    "date": "2026-06-01",
+    "brand_slug": "voltagent",
+    "aesthetic_slug": "voltagent",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
+  },
+  {
+    "date": "2026-06-02",
+    "brand_slug": "clickhouse",
+    "aesthetic_slug": "clickhouse",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/D4Vinci/Scrapling"
+  },
+  {
+    "date": "2026-06-03",
+    "brand_slug": "composio",
+    "aesthetic_slug": "composio",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/jlowin/fastmcp"
+  },
+  {
+    "date": "2026-06-04",
+    "brand_slug": "supabase",
+    "aesthetic_slug": "supabase",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/chopratejas/headroom"
+  },
+  {
+    "date": "2026-06-05",
+    "brand_slug": "linear.app",
+    "aesthetic_slug": "linear.app",
+    "framework": "SCHEMATIC",
+    "project_url": "https://boxes.dev"
+  },
+  {
+    "date": "2026-06-06",
+    "brand_slug": "wired",
+    "aesthetic_slug": "wired",
+    "framework": "DISPATCH",
+    "project_url": "https://github.com/mvanhorn/last30days-skill"
+  },
+  {
+    "date": "2026-06-07",
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/Leonxlnx/taste-skill"
+  },
+  {
+    "date": "2026-06-08",
+    "brand_slug": null,
+    "aesthetic_slug": "subway-chrome",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/Panniantong/Agent-Reach"
+  },
+  {
+    "date": "2026-06-10",
+    "brand_slug": "raycast",
+    "aesthetic_slug": "raycast",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/evalstate/fast-agent"
+  },
+  {
+    "date": "2026-06-11",
+    "brand_slug": null,
+    "aesthetic_slug": "gallery",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/kenn-io/agentsview"
+  },
+  {
+    "date": "2026-06-12",
+    "brand_slug": "cursor",
+    "aesthetic_slug": "cursor",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/trycua/cua"
+  },
+  {
+    "date": "2026-06-13",
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/DanMcInerney/architect-loop"
+  },
+  {
+    "date": "2026-06-14",
+    "brand_slug": null,
+    "aesthetic_slug": "geominimal",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/LMCache/LMCache"
+  },
+  {
+    "date": "2026-06-15",
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-paper",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/Ar9av/obsidian-wiki"
+  },
+  {
+    "date": "2026-06-16",
+    "brand_slug": null,
+    "aesthetic_slug": "cctv",
+    "framework": "DISPATCH",
+    "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
+  },
+  {
+    "date": "2026-06-17",
+    "brand_slug": null,
+    "aesthetic_slug": "editorial-90s",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/stevesolun/ctx"
+  },
+  {
+    "date": "2026-06-18",
+    "brand_slug": "vercel",
+    "aesthetic_slug": "vercel",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/alexzhang13/rlm"
+  }
 ]

@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-18",
+  "brand_slug": "vercel",
+  "aesthetic_slug": "vercel",
+  "framework": "RECEIPT",
+  "audio_palette": "electronic",
+  "held_subject": "RLM",
+  "tokens": {
+    "canvas": "#FFFFFF",
+    "ink": "#171717",
+    "ink_muted": "#4D4D4D",
+    "accent": "#0062D6",
+    "hairline": "#EBEBEB"
+  },
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 600,
+    "body_weight": 400,
+    "letter_spacing_em": -0.03,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.34,
+    "scene_out_s": 0.22,
+    "stagger_s": 0.20
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 6
+  },
+  "texture": {
+    "grain": 0.04,
+    "vignette": 0.10,
+    "halation": 0.05,
+    "lighting_arc": 0.24
+  },
+  "accent_contrast_min": 4.5,
+  "audio_track": {
+    "slug": "digital-lemonade",
+    "title": "Digital Lemonade",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "file": "Digital_Lemonade.mp3"
+  }
+}
