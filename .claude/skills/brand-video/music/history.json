@@ -193,5 +193,10 @@
     "date": "2026-06-18",
     "slug": "digital-lemonade",
     "project_url": "https://github.com/alexzhang13/rlm"
+  },
+  {
+    "date": "2026-06-19",
+    "slug": "newer-wave",
+    "project_url": "https://github.com/ollama/ollama"
   }
 ]

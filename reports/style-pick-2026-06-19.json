@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-19",
+  "brand_slug": "ollama",
+  "preset_slug": "ollama",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "Ollama's MLX engine is an architecture swap, so the SCHEMATIC diagram-first framework fits, rendered in Ollama's own paper-white documentation brand.",
+  "writing_tone_notes": "Understated, documentation-first, no hype. Let the install command and the speed numbers carry it. Peer-to-peer builder voice. Contractions where natural. The contrast (cloud out vs stays home) carries the praise.",
+  "do_rules": [
+    "Lead the caption with the star metric, never a version number",
+    "Keep copy terminal-plain and concrete (run, weights, tokens, disk)",
+    "Use the CLI-green accent only as the local / success signal",
+    "Show the MLX engine as a diagram and prove it with a terminal scene"
+  ],
+  "dont_rules": [
+    "No superlatives, no hype adjectives",
+    "Do not say v0.30.10 or any version number anywhere in the caption",
+    "Do not add brand colors beyond black, white, gray and the one CLI green",
+    "Do not repeat any phrase across tweet, why-this-one, and scene copy"
+  ],
+  "notes": "Preset packs are all inside the 14-entry cooldown window, so per Step 5 rule 1 this run uses the creator's own brand pack (ollama), which has never shipped and is outside the last 14. Music catalog was exhausted (39/39 lifetime-used); a new CC BY 4.0 track (Newer Wave by Kevin MacLeod) was added to the catalog so the lifetime-no-repeat rule still holds."
+}
