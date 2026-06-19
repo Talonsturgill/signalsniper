@@ -963,6 +963,33 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Digital+Lemonade",
       "attribution_required": "Music. Digital Lemonade by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "newer-wave",
+      "title": "Newer Wave",
+      "file": "Newer_Wave.mp3",
+      "duration_s": 174.6,
+      "mood": "clean propulsive synthwave, modern builder optimism, retro-future local-compute momentum",
+      "register": "electronic",
+      "fits": "ollama, mono-terminal, subway-chrome, geominimal, gallery, SCHEMATIC, CLASSIC, RECEIPT",
+      "preset_packs": [
+        "ollama",
+        "mono-terminal",
+        "subway-chrome",
+        "geominimal",
+        "gallery"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "CLASSIC",
+        "RECEIPT",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Newer+Wave",
+      "attribution_required": "Music. Newer Wave by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

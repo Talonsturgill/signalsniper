@@ -208,5 +208,12 @@
     "aesthetic_slug": "vercel",
     "framework": "RECEIPT",
     "project_url": "https://github.com/alexzhang13/rlm"
+  },
+  {
+    "date": "2026-06-19",
+    "brand_slug": "ollama",
+    "aesthetic_slug": "ollama",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/ollama/ollama"
   }
 ]

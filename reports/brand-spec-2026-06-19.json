@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-19",
+  "brand_slug": "ollama",
+  "aesthetic_slug": "ollama",
+  "framework": "SCHEMATIC",
+  "audio_palette": "electronic",
+  "held_subject": "ollama",
+  "source": "Derived from .claude/skills/brand-design-systems/brands/ollama.md (paper-white documentation-first system, pure black ink, system sans, terminal-card with CLI green).",
+  "tokens": {
+    "canvas": "#FFFFFF",
+    "ink": "#000000",
+    "ink_muted": "#737373",
+    "accent": "#157F3C",
+    "hairline": "#E5E5E5"
+  },
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 600,
+    "body_weight": 400,
+    "letter_spacing_em": 0,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.34,
+    "scene_out_s": 0.22,
+    "stagger_s": 0.22
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 12
+  },
+  "texture": {
+    "grain": 0.04,
+    "vignette": 0.10,
+    "halation": 0.05,
+    "lighting_arc": 0.24
+  },
+  "accent_contrast_min": 3.0,
+  "token_notes": {
+    "accent": "#157F3C is a deepened version of Ollama's terminal-green (the CLI success / traffic-light green). It reads as the local-and-go signal and clears the 3.0:1 contrast floor on white, where the literal #27C93F would not.",
+    "fonts": "Ollama's heading face is SF Pro Rounded (Apple-licensed, not bundled). Inter is the brand's own stated body match for system-ui and is used across the board for a faithful documentation feel."
+  },
+  "audio_track": {
+    "slug": "newer-wave",
+    "title": "Newer Wave",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "file": "Newer_Wave.mp3"
+  }
+}
