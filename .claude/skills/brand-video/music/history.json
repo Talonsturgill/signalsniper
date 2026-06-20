@@ -198,5 +198,10 @@
     "date": "2026-06-19",
     "slug": "newer-wave",
     "project_url": "https://github.com/ollama/ollama"
+  },
+  {
+    "date": "2026-06-20",
+    "slug": "reawakening",
+    "project_url": "https://github.com/obra/superpowers"
   }
 ]

@@ -1,0 +1,46 @@
+{
+  "date": "2026-06-20",
+  "topic": "Superpowers, Jesse Vincent's agentic skills framework that makes a coding agent clarify, plan, test, and review before it writes code, with skills that fire as mandatory pre-task workflows rather than suggestions",
+  "creator_handle": "@obra",
+  "project_url": "https://github.com/obra/superpowers",
+
+  "design": {
+    "brand_slug": "warp",
+    "aesthetic_slug": "warp",
+    "framework": "CLASSIC",
+    "audio_palette": "ambient",
+    "held_subject": "Superpowers",
+
+    "tokens": {"canvas": "#16130F", "ink": "#FAF9F6", "ink_muted": "#A89C88", "accent": "#E0913E", "hairline": "#2C261E"},
+    "fonts": {"display": "JetBrainsMono", "body": "Inter", "italic": "Inter"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.01, "case": "preserve", "italic_descriptors": false},
+    "motion": {"register": "fade", "scene_in_s": 0.34, "scene_out_s": 0.24, "stagger_s": 0.24},
+    "layout": {"padding_pct": 8, "rule_thickness_px": 1, "stage_radius_px": 10},
+    "texture": {"grain": 0.05, "vignette": 0.22, "halation": 0.05, "lighting_arc": 0.28},
+    "accent_contrast_min": 3.0
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "Superpowers", "eyebrow": "guardrails for your agent", "camera": "push_in", "duration_s": 3.0},
+
+    {"template": "diagram", "eyebrow": "the loop it enforces", "camera": "orbit", "duration_s": 4.5, "nodes": [
+      {"label": "clarify", "x": 18, "y": 50},
+      {"label": "plan", "x": 50, "y": 16, "accent": true},
+      {"label": "build", "x": 82, "y": 50, "accent": true, "filled": true},
+      {"label": "review", "x": 50, "y": 84}
+    ], "edges": [
+      {"from": 0, "to": 1},
+      {"from": 1, "to": 2, "accent": true},
+      {"from": 2, "to": 3},
+      {"from": 3, "to": 0}
+    ]},
+
+    {"template": "two_line", "lines": ["Vibe coding guesses.", "This one thinks first."], "accent_idx": 1, "camera": "ken_burns", "duration_s": 3.2},
+
+    {"template": "fix", "primary": "Rules, not tips.", "secondary": "Triggered before code.", "emphasize": true, "camera": "push_in", "duration_s": 3.4},
+
+    {"template": "three_line", "lines": ["Plans before patches.", "Tests before trust.", "Review before merge."], "accent_idx": 2, "camera": "parallax_drift", "duration_s": 3.4},
+
+    {"template": "close", "primary": "Old discipline.", "accent": "New hands.", "subtitle": "A veteran's method, wired into the agent.", "emphasize": true, "camera": "pull_back", "duration_s": 3.6}
+  ]
+}

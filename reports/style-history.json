@@ -1,19 +1,5 @@
 [
   {
-    "date": "2026-05-17",
-    "brand_slug": "hashicorp",
-    "aesthetic_slug": "hashicorp",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/statewright/statewright"
-  },
-  {
-    "date": "2026-05-18",
-    "brand_slug": "cohere",
-    "aesthetic_slug": "cohere",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/MinishLab/semble"
-  },
-  {
     "date": "2026-05-19",
     "brand_slug": "sentry",
     "aesthetic_slug": "sentry",
@@ -215,5 +201,12 @@
     "aesthetic_slug": "ollama",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/ollama/ollama"
+  },
+  {
+    "date": "2026-06-20",
+    "brand_slug": "warp",
+    "aesthetic_slug": "warp",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/obra/superpowers"
   }
 ]
