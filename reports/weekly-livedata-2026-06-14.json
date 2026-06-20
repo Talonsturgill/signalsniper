@@ -1,0 +1,11 @@
+{
+  "generated": "2026-06-20",
+  "source": "mcp__github__search_repositories minimal_output:false",
+  "picks": {
+    "2026-06-18": {"slug": "rlm", "full_name": "alexzhang13/rlm", "stars_now": 5036, "forks": 836, "language": "Python", "license": "MIT", "created_at": "2025-12-20", "pushed_at": "2026-06-06", "open_issues": 80},
+    "2026-06-14": {"slug": "LMCache", "full_name": "LMCache/LMCache", "stars_now": 9450, "forks": 1356, "language": "Python", "license": "Apache-2.0", "created_at": "2024-05-28", "pushed_at": "2026-06-20", "open_issues": 317},
+    "2026-06-20": {"slug": "superpowers", "full_name": "obra/superpowers", "stars_now": 233834, "forks": 20756, "language": "Shell", "license": "MIT", "created_at": "2025-10-09", "pushed_at": "2026-06-18", "open_issues": 273},
+    "2026-06-19": {"slug": "ollama", "full_name": "ollama/ollama", "stars_now": 174590, "forks": 16689, "language": "Go", "license": "MIT", "created_at": "2023-06-26", "pushed_at": "2026-06-19", "open_issues": 3472},
+    "2026-06-17": {"slug": "ctx", "full_name": "stevesolun/ctx", "stars_now": 520, "forks": 63, "language": "Python", "license": "MIT", "created_at": "2026-04-08", "pushed_at": "2026-06-20", "open_issues": 1}
+  }
+}

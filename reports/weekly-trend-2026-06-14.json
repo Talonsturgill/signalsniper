@@ -1,0 +1,13 @@
+{
+  "through_line": "This week's climbers competed on what to keep out of the context window, not what to pile in.",
+  "prior_through_lines": [
+    "Issue 2 (2026-05-09): Agents are gaining persistent memory and self-composing skill loops between sessions.",
+    "Issue 4 (2026-05-26): This week's breakout repos pulled AI off the cloud and onto hardware the user owns.",
+    "Issue 5 (2026-05-31): This week's builds were connective tissue for agents, not new models.",
+    "Issue 6 (2026-06-07): The repos that climbed this week stayed thin and stood on tools that already worked."
+  ],
+  "supporting_picks": ["2026-06-18", "2026-06-14", "2026-06-17"],
+  "evidence_paragraph": "RLM (@a1zhang) places the prompt in a REPL variable and recurses over snippets, so RLM(GPT-5-mini) beats GPT-5 by 34 points at OOLONG 132k tokens for roughly the same cost, by never reading the whole document at once. LMCache (@ChengYihuaA) treats the KV cache as a shared layer pulled warm across engines instead of recomputed per request, claiming up to 15x throughput on multi-round and document workloads. ctx (@SteveSolun) walks a graph of 68,494 skills and loads only the 10-to-15 that matter, unloading the rest as rot. Three different layers, one move, decide what the model never has to hold.",
+  "counter_signal": "Ollama (@ollama) and Superpowers (@obra) climbed on the opposite premise, raw local reach and an enforced process that adds structure rather than trimming it.",
+  "note": "Distinct from prior four. Issue 2 was memory across sessions, Issue 5 was connective tissue, Issue 6 was thin tools on existing surfaces. This week is context economy, what to leave out of a single inference."
+}

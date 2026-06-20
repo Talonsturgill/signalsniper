@@ -1,0 +1,21 @@
+{
+  "no_hero_this_week": false,
+  "hero": {
+    "date": "2026-06-18",
+    "project_slug": "rlm",
+    "creator_handle": "a1zhang",
+    "scores": {"momentum": 8, "novelty": 9, "resonance": 8, "total": 25},
+    "reason": "Highest total and best embodiment of the candidate through-line. RLM wins by deciding what the model never reads, recursing over snippets to beat a larger model at the same cost. Lede and Pattern reinforce each other on this pick."
+  },
+  "finalists": [
+    {"rank": 2, "date": "2026-06-14", "project_slug": "LMCache", "creator_handle": "ChengYihuaA", "scores": {"momentum": 8, "novelty": 8, "resonance": 8, "total": 24}},
+    {"rank": 3, "date": "2026-06-20", "project_slug": "superpowers", "creator_handle": "obra", "scores": {"momentum": 10, "novelty": 6, "resonance": 8, "total": 24}},
+    {"rank": 4, "date": "2026-06-19", "project_slug": "ollama", "creator_handle": "ollama", "scores": {"momentum": 9, "novelty": 5, "resonance": 8, "total": 22}},
+    {"rank": 5, "date": "2026-06-17", "project_slug": "ctx", "creator_handle": "SteveSolun", "scores": {"momentum": 5, "novelty": 9, "resonance": 7, "total": 21}}
+  ],
+  "excluded": [
+    {"date": "2026-06-15", "project_slug": "obsidian-wiki", "creator_handle": "_ar9av", "reason": "Strong, but agent-memory framing overlaps Issue 2 through-line; lower total than the five chosen."},
+    {"date": "2026-06-16", "project_slug": "claude-bug-bounty", "creator_handle": "shuvonsec", "reason": "Good subtraction story, lowest total of the seven; held for a possible future security-lane issue."}
+  ],
+  "tiebreak_notes": "RLM (25) over LMCache and Superpowers (24 each) on tiebreak 1, best through-line fit. Superpowers ranked above Ollama on total despite Ollama's larger base, since Superpowers velocity (+1,110/day) outran it this week."
+}

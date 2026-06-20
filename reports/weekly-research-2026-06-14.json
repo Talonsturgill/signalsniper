@@ -1,0 +1,71 @@
+{
+  "2026-06-18": {
+    "date": "2026-06-18",
+    "project_slug": "rlm",
+    "momentum_delta": {"stars_then": 5000, "stars_now": 5036, "velocity_window": "stars roughly flat week over week; the real delta is attention, not commits. Last code push 2026-06-06 predates the tribute. Driven by downstream re-implementations and Prime Intellect's RLMEnv adoption.", "hn_followups": ["https://news.ycombinator.com/item?id=46760660 (Recursive Language Models: the paradigm of 2026)"], "newsletter_mentions": ["VentureBeat: MIT's new recursive framework lets LLMs process 10 million tokens", "MarkTechPost", "bdtechtalks", "Prime Intellect blog (RLMEnv)", "The Neuron Daily"]},
+    "shipped_since": [],
+    "sibling_work": [
+      {"name": "grishahq/recursive-llm", "url": "https://github.com/grishahq/recursive-llm", "one_line": "Independent re-implementation (~557 stars) storing context as variables instead of prompts via LiteLLM."},
+      {"name": "fullstackwebdev/rlm_repl", "url": "https://github.com/fullstackwebdev/rlm_repl", "one_line": "Independent RLM-REPL targeting local LLM servers via a configurable RLM_API_URL."},
+      {"name": "Prime Intellect RLMEnv", "url": "https://www.primeintellect.ai/blog/rlm", "one_line": "RL training environment built around RLMs, framing training models to manage their own context as a 2026 research direction."}
+    ],
+    "shipping_next": [],
+    "creator_quote": {"text": "RLMs replace the canonical llm.completion(prompt, model) call with a rlm.completion(prompt, model) call, acting as a 'language model.'", "source_url": "https://github.com/alexzhang13/rlm"},
+    "creator_quote_alt": {"text": "provides the user the illusion of near infinite context, while under the hood a language model manages, partitions, and recursively calls itself", "source_url": "https://alexzhang13.github.io/blog/2025/rlm/"},
+    "benchmarks": {"oolong_132k": "RLM(GPT-5-mini) beats GPT-5 by ~34 points (~114%) at near-equal cost", "oolong_263k": "beats by ~15 points (~49%) and cheaper per query", "browsecomp_plus_1000docs": "near-perfect (100% vs ~90% without recursion)", "source": "https://alexzhang13.github.io/blog/2025/rlm/"},
+    "reading_list_candidate": {"title": "Think, But Don't Overthink: Reproducing Recursive Language Models", "url": "https://arxiv.org/abs/2603.02615", "why": "Independent reproduction that stress-tests RLM's claims and flags an over-thinking failure mode."},
+    "code_snippet": {"lang": "python", "path": "README.md", "code": "from rlm import RLM\n\nrlm = RLM(\n    backend=\"openai\",\n    backend_kwargs={\"model_name\": \"gpt-5-nano\"},\n    verbose=True,\n)\n\nprint(rlm.completion(\"Print the first 100 powers of two, each on a newline.\").response)", "caption": "Instantiate RLM with any backend and call rlm.completion() where you would call llm.completion(). The recursive decomposition hides behind the same single call."}
+  },
+  "2026-06-14": {
+    "date": "2026-06-14",
+    "project_slug": "LMCache",
+    "momentum_delta": {"stars_then": 9000, "stars_now": 9450, "velocity_window": "+450 since the June 14 tribute baseline of ~9,000. Integrations now span vLLM, SGLang, TensorRT, llm-d, NVIDIA Dynamo, AWS SageMaker, Oracle OCI.", "hn_followups": [], "newsletter_mentions": ["Tensormesh $20M raise covered by SiliconANGLE, HPCwire, BusinessWire, week of May 27 2026", "LMCache + NVIDIA Dynamo at GTC San Jose 2026 session S82033"]},
+    "shipped_since": ["v0.4.8rc3 and rc4 cut June 18 2026 (newer than v0.4.7 of June 13); CUDA 12.9 / 13.0 nightlies June 20", "Blog 'A New Chapter for LMCache and the KV Cache Community' June 2 2026, 220+ contributors across 30+ partners", "Tensormesh raised $20M on top of a $4.5M seed ($24.5M total), AMD Ventures, NVIDIA/NVentures, CoreWeave, announced May 27 2026"],
+    "sibling_work": [{"name": "Mooncake", "url": "https://github.com/kvcache-ai/Mooncake", "one_line": "Distributed KV cache pooling engine from the Kimi team, featured by vLLM in May 2026 for cross-instance cache sharing."}],
+    "shipping_next": ["Stabilize and tag v0.4.8 (at rc4 as of June 18)", "Deeper NVIDIA Dynamo integration via NIXL and GPUDirect Storage"],
+    "creator_quote": {"text": "LMCache: Supercharge Your LLM with the Fastest KV Cache Layer.", "source_url": "https://github.com/LMCache/LMCache", "note": "README tagline; contains a colon and a banned verb, NOT used in post copy."},
+    "verified_perf": {"throughput": "up to 15x improvement in throughput on multi-round QA and document analysis (arXiv:2510.09665 abstract, verbatim)", "ttft": "TTFT 3-10x (LMCache blog); up to 10x cost/latency reduction (Tensormesh press)", "note": "the 8x TTFT / 8x cost figure from the dossier was NOT verifiable and is dropped"},
+    "reading_list_candidate": {"title": "Awesome KV Cache Optimization (system-aware survey, ACL 2026)", "url": "https://github.com/jjiantong/Awesome-KV-Cache-Optimization", "why": "Curated reading list of system-level KV cache techniques, the landscape LMCache sits in."},
+    "code_snippet": {"lang": "bash", "path": "https://docs.lmcache.ai/getting_started/quickstart/offload_kv_cache.html", "code": "export LMCACHE_CHUNK_SIZE=\"256\"\nexport LMCACHE_LOCAL_CPU=\"True\"\nexport LMCACHE_MAX_LOCAL_CPU_SIZE=\"5.0\"\n\nLMCACHE_CONFIG_FILE=lmcache_config.yaml \\\nvllm serve Qwen/Qwen3-8B \\\n  --kv-transfer-config \\\n  '{\"kv_connector\":\"LMCacheConnectorV1\",\"kv_role\":\"kv_both\"}'", "caption": "Env vars set CPU offload, then vllm serve wires in LMCacheConnectorV1 so warm caches load instead of recompute."}
+  },
+  "2026-06-20": {
+    "date": "2026-06-20",
+    "project_slug": "superpowers",
+    "momentum_delta": {"stars_then": 234000, "stars_now": 233834, "velocity_window": "~+1,110 stars on 2026-06-20 (GitHub trending); grew from ~93k in March 2026 to 233,834 by June.", "hn_followups": [], "newsletter_mentions": ["dev.to deep dive 'Superpowers: The Technology to Persuade AI Agents'"]},
+    "shipped_since": ["v6.0.3 (2026-06-18) relocated Subagent-Driven Development scratch files out of .git into a self-ignoring .superpowers/sdd/ directory", "v6.0.2 (2026-06-17) removed the evals submodule to fix plugin installation", "v6.0.0 (2026-06-16) unified two reviewer prompts into one, added Kimi Code / Pi / Antigravity harness support, introduced Global Constraints blocks in plans"],
+    "sibling_work": [{"name": "Massively Parallel Procrastination", "url": "https://blog.fsck.com/2025/10/09/superpowers/", "one_line": "obra's launch essay framing skills as mandatory guides the agent reads before acting."}],
+    "shipping_next": ["Open issue #1667: skills not firing when Claude Code Plan Mode is active, under investigation"],
+    "creator_quote": {"text": "If you have a skill to do something, you _must_ use it to do that activity.", "source_url": "https://blog.fsck.com/2025/10/09/superpowers/"},
+    "reading_list_candidate": {"title": "Superpowers: How I'm using coding agents (Jesse Vincent)", "url": "https://blog.fsck.com/2025/10/09/superpowers/", "why": "The origin essay articulating rules-not-tips and why mandatory composable skills beat optional prompting."},
+    "code_snippet": {"lang": "yaml", "path": "skills/brainstorming/SKILL.md", "code": "---\nname: brainstorming\ndescription: \"You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.\"\n---", "caption": "The skill front-matter encodes the mandatory trigger directly, so the matcher fires it as a hard design-first gate, not a tip."}
+  },
+  "2026-06-19": {
+    "date": "2026-06-19",
+    "project_slug": "ollama",
+    "momentum_delta": {"stars_then": 174000, "stars_now": 174590, "velocity_window": "~+590 over the tribute window on a 174.5k base; steady velocity on a huge installed base.", "hn_followups": [], "newsletter_mentions": ["AlternativeTo coverage of ollama launch for local coding tools"]},
+    "shipped_since": ["v0.30.10 (June 17 2026): Command A and North model family run on Apple Silicon via the MLX engine; llama.cpp engine updated to build 9672", "MLX engine optimizations up to 20% faster via fused Metal kernels and reworked GPU-backed sampling", "ollama launch drives agentic coding apps against a local backend"],
+    "sibling_work": [
+      {"name": "mlx-lm 0.21", "url": "https://github.com/ml-explore/mlx-lm", "one_line": "Apple's MLX LM library added speculative decoding on Apple Silicon."},
+      {"name": "LM Studio", "url": "https://lmstudio.ai", "one_line": "GUI local runtime that also picks llama.cpp or MLX per model."}
+    ],
+    "shipping_next": ["Broader model-family coverage on the MLX engine beyond Command A and North", "More ollama launch agent integrations"],
+    "creator_quote": {"text": "Ollama's MLX engine is now up to 20% faster from new optimizations: several operations are now fused into single Metal kernels via MLX's just-in-time compiler features.", "source_url": "https://ollama.com/blog/mlx-performance", "note": "contains a colon; not used as a blockquote in the post."},
+    "reading_list_candidate": {"title": "Choosing an On-Device LLM Runtime on Apple Silicon", "url": "https://medium.com/@michael.hannecke/choosing-an-on-device-llm-runtime-on-apple-silicon-a-decision-framework-beyond-benchmarks-2449067b8b67", "why": "Frames the MLX vs llama.cpp vs Ollama tradeoff and where the speed edge holds."},
+    "code_snippet": {"lang": "bash", "path": "https://ollama.com/blog/mlx", "code": "ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4", "caption": "ollama launch wires Claude Code to a local backend in one line, no env vars, no API key, model runs on device via the MLX engine."}
+  },
+  "2026-06-17": {
+    "date": "2026-06-17",
+    "project_slug": "ctx",
+    "momentum_delta": {"stars_then": 509, "stars_now": 520, "velocity_window": "+11 over June 17 to 20.", "hn_followups": [], "newsletter_mentions": []},
+    "shipped_since": ["v1.0.14 released 2026-06-17 (catalog-networkx fixes)", "Skillspector graph-audit suite merged June 17-18, pruned rejected and low-confidence skills from the shipped graph", "Opt-in Google Cloud Function response adapter merged June 18"],
+    "graph_current": {"nodes": 79958, "edges": "2.6M", "skill_pages": 68494, "hydrated": 67024, "agents": 467, "mcp_servers": 10790, "harnesses": 207, "note": "README as of 2026-06-20; lower than the dossier's 102,928 nodes because skillspector pruning removed low-confidence skills. Use these current numbers."},
+    "sibling_work": [
+      {"name": "vercel-labs/skills #1009", "url": "https://github.com/vercel-labs/skills/issues/1009", "one_line": "Open feature request to integrate ctx's recommend flow. Confirmed real."},
+      {"name": "affaan-m/ECC #2112", "url": "https://github.com/affaan-m/ECC/issues/2112", "one_line": "Open issue on synergy between ECC and ctx. Confirmed real."}
+    ],
+    "shipping_next": ["Possible hosted ctx-recommend endpoint (GCF adapter landed June 18)", "Continued skillspector pruning to cut skill rot"],
+    "creator_quote": {"text": "ctx watches what you are building, walks a 79,958-node graph, and recommends a small, top-scored bundle of skills, agents, and MCP servers for the current task.", "source_url": "https://raw.githubusercontent.com/stevesolun/ctx/main/README.md", "note": "README; X handle @SteveSolun is inferred not confirmed."},
+    "reading_list_candidate": {"title": "How Long Contexts Fail and how to fix them", "url": "https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html", "why": "Catalogs the failure modes of bloated context that selective loading is designed to prevent."},
+    "code_snippet": {"lang": "bash", "path": "README.md", "code": "ctx-scan-repo --repo . --recommend   # scored skill/agent/MCP bundle for this repo\nctx-harness-install text-to-cad --dry-run   # inspect before anything runs\nctx-harness-install text-to-cad             # install after reviewing the plan", "caption": "Scan the repo for stack signals, get a scored bundle, dry-run before anything touches disk. The minimal-relevant-subset loop."}
+  }
+}

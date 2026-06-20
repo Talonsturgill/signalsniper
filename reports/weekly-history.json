@@ -25,5 +25,14 @@
     "lesson_headline": "Ship against an interface the agent already understands",
     "final_grader_total": 92,
     "shipped_under_bar": false
+  },
+  {
+    "issue": 7,
+    "week_start": "2026-06-14",
+    "hero_project": "rlm",
+    "through_line": "This week's climbers competed on what to keep out of the context window, not what to pile in.",
+    "lesson_headline": "Trim the context before you trade up the model",
+    "final_grader_total": 95,
+    "shipped_under_bar": false
   }
 ]
