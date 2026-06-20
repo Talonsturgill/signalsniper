@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-20",
+  "brand_slug": "warp",
+  "preset_slug": null,
+  "aesthetic_slug": "warp",
+  "framework": "CLASSIC",
+  "rationale_one_line": "Warp's warm dark terminal-craftsman palette is the truest match for Jesse Vincent, a veteran who markets discipline like a lifestyle; CLASSIC frames the angle on an already-famous project instead of introducing it.",
+  "writing_tone_notes": "Plain, dry, staff-engineer voice. Bold declaratives, contractions where natural, specifics over adjectives. Admiring through contrast, never superlatives. The campfire-ember accent (#E0913E) is the single warm glow in a warm near-black forest; use it sparingly on the one beat that matters per scene.",
+  "do_rules": [
+    "Lead the loop diagram with the four enforced gates: clarify, plan, build, review.",
+    "Keep the warmth: warm parchment ink on warm charred near-black, one ember accent.",
+    "Let the contrast (vibe coding vs enforced method) carry the praise.",
+    "Use the veteran pedigree (RT, Perl, Keyboardio) only on the X caption, not in scenes."
+  ],
+  "dont_rules": [
+    "No version numbers in the X caption.",
+    "No superlatives, no 'revolutionary', no 'game-changing'.",
+    "No cold blue-black; warp is warm near-black, never austere.",
+    "Don't repeat 'plans' / 'discipline' / 'rules' phrasing verbatim across tweet, why-this-one, and scenes."
+  ]
+}

@@ -990,6 +990,31 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Newer+Wave",
       "attribution_required": "Music. Newer Wave by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "reawakening",
+      "title": "Reawakening",
+      "file": "Reawakening.mp3",
+      "duration_s": 214.07,
+      "mood": "warm hopeful cinematic theme, patient build, seasoned-craftsman optimism",
+      "register": "ambient",
+      "fits": "warp, claude, editorial-paper, gallery, CLASSIC, DISPATCH, MANIFESTO sincere builder tributes",
+      "preset_packs": [
+        "warp",
+        "claude",
+        "editorial-paper",
+        "gallery"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "DISPATCH",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Reawakening",
+      "attribution_required": "Music. Reawakening by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }

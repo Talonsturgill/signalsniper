@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-20",
+  "brand_slug": "warp",
+  "aesthetic_slug": "warp",
+  "framework": "CLASSIC",
+  "audio_palette": "ambient",
+  "held_subject": "Superpowers",
+  "tokens": {
+    "canvas": "#16130F",
+    "ink": "#FAF9F6",
+    "ink_muted": "#A89C88",
+    "accent": "#E0913E",
+    "hairline": "#2C261E"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 600,
+    "body_weight": 400,
+    "letter_spacing_em": -0.01,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.34,
+    "scene_out_s": 0.24,
+    "stagger_s": 0.24
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 10
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.22,
+    "halation": 0.05,
+    "lighting_arc": 0.28
+  },
+  "accent_contrast_min": 3.0,
+  "audio_track": {
+    "slug": "reawakening",
+    "title": "Reawakening",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "file": "Reawakening.mp3"
+  }
+}
