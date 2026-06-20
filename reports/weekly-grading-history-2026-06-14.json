@@ -1,0 +1,17 @@
+[
+  {
+    "pass": 1,
+    "critic": "APPROVED (after one revision for a single phrase-overlap, then re-approved)",
+    "fact_validator": "23 of 25 claims verified, 1 removed in revision (RLM launch-thread view count), 1 noted unverifiable (inferred @SteveSolun handle, not a blocker)",
+    "grader_total": 95,
+    "grader_verdict": "SHIP",
+    "axes": {"hook": 11, "single_voice": 15, "original_analysis": 14, "specificity": 15, "curators_edge": 14, "anti_mush": 12, "structural": 6, "closing": 4, "anticipation": 4},
+    "honest_one_liner": "A genuinely sharp, single-thesis issue where five projects answer one real question, held back only by an unresolved counter-example and a placeholder video.",
+    "top_3_fixes_applied": [
+      "Resolved the counter-weight tension, the Tactical Lesson now states that context economy pays off most once a bigger model has stopped being the easy win.",
+      "Re-led the All-Star Lede with the external moment, strangers re-implementing rlm before the author asked.",
+      "Removed the unverifiable launch-thread metric per the Fact Validator."
+    ],
+    "note": "Grader scored the draft at 95 SHIP; the three applied edits addressed its own top fixes and the Validator blocker, so the shipped draft is at or above 95. Video remains an upload marker by design (Substack native upload)."
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "week_start": "2026-06-14",
+  "week_end": "2026-06-20",
+  "issue": 7,
+  "picks": [
+    {
+      "date": "2026-06-14",
+      "project_slug": "LMCache",
+      "project_url": "https://github.com/LMCache/LMCache",
+      "creator_name": "Yihua Cheng",
+      "creator_handle": "ChengYihuaA",
+      "creator_x_url": "https://x.com/ChengYihuaA",
+      "headline_metric": "~9,000 stars, +238/day on trending; 220+ contributors from 30+ partners",
+      "tribute_angle": "First open-source KV cache delivery network, reuse across engines not just prefix reuse within one",
+      "framework": "KDN, engine-independent daemon persisting caches across CPU RAM, disk, Redis, object storage, CacheBlend non-prefix reuse",
+      "lane_tags": ["infra", "inference", "open-source"],
+      "dossier_path": "reports/creator-dossier-2026-06-14.md"
+    },
+    {
+      "date": "2026-06-15",
+      "project_slug": "obsidian-wiki",
+      "project_url": "https://github.com/Ar9av/obsidian-wiki",
+      "creator_name": "Arnav",
+      "creator_handle": "_ar9av",
+      "creator_x_url": "https://x.com/_ar9av",
+      "headline_metric": "~2.1k stars, +135 in 24h on trending",
+      "tribute_angle": "Agent as librarian, ingest-extract-merge-maintain a human-readable Obsidian wiki",
+      "framework": "Four-stage loop, manifest tracks ingested deltas",
+      "lane_tags": ["agents", "tooling"],
+      "dossier_path": "reports/creator-dossier-2026-06-15.md"
+    },
+    {
+      "date": "2026-06-16",
+      "project_slug": "claude-bug-bounty",
+      "project_url": "https://github.com/shuvonsec/claude-bug-bounty",
+      "creator_name": "Shuvonn",
+      "creator_handle": "shuvonsec",
+      "creator_x_url": "https://x.com/shuvonsec",
+      "headline_metric": "~3.3k stars, ~135/day during spike, v5.0.0 June 9",
+      "tribute_angle": "Subtraction, a 7-Question Gate that throws findings away to cut false positives",
+      "framework": "Recon-test-validate-report, scope discipline as first-class",
+      "lane_tags": ["tooling", "agents"],
+      "dossier_path": "reports/creator-dossier-2026-06-16.md"
+    },
+    {
+      "date": "2026-06-17",
+      "project_slug": "ctx",
+      "project_url": "https://github.com/stevesolun/ctx",
+      "creator_name": "Steve Solun",
+      "creator_handle": "SteveSolun",
+      "creator_x_url": "https://x.com/SteveSolun",
+      "headline_metric": "520 stars, 79,958-node LLM-wiki graph, 68,494 skill pages indexed (after skillspector pruning)",
+      "tribute_angle": "The inversion, load only the minimal relevant subset of skills/agents/MCP, unload skill rot",
+      "framework": "Scored knowledge graph recommends a 10-to-15 item bundle per task",
+      "lane_tags": ["tooling", "agents", "infra"],
+      "dossier_path": "reports/creator-dossier-2026-06-17.md"
+    },
+    {
+      "date": "2026-06-18",
+      "project_slug": "rlm",
+      "project_url": "https://github.com/alexzhang13/rlm",
+      "creator_name": "Alex L. Zhang",
+      "creator_handle": "a1zhang",
+      "creator_x_url": "https://x.com/a1zhang",
+      "headline_metric": "~5,000 stars; RLM(GPT-5-mini) beats GPT-5 by 34+ points at OOLONG 132k tokens, same cost",
+      "tribute_angle": "Recursive decomposition over snippets instead of reading the whole document, effectively unbounded context",
+      "framework": "CodeAct REPL, root model writes code that spawns sub-RLM calls",
+      "lane_tags": ["research", "agents", "infra"],
+      "dossier_path": "reports/creator-dossier-2026-06-18.md"
+    },
+    {
+      "date": "2026-06-19",
+      "project_slug": "ollama",
+      "project_url": "https://github.com/ollama/ollama",
+      "creator_name": "Jeffrey Morgan",
+      "creator_handle": "ollama",
+      "creator_x_url": "https://x.com/ollama",
+      "headline_metric": "174,000 stars; v0.30.10 June 17, MLX engine roughly doubles decode (~58 to ~112 tok/s)",
+      "tribute_angle": "Local runtime, curl pipe sh then run a frontier-class open model on your own machine",
+      "framework": "CLI plus tiny daemon, MLX engine on Apple Silicon, ollama launch for local agents",
+      "lane_tags": ["infra", "on-device", "open-source"],
+      "dossier_path": "reports/creator-dossier-2026-06-19.md"
+    },
+    {
+      "date": "2026-06-20",
+      "project_slug": "superpowers",
+      "project_url": "https://github.com/obra/superpowers",
+      "creator_name": "Jesse Vincent",
+      "creator_handle": "obra",
+      "creator_x_url": "https://x.com/obra",
+      "headline_metric": "~234k stars, +1,110 on 2026-06-20, 20.7k forks, v6.0.3 June 18",
+      "tribute_angle": "Mandatory pre-task workflows not suggestions, rules not tips, the relevant skill fires before the agent acts",
+      "framework": "Clarify-design-plan-execute-review with TDD, subagent-driven development",
+      "lane_tags": ["agents", "tooling", "open-source"],
+      "dossier_path": "reports/creator-dossier-2026-06-20.md"
+    }
+  ]
+}

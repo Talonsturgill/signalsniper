@@ -1,0 +1,10 @@
+[
+  {"pass": 1, "focus": "voice + specificity + cadence + cuts", "actions": [
+    "Removed 4 em dashes from Code-from-the-week subheadings, replaced with middot.",
+    "Replaced two banned vague quantifiers (many) in cold open and pattern.",
+    "Trimmed all four finalist cards from 83-92 words to <=80.",
+    "Dropped the unverifiable LMCache 8x TTFT claim in favor of the paper-verified 15x throughput framing.",
+    "Corrected ctx graph size to the current 68,494 skills (skillspector pruning) from the stale 102,928-node figure.",
+    "Added a cost-inversion sentence to the hero Build and a budget-framing sentence to the Pattern to clear the 1,400-word floor with margin."
+  ], "result": "1,422 editorial words, all section budgets met, local pre-flight clean (no em/en dash, semicolon, question mark, arrow, stray colon, banned phrase)."}
+]
