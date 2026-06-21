@@ -1015,6 +1015,31 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Reawakening",
       "attribution_required": "Music. Reawakening by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "cyborg-ninja",
+      "title": "Cyborg Ninja",
+      "file": "Cyborg_Ninja.mp3",
+      "duration_s": 180.06,
+      "mood": "driving cyber electronic, focused command-terminal propulsion, precise systems momentum",
+      "register": "electronic",
+      "fits": "voltagent, mono-terminal, subway-chrome, cctv, SCHEMATIC, MANIFESTO, RECEIPT",
+      "preset_packs": [
+        "voltagent",
+        "mono-terminal",
+        "subway-chrome",
+        "cctv"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "MANIFESTO",
+        "RECEIPT"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cyborg+Ninja",
+      "attribution_required": "Music. Cyborg Ninja by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
