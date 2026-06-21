@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-21",
+  "brand_slug": "voltagent",
+  "aesthetic_slug": "voltagent",
+  "framework": "SCHEMATIC",
+  "audio_palette": "electronic",
+  "held_subject": "OpenMontage",
+
+  "tokens": {
+    "canvas": "#050507",
+    "ink": "#F2F2F2",
+    "ink_muted": "#8B949E",
+    "accent": "#00D992",
+    "hairline": "#3D3A39"
+  },
+
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+
+  "typography": {
+    "display_weight": 600,
+    "body_weight": 400,
+    "letter_spacing_em": -0.01,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.30,
+    "scene_out_s": 0.20,
+    "stagger_s": 0.20
+  },
+
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 8
+  },
+
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.24,
+    "halation": 0.06,
+    "lighting_arc": 0.26
+  },
+
+  "accent_contrast_min": 4.5
+}

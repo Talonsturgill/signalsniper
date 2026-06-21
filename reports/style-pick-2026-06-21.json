@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-21",
+  "brand_slug": "voltagent",
+  "preset_slug": null,
+  "aesthetic_slug": "voltagent",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "OpenMontage is an agentic pipeline, so SCHEMATIC draws the loop; voltagent's deep-space command terminal (emerald on carbon black) matches both the agent-orchestration story and the creator's command-center lineage.",
+  "writing_tone_notes": "Build-in-public, technical, confident. Show one specific thing per surface. Lead the caption with star velocity, never a version number. Land the 'real footage not stills' thesis once. Contractions where natural.",
+  "do_rules": [
+    "Draw the actual production pipeline as the hero diagram with an orbit camera.",
+    "Use the emerald accent only on the highest-signal beats (final node, fix, close).",
+    "Keep the terminal beat concrete: a real command, real archive sources, a real result."
+  ],
+  "dont_rules": [
+    "No version numbers anywhere (there are no release tags anyway).",
+    "Do not repeat the star figure or the exact 'real footage' phrasing across tweet, Gmail, and scenes.",
+    "No superlatives doing the praise work. Let the contrast carry it."
+  ]
+}

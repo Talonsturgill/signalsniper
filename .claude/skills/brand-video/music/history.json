@@ -203,5 +203,10 @@
     "date": "2026-06-20",
     "slug": "reawakening",
     "project_url": "https://github.com/obra/superpowers"
+  },
+  {
+    "date": "2026-06-21",
+    "slug": "cyborg-ninja",
+    "project_url": "https://github.com/calesthio/OpenMontage"
   }
 ]

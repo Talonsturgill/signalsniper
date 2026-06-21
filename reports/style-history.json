@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-19",
-    "brand_slug": "sentry",
-    "aesthetic_slug": "sentry",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/tech-leads-club/agent-skills"
-  },
-  {
     "date": "2026-05-20",
     "brand_slug": "opencode.ai",
     "aesthetic_slug": "opencode.ai",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "warp",
     "framework": "CLASSIC",
     "project_url": "https://github.com/obra/superpowers"
+  },
+  {
+    "date": "2026-06-21",
+    "brand_slug": "voltagent",
+    "aesthetic_slug": "voltagent",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/calesthio/OpenMontage"
   }
 ]
