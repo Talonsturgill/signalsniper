@@ -1040,6 +1040,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cyborg+Ninja",
       "attribution_required": "Music. Cyborg Ninja by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "black-vortex",
+      "title": "Black Vortex",
+      "file": "Black_Vortex.mp3",
+      "duration_s": 169.7,
+      "mood": "dark driving electronic, tense, propulsive",
+      "register": "electronic",
+      "fits": "mono-terminal, subway-chrome, cctv, RECEIPT, MANIFESTO",
+      "preset_packs": [
+        "mono-terminal",
+        "subway-chrome",
+        "cctv"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "MANIFESTO",
+        "SCHEMATIC"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Black+Vortex",
+      "attribution_required": "Music. Black Vortex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
