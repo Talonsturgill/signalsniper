@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-20",
-    "brand_slug": "opencode.ai",
-    "aesthetic_slug": "opencode.ai",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/tirth8205/code-review-graph"
-  },
-  {
     "date": "2026-05-21",
     "brand_slug": null,
     "aesthetic_slug": "mono-terminal",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "voltagent",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/calesthio/OpenMontage"
+  },
+  {
+    "date": "2026-06-22",
+    "brand_slug": "opencode.ai",
+    "aesthetic_slug": "opencode.ai",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/raiyanyahya/recall"
   }
 ]

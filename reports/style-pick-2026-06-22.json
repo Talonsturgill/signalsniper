@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-22",
+  "brand_slug": "opencode.ai",
+  "preset_slug": "opencode.ai",
+  "framework": "RECEIPT",
+  "rationale_one_line": "A terminal-native monospace brand (OpenCode) for a terminal-native Claude Code plugin, with RECEIPT letting the zero-token cost be the headline.",
+  "writing_tone_notes": "Plain, build-in-public, unhyped. Specifics over adjectives, the contrast carries the praise. Mirror the creator's precise README voice. Numbers do the proving.",
+  "do_rules": [
+    "Lead the receipt with the 0-token summarization cost",
+    "Show the terminal and the session-to-digest flow, do not narrate them",
+    "Keep every surface in monospace register, sharp 0px containers",
+    "Use the deep-blue accent sparingly on the emphasis beats"
+  ],
+  "dont_rules": [
+    "No version numbers anywhere in copy",
+    "No superlatives, no hype, let the numbers carry it",
+    "Do not repeat the token-cost phrasing verbatim across scenes",
+    "No sans-serif, no rounded cards, no gradients"
+  ]
+}

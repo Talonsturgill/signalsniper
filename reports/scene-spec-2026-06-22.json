@@ -1,0 +1,50 @@
+{
+  "date": "2026-06-22",
+  "topic": "Recall, a fully-local project-memory plugin for Claude Code that captures each session and regenerates a compact context digest on-device with vendored TF-IDF plus TextRank, costing zero model tokens and making no network call",
+  "creator_handle": "@raiyan_yahya",
+  "project_url": "https://github.com/raiyanyahya/recall",
+
+  "design": {
+    "brand_slug": "opencode.ai",
+    "aesthetic_slug": "opencode.ai",
+    "framework": "RECEIPT",
+    "audio_palette": "electronic",
+    "held_subject": "Recall",
+
+    "tokens": {"canvas": "#fdfcfc", "ink": "#201d1d", "ink_muted": "#646262", "accent": "#0056b3", "hairline": "#e2dede"},
+    "fonts": {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": 0.0, "case": "preserve", "italic_descriptors": false},
+    "motion": {"register": "fade", "scene_in_s": 0.30, "scene_out_s": 0.20, "stagger_s": 0.16},
+    "layout": {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 0},
+    "texture": {"grain": 0.05, "vignette": 0.18, "halation": 0.05, "lighting_arc": 0.28},
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "Recall", "eyebrow": "your project, remembered", "camera": "push_in", "duration_s": 3.0},
+
+    {"template": "big_number", "numeral": "0", "caption": "tokens to summarize", "sub": "the model never reads your logs", "camera": "ken_burns", "duration_s": 3.2},
+
+    {"template": "terminal", "title": "~/your-project/.recall", "camera": "parallax_drift", "duration_s": 3.8, "lines": [
+      "$ recall save",
+      "reading session transcript",
+      "ranking sentences by centrality",
+      "wrote context.md  offline  deterministic"
+    ]},
+
+    {"template": "diagram", "eyebrow": "session to summary", "camera": "orbit", "duration_s": 4.5, "nodes": [
+      {"label": "session", "x": 12, "y": 54},
+      {"label": "local pass", "x": 44, "y": 54, "accent": true, "filled": true},
+      {"label": "context.md", "x": 80, "y": 54},
+      {"label": "next run", "x": 80, "y": 20}
+    ], "edges": [
+      {"from": 0, "to": 1},
+      {"from": 1, "to": 2, "accent": true},
+      {"from": 2, "to": 3}
+    ]},
+
+    {"template": "fix", "primary": "No cloud call.", "secondary": "It still remembers.", "emphasize": true, "camera": "crash_zoom", "duration_s": 3.4},
+
+    {"template": "close", "primary": "Your context.", "accent": "Your machine.", "subtitle": "Private by design, not by promise.", "emphasize": true, "camera": "pull_back", "duration_s": 3.4}
+  ]
+}

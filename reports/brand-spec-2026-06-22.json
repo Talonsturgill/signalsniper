@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-22",
+  "brand_slug": "opencode.ai",
+  "aesthetic_slug": "opencode.ai",
+  "framework": "RECEIPT",
+  "audio_palette": "electronic",
+  "held_subject": "Recall",
+  "tokens": {
+    "canvas": "#fdfcfc",
+    "ink": "#201d1d",
+    "ink_muted": "#646262",
+    "accent": "#0056b3",
+    "hairline": "#e2dede"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "JetBrainsMono",
+    "italic": "JetBrainsMono"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": 0.0,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.30,
+    "scene_out_s": 0.20,
+    "stagger_s": 0.16
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 0
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.18,
+    "halation": 0.05,
+    "lighting_arc": 0.28
+  },
+  "accent_contrast_min": 4.5,
+  "audio_track": {
+    "slug": "black-vortex",
+    "title": "Black Vortex",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "file": "Black_Vortex.mp3"
+  }
+}
