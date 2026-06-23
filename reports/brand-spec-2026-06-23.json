@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-23",
+  "brand_slug": null,
+  "aesthetic_slug": "mono-terminal",
+  "framework": "MANIFESTO",
+  "audio_palette": "electronic",
+  "held_subject": "oak",
+  "tokens": {"canvas": "#0A0A0A", "ink": "#F0F0F0", "ink_muted": "#7A7A7A", "accent": "#37F712", "hairline": "#1F1F1F"},
+  "fonts": {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+  "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.005, "case": "lower", "italic_descriptors": false},
+  "motion": {"register": "cut", "scene_in_s": 0.06, "scene_out_s": 0.05, "stagger_s": 0.10},
+  "layout": {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 0},
+  "texture": {"grain": 0.05, "vignette": 0.22, "halation": 0.05, "lighting_arc": 0.22},
+  "accent_contrast_min": 4.5
+}
