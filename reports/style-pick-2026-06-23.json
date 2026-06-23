@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-23",
+  "brand_slug": null,
+  "preset_slug": "mono-terminal",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "A dev-tool CLI VCS rebuilt for agents maps to mono-terminal; the bold git-was-for-humans re-think is a MANIFESTO, and neither repeats the recent ledger.",
+  "writing_tone_notes": "Calm, precise, builder-to-builder. Lead with the mechanism, not hype. Specifics over adjectives, the contrast carries the praise. Lowercase mono-terminal register. No frontier-lab grandiosity.",
+  "do_rules": [
+    "Show one concrete mechanism (oak mount, branch per session) in a terminal beat.",
+    "Let the git-vs-oak contrast do the praising.",
+    "Use contractions where natural in prose copy."
+  ],
+  "dont_rules": [
+    "No version numbers in the caption.",
+    "No superlatives or sycophancy.",
+    "Do not reuse the caption's phrases in scene copy or the why-this-one."
+  ]
+}

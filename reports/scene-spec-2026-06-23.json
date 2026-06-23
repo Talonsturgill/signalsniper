@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-23",
+  "topic": "Oak, a from-scratch Rust version control system built for AI agents, using content-addressed lazy mounts and a branch-per-session model so an agent can pick up any repo and start editing in seconds instead of waiting on a full clone",
+  "creator_handle": "@oakdotspace",
+  "project_url": "https://github.com/oakdotspace/oak",
+
+  "design": {
+    "brand_slug": null,
+    "aesthetic_slug": "mono-terminal",
+    "framework": "MANIFESTO",
+    "audio_palette": "electronic",
+    "held_subject": "oak",
+
+    "tokens": {"canvas": "#0A0A0A", "ink": "#F0F0F0", "ink_muted": "#7A7A7A", "accent": "#37F712", "hairline": "#1F1F1F"},
+    "fonts": {"display": "JetBrainsMono", "body": "JetBrainsMono", "italic": "JetBrainsMono"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.005, "case": "lower", "italic_descriptors": false},
+    "motion": {"register": "cut", "scene_in_s": 0.06, "scene_out_s": 0.05, "stagger_s": 0.10},
+    "layout": {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 0},
+    "texture": {"grain": 0.05, "vignette": 0.22, "halation": 0.05, "lighting_arc": 0.22},
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {"template": "title", "headline": "Oak", "eyebrow": "the agent-native vcs", "camera": "orbit", "duration_s": 3.2},
+
+    {"template": "flash", "word": "git stalls", "caption": "agents idle on a full clone.", "camera": "crash_zoom", "duration_s": 3.0},
+
+    {"template": "terminal", "title": "~ oak mount", "camera": "parallax_drift", "duration_s": 4.0, "lines": [
+      "$ oak mount oak.space/acme/api",
+      "manifest down, blobs on first read",
+      "tree ready, no full clone",
+      "$ oak branch session-7f3a"
+    ]},
+
+    {"template": "fix", "primary": "mount, not clone.", "secondary": "hydrate on read.", "emphasize": true, "camera": "push_in", "duration_s": 3.4},
+
+    {"template": "flash", "word": "blake3", "caption": "content addressed, all the way down.", "camera": "crash_zoom", "duration_s": 3.0},
+
+    {"template": "close", "primary": "git was for humans.", "accent": "oak is for agents.", "subtitle": "the same repo, a different model.", "emphasize": true, "camera": "pull_back", "duration_s": 3.4}
+  ]
+}

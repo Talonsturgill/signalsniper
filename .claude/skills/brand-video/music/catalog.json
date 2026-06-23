@@ -1064,6 +1064,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Black+Vortex",
       "attribution_required": "Music. Black Vortex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "electrodoodle",
+      "title": "Electrodoodle",
+      "file": "Electrodoodle.mp3",
+      "duration_s": 166.06,
+      "mood": "energetic propulsive electronic, bright driving arpeggios, fast builder momentum",
+      "register": "electronic",
+      "fits": "mono-terminal, subway-chrome, geominimal, MANIFESTO, RECEIPT, SCHEMATIC",
+      "preset_packs": [
+        "mono-terminal",
+        "subway-chrome",
+        "geominimal"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "RECEIPT",
+        "SCHEMATIC"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Electrodoodle",
+      "attribution_required": "Music. Electrodoodle by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
