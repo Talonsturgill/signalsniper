@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-24",
+  "brand_slug": null,
+  "preset_slug": "subway-chrome",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "A cross-framework security knowledge graph is structural by nature, so SCHEMATIC carries it; subway-chrome's dark steel + icy cyan reads as a security ops console and is the only preset clear of the 14-day window.",
+  "writing_tone_notes": "Precise, standards-literate, security-practitioner register. Itemized and exact. No superlatives. Let the contrast (a PDF a human reads vs. a skill an agent runs) carry the praise. Contractions where natural.",
+  "do_rules": [
+    "Lead the diagram with the six-framework cross-mapping (the structural hero).",
+    "Use exact numbers from the dossier (817, 286, 29, 30 tokens).",
+    "Keep the fix beat as a clean format contrast: docs vs. runnable skills."
+  ],
+  "dont_rules": [
+    "Do not imply Anthropic affiliation. It is a community project.",
+    "Do not reuse star-count phrasing between the tweet and the Why-this-one.",
+    "No version numbers in the caption."
+  ]
+}

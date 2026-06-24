@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-22",
-    "brand_slug": null,
-    "aesthetic_slug": "subway-chrome",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/karpathy/autoresearch"
-  },
-  {
     "date": "2026-05-23",
     "brand_slug": "warp",
     "aesthetic_slug": "warp",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "mono-terminal",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/oakdotspace/oak"
+  },
+  {
+    "date": "2026-06-24",
+    "brand_slug": null,
+    "aesthetic_slug": "subway-chrome",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
   }
 ]
