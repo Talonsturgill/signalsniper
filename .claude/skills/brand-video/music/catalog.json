@@ -1088,6 +1088,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Electrodoodle",
       "attribution_required": "Music. Electrodoodle by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "controlled-chaos",
+      "title": "Controlled Chaos",
+      "file": "Controlled_Chaos.mp3",
+      "duration_s": 352.3,
+      "mood": "dark driving electronic, controlled tension, security-ops systems pulse",
+      "register": "electronic",
+      "fits": "subway-chrome, mono-terminal, cctv, SCHEMATIC, RECEIPT, MANIFESTO",
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal",
+        "cctv"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "RECEIPT",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Controlled+Chaos",
+      "attribution_required": "Music. Controlled Chaos by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
