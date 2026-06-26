@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-23",
-    "brand_slug": "warp",
-    "aesthetic_slug": "warp",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/can1357/oh-my-pi"
-  },
-  {
     "date": "2026-05-24",
     "brand_slug": null,
     "aesthetic_slug": "gallery",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "subway-chrome",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
+  },
+  {
+    "date": "2026-06-26",
+    "brand_slug": "sentry",
+    "aesthetic_slug": "sentry",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/NotASithLord/peerd"
   }
 ]

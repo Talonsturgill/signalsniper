@@ -1,0 +1,58 @@
+{
+  "date": "2026-06-26",
+  "brand_slug": "sentry",
+  "aesthetic_slug": "sentry",
+  "framework": "MANIFESTO",
+  "audio_palette": "electronic",
+  "held_subject": "peerd",
+  "source": "Derived from .claude/skills/brand-design-systems/brands/sentry.md (deep violet-midnight canvas, electric-lime keyword highlight, chunky display sans with Space Grotesk as the stated open substitute, Rubik-for-UI mapped to Inter).",
+  "tokens": {
+    "canvas": "#1F1633",
+    "ink": "#FFFFFF",
+    "ink_muted": "#8B86A0",
+    "accent": "#C2EF4E",
+    "hairline": "#362D59"
+  },
+  "fonts": {
+    "display": "SpaceGrotesk",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.015,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "scale",
+    "scene_in_s": 0.42,
+    "scene_out_s": 0.26,
+    "stagger_s": 0.28
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 2,
+    "stage_radius_px": 12
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.22,
+    "halation": 0.06,
+    "lighting_arc": 0.30
+  },
+  "accent_contrast_min": 4.5,
+  "token_notes": {
+    "canvas": "#1F1633 is Sentry's surface-canvas-dark (deep violet midnight). Chosen over a neutral near-black so the run reads distinct from the recent steel and pure-black dark videos.",
+    "accent": "#C2EF4E is Sentry's electric lime, its signature keyword-highlight color. It clears 12.9:1 on the violet canvas, well past the 4.5 mono-aesthetic floor.",
+    "fonts": "Sentry's proprietary chunky display sans is unavailable. Space Grotesk is the brand doc's own stated open substitute. Inter stands in for Rubik on the UI tier."
+  },
+  "audio_track": {
+    "slug": "gearhead",
+    "title": "Gearhead",
+    "artist": "Kevin MacLeod",
+    "license": "CC BY 4.0",
+    "file": "Gearhead.mp3"
+  }
+}

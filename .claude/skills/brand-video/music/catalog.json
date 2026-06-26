@@ -1112,6 +1112,32 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Controlled+Chaos",
       "attribution_required": "Music. Controlled Chaos by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "gearhead",
+      "title": "Gearhead",
+      "file": "Gearhead.mp3",
+      "duration_s": 139.46,
+      "mood": "driving propulsive electronic, energetic gear-turning groove, builder momentum",
+      "register": "electronic",
+      "fits": "sentry, subway-chrome, mono-terminal, geominimal, MANIFESTO, RECEIPT, SCHEMATIC",
+      "preset_packs": [
+        "sentry",
+        "subway-chrome",
+        "mono-terminal",
+        "geominimal"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "RECEIPT",
+        "SCHEMATIC",
+        "CLASSIC"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gearhead",
+      "attribution_required": "Music. Gearhead by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
