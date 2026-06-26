@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-26",
+  "brand_slug": "sentry",
+  "preset_slug": null,
+  "aesthetic_slug": "sentry",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "peerd is a bold anti-backend launch, so MANIFESTO carries the single thesis, and Sentry's violet-and-lime debug-console palette reads as a different production from the recent dark cyan and green mono runs.",
+  "writing_tone_notes": "Declarative and conviction-first to match the creator's b/acc voice. Praise the architecture, not the feature count. Exact technical claims, zero hype words. Contractions where natural.",
+  "do_rules": [
+    "Lead the story with where the agent runs, not what it can do.",
+    "Use the lime accent sparingly, as a single highlight per beat.",
+    "Keep the contrast doing the praise: client-side versus everyone else's backend."
+  ],
+  "dont_rules": [
+    "No version numbers in the caption.",
+    "No superlatives or sycophancy.",
+    "Do not repeat any scene phrase in the tweet or the Gmail Why-this-one."
+  ]
+}

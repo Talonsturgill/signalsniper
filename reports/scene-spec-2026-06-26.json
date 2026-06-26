@@ -1,0 +1,111 @@
+{
+  "date": "2026-06-26",
+  "topic": "peerd, the AI agent harness that runs the whole loop inside your browser",
+  "creator_handle": "@NotASithLord",
+  "project_url": "https://github.com/NotASithLord/peerd",
+
+  "design": {
+    "brand_slug": "sentry",
+    "aesthetic_slug": "sentry",
+    "framework": "MANIFESTO",
+    "held_subject": "peerd",
+
+    "tokens": {
+      "canvas": "#1F1633",
+      "ink": "#FFFFFF",
+      "ink_muted": "#8B86A0",
+      "accent": "#C2EF4E",
+      "hairline": "#362D59"
+    },
+
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.015,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.42,
+      "scene_out_s": 0.26,
+      "stagger_s": 0.28
+    },
+
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 2,
+      "stage_radius_px": 12
+    },
+
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.06,
+      "lighting_arc": 0.30
+    },
+
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5
+  },
+
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "peerd",
+      "eyebrow": "an agent harness native to the browser",
+      "camera": "orbit",
+      "duration_s": 3.0
+    },
+    {
+      "template": "flash",
+      "word": "NO BACKEND",
+      "caption": "the loop runs client side",
+      "camera": "crash_zoom",
+      "duration_s": 2.8
+    },
+    {
+      "template": "terminal",
+      "title": "peerd agent loop",
+      "lines": [
+        {"text": "peerd run --here"},
+        {"text": "drive the open tab", "prompt": false},
+        {"text": "spin a wasm linux vm", "prompt": false},
+        {"text": "share what it builds", "prompt": false}
+      ],
+      "camera": "parallax_drift",
+      "duration_s": 4.0
+    },
+    {
+      "template": "fix",
+      "primary": "BYOK. Zero relay.",
+      "secondary": "It runs where you do.",
+      "emphasize": true,
+      "camera": "push_in",
+      "duration_s": 3.5
+    },
+    {
+      "template": "flash",
+      "word": "PEER TO PEER",
+      "caption": "agents talk over webrtc",
+      "camera": "ken_burns",
+      "duration_s": 2.8
+    },
+    {
+      "template": "close",
+      "primary": "No server",
+      "accent": "to trust.",
+      "subtitle": "your data never leaves your machine.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.5
+    }
+  ]
+}
