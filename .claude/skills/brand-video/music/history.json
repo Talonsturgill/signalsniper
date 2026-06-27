@@ -228,5 +228,10 @@
     "date": "2026-06-26",
     "slug": "gearhead",
     "project_url": "https://github.com/NotASithLord/peerd"
+  },
+  {
+    "date": "2026-06-27",
+    "slug": "sincerely",
+    "project_url": "https://github.com/workweave/router"
   }
 ]

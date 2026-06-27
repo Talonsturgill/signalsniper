@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-24",
-    "brand_slug": null,
-    "aesthetic_slug": "gallery",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/yoheinakajima/activegraph"
-  },
-  {
     "date": "2026-05-25",
     "brand_slug": null,
     "aesthetic_slug": "editorial-90s",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "sentry",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/NotASithLord/peerd"
+  },
+  {
+    "date": "2026-06-27",
+    "brand_slug": null,
+    "aesthetic_slug": "gallery",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/workweave/router"
   }
 ]

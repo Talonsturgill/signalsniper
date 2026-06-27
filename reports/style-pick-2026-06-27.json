@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-27",
+  "brand_slug": null,
+  "preset_slug": "gallery",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "Router's value is structural, a routing diagram is the whole story, so SCHEMATIC carries it; gallery is the only preset outside the 14-entry window and its flagship-minimal white-and-blue reads as clean infrastructure.",
+  "writing_tone_notes": "Builder-direct and infra-precise. Latency numbers and endpoint changes over adjectives. Admiring by contrast, never superlative. Contractions where natural. The model picks itself, on your box, before the call leaves.",
+  "do_rules": [
+    "Lead the diagram with the on-box embedder deciding between providers",
+    "Land exactly one stat as the big_number beat (the 40-70% cost cut)",
+    "Credit Andrew by name in the close, peer-to-peer",
+    "Keep latency (under 50ms) and cost (40-70%) on separate scenes"
+  ],
+  "dont_rules": [
+    "No version numbers anywhere",
+    "No superlatives, let the contrast carry the praise",
+    "Do not repeat any scene phrase in the tweet or the Why-this-one",
+    "No question hooks, no em or en dashes, no semicolons"
+  ]
+}
