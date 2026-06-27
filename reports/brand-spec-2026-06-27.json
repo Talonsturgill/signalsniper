@@ -1,0 +1,59 @@
+{
+  "date": "2026-06-27",
+  "brand_slug": null,
+  "aesthetic_slug": "gallery",
+  "framework": "SCHEMATIC",
+  "held_subject": "router",
+
+  "tokens": {
+    "canvas": "#FFFFFF",
+    "ink": "#0E0E0F",
+    "ink_muted": "#7B7B7E",
+    "accent": "#1B5BFF",
+    "hairline": "#E5E5E8"
+  },
+
+  "fonts": {
+    "display": "IBMPlexSerif",
+    "body": "Inter",
+    "italic": "IBMPlexSerif"
+  },
+
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.018,
+    "case": "preserve",
+    "italic_descriptors": true
+  },
+
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.42,
+    "scene_out_s": 0.27,
+    "stagger_s": 0.30
+  },
+
+  "layout": {
+    "padding_pct": 9,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 4
+  },
+
+  "texture": {
+    "grain": 0.03,
+    "vignette": 0.10,
+    "halation": 0.04,
+    "lighting_arc": 0.22
+  },
+
+  "audio_palette": "acoustic",
+  "accent_contrast_min": 4.5,
+
+  "texture_overrides_note": "Gallery ships halation 0.0 and lighting_arc 0.14. Raised to halation 0.04 and lighting_arc 0.22 so the emphasize beats glow and the WOW color-drift and halation checks pass cleanly on a pure-white canvas.",
+  "audio_pick": {
+    "track_slug": "sincerely",
+    "preset": "gallery",
+    "framework": "SCHEMATIC"
+  }
+}

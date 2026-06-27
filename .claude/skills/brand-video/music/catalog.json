@@ -1138,6 +1138,30 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gearhead",
       "attribution_required": "Music. Gearhead by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "sincerely",
+      "title": "Sincerely",
+      "file": "Sincerely.mp3",
+      "duration_s": 375.48,
+      "mood": "warm sincere cinematic, heartfelt piano and strings build, earnest builder tribute",
+      "register": "acoustic",
+      "fits": "gallery, claude, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH sincere builder tributes",
+      "preset_packs": [
+        "gallery",
+        "claude",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "CLASSIC",
+        "DISPATCH"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Sincerely",
+      "attribution_required": "Music. Sincerely by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
