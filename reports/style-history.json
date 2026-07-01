@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-25",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-90s",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/virattt/dexter"
-  },
-  {
     "date": "2026-05-26",
     "brand_slug": null,
     "aesthetic_slug": "claude",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "gallery",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/workweave/router"
+  },
+  {
+    "date": "2026-07-01",
+    "brand_slug": "linear.app",
+    "aesthetic_slug": "linear.app",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/ogulcancelik/herdr"
   }
 ]
