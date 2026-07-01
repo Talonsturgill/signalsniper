@@ -1162,6 +1162,32 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Sincerely",
       "attribution_required": "Music. Sincerely by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "district-four",
+      "title": "District Four",
+      "file": "District_Four.mp3",
+      "duration_s": 248.24,
+      "mood": "driving retro electro-funk, propulsive builder momentum, confident systems groove",
+      "register": "electronic",
+      "fits": "linear.app, mono-terminal, subway-chrome, geominimal, RECEIPT, SCHEMATIC, MANIFESTO",
+      "preset_packs": [
+        "linear.app",
+        "mono-terminal",
+        "subway-chrome",
+        "geominimal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "SCHEMATIC",
+        "MANIFESTO",
+        "CLASSIC"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Kevin MacLeod",
+      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=District+Four",
+      "attribution_required": "Music. District Four by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
     }
   ]
 }
