@@ -49,6 +49,19 @@ If the fix scene says `minimal core. / you wire the rest.`, the close scene **do
 | Why-this-one (Gmail body) | <= 280 chars, never repeat tweet content |
 | PR commit subject | <= 70 chars |
 | Scene copy | per-template limits in `validate_spec.py` |
+| Total on-screen words | <= 55 across all scenes (validator warns; silent-feed viewers must read everything) |
+
+## Fact check
+
+Every numeral or verifiable claim that ships (in scenes, the tweet, the Why-this-one, or the PR body) must appear in `reports/fact-check-$DATE.json` with **two independent source URLs**. The critic kills anything untraced. Growth metrics say what they are ("climbing ~170 stars a day", "just crossed 9k") and never round up.
+
+## Storyboard timing lock
+
+The scene-spec's template sequence must match the approved storyboard exactly (`storyboard_check.py --spec` enforces). Structure changes go back through the board; the writing desk only changes words.
+
+## Project dedup (lifetime)
+
+A `project_url` already anywhere in `reports/style-history.json` is not covered again, ever, unless a major new release makes it a genuinely different story — and then the Gmail names the exception.
 
 ## Anti-repeat (style picks across days)
 

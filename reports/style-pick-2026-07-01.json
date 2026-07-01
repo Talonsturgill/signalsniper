@@ -1,14 +1,14 @@
 {
   "date": "2026-07-01",
-  "brand_slug": "linear.app",
+  "brand_slug": "herdr-native",
   "preset_slug": null,
-  "aesthetic_slug": "linear.app",
+  "aesthetic_slug": "herdr-native",
   "framework": "RECEIPT",
-  "rationale_one_line": "herdr is a momentum-and-numbers story, so RECEIPT lets the count do the proving, and Linear's near-black canvas with a single lavender accent reads as software-craft documentation and stays distinct from the recent violet, steel, and mono runs.",
+  "rationale_one_line": "v2 ships in herdr's own extracted palette (near-black, warm cream, herdr blue, JetBrains Mono like herdr.dev itself) because recognition is the quote-post trigger; RECEIPT stays, now with a drawn star-velocity curve and a count-up as the money shot.",
   "writing_tone_notes": "Plain declarative, subtraction over adjectives, matching the creator's unhyped README voice. Let the number contrast carry the praise. Exact technical claims, zero hype words. Contractions where natural.",
   "do_rules": [
     "Lead with the count and the climb, not a feature list.",
-    "Use the lavender accent as a single highlight per beat, never decoratively.",
+    "Use herdr blue as a single highlight per beat, never decoratively.",
     "Keep the contrast doing the praise: many agents versus one terminal, one binary."
   ],
   "dont_rules": [

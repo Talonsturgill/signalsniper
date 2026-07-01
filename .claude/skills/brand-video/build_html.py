@@ -20,6 +20,7 @@ Usage:
 
 import argparse
 import base64
+import colorsys
 import json
 import sys
 from pathlib import Path
@@ -55,8 +56,13 @@ CAMERA_MOVES = {
     "orbit",
     "parallax_drift",
     "static_breathe",
+    "rack_focus",
+    "dolly_up",
+    "tilt_reveal",
     "none",
 }
+
+BACKGROUND_STYLES = {"starfield", "aurora", "grid", "none"}
 
 
 def esc(s):
@@ -65,6 +71,117 @@ def esc(s):
         .replace("<", "&lt;")
         .replace(">", "&gt;")
     )
+
+
+def kinetic_spans(text):
+    """Wrap text into word spans of per-character spans for kinetic reveals.
+
+    Words stay unbreakable (.kword); each character is an animatable .klt
+    with a global character index in --ci. The JS animator staggers on --ci.
+    """
+    words = text.split(" ")
+    ci = 0
+    out = []
+    for w in words:
+        chars = []
+        for ch in w:
+            chars.append(f'<span class="klt" style="--ci:{ci}">{esc(ch)}</span>')
+            ci += 1
+        out.append(f'<span class="kword">{"".join(chars)}</span>')
+        ci += 1  # count the space so cross-word rhythm stays even
+    return "".join(out), ci
+
+
+def word_spans(text):
+    """Wrap text into word-level spans (.kword) for word-stagger reveals."""
+    words = text.split(" ")
+    out = []
+    for i, w in enumerate(words):
+        out.append(f'<span class="kword" style="--wi:{i}">{esc(w)}</span>')
+    return "".join(out), len(words)
+
+
+def sheen_div(scene):
+    """Light-sweep overlay, on by default for logo_reveal, opt-in elsewhere."""
+    want = scene.get("sheen", scene["template"] == "logo_reveal")
+    return '<div class="scene-sheen" aria-hidden="true"></div>' if want else ""
+
+
+def _hex_to_rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def _canvas_is_dark(hex_color):
+    r, g, b = _hex_to_rgb(hex_color)
+    return (0.2126 * r + 0.7152 * g + 0.0722 * b) < 128
+
+
+def _hue_shift(hex_color, deg, light=None, sat=None):
+    r, g, b = (c / 255 for c in _hex_to_rgb(hex_color))
+    h, l, s = colorsys.rgb_to_hls(r, g, b)
+    h = (h + deg / 360.0) % 1.0
+    if light is not None:
+        l = light
+    if sat is not None:
+        s = sat
+    r2, g2, b2 = colorsys.hls_to_rgb(h, l, s)
+    return "#{:02x}{:02x}{:02x}".format(int(r2 * 255), int(g2 * 255), int(b2 * 255))
+
+
+def background_html(spec):
+    """Emit the configured background layer: starfield (default), aurora, grid, none."""
+    design = spec["design"]
+    bg = design.get("background") or {}
+    style = bg.get("style", "starfield")
+    if style not in BACKGROUND_STYLES:
+        raise SystemExit(f"Unknown background style: {style!r}. Valid: {sorted(BACKGROUND_STYLES)}")
+    intensity = float(bg.get("intensity", 1.0))
+    if style == "none":
+        return ""
+    if style == "starfield":
+        return '<canvas id="bgParticles" class="bg-particles" aria-hidden="true"></canvas>'
+    if style == "grid":
+        return (
+            f'<div class="bg-grid" aria-hidden="true" style="--grid-opacity:{0.13 * intensity:.3f}">'
+            f'<div class="plane"></div></div>'
+        )
+    # aurora: three accent-derived blobs drifting behind the scenes.
+    # Hue spread stays tight (+/-24deg) so the field reads as the BRAND color
+    # breathing, not a rainbow; dark opacity is low so near-black stays black.
+    accent = design["tokens"]["accent"]
+    dark = _canvas_is_dark(design["tokens"]["canvas"])
+    c1 = _hue_shift(accent, 0, light=0.50 if dark else 0.62)
+    c2 = _hue_shift(accent, 24, light=0.42 if dark else 0.66)
+    c3 = _hue_shift(accent, -18, light=0.38 if dark else 0.70)
+    opacity = (0.15 if dark else 0.11) * intensity
+    blend = "screen" if dark else "normal"
+    blobs = "".join(
+        f'<div class="blob b{i}" style="background: radial-gradient(circle at 35% 35%, {c} 0%, transparent 62%);"></div>'
+        for i, c in ((1, c1), (2, c2), (3, c3))
+    )
+    return (
+        f'<div class="bg-aurora" aria-hidden="true" '
+        f'style="--aurora-opacity:{opacity:.3f};--aurora-blend:{blend}">{blobs}</div>'
+    )
+
+
+def sparkline_geometry(values):
+    """Normalize a value series into SVG path data in a 100x56 viewBox."""
+    vals = [float(v) for v in values]
+    lo, hi = min(vals), max(vals)
+    span = (hi - lo) or 1.0
+    x0, x1 = 6.0, 94.0
+    y0, y1 = 50.0, 8.0  # SVG y is inverted: y0 = chart floor
+    pts = []
+    n = len(vals)
+    for i, v in enumerate(vals):
+        x = x0 + (x1 - x0) * (i / (n - 1))
+        y = y0 + (y1 - y0) * ((v - lo) / span)
+        pts.append((round(x, 2), round(y, 2)))
+    line_d = "M" + " L".join(f"{x} {y}" for x, y in pts)
+    area_d = line_d + f" L{pts[-1][0]} 54 L{pts[0][0]} 54 Z"
+    return line_d, area_d, pts[-1]
 
 
 def load_font_b64(name):
@@ -141,6 +258,8 @@ def build_css(spec):
     ink_muted = t["ink_muted"]
     accent = t["accent"]
     hairline = t["hairline"]
+    # overlay blend is invisible over near-black; screen lifts it
+    sheen_blend = "screen" if _canvas_is_dark(canvas) else "overlay"
 
     return f"""
 {fonts_css}
@@ -194,6 +313,7 @@ body {{
               0 0 0 1px rgba(255,255,255,0.04);
   container-type: inline-size;
   container-name: stage;
+  contain: layout paint;
 }}
 
 .stage-inner {{
@@ -226,8 +346,9 @@ body {{
   to   {{ transform: scale(1.10); }}
 }}
 @keyframes camPullBack {{
-  from {{ transform: scale(1.08); }}
-  to   {{ transform: scale(1.00); }}
+  0%   {{ transform: scale(1.085); }}
+  72%  {{ transform: scale(1.006); }}
+  100% {{ transform: scale(0.997); }}
 }}
 @keyframes camKenBurns {{
   from {{ transform: scale(1.04) translate(0.2%, 0.2%); }}
@@ -251,14 +372,139 @@ body {{
   50%      {{ transform: scale(1.008); }}
 }}
 
-.scene[data-cam="push_in"]        {{ animation: camPushIn        var(--scene-dur, 3s) ease-out forwards; }}
-.scene[data-cam="pull_back"]      {{ animation: camPullBack      var(--scene-dur, 3s) ease-out forwards; }}
-.scene[data-cam="ken_burns"]      {{ animation: camKenBurns      var(--scene-dur, 3s) ease-in-out forwards; }}
-.scene[data-cam="crash_zoom"]     {{ animation: camCrashZoom     var(--scene-dur, 3s) ease-out forwards; }}
-.scene[data-cam="orbit"]          {{ animation: camOrbit         var(--scene-dur, 3s) ease-in-out forwards; }}
-.scene[data-cam="parallax_drift"] {{ animation: camParallaxDrift var(--scene-dur, 3s) ease-in-out forwards; }}
+@keyframes camRackFocus {{
+  0%   {{ filter: blur(7px);   transform: scale(1.075); }}
+  38%  {{ filter: blur(0px);   transform: scale(1.005); }}
+  100% {{ filter: blur(0px);   transform: scale(1.048); }}
+}}
+@keyframes camDollyUp {{
+  from {{ transform: translateY(2.4%)  scale(1.030); }}
+  to   {{ transform: translateY(-1.2%) scale(1.085); }}
+}}
+@keyframes camTiltReveal {{
+  0%   {{ transform: perspective(1200px) rotateX(9deg) translateY(2.2%) scale(1.06); }}
+  55%  {{ transform: perspective(1200px) rotateX(0deg) translateY(0%)   scale(1.010); }}
+  100% {{ transform: perspective(1200px) rotateX(0deg) translateY(-0.4%) scale(1.032); }}
+}}
+
+.scene[data-cam="push_in"]        {{ animation: camPushIn        var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
+.scene[data-cam="pull_back"]      {{ animation: camPullBack      var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
+.scene[data-cam="ken_burns"]      {{ animation: camKenBurns      var(--scene-dur, 3s) cubic-bezier(0.37, 0, 0.63, 1) forwards; }}
+.scene[data-cam="crash_zoom"]     {{ animation: camCrashZoom     var(--scene-dur, 3s) cubic-bezier(0.19, 1, 0.22, 1) forwards; }}
+.scene[data-cam="orbit"]          {{ animation: camOrbit         var(--scene-dur, 3s) cubic-bezier(0.37, 0, 0.63, 1) forwards; }}
+.scene[data-cam="parallax_drift"] {{ animation: camParallaxDrift var(--scene-dur, 3s) cubic-bezier(0.37, 0, 0.63, 1) forwards; }}
 .scene[data-cam="static_breathe"] {{ animation: camBreathe       var(--scene-dur, 3s) ease-in-out forwards; }}
+.scene[data-cam="rack_focus"]     {{ animation: camRackFocus     var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
+.scene[data-cam="dolly_up"]       {{ animation: camDollyUp       var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
+.scene[data-cam="tilt_reveal"]    {{ animation: camTiltReveal    var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
 .scene[data-cam="none"]           {{ animation: none; }}
+
+/* ---------------- kinetic per-character type ---------------- */
+.kword {{ display: inline-block; white-space: nowrap; }}
+.kword + .kword {{ margin-left: 0.26em; }}
+.klt {{
+  display: inline-block;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}}
+
+/* ---------------- light sweep (sheen) ---------------- */
+.scene-sheen {{
+  position: absolute;
+  top: -55%;
+  left: 0;
+  width: 34%;
+  height: 210%;
+  background: linear-gradient(100deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.14) 45%,
+    rgba(255,255,255,0.22) 50%,
+    rgba(255,255,255,0.14) 55%,
+    rgba(255,255,255,0) 100%);
+  transform: translateX(-260%) skewX(-16deg);
+  mix-blend-mode: {sheen_blend};
+  pointer-events: none;
+  opacity: 0;
+  z-index: 6;
+}}
+
+/* ---------------- held subject wordmark ---------------- */
+.held-subject {{
+  position: absolute;
+  left: 4.2%;
+  bottom: 3.8%;
+  z-index: 30;
+  font-family: var(--mono);
+  font-size: 1.85cqw;
+  letter-spacing: 0.30em;
+  transition: opacity 0.35s ease-out;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  opacity: 0;
+  pointer-events: none;
+}}
+.held-subject::before {{
+  content: "";
+  display: inline-block;
+  width: 0.9cqw;
+  height: 0.9cqw;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 1.0cqw;
+  vertical-align: 6%;
+}}
+
+/* ---------------- aurora background ---------------- */
+.bg-aurora {{
+  position: absolute;
+  inset: -12%;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(46px);
+}}
+.bg-aurora .blob {{
+  position: absolute;
+  width: 68%;
+  height: 68%;
+  border-radius: 50%;
+  opacity: var(--aurora-opacity, 0.20);
+  mix-blend-mode: var(--aurora-blend, screen);
+}}
+.bg-aurora .blob.b1 {{ top: -14%; left: -10%; animation: auroraDrift1 26s ease-in-out infinite alternate; }}
+.bg-aurora .blob.b2 {{ right: -16%; top: 22%;  animation: auroraDrift2 31s ease-in-out infinite alternate; }}
+.bg-aurora .blob.b3 {{ left: 14%; bottom: -20%; animation: auroraDrift3 23s ease-in-out infinite alternate; }}
+@keyframes auroraDrift1 {{ from {{ transform: translate(0,0) scale(1); }}     to {{ transform: translate(9%, 7%) scale(1.14); }} }}
+@keyframes auroraDrift2 {{ from {{ transform: translate(0,0) scale(1.10); }} to {{ transform: translate(-8%, -5%) scale(0.94); }} }}
+@keyframes auroraDrift3 {{ from {{ transform: translate(0,0) scale(0.96); }} to {{ transform: translate(6%, -9%) scale(1.12); }} }}
+
+/* ---------------- perspective grid background ---------------- */
+.bg-grid {{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: var(--grid-opacity, 0.13);
+}}
+.bg-grid .plane {{
+  position: absolute;
+  left: -50%;
+  bottom: -62%;
+  width: 200%;
+  height: 130%;
+  background-image:
+    repeating-linear-gradient(0deg,  var(--hairline) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, var(--hairline) 0 1px, transparent 1px 64px);
+  transform: perspective(900px) rotateX(62deg);
+  transform-origin: 50% 100%;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 30%, transparent 86%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 30%, transparent 86%);
+  animation: gridScroll 9s linear infinite;
+}}
+@keyframes gridScroll {{
+  from {{ background-position: 0 0, 0 0; }}
+  to   {{ background-position: 0 64px, 0 0; }}
+}}
 
 /* ---------------- particle background canvas ---------------- */
 .bg-particles {{
@@ -360,7 +606,7 @@ body {{
   font-family: var(--body);
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 2.6cqw;
+  font-size: 3.1cqw;
   color: var(--ink-muted);
   margin-top: 2.4cqw;
   letter-spacing: 0;
@@ -371,7 +617,7 @@ body {{
   font-family: var(--body);
   font-weight: 600;
   font-variation-settings: "wght" 600;
-  font-size: 2.4cqw;
+  font-size: 2.7cqw;
   letter-spacing: 0.34em;
   color: var(--accent);
   text-transform: uppercase;
@@ -411,7 +657,7 @@ body {{
   font-style: {italic_descriptors};
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 2.2cqw;
+  font-size: 2.6cqw;
   color: var(--ink-muted);
   margin-top: 0.4cqw;
   text-transform: none;
@@ -481,7 +727,7 @@ body {{
   font-family: var(--body);
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 2.4cqw;
+  font-size: 2.8cqw;
   color: var(--ink-muted);
   margin-top: 3cqw;
   letter-spacing: 0.04em;
@@ -513,7 +759,7 @@ body {{
   font-style: italic;
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 2.4cqw;
+  font-size: 2.9cqw;
   color: var(--ink-muted);
   margin-top: 4.4cqw;
   letter-spacing: 0.02em;
@@ -526,7 +772,7 @@ body {{
   font-family: var(--body);
   font-weight: 600;
   font-variation-settings: "wght" 600;
-  font-size: 2.2cqw;
+  font-size: 2.6cqw;
   letter-spacing: 0.34em;
   color: var(--accent);
   text-transform: uppercase;
@@ -618,7 +864,7 @@ body {{
   font-family: var(--body);
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 2.6cqw;
+  font-size: 3.0cqw;
   color: var(--canvas);
   margin-top: 3cqw;
   letter-spacing: 0.18em;
@@ -635,12 +881,14 @@ body {{
   line-height: 0.92;
   letter-spacing: -0.04em;
   color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
 }}
 .bn-caption {{
   font-family: var(--body);
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 3.2cqw;
+  font-size: 3.6cqw;
   color: var(--ink);
   margin-top: 2.6cqw;
   letter-spacing: 0.04em;
@@ -651,7 +899,7 @@ body {{
   font-style: italic;
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 2.2cqw;
+  font-size: 2.7cqw;
   color: var(--ink-muted);
   margin-top: 1cqw;
   text-transform: none;
@@ -680,7 +928,7 @@ body {{
 .terminal-dot {{ width: 1.1cqw; height: 1.1cqw; border-radius: 50%; opacity: 0.55; background: var(--ink-muted); }}
 .terminal-title {{
   font-family: var(--mono);
-  font-size: 1.6cqw;
+  font-size: 1.9cqw;
   color: var(--ink-muted);
   margin-left: 1cqw;
   letter-spacing: 0;
@@ -689,14 +937,14 @@ body {{
 .terminal-body {{
   flex: 1;
   font-family: var(--mono);
-  font-size: 2.4cqw;
+  font-size: 2.7cqw;
   line-height: 1.55;
   color: var(--ink);
   text-align: left;
   letter-spacing: 0;
   text-transform: none;
 }}
-.terminal-line {{ display: block; opacity: 0; }}
+.terminal-line {{ display: block; opacity: 0; white-space: pre; }}
 .terminal-line.accent {{ color: var(--accent); }}
 .terminal-line .prompt {{ color: var(--accent); margin-right: 0.6cqw; }}
 .terminal-cursor {{
@@ -706,9 +954,9 @@ body {{
   background: var(--ink);
   vertical-align: -0.12em;
   margin-left: 0.2em;
-  animation: blink 1s steps(2) infinite;
+  animation: blink 1.06s ease-in-out infinite;
 }}
-@keyframes blink {{ 50% {{ opacity: 0; }} }}
+@keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0.12; }} }}
 
 /* ---- split ---- */
 .scene[data-tpl="split"] {{ padding: 0; flex-direction: row; }}
@@ -728,7 +976,7 @@ body {{
   font-family: var(--body);
   font-weight: 600;
   font-variation-settings: "wght" 600;
-  font-size: 1.9cqw;
+  font-size: 2.2cqw;
   letter-spacing: 0.34em;
   text-transform: uppercase;
   margin-bottom: 2.4cqw;
@@ -741,6 +989,168 @@ body {{
   font-size: 7.5cqw;
   line-height: 1.05;
   letter-spacing: var(--tracking);
+}}
+
+/* ---- logo_reveal ---- */
+.lr-wrap {{ position: relative; display: inline-block; overflow: hidden; padding: 0.1em 0.14em; }}
+.lr-word {{
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  font-variation-settings: "wght" var(--display-weight);
+  font-size: 16cqw;
+  line-height: 1.0;
+  letter-spacing: var(--tracking);
+  color: var(--ink);
+}}
+.lr-rule {{
+  height: calc(var(--rule) + 1px);
+  background: var(--accent);
+  width: 0;
+  margin: 2.8cqw auto 0;
+}}
+.lr-tagline {{
+  font-family: var(--body);
+  font-weight: var(--body-weight);
+  font-variation-settings: "wght" var(--body-weight);
+  font-size: 2.6cqw;
+  color: var(--ink-muted);
+  margin-top: 2.6cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+}}
+
+/* ---- sparkline ---- */
+.scene[data-tpl="sparkline"] {{ padding: 7%; }}
+.sp-eyebrow {{
+  font-family: var(--body);
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  font-size: 2.2cqw;
+  letter-spacing: 0.34em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin-bottom: 2.4cqw;
+  opacity: 0;
+}}
+.sp-svg {{ width: 88%; height: 46%; overflow: visible; display: block; }}
+.sp-area {{ opacity: 0; }}
+.sp-path {{
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 1.6px var(--accent));
+}}
+.sp-dot {{
+  fill: var(--accent);
+  filter: drop-shadow(0 0 2.2px var(--accent)) drop-shadow(0 0 4.4px var(--accent));
+  opacity: 0;
+}}
+.sp-value {{
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  font-variation-settings: "wght" var(--display-weight);
+  font-size: 12cqw;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-top: 2.2cqw;
+  opacity: 0;
+}}
+.sp-caption {{
+  font-family: var(--body);
+  font-weight: var(--body-weight);
+  font-variation-settings: "wght" var(--body-weight);
+  font-size: 2.8cqw;
+  color: var(--ink-muted);
+  margin-top: 1.4cqw;
+  opacity: 0;
+  text-transform: none;
+}}
+
+/* ---- word_cascade ---- */
+.wc-word {{
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  font-variation-settings: "wght" var(--display-weight);
+  line-height: 1.04;
+  letter-spacing: var(--tracking);
+  color: var(--ink);
+  margin: 0.5cqw 0;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}}
+.wc-word.size-l {{ font-size: 9.6cqw; }}
+.wc-word.size-m {{ font-size: 7.4cqw; }}
+.wc-word.accent {{ color: var(--accent); }}
+
+/* ---- wire_dispatch ---- */
+.scene[data-tpl="wire_dispatch"] {{
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 9% 9% 8% 9%;
+}}
+.wd-tickerbar {{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.4cqw;
+  border-top: var(--rule) solid var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding: 1.4cqw 0;
+  opacity: 0;
+}}
+.wd-square {{
+  width: 1.3cqw; height: 1.3cqw;
+  background: var(--accent);
+  animation: blink 1.1s steps(2) infinite;
+}}
+.wd-ticker {{
+  font-family: var(--mono);
+  font-size: 1.9cqw;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  white-space: nowrap;
+}}
+.wd-dateline {{
+  font-family: var(--body);
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  font-size: 2.1cqw;
+  letter-spacing: 0.34em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-top: 6cqw;
+  opacity: 0;
+}}
+.wd-headline {{
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  font-variation-settings: "wght" var(--display-weight);
+  font-size: 8.4cqw;
+  line-height: 1.04;
+  letter-spacing: var(--tracking);
+  color: var(--ink);
+  margin-top: 2.2cqw;
+  max-width: 92%;
+}}
+.wd-headline .kword {{ opacity: 0; will-change: transform, opacity; }}
+.wd-lede {{
+  font-family: var(--italic);
+  font-style: {italic_descriptors};
+  font-weight: var(--body-weight);
+  font-variation-settings: "wght" var(--body-weight);
+  font-size: 3.0cqw;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  margin-top: 3.4cqw;
+  max-width: 78%;
+  opacity: 0;
+  text-transform: none;
 }}
 
 /* ---- controls ---- */
@@ -790,10 +1200,12 @@ def render_scene(idx, scene):
     extra_attrs = f' data-cam="{cam}" style="--scene-dur: {dur}s;"'
 
     if tpl == "title":
+        head_html, _ = kinetic_spans(scene["headline"])
         return f"""
 <section class="scene" data-idx="{idx}" data-tpl="title"{extra_attrs}>
-  <div class="t-headline">{esc(scene['headline'])}</div>
+  <div class="t-headline" data-kinetic="1">{head_html}</div>
   <div class="eyebrow-small">{esc(scene['eyebrow'])}</div>
+  {sheen_div(scene)}
 </section>"""
 
     if tpl == "stack":
@@ -952,9 +1364,10 @@ def render_scene(idx, scene):
             if scene.get("caption")
             else ""
         )
+        word_html, _ = kinetic_spans(scene["word"])
         return f"""
 <section class="scene" data-idx="{idx}" data-tpl="flash"{extra_attrs}>
-  <div class="flash-word">{esc(scene['word'])}</div>
+  <div class="flash-word" data-kinetic="1">{word_html}</div>
   {caption_html}
 </section>"""
 
@@ -964,9 +1377,19 @@ def render_scene(idx, scene):
             if scene.get("sub")
             else ""
         )
+        # Leading integer counts up on reveal; suffix (k, MB, /day) stays fixed.
+        import re as _re
+        m = _re.match(r"^(\d[\d,]*)(.*)$", scene["numeral"])
+        count_attrs = ""
+        if m and len(m.group(1).replace(",", "")) <= 6:
+            count_attrs = (
+                f' data-count="{m.group(1).replace(",", "")}"'
+                f' data-suffix="{esc(m.group(2))}"'
+                f' data-grouped="{1 if "," in m.group(1) else 0}"'
+            )
         return f"""
 <section class="scene" data-idx="{idx}" data-tpl="big_number"{extra_attrs}>
-  <div class="bn-numeral">{esc(scene['numeral'])}</div>
+  <div class="bn-numeral"{count_attrs}>{esc(scene['numeral'])}</div>
   <div class="bn-caption">{esc(scene['caption'])}</div>
   {sub_html}
 </section>"""
@@ -979,10 +1402,17 @@ def render_scene(idx, scene):
         def render_line(i, line):
             text = line["text"] if isinstance(line, dict) else line
             show_prompt = line.get("prompt", True) if isinstance(line, dict) else True
-            classes = "terminal-line" + (" accent" if i == accent_idx else "")
+            line_accent = i == accent_idx or (isinstance(line, dict) and line.get("accent"))
+            classes = "terminal-line" + (" accent" if line_accent else "")
             prompt_html = '<span class="prompt">$</span>' if show_prompt else ""
             cursor_html = '<span class="terminal-cursor"></span>' if i == len(lines) - 1 else ""
-            return f'<span class="{classes}">{prompt_html}{esc(text)}{cursor_html}</span>'
+            # Prompt lines type on character by character; output lines fade in whole.
+            typed = ' data-typed="1"' if show_prompt else ""
+            return (
+                f'<span class="{classes}">{prompt_html}'
+                f'<span class="ttext"{typed} data-full="{esc(text)}">{esc(text)}</span>'
+                f'{cursor_html}</span>'
+            )
 
         lines_html = "".join(render_line(i, line) for i, line in enumerate(lines))
         title_html = f'<div class="terminal-title">{esc(title)}</div>' if title else ""
@@ -1012,6 +1442,77 @@ def render_scene(idx, scene):
     <div class="label">{esc(right['label'])}</div>
     <div class="value">{esc(right['value'])}</div>
   </div>
+</section>"""
+
+    if tpl == "logo_reveal":
+        word_html, _ = kinetic_spans(scene["word"])
+        tagline_html = (
+            f"""<div class="lr-tagline">{esc(scene['tagline'])}</div>"""
+            if scene.get("tagline")
+            else ""
+        )
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="logo_reveal"{extra_attrs}>
+  <div class="lr-wrap">
+    <div class="lr-word" data-kinetic="1">{word_html}</div>
+    {sheen_div(scene)}
+  </div>
+  <div class="lr-rule"></div>
+  {tagline_html}
+</section>"""
+
+    if tpl == "sparkline":
+        line_d, area_d, (ex, ey) = sparkline_geometry(scene["values"])
+        eyebrow_html = (
+            f"""<div class="sp-eyebrow">{esc(scene['eyebrow'])}</div>"""
+            if scene.get("eyebrow")
+            else ""
+        )
+        caption_html = f"""<div class="sp-caption">{esc(scene['caption'])}</div>"""
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="sparkline"{extra_attrs}>
+  {eyebrow_html}
+  <svg class="sp-svg" viewBox="0 0 100 56" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="spFill{idx}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.28"/>
+        <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path class="sp-area" d="{area_d}" fill="url(#spFill{idx})"/>
+    <path class="sp-path" d="{line_d}" pathLength="1000"
+          stroke-dasharray="1000" stroke-dashoffset="1000"/>
+    <circle class="sp-dot" cx="{ex}" cy="{ey}" r="1.7"/>
+  </svg>
+  <div class="sp-value">{esc(scene['value_label'])}</div>
+  {caption_html}
+</section>"""
+
+    if tpl == "word_cascade":
+        words = scene["words"]
+        accent_idx = scene.get("accent_idx", -1)
+        maxlen = max(len(w) for w in words)
+        size_class = "size-m" if (maxlen > 10 or len(words) > 4) else "size-l"
+        words_html = "".join(
+            f"""<div class="wc-word {size_class}{' accent' if i == accent_idx else ''}">{esc(w)}</div>"""
+            for i, w in enumerate(words)
+        )
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="word_cascade"{extra_attrs}>
+  {words_html}
+</section>"""
+
+    if tpl == "wire_dispatch":
+        head_html, _ = word_spans(scene["headline"])
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="wire_dispatch"{extra_attrs}>
+  <div class="wd-tickerbar">
+    <div class="wd-square"></div>
+    <div class="wd-ticker" data-typed="1" data-full="{esc(scene['ticker'])}">{esc(scene['ticker'])}</div>
+  </div>
+  <div class="wd-dateline">{esc(scene['dateline'])}</div>
+  <div class="wd-headline" data-wordstagger="1">{head_html}</div>
+  <div class="wd-lede">{esc(scene['lede'])}</div>
 </section>"""
 
     raise SystemExit(f"Unknown scene template: {tpl!r}")
@@ -1047,6 +1548,8 @@ def build_js(spec, timeline, total_s, emphases):
     stagger_s = motion.get("stagger_s", preset["stagger_s"])
     scale_from = preset["scale_from"]
 
+    tracking_em = spec["design"].get("typography", {}).get("letter_spacing_em", -0.02)
+
     tl_json = json.dumps(timeline)
     return r"""
 const TL = """ + tl_json + r""";
@@ -1056,6 +1559,7 @@ const FADE_OUT_S = """ + f"{out_s}" + r""";
 const STAGGER_S = """ + f"{stagger_s}" + r""";
 const Y_PX = """ + f"{y_px}" + r""";
 const SCALE_FROM = """ + f"{scale_from}" + r""";
+const TRACKING_EM = """ + f"{tracking_em}" + r""";
 const EMPHASES = """ + json.dumps(emphases) + r""";
 
 const $ = (sel) => document.querySelector(sel);
@@ -1066,25 +1570,98 @@ let startedAt = 0;
 let raf = null;
 
 function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+function easeOutExpo(t) { return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+function easeOutBack(t) {
+  const c1 = 1.20, c3 = c1 + 1;
+  return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+}
+function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+function clamp01(t) { return Math.max(0, Math.min(1, t)); }
+
+// Per-character kinetic reveal: blur-in, rise with overshoot settle.
+function animChars(container, t, opts) {
+  const stagger = (opts && opts.stagger) || 0.026;
+  const dur = (opts && opts.dur) || 0.46;
+  const delay = (opts && opts.delay) || 0.06;
+  const chars = container.querySelectorAll(".klt");
+  let allLanded = chars.length > 0;
+  for (let i = 0; i < chars.length; i++) {
+    const ci = parseFloat(chars[i].style.getPropertyValue("--ci")) || i;
+    const local = t - delay - ci * stagger;
+    if (local < 0) {
+      chars[i].style.opacity = 0;
+      chars[i].style.transform = "translateY(0.42em)";
+      chars[i].style.filter = "blur(7px)";
+      allLanded = false;
+      continue;
+    }
+    const k = clamp01(local / dur);
+    const eo = easeOutExpo(k);
+    const eb = easeOutBack(k);
+    chars[i].style.opacity = clamp01(eo * 1.15).toFixed(3);
+    chars[i].style.transform = `translateY(${(0.42 * (1 - eb)).toFixed(3)}em)`;
+    chars[i].style.filter = k >= 1 ? "none" : `blur(${(7 * (1 - eo)).toFixed(2)}px)`;
+    if (k < 1) allLanded = false;
+  }
+  return allLanded;
+}
+
+// Character-count typing for elements with data-typed + data-full.
+function typeText(el, t, start, cps) {
+  const full = el.getAttribute("data-full") || "";
+  const local = t - start;
+  if (local < 0) { el.textContent = ""; return false; }
+  const nchars = Math.min(full.length, Math.floor(local * (cps || 40)));
+  const want = full.slice(0, nchars);
+  if (el.textContent !== want) el.textContent = want;
+  return nchars >= full.length;
+}
+
+// Light sweep across the scene between 52% and 82% of its runtime.
+function animateSheen(el, t, dur) {
+  const sheen = el.querySelector(".scene-sheen");
+  if (!sheen) return;
+  const k = (t / dur - 0.52) / 0.30;
+  if (k < 0 || k > 1) { sheen.style.opacity = 0; return; }
+  const e = easeInOutCubic(clamp01(k));
+  sheen.style.opacity = (Math.sin(clamp01(k) * Math.PI) * 0.55).toFixed(3);
+  sheen.style.transform = `translateX(${(-260 + 620 * e).toFixed(1)}%) skewX(-16deg)`;
+}
 
 function applySceneAnimations(idx, sceneT, dur) {
   const el = sceneEls[idx];
+  // Entrance decelerates, exit accelerates (Material/Carbon asymmetric easing).
   let op = 1;
-  if (sceneT < FADE_IN_S) op = sceneT / FADE_IN_S;
-  else if (sceneT > dur - FADE_OUT_S) op = Math.max(0, (dur - sceneT) / FADE_OUT_S);
+  if (sceneT < FADE_IN_S) op = easeOut(clamp01(sceneT / FADE_IN_S));
+  else if (sceneT > dur - FADE_OUT_S) op = easeOut(clamp01((dur - sceneT) / FADE_OUT_S));
   el.style.opacity = op.toFixed(3);
 
   const tpl = el.dataset.tpl;
-  if (tpl === "diagram") { animateDiagram(el, sceneT, dur); return; }
-  if (tpl === "flash") { animateFlash(el, sceneT, dur); return; }
-  if (tpl === "big_number") { animateBigNumber(el, sceneT, dur); return; }
-  if (tpl === "terminal") { animateTerminal(el, sceneT, dur); return; }
-  if (tpl === "split") { animateSplit(el, sceneT, dur); return; }
+  if (tpl === "diagram") { animateDiagram(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "flash") { animateFlash(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "big_number") { animateBigNumber(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "terminal") { animateTerminal(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "split") { animateSplit(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "logo_reveal") { animateLogoReveal(el, sceneT, dur); return; }
+  if (tpl === "sparkline") { animateSparkline(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "word_cascade") { animateWordCascade(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "wire_dispatch") { animateWireDispatch(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
 
   const children = el.children;
+  let staggerSlot = 0;
   for (let i = 0; i < children.length; i++) {
     const c = children[i];
-    const d = i * STAGGER_S;
+    if (c.classList.contains("scene-sheen")) continue;
+    if (c.dataset && c.dataset.kinetic) {
+      // per-character container: chars animate; container itself stays visible
+      c.style.opacity = 1;
+      c.style.transform = "";
+      animChars(c, sceneT - staggerSlot * STAGGER_S, {});
+      staggerSlot++;
+      continue;
+    }
+    const d = staggerSlot * STAGGER_S;
+    staggerSlot++;
     const local = sceneT - d;
     if (local < 0) {
       c.style.opacity = 0;
@@ -1095,11 +1672,12 @@ function applySceneAnimations(idx, sceneT, dur) {
     }
     const t = Math.min(1, local / Math.max(FADE_IN_S, 0.001));
     const eased = easeOut(t);
+    const settled = easeOutBack(t);
     c.style.opacity = eased.toFixed(3);
     if (Y_PX > 0) {
-      c.style.transform = `translateY(${(Y_PX * (1 - eased)).toFixed(2)}px)`;
+      c.style.transform = `translateY(${(Y_PX * (1 - settled)).toFixed(2)}px)`;
     } else if (SCALE_FROM < 1) {
-      const s = SCALE_FROM + (1 - SCALE_FROM) * eased;
+      const s = SCALE_FROM + (1 - SCALE_FROM) * settled;
       c.style.transform = `scale(${s.toFixed(3)})`;
     } else {
       c.style.transform = "";
@@ -1108,6 +1686,7 @@ function applySceneAnimations(idx, sceneT, dur) {
       c.style.width = `${(12 * eased).toFixed(2)}vmin`;
     }
   }
+  animateSheen(el, sceneT, dur);
 }
 
 function animateDiagram(el, t, dur) {
@@ -1219,9 +1798,10 @@ function animateFlash(el, t, dur) {
   const word = el.querySelector(".flash-word");
   const cap = el.querySelector(".flash-caption");
   if (word) {
+    word.style.opacity = 1;
     const e = easeOut(Math.min(1, t / 0.20));
-    word.style.opacity = e.toFixed(3);
-    word.style.transform = `scale(${(0.86 + 0.14 * e).toFixed(3)})`;
+    word.style.transform = `scale(${(0.90 + 0.10 * e).toFixed(3)})`;
+    animChars(word, t, { stagger: 0.020, dur: 0.30, delay: 0.02 });
   }
   if (cap) {
     const local = t - 0.35;
@@ -1239,9 +1819,23 @@ function animateBigNumber(el, t, dur) {
   const cap = el.querySelector(".bn-caption");
   const sub = el.querySelector(".bn-sub");
   if (numeral) {
+    // Reserve final width once so the count-up never reflows the layout.
+    if (numeral.dataset.count && !numeral.dataset.wlock) {
+      numeral.style.minWidth = numeral.offsetWidth + "px";
+      numeral.dataset.wlock = "1";
+    }
     const e = easeOut(Math.min(1, t / 0.40));
     numeral.style.opacity = e.toFixed(3);
-    numeral.style.transform = `scale(${(0.92 + 0.08 * e).toFixed(3)})`;
+    numeral.style.transform = `scale(${(0.92 + 0.08 * easeOutBack(Math.min(1, t / 0.40))).toFixed(3)})`;
+    if (numeral.dataset.count) {
+      const target = parseInt(numeral.dataset.count, 10);
+      const k = easeOutExpo(clamp01((t - 0.05) / 0.90));
+      let val = Math.round(target * k);
+      if (k >= 1) val = target;
+      const grouped = numeral.dataset.grouped === "1";
+      const text = (grouped ? val.toLocaleString("en-US") : String(val)) + (numeral.dataset.suffix || "");
+      if (numeral.textContent !== text) numeral.textContent = text;
+    }
   }
   if (cap) {
     const local = t - 0.25;
@@ -1282,13 +1876,27 @@ function animateTerminal(el, t, dur) {
   for (let d = 0; d < dots.length; d++) dots[d].style.opacity = 0.55;
   if (title) title.style.opacity = 0.7;
 
+  // Prompt lines type on character-by-character; output lines fade in whole.
   const startT = 0.20;
   const stepT = 0.55;
+  const cursor = el.querySelector(".terminal-cursor");
   for (let i = 0; i < lines.length; i++) {
     const local = t - startT - i * stepT;
-    if (local < 0) { lines[i].style.opacity = 0; continue; }
+    const ttext = lines[i].querySelector(".ttext");
+    if (local < 0) {
+      lines[i].style.opacity = 0;
+      if (ttext && ttext.dataset.typed) ttext.textContent = "";
+      continue;
+    }
     const e = easeOut(Math.min(1, local / 0.18));
     lines[i].style.opacity = e.toFixed(3);
+    if (ttext && ttext.dataset.typed) {
+      typeText(ttext, t, startT + i * stepT + 0.05, 26);
+    }
+  }
+  if (cursor) {
+    const lastStart = startT + (lines.length - 1) * stepT;
+    cursor.style.opacity = t >= lastStart ? "" : "0";
   }
 }
 
@@ -1303,7 +1911,159 @@ function animateSplit(el, t, dur) {
     }
     const e = easeOut(Math.min(1, local / 0.50));
     panes[i].style.opacity = e.toFixed(3);
-    panes[i].style.transform = `translateX(${((i === 0 ? -3 : 3) * (1 - e)).toFixed(2)}%)`;
+    panes[i].style.transform = `translateX(${((i === 0 ? -3 : 3) * (1 - easeOutBack(Math.min(1, local / 0.50)))).toFixed(2)}%)`;
+  }
+}
+
+function animateLogoReveal(el, t, dur) {
+  const wrap = el.querySelector(".lr-wrap");
+  const word = el.querySelector(".lr-word");
+  const rule = el.querySelector(".lr-rule");
+  const tagline = el.querySelector(".lr-tagline");
+  if (wrap) wrap.style.opacity = 1;
+  let landAt = 1.0;
+  if (word) {
+    word.style.opacity = 1;
+    const nChars = word.querySelectorAll(".klt").length;
+    landAt = 0.10 + nChars * 0.030 + 0.46;
+    animChars(word, t, { stagger: 0.030, dur: 0.46, delay: 0.10 });
+    // Tracking settles as the word lands (Animista tracking-in).
+    const k = easeOut(clamp01((t - 0.10) / (landAt - 0.10)));
+    word.style.letterSpacing = `${(0.085 * (1 - k) + TRACKING_EM * k).toFixed(4)}em`;
+  }
+  if (rule) {
+    const local = t - landAt + 0.22;
+    const e = local < 0 ? 0 : easeOut(Math.min(1, local / 0.42));
+    rule.style.opacity = 1;
+    rule.style.width = `${(30 * e).toFixed(2)}cqw`;
+  }
+  if (tagline) {
+    const local = t - landAt - 0.05;
+    if (local < 0) { tagline.style.opacity = 0; tagline.style.transform = "translateY(8px)"; }
+    else {
+      const e = easeOut(Math.min(1, local / 0.45));
+      tagline.style.opacity = e.toFixed(3);
+      tagline.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
+    }
+  }
+  animateSheen(el, t, dur);
+}
+
+function animateSparkline(el, t, dur) {
+  const eyebrow = el.querySelector(".sp-eyebrow");
+  const svg = el.querySelector(".sp-svg");
+  const area = el.querySelector(".sp-area");
+  const path = el.querySelector(".sp-path");
+  const dot = el.querySelector(".sp-dot");
+  const value = el.querySelector(".sp-value");
+  const caption = el.querySelector(".sp-caption");
+  if (svg) svg.style.opacity = 1;
+  if (eyebrow) {
+    const e = easeOut(clamp01(t / 0.32));
+    eyebrow.style.opacity = e.toFixed(3);
+    eyebrow.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
+  }
+  const drawStart = 0.28, drawDur = 1.15;
+  const k = easeInOutCubic(clamp01((t - drawStart) / drawDur));
+  if (path) {
+    path.style.opacity = 1;
+    path.style.strokeDashoffset = (1000 * (1 - k)).toFixed(1);
+  }
+  if (area) area.style.opacity = (0.9 * k).toFixed(3);
+  if (dot) {
+    const pop = easeOutBack(clamp01((k - 0.94) / 0.06));
+    dot.style.opacity = k > 0.94 ? "1" : "0";
+    dot.style.transformOrigin = "center";
+    dot.style.transformBox = "fill-box";
+    dot.style.transform = `scale(${(0.4 + 0.6 * pop).toFixed(3)})`;
+  }
+  const landAt = drawStart + drawDur;
+  if (value) {
+    const local = t - landAt + 0.18;
+    if (local < 0) { value.style.opacity = 0; value.style.transform = "scale(0.94)"; }
+    else {
+      const e = easeOutBack(Math.min(1, local / 0.40));
+      value.style.opacity = easeOut(Math.min(1, local / 0.40)).toFixed(3);
+      value.style.transform = `scale(${(0.94 + 0.06 * e).toFixed(3)})`;
+    }
+  }
+  if (caption) {
+    const local = t - landAt - 0.10;
+    if (local < 0) { caption.style.opacity = 0; caption.style.transform = "translateY(8px)"; }
+    else {
+      const e = easeOut(Math.min(1, local / 0.45));
+      caption.style.opacity = e.toFixed(3);
+      caption.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
+    }
+  }
+}
+
+function animateWordCascade(el, t, dur) {
+  const words = el.querySelectorAll(".wc-word");
+  const step = 0.42;
+  let latest = -1;
+  for (let i = 0; i < words.length; i++) {
+    if (t - 0.12 - i * step >= 0) latest = i;
+  }
+  for (let i = 0; i < words.length; i++) {
+    const local = t - 0.12 - i * step;
+    if (local < 0) {
+      words[i].style.opacity = 0;
+      words[i].style.transform = "scale(1.45)";
+      words[i].style.filter = "blur(8px)";
+      continue;
+    }
+    const k = clamp01(local / 0.38);
+    const eo = easeOutExpo(k);
+    const dimmed = i < latest;
+    words[i].style.opacity = (dimmed ? 0.55 : eo).toFixed(3);
+    words[i].style.transform = `scale(${(1.45 - 0.45 * eo).toFixed(3)})`;
+    words[i].style.filter = k >= 1 ? "none" : `blur(${(8 * (1 - eo)).toFixed(2)}px)`;
+  }
+}
+
+function animateWireDispatch(el, t, dur) {
+  const bar = el.querySelector(".wd-tickerbar");
+  const ticker = el.querySelector(".wd-ticker");
+  const dateline = el.querySelector(".wd-dateline");
+  const headline = el.querySelector(".wd-headline");
+  const lede = el.querySelector(".wd-lede");
+  if (bar) {
+    const e = easeOut(clamp01(t / 0.35));
+    bar.style.opacity = e.toFixed(3);
+    bar.style.transform = `translateY(${(-10 * (1 - e)).toFixed(2)}px)`;
+  }
+  if (ticker) typeText(ticker, t, 0.25, 30);
+  if (dateline) {
+    const local = t - 0.85;
+    if (local < 0) { dateline.style.opacity = 0; }
+    else { dateline.style.opacity = easeOut(Math.min(1, local / 0.35)).toFixed(3); }
+  }
+  let headLand = 1.6;
+  if (headline) {
+    headline.style.opacity = 1;
+    const words = headline.querySelectorAll(".kword");
+    headLand = 1.10 + words.length * 0.085 + 0.42;
+    for (let i = 0; i < words.length; i++) {
+      const local = t - 1.10 - i * 0.085;
+      if (local < 0) {
+        words[i].style.opacity = 0;
+        words[i].style.transform = "translateY(0.55em)";
+        continue;
+      }
+      const k = clamp01(local / 0.42);
+      words[i].style.opacity = easeOut(k).toFixed(3);
+      words[i].style.transform = `translateY(${(0.55 * (1 - easeOutBack(k))).toFixed(3)}em)`;
+    }
+  }
+  if (lede) {
+    const local = t - headLand;
+    if (local < 0) { lede.style.opacity = 0; lede.style.transform = "translateY(10px)"; }
+    else {
+      const e = easeOut(Math.min(1, local / 0.5));
+      lede.style.opacity = e.toFixed(3);
+      lede.style.transform = `translateY(${(10 * (1 - e)).toFixed(2)}px)`;
+    }
   }
 }
 
@@ -1313,12 +2073,18 @@ function hideScene(i) {
   walkReset(el);
 }
 function walkReset(node) {
+  // Reset DIRECT children only. Every template animator fully re-derives its
+  // deep element state from scene time each frame (including t<0), so deep
+  // resets are redundant -- and recursing zeroed nested text wrappers
+  // (.kword, .ttext, .prompt) that no animator restores, leaving their glyphs
+  // permanently transparent in the capture.
   for (let k = 0; k < node.children.length; k++) {
     const c = node.children[k];
     c.style.opacity = 0;
     c.style.transform = "";
+    c.style.filter = "";
     if (c.classList.contains("divider-rule")) c.style.width = "0";
-    if (c.children && c.children.length) walkReset(c);
+    if (c.dataset && c.dataset.typed) c.textContent = "";
   }
 }
 
@@ -1328,6 +2094,7 @@ let lastSceneIdx = -1;
 const CUT_FILTER_MS = 180;
 const stageEl = document.getElementById("stage");
 const empFlashEl = document.querySelector(".emphasize-flash");
+const heldEl = document.querySelector(".held-subject");
 
 function fireChromCut() {
   if (!stageEl) return;
@@ -1365,6 +2132,13 @@ function tick() {
       fireEmphasizeFlash();
     }
     lastSceneIdx = activeIdx;
+  }
+
+  // Held-subject wordmark: appears after the title beat, hides on accent-bg flash scenes.
+  if (heldEl && TL.length > 1) {
+    const activeTpl = activeIdx >= 0 ? TL[activeIdx].tpl : "";
+    const show = clamped >= TL[0].end - 0.25 && activeTpl !== "flash";
+    heldEl.style.opacity = show ? 0.62 : 0;
   }
 
   if (t < DURATION_S) raf = requestAnimationFrame(tick);
@@ -1517,7 +2291,11 @@ async function play() {
   if (soundEnabled) {
     initAudio();
     if (audioCtx) {
-      try { await audioCtx.resume(); } catch (e) {}
+      // resume() never settles under a blocked autoplay policy; race a timeout
+      // so the visual timeline can never hang on audio permission.
+      try {
+        await Promise.race([audioCtx.resume(), new Promise(r => setTimeout(r, 400))]);
+      } catch (e) {}
       if (audioCtx.state === "running") {
         scheduleScore(audioCtx.currentTime + 0.15);
       }
@@ -1540,6 +2318,10 @@ def build_html(spec):
     css = build_css(spec)
     scenes_html = "\n".join(render_scene(i, sc) for i, sc in enumerate(spec["scenes"]))
     js = build_js(spec, timeline, total_s, emphases)
+
+    bg_html = background_html(spec)
+    held = spec["design"].get("held_subject")
+    held_html = f'<div class="held-subject">{esc(held)}</div>' if held else ""
 
     title_text = spec.get("topic") or spec["scenes"][0].get("headline") or "video"
 
@@ -1567,10 +2349,11 @@ def build_html(spec):
 </head>
 <body>
 <div class="stage" id="stage">
-  <canvas id="bgParticles" class="bg-particles" aria-hidden="true"></canvas>
+  {bg_html}
   <div class="stage-inner">
 {scenes_html}
   </div>
+  {held_html}
   <div class="lighting-arc"></div>
   <div class="emphasize-flash" aria-hidden="true"></div>
   <div class="texture">

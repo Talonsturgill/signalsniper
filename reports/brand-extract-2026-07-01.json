@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "canvas": "#0c0c0b",
+    "ink": "#f2f0eb",
+    "ink_muted": "#91908c",
+    "accent": "#4a9eff",
+    "hairline": "#282828"
+  },
+  "provenance": {
+    "canvas": "css var --bg",
+    "ink": "css var --ink (softened from pure white)",
+    "accent": "css var --accent",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "css var --line"
+  },
+  "confidence": "high",
+  "dark_canvas": true,
+  "source_url": "https://herdr.dev",
+  "notes": [
+    "stylesheet mined: https://herdr.dev/css/style.css?v=40"
+  ]
+}

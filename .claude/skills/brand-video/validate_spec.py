@@ -31,25 +31,31 @@ HARD_FORBIDDEN = {
 
 # per-template character limits
 LIMITS = {
-    "title":      {"headline": 22, "eyebrow": 40},
-    "stack":      {"eyebrow": 16, "name": 18, "descriptor": 26},
-    "two_line":   {"line": 22},
-    "three_line": {"line": 26},
-    "fix":        {"primary": 18, "secondary": 22},
-    "mono_block": {"line": 38},
-    "quote":      {"quote": 80, "attribution": 28},
-    "close":      {"primary": 20, "accent": 20, "subtitle": 44},
-    "diagram":    {"eyebrow": 24, "label": 18},
-    "flash":      {"word": 16, "caption": 36},
-    "big_number": {"numeral": 12, "caption": 36, "sub": 40},
-    "terminal":   {"title": 36, "line": 56},
-    "split":      {"label": 18, "value": 16},
+    "title":        {"headline": 22, "eyebrow": 40},
+    "stack":        {"eyebrow": 16, "name": 18, "descriptor": 26},
+    "two_line":     {"line": 22},
+    "three_line":   {"line": 26},
+    "fix":          {"primary": 18, "secondary": 22},
+    "mono_block":   {"line": 38},
+    "quote":        {"quote": 80, "attribution": 28},
+    "close":        {"primary": 20, "accent": 20, "subtitle": 44},
+    "diagram":      {"eyebrow": 24, "label": 18},
+    "flash":        {"word": 16, "caption": 36},
+    "big_number":   {"numeral": 12, "caption": 36, "sub": 40},
+    "terminal":     {"title": 36, "line": 48},
+    "split":        {"label": 18, "value": 16},
+    "logo_reveal":  {"word": 14, "tagline": 40},
+    "sparkline":    {"eyebrow": 24, "value_label": 12, "caption": 36},
+    "word_cascade": {"word": 14},
+    "wire_dispatch": {"ticker": 38, "dateline": 24, "headline": 44, "lede": 96},
 }
 
 VALID_TEMPLATES = set(LIMITS.keys())
-VALID_CAMERAS = {"push_in", "pull_back", "ken_burns", "crash_zoom", "orbit", "parallax_drift", "static_breathe", "none"}
+VALID_CAMERAS = {"push_in", "pull_back", "ken_burns", "crash_zoom", "orbit", "parallax_drift",
+                 "static_breathe", "rack_focus", "dolly_up", "tilt_reveal", "none"}
 VALID_PALETTES = {"ambient", "electronic", "acoustic"}
 VALID_FRAMEWORKS = {"CLASSIC", "RECEIPT", "SCHEMATIC", "MANIFESTO", "DISPATCH"}
+VALID_BACKGROUNDS = {"starfield", "aurora", "grid", "none"}
 
 
 def hex_to_rgb(h):
@@ -224,6 +230,48 @@ def validate_scene(idx, sc, errors):
             check_len(f"{base}.{side}.label", sc[side]["label"], L["label"], "split label", errors)
             check_len(f"{base}.{side}.value", sc[side]["value"], L["value"], "split value", errors)
 
+    elif tpl == "logo_reveal":
+        check_text(f"{base}.word", sc["word"], False, errors)
+        check_len(f"{base}.word", sc["word"], L["word"], "logo_reveal word", errors)
+        if sc.get("tagline"):
+            check_text(f"{base}.tagline", sc["tagline"], False, errors)
+            check_len(f"{base}.tagline", sc["tagline"], L["tagline"], "logo_reveal tagline", errors)
+
+    elif tpl == "sparkline":
+        values = sc.get("values", [])
+        if not (5 <= len(values) <= 24):
+            errors.append(f"  STRUCTURE: {base}.values must have 5..24 entries, got {len(values)}")
+        if not all(isinstance(v, (int, float)) for v in values):
+            errors.append(f"  STRUCTURE: {base}.values must be numbers")
+        check_text(f"{base}.value_label", sc["value_label"], False, errors)
+        check_len(f"{base}.value_label", sc["value_label"], L["value_label"], "sparkline value_label", errors)
+        check_text(f"{base}.caption", sc["caption"], False, errors)
+        check_len(f"{base}.caption", sc["caption"], L["caption"], "sparkline caption", errors)
+        if sc.get("eyebrow"):
+            check_text(f"{base}.eyebrow", sc["eyebrow"], True, errors)
+            check_len(f"{base}.eyebrow", sc["eyebrow"], L["eyebrow"], "sparkline eyebrow", errors)
+
+    elif tpl == "word_cascade":
+        words = sc.get("words", [])
+        if not (3 <= len(words) <= 6):
+            errors.append(f"  STRUCTURE: {base}.words must have 3..6 entries, got {len(words)}")
+        for i, w in enumerate(words):
+            check_text(f"{base}.words[{i}]", w, False, errors)
+            check_len(f"{base}.words[{i}]", w, L["word"], "word_cascade word", errors)
+        ai = sc.get("accent_idx", -1)
+        if ai is not None and ai != -1 and not (0 <= ai < len(words)):
+            errors.append(f"  STRUCTURE: {base}.accent_idx out of range: {ai}")
+
+    elif tpl == "wire_dispatch":
+        check_text(f"{base}.ticker", sc["ticker"], True, errors)
+        check_len(f"{base}.ticker", sc["ticker"], L["ticker"], "wire_dispatch ticker", errors)
+        check_text(f"{base}.dateline", sc["dateline"], True, errors)
+        check_len(f"{base}.dateline", sc["dateline"], L["dateline"], "wire_dispatch dateline", errors)
+        check_text(f"{base}.headline", sc["headline"], False, errors)
+        check_len(f"{base}.headline", sc["headline"], L["headline"], "wire_dispatch headline", errors)
+        check_text(f"{base}.lede", sc["lede"], False, errors)
+        check_len(f"{base}.lede", sc["lede"], L["lede"], "wire_dispatch lede", errors)
+
 
 def validate(spec_path):
     spec = json.loads(Path(spec_path).read_text())
@@ -253,6 +301,29 @@ def validate(spec_path):
     framework = design.get("framework")
     if framework is not None and framework not in VALID_FRAMEWORKS:
         errors.append(f"  FRAMEWORK: design.framework = {framework!r} (must be one of {sorted(VALID_FRAMEWORKS)} or null)")
+
+    background = design.get("background") or {}
+    bg_style = background.get("style", "starfield")
+    if bg_style not in VALID_BACKGROUNDS:
+        errors.append(f"  BACKGROUND: design.background.style = {bg_style!r} (must be one of {sorted(VALID_BACKGROUNDS)})")
+
+    # Silent-first word budget (X practice: ~45 words max across 4-7 scenes).
+    def scene_words(sc):
+        text = []
+        for k, v in sc.items():
+            if isinstance(v, str) and k not in ("template", "camera"):
+                text.append(v)
+            elif k in ("lines", "words") and isinstance(v, list):
+                for item in v:
+                    text.append(item["text"] if isinstance(item, dict) else str(item))
+            elif k == "items" and isinstance(v, list):
+                for item in v:
+                    text.append(item.get("name", "") + " " + item.get("descriptor", ""))
+        return sum(len(t.split()) for t in text)
+
+    total_words = sum(scene_words(sc) for sc in scenes)
+    if total_words > 55:
+        print(f"  WARN: total word count {total_words} > 55; silent-feed viewers cannot read this much")
 
     # Accent threshold defaults to 3.0:1 (warm-earth palettes need this floor).
     # The spec can override per-aesthetic via design.accent_contrast_min, e.g.

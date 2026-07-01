@@ -15,6 +15,7 @@ ffmpeg in PATH, numpy, scipy.
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -26,6 +27,16 @@ from pathlib import Path
 VIEWPORT = 1080
 TAIL_S = 3.0  # extra seconds captured so trim can drop the warmup AND the final fade still records cleanly
 
+# Pre-installed Chromium fallbacks for environments where the Playwright CDN
+# download is blocked (e.g. sandboxed CI). Checked in order after the default.
+CHROMIUM_FALLBACKS = [
+    os.environ.get("BV_CHROMIUM", ""),
+    "/opt/pw-browsers/chromium",
+    shutil.which("chromium") or "",
+    shutil.which("chromium-browser") or "",
+    shutil.which("google-chrome") or "",
+]
+
 
 def ensure_playwright():
     try:
@@ -33,13 +44,18 @@ def ensure_playwright():
     except ImportError:
         print("Installing playwright...", file=sys.stderr)
         subprocess.check_call([sys.executable, "-m", "pip", "install", "playwright"])
-    result = subprocess.run(
-        [sys.executable, "-m", "playwright", "install", "chromium"],
-        capture_output=True, text=True,
-    )
-    if result.returncode != 0:
-        print(result.stderr, file=sys.stderr)
-        raise SystemExit("playwright install chromium failed")
+
+
+def launch_browser(p, args):
+    """Launch Chromium: managed browser first, pre-installed fallbacks second."""
+    try:
+        return p.chromium.launch(args=args)
+    except Exception as first_err:
+        for candidate in CHROMIUM_FALLBACKS:
+            if candidate and Path(candidate).exists():
+                print(f"default chromium unavailable, using {candidate}", file=sys.stderr)
+                return p.chromium.launch(executable_path=candidate, args=args)
+        raise first_err
 
 
 def read_bv_meta(html_path: Path):
@@ -51,19 +67,21 @@ def read_bv_meta(html_path: Path):
     return json.loads(raw)
 
 
-def record_webm(html_path: Path, out_dir: Path, record_s: float) -> Path:
+def record_webm(html_path: Path, out_dir: Path, record_s: float, viewport: int = VIEWPORT) -> Path:
     from playwright.sync_api import sync_playwright
 
     out_dir.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
-        browser = p.chromium.launch(args=["--autoplay-policy=no-user-gesture-required"])
+        browser = launch_browser(p, ["--autoplay-policy=no-user-gesture-required"])
         context = browser.new_context(
-            viewport={"width": VIEWPORT, "height": VIEWPORT},
+            viewport={"width": viewport, "height": viewport},
             record_video_dir=str(out_dir),
-            record_video_size={"width": VIEWPORT, "height": VIEWPORT},
+            record_video_size={"width": viewport, "height": viewport},
         )
         page = context.new_page()
         page.goto(f"file://{html_path.resolve()}")
+        # Explicit font gate: fonts.ready alone misses faces not yet used in layout.
+        page.evaluate("() => document.fonts ? document.fonts.ready : Promise.resolve()")
         page.wait_for_timeout(int(record_s * 1000))
         context.close()
         browser.close()
@@ -110,6 +128,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("html", help="Path to brand-video HTML")
     parser.add_argument("output", help="Path to write MP4")
+    parser.add_argument("--viewport", type=int, default=VIEWPORT,
+                        help="Capture size in px (default 1080). 1620 supersamples 1.5x; "
+                             "finish.py downscales to 1080 with lanczos for crisper type.")
     args = parser.parse_args()
 
     if not shutil.which("ffmpeg"):
@@ -122,13 +143,13 @@ def main():
     meta = read_bv_meta(html_path)
     total_s = float(meta["total_s"])
     record_s = total_s + TAIL_S
-    print(f"Recording {total_s}s + {TAIL_S}s tail = {record_s}s")
+    print(f"Recording {total_s}s + {TAIL_S}s tail = {record_s}s at {args.viewport}px")
 
     ensure_playwright()
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
-        webm = record_webm(html_path, tmp_dir / "video", record_s)
+        webm = record_webm(html_path, tmp_dir / "video", record_s, viewport=args.viewport)
         wav = tmp_dir / "soundtrack.wav"
         synth_wav(wav, meta)
         mux(webm, wav, out_path, total_s)

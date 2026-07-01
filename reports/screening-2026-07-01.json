@@ -1,0 +1,13 @@
+{
+  "frames": 502,
+  "longest_still_s": 1.92,
+  "energy_peak_pos": 0.563,
+  "poster_luma_std": 23.63,
+  "audio_range_db": 8.4,
+  "cut_onset_median_ms": 116.0,
+  "duration_s": 20.08,
+  "warnings": [
+    "near-dead air: 1.9s low motion"
+  ],
+  "failures": []
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-01",
+  "project": "herdr",
+  "project_url": "https://github.com/ogulcancelik/herdr",
+  "audience": "AI engineers on X who already run two or more coding agents and feel the tab-juggling pain daily",
+  "single_takeaway": "herdr turns your scattered coding agents into one glanceable terminal, and it's climbing fast.",
+  "viewer_action": "open the repo, star it, quote the video",
+  "desired_feeling": "recognition, then relief: someone built the thing I keep wishing existed",
+  "tone_adjectives": ["precise", "quietly confident", "terminal-native"],
+  "references": [
+    "Linear release videos: restraint, spatially motivated motion, zero-bounce settles",
+    "Screen Studio grammar: show the real product surface, zoom with intent",
+    "herdr.dev's own site: JetBrains Mono, near-black, one blue"
+  ],
+  "mandatories": "herdr's own brand tokens from herdr.dev, CC BY music attribution, creator tagged",
+  "success_criteria": "the creator quote-posts it; viewers can follow the whole story muted",
+  "platform": "x"
+}
