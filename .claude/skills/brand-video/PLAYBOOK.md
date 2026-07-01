@@ -1,179 +1,141 @@
-# brand-video PLAYBOOK
+# brand-video PLAYBOOK — v2
 
-The strategy doc for the video pipeline. Synthesizes research on Higgsfield, HeyGen Hyperframes, Runway Gen-4, Sora 2, Veo 3, Pika, Kling, Anthropic's video voice, and current X engineering-creator practice (May 2026). Tells the writer agent how to make a video that does not read as templated.
+The strategy doc for the video pipeline. v2 synthesizes four commissioned research briefs (kinetic-typography craft, X launch-video practice 2025-26, studio production discipline, and headless-Chromium cinematography) plus the shipped learnings in `CRAFT_LOG.md`. The writer and director stages read this before drafting; the critic enforces it.
 
-This doc is canonical guidance, not a spec. The Explainer Writer (Step 6 of the routine) reads it before drafting scenes. The Critic (Step 7) checks output against it.
+This doc is canonical guidance, not a spec. Numbers here are defaults, not laws — but depart from them on purpose, not by accident.
 
 ## Architecture validation
 
-The pipeline we have (HTML + Playwright capture + ffmpeg mux + base64-embedded fonts) is the same architecture HeyGen ships as their open-source `hyperframes` framework: HTML + GSAP/Anime.js + Puppeteer + ffmpeg. They use it to render production AI video. This is the right stack. The bottleneck is not the renderer. The bottleneck is what we tell it to render.
+HTML + CSS keyframes + JS rAF timeline + Playwright screencast + ffmpeg finishing is the same architecture HeyGen ships as `hyperframes` and Replit uses for HTML-to-video. The renderer is not the bottleneck. What we tell it to render, and what we verify afterward, is.
 
-## What separates "designed" from "templated"
+## The three-layer quality model
 
-Three patterns, in priority order. If a video has all three it reads as next-level. If it has none it reads as PowerPoint, regardless of how good the fonts are.
+1. **Camera language.** Every scene has a committed motion verb, and no frame is ever truly static: settles end in a breathe or through-drift, tails get a light sweep. A held static frame reads cheap after ~1.2s; a genuinely frozen one is a screening-room FAIL after 2s.
+2. **Texture and light.** Grain + vignette + halation stay on. Light behaves: a single sheen pass timed to a word's landing (never looping), aurora fields derived from the brand accent, bloom gated to highlights in the finish. On near-black canvases use `screen` blends — `overlay` does nothing over black (shipped lesson, 2026-07-01).
+3. **Sound design over a bed.** Licensed music bed + synthesized foley stem (whoosh INTO impact at cuts, stamp on emphasis), music sidechain-ducked ~4-6dB under each hit, two-pass loudnorm to −14 LUFS / −1.5 dBTP. Cuts land ON onsets: beat_align snaps boundaries, leading each cut 40ms so the visual hits with the transient.
 
-1. **Camera language.** Every scene has a committed motion verb. Push-in, pull-back, orbit, ken-burns, crash-zoom, whip-pan, parallax-drift. Higgsfield's entire differentiator is a 50-preset library of named camera moves on top of a generic model. CSS `transform` keyframes do all of this for free. A static frame held more than 1.2 seconds without sub-motion reads as cheap.
+## Easing (the single biggest tell)
 
-2. **Texture layer.** A 4-8% opacity SVG turbulence noise overlay, plus a soft vignette, plus optional halation glow on highlights, is the single biggest "designed vs templated" lever. Every modern AI-video tool ships grain by default. Clean digital reads cheap.
+- Entrances: strong custom ease-out — `cubic-bezier(0.16, 1, 0.3, 1)` family; expo `cubic-bezier(0.19, 1, 0.22, 1)` for hero words. Built-in `ease-out` is not strong enough; `linear` on an enter reads robotic.
+- Exits ACCELERATE and run ~65% of the paired entrance duration. Never decelerate an exit.
+- Ease-in-out (`cubic-bezier(0.37, 0, 0.63, 1)`) only for elements already on screen that move or morph (ken burns, orbit).
+- Overshoot is a spice: one element per scene, excursion inside 0.95–1.05 (the JS `easeOutBack` is tuned to this).
+- Related elements in one beat share one curve. Mixing curves in a choreographed group reads cheap.
 
-3. **Diegetic sound design over a music bed.** A music bed alone reads as YouTube tutorial. Layered sound design (whoosh on cuts, thud on emphasis, typewriter on text reveal, paper rustle on transitions, room tone) reads as production. Silence between beats also works. Stock library music is the worst option.
+## Timing and rhythm
 
-## Aesthetic preset packs (mirror Higgsfield SOUL)
+- Durations scale with size: word 300–500ms, line 500–700ms, full-scene change 700–1000ms.
+- Staggers: 15–40ms per character, ~80ms per word, 100–150ms per line, children trail parents 40–120ms on the same curve.
+- Hold formula after a composition settles: `chars/12 + 0.5` seconds, max ~2s. The screening room measures a hard ceiling.
+- Vary beat lengths deliberately (long–short–short). Equal-length scenes read metronomic; beat_align introduces musical variation naturally.
+- Scene transitions are fade-through, never crossfade mush: outgoing finishes before incoming starts (the renderer already enforces this window). Chromatic tick on the cut.
+- Compound entrances: opacity + translateY(0.3–0.45em) + blur(6–8px→0) + scale(0.97→1) together — the renderer's kinetic and generic paths both do this. Tracking-settle on hero words (logo_reveal does this automatically).
 
-Each daily-tribute aesthetic should map to a "preset pack" that bundles canvas + ink + accent + font + texture + audio palette. Not a one-off recipe per run.
+## Type in motion
 
-Starter pack (8, one per common aesthetic_slug):
+- Max two typefaces per video; get contrast from weight/size/case within the family.
+- Scale contrast between hero and support ≥ 2.5–4x. One-word-huge beats (word fills 60–80% of frame width) alternate with sentence-small beats.
+- All-caps only for short kickers with +0.05–0.2em tracking; sentences stay mixed-case.
+- Reveal granularity: letter-stagger for 1–4-word display type, word-stagger for sentences, line-stagger for blocks.
+- Numerals: tabular figures, count-up over ~0.9s with expo-out (big_number does this for leading integers), width reserved so nothing reflows.
+- Typewriter: ~26 chars/s in terminals, smooth cursor blink (never binary steps).
 
-| Preset | Canvas | Ink | Accent | Font | Texture | Audio palette |
-|---|---|---|---|---|---|---|
-| `editorial-paper` | warm cream | near-black | terracotta or oxblood | EB Garamond / Fraunces | grain 6%, vignette 18%, halation off | felt piano + room tone |
-| `mono-terminal` | near-black | off-white | matrix-green or magenta | JetBrains Mono | scan-lines 4%, vignette 22% | granular clicks + low pulse |
-| `gallery` | pure white | near-black | one brand color | IBM Plex Serif | none, single radial spotlight | chamber strings + soft mallet |
-| `subway-chrome` | dark steel | bright white | one icy color | JetBrains Mono | chromatic aberration 1px | sub bass + transit foley |
-| `cctv` | washed gray | bright white | red | IBM Plex Mono | scan-lines 8%, timestamp overlay | room hum + tape stutter |
-| `editorial-90s` | cream + 4:5 letterbox | ink | oversaturated brand | Fraunces | grain 9%, halation on highlights | piano + stamp foley |
-| `geominimal` | flat brand color blocks | ink | secondary brand | Space Grotesk | none, hard color cuts | arpeggiated synth |
-| `claude` (Anthropic-adjacent) | warm ivory parchment | slate | clay | IBM Plex Serif + Inter | grain 4%, vignette 14% | felt piano + paper rustle |
+## Composition (1080×1080)
 
-Add packs over time as new aesthetics warrant. Never invent a one-off aesthetic per run.
+- Title-safe: keep type inside 90% (the default 8% padding satisfies this).
+- Off-center placement is a system: thirds anchors (wire_dispatch is the left-anchored template); break the center only once per video, at the peak.
+- Three depth layers minimum: background field (aurora/starfield/grid) at low opacity, midground rules/frames, foreground type.
+- Whitespace is a designed element: hero beats are ~two-thirds empty.
+- One focal point per beat. If everything stands out, nothing does.
 
-## Camera move library
+## Color and light
 
-Every scene template is rendered with one camera move from this list. The writer picks per scene; the renderer enforces.
+- 60-30-10: canvas ~60%, secondary tone/texture ~30%, accent ≤10% and only where it means something.
+- **The project's own palette first** (`brand_extract.py`). Never pure #000/#FFF canvases — they melt into X's Lights Out / light chrome; the extractor nudges automatically.
+- Dark canvas + one high-chroma accent is the premium-tech default; counter-programmed warm cream stands out in a dark feed — both are valid, pick by the project's own brand.
+- Glow/halation only on the accent, at most one element per frame. Sheen: single 1.5–2.5s pass, `screen` blend on dark canvases.
+- Lock one palette for the piece; color meanings stay consistent across scenes.
 
-| Move | Implementation | Best for |
+## X feed physics (why the defaults are what they are)
+
+- **Frame 0 is the poster.** Muted autoplay + thumbnail duty: scene 1 must show the project name within its first second, with motion already alive (no fade-from-black). The finisher's 1.5s trim lands frame 0 mid-cascade with the wordmark readable.
+- **14–22s.** ≥12s so the ranker's quality-view threshold is reachable; under ~22s for peak completion. The end card visually rhymes with the open so the autoloop replays clean (replays are a ranking signal).
+- **Silent-first, ≤55 words total**, ≥1s per 13 characters on screen, ≤2 lines and 5–8 words per card. Small captions ≥ ~3cqw (the templates' floors were raised for feed legibility).
+- **Encode**: supersample capture at 1620, lanczos down to 1080, CRF 20 + aq-mode=3 + deband + temporal grain (kills near-black banding through X's re-encode), upload via web.
+- **Post mechanics** (for the Gmail notes): repo link in the first reply, one @mention in the body, one fact the video doesn't show, Tue–Thu 10:00–12:00 creator-timezone. The single highest-value outcome is the tagged creator replying or quote-posting; the video being in THEIR brand colors is the recognition trigger.
+
+## Camera moves (11)
+
+| Move | Reads as | Best for |
 |---|---|---|
-| `push_in` | `scale: 1 → 1.10` over scene duration | title, fix, close |
-| `pull_back` | `scale: 1.08 → 1.00` over scene duration | close, consequence |
-| `ken_burns` | `scale: 1.05 → 1.12 + translate -0.5%, -0.3%` | quote, three_line, mono_block |
-| `crash_zoom` | `scale: 1 → 2` over 200ms then hold | flash, emphasized fix |
-| `whip_pan` | `translateX: -120% → 0` over 240ms with 4px motion blur | cuts between scenes (transition mode) |
-| `orbit` | `perspective(1200px) rotateY: -8deg → 8deg` | diagram, schematic |
-| `parallax_drift` | three layers at 1.0/0.6/0.3x translate | three_line, stack |
-| `static_breathe` | imperceptible 1.0 → 1.005 sine | rare, only when stillness IS the point |
+| `push_in` | slow commitment | title, fix |
+| `pull_back` | reveal, resolve (now drifts through the tail) | close |
+| `ken_burns` | documentary pan | quote, big_number |
+| `crash_zoom` | impact | flash |
+| `orbit` | 3D depth | diagram, sparkline |
+| `parallax_drift` | layered depth | three_line, terminal |
+| `static_breathe` | stillness with life | rare, when stillness IS the point |
+| `rack_focus` | blur→sharp arrival | terminal, product beats |
+| `dolly_up` | ascent | sparkline, momentum beats |
+| `tilt_reveal` | unveiling | logo_reveal, title |
+| `none` | — | never ship it |
 
-No scene should ever be `static` by default. Even quiet scenes get `static_breathe`.
+≥4 distinct moves per video, ≥1 orbit-or-tilt for real 3D.
 
-## Composition vocabulary (scene templates)
+## Scene templates (17)
 
-Beyond centered text on canvas. Each template should be reachable; the writer picks per scene.
+Text: `title` (kinetic per-char headline), `stack`, `two_line`, `three_line`, `fix`, `mono_block`, `quote`, `close`.
+Heroes: `diagram` (draw-on graph + particles), `flash` (accent burst, kinetic word), `big_number` (count-up numeral), `terminal` (typed session, per-line accents, `white-space: pre` alignment), `split`, **`logo_reveal`** (per-char wordmark + tracking settle + rule + tagline + sheen), **`sparkline`** (animated data curve + end-dot + value pop — the momentum receipt), **`word_cascade`** (words slam in on beats, previous dim), **`wire_dispatch`** (ticker types on, dateline, word-staggered headline, lede).
 
-- `title` — already exists
-- `stack` — already exists
-- `two_line` / `three_line` — already exists
-- `fix` — already exists; loudest beat
-- `mono_block` — already exists
-- `quote` — already exists
-- `close` — already exists
-- `diagram` — node graph, animated draw-on, 2-5 nodes (ADD)
-- `flash` — full-bleed accent color, single huge word (ADD)
-- `big_number` — receipt-of-numbers element, massive numeral with caption (ADD)
-- `terminal` — monospace frame with traffic-light dots, animated cursor, typed text (ADD)
-- `wire_dispatch` — top ticker with timestamp + dateline; below, headline + lede (ADD)
-- `magazine_spread` — pull-quote in serif + hairline rules + marginalia (ADD)
-- `split` — 50/50 or 60/40 split-screen; before/after, claim/proof (ADD)
-- `three_up` — three cards in a row for comparison (ADD)
+Every video: ≥1 hero; prefer one REAL-product beat (terminal for CLIs, diagram for systems, sparkline for growth stories) — demonstrated capability out-engages abstract type.
 
-## Audio palettes
+## Backgrounds
 
-Three palettes shipping with the skill. Each spec picks one based on aesthetic.
+`design.background.style`: `starfield` (deterministic particles, accent-tinted), `aurora` (three accent-derived blobs, ±24° hue spread, screen-blended on dark — the brand "breathing"), `grid` (perspective floor, infra flavor), `none`. Don't repeat yesterday's style; keep intensity ≤1.
 
-| Palette | Composition | Best for |
+## Sound design
+
+- Palettes (`ambient`/`electronic`/`acoustic`) drive the PREVIEW score only; the shipped bed is licensed CC BY music.
+- The shipped foley stem (`synth_audio.py --foley-only`): whoosh 240ms before each cut into an impact at the cut, stamp+glitch on emphasized beats. `finish.py` sidechain-ducks the music under it.
+- Music-first editing: pick the track, THEN `beat_align.py` retimes scene durations onto its onsets (±0.45s window, scenes stay 2.5–4.5s), cuts lead transients by one frame.
+- Targets: −14 LUFS integrated, ≤−1.5 dBTP, measured two-pass, `linear=true` so ducking survives.
+
+## The production chain (who does what)
+
+| Stage | Artifact | Gate |
 |---|---|---|
-| `ambient` (default) | Cmaj9 pad, sub drone on C2, white-noise swells, mallet bells | editorial, claude, paper, refined |
-| `electronic` | arpeggiated synth, sub pulse, glitch clicks, hard mallets | mono, brutalism, cosmic, matrix |
-| `acoustic` | felt piano clusters, soft strings, wood mallets, paper rustle foley | terracotta, riso, refined, elegant |
+| Producer | `producer-brief-$DATE.json` (audience, ONE-sentence takeaway, tone, references, success criteria) | storyboard_check |
+| Director | `storyboard-$DATE.json` (per-shot intent, camera, sound cue, energy curve, ONE money shot at 60–80%) | storyboard_check |
+| Music supervisor | track pick + offset | catalog/lifetime rules |
+| Writer | `scene-spec-$DATE.json` (template sequence LOCKED to the board) | validate_spec + storyboard_check --spec |
+| Animatic editor | beat-snapped durations | beat_align + re-validate |
+| Critic | edits keyed to scene index | fact-check + brief alignment + no-repeat |
+| Animator | HTML + raw capture | render sanity |
+| Finisher | graded, mixed MP4 | finish.py |
+| QC | — | wow_check + screening_room + 8-keyframe vibes pass |
+| Producer (retro) | `CRAFT_LOG.md` entry | next run reads it |
 
-Foley layer (always on, regardless of palette):
-- `whoosh` 200ms before each scene boundary
-- `thud` on impact at the boundary
-- `typewriter` ticks at text-appearance moments
-- `stamp` on scene with `emphasize: true`
+Stage-locked notes: story/structure notes at the BOARD (cheapest), timing notes at the animatic, polish notes at screening. Never restructure at the writing desk.
 
-## Narrative frameworks (rotation)
+## Anti-pattern list (cheap tells)
 
-Every video should pick one of these five frameworks. The framework dictates which scene templates appear and in what order. Anti-repeat the framework over the last four runs.
+- Default/linear easing, identical durations everywhere, everything animating at once.
+- Static text held >2s; floaty >500ms moves on small elements; crossfade mush.
+- Center-aligned same-layout scene after scene (the Corporate-Memphis fingerprint).
+- Decorative emojis, arrows, sparkle assets; stock 2018-corporate bounce-ins.
+- Ambient bed with no foley; cuts ignoring the music; version numbers as hooks.
+- Pure #000/#FFF canvases; accents that mean nothing; looping shimmer (loading-state idiom).
+- Tell-don't-show: narrating a paragraph instead of showing one specific thing.
 
-### 1. CLASSIC (the reference baseline)
-`title → stack → two_line → fix → three_line → close`
-Balanced explainer. Setup, problem, fix, consequence. Use when the project is already well-known and you're framing the angle, not introducing.
+## Hard-won environment lessons (do not relearn)
 
-### 2. RECEIPT (numbers do the proving)
-`title → big_number → big_number → fix → close`
-Stat → stat → so-what. Use for benchmark drops, momentum stories, anything where a number IS the headline.
-
-### 3. SCHEMATIC (system diagram explainer)
-`title → diagram → two_line → fix → close`
-Use when the project's value is structural — a new pattern, a new loop, a new architecture. Karpathy whiteboard energy.
-
-### 4. MANIFESTO (color-burst declaration)
-`title → flash → fix → flash → close`
-Single bold claim, color punctuation, restate. Use for opinionated takes, anti-framework positions, bold launches.
-
-### 5. DISPATCH (wire-service field report)
-`title → wire_dispatch → quote → three_line → close`
-Cool, reportorial, dateline framing. Use when the project is meta — observations about the AI engineering field, a pattern across multiple builders.
-
-The routine prompt's Step 6 picks one framework, records it in `style-history.json`, and refuses to repeat any framework in the last 4 entries.
-
-## Pacing rules
-
-From observed-and-measured top creators:
-
-- First 1.5s is a stop-scroll beat. Single bold word, contradiction, or huge number.
-- 2-3 beats per second in the first 4s, easing to 1.2 bps mid.
-- Never hold a static frame longer than 1.2s without sub-motion (breathe, parallax, slow zoom).
-- Cuts every 0.4-0.8s on average over the whole runtime.
-- The "fix" beat lands at 60-65% of total duration, not the end.
-- Audio beats and visual cuts must align. If you can't beat-detect, hand-mark.
-
-## Anti-pattern list
-
-- Static-text-on-canvas video without any camera move. Reads as PowerPoint.
-- Ambient pad music with no foley layer. Reads as stock library.
-- Single composition (centered text) for the entire run. Reads as templated.
-- Same color palette as last week's run. Reads as automated.
-- Same scene template structure as last week's run. Reads as automated.
-- Decorative emojis, arrows, sparkle GIFs. Reads as generic AI slop.
-- Stock motion-graphics typography (oversized sans, all-caps, bouncing in). Reads as 2018 LinkedIn explainer.
-- "Tell-don't-show" copy. The video should show one specific thing, not narrate a paragraph.
-
-## Phasing
-
-This is what the brand-video skill should ship, in order of impact:
-
-**Phase 1 (high impact, low effort):**
-- Texture overlay on the stage (grain + vignette, always on, configurable strength)
-- Three new templates: `diagram`, `flash`, `big_number`
-- Three audio palettes: `ambient`, `electronic`, `acoustic`
-- Foley layer: whoosh + thud at every scene boundary, stamp on emphasize
-- 5-framework rotation in the routine prompt
-- Camera moves on title/fix/close (push_in, pull_back, ken_burns)
-
-**Phase 2 (higher effort, big payoff):**
-- Five more templates: `terminal`, `wire_dispatch`, `magazine_spread`, `split`, `three_up`
-- Full camera-move library applied to every template
-- Aesthetic preset packs (canvas + ink + accent + font + texture + audio bundled per slug)
-- Sub-shots inside long scenes (3 angles × ~2s instead of one 6s static)
-
-**Phase 3 (research-grade):**
-- Beat-snapped cuts (audio transient detection)
-- Per-clip lighting arc (warm → neutral → cool gradient overlay)
-- HDR / display-p3 color
-- Held subject across cuts (shared header/wordmark element across scenes)
+- `walkReset` resets DIRECT children only; template animators own their deep state each frame. Recursive resets once left nested text wrappers permanently invisible IN THE CAPTURE while computed styles looked fine.
+- `audioCtx.resume()` never settles under blocked autoplay — always raced against a 400ms timeout, or the whole visual timeline hangs.
+- Debug renders with the freeze probe (override `performance.now`, step `window.__t`) — wall-clock waits are flaky because `fonts.ready` on ~1.5MB of embedded fonts varies run to run.
+- The recorder falls back to `/opt/pw-browsers/chromium`; never run `playwright install` in the sandbox.
+- HN Algolia `numericFilters` 400s through the proxy; filter client-side.
+- incompetech direct MP3s: `https://incompetech.com/music/royalty-free/mp3-royaltyfree/<Title%20Case>.mp3`.
 
 ## Sources
 
-This playbook synthesizes findings from:
-
-- HeyGen Hyperframes (https://github.com/heygen-com/hyperframes)
-- Higgsfield camera controls and SOUL preset library
-- Runway Gen-4 / Gen-4.5 release notes
-- OpenAI Sora 2 capabilities
-- Google Veo 3 capabilities
-- Pika 2.5 Pikaframes
-- Luma Ray3 HDR pipeline
-- Kling 3.0 storyboard tooling
-- Anthropic "Keep Thinking" campaign and "A Time and a Place" Super Bowl spot
-- X creator practice across Karpathy, levelsio, AI-tool launch trailers
-- Motion design conventions from short-form explainer content (May 2026)
+Four research briefs (2026-07-01, transcripts in the session log) synthesizing: animations.dev, easings.net, Material 3 + Carbon motion, NN/g, GSAP SplitText guidance, PremiumBeat title-design guidelines, SMPTE safe areas, Advids launch-video analysis, X open-source ranker analyses, legibility.info, RocketShip HQ, Socialinsider/OpusClip completion data, Buffer/hashmeta link-penalty coverage, Ordinary Folk + Buck process posts, StudioBinder, Murch's rule of six, premiumbeat 60/30/15 cutting discipline, artlist/bitcut beat-sync, krotos/pixflow foley grammar, loudness standards (−14 LUFS), Josh Comeau `linear()`, Keith Clark CSS parallax, CSS-Tricks grain/motion-blur, Codrops feTurbulence, zayne.io ffmpeg grades, CPJKU onset detection, k.ylo.ph loudnorm, Playwright screencast internals, Replit/HeyGen HTML-to-video write-ups.

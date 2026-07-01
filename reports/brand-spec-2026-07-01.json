@@ -1,34 +1,34 @@
 {
   "date": "2026-07-01",
-  "brand_slug": "linear.app",
-  "aesthetic_slug": "linear.app",
+  "brand_slug": "herdr-native",
+  "aesthetic_slug": "herdr-native",
   "framework": "RECEIPT",
   "audio_palette": "electronic",
   "held_subject": "herdr",
-  "source": "Derived from .claude/skills/brand-design-systems/brands/linear.app.md (near-black #010102 canvas, light-gray #f7f8f8 ink, signature lavender-blue accent, charcoal hairline panels, measured negative-tracking display sans).",
+  "source": "Extracted live from https://herdr.dev by brand_extract.py (v2 run). Dark-theme custom properties: --bg #0c0c0b, --ink (softened from pure white), --accent #4a9eff. herdr.dev itself sets display type in JetBrains Mono.",
   "tokens": {
-    "canvas": "#010102",
-    "ink": "#f7f8f8",
-    "ink_muted": "#8a8f98",
-    "accent": "#828fff",
-    "hairline": "#23252a"
+    "canvas": "#0c0c0b",
+    "ink": "#f2f0eb",
+    "ink_muted": "#91908c",
+    "accent": "#4a9eff",
+    "hairline": "#282828"
   },
   "fonts": {
-    "display": "Inter",
+    "display": "JetBrainsMono",
     "body": "Inter",
     "italic": "Inter"
   },
   "typography": {
     "display_weight": 700,
     "body_weight": 400,
-    "letter_spacing_em": -0.02,
+    "letter_spacing_em": -0.015,
     "case": "preserve",
     "italic_descriptors": false
   },
   "motion": {
     "register": "fade",
-    "scene_in_s": 0.36,
-    "scene_out_s": 0.24,
+    "scene_in_s": 0.34,
+    "scene_out_s": 0.22,
     "stagger_s": 0.24
   },
   "layout": {
@@ -37,17 +37,19 @@
     "stage_radius_px": 8
   },
   "texture": {
-    "grain": 0.04,
-    "vignette": 0.16,
-    "halation": 0.03,
-    "lighting_arc": 0.20
+    "grain": 0.05,
+    "vignette": 0.18,
+    "halation": 0.05,
+    "lighting_arc": 0.22
+  },
+  "background": {
+    "style": "aurora",
+    "intensity": 0.85
   },
   "accent_contrast_min": 4.5,
   "token_notes": {
-    "canvas": "#010102 is Linear's canvas, the deepest dark surface in the brand library. Reads distinct from the recent violet-midnight (sentry) and steel (subway-chrome) dark runs.",
-    "accent": "#828fff is Linear's lighter lavender (their primary-hover tone). The signature #5e6ad2 lands at 4.44:1 on canvas, just under the 4.5 mono floor, so the brighter lavender is used at 7.27:1 while staying an authentic Linear brand color.",
-    "ink_muted": "#8a8f98 is Linear's ink-subtle, 6.42:1 on canvas.",
-    "fonts": "Linear's custom sans is unavailable. Inter is the closest shipped geometric-sans match for Linear's neutral, negative-tracked display voice."
+    "provenance": "project-native palette, mined from herdr.dev css custom properties and contrast-fixed; see reports/brand-extract-2026-07-01.json",
+    "ink_muted": "derived mix(ink, canvas) because the site's --muted variants belong to scoped demo-theme blocks"
   },
   "audio_track": {
     "slug": "district-four",

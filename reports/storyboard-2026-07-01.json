@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-01",
+  "project": "herdr",
+  "framework": "RECEIPT",
+  "concept": "A receipt told in herdr's own colors: the wordmark arrives like the product booting, the star curve proves momentum, the real terminal shows the glanceable state view, the count lands the scale, the fix names the pain it kills, the close commands the herd.",
+  "money_shot_note": "The 26-count-up big_number at 60% of runtime: the number IS the argument, so it gets the count-up, the hit, and the flash.",
+  "transition_strategy": "fade-through with accelerating exits; chromatic tick on every cut; emphasize flash reserved for the money shot and the close",
+  "music_direction": "district-four (already recorded for today), electronic, cuts snapped to onsets by beat_align",
+  "energy_curve": [0.45, 0.6, 0.65, 0.85, 0.8, 0.55],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "recognition hook: herdr's wordmark in its own colors doubles as the muted-autoplay poster frame",
+      "template": "logo_reveal",
+      "camera": "tilt_reveal",
+      "copy_note": "wordmark 'herdr' + tagline naming the category",
+      "sound_cue": "riser into first downbeat",
+      "transition": "fade-through",
+      "energy": 0.45
+    },
+    {
+      "beat": 2,
+      "intent": "momentum proof: the star curve drawing itself is the receipt, not an adjective",
+      "template": "sparkline",
+      "camera": "orbit",
+      "copy_note": "climbing curve, end value 9.1k, velocity caption",
+      "sound_cue": "draw-on under rising phrase",
+      "transition": "fade-through",
+      "energy": 0.6
+    },
+    {
+      "beat": 3,
+      "intent": "the product surface itself: rack focus lands on the live state view, typed like a real session",
+      "template": "terminal",
+      "camera": "rack_focus",
+      "copy_note": "herdr up, then three agents with their states at a glance",
+      "sound_cue": "typing ticks ducked under the bed",
+      "transition": "fade-through",
+      "energy": 0.65
+    },
+    {
+      "beat": 4,
+      "intent": "the scale lands: count-up to 26 makes breadth felt, not stated",
+      "template": "big_number",
+      "camera": "ken_burns",
+      "copy_note": "26 counting up, supported agents named small",
+      "sound_cue": "hard hit as the count lands",
+      "transition": "fade-through",
+      "energy": 0.85,
+      "money_shot": true
+    },
+    {
+      "beat": 5,
+      "intent": "name the pain it kills: the blocked agent you did not notice",
+      "template": "fix",
+      "camera": "push_in",
+      "copy_note": "stuck agents, seen in seconds",
+      "sound_cue": "stamp on the emphasize",
+      "transition": "fade-through",
+      "energy": 0.8
+    },
+    {
+      "beat": 6,
+      "intent": "closing command that rhymes with the open so the loop replays clean",
+      "template": "close",
+      "camera": "pull_back",
+      "copy_note": "herd them all, binary honesty in the subtitle",
+      "sound_cue": "resolve and fade",
+      "transition": "fade to loop",
+      "energy": 0.55
+    }
+  ]
+}

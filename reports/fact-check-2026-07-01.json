@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-01",
+  "project_url": "https://github.com/ogulcancelik/herdr",
+  "claims": [
+    {
+      "claim": "9.1k stars",
+      "sources": [
+        "https://github.com/ogulcancelik/herdr",
+        "https://www.linuxlinks.com/herdr-terminal-based-agent-multiplexer/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-01"
+    },
+    {
+      "claim": "climbing near 170 stars a day",
+      "sources": [
+        "https://trendshift.io/repositories/32084",
+        "https://github.com/trending (rust, daily)"
+      ],
+      "verified": true,
+      "as_of": "2026-07-01"
+    },
+    {
+      "claim": "26 agents supported (11 named in README plus '15+ others'; 26 is the floor)",
+      "sources": [
+        "https://github.com/ogulcancelik/herdr#readme",
+        "https://herdr.dev"
+      ],
+      "verified": true,
+      "as_of": "2026-07-01"
+    },
+    {
+      "claim": "one ~10MB single Rust binary, no Electron, no telemetry, detach/reattach sessions",
+      "sources": [
+        "https://github.com/ogulcancelik/herdr#readme",
+        "https://herdr.dev"
+      ],
+      "verified": true,
+      "as_of": "2026-07-01"
+    },
+    {
+      "claim": "latest release v0.7.1, June 24, 2026",
+      "sources": [
+        "https://github.com/ogulcancelik/herdr/releases",
+        "https://github.com/ogulcancelik/herdr"
+      ],
+      "verified": true,
+      "as_of": "2026-07-01"
+    }
+  ]
+}

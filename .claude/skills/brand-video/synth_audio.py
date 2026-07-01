@@ -359,15 +359,32 @@ def typewriter_tick(seed, dur=0.06):
     return noise * env * 0.10
 
 
-def build_foley(total_s, transitions, emphases):
+def build_foley(total_s, transitions, emphases, rich=False):
+    """Foley bus. Default (rich=False) keeps the legacy minimal bed used inside
+    the synth preview. rich=True is the shipping foley layered OVER the music
+    bed by the finishing mux: whoosh into impact at every cut (movement +
+    arrival, pixflow grammar), a stamp on emphasized beats, ducked by the mixer.
+    """
     track = np.zeros(int(SR * total_s))
-    # No transition foley. Cuts are read by the pad shifting, not by a whoosh.
-    # No typewriter chatter. The music carries the rhythm.
-    # A single soft sub-thump on emphasized beats only, low gain, supports the visual hit.
-    for em in emphases:
+    if not rich:
+        for em in emphases:
+            if em < 0 or em >= total_s:
+                continue
+            add(track, thud(dur=0.45), em, gain=0.22)
+        return track
+    em_set = set(round(e, 2) for e in emphases)
+    for i, tt in enumerate(transitions):
+        if tt <= 0.1 or tt >= total_s - 0.1:
+            continue
+        add(track, whoosh(seed=1000 + i, dur=0.42), tt - 0.24, gain=0.55)
+        # emphasized boundaries get the stamp instead of the plain thud
+        if round(tt, 2) not in em_set:
+            add(track, thud(dur=0.34), tt - 0.01, gain=0.38)
+    for j, em in enumerate(emphases):
         if em < 0 or em >= total_s:
             continue
-        add(track, thud(dur=0.45), em, gain=0.22)
+        add(track, thud(dur=0.5), em - 0.01, gain=0.62)
+        add(track, glitch_hit(seed=2000 + j, dur=0.12), em, gain=0.30)
     return track
 
 
@@ -409,6 +426,15 @@ def build_track(palette, total_s, transitions, emphases):
     return master_chain(music + foley, total_s)
 
 
+def build_foley_track(total_s, transitions, emphases):
+    """Foley-only stem for the finishing mux (no pad, no normalization frenzy)."""
+    foley = build_foley(total_s, transitions, emphases, rich=True)
+    peak = np.max(np.abs(foley))
+    if peak > 0:
+        foley = foley / peak * 0.7
+    return np.column_stack([foley, foley])
+
+
 def parse_floats(s):
     if not s:
         return []
@@ -422,6 +448,8 @@ def main():
     parser.add_argument("--emphases", default="")
     parser.add_argument("--palette", default="ambient", choices=list(PALETTES))
     parser.add_argument("--bv-meta", help="Inline JSON {total_s, timeline:[{start}], emphases:[], audio_palette:'..'}")
+    parser.add_argument("--foley-only", action="store_true",
+                        help="Emit only the rich foley stem (whoosh+impact at cuts, stamp on emphases) for the finishing mux")
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
@@ -443,11 +471,15 @@ def main():
         print(f"Unknown palette {palette!r}, falling back to ambient")
         palette = "ambient"
 
-    audio = build_track(palette, total, transitions, emphases)
+    if args.foley_only:
+        audio = build_foley_track(total, transitions, emphases)
+    else:
+        audio = build_track(palette, total, transitions, emphases)
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     wavfile.write(str(out), SR, (audio * 32767).astype(np.int16))
-    print(f"wrote {out}, {audio.shape[0]/SR:.2f}s, palette={palette}")
+    kind = "foley stem" if args.foley_only else f"palette={palette}"
+    print(f"wrote {out}, {audio.shape[0]/SR:.2f}s, {kind}")
 
 
 if __name__ == "__main__":
