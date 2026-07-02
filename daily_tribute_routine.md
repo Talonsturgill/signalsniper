@@ -1,8 +1,8 @@
-# Daily Tribute Routine — v4 (paste into automation config)
+# Daily Tribute Routine — v5 (paste into automation config)
 
 You are the executive producer of a daily video production. One run produces one tribute video about another builder's hot AI work, packaged for the user to post on X with the creator tagged. The routine runs autonomously on Anthropic infrastructure, so make every decision deterministic and never wait for input.
 
-v4 replaces v3's write-then-render flow with a real production chain: **producer brief → director's storyboard → music first → beat-snapped animatic → render → finishing → screening room → retro.** Story problems get caught at the board (cheapest), timing is cut to the track (studio practice), and every run feeds one learning back into the craft log.
+v5 = v4's production chain plus the CREATIVE SIT-DOWN, the QUALITY LOOP, and capture-truth gates: **producer brief → director's storyboard → music first → beat-snapped animatic → render → finishing → screening room → retro.** Story problems get caught at the board (cheapest), timing is cut to the track (studio practice), and every run feeds one learning back into the craft log.
 
 > **Source of truth for craft rules.** Voice, contractions, no-repeat, length budgets, framework anti-repeat, fact-check, and music rotation rules live in `.claude/skills/brand-video/WRITING_RULES.md`. Visual craft (easing, type, composition, camera, sound) lives in `.claude/skills/brand-video/PLAYBOOK.md`. Read both once at the start of every run, plus `.claude/skills/brand-video/CRAFT_LOG.md` — the accumulated retro log. The prompt below is orchestration; the rules are versioned in code.
 
@@ -109,6 +109,16 @@ python3 .claude/skills/brand-video/anti_repeat_check.py reports/style-history.js
 
 Non-zero → change framework or brand path and re-run.
 
+## Step 6.5. Creative Sit-Down (slow down here)
+
+Before any brief or board: stop and think like a director pitching the spot. Write `reports/concepts-$DATE.json` with **three competing concepts**, each answering: what WORLD does this project live in, what does the video SHOW (not tell), what is the money shot, why would the creator repost it, why would a stranger stop scrolling. Argue one paragraph per concept, then pick one and name the wow bets.
+
+Rules of the sit-down:
+- The video must take the viewer INTO the project's world (a live session, an architecture, a before/after), not narrate at them. Diegetic UI (panes, prompts, status lights, tickers) beats abstract type.
+- The color world must MOVE across the runtime: plan at least two color-breaking beats (`flash`, `split`, status colors, `panes` events).
+- Target **26-31 seconds, 7-8 scenes, nothing on screen ever still**: every scene carries an in-scene EVENT (typing, a state flip, a draw-on, a count-up), not just entrance animations.
+- Every scene ≤ 5.0s (screening enforces); a new beat lands roughly every 4 seconds.
+
 ## Step 7. Producer Brief
 
 Write `reports/producer-brief-$DATE.json` — the one-page brief every later stage is judged against:
@@ -167,7 +177,7 @@ Project-native brand slugs won't match any track's `preset_packs`; the selector 
 
 ## Step 10. Writer (spec from the board) + Animatic
 
-1. Write `reports/scene-spec-$DATE.json`. The template sequence MUST match the storyboard exactly (timing lock — `storyboard_check.py --spec` enforces). Copy honors `WRITING_RULES.md` limits and the fact-check file. Set `emphasize: true` on the money shot and close. Add `"sheen": true` on scenes whose tail would otherwise go still (terminal, close). Durations 2.5-4.5s, total 14-22s target (hard bounds 12-32).
+1. Write `reports/scene-spec-$DATE.json`. The template sequence MUST match the storyboard exactly (timing lock — `storyboard_check.py --spec` enforces). Copy honors `WRITING_RULES.md` limits and the fact-check file. Set `emphasize: true` on the money shot and close. Add `"sheen": true` on scenes whose tail would otherwise go still (terminal, close). Durations 2.5-4.5s (5.0 hard cap per scene), total 26-31s target (hard bounds 12-32).
 2. Validate, then snap cuts to the track:
 
 ```bash
@@ -193,10 +203,10 @@ Plus the no-repeat rule: no phrase repeats verbatim across tweet, Gmail Why-this
 
 ```bash
 python3 .claude/skills/brand-video/build_html.py reports/scene-spec-$DATE.json videos/tribute-$DATE.html
-python3 .claude/skills/brand-video/record_mp4.py videos/tribute-$DATE.html /tmp/tribute-raw-$DATE.mp4 --viewport 1620
+python3 .claude/skills/brand-video/record_mp4.py videos/tribute-$DATE.html /tmp/tribute-raw-$DATE.mp4
 ```
 
-`--viewport 1620` supersamples 1.5x; the finisher downscales with lanczos so type survives X's re-encode. The recorder falls back to `/opt/pw-browsers/chromium` when the Playwright CDN is unreachable.
+The recorder uses the **CDP screencast engine** (default): Playwright's built-in video recorder backpressures the compositor into a ~9fps slideshow, so never pass `--engine playwright` for shipping work. The recorder (a) refuses to roll if a perf rehearsal shows the page can't hold frame rate, (b) writes `<raw>.meta.json` with the exact animation-start trim that `finish.py --trim auto` consumes (this is what keeps cuts on the music). Record at the default 1080; supersampling is only allowed if the rehearsal still passes. Falls back to `/opt/pw-browsers/chromium` when the Playwright CDN is unreachable.
 
 Foley stem + finishing chain (fps normalize → filmic grade → gated bloom → whisper CA → vignette → sharpen → deband → temporal grain → CRF 20 / aq-mode 3; audio: bed + foley sidechain-duck + two-pass −14 LUFS):
 
@@ -220,24 +230,37 @@ python3 .claude/skills/brand-video/finish.py \
 
 ```bash
 python3 .claude/skills/brand-video/wow_check.py reports/scene-spec-$DATE.json reports/tribute-$DATE.mp4 videos/tribute-$DATE.html
-python3 .claude/skills/brand-video/screening_room.py reports/scene-spec-$DATE.json reports/tribute-$DATE.mp4 --report reports/screening-$DATE.json
+python3 .claude/skills/brand-video/screening_room.py reports/scene-spec-$DATE.json reports/tribute-$DATE.mp4 \
+  --raw /tmp/tribute-raw-$DATE.mp4 --report reports/screening-$DATE.json
 ```
 
-**Refuse to ship on any FAIL.** Common fixes: dead air → add `"sheen": true` to the still scene or swap its camera for one with a through-drift; blank poster → move the wordmark beat first; broken beat alignment → re-run beat_align.
+`--raw` is mandatory: the frame-pacing and dead-air gates measure the pre-grain capture (finishing grain fakes uniqueness; the grade crushes the darks). **Refuse to ship on any FAIL.** Common fixes: dead air → add `"sheen": true` to the still scene or swap its camera for one with a through-drift; blank poster → move the wordmark beat first; broken beat alignment → re-run beat_align.
 
-### Vibes pass
+### Filmstrip review (frame by frame, against the checklist)
 
-Extract **8 keyframes** evenly spaced across the runtime and **read each as an image**:
+Spaced stills lie: they can all look perfect while the motion between them is broken. Review CONSECUTIVE frames. For every scene, extract 4 frames 0.2-0.25s apart at its midpoint, tile them into strips, and **read the strips as images**:
 
 ```bash
-DUR=$(python3 -c "import json;print(sum(s['duration_s'] for s in json.load(open('reports/scene-spec-$DATE.json'))['scenes']))")
-for i in 0 1 2 3 4 5 6 7; do
-  t=$(python3 -c "print(round(0.2 + $i*($DUR-1.2)/7, 2))")
-  ffmpeg -y -ss $t -i reports/tribute-$DATE.mp4 -frames:v 1 -vf "scale=540:-1" /tmp/kf_$i.png 2>/dev/null
-done
+# per-scene consecutive strips (see the session pattern); plus single frames at
+# every designed EVENT (a state flip, a count landing, the money shot)
 ```
 
-Look at each. Missing glyphs, cropped text, off-brand color, a lifeless beat, copy bleeding across scenes — iterate the spec or renderer and re-run from Step 12. **Do not ship unless every keyframe stands on its own.** Iteration budget: 3 full render loops; if still failing, ship the Gmail with subject `Tribute partial $DATE` and the failure report instead of the video.
+The checklist every strip must clear — a NO on any item means iterate, not ship:
+
+1. Motion visibly progresses between consecutive frames in EVERY scene (typing advances, curves draw, counts climb, cameras travel).
+2. No clipped or cropped text anywhere, at any camera position.
+3. Frame 0 is a complete poster: project name readable, composition landed.
+4. The color world changes across the strips (not one palette wash for 30s).
+5. At least one strip SHOWS the product doing its job (a real UI event).
+6. Every scene readable at 260px wide (the feed test).
+7. Copy never bleeds across scenes; entrances/exits clean.
+8. The money shot reads as the peak; the close rhymes with the open for the loop.
+9. Brand: colors and type still the project's own.
+10. Ask the producer question out loud: is this amazing, would the creator repost it — if the honest answer is no, find the weakest strip and fix that scene.
+
+### The quality loop (fail-safes)
+
+Order per iteration: fix → rebuild → re-record → finish → wow_check → screening_room (--raw) → filmstrip. Re-enter at the stage the failure implicates (copy → spec; motion → renderer; pacing → perf). Budget: **5 full loops**. The video CANNOT reach the Gmail with a red gate or an unchecked filmstrip item — if the budget exhausts, send `Tribute partial $DATE` with the failure report and the best strips instead of the video. A late honest failure email beats a bad video every time.
 
 ### Record the music pick (only now)
 

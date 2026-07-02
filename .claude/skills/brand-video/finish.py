@@ -36,6 +36,28 @@ def run(cmd, **kw):
     return res
 
 
+def detect_content_start(raw, hint, window=1.2):
+    """The sidecar t0 marks when the page SCHEDULED the animation; the first
+    composited content frame lands ~100-200ms later (rAF + encode latency).
+    Scan a small window after the hint for the first real frame-to-frame
+    change so video t=0 is the true visual t=0 (poster + beat alignment)."""
+    import numpy as np
+    start = max(0.0, hint - 0.1)
+    cmd = ["ffmpeg", "-v", "error", "-ss", str(start), "-t", str(window + 0.1),
+           "-i", str(raw), "-vf", "fps=25,scale=160:160", "-pix_fmt", "gray",
+           "-f", "rawvideo", "-"]
+    buf = subprocess.run(cmd, capture_output=True).stdout
+    n = len(buf) // (160 * 160)
+    if n < 4:
+        return hint
+    fr = __import__("numpy").frombuffer(buf, dtype="uint8")[: n * 160 * 160].reshape(n, 160, 160).astype("float32")
+    d = abs(fr[1:] - fr[:-1]).mean(axis=(1, 2))
+    for i, x in enumerate(d):
+        if x > 0.5:
+            return round(start + (i + 1) / 25.0, 3)
+    return hint
+
+
 def spec_duration(spec_path):
     spec = json.loads(Path(spec_path).read_text())
     return sum(float(s.get("duration_s", 3.0)) for s in spec["scenes"])
@@ -49,6 +71,9 @@ def build_video_chain(grade, bloom):
         steps.append("eq=saturation=1.06:contrast=1.02")
     chain_a = ",".join(steps)
     post = [
+        # blend-interpolate 25 -> 50fps: intermediate frames are crossfades,
+        # which reads as natural motion blur on kinetic type (no warping)
+        "minterpolate=fps=50:mi_mode=blend",
         "rgbashift=rh=1:bh=-1:edge=smear",
         "vignette=angle=PI/5",
         "unsharp=5:5:0.45:5:5:0.0",
@@ -107,11 +132,25 @@ def main():
     p.add_argument("--music-offset", type=float, default=30.0)
     p.add_argument("--foley", required=True)
     p.add_argument("--out", required=True)
-    p.add_argument("--trim", type=float, default=1.5,
-                   help="Seconds of warmup to drop from the raw capture head")
+    p.add_argument("--trim", default="auto",
+                   help="Seconds of warmup to drop from the raw capture head. 'auto' (default) "
+                        "reads <raw>.meta.json written by the CDP recorder for the EXACT "
+                        "animation start; falls back to 1.5 when no sidecar exists.")
     p.add_argument("--grade", choices=["filmic", "none"], default="filmic")
     p.add_argument("--no-bloom", action="store_true")
     args = p.parse_args()
+
+    if args.trim == "auto":
+        sidecar = Path(str(args.raw) + ".meta.json")
+        if sidecar.exists():
+            hint = float(json.loads(sidecar.read_text())["trim_s"])
+            args.trim = detect_content_start(args.raw, hint)
+            print(f"trim: {args.trim:.3f}s (first content frame; sidecar hint {hint:.3f}s)")
+        else:
+            args.trim = 1.5
+            print("trim: 1.5s (no sidecar; legacy fallback)", file=sys.stderr)
+    else:
+        args.trim = float(args.trim)
 
     dur = spec_duration(args.spec)
     fade_out_start = dur - 1.5

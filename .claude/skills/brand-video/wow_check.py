@@ -29,7 +29,7 @@ import sys
 from pathlib import Path
 
 VALID_HERO_TPLS = {"diagram", "terminal", "big_number", "flash", "split",
-                   "sparkline", "logo_reveal", "word_cascade", "wire_dispatch"}
+                   "sparkline", "logo_reveal", "word_cascade", "wire_dispatch", "panes"}
 
 
 def fail(msg, errors): errors.append(("FAIL", msg))

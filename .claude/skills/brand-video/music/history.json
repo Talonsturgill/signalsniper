@@ -243,5 +243,10 @@
     "date": "2026-07-02",
     "slug": "industrial-cinematic",
     "project_url": "https://github.com/usestrix/strix"
+  },
+  {
+    "date": "2026-07-01",
+    "slug": "exit-the-premises",
+    "project_url": "https://github.com/ogulcancelik/herdr"
   }
 ]

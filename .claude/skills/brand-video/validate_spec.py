@@ -48,6 +48,7 @@ LIMITS = {
     "sparkline":    {"eyebrow": 24, "value_label": 12, "caption": 36},
     "word_cascade": {"word": 14},
     "wire_dispatch": {"ticker": 38, "dateline": 24, "headline": 44, "lede": 96},
+    "panes":        {"eyebrow": 24, "name": 14, "line": 24},
 }
 
 VALID_TEMPLATES = set(LIMITS.keys())
@@ -261,6 +262,28 @@ def validate_scene(idx, sc, errors):
         ai = sc.get("accent_idx", -1)
         if ai is not None and ai != -1 and not (0 <= ai < len(words)):
             errors.append(f"  STRUCTURE: {base}.accent_idx out of range: {ai}")
+
+    elif tpl == "panes":
+        panes = sc.get("panes", [])
+        if not (2 <= len(panes) <= 4):
+            errors.append(f"  STRUCTURE: {base}.panes must have 2..4 entries, got {len(panes)}")
+        for i, pn in enumerate(panes):
+            if "name" not in pn:
+                errors.append(f"  STRUCTURE: {base}.panes[{i}].name missing")
+                continue
+            check_text(f"{base}.panes[{i}].name", pn["name"], False, errors)
+            check_len(f"{base}.panes[{i}].name", pn["name"], L["name"], "pane name", errors)
+            for j, ln in enumerate(pn.get("lines", [])[:4]):
+                check_text(f"{base}.panes[{i}].lines[{j}]", ln, False, errors)
+                check_len(f"{base}.panes[{i}].lines[{j}]", ln, L["line"], "pane line", errors)
+            if len(pn.get("lines", [])) > 3:
+                errors.append(f"  STRUCTURE: {base}.panes[{i}] max 3 lines")
+            for field in ("state", "flip_to"):
+                if pn.get(field) and pn[field] not in ("working", "blocked", "done", "idle"):
+                    errors.append(f"  STRUCTURE: {base}.panes[{i}].{field} = {pn[field]!r} invalid")
+        if sc.get("eyebrow"):
+            check_text(f"{base}.eyebrow", sc["eyebrow"], True, errors)
+            check_len(f"{base}.eyebrow", sc["eyebrow"], L["eyebrow"], "panes eyebrow", errors)
 
     elif tpl == "wire_dispatch":
         check_text(f"{base}.ticker", sc["ticker"], True, errors)

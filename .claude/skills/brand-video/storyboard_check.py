@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 HERO_TPLS = {"diagram", "terminal", "big_number", "flash", "split",
-             "sparkline", "logo_reveal", "word_cascade", "wire_dispatch"}
+             "sparkline", "logo_reveal", "word_cascade", "wire_dispatch", "panes"}
 VALID_TEMPLATES = HERO_TPLS | {"title", "stack", "two_line", "three_line",
                                "fix", "mono_block", "quote", "close"}
 VALID_CAMERAS = {"push_in", "pull_back", "ken_burns", "crash_zoom", "orbit",

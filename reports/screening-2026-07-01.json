@@ -1,13 +1,27 @@
 {
-  "frames": 502,
-  "longest_still_s": 1.92,
-  "energy_peak_pos": 0.563,
-  "poster_luma_std": 23.63,
-  "audio_range_db": 8.4,
-  "cut_onset_median_ms": 116.0,
-  "duration_s": 20.08,
+  "raw_unique_ratio": 0.965,
+  "raw_max_interior_dup_ms": 200,
+  "raw_min_unique_per_sec": 22,
+  "scene_durations": [
+    3.4,
+    4.46,
+    3.04,
+    4.11,
+    3.39,
+    3.74,
+    3.3,
+    3.6
+  ],
+  "frames": 726,
+  "longest_still_s": 0.2,
+  "energy_peak_pos": 0.264,
+  "poster_luma_std": 9.88,
+  "audio_range_db": 3.7,
+  "cut_onset_median_ms": 195.6,
+  "duration_s": 29.04,
   "warnings": [
-    "near-dead air: 1.9s low motion"
+    "energy arc peaks at 26%; aim for 60-80%",
+    "beat alignment soft: median cut-to-onset 196ms"
   ],
   "failures": []
 }

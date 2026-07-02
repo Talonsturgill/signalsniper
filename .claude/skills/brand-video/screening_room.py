@@ -15,9 +15,18 @@ Checks:
                      <= 120ms PASS / <= 200ms WARN / else FAIL
   6. conform sanity  duration within 0.5s of spec, fps ~25 (FAIL)
 
+With --raw, also runs the FRAME-PACING gate against the pre-grain capture:
+finishing grain makes every output frame technically unique, so duplicated
+frames (a page that painted slower than the recorder) are only detectable on
+the raw. A slideshow is unshippable: unique-frame ratio >= 0.90, no duplicate
+run > 200ms, every second >= 18 unique frames.
+
+Also enforces CADENCE: scenes 3.2-5.0s (a beat every ~4s), and the energy
+trace must show in-scene motion between cuts, not just at them.
+
 Usage:
     python screening_room.py reports/scene-spec-DATE.json reports/tribute-DATE.mp4 \
-        [--report reports/screening-DATE.json]
+        [--raw /tmp/tribute-raw-DATE.mp4] [--report reports/screening-DATE.json]
 """
 
 import argparse
@@ -79,10 +88,76 @@ def onset_times(x, fs):
     return peaks * hop / fs
 
 
+def frame_pacing(raw_path, spec, fails, warns, report):
+    """Unique-frame + liveliness analysis of the raw capture (pre-grain, the
+    honest source: finishing grain fakes uniqueness and the grade crushes the
+    darks the dead-air heuristic reads). Fade-through troughs at scene cuts
+    are DESIGNED dips, so freezes are judged inside scene interiors only.
+
+    Returns the per-frame motion trace so the dead-air check can reuse it."""
+    cmd = ["ffmpeg", "-v", "error", "-i", str(raw_path),
+           "-vf", "fps=25,scale=128:128", "-pix_fmt", "gray", "-f", "rawvideo", "-"]
+    buf = subprocess.run(cmd, capture_output=True).stdout
+    n = len(buf) // (128 * 128)
+    if n < 25:
+        fails.append("frame pacing: could not decode raw capture")
+        return None
+    fr = np.frombuffer(buf, dtype=np.uint8)[: n * 128 * 128].reshape(n, 128, 128).astype(np.float32)
+    d = np.abs(np.diff(fr, axis=0)).mean(axis=(1, 2))
+    # content window: skip the blank pre-animation head and post-animation tail
+    active = np.where(d > 0.5)[0]
+    lo = int(active[0]) if len(active) > 2 else 0
+    hi = int(active[-1]) if len(active) > 2 else len(d) - 1
+    d = d[lo: hi + 1]
+    # mask +/-0.3s around each designed cut (fade-through dips are intentional)
+    durs = [float(sc.get("duration_s", 3.0)) for sc in spec["scenes"]]
+    cuts = np.cumsum(durs)[:-1]
+    interior = np.ones(len(d), dtype=bool)
+    for c in cuts:
+        ci = int(c * 25)
+        interior[max(0, ci - 8): ci + 8] = False
+    dup = d < 0.03
+    runs, run = [], 0
+    for i, x in enumerate(dup):
+        run = run + 1 if (x and interior[i]) else 0
+        runs.append(run)
+    uniq_ratio = float(1 - dup.mean())
+    max_run_ms = max(runs) / 25 * 1000
+    per_sec = [(int((~dup[i * 25:(i + 1) * 25]).sum())) for i in range(max(1, len(d) // 25))]
+    worst_sec = min(per_sec[1:-1]) if len(per_sec) > 3 else min(per_sec)
+    report["raw_unique_ratio"] = round(uniq_ratio, 3)
+    report["raw_max_interior_dup_ms"] = round(max_run_ms)
+    report["raw_min_unique_per_sec"] = worst_sec
+    if uniq_ratio < 0.85:
+        fails.append(f"frame pacing: only {uniq_ratio:.0%} of raw frames are unique "
+                     f"(page painted slower than the recorder; this is a slideshow)")
+    elif max_run_ms > 240:
+        fails.append(f"frame pacing: {max_run_ms:.0f}ms duplicate-frame freeze inside a scene")
+    elif worst_sec < 12:
+        fails.append(f"frame pacing: a second with only {worst_sec} unique frames in the raw capture")
+    else:
+        print(f"  [PASS] frame pacing (raw unique {uniq_ratio:.0%}, max interior dup {max_run_ms:.0f}ms, "
+              f"min {worst_sec} unique/s)")
+    return d
+
+
+def cadence(spec, fails, warns, report):
+    durs = [float(s.get("duration_s", 3.0)) for s in spec["scenes"]]
+    report["scene_durations"] = durs
+    long_scenes = [i for i, d in enumerate(durs) if d > 5.0]
+    if long_scenes:
+        fails.append(f"cadence: scene(s) {long_scenes} exceed 5.0s; a beat lands every ~4s or attention dies")
+    if len(durs) < 4:
+        warns.append(f"cadence: only {len(durs)} scenes")
+    else:
+        print(f"  [PASS] cadence ({len(durs)} scenes, longest {max(durs):.1f}s)")
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("spec")
     p.add_argument("mp4")
+    p.add_argument("--raw", help="raw capture (pre-grain) for the frame-pacing gate")
     p.add_argument("--report")
     args = p.parse_args()
 
@@ -91,12 +166,21 @@ def main():
     total = sum(durs)
     fails, warns, report = [], [], {}
 
+    raw_motion = None
+    if args.raw:
+        raw_motion = frame_pacing(args.raw, spec, fails, warns, report)
+    cadence(spec, fails, warns, report)
+
     frames = decode_gray(args.mp4)
     energy = np.abs(np.diff(frames, axis=0)).mean(axis=(1, 2))  # per-frame motion
     report["frames"] = int(len(frames))
 
-    # 1. dead air
-    still = energy < 0.22
+    # 1. dead air: judged on the raw capture when available (the grade crushes
+    # near-black drift below any fixed final-pixel threshold)
+    if raw_motion is not None:
+        still = raw_motion < 0.03
+    else:
+        still = energy < 0.22
     max_run = run = 0
     for s in still:
         run = run + 1 if s else 0

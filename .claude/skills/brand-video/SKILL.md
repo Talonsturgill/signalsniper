@@ -9,7 +9,7 @@ description: Generate a short (12 to 32 second) 1080x1080 kinetic-typography vid
 
 A flexible kinetic-typography video generator. Replaces the old fixed-format `editorial-kinetic-type`. The skill now ships:
 
-- **17 scene templates**: `title`, `stack`, `two_line`, `three_line`, `fix`, `mono_block`, `quote`, `close`, `diagram`, `flash`, `big_number`, `terminal`, `split`, `logo_reveal`, `sparkline`, `word_cascade`, `wire_dispatch`
+- **18 scene templates**: `title`, `stack`, `two_line`, `three_line`, `fix`, `mono_block`, `quote`, `close`, `diagram`, `flash`, `big_number`, `terminal`, `split`, `logo_reveal`, `sparkline`, `word_cascade`, `wire_dispatch`, `panes`
 - **11 camera moves** per scene: `push_in`, `pull_back`, `ken_burns`, `crash_zoom`, `orbit`, `parallax_drift`, `static_breathe`, `rack_focus`, `dolly_up`, `tilt_reveal`, `none`
 - **Kinetic type engine**: per-character reveals with blur-in + overshoot settle on `title`, `flash`, `logo_reveal`; word-stagger on `wire_dispatch` headlines; count-up numerals in `big_number`; character typing in `terminal` and `wire_dispatch` tickers
 - **Premium easing**: expo-out entrances, accelerating exits, `easeOutBack` settles (0.95-1.05 band)
@@ -175,6 +175,7 @@ A spec sets `display`, `body`, and optional `italic` keys. The renderer base64-e
 | `wire_dispatch`| `ticker`, `dateline`, `headline`, `lede`                             | Left-anchored wire report; ticker types on; ticker/dateline may hold a colon |
 | `terminal` (upgraded) | `title`, `lines[1..6]` — line dicts take `prompt`, `accent`   | Prompt lines type at 26 cps; `white-space: pre` preserves column alignment |
 | `big_number` (upgraded) | `numeral`, `caption`, optional `sub`                        | Leading integer counts up over 0.9s, width-locked, tabular numerals |
+| `panes`      | `panes[2..4]` (each `name`, `lines[<=3]`, `state`, optional `flip_to`+`flip_at`), optional `eyebrow` | Live multi-agent session: typed activity, pulsing status dots, and a mid-scene state flip (border+badge swap with a shake) |
 
 ### Per-scene fields
 
