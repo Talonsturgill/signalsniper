@@ -56,6 +56,15 @@ HTML + CSS keyframes + JS rAF timeline + Playwright screencast + ffmpeg finishin
 - Glow/halation only on the accent, at most one element per frame. Sheen: single 1.5–2.5s pass, `screen` blend on dark canvases.
 - Lock one palette for the piece; color meanings stay consistent across scenes.
 
+### Brightness physics (dim is a design failure, not a grade setting)
+
+- **Ink floors.** Dark canvas → primary ink ≥ 230 luma; light canvas → ≤ 60. The screening gate demands p99.3 ≥ 180 with spread ≥ 120 at every scene midpoint (540px sampling — 270px smears thin mono type ~20-30 levels into the background and lies).
+- **Accent is graphic, not text.** Mid-luma accents (most brand blues/reds, 120-170 luma) read dim as hero glyphs on black. `build_html.py` derives `--accent-ink` (accent blended toward white to ~205 luma; toward black to ~60 on light canvases) for ALL text-scale accents; the raw `--accent` stays on dots, fills, strokes, glows, and inverted-field backgrounds where mid-luma is the point.
+- **Muted that carries content gets lifted.** `--muted-content` = muted blended 60% toward ink; activity lines, detail rows. Raw `--ink-muted` only for decorative whispers.
+- **A frame's light source must cover pixels.** Sparse bright type at small sizes fails the gate honestly — grow the hero, or give the scene a bright plate. Panes: names 2.7cqw nowrap, lines 2.7cqw, plates at 0.06 white on dark.
+- **The grade must not fight the page.** Filmic curve LIFTS (0.25→0.27, gamma 1.03), never crushes; one vignette only (the page's — the old ffmpeg vignette double-dipped ~10% off the mean).
+- **Blend in RGB, verify with a gate.** ffmpeg's `blend` runs per-plane: a screen blend on YUV chroma (centered 128) pushes U/V toward 192 — the bloom manufactured a magenta cast over every dark canvas for weeks and read as "dim purple murk." Bloom now blends in `gbrp`; the chroma-neutrality gate (median R−G/B−G of final vs raw, drift > 8 FAILs) makes the whole bug class unshippable.
+
 ## X feed physics (why the defaults are what they are)
 
 - **Frame 0 is the poster.** Muted autoplay + thumbnail duty: scene 1 must show the project name within its first second, with motion already alive (no fade-from-black). The finisher's 1.5s trim lands frame 0 mid-cascade with the wordmark readable.

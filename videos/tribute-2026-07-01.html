@@ -29,7 +29,9 @@
   --canvas: #0c0c0b;
   --ink: #f2f0eb;
   --ink-muted: #91908c;
+  --muted-content: #cbcac5;
   --accent: #4a9eff;
+  --accent-ink: #abd2ff;
   --hairline: #282828;
   --display: 'JetBrainsMono', serif;
   --body: 'Inter', serif;
@@ -59,19 +61,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 16px;
+  gap: 0;
+  padding: 0;
 }
 
+/* Full-bleed: the old floating-card matte cost ~26% of pixels to a dark
+   border and read dim in the feed. X's tile provides the frame. */
 .stage {
   position: relative;
-  width: min(86vmin, calc(100vh - 100px));
+  width: 100vmin;
   aspect-ratio: 1 / 1;
   background: var(--canvas);
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.5),
-              0 0 0 1px rgba(255,255,255,0.04);
+  border-radius: 0;
   container-type: inline-size;
   container-name: stage;
   contain: layout paint;
@@ -360,7 +362,9 @@ body {
 .texture-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.2) 100%);
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255,210,160,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.2) 100%);
 }
 .texture-halation {
   position: absolute;
@@ -402,7 +406,7 @@ body {
   font-variation-settings: "wght" 600;
   font-size: 2.7cqw;
   letter-spacing: 0.34em;
-  color: var(--accent);
+  color: var(--accent-ink);
   text-transform: uppercase;
 }
 
@@ -458,7 +462,7 @@ body {
 }
 .line.size-2 { font-size: 8.6cqw; }
 .line.size-3 { font-size: 6.4cqw; }
-.line.accent { color: var(--accent); }
+.line.accent { color: var(--accent-ink); }
 
 /* ---- fix ---- */
 .f-primary {
@@ -493,7 +497,7 @@ body {
   letter-spacing: 0;
   text-transform: none;
 }
-.mb-line.accent { color: var(--accent); font-weight: 700; font-variation-settings: "wght" 700; }
+.mb-line.accent { color: var(--accent-ink); font-weight: 700; font-variation-settings: "wght" 700; }
 
 /* ---- quote ---- */
 .q-quote {
@@ -534,7 +538,7 @@ body {
   font-size: 9.2cqw;
   line-height: 1;
   letter-spacing: var(--tracking);
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-top: 1.8cqw;
 }
 .c-subtitle {
@@ -557,7 +561,7 @@ body {
   font-variation-settings: "wght" 600;
   font-size: 2.6cqw;
   letter-spacing: 0.34em;
-  color: var(--accent);
+  color: var(--accent-ink);
   text-transform: uppercase;
   margin-top: 2cqw;
   margin-bottom: 3cqw;
@@ -664,7 +668,7 @@ body {
   font-size: 28cqw;
   line-height: 0.92;
   letter-spacing: -0.04em;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-variant-numeric: tabular-nums;
   text-align: center;
 }
@@ -696,7 +700,7 @@ body {
   border: 1px solid var(--hairline);
   border-radius: 4px;
   width: 88%;
-  height: 78%;
+  height: 64%;
   padding: 2.5cqw 3cqw 3cqw 3cqw;
   display: flex;
   flex-direction: column;
@@ -721,16 +725,16 @@ body {
 .terminal-body {
   flex: 1;
   font-family: var(--mono);
-  font-size: 2.9cqw;
-  line-height: 1.55;
+  font-size: 3.5cqw;
+  line-height: 1.6;
   color: var(--ink);
   text-align: left;
   letter-spacing: 0;
   text-transform: none;
 }
 .terminal-line { display: block; opacity: 0; white-space: pre; }
-.terminal-line.accent { color: var(--accent); }
-.terminal-line .prompt { color: var(--accent); margin-right: 0.6cqw; }
+.terminal-line.accent { color: var(--accent-ink); }
+.terminal-line .prompt { color: var(--accent-ink); margin-right: 0.6cqw; }
 .terminal-cursor {
   display: inline-block;
   width: 0.55em;
@@ -868,7 +872,7 @@ body {
 }
 .wc-word.size-l { font-size: 9.6cqw; }
 .wc-word.size-m { font-size: 7.4cqw; }
-.wc-word.accent { color: var(--accent); }
+.wc-word.accent { color: var(--accent-ink); }
 
 /* ---- wire_dispatch ---- */
 .scene[data-tpl="wire_dispatch"] {
@@ -906,7 +910,7 @@ body {
   font-variation-settings: "wght" 600;
   font-size: 2.1cqw;
   letter-spacing: 0.34em;
-  color: var(--accent);
+  color: var(--accent-ink);
   text-transform: uppercase;
   margin-top: 6cqw;
   opacity: 0;
@@ -944,9 +948,9 @@ body {
   font-family: var(--body);
   font-weight: 600;
   font-variation-settings: "wght" 600;
-  font-size: 2.4cqw;
+  font-size: 2.7cqw;
   letter-spacing: 0.34em;
-  color: var(--ink-muted);
+  color: var(--muted-content);
   text-transform: uppercase;
   margin-bottom: 2.2cqw;
   opacity: 0;
@@ -954,15 +958,17 @@ body {
 .panes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.8cqw;
+  grid-auto-rows: 1fr;
+  gap: 2.0cqw;
   width: 92%;
+  min-height: 58%;
 }
 .panes-grid.n2 { grid-template-columns: 1fr; width: 74%; }
 .pane {
-  background: rgba(255,255,255,0.045);
+  background: rgba(255,255,255,0.06);
   border: 1px solid var(--hairline);
   border-radius: 6px;
-  padding: 2.6cqw 2.6cqw;
+  padding: 3.0cqw 3.0cqw;
   text-align: left;
   opacity: 0;
   position: relative;
@@ -986,24 +992,27 @@ body {
 }
 .pane-name {
   font-family: var(--mono);
-  font-size: 2.4cqw;
+  font-size: 2.7cqw;
   color: var(--ink);
   letter-spacing: 0.04em;
   text-transform: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .pane-badge {
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 1.9cqw;
+  font-size: 2.1cqw;
+  white-space: nowrap;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--state-color, var(--ink-muted));
 }
 .pane-line {
   font-family: var(--mono);
-  font-size: 2.2cqw;
+  font-size: 2.7cqw;
   line-height: 1.6;
-  color: var(--ink-muted);
+  color: var(--muted-content);
   display: block;
   opacity: 0;
   white-space: pre;
@@ -1144,7 +1153,6 @@ body {
   <div class="texture">
     <div class="texture-grain"></div>
     <div class="texture-vignette"></div>
-    <div class="texture-halation"></div>
   </div>
   <svg class="bv-defs" aria-hidden="true" width="0" height="0">
     <defs>

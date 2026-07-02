@@ -2,6 +2,12 @@
 
 The pipeline's accumulated retro. Every run appends one entry (KEPT / KILLED / NEXT) after the merge; every run reads the whole file before making style decisions. Keep entries to three bullets — this is a memory, not a diary.
 
+## 2026-07-02 — herdr (v4, the light reckoning)
+
+- KEPT: the readability layer end to end — luma floors planned in brand direction, `--accent-ink`/`--muted-content` derived tokens in the renderer, and a per-scene polarity-aware luma gate (p99.3 ≥ 180, spread ≥ 120 at 540px) in the screening room. Mean luma 24.7 → 37.8 on the same cut, and the grade now lifts instead of crushes.
+- KILLED: the finishing bloom's YUV screen blend — it pushed chroma planes toward 192 and tinted EVERY dark-canvas video magenta-purple (the real "dim murk"; v2's craft-log entry blamed the aurora). Found by binary-searching the filter chain with per-stage R−G/B−G measurements; fixed with `format=gbrp` around the blend; a chroma-neutrality gate (final vs raw cast, drift > 8 FAILs) now makes the class unshippable. Also killed: pane names wrapping mid-word at the bigger type size (nowrap + 2.7cqw), and 1080px capture on a slow container (`--viewport 960` halves frame time; finish upscales).
+- NEXT: chroma gate still shows a mild −4.5 B−G drift from `eq=saturation=1.07` on cool content — try saturation 1.04 next dark-canvas run and see if the WARN clears without flattening the accent. Energy arc still peaks at 27%; the money shot needs a bigger camera event than the surrounding scenes, not just an `emphasize` flag.
+
 ## 2026-07-02 — strix (offensive-security manifesto)
 
 - KEPT: strix-native alert-red-on-near-black console with a `grid` background (acting on yesterday's NEXT note to swap the violet-tinting aurora for grid on dark native palettes) reads clean and infra-flavored; the find/validate/fix diagram with the glowing accent `validate` node and the typed terminal PoC carried the proof-over-guesses thesis with zero adjectives.

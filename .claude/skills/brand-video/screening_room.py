@@ -14,6 +14,11 @@ Checks:
   5. beat alignment  when design.beat.aligned, median |cut - nearest onset|
                      <= 120ms PASS / <= 200ms WARN / else FAIL
   6. conform sanity  duration within 0.5s of spec, fps ~25 (FAIL)
+  7. readability     per-scene polarity from the frame itself: dark frames
+                     need bright ink (p99.3 >= 180, spread >= 120), light
+                     frames need dark ink (p0.7 <= 70) (FAIL)
+  8. chroma          finishing must not tint: median R-G / B-G cast of the
+                     final vs the raw capture, drift > 8 levels FAILs
 
 With --raw, also runs the FRAME-PACING gate against the pre-grain capture:
 finishing grain makes every output frame technically unique, so duplicated
@@ -141,6 +146,88 @@ def frame_pacing(raw_path, spec, fails, warns, report):
     return d
 
 
+def readability(spec, mp4, fails, warns, report):
+    """Brightness/readability gauge, polarity-aware PER SCENE. Each scene's
+    polarity comes from its own frame (median luma), not the video's canvas
+    token — a dark video legitimately carries inverted color-break scenes.
+    Dark frames must carry genuinely BRIGHT ink (p99.3 luma) with a wide
+    spread; bright frames must carry genuinely dark ink. Catches the
+    "everything looks dim" failure the grade or a weak palette can cause."""
+    durs = [float(sc.get("duration_s", 3.0)) for sc in spec["scenes"]]
+    mids, acc = [], 0.0
+    for d in durs:
+        mids.append(acc + d / 2)
+        acc += d
+    scene_stats, weakest = [], None
+    for i, t in enumerate(mids):
+        cmd = ["ffmpeg", "-v", "error", "-ss", str(t), "-i", str(mp4),
+               "-frames:v", "1", "-vf", "scale=540:540", "-pix_fmt", "gray",
+               "-f", "rawvideo", "-"]
+        buf = subprocess.run(cmd, capture_output=True).stdout
+        if len(buf) < 540 * 540:
+            continue
+        fr = np.frombuffer(buf[: 540 * 540], dtype=np.uint8).astype(np.float32)
+        dark = float(np.median(fr)) < 128
+        # p99.3 / p0.7: ink can be sparse (terminal type covers ~1-2% of pixels)
+        if dark:
+            ink = float(np.percentile(fr, 99.3))
+            spread = ink - float(np.percentile(fr, 15))
+            ink_ok = ink >= 180
+        else:
+            ink = float(np.percentile(fr, 0.7))
+            spread = float(np.percentile(fr, 85)) - ink
+            ink_ok = ink <= 70
+        scene_stats.append({"scene": i, "polarity": "dark" if dark else "light",
+                            "ink": round(ink), "spread": round(spread)})
+        if not ink_ok or spread < 120:
+            if weakest is None or spread < weakest[1]:
+                weakest = (i, spread, ink, dark)
+    report["readability"] = scene_stats
+    if weakest is not None:
+        i, spread, ink, dark = weakest
+        pol = "bright ink p99.3" if dark else "dark ink p0.7"
+        fails.append(f"readability: scene {i} reads dim ({pol}={ink:.0f}, luma spread={spread:.0f}; "
+                     f"need ink {'>=180' if dark else '<=70'} and spread >=120)")
+    else:
+        mn = min((st["spread"] for st in scene_stats), default=0)
+        print(f"  [PASS] readability ({len(scene_stats)} scenes, per-scene polarity, min luma spread {mn})")
+
+
+def chroma_neutrality(mp4, raw, fails, warns, report):
+    """The finishing chain must not invent color the page never rendered.
+    Sample frames across the final and the raw capture, compare median R-G
+    and B-G casts; finishing-introduced drift > ~8 levels is a grade/bloom
+    bug (e.g. screen-blending YUV chroma planes turns black canvases
+    magenta — shipped as 'dim' purple murk for weeks before this gate)."""
+    def casts(path):
+        cmd = ["ffmpeg", "-v", "error", "-i", str(path),
+               "-vf", "fps=2,scale=96:96,format=rgb24", "-f", "rawvideo", "-"]
+        buf = subprocess.run(cmd, capture_output=True).stdout
+        n = len(buf) // (96 * 96 * 3)
+        if n < 4:
+            return None
+        a = np.frombuffer(buf[: n * 96 * 96 * 3], dtype=np.uint8).reshape(n, -1, 3).astype(np.float64)
+        m = a.mean(axis=1)  # per-frame R,G,B means
+        return float(np.median(m[:, 0] - m[:, 1])), float(np.median(m[:, 2] - m[:, 1]))
+    fin = casts(mp4)
+    ref = casts(raw) if raw else None
+    if fin is None:
+        warns.append("chroma: could not sample final for the neutrality check")
+        return
+    drift_rg = fin[0] - (ref[0] if ref else 0.0)
+    drift_bg = fin[1] - (ref[1] if ref else 0.0)
+    report["chroma_cast"] = {"final_RG": round(fin[0], 2), "final_BG": round(fin[1], 2),
+                             "raw_RG": round(ref[0], 2) if ref else None,
+                             "raw_BG": round(ref[1], 2) if ref else None}
+    if abs(drift_rg) > 8 or abs(drift_bg) > 8:
+        fails.append(f"chroma: finishing introduced a color cast (R-G drift {drift_rg:+.1f}, "
+                     f"B-G drift {drift_bg:+.1f} vs raw; the brand's blacks must stay black)")
+    elif abs(drift_rg) > 4 or abs(drift_bg) > 4:
+        warns.append(f"chroma: mild finishing cast (R-G drift {drift_rg:+.1f}, B-G drift {drift_bg:+.1f})")
+    else:
+        print(f"  [PASS] chroma neutrality (R-G drift {drift_rg:+.1f}, B-G drift {drift_bg:+.1f} vs raw)")
+
+
 def cadence(spec, fails, warns, report):
     durs = [float(s.get("duration_s", 3.0)) for s in spec["scenes"]]
     report["scene_durations"] = durs
@@ -170,6 +257,8 @@ def main():
     if args.raw:
         raw_motion = frame_pacing(args.raw, spec, fails, warns, report)
     cadence(spec, fails, warns, report)
+    readability(spec, args.mp4, fails, warns, report)
+    chroma_neutrality(args.mp4, args.raw, fails, warns, report)
 
     frames = decode_gray(args.mp4)
     energy = np.abs(np.diff(frames, axis=0)).mean(axis=(1, 2))  # per-frame motion

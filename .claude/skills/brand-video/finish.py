@@ -67,15 +67,16 @@ def build_video_chain(grade, bloom):
     pre = "fps=25,scale=1080:1080:flags=lanczos,format=yuv444p"
     steps = [pre]
     if grade == "filmic":
-        steps.append("curves=master='0/0 0.25/0.22 0.5/0.5 0.75/0.79 1/1'")
-        steps.append("eq=saturation=1.06:contrast=1.02")
+        # brightness-preserving filmic: gentle shadow LIFT + highlight glide.
+        # The old curve crushed 0.25->0.22 and dimmed every dark-canvas video.
+        steps.append("curves=master='0/0 0.25/0.27 0.5/0.54 0.75/0.80 1/1'")
+        steps.append("eq=saturation=1.07:contrast=1.02:gamma=1.03")
     chain_a = ",".join(steps)
     post = [
         # blend-interpolate 25 -> 50fps: intermediate frames are crossfades,
         # which reads as natural motion blur on kinetic type (no warping)
         "minterpolate=fps=50:mi_mode=blend",
         "rgbashift=rh=1:bh=-1:edge=smear",
-        "vignette=angle=PI/5",
         "unsharp=5:5:0.45:5:5:0.0",
         "deband=1thr=0.012:2thr=0.012:3thr=0.012:range=16:blur=1",
         "noise=c0s=5:c0f=t+u",
@@ -83,10 +84,14 @@ def build_video_chain(grade, bloom):
     ]
     chain_b = ",".join(post)
     if bloom:
+        # bloom MUST blend in planar RGB: `blend` works per-plane, and a
+        # screen blend on YUV chroma planes (centered at 128) pushes U/V
+        # toward 192 — a hard magenta cast over every dark canvas. gbrp in,
+        # screen per RGB plane (correct), then back to yuv444p for the rest.
         return (
-            f"[0:v]{chain_a},split=2[base][gl];"
+            f"[0:v]{chain_a},format=gbrp,split=2[base][gl];"
             f"[gl]colorlevels=rimin=0.55:gimin=0.55:bimin=0.55,gblur=sigma=26:steps=3[glow];"
-            f"[base][glow]blend=all_mode=screen:all_opacity=0.30,{chain_b}[vout]"
+            f"[base][glow]blend=all_mode=screen:all_opacity=0.30,format=yuv444p,{chain_b}[vout]"
         )
     return f"[0:v]{chain_a},{chain_b}[vout]"
 
