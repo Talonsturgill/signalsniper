@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-02",
+  "topic": "strix, open source AI pentest agents, in its own security-console palette",
+  "creator_handle": "@strix_ai",
+  "project_url": "https://github.com/usestrix/strix",
+  "design": {
+    "brand_slug": "strix-native",
+    "aesthetic_slug": "strix-native",
+    "framework": "MANIFESTO",
+    "held_subject": "strix",
+    "tokens": {
+      "canvas": "#0b0e14",
+      "ink": "#eef1f6",
+      "ink_muted": "#8b93a3",
+      "accent": "#ff4536",
+      "hairline": "#20252f"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.015,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.28,
+      "scene_out_s": 0.18,
+      "stagger_s": 0.18
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.06,
+      "vignette": 0.24,
+      "halation": 0.06,
+      "lighting_arc": 0.24
+    },
+    "background": {
+      "style": "grid",
+      "intensity": 0.8
+    },
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5
+  },
+  "scenes": [
+    {
+      "template": "logo_reveal",
+      "word": "strix",
+      "tagline": "autonomous security, ai era",
+      "camera": "tilt_reveal",
+      "duration_s": 3.0
+    },
+    {
+      "template": "two_line",
+      "lines": ["Scanners flag maybes.", "Then move on."],
+      "accent_idx": 1,
+      "camera": "push_in",
+      "duration_s": 2.8
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "how strix works",
+      "nodes": [
+        {"label": "find", "x": 50, "y": 22},
+        {"label": "validate", "x": 50, "y": 50, "accent": true, "filled": true},
+        {"label": "fix", "x": 50, "y": 78}
+      ],
+      "edges": [
+        {"from": 0, "to": 1},
+        {"from": 1, "to": 2, "accent": true},
+        {"from": 2, "to": 0, "style": "dashed"}
+      ],
+      "camera": "orbit",
+      "duration_s": 3.6
+    },
+    {
+      "template": "terminal",
+      "title": "strix run",
+      "lines": [
+        {"text": "strix --target ./app"},
+        {"text": "found  sql injection  /api/login", "prompt": false, "accent": true},
+        {"text": "exploit confirmed in sandbox", "prompt": false},
+        {"text": "patch sent back", "prompt": false}
+      ],
+      "camera": "rack_focus",
+      "duration_s": 4.0,
+      "sheen": true
+    },
+    {
+      "template": "fix",
+      "primary": "It proves the bug.",
+      "secondary": "By breaking in.",
+      "emphasize": true,
+      "camera": "crash_zoom",
+      "duration_s": 2.8
+    },
+    {
+      "template": "big_number",
+      "numeral": "29k",
+      "caption": "stars, and still climbing",
+      "emphasize": true,
+      "camera": "ken_burns",
+      "duration_s": 3.0
+    },
+    {
+      "template": "close",
+      "primary": "Security that",
+      "accent": "attacks first.",
+      "subtitle": "free to run. yours to change.",
+      "emphasize": true,
+      "camera": "pull_back",
+      "duration_s": 3.4,
+      "sheen": true
+    }
+  ]
+}

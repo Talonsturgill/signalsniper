@@ -1,1193 +1,1385 @@
 {
-  "version": 2,
-  "_comment": "Music library for the daily-tribute pipeline. All tracks are CC BY 4.0 from Kevin MacLeod (incompetech.com); each ship requires the verbatim attribution_required reply on X. Rotation rule: never reuse a slug twice. The selector reads music-history.json to enforce.",
-  "tracks": [
-    {
-      "slug": "tyrant",
-      "title": "Tyrant",
-      "file": "Tyrant.mp3",
-      "duration_s": 341.7,
-      "mood": "industrial / dark electronic",
-      "register": "electronic",
-      "fits": "subway-chrome, mono-terminal, cctv, MANIFESTO, RECEIPT",
-      "preset_packs": [
-        "subway-chrome",
-        "mono-terminal",
-        "cctv"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "RECEIPT",
-        "SCHEMATIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Tyrant",
-      "attribution_required": "Music. Tyrant by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "backed-vibes-clean",
-      "title": "Backed Vibes Clean",
-      "file": "Backed_Vibes_Clean.mp3",
-      "duration_s": 228.4,
-      "mood": "hip-hop instrumental, smooth, modern",
-      "register": "electronic",
-      "fits": "subway-chrome, geominimal, mono-terminal, dispatch-style",
-      "preset_packs": [
-        "subway-chrome",
-        "geominimal",
-        "mono-terminal"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "RECEIPT",
-        "CLASSIC"
-      ],
-      "default_offset_s": 8.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Backed+Vibes+Clean",
-      "attribution_required": "Music. Backed Vibes Clean by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "inspired",
-      "title": "Inspired",
-      "file": "Inspired.mp3",
-      "duration_s": 286.1,
-      "mood": "uplifting cinematic strings, hopeful",
-      "register": "ambient",
-      "fits": "editorial-paper, claude, gallery, MANIFESTO bold launches",
-      "preset_packs": [
-        "editorial-paper",
-        "claude",
-        "gallery"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "CLASSIC",
-        "RECEIPT"
-      ],
-      "default_offset_s": 6.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Inspired",
-      "attribution_required": "Music. Inspired by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "lightless-dawn",
-      "title": "Lightless Dawn",
-      "file": "Lightless_Dawn.mp3",
-      "duration_s": 379.8,
-      "mood": "atmospheric dark cinematic, brooding pad",
-      "register": "ambient",
-      "fits": "cctv, claude, gallery, DISPATCH, observational pieces",
-      "preset_packs": [
-        "cctv",
-        "claude",
-        "gallery"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "SCHEMATIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Lightless+Dawn",
-      "attribution_required": "Music. Lightless Dawn by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "decisions",
-      "title": "Decisions",
-      "file": "Decisions.mp3",
-      "duration_s": 88.6,
-      "mood": "dramatic cinematic build, decisive piano + strings",
-      "register": "ambient",
-      "fits": "gallery, geominimal, MANIFESTO bold positions",
-      "preset_packs": [
-        "gallery",
-        "geominimal",
-        "editorial-paper"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 4.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Decisions",
-      "attribution_required": "Music. Decisions by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "local-forecast-elevator",
-      "title": "Local Forecast - Elevator",
-      "file": "Local_Forecast_-_Elevator.mp3",
-      "duration_s": 189.2,
-      "mood": "retro playful electronic, optimistic groove",
-      "register": "electronic",
-      "fits": "editorial-90s, geominimal, signal-lane bold launches",
-      "preset_packs": [
-        "editorial-90s",
-        "geominimal"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "CLASSIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 14.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Local+Forecast+Elevator",
-      "attribution_required": "Music. Local Forecast - Elevator by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "faceoff",
-      "title": "Faceoff",
-      "file": "Faceoff.mp3",
-      "duration_s": 73.1,
-      "mood": "tense electronic, sharp pulses, urgent",
-      "register": "electronic",
-      "fits": "cctv, subway-chrome, mono-terminal, RECEIPT, SCHEMATIC",
-      "preset_packs": [
-        "cctv",
-        "subway-chrome",
-        "mono-terminal"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "SCHEMATIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 4.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Faceoff",
-      "attribution_required": "Music. Faceoff by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "investigations",
-      "title": "Investigations",
-      "file": "Investigations.mp3",
-      "duration_s": 93.5,
-      "mood": "pizzicato strings, suspenseful detective walk",
-      "register": "ambient",
-      "fits": "cctv, claude, gallery, DISPATCH wire-style",
-      "preset_packs": [
-        "cctv",
-        "claude",
-        "gallery"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "SCHEMATIC",
-        "CLASSIC"
-      ],
-      "default_offset_s": 6.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Investigations",
-      "attribution_required": "Music. Investigations by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "constance",
-      "title": "Constance",
-      "file": "Constance.mp3",
-      "duration_s": 140.3,
-      "mood": "contemplative acoustic guitar and piano, melancholic patience",
-      "register": "acoustic",
-      "fits": "editorial-paper, claude, gallery, CLASSIC quiet stories",
-      "preset_packs": [
-        "editorial-paper",
-        "claude",
-        "gallery"
-      ],
-      "frameworks": [
-        "CLASSIC",
-        "DISPATCH",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 10.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Constance",
-      "attribution_required": "Music. Constance by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "sovereign",
-      "title": "Sovereign",
-      "file": "Sovereign.mp3",
-      "duration_s": 371.6,
-      "mood": "orchestral epic, slow regal build, brass and strings",
-      "register": "ambient",
-      "fits": "gallery, editorial-paper, claude, MANIFESTO bold positions",
-      "preset_packs": [
-        "gallery",
-        "editorial-paper",
-        "claude"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Sovereign",
-      "attribution_required": "Music. Sovereign by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "hyperfun",
-      "title": "Hyperfun",
-      "file": "Hyperfun.mp3",
-      "duration_s": 233.3,
-      "mood": "upbeat playful electronic, bouncy positive groove",
-      "register": "electronic",
-      "fits": "geominimal, editorial-90s, subway-chrome, RECEIPT launches",
-      "preset_packs": [
-        "geominimal",
-        "editorial-90s",
-        "subway-chrome"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "CLASSIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 8.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hyperfun",
-      "attribution_required": "Music. Hyperfun by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "crypto",
-      "title": "Crypto",
-      "file": "Crypto.mp3",
-      "duration_s": 204.1,
-      "mood": "driving dark electronic, tense systems pulse",
-      "register": "electronic",
-      "fits": "sentry, mono-terminal, cctv, MANIFESTO, SCHEMATIC",
-      "preset_packs": [
-        "sentry",
-        "mono-terminal",
-        "cctv"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "SCHEMATIC",
-        "RECEIPT"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Crypto",
-      "attribution_required": "Music. Crypto by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "long-stroll",
-      "title": "Long Stroll",
-      "file": "Long_Stroll.mp3",
-      "duration_s": 254.7,
-      "mood": "jazz walking bass and warm piano, methodical detective groove",
-      "register": "acoustic",
-      "fits": "opencode.ai, editorial-paper, claude, gallery, SCHEMATIC, DISPATCH",
-      "preset_packs": [
-        "opencode.ai",
-        "editorial-paper",
-        "claude",
-        "gallery"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "DISPATCH",
-        "CLASSIC"
-      ],
-      "default_offset_s": 10.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Long+Stroll",
-      "attribution_required": "Music. Long Stroll by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "hidden-agenda",
-      "title": "Hidden Agenda",
-      "file": "Hidden_Agenda.mp3",
-      "duration_s": 135.0,
-      "mood": "tense electronic synth groove, surveillance-room pulse, deterministic ticking",
-      "register": "electronic",
-      "fits": "mono-terminal, cctv, subway-chrome, MANIFESTO, SCHEMATIC, RECEIPT",
-      "preset_packs": [
-        "mono-terminal",
-        "cctv",
-        "subway-chrome"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "SCHEMATIC",
-        "RECEIPT"
-      ],
-      "default_offset_s": 12.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hidden+Agenda",
-      "attribution_required": "Music. Hidden Agenda by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "voltaic",
-      "title": "Voltaic",
-      "file": "Voltaic.mp3",
-      "duration_s": 196.1,
-      "mood": "driving electronic synth pulse, energetic four-on-the-floor groove, optimistic propulsive",
-      "register": "electronic",
-      "fits": "subway-chrome, mono-terminal, geominimal, RECEIPT, SCHEMATIC, CLASSIC",
-      "preset_packs": [
-        "subway-chrome",
-        "mono-terminal",
-        "geominimal"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "SCHEMATIC",
-        "CLASSIC"
-      ],
-      "default_offset_s": 16.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voltaic",
-      "attribution_required": "Music. Voltaic by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "the-builder",
-      "title": "The Builder",
-      "file": "The_Builder.mp3",
-      "duration_s": 117.6,
-      "mood": "warm methodical electronic build, patient layered groove, craftsperson at work",
-      "register": "electronic",
-      "fits": "warp, claude, editorial-paper, mono-terminal, SCHEMATIC, CLASSIC, DISPATCH",
-      "preset_packs": [
-        "warp",
-        "claude",
-        "mono-terminal",
-        "editorial-paper",
-        "gallery"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 12.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Builder",
-      "attribution_required": "Music. The Builder by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "floating-cities",
-      "title": "Floating Cities",
-      "file": "Floating_Cities.mp3",
-      "duration_s": 184.1,
-      "mood": "atmospheric ambient cinematic pad, slow-drifting chord wash, hushed wonder",
-      "register": "ambient",
-      "fits": "gallery, claude, editorial-paper, cctv, DISPATCH, CLASSIC, MANIFESTO observational",
-      "preset_packs": [
-        "gallery",
-        "claude",
-        "editorial-paper",
-        "cctv"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "CLASSIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 24.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Floating+Cities",
-      "attribution_required": "Music. Floating Cities by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "carefree",
-      "title": "Carefree",
-      "file": "Carefree.mp3",
-      "duration_s": 205.1,
-      "mood": "cheerful acoustic ukulele and whistle, bright optimistic stroll",
-      "register": "acoustic",
-      "fits": "editorial-90s, editorial-paper, gallery, claude, CLASSIC, RECEIPT, DISPATCH",
-      "preset_packs": [
-        "editorial-90s",
-        "editorial-paper",
-        "gallery",
-        "claude"
-      ],
-      "frameworks": [
-        "CLASSIC",
-        "RECEIPT",
-        "DISPATCH"
-      ],
-      "default_offset_s": 8.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Carefree",
-      "attribution_required": "Music. Carefree by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "cheery-monday",
-      "title": "Cheery Monday",
-      "file": "Cheery_Monday.mp3",
-      "duration_s": 80.2,
-      "mood": "light playful acoustic guitar groove, optimistic morning energy",
-      "register": "acoustic",
-      "fits": "editorial-90s, gallery, editorial-paper, RECEIPT, CLASSIC bold launches",
-      "preset_packs": [
-        "editorial-90s",
-        "gallery",
-        "editorial-paper",
-        "geominimal"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 4.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cheery+Monday",
-      "attribution_required": "Music. Cheery Monday by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "cipher2",
-      "title": "Cipher2",
-      "file": "Cipher2.mp3",
-      "duration_s": 231.3,
-      "mood": "tense electronic pulse, ticking suspense, surveillance-room groove",
-      "register": "electronic",
-      "fits": "mono-terminal, cctv, subway-chrome, SCHEMATIC, RECEIPT, MANIFESTO",
-      "preset_packs": [
-        "mono-terminal",
-        "cctv",
-        "subway-chrome"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "RECEIPT",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 16.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cipher2",
-      "attribution_required": "Music. Cipher2 by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "penumbra",
-      "title": "Penumbra",
-      "file": "Penumbra.mp3",
-      "duration_s": 296.1,
-      "mood": "atmospheric dark cinematic pad, brooding observational drift",
-      "register": "ambient",
-      "fits": "cctv, claude, gallery, editorial-paper, DISPATCH, SCHEMATIC",
-      "preset_packs": [
-        "cctv",
-        "claude",
-        "gallery",
-        "editorial-paper"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "SCHEMATIC",
-        "CLASSIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Penumbra",
-      "attribution_required": "Music. Penumbra by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "mechanolith",
-      "title": "Mechanolith",
-      "file": "Mechanolith.mp3",
-      "duration_s": 55.4,
-      "mood": "slow brooding industrial pulse, mechanical surveillance-room tension, deliberate machine groove",
-      "register": "electronic",
-      "fits": "cctv, mono-terminal, subway-chrome, RECEIPT, SCHEMATIC, MANIFESTO",
-      "preset_packs": [
-        "cctv",
-        "mono-terminal",
-        "subway-chrome"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "SCHEMATIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mechanolith",
-      "attribution_required": "Music. Mechanolith by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "the-complex",
-      "title": "The Complex",
-      "file": "The_Complex.mp3",
-      "duration_s": 267.8,
-      "mood": "driving dark electronic, steady systems pulse, command-terminal propulsion",
-      "register": "electronic",
-      "fits": "voltagent, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
-      "preset_packs": [
-        "voltagent",
-        "mono-terminal",
-        "subway-chrome",
-        "cctv"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "SCHEMATIC",
-        "RECEIPT"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Complex",
-      "attribution_required": "Music. The Complex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "volatile-reaction",
-      "title": "Volatile Reaction",
-      "file": "Volatile_Reaction.mp3",
-      "duration_s": 165.4,
-      "mood": "driving propulsive electronic, urgent systems pulse, precise machine momentum",
-      "register": "electronic",
-      "fits": "clickhouse, subway-chrome, mono-terminal, geominimal, SCHEMATIC, RECEIPT, MANIFESTO",
-      "preset_packs": [
-        "clickhouse",
-        "subway-chrome",
-        "mono-terminal",
-        "geominimal"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "RECEIPT",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Volatile+Reaction",
-      "attribution_required": "Music. Volatile Reaction by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "ouroboros",
-      "title": "Ouroboros",
-      "file": "Ouroboros.mp3",
-      "duration_s": 161.6,
-      "mood": "dark cyclical electronic, brooding systems loop, deliberate machine propulsion",
-      "register": "electronic",
-      "fits": "composio, mono-terminal, cctv, subway-chrome, voltagent, CLASSIC, SCHEMATIC, MANIFESTO",
-      "preset_packs": [
-        "composio",
-        "mono-terminal",
-        "cctv",
-        "subway-chrome",
-        "voltagent"
-      ],
-      "frameworks": [
-        "CLASSIC",
-        "SCHEMATIC",
-        "MANIFESTO",
-        "DISPATCH"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Ouroboros",
-      "attribution_required": "Music. Ouroboros by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "exhilarate",
-      "title": "Exhilarate",
-      "file": "Exhilarate.mp3",
-      "duration_s": 145.5,
-      "mood": "energetic uplifting electronic, driving cinematic build, propulsive optimism",
-      "register": "electronic",
-      "fits": "supabase, subway-chrome, geominimal, mono-terminal, RECEIPT, MANIFESTO, CLASSIC",
-      "preset_packs": [
-        "supabase",
-        "subway-chrome",
-        "geominimal",
-        "mono-terminal"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "MANIFESTO",
-        "CLASSIC"
-      ],
-      "default_offset_s": 28.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Exhilarate",
-      "attribution_required": "Music. Exhilarate by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "quasi-motion",
-      "title": "Quasi Motion",
-      "file": "Quasi_Motion.mp3",
-      "duration_s": 151.6,
-      "mood": "driving minimal electronic, deliberate mechanical motif, command-center momentum",
-      "register": "electronic",
-      "fits": "linear.app, mono-terminal, subway-chrome, cctv, SCHEMATIC, CLASSIC, MANIFESTO",
-      "preset_packs": [
-        "linear.app",
-        "mono-terminal",
-        "subway-chrome",
-        "cctv"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "CLASSIC",
-        "MANIFESTO",
-        "DISPATCH"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Quasi+Motion",
-      "attribution_required": "Music. Quasi Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "marty-gots-a-plan",
-      "title": "Marty Gots a Plan",
-      "file": "Marty_Gots_a_Plan.mp3",
-      "duration_s": 168.1,
-      "mood": "pizzicato strings suspense, investigative newsroom walk, methodical reportorial groove",
-      "register": "ambient",
-      "fits": "wired, cctv, claude, gallery, editorial-paper, DISPATCH, SCHEMATIC, CLASSIC",
-      "preset_packs": [
-        "wired",
-        "cctv",
-        "claude",
-        "gallery",
-        "editorial-paper"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "SCHEMATIC",
-        "CLASSIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Marty+Gots+a+Plan",
-      "attribution_required": "Music. Marty Gots a Plan by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "voxel-revolution",
-      "title": "Voxel Revolution",
-      "file": "Voxel_Revolution.mp3",
-      "duration_s": 129.9,
-      "mood": "driving energetic electronic, defiant chiptune-edged groove, propulsive build",
-      "register": "electronic",
-      "fits": "mono-terminal, subway-chrome, cctv, geominimal, MANIFESTO, SCHEMATIC, RECEIPT",
-      "preset_packs": [
-        "mono-terminal",
-        "subway-chrome",
-        "cctv",
-        "geominimal"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "SCHEMATIC",
-        "RECEIPT"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voxel+Revolution",
-      "attribution_required": "Music. Voxel Revolution by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "static-motion",
-      "title": "Static Motion",
-      "file": "Static_Motion.mp3",
-      "duration_s": 188.8,
-      "mood": "tense synth drone with sharp percussive clicks, surveillance-room motion, deterministic ticking pulse",
-      "register": "electronic",
-      "fits": "subway-chrome, cctv, mono-terminal, SCHEMATIC, RECEIPT, MANIFESTO",
-      "preset_packs": [
-        "subway-chrome",
-        "cctv",
-        "mono-terminal"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "RECEIPT",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 24.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Static+Motion",
-      "attribution_required": "Music. Static Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "mistake-the-getaway",
-      "title": "Mistake the Getaway",
-      "file": "Mistake_the_Getaway.mp3",
-      "duration_s": 122.6,
-      "mood": "tense propulsive electronic heist groove, defiant driving synth, command-center momentum",
-      "register": "electronic",
-      "fits": "raycast, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
-      "preset_packs": [
-        "raycast",
-        "mono-terminal",
-        "subway-chrome",
-        "cctv",
-        "geominimal"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "SCHEMATIC",
-        "RECEIPT"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mistake+the+Getaway",
-      "attribution_required": "Music. Mistake the Getaway by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "gymnopedie-no-1",
-      "title": "Gymnopedie No. 1",
-      "file": "Gymnopedie_No_1.mp3",
-      "duration_s": 187.1,
-      "mood": "refined chamber piano, contemplative and unhurried, museum-quiet elegance",
-      "register": "acoustic",
-      "fits": "gallery, claude, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH refined explainers",
-      "preset_packs": [
-        "gallery",
-        "claude",
-        "editorial-paper"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 6.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gymnopedie",
-      "attribution_required": "Music. Gymnopedie No. 1 by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "wholesome",
-      "title": "Wholesome",
-      "file": "Wholesome.mp3",
-      "duration_s": 363.8,
-      "mood": "warm earnest acoustic build, hopeful confident strings and piano, sincere craftsperson optimism",
-      "register": "acoustic",
-      "fits": "cursor, claude, editorial-paper, gallery, CLASSIC, DISPATCH, MANIFESTO sincere tributes",
-      "preset_packs": [
-        "cursor",
-        "claude",
-        "editorial-paper",
-        "gallery"
-      ],
-      "frameworks": [
-        "CLASSIC",
-        "DISPATCH",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Wholesome",
-      "attribution_required": "Music. Wholesome by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "pamgaea",
-      "title": "Pamgaea",
-      "file": "Pamgaea.mp3",
-      "duration_s": 168.6,
-      "mood": "uplifting world-cinematic build, warm ethnic percussion and strings, expansive optimistic horizon",
-      "register": "ambient",
-      "fits": "gallery, claude, editorial-paper, cursor, MANIFESTO, CLASSIC, DISPATCH bold warm launches",
-      "preset_packs": [
-        "gallery",
-        "claude",
-        "editorial-paper",
-        "cursor"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 20.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Pamgaea",
-      "attribution_required": "Music. Pamgaea by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "retrofuture-clean",
-      "title": "RetroFuture Clean",
-      "file": "RetroFuture_Clean.mp3",
-      "duration_s": 206.2,
-      "mood": "driving synthwave, clean propulsive retro-future groove, precise systems momentum",
-      "register": "electronic",
-      "fits": "geominimal, subway-chrome, mono-terminal, RECEIPT, SCHEMATIC, CLASSIC",
-      "preset_packs": [
-        "geominimal",
-        "subway-chrome",
-        "mono-terminal",
-        "cctv"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "SCHEMATIC",
-        "CLASSIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=RetroFuture+Clean",
-      "attribution_required": "Music. RetroFuture Clean by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "clean-soul",
-      "title": "Clean Soul",
-      "file": "Clean_Soul.mp3",
-      "duration_s": 306.7,
-      "mood": "calm / reflective / light piano",
-      "register": "acoustic",
-      "fits": "editorial-paper, claude, gallery, MANIFESTO, CLASSIC",
-      "preset_packs": [
-        "editorial-paper",
-        "claude",
-        "gallery"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Clean+Soul",
-      "attribution_required": "Music. Clean Soul by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "darkest-child",
-      "title": "Darkest Child",
-      "file": "Darkest_Child.mp3",
-      "duration_s": 238.7,
-      "mood": "eerie suspense, tense surveillance, brooding",
-      "register": "electronic",
-      "fits": "cctv, mono-terminal, subway-chrome, DISPATCH, SCHEMATIC, surveillance pieces",
-      "preset_packs": [
-        "cctv",
-        "mono-terminal",
-        "subway-chrome"
-      ],
-      "frameworks": [
-        "DISPATCH",
-        "SCHEMATIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Darkest+Child",
-      "attribution_required": "Music. Darkest Child by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "frost-waltz",
-      "title": "Frost Waltz",
-      "file": "Frost_Waltz.mp3",
-      "duration_s": 135.5,
-      "mood": "elegant classical waltz, refined orchestral lilt, clever methodical poise",
-      "register": "acoustic",
-      "fits": "editorial-90s, editorial-paper, gallery, claude, SCHEMATIC, CLASSIC, DISPATCH refined explainers",
-      "preset_packs": [
-        "editorial-90s",
-        "editorial-paper",
-        "gallery",
-        "claude"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "CLASSIC",
-        "DISPATCH",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Frost+Waltz",
-      "attribution_required": "Music. Frost Waltz by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "digital-lemonade",
-      "title": "Digital Lemonade",
-      "file": "Digital_Lemonade.mp3",
-      "duration_s": 180.1,
-      "mood": "bright clean electronic, crisp propulsive groove, modern builder optimism",
-      "register": "electronic",
-      "fits": "vercel, geominimal, subway-chrome, gallery, RECEIPT, CLASSIC, MANIFESTO clean infra launches",
-      "preset_packs": [
-        "vercel",
-        "geominimal",
-        "subway-chrome",
-        "gallery"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "CLASSIC",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Digital+Lemonade",
-      "attribution_required": "Music. Digital Lemonade by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "newer-wave",
-      "title": "Newer Wave",
-      "file": "Newer_Wave.mp3",
-      "duration_s": 174.6,
-      "mood": "clean propulsive synthwave, modern builder optimism, retro-future local-compute momentum",
-      "register": "electronic",
-      "fits": "ollama, mono-terminal, subway-chrome, geominimal, gallery, SCHEMATIC, CLASSIC, RECEIPT",
-      "preset_packs": [
-        "ollama",
-        "mono-terminal",
-        "subway-chrome",
-        "geominimal",
-        "gallery"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "CLASSIC",
-        "RECEIPT",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Newer+Wave",
-      "attribution_required": "Music. Newer Wave by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "reawakening",
-      "title": "Reawakening",
-      "file": "Reawakening.mp3",
-      "duration_s": 214.07,
-      "mood": "warm hopeful cinematic theme, patient build, seasoned-craftsman optimism",
-      "register": "ambient",
-      "fits": "warp, claude, editorial-paper, gallery, CLASSIC, DISPATCH, MANIFESTO sincere builder tributes",
-      "preset_packs": [
-        "warp",
-        "claude",
-        "editorial-paper",
-        "gallery"
-      ],
-      "frameworks": [
-        "CLASSIC",
-        "DISPATCH",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Reawakening",
-      "attribution_required": "Music. Reawakening by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "cyborg-ninja",
-      "title": "Cyborg Ninja",
-      "file": "Cyborg_Ninja.mp3",
-      "duration_s": 180.06,
-      "mood": "driving cyber electronic, focused command-terminal propulsion, precise systems momentum",
-      "register": "electronic",
-      "fits": "voltagent, mono-terminal, subway-chrome, cctv, SCHEMATIC, MANIFESTO, RECEIPT",
-      "preset_packs": [
-        "voltagent",
-        "mono-terminal",
-        "subway-chrome",
-        "cctv"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "MANIFESTO",
-        "RECEIPT"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cyborg+Ninja",
-      "attribution_required": "Music. Cyborg Ninja by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "black-vortex",
-      "title": "Black Vortex",
-      "file": "Black_Vortex.mp3",
-      "duration_s": 169.7,
-      "mood": "dark driving electronic, tense, propulsive",
-      "register": "electronic",
-      "fits": "mono-terminal, subway-chrome, cctv, RECEIPT, MANIFESTO",
-      "preset_packs": [
-        "mono-terminal",
-        "subway-chrome",
-        "cctv"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "MANIFESTO",
-        "SCHEMATIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Black+Vortex",
-      "attribution_required": "Music. Black Vortex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "electrodoodle",
-      "title": "Electrodoodle",
-      "file": "Electrodoodle.mp3",
-      "duration_s": 166.06,
-      "mood": "energetic propulsive electronic, bright driving arpeggios, fast builder momentum",
-      "register": "electronic",
-      "fits": "mono-terminal, subway-chrome, geominimal, MANIFESTO, RECEIPT, SCHEMATIC",
-      "preset_packs": [
-        "mono-terminal",
-        "subway-chrome",
-        "geominimal"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "RECEIPT",
-        "SCHEMATIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Electrodoodle",
-      "attribution_required": "Music. Electrodoodle by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "controlled-chaos",
-      "title": "Controlled Chaos",
-      "file": "Controlled_Chaos.mp3",
-      "duration_s": 352.3,
-      "mood": "dark driving electronic, controlled tension, security-ops systems pulse",
-      "register": "electronic",
-      "fits": "subway-chrome, mono-terminal, cctv, SCHEMATIC, RECEIPT, MANIFESTO",
-      "preset_packs": [
-        "subway-chrome",
-        "mono-terminal",
-        "cctv"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "RECEIPT",
-        "MANIFESTO"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Controlled+Chaos",
-      "attribution_required": "Music. Controlled Chaos by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "gearhead",
-      "title": "Gearhead",
-      "file": "Gearhead.mp3",
-      "duration_s": 139.46,
-      "mood": "driving propulsive electronic, energetic gear-turning groove, builder momentum",
-      "register": "electronic",
-      "fits": "sentry, subway-chrome, mono-terminal, geominimal, MANIFESTO, RECEIPT, SCHEMATIC",
-      "preset_packs": [
-        "sentry",
-        "subway-chrome",
-        "mono-terminal",
-        "geominimal"
-      ],
-      "frameworks": [
-        "MANIFESTO",
-        "RECEIPT",
-        "SCHEMATIC",
-        "CLASSIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gearhead",
-      "attribution_required": "Music. Gearhead by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "sincerely",
-      "title": "Sincerely",
-      "file": "Sincerely.mp3",
-      "duration_s": 375.48,
-      "mood": "warm sincere cinematic, heartfelt piano and strings build, earnest builder tribute",
-      "register": "acoustic",
-      "fits": "gallery, claude, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH sincere builder tributes",
-      "preset_packs": [
-        "gallery",
-        "claude",
-        "editorial-paper"
-      ],
-      "frameworks": [
-        "SCHEMATIC",
-        "CLASSIC",
-        "DISPATCH"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Sincerely",
-      "attribution_required": "Music. Sincerely by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    },
-    {
-      "slug": "district-four",
-      "title": "District Four",
-      "file": "District_Four.mp3",
-      "duration_s": 248.24,
-      "mood": "driving retro electro-funk, propulsive builder momentum, confident systems groove",
-      "register": "electronic",
-      "fits": "linear.app, mono-terminal, subway-chrome, geominimal, RECEIPT, SCHEMATIC, MANIFESTO",
-      "preset_packs": [
-        "linear.app",
-        "mono-terminal",
-        "subway-chrome",
-        "geominimal"
-      ],
-      "frameworks": [
-        "RECEIPT",
-        "SCHEMATIC",
-        "MANIFESTO",
-        "CLASSIC"
-      ],
-      "default_offset_s": 30.0,
-      "license": "CC BY 4.0",
-      "author": "Kevin MacLeod",
-      "source": "https://incompetech.com/music/royalty-free/index.html?keywords=District+Four",
-      "attribution_required": "Music. District Four by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
-    }
-  ]
+ "version": 2,
+ "_comment": "Music library for the daily-tribute pipeline. All tracks are CC BY 4.0 from Kevin MacLeod (incompetech.com); each ship requires the verbatim attribution_required reply on X. Rotation rule: never reuse a slug twice. The selector reads music-history.json to enforce.",
+ "tracks": [
+  {
+   "slug": "tyrant",
+   "title": "Tyrant",
+   "file": "Tyrant.mp3",
+   "duration_s": 341.7,
+   "mood": "industrial / dark electronic",
+   "register": "electronic",
+   "fits": "subway-chrome, mono-terminal, cctv, MANIFESTO, RECEIPT",
+   "preset_packs": [
+    "subway-chrome",
+    "mono-terminal",
+    "cctv"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "RECEIPT",
+    "SCHEMATIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Tyrant",
+   "attribution_required": "Music. Tyrant by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "backed-vibes-clean",
+   "title": "Backed Vibes Clean",
+   "file": "Backed_Vibes_Clean.mp3",
+   "duration_s": 228.4,
+   "mood": "hip-hop instrumental, smooth, modern",
+   "register": "electronic",
+   "fits": "subway-chrome, geominimal, mono-terminal, dispatch-style",
+   "preset_packs": [
+    "subway-chrome",
+    "geominimal",
+    "mono-terminal"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "RECEIPT",
+    "CLASSIC"
+   ],
+   "default_offset_s": 8.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Backed+Vibes+Clean",
+   "attribution_required": "Music. Backed Vibes Clean by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "inspired",
+   "title": "Inspired",
+   "file": "Inspired.mp3",
+   "duration_s": 286.1,
+   "mood": "uplifting cinematic strings, hopeful",
+   "register": "ambient",
+   "fits": "editorial-paper, claude, gallery, MANIFESTO bold launches",
+   "preset_packs": [
+    "editorial-paper",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "CLASSIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 6.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Inspired",
+   "attribution_required": "Music. Inspired by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "lightless-dawn",
+   "title": "Lightless Dawn",
+   "file": "Lightless_Dawn.mp3",
+   "duration_s": 379.8,
+   "mood": "atmospheric dark cinematic, brooding pad",
+   "register": "ambient",
+   "fits": "cctv, claude, gallery, DISPATCH, observational pieces",
+   "preset_packs": [
+    "cctv",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "SCHEMATIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Lightless+Dawn",
+   "attribution_required": "Music. Lightless Dawn by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "decisions",
+   "title": "Decisions",
+   "file": "Decisions.mp3",
+   "duration_s": 88.6,
+   "mood": "dramatic cinematic build, decisive piano + strings",
+   "register": "ambient",
+   "fits": "gallery, geominimal, MANIFESTO bold positions",
+   "preset_packs": [
+    "gallery",
+    "geominimal",
+    "editorial-paper"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 4.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Decisions",
+   "attribution_required": "Music. Decisions by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "local-forecast-elevator",
+   "title": "Local Forecast - Elevator",
+   "file": "Local_Forecast_-_Elevator.mp3",
+   "duration_s": 189.2,
+   "mood": "retro playful electronic, optimistic groove",
+   "register": "electronic",
+   "fits": "editorial-90s, geominimal, signal-lane bold launches",
+   "preset_packs": [
+    "editorial-90s",
+    "geominimal"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "CLASSIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 14.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Local+Forecast+Elevator",
+   "attribution_required": "Music. Local Forecast - Elevator by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "faceoff",
+   "title": "Faceoff",
+   "file": "Faceoff.mp3",
+   "duration_s": 73.1,
+   "mood": "tense electronic, sharp pulses, urgent",
+   "register": "electronic",
+   "fits": "cctv, subway-chrome, mono-terminal, RECEIPT, SCHEMATIC",
+   "preset_packs": [
+    "cctv",
+    "subway-chrome",
+    "mono-terminal"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "SCHEMATIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 4.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Faceoff",
+   "attribution_required": "Music. Faceoff by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "investigations",
+   "title": "Investigations",
+   "file": "Investigations.mp3",
+   "duration_s": 93.5,
+   "mood": "pizzicato strings, suspenseful detective walk",
+   "register": "ambient",
+   "fits": "cctv, claude, gallery, DISPATCH wire-style",
+   "preset_packs": [
+    "cctv",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "SCHEMATIC",
+    "CLASSIC"
+   ],
+   "default_offset_s": 6.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Investigations",
+   "attribution_required": "Music. Investigations by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "constance",
+   "title": "Constance",
+   "file": "Constance.mp3",
+   "duration_s": 140.3,
+   "mood": "contemplative acoustic guitar and piano, melancholic patience",
+   "register": "acoustic",
+   "fits": "editorial-paper, claude, gallery, CLASSIC quiet stories",
+   "preset_packs": [
+    "editorial-paper",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "CLASSIC",
+    "DISPATCH",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 10.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Constance",
+   "attribution_required": "Music. Constance by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "sovereign",
+   "title": "Sovereign",
+   "file": "Sovereign.mp3",
+   "duration_s": 371.6,
+   "mood": "orchestral epic, slow regal build, brass and strings",
+   "register": "ambient",
+   "fits": "gallery, editorial-paper, claude, MANIFESTO bold positions",
+   "preset_packs": [
+    "gallery",
+    "editorial-paper",
+    "claude"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Sovereign",
+   "attribution_required": "Music. Sovereign by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "hyperfun",
+   "title": "Hyperfun",
+   "file": "Hyperfun.mp3",
+   "duration_s": 233.3,
+   "mood": "upbeat playful electronic, bouncy positive groove",
+   "register": "electronic",
+   "fits": "geominimal, editorial-90s, subway-chrome, RECEIPT launches",
+   "preset_packs": [
+    "geominimal",
+    "editorial-90s",
+    "subway-chrome"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "CLASSIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 8.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hyperfun",
+   "attribution_required": "Music. Hyperfun by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "crypto",
+   "title": "Crypto",
+   "file": "Crypto.mp3",
+   "duration_s": 204.1,
+   "mood": "driving dark electronic, tense systems pulse",
+   "register": "electronic",
+   "fits": "sentry, mono-terminal, cctv, MANIFESTO, SCHEMATIC",
+   "preset_packs": [
+    "sentry",
+    "mono-terminal",
+    "cctv"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "SCHEMATIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Crypto",
+   "attribution_required": "Music. Crypto by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "long-stroll",
+   "title": "Long Stroll",
+   "file": "Long_Stroll.mp3",
+   "duration_s": 254.7,
+   "mood": "jazz walking bass and warm piano, methodical detective groove",
+   "register": "acoustic",
+   "fits": "opencode.ai, editorial-paper, claude, gallery, SCHEMATIC, DISPATCH",
+   "preset_packs": [
+    "opencode.ai",
+    "editorial-paper",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "DISPATCH",
+    "CLASSIC"
+   ],
+   "default_offset_s": 10.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Long+Stroll",
+   "attribution_required": "Music. Long Stroll by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "hidden-agenda",
+   "title": "Hidden Agenda",
+   "file": "Hidden_Agenda.mp3",
+   "duration_s": 135.0,
+   "mood": "tense electronic synth groove, surveillance-room pulse, deterministic ticking",
+   "register": "electronic",
+   "fits": "mono-terminal, cctv, subway-chrome, MANIFESTO, SCHEMATIC, RECEIPT",
+   "preset_packs": [
+    "mono-terminal",
+    "cctv",
+    "subway-chrome"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "SCHEMATIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 12.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Hidden+Agenda",
+   "attribution_required": "Music. Hidden Agenda by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "voltaic",
+   "title": "Voltaic",
+   "file": "Voltaic.mp3",
+   "duration_s": 196.1,
+   "mood": "driving electronic synth pulse, energetic four-on-the-floor groove, optimistic propulsive",
+   "register": "electronic",
+   "fits": "subway-chrome, mono-terminal, geominimal, RECEIPT, SCHEMATIC, CLASSIC",
+   "preset_packs": [
+    "subway-chrome",
+    "mono-terminal",
+    "geominimal"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "SCHEMATIC",
+    "CLASSIC"
+   ],
+   "default_offset_s": 16.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voltaic",
+   "attribution_required": "Music. Voltaic by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "the-builder",
+   "title": "The Builder",
+   "file": "The_Builder.mp3",
+   "duration_s": 117.6,
+   "mood": "warm methodical electronic build, patient layered groove, craftsperson at work",
+   "register": "electronic",
+   "fits": "warp, claude, editorial-paper, mono-terminal, SCHEMATIC, CLASSIC, DISPATCH",
+   "preset_packs": [
+    "warp",
+    "claude",
+    "mono-terminal",
+    "editorial-paper",
+    "gallery"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 12.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Builder",
+   "attribution_required": "Music. The Builder by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "floating-cities",
+   "title": "Floating Cities",
+   "file": "Floating_Cities.mp3",
+   "duration_s": 184.1,
+   "mood": "atmospheric ambient cinematic pad, slow-drifting chord wash, hushed wonder",
+   "register": "ambient",
+   "fits": "gallery, claude, editorial-paper, cctv, DISPATCH, CLASSIC, MANIFESTO observational",
+   "preset_packs": [
+    "gallery",
+    "claude",
+    "editorial-paper",
+    "cctv"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "CLASSIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 24.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Floating+Cities",
+   "attribution_required": "Music. Floating Cities by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "carefree",
+   "title": "Carefree",
+   "file": "Carefree.mp3",
+   "duration_s": 205.1,
+   "mood": "cheerful acoustic ukulele and whistle, bright optimistic stroll",
+   "register": "acoustic",
+   "fits": "editorial-90s, editorial-paper, gallery, claude, CLASSIC, RECEIPT, DISPATCH",
+   "preset_packs": [
+    "editorial-90s",
+    "editorial-paper",
+    "gallery",
+    "claude"
+   ],
+   "frameworks": [
+    "CLASSIC",
+    "RECEIPT",
+    "DISPATCH"
+   ],
+   "default_offset_s": 8.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Carefree",
+   "attribution_required": "Music. Carefree by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "cheery-monday",
+   "title": "Cheery Monday",
+   "file": "Cheery_Monday.mp3",
+   "duration_s": 80.2,
+   "mood": "light playful acoustic guitar groove, optimistic morning energy",
+   "register": "acoustic",
+   "fits": "editorial-90s, gallery, editorial-paper, RECEIPT, CLASSIC bold launches",
+   "preset_packs": [
+    "editorial-90s",
+    "gallery",
+    "editorial-paper",
+    "geominimal"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 4.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cheery+Monday",
+   "attribution_required": "Music. Cheery Monday by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "cipher2",
+   "title": "Cipher2",
+   "file": "Cipher2.mp3",
+   "duration_s": 231.3,
+   "mood": "tense electronic pulse, ticking suspense, surveillance-room groove",
+   "register": "electronic",
+   "fits": "mono-terminal, cctv, subway-chrome, SCHEMATIC, RECEIPT, MANIFESTO",
+   "preset_packs": [
+    "mono-terminal",
+    "cctv",
+    "subway-chrome"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "RECEIPT",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 16.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cipher2",
+   "attribution_required": "Music. Cipher2 by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "penumbra",
+   "title": "Penumbra",
+   "file": "Penumbra.mp3",
+   "duration_s": 296.1,
+   "mood": "atmospheric dark cinematic pad, brooding observational drift",
+   "register": "ambient",
+   "fits": "cctv, claude, gallery, editorial-paper, DISPATCH, SCHEMATIC",
+   "preset_packs": [
+    "cctv",
+    "claude",
+    "gallery",
+    "editorial-paper"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "SCHEMATIC",
+    "CLASSIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Penumbra",
+   "attribution_required": "Music. Penumbra by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "mechanolith",
+   "title": "Mechanolith",
+   "file": "Mechanolith.mp3",
+   "duration_s": 55.4,
+   "mood": "slow brooding industrial pulse, mechanical surveillance-room tension, deliberate machine groove",
+   "register": "electronic",
+   "fits": "cctv, mono-terminal, subway-chrome, RECEIPT, SCHEMATIC, MANIFESTO",
+   "preset_packs": [
+    "cctv",
+    "mono-terminal",
+    "subway-chrome"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "SCHEMATIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mechanolith",
+   "attribution_required": "Music. Mechanolith by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "the-complex",
+   "title": "The Complex",
+   "file": "The_Complex.mp3",
+   "duration_s": 267.8,
+   "mood": "driving dark electronic, steady systems pulse, command-terminal propulsion",
+   "register": "electronic",
+   "fits": "voltagent, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
+   "preset_packs": [
+    "voltagent",
+    "mono-terminal",
+    "subway-chrome",
+    "cctv"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "SCHEMATIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=The+Complex",
+   "attribution_required": "Music. The Complex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "volatile-reaction",
+   "title": "Volatile Reaction",
+   "file": "Volatile_Reaction.mp3",
+   "duration_s": 165.4,
+   "mood": "driving propulsive electronic, urgent systems pulse, precise machine momentum",
+   "register": "electronic",
+   "fits": "clickhouse, subway-chrome, mono-terminal, geominimal, SCHEMATIC, RECEIPT, MANIFESTO",
+   "preset_packs": [
+    "clickhouse",
+    "subway-chrome",
+    "mono-terminal",
+    "geominimal"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "RECEIPT",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Volatile+Reaction",
+   "attribution_required": "Music. Volatile Reaction by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "ouroboros",
+   "title": "Ouroboros",
+   "file": "Ouroboros.mp3",
+   "duration_s": 161.6,
+   "mood": "dark cyclical electronic, brooding systems loop, deliberate machine propulsion",
+   "register": "electronic",
+   "fits": "composio, mono-terminal, cctv, subway-chrome, voltagent, CLASSIC, SCHEMATIC, MANIFESTO",
+   "preset_packs": [
+    "composio",
+    "mono-terminal",
+    "cctv",
+    "subway-chrome",
+    "voltagent"
+   ],
+   "frameworks": [
+    "CLASSIC",
+    "SCHEMATIC",
+    "MANIFESTO",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Ouroboros",
+   "attribution_required": "Music. Ouroboros by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "exhilarate",
+   "title": "Exhilarate",
+   "file": "Exhilarate.mp3",
+   "duration_s": 145.5,
+   "mood": "energetic uplifting electronic, driving cinematic build, propulsive optimism",
+   "register": "electronic",
+   "fits": "supabase, subway-chrome, geominimal, mono-terminal, RECEIPT, MANIFESTO, CLASSIC",
+   "preset_packs": [
+    "supabase",
+    "subway-chrome",
+    "geominimal",
+    "mono-terminal"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "MANIFESTO",
+    "CLASSIC"
+   ],
+   "default_offset_s": 28.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Exhilarate",
+   "attribution_required": "Music. Exhilarate by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "quasi-motion",
+   "title": "Quasi Motion",
+   "file": "Quasi_Motion.mp3",
+   "duration_s": 151.6,
+   "mood": "driving minimal electronic, deliberate mechanical motif, command-center momentum",
+   "register": "electronic",
+   "fits": "linear.app, mono-terminal, subway-chrome, cctv, SCHEMATIC, CLASSIC, MANIFESTO",
+   "preset_packs": [
+    "linear.app",
+    "mono-terminal",
+    "subway-chrome",
+    "cctv"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "MANIFESTO",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Quasi+Motion",
+   "attribution_required": "Music. Quasi Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "marty-gots-a-plan",
+   "title": "Marty Gots a Plan",
+   "file": "Marty_Gots_a_Plan.mp3",
+   "duration_s": 168.1,
+   "mood": "pizzicato strings suspense, investigative newsroom walk, methodical reportorial groove",
+   "register": "ambient",
+   "fits": "wired, cctv, claude, gallery, editorial-paper, DISPATCH, SCHEMATIC, CLASSIC",
+   "preset_packs": [
+    "wired",
+    "cctv",
+    "claude",
+    "gallery",
+    "editorial-paper"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "SCHEMATIC",
+    "CLASSIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Marty+Gots+a+Plan",
+   "attribution_required": "Music. Marty Gots a Plan by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "voxel-revolution",
+   "title": "Voxel Revolution",
+   "file": "Voxel_Revolution.mp3",
+   "duration_s": 129.9,
+   "mood": "driving energetic electronic, defiant chiptune-edged groove, propulsive build",
+   "register": "electronic",
+   "fits": "mono-terminal, subway-chrome, cctv, geominimal, MANIFESTO, SCHEMATIC, RECEIPT",
+   "preset_packs": [
+    "mono-terminal",
+    "subway-chrome",
+    "cctv",
+    "geominimal"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "SCHEMATIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Voxel+Revolution",
+   "attribution_required": "Music. Voxel Revolution by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "static-motion",
+   "title": "Static Motion",
+   "file": "Static_Motion.mp3",
+   "duration_s": 188.8,
+   "mood": "tense synth drone with sharp percussive clicks, surveillance-room motion, deterministic ticking pulse",
+   "register": "electronic",
+   "fits": "subway-chrome, cctv, mono-terminal, SCHEMATIC, RECEIPT, MANIFESTO",
+   "preset_packs": [
+    "subway-chrome",
+    "cctv",
+    "mono-terminal"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "RECEIPT",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 24.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Static+Motion",
+   "attribution_required": "Music. Static Motion by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "mistake-the-getaway",
+   "title": "Mistake the Getaway",
+   "file": "Mistake_the_Getaway.mp3",
+   "duration_s": 122.6,
+   "mood": "tense propulsive electronic heist groove, defiant driving synth, command-center momentum",
+   "register": "electronic",
+   "fits": "raycast, mono-terminal, subway-chrome, cctv, MANIFESTO, SCHEMATIC, RECEIPT",
+   "preset_packs": [
+    "raycast",
+    "mono-terminal",
+    "subway-chrome",
+    "cctv",
+    "geominimal"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "SCHEMATIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Mistake+the+Getaway",
+   "attribution_required": "Music. Mistake the Getaway by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "gymnopedie-no-1",
+   "title": "Gymnopedie No. 1",
+   "file": "Gymnopedie_No_1.mp3",
+   "duration_s": 187.1,
+   "mood": "refined chamber piano, contemplative and unhurried, museum-quiet elegance",
+   "register": "acoustic",
+   "fits": "gallery, claude, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH refined explainers",
+   "preset_packs": [
+    "gallery",
+    "claude",
+    "editorial-paper"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 6.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gymnopedie",
+   "attribution_required": "Music. Gymnopedie No. 1 by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "wholesome",
+   "title": "Wholesome",
+   "file": "Wholesome.mp3",
+   "duration_s": 363.8,
+   "mood": "warm earnest acoustic build, hopeful confident strings and piano, sincere craftsperson optimism",
+   "register": "acoustic",
+   "fits": "cursor, claude, editorial-paper, gallery, CLASSIC, DISPATCH, MANIFESTO sincere tributes",
+   "preset_packs": [
+    "cursor",
+    "claude",
+    "editorial-paper",
+    "gallery"
+   ],
+   "frameworks": [
+    "CLASSIC",
+    "DISPATCH",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Wholesome",
+   "attribution_required": "Music. Wholesome by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "pamgaea",
+   "title": "Pamgaea",
+   "file": "Pamgaea.mp3",
+   "duration_s": 168.6,
+   "mood": "uplifting world-cinematic build, warm ethnic percussion and strings, expansive optimistic horizon",
+   "register": "ambient",
+   "fits": "gallery, claude, editorial-paper, cursor, MANIFESTO, CLASSIC, DISPATCH bold warm launches",
+   "preset_packs": [
+    "gallery",
+    "claude",
+    "editorial-paper",
+    "cursor"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 20.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Pamgaea",
+   "attribution_required": "Music. Pamgaea by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "retrofuture-clean",
+   "title": "RetroFuture Clean",
+   "file": "RetroFuture_Clean.mp3",
+   "duration_s": 206.2,
+   "mood": "driving synthwave, clean propulsive retro-future groove, precise systems momentum",
+   "register": "electronic",
+   "fits": "geominimal, subway-chrome, mono-terminal, RECEIPT, SCHEMATIC, CLASSIC",
+   "preset_packs": [
+    "geominimal",
+    "subway-chrome",
+    "mono-terminal",
+    "cctv"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "SCHEMATIC",
+    "CLASSIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=RetroFuture+Clean",
+   "attribution_required": "Music. RetroFuture Clean by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "clean-soul",
+   "title": "Clean Soul",
+   "file": "Clean_Soul.mp3",
+   "duration_s": 306.7,
+   "mood": "calm / reflective / light piano",
+   "register": "acoustic",
+   "fits": "editorial-paper, claude, gallery, MANIFESTO, CLASSIC",
+   "preset_packs": [
+    "editorial-paper",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Clean+Soul",
+   "attribution_required": "Music. Clean Soul by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "darkest-child",
+   "title": "Darkest Child",
+   "file": "Darkest_Child.mp3",
+   "duration_s": 238.7,
+   "mood": "eerie suspense, tense surveillance, brooding",
+   "register": "electronic",
+   "fits": "cctv, mono-terminal, subway-chrome, DISPATCH, SCHEMATIC, surveillance pieces",
+   "preset_packs": [
+    "cctv",
+    "mono-terminal",
+    "subway-chrome"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "SCHEMATIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Darkest+Child",
+   "attribution_required": "Music. Darkest Child by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "frost-waltz",
+   "title": "Frost Waltz",
+   "file": "Frost_Waltz.mp3",
+   "duration_s": 135.5,
+   "mood": "elegant classical waltz, refined orchestral lilt, clever methodical poise",
+   "register": "acoustic",
+   "fits": "editorial-90s, editorial-paper, gallery, claude, SCHEMATIC, CLASSIC, DISPATCH refined explainers",
+   "preset_packs": [
+    "editorial-90s",
+    "editorial-paper",
+    "gallery",
+    "claude"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "DISPATCH",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Frost+Waltz",
+   "attribution_required": "Music. Frost Waltz by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "digital-lemonade",
+   "title": "Digital Lemonade",
+   "file": "Digital_Lemonade.mp3",
+   "duration_s": 180.1,
+   "mood": "bright clean electronic, crisp propulsive groove, modern builder optimism",
+   "register": "electronic",
+   "fits": "vercel, geominimal, subway-chrome, gallery, RECEIPT, CLASSIC, MANIFESTO clean infra launches",
+   "preset_packs": [
+    "vercel",
+    "geominimal",
+    "subway-chrome",
+    "gallery"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "CLASSIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Digital+Lemonade",
+   "attribution_required": "Music. Digital Lemonade by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "newer-wave",
+   "title": "Newer Wave",
+   "file": "Newer_Wave.mp3",
+   "duration_s": 174.6,
+   "mood": "clean propulsive synthwave, modern builder optimism, retro-future local-compute momentum",
+   "register": "electronic",
+   "fits": "ollama, mono-terminal, subway-chrome, geominimal, gallery, SCHEMATIC, CLASSIC, RECEIPT",
+   "preset_packs": [
+    "ollama",
+    "mono-terminal",
+    "subway-chrome",
+    "geominimal",
+    "gallery"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "RECEIPT",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Newer+Wave",
+   "attribution_required": "Music. Newer Wave by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "reawakening",
+   "title": "Reawakening",
+   "file": "Reawakening.mp3",
+   "duration_s": 214.07,
+   "mood": "warm hopeful cinematic theme, patient build, seasoned-craftsman optimism",
+   "register": "ambient",
+   "fits": "warp, claude, editorial-paper, gallery, CLASSIC, DISPATCH, MANIFESTO sincere builder tributes",
+   "preset_packs": [
+    "warp",
+    "claude",
+    "editorial-paper",
+    "gallery"
+   ],
+   "frameworks": [
+    "CLASSIC",
+    "DISPATCH",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Reawakening",
+   "attribution_required": "Music. Reawakening by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "cyborg-ninja",
+   "title": "Cyborg Ninja",
+   "file": "Cyborg_Ninja.mp3",
+   "duration_s": 180.06,
+   "mood": "driving cyber electronic, focused command-terminal propulsion, precise systems momentum",
+   "register": "electronic",
+   "fits": "voltagent, mono-terminal, subway-chrome, cctv, SCHEMATIC, MANIFESTO, RECEIPT",
+   "preset_packs": [
+    "voltagent",
+    "mono-terminal",
+    "subway-chrome",
+    "cctv"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "MANIFESTO",
+    "RECEIPT"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Cyborg+Ninja",
+   "attribution_required": "Music. Cyborg Ninja by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "black-vortex",
+   "title": "Black Vortex",
+   "file": "Black_Vortex.mp3",
+   "duration_s": 169.7,
+   "mood": "dark driving electronic, tense, propulsive",
+   "register": "electronic",
+   "fits": "mono-terminal, subway-chrome, cctv, RECEIPT, MANIFESTO",
+   "preset_packs": [
+    "mono-terminal",
+    "subway-chrome",
+    "cctv"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "MANIFESTO",
+    "SCHEMATIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Black+Vortex",
+   "attribution_required": "Music. Black Vortex by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "electrodoodle",
+   "title": "Electrodoodle",
+   "file": "Electrodoodle.mp3",
+   "duration_s": 166.06,
+   "mood": "energetic propulsive electronic, bright driving arpeggios, fast builder momentum",
+   "register": "electronic",
+   "fits": "mono-terminal, subway-chrome, geominimal, MANIFESTO, RECEIPT, SCHEMATIC",
+   "preset_packs": [
+    "mono-terminal",
+    "subway-chrome",
+    "geominimal"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "RECEIPT",
+    "SCHEMATIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Electrodoodle",
+   "attribution_required": "Music. Electrodoodle by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "controlled-chaos",
+   "title": "Controlled Chaos",
+   "file": "Controlled_Chaos.mp3",
+   "duration_s": 352.3,
+   "mood": "dark driving electronic, controlled tension, security-ops systems pulse",
+   "register": "electronic",
+   "fits": "subway-chrome, mono-terminal, cctv, SCHEMATIC, RECEIPT, MANIFESTO",
+   "preset_packs": [
+    "subway-chrome",
+    "mono-terminal",
+    "cctv"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "RECEIPT",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Controlled+Chaos",
+   "attribution_required": "Music. Controlled Chaos by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "gearhead",
+   "title": "Gearhead",
+   "file": "Gearhead.mp3",
+   "duration_s": 139.46,
+   "mood": "driving propulsive electronic, energetic gear-turning groove, builder momentum",
+   "register": "electronic",
+   "fits": "sentry, subway-chrome, mono-terminal, geominimal, MANIFESTO, RECEIPT, SCHEMATIC",
+   "preset_packs": [
+    "sentry",
+    "subway-chrome",
+    "mono-terminal",
+    "geominimal"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "RECEIPT",
+    "SCHEMATIC",
+    "CLASSIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Gearhead",
+   "attribution_required": "Music. Gearhead by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "sincerely",
+   "title": "Sincerely",
+   "file": "Sincerely.mp3",
+   "duration_s": 375.48,
+   "mood": "warm sincere cinematic, heartfelt piano and strings build, earnest builder tribute",
+   "register": "acoustic",
+   "fits": "gallery, claude, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH sincere builder tributes",
+   "preset_packs": [
+    "gallery",
+    "claude",
+    "editorial-paper"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Sincerely",
+   "attribution_required": "Music. Sincerely by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "district-four",
+   "title": "District Four",
+   "file": "District_Four.mp3",
+   "duration_s": 248.24,
+   "mood": "driving retro electro-funk, propulsive builder momentum, confident systems groove",
+   "register": "electronic",
+   "fits": "linear.app, mono-terminal, subway-chrome, geominimal, RECEIPT, SCHEMATIC, MANIFESTO",
+   "preset_packs": [
+    "linear.app",
+    "mono-terminal",
+    "subway-chrome",
+    "geominimal"
+   ],
+   "frameworks": [
+    "RECEIPT",
+    "SCHEMATIC",
+    "MANIFESTO",
+    "CLASSIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=District+Four",
+   "attribution_required": "Music. District Four by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "werq",
+   "title": "Werq",
+   "file": "Werq.mp3",
+   "duration_s": 162.3,
+   "mood": "driving hip-hop stomp, confident swagger, heavy downbeat",
+   "register": "electronic",
+   "fits": "subway-chrome, mono-terminal, geominimal, cctv, MANIFESTO, RECEIPT, DISPATCH",
+   "preset_packs": [
+    "subway-chrome",
+    "mono-terminal",
+    "geominimal",
+    "cctv"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "RECEIPT",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Werq",
+   "attribution_required": "Music. Werq by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "edm-detection-mode",
+   "title": "EDM Detection Mode",
+   "file": "EDM_Detection_Mode.mp3",
+   "duration_s": 365.7,
+   "mood": "pulsing four-on-the-floor EDM, scanning energy, relentless build",
+   "register": "electronic",
+   "fits": "mono-terminal, subway-chrome, geominimal, SCHEMATIC, RECEIPT, CLASSIC",
+   "preset_packs": [
+    "mono-terminal",
+    "subway-chrome",
+    "geominimal"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "RECEIPT",
+    "CLASSIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=EDM+Detection+Mode",
+   "attribution_required": "Music. EDM Detection Mode by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "industrial-cinematic",
+   "title": "Industrial Cinematic",
+   "file": "Industrial_Cinematic.mp3",
+   "duration_s": 244.4,
+   "mood": "dark industrial percussion, factory-floor menace, cinematic weight",
+   "register": "electronic",
+   "fits": "cctv, subway-chrome, mono-terminal, MANIFESTO, DISPATCH, SCHEMATIC",
+   "preset_packs": [
+    "cctv",
+    "subway-chrome",
+    "mono-terminal"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "DISPATCH",
+    "SCHEMATIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Industrial+Cinematic",
+   "attribution_required": "Music. Industrial Cinematic by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "deliberate-thought",
+   "title": "Deliberate Thought",
+   "file": "Deliberate_Thought.mp3",
+   "duration_s": 177.5,
+   "mood": "measured electronic piano, considered optimism, clean forward motion",
+   "register": "ambient",
+   "fits": "claude, gallery, editorial-paper, SCHEMATIC, CLASSIC, DISPATCH",
+   "preset_packs": [
+    "claude",
+    "gallery",
+    "editorial-paper"
+   ],
+   "frameworks": [
+    "SCHEMATIC",
+    "CLASSIC",
+    "DISPATCH"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Deliberate+Thought",
+   "attribution_required": "Music. Deliberate Thought by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "beauty-flow",
+   "title": "Beauty Flow",
+   "file": "Beauty_Flow.mp3",
+   "duration_s": 433.4,
+   "mood": "lo-fi chill hop, unhurried focus, late-night build session",
+   "register": "ambient",
+   "fits": "claude, gallery, editorial-paper, geominimal, CLASSIC, RECEIPT",
+   "preset_packs": [
+    "claude",
+    "gallery",
+    "editorial-paper",
+    "geominimal"
+   ],
+   "frameworks": [
+    "CLASSIC",
+    "RECEIPT"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Beauty+Flow",
+   "attribution_required": "Music. Beauty Flow by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "frozen-star",
+   "title": "Frozen Star",
+   "file": "Frozen_Star.mp3",
+   "duration_s": 221.3,
+   "mood": "glacial ambient cinematic, vast quiet awe, slow shimmer",
+   "register": "ambient",
+   "fits": "gallery, claude, cctv, DISPATCH, MANIFESTO",
+   "preset_packs": [
+    "gallery",
+    "claude",
+    "cctv"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Frozen+Star",
+   "attribution_required": "Music. Frozen Star by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "movement-proposition",
+   "title": "Movement Proposition",
+   "file": "Movement_Proposition.mp3",
+   "duration_s": 141.0,
+   "mood": "tense driving pulse, urgent strings over electronics, chase energy",
+   "register": "electronic",
+   "fits": "cctv, subway-chrome, geominimal, DISPATCH, SCHEMATIC, MANIFESTO",
+   "preset_packs": [
+    "cctv",
+    "subway-chrome",
+    "geominimal"
+   ],
+   "frameworks": [
+    "DISPATCH",
+    "SCHEMATIC",
+    "MANIFESTO"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Movement+Proposition",
+   "attribution_required": "Music. Movement Proposition by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  },
+  {
+   "slug": "windswept",
+   "title": "Windswept",
+   "file": "Windswept.mp3",
+   "duration_s": 208.3,
+   "mood": "uplifting cinematic sweep, open-sky resolve, warm strings",
+   "register": "acoustic",
+   "fits": "editorial-paper, editorial-90s, claude, gallery, MANIFESTO, CLASSIC",
+   "preset_packs": [
+    "editorial-paper",
+    "editorial-90s",
+    "claude",
+    "gallery"
+   ],
+   "frameworks": [
+    "MANIFESTO",
+    "CLASSIC"
+   ],
+   "default_offset_s": 30.0,
+   "license": "CC BY 4.0",
+   "author": "Kevin MacLeod",
+   "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Windswept",
+   "attribution_required": "Music. Windswept by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+  }
+ ]
 }

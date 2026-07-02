@@ -1,0 +1,70 @@
+{
+  "date": "2026-07-02",
+  "project": "strix",
+  "project_url": "https://github.com/usestrix/strix",
+  "claims": [
+    {
+      "claim": "just crossed 29k stars (29,944 exact)",
+      "sources": [
+        "https://github.com/usestrix/strix",
+        "https://api.github.com/repos/usestrix/strix"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    },
+    {
+      "claim": "one of GitHub's top trending repos this week, climbing more than 1,000 stars in a day",
+      "sources": [
+        "https://github.com/trending/python?since=daily",
+        "https://api.github.com/repos/usestrix/strix"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    },
+    {
+      "claim": "open source, Apache-2.0, Python",
+      "sources": [
+        "https://github.com/usestrix/strix",
+        "https://www.strix.ai/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    },
+    {
+      "claim": "agents validate each finding with a working proof-of-exploit inside a sandboxed Docker environment, killing false positives",
+      "sources": [
+        "https://github.com/usestrix/strix",
+        "https://www.helpnetsecurity.com/2025/11/17/strix-open-source-ai-agents-penetration-testing/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    },
+    {
+      "claim": "find, validate, fix loop with AI-generated remediation delivered as pull requests",
+      "sources": [
+        "https://github.com/usestrix/strix",
+        "https://www.strix.ai/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    },
+    {
+      "claim": "graph of parallel specialist agents running the target dynamically like a real attacker",
+      "sources": [
+        "https://github.com/usestrix/strix",
+        "https://www.helpnetsecurity.com/2025/11/17/strix-open-source-ai-agents-penetration-testing/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    },
+    {
+      "claim": "created by Ahmed Allam (@0xallam), San Francisco, launched to the front page of Hacker News in 2025",
+      "sources": [
+        "https://github.com/0xallam",
+        "https://news.ycombinator.com/item?id=44945113"
+      ],
+      "verified": true,
+      "as_of": "2026-07-02"
+    }
+  ]
+}

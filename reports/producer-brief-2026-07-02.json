@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-02",
+  "project": "strix",
+  "project_url": "https://github.com/usestrix/strix",
+  "audience": "AI engineers and appsec builders on X who ship code fast and distrust scanners that cry wolf",
+  "single_takeaway": "Strix is open source pentest agents that prove each bug by exploiting it, so what you get is real findings and a fix, not a wall of maybes.",
+  "viewer_action": "open the repo, star it, quote the video",
+  "desired_feeling": "the jolt of watching a tool actually break in to prove it's right, then relief that it hands you the fix",
+  "tone_adjectives": ["adversarial", "precise", "unhyped"],
+  "references": [
+    "strix.ai: dark UI, security-console register, one hot alert accent",
+    "Burp and terminal pentest tooling: real offensive surface, no marketing gloss",
+    "Linear release videos: committed motion, zero-bounce settles"
+  ],
+  "mandatories": "strix's own dark security palette, CC BY music attribution, creator tagged, keep copy on the defensive proof-over-guesses value",
+  "success_criteria": "the creator or the project account quote-posts it, and a muted viewer follows the whole find validate fix argument",
+  "platform": "x"
+}

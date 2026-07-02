@@ -238,5 +238,10 @@
     "date": "2026-07-01",
     "slug": "district-four",
     "project_url": "https://github.com/ogulcancelik/herdr"
+  },
+  {
+    "date": "2026-07-02",
+    "slug": "industrial-cinematic",
+    "project_url": "https://github.com/usestrix/strix"
   }
 ]

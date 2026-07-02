@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "canvas": "#1f2937",
+    "ink": "#7a91c7",
+    "ink_muted": "#60739e",
+    "accent": "#7a91c7",
+    "hairline": "#2c384c"
+  },
+  "provenance": {
+    "canvas": "css var --tw-prose-pre-bg",
+    "ink": "css var --tw-prose-links (contrast-fixed)",
+    "accent": "css var --tw-prose-links (lightness-nudged from #111827)",
+    "hairline": "derived mix(ink, canvas, 0.85)",
+    "ink_muted": "derived mix(ink, canvas)"
+  },
+  "confidence": "high",
+  "dark_canvas": true,
+  "source_url": "https://strix.ai",
+  "notes": [
+    "stylesheet mined: https://strix.ai/assets/index-w7b4UKnY.css"
+  ]
+}

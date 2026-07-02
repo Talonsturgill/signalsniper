@@ -2,6 +2,12 @@
 
 The pipeline's accumulated retro. Every run appends one entry (KEPT / KILLED / NEXT) after the merge; every run reads the whole file before making style decisions. Keep entries to three bullets — this is a memory, not a diary.
 
+## 2026-07-02 — strix (offensive-security manifesto)
+
+- KEPT: strix-native alert-red-on-near-black console with a `grid` background (acting on yesterday's NEXT note to swap the violet-tinting aurora for grid on dark native palettes) reads clean and infra-flavored; the find/validate/fix diagram with the glowing accent `validate` node and the typed terminal PoC carried the proof-over-guesses thesis with zero adjectives.
+- KILLED: nothing this run. Two near-black keyframes at 4.5s and 8.5s looked like invisible-glyph failures on first read, but dense re-sampling proved they were just fade-through transition dips between scenes; every hero scene stands on its own. Lesson: sample keyframes on scene centers, not on the transition windows, before calling a scene dead.
+- NEXT: the MANIFESTO `fix` scene "It proves the bug." in JetBrains Mono at hero size nearly fills the frame width; check on a small phone whether mono display crowds the title-safe, and consider +1% padding on `fix` when the display font is mono.
+
 ## 2026-07-01 — herdr (v2, pipeline overhaul run)
 
 - KEPT: project-native palette via `brand_extract.py` — the herdr-blue video in the site's own JetBrains Mono reads like a gift, not a template; the sparkline star-curve and the big_number count-up carried the RECEIPT argument with zero adjectives.
