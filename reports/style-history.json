@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-26",
-    "brand_slug": null,
-    "aesthetic_slug": "claude",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/affaan-m/ECC"
-  },
-  {
     "date": "2026-05-28",
     "brand_slug": null,
     "aesthetic_slug": "geominimal",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "herdr-native",
     "framework": "RECEIPT",
     "project_url": "https://github.com/ogulcancelik/herdr"
+  },
+  {
+    "date": "2026-07-02",
+    "brand_slug": "strix-native",
+    "aesthetic_slug": "strix-native",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/usestrix/strix"
   }
 ]

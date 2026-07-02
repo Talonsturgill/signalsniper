@@ -1,0 +1,19 @@
+{
+  "date": "2026-07-02",
+  "brand_slug": "strix-native",
+  "preset_slug": null,
+  "aesthetic_slug": "strix-native",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "Strix ships in its own dark security-console palette (near-black slate, one hot alert red, JetBrains Mono like a terminal) because recognition is the quote-post trigger for an appsec builder; MANIFESTO carries the contrarian proof-over-guesses thesis and breaks yesterday's RECEIPT streak.",
+  "writing_tone_notes": "Adversarial but unhyped, plain declarative, subtraction over adjectives. Let the contrast carry the praise: scanners flag maybes, this one exploits to prove. Exact technical claims, zero superlatives. Contractions where natural.",
+  "do_rules": [
+    "Lead with the proof-by-exploit angle, the one thing scanners don't do.",
+    "Use the alert red as a single highlight per beat, on the finding and the punch, never decoratively.",
+    "Keep the contrast doing the work: a maybe versus a working exploit, guesses versus a fix."
+  ],
+  "dont_rules": [
+    "No version numbers in the caption.",
+    "No superlatives or sycophancy, and no attack framing aimed at any real target.",
+    "Do not repeat any scene phrase in the tweet or the Gmail Why-this-one."
+  ]
+}

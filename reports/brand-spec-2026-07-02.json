@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-02",
+  "brand_slug": "strix-native",
+  "aesthetic_slug": "strix-native",
+  "framework": "MANIFESTO",
+  "source_url": "https://strix.ai",
+  "tokens": {
+    "canvas": "#0b0e14",
+    "ink": "#eef1f6",
+    "ink_muted": "#8b93a3",
+    "accent": "#ff4536",
+    "hairline": "#20252f"
+  },
+  "provenance": {
+    "canvas": "strix.ai dark theme near-black slate",
+    "ink": "near-white console text, softened from pure white",
+    "accent": "offensive-security alert red, tuned to the find-validate register",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived console rule"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.015,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.28,
+    "scene_out_s": 0.18,
+    "stagger_s": 0.18
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 4
+  },
+  "texture": {
+    "grain": 0.06,
+    "vignette": 0.24,
+    "halation": 0.06,
+    "lighting_arc": 0.24
+  },
+  "background": {
+    "style": "grid",
+    "intensity": 0.8
+  },
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5
+}

@@ -1,0 +1,83 @@
+{
+  "date": "2026-07-02",
+  "project": "strix",
+  "framework": "MANIFESTO",
+  "concept": "A manifesto for offensive proof, told in strix's own alert-red-on-near-black console. The wordmark boots like the tool itself, the thesis names the lie every scanner tells, the loop diagram shows the argument as a system, the terminal shows a real validated finding, the fix scene lands the contrarian punch, the count-up proves the crowd already agrees, the close reframes the whole stance.",
+  "money_shot_note": "The 29k count-up at scene 6 (~83% of runtime): the number is the crowd's verdict on the argument the video just made, so it gets the count-up, the hit, and the flash.",
+  "transition_strategy": "fade-through with accelerating exits, chromatic tick on every cut, emphasize reserved for the fix punch and the count-up",
+  "music_direction": "industrial-cinematic, electronic, dark factory-floor percussion, cuts snapped to onsets by beat_align",
+  "energy_curve": [0.4, 0.52, 0.66, 0.78, 0.86, 0.95, 0.6],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "recognition hook: strix's wordmark in its own alert palette doubles as the muted-autoplay poster frame",
+      "template": "logo_reveal",
+      "camera": "tilt_reveal",
+      "copy_note": "wordmark 'strix' plus the category line",
+      "sound_cue": "low riser into first downbeat",
+      "transition": "fade-through",
+      "energy": 0.4
+    },
+    {
+      "beat": 2,
+      "intent": "name the lie: every scanner flags a maybe and walks away, leaving the human to sort it",
+      "template": "two_line",
+      "camera": "push_in",
+      "copy_note": "scanners flag maybes, then move on",
+      "sound_cue": "beat drops in under the second line",
+      "transition": "fade-through",
+      "energy": 0.52
+    },
+    {
+      "beat": 3,
+      "intent": "the argument as a system: the find validate fix loop drawn as a graph so the muted viewer sees the whole method at once",
+      "template": "diagram",
+      "camera": "orbit",
+      "copy_note": "three nodes, find then validate then fix, edges drawing on",
+      "sound_cue": "draw-on ticks under a rising phrase",
+      "transition": "fade-through",
+      "energy": 0.66
+    },
+    {
+      "beat": 4,
+      "intent": "the proof surface: a real session where an agent lands a working exploit and confirms the finding is not a false positive",
+      "template": "terminal",
+      "camera": "rack_focus",
+      "copy_note": "strix run, a finding, exploit confirmed, false positive killed",
+      "sound_cue": "typing ticks ducked under the bed",
+      "transition": "fade-through",
+      "energy": 0.78
+    },
+    {
+      "beat": 5,
+      "intent": "the contrarian punch: it does not guess, it breaks in to prove the bug, and only then writes the fix",
+      "template": "fix",
+      "camera": "crash_zoom",
+      "copy_note": "it proves the bug by breaking in",
+      "sound_cue": "stamp on the emphasize",
+      "transition": "fade-through",
+      "energy": 0.86
+    },
+    {
+      "beat": 6,
+      "intent": "the crowd's verdict: the count-up to 29k shows the argument already won an audience",
+      "template": "big_number",
+      "camera": "ken_burns",
+      "copy_note": "29k counting up, stars and still climbing",
+      "sound_cue": "hard hit as the count lands",
+      "transition": "fade-through",
+      "energy": 0.95,
+      "money_shot": true
+    },
+    {
+      "beat": 7,
+      "intent": "closing stance that rhymes with the open so the autoloop replays clean",
+      "template": "close",
+      "camera": "pull_back",
+      "copy_note": "security that attacks first, apache licensed in the subtitle",
+      "sound_cue": "resolve and fade",
+      "transition": "fade to loop",
+      "energy": 0.6
+    }
+  ]
+}
