@@ -3,8 +3,8 @@
   "brand_slug": "herdr-native",
   "preset_slug": null,
   "aesthetic_slug": "herdr-native",
-  "framework": "RECEIPT",
-  "rationale_one_line": "v2 ships in herdr's own extracted palette (near-black, warm cream, herdr blue, JetBrains Mono like herdr.dev itself) because recognition is the quote-post trigger; RECEIPT stays, now with a drawn star-velocity curve and a count-up as the money shot.",
+  "framework": "DISPATCH",
+  "rationale_one_line": "v3 is MISSION CONTROL: a wire report drops the viewer into a live herdr session (typed panes, a red blocked flip, the save in a real prompt), told in herdr's own palette at thirty seconds with a beat every four.",
   "writing_tone_notes": "Plain declarative, subtraction over adjectives, matching the creator's unhyped README voice. Let the number contrast carry the praise. Exact technical claims, zero hype words. Contractions where natural.",
   "do_rules": [
     "Lead with the count and the climb, not a feature list.",

@@ -1,12 +1,12 @@
 {
   "date": "2026-07-01",
-  "topic": "herdr, the terminal agent multiplexer, in its own brand",
+  "topic": "herdr mission control, a live tour of the agent multiplexer",
   "creator_handle": "@ogulcancelik",
   "project_url": "https://github.com/ogulcancelik/herdr",
   "design": {
     "brand_slug": "herdr-native",
     "aesthetic_slug": "herdr-native",
-    "framework": "RECEIPT",
+    "framework": "DISPATCH",
     "held_subject": "herdr",
     "tokens": {
       "canvas": "#0c0c0b",
@@ -18,20 +18,20 @@
     "fonts": {
       "display": "JetBrainsMono",
       "body": "Inter",
-      "italic": "Inter"
+      "italic": "IBMPlexSerif"
     },
     "typography": {
       "display_weight": 700,
       "body_weight": 400,
       "letter_spacing_em": -0.015,
       "case": "preserve",
-      "italic_descriptors": false
+      "italic_descriptors": true
     },
     "motion": {
       "register": "fade",
       "scene_in_s": 0.34,
       "scene_out_s": 0.22,
-      "stagger_s": 0.24
+      "stagger_s": 0.22
     },
     "layout": {
       "padding_pct": 8,
@@ -40,34 +40,121 @@
     },
     "texture": {
       "grain": 0.05,
-      "vignette": 0.18,
+      "vignette": 0.2,
       "halation": 0.05,
       "lighting_arc": 0.22
     },
     "background": {
-      "style": "aurora",
-      "intensity": 0.85
+      "style": "grid",
+      "intensity": 0.9
     },
     "audio_palette": "electronic",
     "accent_contrast_min": 4.5,
     "beat": {
-      "bpm": 172.3,
-      "offset_s": 30.0,
+      "bpm": 129.2,
+      "offset_s": 20.0,
       "aligned": true,
-      "median_drift_ms": 103.5
+      "median_drift_ms": 62.8
     }
   },
   "scenes": [
     {
-      "template": "logo_reveal",
-      "word": "herdr",
-      "tagline": "your coding agents, herded",
+      "template": "wire_dispatch",
+      "ticker": "HERDR WIRE // 0700 UTC",
+      "dateline": "MISSION CONTROL DESK",
+      "headline": "herdr runs the whole herd",
+      "lede": "every coding agent you own, watched on one screen.",
       "camera": "tilt_reveal",
-      "duration_s": 3.07
+      "sheen": true,
+      "duration_s": 3.4
+    },
+    {
+      "template": "panes",
+      "eyebrow": "live session",
+      "panes": [
+        {
+          "name": "claude code",
+          "lines": [
+            "auth.rs, 214 lines in"
+          ],
+          "state": "working"
+        },
+        {
+          "name": "codex",
+          "lines": [
+            "waiting on approval"
+          ],
+          "state": "working",
+          "flip_to": "blocked",
+          "flip_at": 0.78
+        },
+        {
+          "name": "cursor agent",
+          "lines": [
+            "diff ready to review"
+          ],
+          "state": "done"
+        },
+        {
+          "name": "amp",
+          "lines": [
+            "queue empty"
+          ],
+          "state": "idle"
+        }
+      ],
+      "camera": "push_in",
+      "duration_s": 4.46
+    },
+    {
+      "template": "flash",
+      "word": "CAUGHT.",
+      "caption": "the stall, before it costs an hour",
+      "emphasize": true,
+      "camera": "crash_zoom",
+      "duration_s": 3.04
+    },
+    {
+      "template": "terminal",
+      "title": "herdr",
+      "lines": [
+        {
+          "text": "herdr attach codex"
+        },
+        {
+          "text": "paused, tool approval",
+          "prompt": false
+        },
+        {
+          "text": "y",
+          "prompt": true
+        },
+        {
+          "text": "codex is moving again",
+          "prompt": false,
+          "accent": true
+        }
+      ],
+      "camera": "rack_focus",
+      "sheen": true,
+      "duration_s": 4.11
+    },
+    {
+      "template": "split",
+      "left": {
+        "label": "tmux",
+        "value": "blind panes"
+      },
+      "right": {
+        "label": "herdr",
+        "value": "agent aware"
+      },
+      "camera": "parallax_drift",
+      "duration_s": 3.39
     },
     {
       "template": "sparkline",
-      "eyebrow": "star velocity",
+      "eyebrow": "the receipts",
       "values": [
         0.3,
         0.5,
@@ -81,61 +168,28 @@
         9.1
       ],
       "value_label": "9.1k",
-      "caption": "and the curve is steepening",
+      "caption": "stars, still climbing",
       "camera": "orbit",
-      "duration_s": 3.6
-    },
-    {
-      "template": "terminal",
-      "title": "herdr",
-      "lines": [
-        {
-          "text": "herdr up"
-        },
-        {
-          "text": "1  claude code   working",
-          "prompt": false
-        },
-        {
-          "text": "2  codex         blocked",
-          "prompt": false,
-          "accent": true
-        },
-        {
-          "text": "3  cursor agent  done",
-          "prompt": false
-        }
-      ],
-      "camera": "rack_focus",
-      "duration_s": 4.06,
-      "sheen": true
+      "duration_s": 3.74
     },
     {
       "template": "big_number",
       "numeral": "26",
-      "caption": "agents it can wrangle",
-      "sub": "claude code, codex, cursor, amp, more",
+      "caption": "agents, one shepherd",
+      "sub": "claude code, codex, cursor, amp, droid",
       "emphasize": true,
       "camera": "ken_burns",
-      "duration_s": 2.9
-    },
-    {
-      "template": "fix",
-      "primary": "Stuck agents,",
-      "secondary": "seen in seconds.",
-      "emphasize": true,
-      "camera": "push_in",
-      "duration_s": 3.04
+      "duration_s": 3.3
     },
     {
       "template": "close",
-      "primary": "Herd them",
-      "accent": "all.",
-      "subtitle": "one rust binary. detach anywhere. reattach.",
+      "primary": "Run the herd.",
+      "accent": "herdr.",
+      "subtitle": "one rust binary. agpl. herdr.dev",
       "emphasize": true,
       "camera": "pull_back",
-      "duration_s": 3.4,
-      "sheen": true
+      "sheen": true,
+      "duration_s": 3.6
     }
   ]
 }

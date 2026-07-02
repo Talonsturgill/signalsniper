@@ -8,6 +8,12 @@ The pipeline's accumulated retro. Every run appends one entry (KEPT / KILLED / N
 - KILLED: nothing this run. Two near-black keyframes at 4.5s and 8.5s looked like invisible-glyph failures on first read, but dense re-sampling proved they were just fade-through transition dips between scenes; every hero scene stands on its own. Lesson: sample keyframes on scene centers, not on the transition windows, before calling a scene dead.
 - NEXT: the MANIFESTO `fix` scene "It proves the bug." in JetBrains Mono at hero size nearly fills the frame width; check on a small phone whether mono display crowds the title-safe, and consider +1% padding on `fix` when the display font is mono.
 
+## 2026-07-01 — herdr (v3, MISSION CONTROL, the frame-pacing reckoning)
+
+- KEPT: the creative sit-down artifact (three concepts argued, MISSION CONTROL won) and the diegetic world: typed panes with status lights, a mid-scene blocked-red flip, the save typed in a real prompt, the count climbing with the star curve. 29s, 8 scenes, a beat every ~4s.
+- KILLED: the entire capture path (Playwright recorder = 9fps slideshow; replaced with CDP screencast + rehearsal gate + raw unique-frame gate), load-time CSS cameras (scrubbed now), decelerating camera easings, a clipped flash word, a shrink-wrapped split — all caught by the filmstrip review or the new gates across five fix loops.
+- NEXT: energy arc still peaks early (wire+panes typing front-loads motion; consider a bigger money-shot camera move); beat drift ~196ms from capture latency (consider a visual sync beacon frame); split scene shows a slight edge inset under parallax; try a light-canvas project to exercise the other palette pole.
+
 ## 2026-07-01 — herdr (v2, pipeline overhaul run)
 
 - KEPT: project-native palette via `brand_extract.py` — the herdr-blue video in the site's own JetBrains Mono reads like a gift, not a template; the sparkline star-curve and the big_number count-up carried the RECEIPT argument with zero adjectives.

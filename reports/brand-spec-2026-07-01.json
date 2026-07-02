@@ -2,10 +2,10 @@
   "date": "2026-07-01",
   "brand_slug": "herdr-native",
   "aesthetic_slug": "herdr-native",
-  "framework": "RECEIPT",
+  "framework": "DISPATCH",
   "audio_palette": "electronic",
   "held_subject": "herdr",
-  "source": "Extracted live from https://herdr.dev by brand_extract.py (v2 run). Dark-theme custom properties: --bg #0c0c0b, --ink (softened from pure white), --accent #4a9eff. herdr.dev itself sets display type in JetBrains Mono.",
+  "source": "Extracted live from https://herdr.dev by brand_extract.py (v2 run). Dark-theme custom properties: --bg #0c0c0b, --ink (softened from pure white), --accent #4a9eff. herdr.dev itself sets display type in JetBrains Mono. v3: MISSION CONTROL concept, DISPATCH framework, grid floor, serif italic ledes, Exit the Premises bed.",
   "tokens": {
     "canvas": "#0c0c0b",
     "ink": "#f2f0eb",
@@ -16,14 +16,14 @@
   "fonts": {
     "display": "JetBrainsMono",
     "body": "Inter",
-    "italic": "Inter"
+    "italic": "IBMPlexSerif"
   },
   "typography": {
     "display_weight": 700,
     "body_weight": 400,
     "letter_spacing_em": -0.015,
     "case": "preserve",
-    "italic_descriptors": false
+    "italic_descriptors": true
   },
   "motion": {
     "register": "fade",
@@ -43,8 +43,8 @@
     "lighting_arc": 0.22
   },
   "background": {
-    "style": "aurora",
-    "intensity": 0.85
+    "style": "grid",
+    "intensity": 0.9
   },
   "accent_contrast_min": 4.5,
   "token_notes": {
@@ -52,10 +52,10 @@
     "ink_muted": "derived mix(ink, canvas) because the site's --muted variants belong to scoped demo-theme blocks"
   },
   "audio_track": {
-    "slug": "district-four",
-    "title": "District Four",
+    "slug": "exit-the-premises",
+    "title": "Exit the Premises",
     "artist": "Kevin MacLeod",
     "license": "CC BY 4.0",
-    "file": "District_Four.mp3"
+    "file": "Exit_the_Premises.mp3"
   }
 }

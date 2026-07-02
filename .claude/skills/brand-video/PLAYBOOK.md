@@ -129,6 +129,13 @@ Stage-locked notes: story/structure notes at the BOARD (cheapest), timing notes 
 
 ## Hard-won environment lessons (do not relearn)
 
+- **CSS scene animations start at page LOAD, not scene start.** Any camera/effect keyed to a scene must be scrubbed by the timeline driver (`animation-play-state: paused` + negative `animation-delay` per frame) or every scene past the first shows a parked end-pose. This shipped unnoticed for 47 videos.
+- **Playwright's video recorder throttles the page to ~9fps** (in-process VP8 backpressure). Record via CDP JPEG screencast with instant acks; verify with the raw unique-frame gate, never with post-grain output (finishing grain fakes uniqueness).
+- **Decelerating easings park the camera.** For feed-scale drift moves use linear timing with the shape in the keyframes, so velocity persists to the last frame; ~2x bolder travel than desktop taste (the feed shows the video at ~350px).
+- **Zooming a flat background changes nothing.** Full-bleed color scenes (flash, split) need the TEXT sized so camera travel keeps edges inside frame (clipping) while captions carry motion.
+- **Base `.scene` centering shrink-wraps stretch layouts** — split/panes style templates must set `align-items: stretch` themselves.
+- **Events beat entrances.** A pane flipping blocked-red mid-scene, a number counting WITH a drawing curve, staggered typing — in-scene events are what "something is always happening" means; entrance animations alone read as still cards.
+
 - `walkReset` resets DIRECT children only; template animators own their deep state each frame. Recursive resets once left nested text wrappers permanently invisible IN THE CAPTURE while computed styles looked fine.
 - `audioCtx.resume()` never settles under blocked autoplay — always raced against a 400ms timeout, or the whole visual timeline hangs.
 - Debug renders with the freeze probe (override `performance.now`, step `window.__t`) — wall-clock waits are flaky because `fonts.ready` on ~1.5MB of embedded fonts varies run to run.

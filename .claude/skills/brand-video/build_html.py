@@ -260,6 +260,7 @@ def build_css(spec):
     hairline = t["hairline"]
     # overlay blend is invisible over near-black; screen lifts it
     sheen_blend = "screen" if _canvas_is_dark(canvas) else "overlay"
+    pane_bg = "rgba(255,255,255,0.045)" if _canvas_is_dark(canvas) else "rgba(0,0,0,0.035)"
 
     return f"""
 {fonts_css}
@@ -343,29 +344,31 @@ body {{
 /* ---------------- camera move keyframes ---------------- */
 @keyframes camPushIn {{
   from {{ transform: scale(1.000); }}
-  to   {{ transform: scale(1.10); }}
+  to   {{ transform: scale(1.22); }}
 }}
 @keyframes camPullBack {{
-  0%   {{ transform: scale(1.085); }}
-  72%  {{ transform: scale(1.006); }}
-  100% {{ transform: scale(0.997); }}
+  0%   {{ transform: scale(1.26); }}
+  35%  {{ transform: scale(1.09); }}
+  72%  {{ transform: scale(1.02); }}
+  100% {{ transform: scale(0.99); }}
 }}
 @keyframes camKenBurns {{
-  from {{ transform: scale(1.04) translate(0.2%, 0.2%); }}
-  to   {{ transform: scale(1.12) translate(-0.6%, -0.4%); }}
+  from {{ transform: scale(1.06) translate(1.0%, 0.8%); }}
+  to   {{ transform: scale(1.20) translate(-1.2%, -0.9%); }}
 }}
 @keyframes camCrashZoom {{
   0%   {{ transform: scale(1.00); }}
-  18%  {{ transform: scale(1.40); }}
-  100% {{ transform: scale(1.40); }}
+  10%  {{ transform: scale(1.20); }}
+  18%  {{ transform: scale(1.24); }}
+  100% {{ transform: scale(1.34); }}
 }}
 @keyframes camOrbit {{
-  from {{ transform: perspective(1100px) rotateY(-12deg) scale(1.04); }}
-  to   {{ transform: perspective(1100px) rotateY(12deg)  scale(1.04); }}
+  from {{ transform: perspective(1100px) rotateY(-15deg) scale(1.08); }}
+  to   {{ transform: perspective(1100px) rotateY(15deg)  scale(1.08); }}
 }}
 @keyframes camParallaxDrift {{
-  from {{ transform: translate(0.6%, 0) scale(1.04); }}
-  to   {{ transform: translate(-0.6%, -0.2%) scale(1.04); }}
+  from {{ transform: translate(1.6%, 0.4%) scale(1.07); }}
+  to   {{ transform: translate(-1.6%, -0.6%) scale(1.07); }}
 }}
 @keyframes camBreathe {{
   0%, 100% {{ transform: scale(1.000); }}
@@ -373,31 +376,41 @@ body {{
 }}
 
 @keyframes camRackFocus {{
-  0%   {{ filter: blur(7px);   transform: scale(1.075); }}
-  38%  {{ filter: blur(0px);   transform: scale(1.005); }}
-  100% {{ filter: blur(0px);   transform: scale(1.048); }}
+  0%   {{ filter: blur(6px);   transform: scale(1.14); }}
+  14%  {{ filter: blur(0px);   transform: scale(1.04); }}
+  15%  {{ filter: none;        transform: scale(1.038); }}
+  100% {{ filter: none;        transform: scale(1.13); }}
 }}
 @keyframes camDollyUp {{
-  from {{ transform: translateY(2.4%)  scale(1.030); }}
-  to   {{ transform: translateY(-1.2%) scale(1.085); }}
+  from {{ transform: translateY(3.4%)  scale(1.04); }}
+  to   {{ transform: translateY(-2.0%) scale(1.14); }}
 }}
 @keyframes camTiltReveal {{
-  0%   {{ transform: perspective(1200px) rotateX(9deg) translateY(2.2%) scale(1.06); }}
-  55%  {{ transform: perspective(1200px) rotateX(0deg) translateY(0%)   scale(1.010); }}
-  100% {{ transform: perspective(1200px) rotateX(0deg) translateY(-0.4%) scale(1.032); }}
+  0%   {{ transform: perspective(1200px) rotateX(11deg) translateY(3.0%) scale(1.10); }}
+  30%  {{ transform: perspective(1200px) rotateX(2deg)  translateY(0.7%) scale(1.03); }}
+  55%  {{ transform: perspective(1200px) rotateX(0deg)  translateY(0%)   scale(1.02); }}
+  100% {{ transform: perspective(1200px) rotateX(-1.5deg) translateY(-1.2%) scale(1.08); }}
 }}
 
-.scene[data-cam="push_in"]        {{ animation: camPushIn        var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
-.scene[data-cam="pull_back"]      {{ animation: camPullBack      var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
-.scene[data-cam="ken_burns"]      {{ animation: camKenBurns      var(--scene-dur, 3s) cubic-bezier(0.37, 0, 0.63, 1) forwards; }}
-.scene[data-cam="crash_zoom"]     {{ animation: camCrashZoom     var(--scene-dur, 3s) cubic-bezier(0.19, 1, 0.22, 1) forwards; }}
-.scene[data-cam="orbit"]          {{ animation: camOrbit         var(--scene-dur, 3s) cubic-bezier(0.37, 0, 0.63, 1) forwards; }}
-.scene[data-cam="parallax_drift"] {{ animation: camParallaxDrift var(--scene-dur, 3s) cubic-bezier(0.37, 0, 0.63, 1) forwards; }}
+/* Linear timing everywhere: easing shape lives in the keyframes (piecewise),
+   so the camera keeps perceptible velocity through the WHOLE scene instead of
+   parking after the first second (decelerating curves read as freeze-frames
+   in a feed). */
+.scene[data-cam="push_in"]        {{ animation: camPushIn        var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="pull_back"]      {{ animation: camPullBack      var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="ken_burns"]      {{ animation: camKenBurns      var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="crash_zoom"]     {{ animation: camCrashZoom     var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="orbit"]          {{ animation: camOrbit         var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="parallax_drift"] {{ animation: camParallaxDrift var(--scene-dur, 3s) linear forwards; }}
 .scene[data-cam="static_breathe"] {{ animation: camBreathe       var(--scene-dur, 3s) ease-in-out forwards; }}
-.scene[data-cam="rack_focus"]     {{ animation: camRackFocus     var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
-.scene[data-cam="dolly_up"]       {{ animation: camDollyUp       var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
-.scene[data-cam="tilt_reveal"]    {{ animation: camTiltReveal    var(--scene-dur, 3s) cubic-bezier(0.22, 1, 0.36, 1) forwards; }}
+.scene[data-cam="rack_focus"]     {{ animation: camRackFocus     var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="dolly_up"]       {{ animation: camDollyUp       var(--scene-dur, 3s) linear forwards; }}
+.scene[data-cam="tilt_reveal"]    {{ animation: camTiltReveal    var(--scene-dur, 3s) linear forwards; }}
 .scene[data-cam="none"]           {{ animation: none; }}
+/* Cameras are SCRUBBED by the timeline driver: CSS animations otherwise start
+   at page load and finish before late scenes ever become visible (every
+   camera past scene 1 shipped as a parked end-pose until this). */
+.scene[data-cam] {{ animation-play-state: paused; }}
 
 /* ---------------- kinetic per-character type ---------------- */
 .kword {{ display: inline-block; white-space: nowrap; }}
@@ -405,7 +418,6 @@ body {{
 .klt {{
   display: inline-block;
   opacity: 0;
-  will-change: transform, opacity, filter;
 }}
 
 /* ---------------- light sweep (sheen) ---------------- */
@@ -460,7 +472,6 @@ body {{
   inset: -12%;
   z-index: 1;
   pointer-events: none;
-  filter: blur(46px);
 }}
 .bg-aurora .blob {{
   position: absolute;
@@ -492,18 +503,26 @@ body {{
   bottom: -62%;
   width: 200%;
   height: 130%;
-  background-image:
-    repeating-linear-gradient(0deg,  var(--hairline) 0 1px, transparent 1px 64px),
-    repeating-linear-gradient(90deg, var(--hairline) 0 1px, transparent 1px 64px);
   transform: perspective(900px) rotateX(62deg);
   transform-origin: 50% 100%;
   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 30%, transparent 86%);
   mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 30%, transparent 86%);
+  overflow: hidden;
+}}
+.bg-grid .plane::before {{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: -64px; bottom: -64px;
+  background-image:
+    repeating-linear-gradient(0deg,  var(--hairline) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, var(--hairline) 0 1px, transparent 1px 64px);
   animation: gridScroll 9s linear infinite;
+  will-change: transform;
 }}
 @keyframes gridScroll {{
-  from {{ background-position: 0 0, 0 0; }}
-  to   {{ background-position: 0 64px, 0 0; }}
+  from {{ transform: translateY(0); }}
+  to   {{ transform: translateY(64px); }}
 }}
 
 /* ---------------- particle background canvas ---------------- */
@@ -519,9 +538,14 @@ body {{
 
 .bv-defs {{ position: absolute; width: 0; height: 0; pointer-events: none; }}
 
-/* ---------------- chromatic aberration on cuts ---------------- */
+/* ---------------- cut kick (compositor-only cut accent) ---------------- */
 .stage.chrom-cut .stage-inner {{
-  filter: url(#bvChromAb);
+  animation: cutKick 0.16s ease-out;
+}}
+@keyframes cutKick {{
+  0%   {{ transform: scale(1.000); }}
+  40%  {{ transform: scale(1.006); }}
+  100% {{ transform: scale(1.000); }}
 }}
 
 /* ---------------- emphasize flash ---------------- */
@@ -549,7 +573,6 @@ body {{
   inset: 0;
   pointer-events: none;
   z-index: 50;
-  mix-blend-mode: overlay;
 }}
 .texture-grain {{
   position: absolute;
@@ -557,49 +580,49 @@ body {{
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
   background-size: 220px 220px;
   opacity: {grain_strength};
-  animation: grainShift 1.6s steps(6) infinite;
+  animation: grainShift 0.52s steps(13) infinite;
 }}
 @keyframes grainShift {{
   0%   {{ transform: translate(0, 0); }}
-  16%  {{ transform: translate(-1.5%, 1%); }}
-  33%  {{ transform: translate(1%, -1%); }}
-  50%  {{ transform: translate(-1%, -1.5%); }}
-  66%  {{ transform: translate(1.5%, 1%); }}
-  83%  {{ transform: translate(-0.5%, 1.5%); }}
+  8%   {{ transform: translate(-1.5%, 1%); }}
+  16%  {{ transform: translate(1%, -1.2%); }}
+  24%  {{ transform: translate(-0.8%, -1.5%); }}
+  32%  {{ transform: translate(1.5%, 0.8%); }}
+  40%  {{ transform: translate(-0.4%, 1.4%); }}
+  48%  {{ transform: translate(1.2%, -0.6%); }}
+  56%  {{ transform: translate(-1.3%, -0.9%); }}
+  64%  {{ transform: translate(0.7%, 1.3%); }}
+  72%  {{ transform: translate(-1.1%, 0.3%); }}
+  80%  {{ transform: translate(0.9%, -1.4%); }}
+  88%  {{ transform: translate(-0.6%, -0.4%); }}
   100% {{ transform: translate(0, 0); }}
 }}
 .texture-vignette {{
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,{vignette_strength}) 100%);
-  mix-blend-mode: multiply;
 }}
 .texture-halation {{
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 50% 35%, rgba(255,210,160,{halation_strength}) 0%, transparent 60%);
-  mix-blend-mode: screen;
 }}
 
-/* ---------------- lighting arc (full-stage hue drift) ---------------- */
-.lighting-arc {{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 40;
-  mix-blend-mode: overlay;
+/* ---------------- lighting arc (warm-to-cool crossfade, compositor-only) ---------------- */
+.lighting-arc {{ position: absolute; inset: 0; pointer-events: none; z-index: 40; }}
+.la-warm, .la-cool {{ position: absolute; inset: 0; }}
+.la-warm {{
+  background: linear-gradient(135deg, rgba(255,214,170,0.10) 0%, rgba(255,214,170,0.0) 55%);
   opacity: {lighting_strength};
-  background: linear-gradient(135deg,
-    rgba(255, 220, 180, 0.0) 0%,
-    rgba(255, 220, 180, 0.4) 50%,
-    rgba(140, 180, 255, 0.4) 100%);
-  animation: lightingArcShift var(--total-dur, 25s) ease-in-out forwards;
+  animation: laWarmFade var(--total-dur, 25s) ease-in-out forwards;
 }}
-@keyframes lightingArcShift {{
-  0%   {{ filter: hue-rotate(-12deg); }}
-  50%  {{ filter: hue-rotate(0deg); }}
-  100% {{ filter: hue-rotate(20deg); }}
+.la-cool {{
+  background: linear-gradient(315deg, rgba(140,180,255,0.10) 0%, rgba(140,180,255,0.0) 55%);
+  opacity: 0;
+  animation: laCoolFade var(--total-dur, 25s) ease-in-out forwards;
 }}
+@keyframes laWarmFade {{ from {{ opacity: {lighting_strength}; }} to {{ opacity: 0; }} }}
+@keyframes laCoolFade {{ from {{ opacity: 0; }} to {{ opacity: {lighting_strength}; }} }}
 
 /* ---------------- shared atoms ---------------- */
 .eyebrow-small {{
@@ -855,7 +878,7 @@ body {{
   font-family: var(--display);
   font-weight: var(--display-weight);
   font-variation-settings: "wght" var(--display-weight);
-  font-size: 18cqw;
+  font-size: 14cqw;
   line-height: 1;
   letter-spacing: var(--tracking);
   color: var(--canvas);
@@ -864,7 +887,8 @@ body {{
   font-family: var(--body);
   font-weight: var(--body-weight);
   font-variation-settings: "wght" var(--body-weight);
-  font-size: 3.0cqw;
+  font-size: 2.7cqw;
+  max-width: 74%;
   color: var(--canvas);
   margin-top: 3cqw;
   letter-spacing: 0.18em;
@@ -937,7 +961,7 @@ body {{
 .terminal-body {{
   flex: 1;
   font-family: var(--mono);
-  font-size: 2.7cqw;
+  font-size: 2.9cqw;
   line-height: 1.55;
   color: var(--ink);
   text-align: left;
@@ -959,9 +983,10 @@ body {{
 @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0.12; }} }}
 
 /* ---- split ---- */
-.scene[data-tpl="split"] {{ padding: 0; flex-direction: row; }}
+.scene[data-tpl="split"] {{ padding: 0; flex-direction: row; align-items: stretch; justify-content: stretch; }}
 .split-pane {{
-  flex: 1;
+  flex: 1 1 50%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1080,7 +1105,6 @@ body {{
   color: var(--ink);
   margin: 0.5cqw 0;
   opacity: 0;
-  will-change: transform, opacity, filter;
 }}
 .wc-word.size-l {{ font-size: 9.6cqw; }}
 .wc-word.size-m {{ font-size: 7.4cqw; }}
@@ -1089,9 +1113,9 @@ body {{
 /* ---- wire_dispatch ---- */
 .scene[data-tpl="wire_dispatch"] {{
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   text-align: left;
-  padding: 9% 9% 8% 9%;
+  padding: 9%;
 }}
 .wd-tickerbar {{
   width: 100%;
@@ -1153,6 +1177,89 @@ body {{
   text-transform: none;
 }}
 
+
+/* ---- panes (live multi-agent session illustration) ---- */
+.scene[data-tpl="panes"] {{ padding: 6%; }}
+.panes-eyebrow {{
+  font-family: var(--body);
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  font-size: 2.4cqw;
+  letter-spacing: 0.34em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin-bottom: 2.2cqw;
+  opacity: 0;
+}}
+.panes-grid {{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8cqw;
+  width: 92%;
+}}
+.panes-grid.n2 {{ grid-template-columns: 1fr; width: 74%; }}
+.pane {{
+  background: {pane_bg};
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 2.6cqw 2.6cqw;
+  text-align: left;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+}}
+.pane-head {{
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  margin-bottom: 1.3cqw;
+}}
+.pane-dot {{
+  width: 1.15cqw; height: 1.15cqw;
+  border-radius: 50%;
+  background: var(--state-color, var(--ink-muted));
+  animation: panePulse 1.5s ease-in-out infinite;
+}}
+@keyframes panePulse {{
+  0%, 100% {{ opacity: 1;    transform: scale(1); }}
+  50%      {{ opacity: 0.45; transform: scale(1.45); }}
+}}
+.pane-name {{
+  font-family: var(--mono);
+  font-size: 2.4cqw;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}}
+.pane-badge {{
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 1.9cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--state-color, var(--ink-muted));
+}}
+.pane-line {{
+  font-family: var(--mono);
+  font-size: 2.2cqw;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  display: block;
+  opacity: 0;
+  white-space: pre;
+  text-transform: none;
+}}
+.pane.flipped {{
+  border-color: var(--state-color);
+  animation: paneShake 0.28s ease-out;
+}}
+@keyframes paneShake {{
+  0% {{ transform: translateX(0); }}
+  30% {{ transform: translateX(-0.5%); }}
+  60% {{ transform: translateX(0.4%); }}
+  100% {{ transform: translateX(0); }}
+}}
+
 /* ---- controls ---- */
 .controls {{
   display: flex;
@@ -1197,7 +1304,8 @@ def render_scene(idx, scene):
     if cam not in CAMERA_MOVES:
         raise SystemExit(f"Unknown camera move: {cam!r}. Valid: {sorted(CAMERA_MOVES)}")
     dur = float(scene.get("duration_s", 3.0))
-    extra_attrs = f' data-cam="{cam}" style="--scene-dur: {dur}s;"'
+    cam_dur = dur + 1.2 if idx == 0 else dur  # scene 0 cold-opens 1.2s in
+    extra_attrs = f' data-cam="{cam}" style="--scene-dur: {cam_dur}s;"'
 
     if tpl == "title":
         head_html, _ = kinetic_spans(scene["headline"])
@@ -1515,6 +1623,48 @@ def render_scene(idx, scene):
   <div class="wd-lede">{esc(scene['lede'])}</div>
 </section>"""
 
+
+    if tpl == "panes":
+        panes = scene["panes"]
+        state_colors = {
+            "working": "#3fb950", "blocked": "#f0524f",
+            "done": "#58a6ff", "idle": "#8b8b86",
+        }
+        eyebrow_html = (
+            f"""<div class="panes-eyebrow">{esc(scene['eyebrow'])}</div>"""
+            if scene.get("eyebrow") else ""
+        )
+        grid_class = "panes-grid n2" if len(panes) == 2 else "panes-grid"
+
+        def pane_el(i, pn):
+            state = pn.get("state", "working")
+            flip_to = pn.get("flip_to", "")
+            flip_at = float(pn.get("flip_at", 0.7))
+            lines_html = "".join(
+                f"""<span class="pane-line" data-typed="1" data-full="{esc(ln)}">{esc(ln)}</span>"""
+                for ln in pn.get("lines", [])
+            )
+            flip_attrs = (
+                f' data-flip-to="{esc(flip_to)}" data-flip-color="{state_colors.get(flip_to, "#8b8b86")}"'
+                f' data-flip-at="{flip_at}"'
+            ) if flip_to else ""
+            return (
+                f'<div class="pane" data-state="{esc(state)}"{flip_attrs} '
+                f'style="--state-color: {state_colors.get(state, "#8b8b86")};">'
+                f'<div class="pane-head"><div class="pane-dot"></div>'
+                f'<div class="pane-name">{esc(pn["name"])}</div>'
+                f'<div class="pane-badge" data-badge="{esc(state)}">{esc(state)}</div></div>'
+                f'{lines_html}</div>'
+            )
+
+        panes_html = "".join(pane_el(i, pn) for i, pn in enumerate(panes))
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="panes"{extra_attrs}>
+  {eyebrow_html}
+  <div class="{grid_class}">{panes_html}</div>
+  {sheen_div(scene)}
+</section>"""
+
     raise SystemExit(f"Unknown scene template: {tpl!r}")
 
 
@@ -1560,6 +1710,7 @@ const STAGGER_S = """ + f"{stagger_s}" + r""";
 const Y_PX = """ + f"{y_px}" + r""";
 const SCALE_FROM = """ + f"{scale_from}" + r""";
 const TRACKING_EM = """ + f"{tracking_em}" + r""";
+const COLD_OPEN_S = 1.2;
 const EMPHASES = """ + json.dumps(emphases) + r""";
 
 const $ = (sel) => document.querySelector(sel);
@@ -1630,9 +1781,14 @@ function animateSheen(el, t, dur) {
 
 function applySceneAnimations(idx, sceneT, dur) {
   const el = sceneEls[idx];
+  // Scene 0 is the poster: it opens already 1.2s into its beat with no fade-in,
+  // so frame 0 is a landed title card under muted autoplay (X thumbnail duty).
+  if (idx === 0) { sceneT += COLD_OPEN_S; dur += COLD_OPEN_S; }
+  // Scrub the paused camera animation to the exact scene time.
+  el.style.animationDelay = `${(-sceneT).toFixed(3)}s`;
   // Entrance decelerates, exit accelerates (Material/Carbon asymmetric easing).
   let op = 1;
-  if (sceneT < FADE_IN_S) op = easeOut(clamp01(sceneT / FADE_IN_S));
+  if (sceneT < FADE_IN_S) op = idx === 0 ? 1 : easeOut(clamp01(sceneT / FADE_IN_S));
   else if (sceneT > dur - FADE_OUT_S) op = easeOut(clamp01((dur - sceneT) / FADE_OUT_S));
   el.style.opacity = op.toFixed(3);
 
@@ -1646,6 +1802,7 @@ function applySceneAnimations(idx, sceneT, dur) {
   if (tpl === "sparkline") { animateSparkline(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "word_cascade") { animateWordCascade(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "wire_dispatch") { animateWireDispatch(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "panes") { animatePanes(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
 
   const children = el.children;
   let staggerSlot = 0;
@@ -1963,7 +2120,7 @@ function animateSparkline(el, t, dur) {
     eyebrow.style.opacity = e.toFixed(3);
     eyebrow.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
   }
-  const drawStart = 0.28, drawDur = 1.15;
+  const drawStart = 0.10, drawDur = 1.6;
   const k = easeInOutCubic(clamp01((t - drawStart) / drawDur));
   if (path) {
     path.style.opacity = 1;
@@ -1979,12 +2136,25 @@ function animateSparkline(el, t, dur) {
   }
   const landAt = drawStart + drawDur;
   if (value) {
-    const local = t - landAt + 0.18;
-    if (local < 0) { value.style.opacity = 0; value.style.transform = "scale(0.94)"; }
+    // the number climbs WITH the curve: constant on-screen motion, and the
+    // stat lands exactly when the line reaches its endpoint
+    if (!value.dataset.vTarget) {
+      const m = (value.textContent || "").match(/^([\d.]+)(.*)$/);
+      value.dataset.vTarget = m ? m[1] : "";
+      value.dataset.vSuffix = m ? m[2] : "";
+      value.dataset.vDec = m && m[1].includes(".") ? String(m[1].split(".")[1].length) : "0";
+    }
+    if (t < drawStart) { value.style.opacity = 0; value.style.transform = "scale(0.94)"; }
     else {
-      const e = easeOutBack(Math.min(1, local / 0.40));
-      value.style.opacity = easeOut(Math.min(1, local / 0.40)).toFixed(3);
-      value.style.transform = `scale(${(0.94 + 0.06 * e).toFixed(3)})`;
+      value.style.opacity = easeOut(clamp01((t - drawStart) / 0.35)).toFixed(3);
+      const target = parseFloat(value.dataset.vTarget || "0");
+      if (target > 0) {
+        const shown = (target * k).toFixed(parseInt(value.dataset.vDec, 10));
+        const text = shown + (value.dataset.vSuffix || "");
+        if (value.textContent !== text) value.textContent = text;
+      }
+      const eb = easeOutBack(clamp01((t - landAt + 0.1) / 0.4));
+      value.style.transform = `scale(${(0.94 + 0.06 * (t > landAt - 0.1 ? eb : 0)).toFixed(3)})`;
     }
   }
   if (caption) {
@@ -2067,9 +2237,59 @@ function animateWireDispatch(el, t, dur) {
   }
 }
 
+function animatePanes(el, t, dur) {
+  const eyebrow = el.querySelector(".panes-eyebrow");
+  const grid = el.querySelector(".panes-grid");
+  if (grid) grid.style.opacity = 1;
+  if (eyebrow) {
+    const e = easeOut(clamp01(t / 0.30));
+    eyebrow.style.opacity = e.toFixed(3);
+    eyebrow.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
+  }
+  const panes = el.querySelectorAll(".pane");
+  for (let i = 0; i < panes.length; i++) {
+    const start = 0.18 + i * 0.22;
+    const local = t - start;
+    const pane = panes[i];
+    if (local < 0) {
+      pane.style.opacity = 0;
+      pane.style.transform = "translateY(3%) scale(0.97)";
+    } else {
+      const k = clamp01(local / 0.42);
+      pane.style.opacity = easeOut(k).toFixed(3);
+      const eb = easeOutBack(k);
+      pane.style.transform = `translateY(${(3 * (1 - eb)).toFixed(2)}%) scale(${(0.97 + 0.03 * eb).toFixed(3)})`;
+    }
+    // typed activity lines inside each pane, staggered so something is
+    // always typing somewhere in the grid
+    const lines = pane.querySelectorAll(".pane-line");
+    for (let j = 0; j < lines.length; j++) {
+      const lineStart = start + 0.35 + j * 0.5 + i * 0.30;
+      lines[j].style.opacity = t - lineStart < 0 ? 0 : 1;
+      typeText(lines[j], t, lineStart, 17);
+    }
+    // the state flip: a pane changes status mid-scene (the product moment)
+    const flipTo = pane.dataset.flipTo;
+    if (flipTo) {
+      const flipT = parseFloat(pane.dataset.flipAt || "0.7") * dur;
+      const badge = pane.querySelector(".pane-badge");
+      if (t >= flipT) {
+        if (!pane.classList.contains("flipped")) pane.classList.add("flipped");
+        pane.style.setProperty("--state-color", pane.dataset.flipColor);
+        if (badge && badge.textContent !== flipTo) badge.textContent = flipTo;
+      } else {
+        pane.classList.remove("flipped");
+        pane.style.removeProperty("--state-color");
+        if (badge && badge.textContent !== badge.dataset.badge) badge.textContent = badge.dataset.badge;
+      }
+    }
+  }
+}
+
 function hideScene(i) {
   const el = sceneEls[i];
   el.style.opacity = 0;
+  el.style.animationDelay = "0s";
   walkReset(el);
 }
 function walkReset(node) {
@@ -2302,6 +2522,8 @@ async function play() {
     }
   }
   startedAt = performance.now() + 150;
+  // absolute epoch-ms of animation t=0, so the recorder can trim exactly
+  window.__bvT0abs = performance.timeOrigin + startedAt;
   setTimeout(() => { raf = requestAnimationFrame(tick); }, 150);
 }
 
@@ -2354,7 +2576,7 @@ def build_html(spec):
 {scenes_html}
   </div>
   {held_html}
-  <div class="lighting-arc"></div>
+  <div class="lighting-arc"><div class="la-warm"></div><div class="la-cool"></div></div>
   <div class="emphasize-flash" aria-hidden="true"></div>
   <div class="texture">
     <div class="texture-grain"></div>

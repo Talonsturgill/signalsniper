@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-01",
+  "project": "herdr",
+  "question": "What world does herdr live in, and what video would make its creator repost it and a stranger stop scrolling",
+  "concepts": [
+    {
+      "name": "MISSION CONTROL",
+      "world": "A dark operations room. Four AI agents grind in parallel panes. You are the controller. The feeling is calm command over chaos.",
+      "arc": "wire-report cold open sets the world, the live pane grid breathes (typing, status lights), one pane flips blocked-red mid-scene, the save plays out in a real terminal exchange, positioning against tmux, the receipts, the count, the command close.",
+      "money_shot": "the count-up landing while the viewer still remembers the red flip it earned",
+      "why_it_wins": "It is the product truth told diegetically. Every beat SHOWS the tool doing its one job (seeing and saving stuck agents). Uses status-color world-building, a red-alert event, a blue save flash, and a two-tone split so the color world changes every scene.",
+      "risks": "dense; needs strict cadence so no beat exceeds ~4.5s"
+    },
+    {
+      "name": "THE SHEPHERD",
+      "world": "Pastoral metaphor: agents as a flock, herdr as the crook. Word-cascade poetry, a diagram of one shepherd and many sheep-nodes.",
+      "why_not": "Cute over true. The metaphor tells; it never shows the actual screen a developer would live in. Weaker repost pull for a terminal-native audience."
+    },
+    {
+      "name": "SPLIT-SCREEN DAY",
+      "world": "A before/after narrative: four scattered tabs vs one herdr view, told entirely in split scenes.",
+      "why_not": "One template carrying a whole video is the exact monotony we are correcting. Keeps the compare beat only."
+    }
+  ],
+  "picked": "MISSION CONTROL",
+  "wow_bets": [
+    "a pane flipping blocked-red MID-SCENE with a shake, the first time a tribute scene has an event inside it",
+    "a real intervention typed in the terminal (attach, approve, back to work)",
+    "color world that moves: status greens and ambers, a red alert, a full herdr-blue flash, a two-tone split",
+    "thirty seconds, eight scenes, nothing on screen ever still"
+  ]
+}
