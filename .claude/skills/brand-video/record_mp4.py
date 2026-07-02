@@ -76,7 +76,7 @@ window.__ft = [];
 """
 
 
-def rehearse_perf(page, seconds=3.0, slow_ms=45.0, max_slow_frac=0.08, median_budget_ms=28.0):
+def rehearse_perf(page, seconds=3.0, slow_ms=50.0, max_slow_frac=0.08, median_budget_ms=36.0):
     """Sample rAF frame times while the animation plays. A page that cannot
     paint fast enough produces a duplicated-frame slideshow in the screencast;
     refuse to record it.

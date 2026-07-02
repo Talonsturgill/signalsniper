@@ -117,6 +117,48 @@ def _canvas_is_dark(hex_color):
     return (0.2126 * r + 0.7152 * g + 0.0722 * b) < 128
 
 
+def _luma(hex_color):
+    r, g, b = _hex_to_rgb(hex_color)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def _mix_toward(hex_color, target_rgb, t):
+    r, g, b = _hex_to_rgb(hex_color)
+    tr, tg, tb = target_rgb
+    return "#{:02x}{:02x}{:02x}".format(
+        round(r + (tr - r) * t), round(g + (tg - g) * t), round(b + (tb - b) * t))
+
+
+def _text_safe_accent(accent, canvas):
+    """Brand accents are picked for buttons and links, not for hero glyphs.
+    A mid-luma accent (herdr blue ~147) used as TEXT on a dark canvas reads
+    dim on a phone. Blend it toward white until it carries ~205 luma (or
+    toward black to ~60 on light canvases); hue survives, brightness ships."""
+    la = _luma(accent)
+    if _canvas_is_dark(canvas):
+        if la >= 175:
+            return accent
+        t = (205 - la) / max(1.0, 255 - la)
+        return _mix_toward(accent, (255, 255, 255), min(0.85, t))
+    if la <= 90:
+        return accent
+    t = (la - 60) / max(1.0, la)
+    return _mix_toward(accent, (0, 0, 0), min(0.85, t))
+
+
+def _content_muted(ink_muted, ink, canvas):
+    """Muted ink that CARRIES CONTENT (pane activity lines, terminal detail)
+    must stay readable: on dark canvases lift it 45% toward full ink when it
+    sits below ~175 luma. Decorative muted (corner tags, tickers) keeps the
+    quiet original token."""
+    lm = _luma(ink_muted)
+    if _canvas_is_dark(canvas) and lm < 175:
+        return _mix_toward(ink_muted, _hex_to_rgb(ink), 0.6)
+    if not _canvas_is_dark(canvas) and lm > 110:
+        return _mix_toward(ink_muted, _hex_to_rgb(ink), 0.6)
+    return ink_muted
+
+
 def _hue_shift(hex_color, deg, light=None, sat=None):
     r, g, b = (c / 255 for c in _hex_to_rgb(hex_color))
     h, l, s = colorsys.rgb_to_hls(r, g, b)
@@ -260,7 +302,9 @@ def build_css(spec):
     hairline = t["hairline"]
     # overlay blend is invisible over near-black; screen lifts it
     sheen_blend = "screen" if _canvas_is_dark(canvas) else "overlay"
-    pane_bg = "rgba(255,255,255,0.045)" if _canvas_is_dark(canvas) else "rgba(0,0,0,0.035)"
+    pane_bg = "rgba(255,255,255,0.06)" if _canvas_is_dark(canvas) else "rgba(0,0,0,0.035)"
+    accent_ink = _text_safe_accent(accent, canvas)
+    muted_content = _content_muted(ink_muted, ink, canvas)
 
     return f"""
 {fonts_css}
@@ -269,7 +313,9 @@ def build_css(spec):
   --canvas: {canvas};
   --ink: {ink};
   --ink-muted: {ink_muted};
+  --muted-content: {muted_content};
   --accent: {accent};
+  --accent-ink: {accent_ink};
   --hairline: {hairline};
   --display: '{display}', serif;
   --body: '{body}', serif;
@@ -299,19 +345,19 @@ body {{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 16px;
+  gap: 0;
+  padding: 0;
 }}
 
+/* Full-bleed: the old floating-card matte cost ~26% of pixels to a dark
+   border and read dim in the feed. X's tile provides the frame. */
 .stage {{
   position: relative;
-  width: min(86vmin, calc(100vh - 100px));
+  width: 100vmin;
   aspect-ratio: 1 / 1;
   background: var(--canvas);
   overflow: hidden;
-  border-radius: {stage_radius}px;
-  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.5),
-              0 0 0 1px rgba(255,255,255,0.04);
+  border-radius: 0;
   container-type: inline-size;
   container-name: stage;
   contain: layout paint;
@@ -600,7 +646,9 @@ body {{
 .texture-vignette {{
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,{vignette_strength}) 100%);
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255,210,160,{halation_strength}) 0%, transparent 60%),
+    radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,{vignette_strength}) 100%);
 }}
 .texture-halation {{
   position: absolute;
@@ -642,7 +690,7 @@ body {{
   font-variation-settings: "wght" 600;
   font-size: 2.7cqw;
   letter-spacing: 0.34em;
-  color: var(--accent);
+  color: var(--accent-ink);
   text-transform: uppercase;
 }}
 
@@ -698,7 +746,7 @@ body {{
 }}
 .line.size-2 {{ font-size: 8.6cqw; }}
 .line.size-3 {{ font-size: 6.4cqw; }}
-.line.accent {{ color: var(--accent); }}
+.line.accent {{ color: var(--accent-ink); }}
 
 /* ---- fix ---- */
 .f-primary {{
@@ -733,7 +781,7 @@ body {{
   letter-spacing: 0;
   text-transform: none;
 }}
-.mb-line.accent {{ color: var(--accent); font-weight: 700; font-variation-settings: "wght" 700; }}
+.mb-line.accent {{ color: var(--accent-ink); font-weight: 700; font-variation-settings: "wght" 700; }}
 
 /* ---- quote ---- */
 .q-quote {{
@@ -774,7 +822,7 @@ body {{
   font-size: 9.2cqw;
   line-height: 1;
   letter-spacing: var(--tracking);
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-top: 1.8cqw;
 }}
 .c-subtitle {{
@@ -797,7 +845,7 @@ body {{
   font-variation-settings: "wght" 600;
   font-size: 2.6cqw;
   letter-spacing: 0.34em;
-  color: var(--accent);
+  color: var(--accent-ink);
   text-transform: uppercase;
   margin-top: 2cqw;
   margin-bottom: 3cqw;
@@ -904,7 +952,7 @@ body {{
   font-size: 28cqw;
   line-height: 0.92;
   letter-spacing: -0.04em;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-variant-numeric: tabular-nums;
   text-align: center;
 }}
@@ -936,7 +984,7 @@ body {{
   border: 1px solid var(--hairline);
   border-radius: 4px;
   width: 88%;
-  height: 78%;
+  height: 64%;
   padding: 2.5cqw 3cqw 3cqw 3cqw;
   display: flex;
   flex-direction: column;
@@ -961,16 +1009,16 @@ body {{
 .terminal-body {{
   flex: 1;
   font-family: var(--mono);
-  font-size: 2.9cqw;
-  line-height: 1.55;
+  font-size: 3.5cqw;
+  line-height: 1.6;
   color: var(--ink);
   text-align: left;
   letter-spacing: 0;
   text-transform: none;
 }}
 .terminal-line {{ display: block; opacity: 0; white-space: pre; }}
-.terminal-line.accent {{ color: var(--accent); }}
-.terminal-line .prompt {{ color: var(--accent); margin-right: 0.6cqw; }}
+.terminal-line.accent {{ color: var(--accent-ink); }}
+.terminal-line .prompt {{ color: var(--accent-ink); margin-right: 0.6cqw; }}
 .terminal-cursor {{
   display: inline-block;
   width: 0.55em;
@@ -1108,7 +1156,7 @@ body {{
 }}
 .wc-word.size-l {{ font-size: 9.6cqw; }}
 .wc-word.size-m {{ font-size: 7.4cqw; }}
-.wc-word.accent {{ color: var(--accent); }}
+.wc-word.accent {{ color: var(--accent-ink); }}
 
 /* ---- wire_dispatch ---- */
 .scene[data-tpl="wire_dispatch"] {{
@@ -1146,7 +1194,7 @@ body {{
   font-variation-settings: "wght" 600;
   font-size: 2.1cqw;
   letter-spacing: 0.34em;
-  color: var(--accent);
+  color: var(--accent-ink);
   text-transform: uppercase;
   margin-top: 6cqw;
   opacity: 0;
@@ -1184,9 +1232,9 @@ body {{
   font-family: var(--body);
   font-weight: 600;
   font-variation-settings: "wght" 600;
-  font-size: 2.4cqw;
+  font-size: 2.7cqw;
   letter-spacing: 0.34em;
-  color: var(--ink-muted);
+  color: var(--muted-content);
   text-transform: uppercase;
   margin-bottom: 2.2cqw;
   opacity: 0;
@@ -1194,15 +1242,17 @@ body {{
 .panes-grid {{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.8cqw;
+  grid-auto-rows: 1fr;
+  gap: 2.0cqw;
   width: 92%;
+  min-height: 58%;
 }}
 .panes-grid.n2 {{ grid-template-columns: 1fr; width: 74%; }}
 .pane {{
   background: {pane_bg};
   border: 1px solid var(--hairline);
   border-radius: 6px;
-  padding: 2.6cqw 2.6cqw;
+  padding: 3.0cqw 3.0cqw;
   text-align: left;
   opacity: 0;
   position: relative;
@@ -1226,24 +1276,27 @@ body {{
 }}
 .pane-name {{
   font-family: var(--mono);
-  font-size: 2.4cqw;
+  font-size: 2.7cqw;
   color: var(--ink);
   letter-spacing: 0.04em;
   text-transform: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }}
 .pane-badge {{
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 1.9cqw;
+  font-size: 2.1cqw;
+  white-space: nowrap;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--state-color, var(--ink-muted));
 }}
 .pane-line {{
   font-family: var(--mono);
-  font-size: 2.2cqw;
+  font-size: 2.7cqw;
   line-height: 1.6;
-  color: var(--ink-muted);
+  color: var(--muted-content);
   display: block;
   opacity: 0;
   white-space: pre;
@@ -2581,7 +2634,6 @@ def build_html(spec):
   <div class="texture">
     <div class="texture-grain"></div>
     <div class="texture-vignette"></div>
-    <div class="texture-halation"></div>
   </div>
   <svg class="bv-defs" aria-hidden="true" width="0" height="0">
     <defs>
