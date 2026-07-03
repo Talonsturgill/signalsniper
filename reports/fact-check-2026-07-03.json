@@ -46,6 +46,16 @@
       ],
       "verified": true,
       "as_of": "2026-07-03"
+    },
+    {
+      "claim": "AgentShield scans agent configurations for vulnerabilities, misconfigurations, and injection risks, invoked with /security-scan",
+      "sources": [
+        "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md",
+        "https://medium.com/@tentenco/everything-claude-code-inside-the-82k-star-agent-harness-thats-dividing-the-developer-community-4fe54feccbc1"
+      ],
+      "verified": true,
+      "as_of": "2026-07-03",
+      "note": "Added same-day after operator feedback. The originally shipped terminal scene typed 'ecc security-review', which does NOT exist; the real invocation is the /security-scan slash command. Corrected video uses only README-verified commands."
     }
   ]
 }

@@ -243,6 +243,13 @@ def extract(url):
     tokens["hairline"] = hairline
 
     named = sum(1 for r in ("canvas", "ink", "accent") if "css var" in provenance.get(r, ""))
+    # meta theme-color is an explicit author declaration of the brand canvas —
+    # as strong a signal as a named CSS variable. Before this counted, ecc.tools
+    # (theme-color #0a0a12 + a saturated gold accent) scored "low" and the
+    # 2026-07-03 run threw away a striking native palette for a library preset.
+    if "meta theme-color" in provenance.get("canvas", ""):
+        named += 1
+        notes.append("confidence: meta theme-color counted as an author-declared signal")
     confidence = "high" if named >= 3 else ("medium" if named >= 1 else "low")
     return {
         "tokens": {k: tokens[k] for k in ("canvas", "ink", "ink_muted", "accent", "hairline")},

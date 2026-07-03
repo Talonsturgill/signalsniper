@@ -1,0 +1,35 @@
+{
+  "date": "2026-07-03",
+  "project_url": "https://github.com/affaan-m/ECC",
+  "study_note": "Written same-day after operator feedback: the shipped video typed 'ecc security-review', a command that does not exist. This study reads the actual README; the corrected terminal scene draws only from commands[] below. Future runs write this file at Step 4.5, BEFORE any scene copy exists.",
+  "components": [
+    "ECC",
+    "claude code",
+    "codex",
+    "cursor",
+    "opencode",
+    "AgentShield",
+    "67 specialized subagents",
+    "277 workflow skills",
+    "92 legacy commands",
+    "34 rules",
+    "8 hook event types",
+    "14 configured MCP servers"
+  ],
+  "commands": [
+    {"text": "/plugin install ecc@ecc", "source": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"},
+    {"text": "/security-scan", "source": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"},
+    {"text": "/ecc:plan", "source": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"},
+    {"text": "/code-review", "source": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"},
+    {"text": "/evolve", "source": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"},
+    {"text": "/instinct-status", "source": "https://raw.githubusercontent.com/affaan-m/ECC/main/README.md"}
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "AgentShield scans a Claude Code configuration for vulnerabilities, misconfigurations, and injection risks",
+    "AgentShield runs via /security-scan in Claude Code or as a GitHub Action in CI",
+    "the config layer ports across Claude Code, Cursor, Codex CLI, and OpenCode",
+    "ships 67 specialized subagents and 277 workflow skills"
+  ],
+  "surprising_detail": "AgentShield, the security-scanning layer, was itself built at a hackathon (Cerebral Valley x Anthropic, Feb 2026) and ships with 1282 tests, 98% coverage, and 102 static analysis rules per the README."
+}
