@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-03",
+  "brand_slug": null,
+  "preset_slug": "claude",
+  "framework": "RECEIPT",
+  "rationale_one_line": "ECC's own site read low-confidence on extraction, but the story is literally 'Everything Claude Code' -- the cream-and-terracotta Claude preset is the earned, on-theme fallback, not a random pick.",
+  "writing_tone_notes": "Technical and direct, build-in-public. Let the numbers carry the praise: hackathon win, viral thread, star count. No hype adjectives.",
+  "do_rules": [
+    "Lead with the origin story (hackathon -> viral thread -> open source) as the differentiator, growth number as the hook",
+    "Show the cross-tool reach (Claude Code, Codex, Cursor, OpenCode) as a diagram or ticked list, not a claim",
+    "Count up the star number over the sparkline draw"
+  ],
+  "dont_rules": [
+    "Don't say '225k stars' in both the tweet and a scene card",
+    "Don't editorialize about the 'dividing the developer community' angle -- stay admiring, not comparative",
+    "No question-hook captions"
+  ]
+}

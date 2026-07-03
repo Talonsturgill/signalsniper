@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-28",
-    "brand_slug": null,
-    "aesthetic_slug": "geominimal",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/thedotmack/claude-mem"
-  },
-  {
     "date": "2026-05-29",
     "brand_slug": null,
     "aesthetic_slug": "editorial-paper",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "strix-native",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/usestrix/strix"
+  },
+  {
+    "date": "2026-07-03",
+    "brand_slug": null,
+    "aesthetic_slug": "claude",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/affaan-m/ECC"
   }
 ]

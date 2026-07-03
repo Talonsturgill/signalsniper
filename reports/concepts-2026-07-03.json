@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-03",
+  "project": "ECC (Everything Claude Code)",
+  "concepts": [
+    {
+      "name": "THE RECEIPT",
+      "world": "A clean, cream 'documentation' world -- the video reads like the project's own changelog come to life: numerals landing, a growth curve drawing itself, a diagram of the four harnesses it now runs on.",
+      "shows": "Open on the wordmark. Cut to the hackathon receipt (8 hours / $15k, typed like a stat card). Cut to a diagram: one config, four arrows out to Claude Code / Codex / Cursor / OpenCode. Cut to a terminal invoking an ECC agent. Money shot: the star sparkline drawing from the March baseline up to 225k+ with a count-up numeral landing on the peak. Inverted flash beat on the single line that matters most ('still climbing'). Close rhymes with the open wordmark.",
+      "money_shot": "the sparkline draw + big_number count-up landing together at the peak, accent-colored curve against cream",
+      "why_creator_reposts": "It's literally a scoreboard of his own numbers rendered better than his own README table -- vain in the best way, and it doesn't editorialize or invent anything he hasn't already said publicly.",
+      "why_stranger_stops": "A number visibly climbing on a paper-clean background reads as 'this is real and provable' in the first two seconds, before any text is read.",
+      "light_per_scene": "type-mass and diagram rules ARE the light source on cream; the one dark flash beat is the only inversion, used once at the emotional peak line."
+    },
+    {
+      "name": "ORIGIN STORY",
+      "world": "A build-in-public dispatch: eight hours, one hackathon table, one Claude Code window -- told in real time like a dateline ticker.",
+      "shows": "wire_dispatch ticker types '8 HOURS / NYC / $15,000' as a dateline. Cut to a recreated terminal building zenith.chat unattended. Cut to the viral thread card (900k views ticking up). Cut to the open-source moment: repo card flipping from private to public. Close on the current star count.",
+      "money_shot": "the 900k-views counter landing inside the thread card, camera pushing in",
+      "why_creator_reposts": "It's his own founder myth, dramatized -- the kind of clip a builder wants pinned to their profile.",
+      "why_stranger_stops": "The '8 hours, zero manual code, hackathon' hook is a strong enough single sentence to work even muted.",
+      "light_per_scene": "dispatch ticker and terminal both carry their own bright mono type; the thread-card scene needs a deliberately larger view count numeral to clear the luma gate at that camera distance."
+    },
+    {
+      "name": "THE HARNESS",
+      "world": "An exploded-diagram world -- ECC as a piece of infrastructure, cutaway and labeled like an engineering schematic.",
+      "shows": "Open on the wordmark over a faint schematic grid. Cut through labeled layers: agents, skills, memory, AgentShield security scan (a lock icon ticking through OWASP-style checks). Cut to the four-tool diagram. Close on the star count as a small final stat, understated.",
+      "money_shot": "the AgentShield security-scan beat, checks ticking green one by one",
+      "why_creator_reposts": "flatters the 'research-first, security-first' positioning he explicitly cares about, not just the vanity metric.",
+      "why_stranger_stops": "security-scanning-for-agents is a genuinely underserved angle most agent-tooling content ignores.",
+      "light_per_scene": "diagram scenes carry their own light via rule-lines and the one accent node; risk is the schematic reading gray-on-gray if the accent node isn't sized generously."
+    }
+  ],
+  "chosen": "THE RECEIPT",
+  "chosen_rationale": "RECEIPT is the framework already locked in from the anti-repeat check, and 'THE RECEIPT' concept is the tightest fit for it: numbers ARE the thesis (star count, hackathon economics, cross-tool count), it gives the sparkline+big_number money shot the framework was built for, and it stays fully admiring without commenting on the 'dividing the developer community' subplot. ORIGIN STORY is a strong secondary angle -- it becomes the Gmail Why-this-one instead, so nothing is wasted.",
+  "wow_bets": [
+    "star sparkline drawing live from ~82k (March) to 225k+ (now) with a count-up landing exactly on the money shot",
+    "one inverted (dark-field) beat as the sole polarity flip, timed to the thesis line",
+    "four-tool diagram (Claude Code / Codex / Cursor / OpenCode) as a real drawn diagram, not a bullet list"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "tokens": {
+    "canvas": "#0a0a12",
+    "ink": "#f2f0eb",
+    "ink_muted": "#908f8f",
+    "accent": "#ffd700",
+    "hairline": "#2c2c32"
+  },
+  "provenance": {
+    "canvas": "meta theme-color",
+    "ink": "frequency heuristic (lightest common) (softened from pure white)",
+    "accent": "frequency heuristic (most saturated)",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.85)"
+  },
+  "confidence": "low",
+  "dark_canvas": true,
+  "source_url": "https://ecc.tools",
+  "notes": []
+}
