@@ -1,0 +1,74 @@
+{
+  "date": "2026-07-03",
+  "brand_slug": null,
+  "aesthetic_slug": "claude",
+  "framework": "RECEIPT",
+  "source_url": "https://ecc.tools",
+  "provenance_note": "ecc.tools brand_extract.py ran confidence=low (heuristic frequency guess, no confirmed CSS variables); falling back per routine step 6.2/6.3 to the 'claude' preset -- earned rather than arbitrary, since the project IS Everything Claude Code.",
+  "tokens": {
+    "canvas": "#F5EFE3",
+    "ink": "#191919",
+    "ink_muted": "#7C7C7C",
+    "accent": "#8B4226",
+    "hairline": "#E2DAC8"
+  },
+  "provenance": {
+    "canvas": "claude preset cream paper",
+    "ink": "claude preset near-black ink",
+    "accent": "claude preset terracotta, deepened further (#CC785C -> #8B4226) so the flash beat's accent-filled background reads unambiguously dark for the polarity-aware readability gate, while still clearing accent/canvas contrast well above the 3.0 floor",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas)"
+  },
+  "fonts": {
+    "display": "IBMPlexSerif",
+    "body": "Inter",
+    "italic": "IBMPlexSerif"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.018,
+    "case": "preserve",
+    "italic_descriptors": true
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.4,
+    "scene_out_s": 0.27,
+    "stagger_s": 0.27
+  },
+  "layout": {
+    "padding_pct": 8,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 8
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.16,
+    "halation": 0.04,
+    "lighting_arc": 0.28
+  },
+  "background": {
+    "style": "none",
+    "intensity": 0.0
+  },
+  "audio_palette": "ambient",
+  "accent_contrast_min": 3.0,
+  "readability": {
+    "canvas_polarity": "light",
+    "ink_floor_luma": "<=60 (ink #191919 measures ~25, well clear)",
+    "accent_is_graphic_not_text": "raw #CC785C stays on dots/fills/strokes; --accent-ink (accent blended toward black to ~60 luma) used for any accent-colored hero text so it doesn't wash out on cream",
+    "muted_content_rule": "activity lines / detail rows use --muted-content (muted blended toward ink); ink_muted stays for decorative-only whispers",
+    "per_scene_light_source": {
+      "1_title": "hero wordmark in full ink weight fills ~70% of frame width -- the light source IS the type mass",
+      "2_stack_hackathon": "bold ink numerals (8 hours / $15k) at hero scale against paper",
+      "3_diagram": "diagram nodes/rules in ink with one terracotta accent node lit as the through-line; midground rule-lines carry the plate",
+      "4_terminal": "mono_block/terminal pane on a subtly darker paper plate so typed ink text keeps contrast while accent tags the prompt",
+      "5_sparkline": "sparkline drawn in accent, end-dot glow, big_number count-up in full ink -- brightest, busiest frame in the piece",
+      "6_flash_inverted": "INVERTED beat: near-black field, cream/ink-on-dark hero word -- the one polarity flip, contrast budget spent here",
+      "7_quote": "pull-quote in ink at hero scale, thin rule underneath",
+      "8_close": "wordmark rhymes with scene 1 composition for the autoloop"
+    },
+    "inverted_beat": "scene 6 (flash) flips to a dark field so the piece isn't one flat cream wash for 29s"
+  }
+}

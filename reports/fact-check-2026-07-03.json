@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-03",
+  "project_url": "https://github.com/affaan-m/ECC",
+  "claims": [
+    {
+      "claim": "225k+ GitHub stars",
+      "sources": [
+        "https://github.com/affaan-m/ECC",
+        "https://img.shields.io/github/stars/affaan-m/ECC.json"
+      ],
+      "verified": true,
+      "as_of": "2026-07-03"
+    },
+    {
+      "claim": "900,000+ views on the launch thread on X",
+      "sources": [
+        "https://medium.com/@tentenco/everything-claude-code-inside-the-82k-star-agent-harness-thats-dividing-the-developer-community-4fe54feccbc1",
+        "https://www.claudehub.fr/en/blog/hackathon-claude-code-everything-repo/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-03"
+    },
+    {
+      "claim": "Built in 8 hours at the Anthropic x Forum Ventures hackathon in NYC for $15,000 in API credits",
+      "sources": [
+        "https://medium.com/@tentenco/everything-claude-code-inside-the-82k-star-agent-harness-thats-dividing-the-developer-community-4fe54feccbc1",
+        "https://www.claudehub.fr/en/blog/hackathon-claude-code-everything-repo/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-03"
+    },
+    {
+      "claim": "Runs across Claude Code, Codex, Cursor, and OpenCode",
+      "sources": [
+        "https://github.com/affaan-m/ECC",
+        "https://ecc.tools"
+      ],
+      "verified": true,
+      "as_of": "2026-07-03"
+    },
+    {
+      "claim": "60+ specialized agents and 250+ skills",
+      "sources": [
+        "https://github.com/affaan-m/ECC",
+        "https://ecc.tools"
+      ],
+      "verified": true,
+      "as_of": "2026-07-03"
+    }
+  ]
+}

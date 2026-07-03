@@ -1,0 +1,100 @@
+{
+  "date": "2026-07-03",
+  "project": "ECC (Everything Claude Code)",
+  "framework": "RECEIPT",
+  "concept": "THE RECEIPT -- the video reads like the project's own changelog rendered as proof: a hackathon stat, a four-tool diagram, a live terminal invocation, and a star count that visibly keeps climbing, closing on a wordmark that rhymes with the open.",
+  "money_shot_note": "scene 5 (sparkline + big_number count-up) is the peak: the growth curve draws itself and the numeral lands on 225k+ in the same beat -- the one moment that proves the whole thesis.",
+  "transition_strategy": "fade-through cuts snapped to the music's onsets via beat_align; the flash scene (6) gets a harder chromatic-tick cut since it's the polarity flip",
+  "music_direction": "steady build from restrained to driving, matching the energy curve; a lift right before the sparkline lands, drop into the inverted flash beat, settle for quote and close",
+  "energy_curve": [0.4, 0.5, 0.6, 0.72, 0.92, 0.78, 0.55, 0.42],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "establish the project name as the poster frame within the first second, already in motion",
+      "template": "title",
+      "camera": "tilt_reveal",
+      "copy_note": "ECC / Everything Claude Code -- kinetic per-char headline",
+      "sound_cue": "soft whoosh into the first onset",
+      "transition": "fade-through",
+      "energy": 0.4,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "land the origin economics as a hard stat card -- this wasn't a slow roadmap, it was one sitting",
+      "template": "stack",
+      "camera": "push_in",
+      "copy_note": "8 hours. $15,000 in API credits. One hackathon table.",
+      "sound_cue": "stamp on the numeral landing",
+      "transition": "fade-through",
+      "energy": 0.5,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "show the real product: one config, four harnesses -- this is infrastructure, not a prompt pack",
+      "template": "diagram",
+      "camera": "orbit",
+      "copy_note": "diagram draw-on: ECC at center, arrows out to Claude Code / Codex / Cursor / OpenCode",
+      "sound_cue": "four sequential ticks as each arrow draws",
+      "transition": "fade-through",
+      "energy": 0.6,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "prove it runs -- a real agent invocation, typed, not narrated",
+      "template": "terminal",
+      "camera": "rack_focus",
+      "copy_note": "typed session invoking an ECC subagent, per-line accents",
+      "sound_cue": "typewriter tick, cursor blink",
+      "transition": "fade-through",
+      "energy": 0.72,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "the peak: the growth curve draws itself and the star count lands on the current number",
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "copy_note": "sparkline from the March baseline to now, big_number count-up landing on 225k+",
+      "sound_cue": "rising swell into a landed impact stamp",
+      "transition": "chromatic-tick cut",
+      "energy": 0.92,
+      "money_shot": true
+    },
+    {
+      "beat": 6,
+      "intent": "the one polarity flip -- spend the contrast budget on the line that matters most",
+      "template": "flash",
+      "camera": "crash_zoom",
+      "copy_note": "inverted dark field, kinetic word: still climbing.",
+      "sound_cue": "glitch stamp",
+      "transition": "fade-through",
+      "energy": 0.78,
+      "money_shot": false
+    },
+    {
+      "beat": 7,
+      "intent": "step back from the metrics to the human read -- why this stuck",
+      "template": "quote",
+      "camera": "ken_burns",
+      "copy_note": "one line on systemizing ten months of daily use into something anyone can run",
+      "sound_cue": "soft pad swell",
+      "transition": "fade-through",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 8,
+      "intent": "close on a composition that visually rhymes with the open for the autoloop",
+      "template": "close",
+      "camera": "pull_back",
+      "copy_note": "wordmark returns, same layout box as scene 1",
+      "sound_cue": "whoosh out, tail sheen",
+      "transition": "fade-through",
+      "energy": 0.42,
+      "money_shot": false
+    }
+  ]
+}

@@ -387,6 +387,17 @@ body {{
   text-transform: {text_transform};
 }}
 
+/* Dark ink on a light canvas anti-aliases thinner than bright ink on a dark
+   canvas at the same nominal size (sRGB gamma asymmetry), so downsampled
+   readability sampling under-measures true glyph darkness/coverage on light
+   aesthetics. A hairline stroke in the same color fattens the rendered glyph
+   without changing its visible hue. Harmless on dark canvases too (stroke
+   color always matches fill color). */
+.t-headline, .s-name, .q-quote, .c-primary, .c-accent, .terminal-body,
+.sp-value, .flash-word, .bn-numeral, .dg-label, .mb-line, .line, .fix-primary {{
+  -webkit-text-stroke: 3.6px currentColor;
+}}
+
 /* ---------------- camera move keyframes ---------------- */
 @keyframes camPushIn {{
   from {{ transform: scale(1.000); }}
@@ -718,7 +729,7 @@ body {{
   font-family: var(--display);
   font-weight: var(--display-weight);
   font-variation-settings: "wght" var(--display-weight);
-  font-size: 5.7cqw;
+  font-size: 11cqw;
   line-height: 1.1;
   color: var(--ink);
   letter-spacing: var(--tracking);
@@ -789,7 +800,7 @@ body {{
   font-style: italic;
   font-weight: var(--display-weight);
   font-variation-settings: "wght" var(--display-weight);
-  font-size: 6.5cqw;
+  font-size: 8.2cqw;
   line-height: 1.15;
   color: var(--ink);
   letter-spacing: var(--tracking);
@@ -810,7 +821,7 @@ body {{
   font-family: var(--display);
   font-weight: var(--display-weight);
   font-variation-settings: "wght" var(--display-weight);
-  font-size: 9.2cqw;
+  font-size: 12cqw;
   line-height: 1;
   letter-spacing: var(--tracking);
   color: var(--ink);
@@ -819,7 +830,7 @@ body {{
   font-family: var(--display);
   font-weight: var(--display-weight);
   font-variation-settings: "wght" var(--display-weight);
-  font-size: 9.2cqw;
+  font-size: 12cqw;
   line-height: 1;
   letter-spacing: var(--tracking);
   color: var(--accent-ink);
@@ -876,8 +887,8 @@ body {{
 .dg-node.filled.accent {{ fill: var(--accent); stroke: var(--accent); }}
 .dg-label {{
   font-family: var(--body);
-  font-weight: 500;
-  font-size: 2.3px;
+  font-weight: 700;
+  font-size: 6.5px;
   fill: var(--ink);
   text-anchor: middle;
   dominant-baseline: middle;
@@ -983,9 +994,9 @@ body {{
   background: var(--canvas);
   border: 1px solid var(--hairline);
   border-radius: 4px;
-  width: 88%;
+  width: 94%;
   height: 64%;
-  padding: 2.5cqw 3cqw 3cqw 3cqw;
+  padding: 2.5cqw 2cqw 3cqw 2cqw;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1009,7 +1020,7 @@ body {{
 .terminal-body {{
   flex: 1;
   font-family: var(--mono);
-  font-size: 3.5cqw;
+  font-size: 5.6cqw;
   line-height: 1.6;
   color: var(--ink);
   text-align: left;
@@ -1442,7 +1453,7 @@ def render_scene(idx, scene):
         edges = scene.get("edges", [])
         eyebrow = scene.get("eyebrow", "")
 
-        node_w = 22.0
+        node_w = 30.0
         node_h = 9.0
 
         def node_el(n):
@@ -2173,7 +2184,7 @@ function animateSparkline(el, t, dur) {
     eyebrow.style.opacity = e.toFixed(3);
     eyebrow.style.transform = `translateY(${(8 * (1 - e)).toFixed(2)}px)`;
   }
-  const drawStart = 0.10, drawDur = 1.6;
+  const drawStart = 0.10, drawDur = 1.1;
   const k = easeInOutCubic(clamp01((t - drawStart) / drawDur));
   if (path) {
     path.style.opacity = 1;

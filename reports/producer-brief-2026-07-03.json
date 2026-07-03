@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-03",
+  "project": "ECC (Everything Claude Code)",
+  "project_url": "https://github.com/affaan-m/ECC",
+  "audience": "builders who run Claude Code / Codex / Cursor daily and are deciding whether to adopt a shared agent-config layer instead of hand-rolling their own",
+  "single_takeaway": "One builder turned ten months of daily Claude Code use into a cross-tool agent harness that's now climbing past 225k stars.",
+  "viewer_action": "star the repo / quote the video",
+  "desired_feeling": "quiet respect for someone who systemized a real, tedious problem instead of shipping a gimmick",
+  "tone_adjectives": ["precise", "earned", "unshowy"],
+  "references": ["a well-kept engineering changelog", "a hackathon demo reel", "a stock-ticker receipt"],
+  "mandatories": "claude preset tokens (cream/ink/terracotta) sourced per brand-spec-2026-07-03.json, CC BY attribution for the music bed, @affaanmustafa tagged",
+  "success_criteria": "Affaan quote-posts it; the story reads fully muted; every numeral traces to fact-check-2026-07-03.json",
+  "platform": "x"
+}
