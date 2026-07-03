@@ -1,7 +1,7 @@
 {
-  "raw_unique_ratio": 0.99,
+  "raw_unique_ratio": 0.948,
   "raw_max_interior_dup_ms": 40,
-  "raw_min_unique_per_sec": 22,
+  "raw_min_unique_per_sec": 17,
   "scene_durations": [
     3.3,
     3.04,
@@ -28,14 +28,14 @@
     {
       "scene": 2,
       "polarity": "light",
-      "ink": 65,
-      "spread": 182
+      "ink": 67,
+      "spread": 180
     },
     {
       "scene": 3,
       "polarity": "light",
-      "ink": 69,
-      "spread": 178
+      "ink": 67,
+      "spread": 180
     },
     {
       "scene": 4,
@@ -52,26 +52,26 @@
     {
       "scene": 6,
       "polarity": "light",
-      "ink": 63,
-      "spread": 184
+      "ink": 62,
+      "spread": 185
     },
     {
       "scene": 7,
       "polarity": "light",
-      "ink": 66,
-      "spread": 181
+      "ink": 65,
+      "spread": 182
     }
   ],
   "chroma_cast": {
-    "final_RG": 3.73,
-    "final_BG": -11.34,
-    "raw_RG": 6.37,
-    "raw_BG": -11.59
+    "final_RG": 3.32,
+    "final_BG": -11.29,
+    "raw_RG": 6.29,
+    "raw_BG": -11.54
   },
   "frames": 678,
   "longest_still_s": 0.04,
-  "energy_peak_pos": 0.652,
-  "poster_luma_std": 28.5,
+  "energy_peak_pos": 0.655,
+  "poster_luma_std": 28.59,
   "audio_range_db": 6.4,
   "cut_onset_median_ms": 21.9,
   "duration_s": 27.12,

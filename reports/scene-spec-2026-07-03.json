@@ -164,18 +164,23 @@
       "title": "claude code session",
       "lines": [
         {
-          "text": "ecc security-review",
+          "text": "/ecc:plan",
           "prompt": true
         },
         {
-          "text": "0 criticals, 2 warnings",
-          "prompt": false,
+          "text": "/code-review",
+          "prompt": true
+        },
+        {
+          "text": "/security-scan",
+          "prompt": true,
           "accent": true
         }
       ],
       "camera": "rack_focus",
       "duration_s": 3.6,
-      "sheen": true
+      "sheen": true,
+      "prompt_char": ">"
     },
     {
       "template": "sparkline",
@@ -207,7 +212,6 @@
     {
       "template": "quote",
       "quote": "daily habit, shared infrastructure",
-      "attribution": "affaan mustafa, creator",
       "camera": "ken_burns",
       "duration_s": 3.9
     },

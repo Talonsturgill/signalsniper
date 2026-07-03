@@ -2,6 +2,12 @@
 
 The pipeline's accumulated retro. Every run appends one entry (KEPT / KILLED / NEXT) after the merge; every run reads the whole file before making style decisions. Keep entries to three bullets — this is a memory, not a diary.
 
+## 2026-07-03 — ECC, operator feedback (same-day addendum, the substance reckoning)
+
+- KEPT: the client confirmed the video craft itself is up ("quality is much better") — the v6 light-layer gates are doing their job. And AgentShield as a topic was right: now verified in the README itself, it's ECC's config scanner, invoked with `/security-scan`.
+- KILLED (by client feedback, now by gates): a caption that was ALL scoreboard (stars + thread views, zero capability facts); a terminal beat typing `ecc security-review` — a command that does not exist (the real one is `/security-scan`; nothing in v6 ever read the repo, and fact-check only traces numerals, so an invented command passed every gate); a Gmail that shipped the first-reply mechanics NOTE without the LINK; a quote scene attributing words the creator never said; and ECC's own gold-on-black palette, discarded because `meta theme-color` counted for nothing in extractor confidence. The fixes are structural: Step 4.5 Repo Study (sourced commands or no terminal beat), `deliverables_check.py` (metric budget ≤1, capability fact required, first-reply link required, gmail HTML validated, terminal lines verified against the study, ≥2 product scenes / ≤2 growth scenes), theme-color now scores medium, and terminal scenes carry the tool's real prompt char (`>` for Claude Code).
+- NEXT: tomorrow is the first run through the substance layer — do Step 4.5 BEFORE the sit-down so the concepts grow out of what the repo actually contains; board the product beats first and place the receipt after. If extraction reads low on the primary site, try the docs URL before touching a preset.
+
 ## 2026-07-03 — ECC (ecosystem-first, the light-canvas readability reckoning)
 
 - KEPT: the `claude` preset (cream, near-black ink, terracotta accent) as the on-theme fallback when `brand_extract.py` on ecc.tools came back confidence=low -- since the project literally is "Everything Claude Code," the library preset read as earned, not lazy. The RECEIPT framework's sparkline (March-to-now star curve) plus a stack "receipt" card (8 hours, $15,000) carried the origin-story proof-over-hype thesis with zero adjectives.

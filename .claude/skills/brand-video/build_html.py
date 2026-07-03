@@ -1570,13 +1570,16 @@ def render_scene(idx, scene):
         title = scene.get("title", "")
         lines = scene["lines"]
         accent_idx = scene.get("accent_idx", -1)
+        # REPL-accurate prompt: Claude Code sessions prompt with ">", a shell
+        # with "$". Spec sets prompt_char to match the tool being shown.
+        prompt_char = scene.get("prompt_char", "$")
 
         def render_line(i, line):
             text = line["text"] if isinstance(line, dict) else line
             show_prompt = line.get("prompt", True) if isinstance(line, dict) else True
             line_accent = i == accent_idx or (isinstance(line, dict) and line.get("accent"))
             classes = "terminal-line" + (" accent" if line_accent else "")
-            prompt_html = '<span class="prompt">$</span>' if show_prompt else ""
+            prompt_html = f'<span class="prompt">{esc(prompt_char)}</span>' if show_prompt else ""
             cursor_html = '<span class="terminal-cursor"></span>' if i == len(lines) - 1 else ""
             # Prompt lines type on character by character; output lines fade in whole.
             typed = ' data-typed="1"' if show_prompt else ""
