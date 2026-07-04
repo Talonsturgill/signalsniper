@@ -1,0 +1,79 @@
+{
+  "date": "2026-07-04b",
+  "project": "video-use",
+  "brand_slug": "browser-use-native-assisted",
+  "aesthetic_slug": "browser-use-native-assisted",
+  "framework": "MANIFESTO",
+  "source_url": "https://browser-use.com",
+  "provenance_note": "brand_extract.py on browser-use.com returned confidence=high: canvas #09090b (css var --bg, zinc-950), border #27272a (css var --border), and the brand periwinkle-blue #6983c0 (css var --tw-prose-links). The extractor picked that same link-blue as ink, but at luma ~130 it is a mid-luma color that reads DIM as body text on near-black (the exact accent-is-not-text failure class in PLAYBOOK and the 2026-07-03/2026-07-04 CRAFT_LOG entries). Corrected ink to browser-use's real dark-theme body text, a near-white #f4f4f5 (luma ~244, clears the >=230 floor) -- the assisted part. The brand blue stays as the graphic accent, lifted from #6983c0 (luma ~130) to #8ea3d6 (luma ~163) so the one inverted flash field clears the readability spread floor (>=120), same shipped fix caveman needed the same morning.",
+  "design": {
+    "framework": "MANIFESTO"
+  },
+  "tokens": {
+    "canvas": "#09090b",
+    "ink": "#f4f4f5",
+    "ink_muted": "#7c88ad",
+    "accent": "#8ea3d6",
+    "hairline": "#27272a"
+  },
+  "provenance": {
+    "canvas": "browser-use.com css var --bg (zinc-950), confidence high, native exact",
+    "ink": "assisted: browser-use's dark-theme body text is near-white; extractor mis-picked the blue link color, corrected to #f4f4f5 (luma ~244) to clear the ink floor",
+    "ink_muted": "blue-tinted gray for decorative whispers; the renderer derives --muted-content (lifted 60% toward ink) for any content lines",
+    "accent": "browser-use brand periwinkle #6983c0 (css var --tw-prose-links, luma ~130), lightened to #8ea3d6 (luma ~163) so the inverted flash field clears the spread floor; stays on dots, edges, node glow, sparkline curve, prompt char; --accent-ink used for any accent-colored TEXT",
+    "hairline": "browser-use.com css var --border (zinc-800), native exact"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "font_note": "First pass used SpaceGrotesk display; its tapering strokes on the long 'video-use' wordmark smeared below the readability gate's p99.3 ink floor (159, need 180) at the gate's 540px sampling, even though the frame read bright to the eye. Swapped to JetBrainsMono, which clears the gate with chunky mono strokes (proven same-day on caveman) and is honest for a Claude Code skill, harmonizing the wordmark with the terminal scene.",
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.01,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.32,
+    "scene_out_s": 0.21,
+    "stagger_s": 0.18
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 6
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.2,
+    "halation": 0.05,
+    "lighting_arc": 0.3
+  },
+  "background": {
+    "style": "grid",
+    "intensity": 0.5
+  },
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_floor_luma": ">=230 (ink #f4f4f5 measures ~244, clear of floor)",
+    "accent_is_graphic_not_text": "raw #8ea3d6 (luma ~163) stays on grid lines, diagram edges/nodes, the glowing self-eval node, the sparkline curve/end-dot, and the terminal prompt char; --accent-ink (accent blended toward ink to ~205 luma) is used for any accent-colored hero text so it never reads dim on near-black",
+    "muted_content_rule": "mono_block detail and any activity line use --muted-content (muted blended 60% toward ink ~201 luma); raw ink_muted #7c88ad stays for decorative-only tags",
+    "per_scene_light_source": {
+      "1_logo_reveal": "hero wordmark 'video-use' in near-white ink fills most of the frame width, SpaceGrotesk at hero scale -- the type mass IS the light, poster-ready at frame 0",
+      "2_word_cascade": "three words slam in bright ink, previous words dim to muted; the accent lands on 'final cut'",
+      "3_terminal": "terminal pane on a slightly lifted near-black plate so typed near-white text keeps contrast; accent tags the '>' prompt char",
+      "4_diagram": "five loop nodes in ink with the 'self-eval' node glowing accent; a feedback edge loops self-eval back to render -- the through-line light",
+      "5_mono_block": "two ink lines on the dark plate quoting the discipline (plans before it cuts, grades its own edit), a small accent rule under the accented line",
+      "6_flash": "INVERTED money shot: bright accent-lit field (#8ea3d6, luma ~163), dark ink word 'never watches' -- the one polarity flip, contrast budget spent here",
+      "7_sparkline": "sparkline drawn in accent with an end-dot glow, the 14k value in full ink -- busiest, brightest data frame",
+      "8_close": "wordmark rhymes with scene 1 composition for the autoloop, same ink type mass as the light source"
+    },
+    "inverted_beat": "scene 6 (flash) flips to a bright accent-lit field so the piece is not one flat near-black wash for the whole runtime"
+  }
+}

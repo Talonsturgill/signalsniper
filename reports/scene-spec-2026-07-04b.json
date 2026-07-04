@@ -1,0 +1,198 @@
+{
+  "date": "2026-07-04b",
+  "project": "video-use",
+  "design": {
+    "framework": "MANIFESTO",
+    "tokens": {
+      "canvas": "#09090b",
+      "ink": "#f4f4f5",
+      "ink_muted": "#7c88ad",
+      "accent": "#8ea3d6",
+      "hairline": "#27272a"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.32,
+      "scene_out_s": 0.21,
+      "stagger_s": 0.18
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.2,
+      "halation": 0.05,
+      "lighting_arc": 0.3
+    },
+    "background": {
+      "style": "grid",
+      "intensity": 0.5
+    },
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "held_subject": "video-use",
+    "beat": {
+      "bpm": 92.3,
+      "offset_s": 30.0,
+      "aligned": true,
+      "median_drift_ms": 188.8
+    }
+  },
+  "scenes": [
+    {
+      "template": "logo_reveal",
+      "camera": "push_in",
+      "duration_s": 3.03,
+      "word": "video-use",
+      "tagline": "edit video by talking to your agent",
+      "sheen": true
+    },
+    {
+      "template": "three_line",
+      "camera": "tilt_reveal",
+      "duration_s": 3.04,
+      "lines": [
+        "raw footage",
+        "one prompt",
+        "final cut"
+      ],
+      "accent_idx": 2
+    },
+    {
+      "template": "terminal",
+      "camera": "rack_focus",
+      "duration_s": 3.18,
+      "title": "claude code",
+      "prompt_char": ">",
+      "lines": [
+        {
+          "text": "edit these into a launch video",
+          "prompt": true
+        },
+        {
+          "text": "final.mp4",
+          "prompt": false
+        }
+      ],
+      "sheen": true
+    },
+    {
+      "template": "diagram",
+      "camera": "orbit",
+      "duration_s": 3.6,
+      "eyebrow": "the loop",
+      "nodes": [
+        {
+          "label": "transcribe",
+          "x": 18,
+          "y": 32
+        },
+        {
+          "label": "reason",
+          "x": 34,
+          "y": 64
+        },
+        {
+          "label": "edl",
+          "x": 50,
+          "y": 32
+        },
+        {
+          "label": "render",
+          "x": 66,
+          "y": 64
+        },
+        {
+          "label": "self-eval",
+          "x": 82,
+          "y": 32,
+          "accent": true
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3
+        },
+        {
+          "from": 3,
+          "to": 4
+        },
+        {
+          "from": 4,
+          "to": 3,
+          "accent": true
+        }
+      ]
+    },
+    {
+      "template": "mono_block",
+      "camera": "parallax_drift",
+      "duration_s": 3.3,
+      "lines": [
+        "plans before it cuts",
+        "grades its own edit"
+      ],
+      "accent_idx": 1
+    },
+    {
+      "template": "flash",
+      "camera": "crash_zoom",
+      "duration_s": 3.27,
+      "word": "never watches",
+      "caption": "it reads the transcript instead",
+      "emphasize": true
+    },
+    {
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "duration_s": 3.6,
+      "eyebrow": "star history",
+      "values": [
+        180,
+        900,
+        2600,
+        5200,
+        8200,
+        11000,
+        13200,
+        14585
+      ],
+      "value_label": "14k stars",
+      "caption": "still climbing"
+    },
+    {
+      "template": "close",
+      "camera": "pull_back",
+      "duration_s": 3.4,
+      "primary": "video-use",
+      "accent": "reads to edit",
+      "subtitle": "you talk, it edits",
+      "emphasize": true,
+      "sheen": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-04",
+  "slug": "2026-07-04b",
+  "project": "video-use",
+  "project_url": "https://github.com/browser-use/video-use",
+  "prompt_char": ">",
+  "components": [
+    "Six-stage pipeline: Transcribe, Pack, LLM Reasons, EDL, Render, Self-Eval",
+    "ElevenLabs Scribe word-level transcription (cached per source)",
+    "takes_packed.md: phrase-level transcript, the model's primary reading document",
+    "timeline_view: on-demand filmstrip + waveform PNG (the model looks only when it needs to)",
+    "edl.json: the cut list (source, in/out, beat label, quote, reasoning, grade, overlays, subtitles)",
+    "Parallel animation sub-agents: HyperFrames, Remotion, Manim, PIL",
+    "render.py + grade.py (ASC CDL per channel); ffmpeg; subtitles applied LAST",
+    "project.md: session memory appended per edit"
+  ],
+  "commands": [
+    {"text": "cd /path/to/your/videos", "prompt_char": "$", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/README.md"},
+    {"text": "claude", "prompt_char": "$", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/README.md"},
+    {"text": "edit these into a launch video", "prompt_char": ">", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/README.md"},
+    {"text": "transcribe_batch.py videos", "prompt_char": "$", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/SKILL.md"},
+    {"text": "render.py edl.json -o final.mp4", "prompt_char": "$", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/SKILL.md"}
+  ],
+  "outputs": [
+    {"text": "[002.52-005.36] S0 Ninety percent of what a web agent does is completely wasted.", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/SKILL.md"},
+    {"text": "final.mp4", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/SKILL.md"},
+    {"text": "Self-Eval", "source": "https://raw.githubusercontent.com/browser-use/video-use/main/README.md"}
+  ],
+  "architecture_facts": [
+    "The model never watches the video. It reasons over a packed text transcript plus a few on-demand PNGs.",
+    "Audio is primary: cuts snap to word boundaries from a word-level transcript, and it never cuts inside a word.",
+    "It spawns parallel sub-agents to build overlay animations in HyperFrames, Remotion, Manim, or PIL.",
+    "Before you ever see the cut, it self-evaluates every boundary, then re-renders, up to three passes.",
+    "Transcribe, Pack, LLM Reasons, EDL, Render, Self-Eval are the six named stages of the loop.",
+    "Session memory persists to project.md so later edits re-plan without re-transcribing."
+  ],
+  "surprising_detail": "The model never sees a single frame while it edits. It reads the transcript as text and only pulls a filmstrip PNG when it needs to actually look. Naive frame-reading would be tens of millions of tokens of noise.",
+  "diagram_nodes": ["Transcribe", "Pack", "Reason", "EDL", "Render", "Self-Eval"],
+  "diagram_node_facts": {
+    "Transcribe": "ElevenLabs Scribe pulls a word-level transcript, cached per source.",
+    "Pack": "Phrases fold into takes_packed.md, the model's primary reading document.",
+    "Reason": "The model reasons over text and on-demand PNGs, never the raw frames.",
+    "EDL": "Decisions land in edl.json: source, in and out, beat, quote, reasoning.",
+    "Render": "render.py extracts per segment, concatenates, then burns subtitles last.",
+    "Self-Eval": "It inspects every cut boundary and re-renders, up to three passes."
+  }
+}

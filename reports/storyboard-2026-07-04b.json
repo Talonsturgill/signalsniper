@@ -1,0 +1,100 @@
+{
+  "date": "2026-07-04b",
+  "project": "video-use",
+  "framework": "MANIFESTO",
+  "concept": "A manifesto for a counterintuitive tool: a coding agent that edits video from the transcript and never watches a frame. The bold claim is earned by three mechanism beats (a real prompt, the self-correcting loop, the ask-first discipline) before the inverted reveal spends the contrast budget, then a star receipt and a wordmark close that loops back to the open.",
+  "money_shot_note": "Scene 6, the inverted flash 'never watches', is the peak: it is the one polarity flip and the single most quotable frame, positioned at 71 percent so everything builds to it.",
+  "transition_strategy": "Fade-through cuts, outgoing settles before incoming starts, a chromatic tick on each cut; the flash cut lands hardest with a whoosh into an impact.",
+  "music_direction": "Electronic bed, propulsive and precise (browser-use premium-tech), building under the loop and peaking at the flash; cuts snapped to onsets by beat_align.",
+  "energy_curve": [0.42, 0.55, 0.6, 0.68, 0.62, 0.9, 0.7, 0.5],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "Land the poster: the video-use wordmark readable in the first second so frame 0 carries the project name.",
+      "template": "logo_reveal",
+      "camera": "push_in",
+      "copy_note": "wordmark video-use plus a plain tagline about editing video by talking to your agent",
+      "sound_cue": "low sub swell and a soft key as the wordmark tracks in",
+      "transition": "hold, then fade-through",
+      "energy": 0.42,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "State the transformation as a three-line triple so the muted viewer gets the whole promise fast.",
+      "template": "three_line",
+      "camera": "tilt_reveal",
+      "copy_note": "raw footage / one prompt / final cut, staggered in, accent on the last line",
+      "sound_cue": "three stamps on the beat, each line a hit",
+      "transition": "hard cut after the last line",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "Show the product doing its job: a real Claude Code prompt turns a folder of clips into a finished file.",
+      "template": "terminal",
+      "camera": "rack_focus",
+      "copy_note": "type the real one-line prompt from the README, resolve to final.mp4",
+      "sound_cue": "key clicks under the typing, a soft chime when final.mp4 appears",
+      "transition": "fade-through",
+      "energy": 0.6,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "Reveal the mechanism: the six-stage loop draws on and self-eval feeds back into render.",
+      "template": "diagram",
+      "camera": "orbit",
+      "copy_note": "nodes transcribe reason edl render self-eval, accent node self-eval, feedback edge self-eval back to render",
+      "sound_cue": "rising arpeggio as nodes connect, a pulse when the feedback edge fires",
+      "transition": "fade-through",
+      "energy": 0.68,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "Name the discipline that makes it trustworthy: it plans in plain English and grades its own cut.",
+      "template": "mono_block",
+      "camera": "parallax_drift",
+      "copy_note": "two lines, plans before it cuts / grades its own edit, accent on the second",
+      "sound_cue": "quiet pad, a single tick under the accented line",
+      "transition": "fade-through into the flash",
+      "energy": 0.62,
+      "money_shot": false
+    },
+    {
+      "beat": 6,
+      "intent": "The reveal and peak: a video editor that never watches the video, the one inverted beat.",
+      "template": "flash",
+      "camera": "crash_zoom",
+      "copy_note": "word never watches on a bright accent field, dark ink, caption it reads the transcript instead",
+      "sound_cue": "whoosh into a hard impact, music ducks then swells",
+      "transition": "crash cut",
+      "energy": 0.9,
+      "money_shot": true
+    },
+    {
+      "beat": 7,
+      "intent": "Drop the one receipt: the star curve climbing past 14k proves people care.",
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "copy_note": "accent curve climbing to the 14k value in ink, caption still climbing",
+      "sound_cue": "a rising sweep as the curve draws, a pop on the end dot",
+      "transition": "fade-through",
+      "energy": 0.7,
+      "money_shot": false
+    },
+    {
+      "beat": 8,
+      "intent": "Resolve and loop: the wordmark returns so the autoloop replays clean, thesis restated once more.",
+      "template": "close",
+      "camera": "pull_back",
+      "copy_note": "video-use, reads to edit, subtitle you talk it edits, rhymes with scene 1",
+      "sound_cue": "resolving chord, tail drifts to silence",
+      "transition": "pull back and settle",
+      "energy": 0.5,
+      "money_shot": false
+    }
+  ]
+}
