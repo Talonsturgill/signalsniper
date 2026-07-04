@@ -1,0 +1,164 @@
+{
+  "date": "2026-07-04c",
+  "project": "mcp-use",
+  "project_url": "https://github.com/mcp-use/mcp-use",
+  "design": {
+    "framework": "CLASSIC",
+    "tokens": {
+      "canvas": "#0b0c0e",
+      "ink": "#f2f0eb",
+      "ink_muted": "#90908e",
+      "accent": "#ff7f33",
+      "hairline": "#2d2e2f"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.2,
+      "halation": 0.06,
+      "lighting_arc": 0.3
+    },
+    "background": {
+      "style": "aurora",
+      "intensity": 0.55
+    },
+    "transition_style": "hard_cut",
+    "foley_style": "sub_impact",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "held_subject": "mcp-use",
+    "beat": {
+      "bpm": 161.5,
+      "offset_s": 30.0,
+      "aligned": true,
+      "median_drift_ms": 194.4
+    }
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "camera": "tilt_reveal",
+      "duration_s": 3.91,
+      "headline": "mcp-use",
+      "eyebrow": "the model was never the hard part"
+    },
+    {
+      "template": "two_line",
+      "camera": "ken_burns",
+      "duration_s": 3.85,
+      "lines": [
+        "sdk to build",
+        "cloud to ship"
+      ],
+      "accent_idx": 1
+    },
+    {
+      "template": "terminal",
+      "camera": "rack_focus",
+      "duration_s": 4.11,
+      "title": "mcp-use quickstart",
+      "prompt_char": "$",
+      "lines": [
+        {
+          "text": "npx create-mcp-use-app@latest",
+          "prompt": true
+        },
+        {
+          "text": "pip install mcp-use",
+          "prompt": true
+        }
+      ],
+      "sheen": true
+    },
+    {
+      "template": "diagram",
+      "camera": "orbit",
+      "duration_s": 4.16,
+      "eyebrow": "build. preview. ship.",
+      "nodes": [
+        {
+          "label": "build sdk",
+          "x": 18,
+          "y": 58
+        },
+        {
+          "label": "inspector",
+          "x": 39,
+          "y": 30
+        },
+        {
+          "label": "cli deploy",
+          "x": 61,
+          "y": 58
+        },
+        {
+          "label": "manufact cloud",
+          "x": 82,
+          "y": 30,
+          "accent": true
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "accent": true
+        }
+      ]
+    },
+    {
+      "template": "quote",
+      "camera": "static_breathe",
+      "duration_s": 3.51,
+      "quote": "the hard part isn't the model anymore, it's everything around it",
+      "attribution": "Pietro Zullo, mcp-use"
+    },
+    {
+      "template": "flash",
+      "camera": "crash_zoom",
+      "duration_s": 3.02,
+      "word": "no more plumbing",
+      "caption": "agents get infra, not glue code",
+      "emphasize": true
+    },
+    {
+      "template": "logo_reveal",
+      "camera": "pull_back",
+      "duration_s": 4.0,
+      "word": "mcp-use",
+      "tagline": "the hard part, shipped",
+      "emphasize": true,
+      "sheen": true
+    }
+  ]
+}

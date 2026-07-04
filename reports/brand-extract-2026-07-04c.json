@@ -1,0 +1,24 @@
+{
+  "tokens": {
+    "canvas": "#0b0c0e",
+    "ink": "#f2f0eb",
+    "ink_muted": "#90908e",
+    "accent": "#e05300",
+    "hairline": "#2d2e2f"
+  },
+  "provenance": {
+    "canvas": "css var --shiki-dark-bg (docs.mcp-use.com)",
+    "ink": "frequency heuristic, lightest common (softened from pure white)",
+    "accent": "frequency heuristic, most saturated (lightness-nudged from #953800)",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.85)"
+  },
+  "confidence": "medium",
+  "dark_canvas": true,
+  "source_url": "https://docs.mcp-use.com/",
+  "notes": [
+    "First attempt: extracted https://mcp-use.com (which now 301-redirects to https://manufact.com/, the post-rebrand marketing site) and separately https://manufact.com directly. Both came back 'high' confidence but with an internally IMPLAUSIBLE role mapping: canvas resolved to #a1a1aa (a mid-gray, luminance ~0.42) while dark_canvas was flagged true, and accent resolved to #18181b (near-black) -- a generic Tailwind '--base-color' / '--primary' variable pair that does not correspond to real background/accent roles on this Next.js site. Discarded despite the 'high' label; a high confidence score does not override an implausible read.",
+    "Second attempt: https://docs.mcp-use.com/ (Mintlify docs, not redirected) resolved a genuinely coherent dark near-black canvas (--shiki-dark-bg, the code-block background) + near-white ink + a saturated orange accent, all independently corroborated by contrast math (ink/canvas 17.2:1, accent/canvas 5.0:1, muted/canvas 6.1:1 -- comfortably clear every validator floor). Confidence label is 'medium' (only one named CSS-variable signal), used directly per Step 6 rule 1 (medium/high confidence -> use as '-native', no preset fallback needed).",
+    "brand_slug: mcp-use-native"
+  ]
+}

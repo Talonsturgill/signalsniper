@@ -1,0 +1,89 @@
+{
+  "date": "2026-07-04c",
+  "project": "mcp-use",
+  "framework": "CLASSIC",
+  "concept": "A fast, confident developer-tool spot that treats MCP tooling as a single continuous pipeline instead of four separate chores. Open on the name and the problem (MCP needed a front door), state the thesis in one breath (one sdk to build, one cloud to ship), prove the sdk and the architecture are real with a typed terminal and a draw-on diagram, let the founder explain the actual motivation in his own words, pay it off with a one-word emotional burst that resolves his 'plumbing' language, then sign off on the wordmark with a tagline that rhymes with the open.",
+  "money_shot_note": "Scene 6 (flash, 'no more plumbing') is the peak at ~74% of runtime: the only color-inverted, full-bleed accent beat in the video, landing the hardest sub_impact hit, and it's a direct callback to the founder's own quote one scene earlier -- payoff, not just volume.",
+  "transition_strategy": "Hard cuts throughout (the invisible, confident default) -- no stylized boundary effect on any cut. The impact comes entirely from the sub_impact foley hit and the accent-burst color of the flash scene itself, not from a transition gimmick.",
+  "music_direction": "Electronic, mid-tempo, confident. A low pad is allowed to build under the diagram and quote scenes so the flash hit has somewhere to land; cuts lead the beat by one frame throughout.",
+  "energy_curve": [0.40, 0.50, 0.60, 0.65, 0.55, 0.90, 0.50],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "establish the project name as the X poster frame and open on the problem MCP tooling never solved",
+      "template": "title",
+      "camera": "tilt_reveal",
+      "copy_note": "headline is the literal project name; eyebrow poses the plumbing problem as a question of missing infrastructure",
+      "sound_cue": "track intro, no hit yet",
+      "transition": "cold open",
+      "energy": 0.40,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "state the whole thesis in one breath before any proof is shown",
+      "template": "two_line",
+      "camera": "ken_burns",
+      "copy_note": "second line (the cloud half of the claim) carries the accent color as the newer, more distinctive piece",
+      "sound_cue": "sub_impact hit under the hard cut",
+      "transition": "hard cut",
+      "energy": 0.50,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "prove the sdk is real by typing the two actual documented install commands",
+      "template": "terminal",
+      "camera": "rack_focus",
+      "copy_note": "both lines are verified, sourced commands at typewriter pace, nothing invented",
+      "sound_cue": "sub_impact hit, typewriter clicks under the typing",
+      "transition": "hard cut",
+      "energy": 0.60,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "show the real architecture as one continuous pipeline instead of four separate tools",
+      "template": "diagram",
+      "camera": "orbit",
+      "copy_note": "the cloud node carries the accent glow as the newest, most distinctive stop on the pipeline",
+      "sound_cue": "sub_impact hit, low synth pad starts building",
+      "transition": "hard cut",
+      "energy": 0.65,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "let the founder explain the real motivation in his own words before the payoff lands",
+      "template": "quote",
+      "camera": "static_breathe",
+      "copy_note": "attributed, verbatim, sourced quote -- the one deliberately still, human beat in the video",
+      "sound_cue": "pad sustains, energy pulls back ahead of the peak",
+      "transition": "hard cut",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 6,
+      "intent": "land the emotional payoff: the plumbing problem from the quote is resolved in one accent-burst word",
+      "template": "flash",
+      "camera": "crash_zoom",
+      "copy_note": "direct callback to the quote's own language, resolved -- the video's one inverted, full-bleed bright beat",
+      "sound_cue": "sub_impact hit at full weight, the loudest moment in the mix",
+      "transition": "hard cut, hardest hit of the video",
+      "energy": 0.90,
+      "money_shot": true
+    },
+    {
+      "beat": 7,
+      "intent": "sign off on the wordmark with a tagline that rhymes with the open, inviting the autoloop to replay clean",
+      "template": "logo_reveal",
+      "camera": "pull_back",
+      "copy_note": "tagline echoes the open's 'front door' framing from a different angle, not verbatim",
+      "sound_cue": "track resolves under a sheen pass",
+      "transition": "hard cut into the sign-off",
+      "energy": 0.50,
+      "money_shot": false
+    }
+  ]
+}

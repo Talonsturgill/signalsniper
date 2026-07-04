@@ -1,0 +1,64 @@
+{
+  "date": "2026-07-04c",
+  "project": "mcp-use",
+  "framework": "CLASSIC",
+  "tokens": {
+    "canvas": "#0b0c0e",
+    "ink": "#f2f0eb",
+    "ink_muted": "#90908e",
+    "accent": "#ff7f33",
+    "hairline": "#2d2e2f"
+  },
+  "token_provenance": {
+    "canvas": "css var --shiki-dark-bg (docs.mcp-use.com)",
+    "ink": "frequency heuristic, lightest common",
+    "accent": "frequency heuristic, most saturated, extracted as #e05300 then LIGHTENED to #ff7f33 (same hue, HLS lightness 0.44 -> 0.60) after the screening gate FAILed readability on the flash scene -- the extracted orange's grayscale luma (601-luma 115.7) sat just under the gate's 128 dark/light polarity threshold, so the gate misread the flash template's full-bleed accent field as a dark canvas needing bright ink, when the actual design is a bright accent field with dark canvas-colored text cut into it. Same failure class as the 2026-07-04 caveman entry in CRAFT_LOG (accent luma sitting on the boundary). Fixed at the token, not the renderer: #ff7f33 has 601-luma 156.4 (28pt clear of the boundary, matching the precedented fix's margin) and still clears accent/canvas contrast at 7.75:1 (was 5.04:1).",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.85)"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.01,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "cut",
+    "scene_in_s": 0.06,
+    "scene_out_s": 0.05,
+    "stagger_s": 0.10
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 4
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.2,
+    "halation": 0.06,
+    "lighting_arc": 0.3
+  },
+  "background": {
+    "style": "aurora",
+    "intensity": 0.55
+  },
+  "transition_style": "hard_cut",
+  "foley_style": "sub_impact",
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "held_subject": "mcp-use",
+  "readability_plan": {
+    "ink_floor": "dark canvas, primary ink >= 230 luma (#f2f0eb clears this)",
+    "accent_as_graphic": "raw #e05300 accent stays on aurora blobs / dots / diagram accent node / flash burst; any text-scale accent use relies on build_html's auto-derived --accent-ink",
+    "muted_carries_content": "diagram node labels and terminal supporting lines use --muted-content, not raw --ink-muted",
+    "light_per_scene": "title: hero headline at full ink brightness. two_line: accent_idx line lifts to accent-ink. terminal: prompt-line accent + bright ink body, widened pane per the 2026-07-03 light lesson. diagram: accent:true cloud node glows, labels in ink/muted-content. quote: bright ink quote text, generous scale. flash: accent-colored full-bleed burst -- the one inverted/bright beat. logo_reveal: bright hero wordmark + sheen.",
+    "inverted_beat": "flash (scene 6) is the color-break: accent field burst instead of dark canvas"
+  }
+}

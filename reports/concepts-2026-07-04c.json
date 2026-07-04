@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-04c",
+  "project": "mcp-use",
+  "concepts": [
+    {
+      "name": "Everything Around the Model",
+      "world": "An AI feed's obsession, the model, sits as one small calm orange orb dead-center. The film argues the founder's thesis: that orb is the easy 5 percent; the real work is the connective scaffolding that snaps into being around it. mcp-use is that scaffolding.",
+      "shows": "Title poses the thesis over the wordmark. Hairline wiring snaps outward labeling build/preview/deploy/observe. Terminal types the real install commands. The full pipeline draws as a ring around the orb; the deploy command fires.",
+      "money_shot": "~68%: the four-stage ring completes a full loop and orange aurora floods the frame.",
+      "why_creator_reposts": "It is literally his own sentence, rendered as film, on the exact day MCP is the theme.",
+      "why_stranger_stops": "'the model isn't the hard part' is a contrarian gut-punch in an AI-saturated feed.",
+      "light_map": "Orb as a persistent warm source; ring-ignition money shot is the brightest frame.",
+      "one_paragraph_argument": "Sharpest scroll-stopping poster line, built on the founder's real words, peaks on a real product truth."
+    },
+    {
+      "name": "The Manufact Line",
+      "world": "A typographic assembly line, fitting a company literally named Manufact: one MCP app rides a glowing token down four labeled stations (Build, Inspect, Ship, Run).",
+      "shows": "Token forms at Build, lights up at Inspect, launches at Ship, lands at Run where a wall of live logs/metrics ignites.",
+      "money_shot": "~70%: the shipped token slams into Cloud and the observability wall ignites in orange aurora.",
+      "why_creator_reposts": "Foregrounds the fresh hosted Cloud launch (his current Launch HN), not just the year-old OSS SDK.",
+      "why_stranger_stops": "Oddly-satisfying token-down-the-belt journey with an instant, silent-first read.",
+      "light_map": "Spotlight pools per station; the Cloud dashboard wall is by far the brightest.",
+      "one_paragraph_argument": "Most literal brand fit (Manufact = manufacturing) but risks drifting toward literal machinery over kinetic type; softer poster line."
+    },
+    {
+      "name": "One Folder",
+      "world": "An intimate split screen: a file tree on the left, a Claude chat on the right. The whole film is one magic trick: what happens when you drop a file into resources/.",
+      "shows": "A component file drags into the resources/ folder and drops; on the right, an interactive widget materializes inside a Claude message, captioned 'no manifest. no registration.'",
+      "money_shot": "~68%: the widget blooms to life inside the chat bubble.",
+      "why_creator_reposts": "Showcases the single most delightful, least-believable truth in the docs -- the 'look how little you do' clip.",
+      "why_stranger_stops": "Pure dopamine: drop file, get live widget. Concrete, screenshot-ready.",
+      "light_map": "The glowing resources/ folder anchors early light; the widget materialization is the brightest bloom.",
+      "one_paragraph_argument": "Cleanest silent-first idea and strongest single dopamine beat, but undersells the fresh Cloud launch and rides on one trick."
+    }
+  ],
+  "winner": "Everything Around the Model",
+  "wow_bets": [
+    "Frame-0 poster line 'the model was never the hard part' over the mcp-use wordmark -- a contrarian, founder-sourced hook engineered to stop a scroll on the day MCP is the theme.",
+    "The founder's real, attributed quote lands mid-video as the emotional grounding beat, then the flash scene resolves his own 'plumbing' language -- callback, not repetition."
+  ],
+  "why_it_won": "Judged by an independent Opus creative pass against the other two (The Manufact Line, One Folder). It owns the sharpest scroll-stopping poster line and is the only concept whose hook is the founder's actual thesis, maximizing repost odds, while still satisfying both mandatory product-truth beats (terminal + full architecture) and giving the readability gate a clear brightest frame at the money shot.",
+  "implementation_note": "The winning hook and the founder's-quote-as-spine idea were folded into the already-gated 7-scene structure (title / two_line / terminal / diagram / quote / flash / logo_reveal) rather than triggering a full re-board: scene 1's eyebrow now carries the sharper 'the model was never the hard part' framing, and the close's tagline ('the hard part, shipped') rhymes with it. The 'One Folder' concept's resources/-drop-to-widget beat is a genuinely lovely idea but has no existing template that renders a drag-and-drop file-to-live-widget animation; building one was out of scope for this run and is logged as a NEXT idea for build_html.py."
+}

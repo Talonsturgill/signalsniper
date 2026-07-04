@@ -1,0 +1,64 @@
+{
+  "date": "2026-07-04c",
+  "project_url": "https://github.com/mcp-use/mcp-use",
+  "claims": [
+    {
+      "claim": "10k+ GitHub stars",
+      "sources": [
+        "https://github.com/mcp-use/mcp-use",
+        "https://www.ycombinator.com/companies/manufact"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04",
+      "notes": "Direct repo page reads 10.2k stars / 1.4k forks; YC's company page independently states '10k github stars and 8M+ downloads'. Third-party SEO recaps cite figures from 6k to 10k across different dates (real, ongoing growth) -- shipping the conservative, twice-corroborated '10k+' rather than an exact instantaneous count."
+    },
+    {
+      "claim": "8M+ downloads (python and typescript combined)",
+      "sources": [
+        "https://www.ycombinator.com/companies/manufact",
+        "https://pulse2.com/manufact-6-3-million-seed-funding-raised-to-power-mcp-based-agents-and-chatgpt-apps/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04",
+      "notes": "YC page states '8M+ downloads' today; pulse2's Feb 2026 seed-funding coverage independently documented 5M downloads six weeks after launch, consistent with continued growth to the current figure. Not shipped in the caption (only one engagement metric allowed there) but usable in supporting copy."
+    },
+    {
+      "claim": "founded by Pietro Zullo and Luigi Pederzani, YC S25",
+      "sources": [
+        "https://www.ycombinator.com/companies/manufact",
+        "https://www.linkedin.com/in/pietrozullo/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04",
+      "notes": "Confirmed by YC's official company page and Pietro's own LinkedIn headline ('Building Manufact (mcp-use) YC S25')."
+    },
+    {
+      "claim": "mcp-use is a fullstack framework: TypeScript + Python SDKs, an Inspector, a CLI, and Manufact Cloud",
+      "sources": [
+        "https://raw.githubusercontent.com/mcp-use/mcp-use/main/README.md",
+        "https://github.com/mcp-use/mcp-use"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04",
+      "notes": "Repo description: 'The fullstack MCP framework to develop MCP Apps for ChatGPT / Claude & MCP Servers for AI Agents.' Component breakdown confirmed directly in the README and the repo homepage."
+    },
+    {
+      "claim": "latest release mcp-use 1.33.0, June 26",
+      "sources": [
+        "https://github.com/mcp-use/mcp-use/releases"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04",
+      "notes": "Single primary source (GitHub releases page); this claim does not ship in any deliverable copy, kept for dossier context only."
+    },
+    {
+      "claim": "Pietro Zullo quote: \"the hard part isn't the model anymore, it's everything around it\"",
+      "sources": [
+        "https://pulse2.com/manufact-6-3-million-seed-funding-raised-to-power-mcp-based-agents-and-chatgpt-apps/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04",
+      "notes": "Single-source direct attribution from funding-announcement coverage (standard press-quote sourcing); used verbatim as an attributed quote scene, not paraphrased. Only one source found for the exact wording, but it is presented as the founder's own words in reputable funding-round trade coverage, not an SEO recap -- risk of misattribution is low."
+    }
+  ]
+}

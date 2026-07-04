@@ -1,0 +1,52 @@
+{
+  "date": "2026-07-04c",
+  "project_url": "https://github.com/mcp-use/mcp-use",
+  "components": [
+    "sdk",
+    "inspector",
+    "cli",
+    "cloud",
+    "manufact",
+    "mcp-use sdk",
+    "mcp-use inspector",
+    "mcp-use cli",
+    "manufact cloud"
+  ],
+  "commands": [
+    {
+      "text": "npx create-mcp-use-app@latest",
+      "source": "https://raw.githubusercontent.com/mcp-use/mcp-use/main/README.md"
+    },
+    {
+      "text": "pip install mcp-use",
+      "source": "https://raw.githubusercontent.com/mcp-use/mcp-use/main/README.md"
+    },
+    {
+      "text": "npx @mcp-use/inspector --url http://localhost:3000/mcp",
+      "source": "https://github.com/mcp-use/mcp-use"
+    },
+    {
+      "text": "npx @mcp-use/cli login",
+      "source": "https://github.com/mcp-use/mcp-use"
+    },
+    {
+      "text": "npx @mcp-use/cli deploy",
+      "source": "https://github.com/mcp-use/mcp-use"
+    },
+    {
+      "text": "npm install mcp-use",
+      "source": "https://github.com/mcp-use/mcp-use"
+    }
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "mcp-use ships a typescript and a python sdk so a build sdk step is how every server starts",
+    "the inspector previews and debugs a running server, both a hosted and an open source build",
+    "the cli deploy command pushes straight to manufact cloud once you are signed in",
+    "manufact cloud adds observability, metrics, logs, and branch deployments on top of the open source cli deploy",
+    "mcp apps are react widgets auto discovered from a resources folder, no manifest wiring required",
+    "the inspector attaches automatically the moment a server calls listen, no separate process to run",
+    "tool schemas validate with zod in typescript and pydantic in python"
+  ],
+  "surprising_detail": "MCP Apps are just React components dropped in a resources/ folder. The SDK auto-discovers and serves them. No manifest file, no registration step."
+}

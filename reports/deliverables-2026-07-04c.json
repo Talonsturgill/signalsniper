@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-04c",
+  "project_url": "https://github.com/mcp-use/mcp-use",
+  "creator_handle": "@pietrozullo",
+  "caption": "@pietrozullo 10k+ GitHub stars for mcp-use, the fullstack framework that ships MCP servers and interactive Claude apps from one SDK, an Inspector, and a CLI deploy to the cloud.",
+  "capability_fact": "the fullstack framework that ships MCP servers and interactive Claude apps from one SDK, an Inspector, and a CLI deploy to the cloud",
+  "first_reply": "The repo: https://github.com/mcp-use/mcp-use",
+  "why_this_one": "Before this, Pietro studied multi-agent game theory for his master's thesis and built autonomous vehicle systems at Motional. The pivot to MCP tooling tracks: same problem, coordinating independent agents, just shipped as infrastructure instead of a paper.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Windswept by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.",
+  "linkedin_caption": "MCP tooling has a real gap right now. Everyone talks about the model. Almost nobody talks about the plumbing around it, the SDK, the debugging, the actual deploy. Pietro Zullo and Luigi Pederzani built mcp-use to close that gap. One TypeScript or Python SDK to build an MCP server. An Inspector to watch it live. A CLI that deploys straight to Manufact Cloud. The part that got me is how they handle MCP Apps. Drop a React component in a resources folder and the SDK finds it and serves it as a live widget inside Claude or ChatGPT. No manifest file. No registration step. That is the kind of detail you only get right if you have shipped the painful version first. The project just crossed 10k GitHub stars and 8M downloads across both SDKs. If you are building anything with MCP right now, this is worth an afternoon.",
+  "linkedin_hashtags": "#MCP #AI #DevTools #OpenSource",
+  "linkedin_tag": {
+    "name": "Pietro Zullo",
+    "url": "https://www.linkedin.com/in/pietrozullo/"
+  }
+}

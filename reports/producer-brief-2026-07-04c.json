@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-04c",
+  "project": "mcp-use",
+  "project_url": "https://github.com/mcp-use/mcp-use",
+  "audience": "AI-engineering builders already shipping agents or MCP servers who feel the plumbing friction the moment they see it solved",
+  "single_takeaway": "mcp-use turns the whole MCP build-to-cloud pipeline, SDK, Inspector, CLI, deploy, into one continuous, typeable flow.",
+  "viewer_action": "star or try mcp-use, or quote-post the video tagging @pietrozullo",
+  "desired_feeling": "impressed at how much friction just disappeared",
+  "tone_adjectives": ["confident", "fast", "plainspoken"],
+  "references": [
+    "Vercel's product-launch spots -- clean SDK-to-cloud narrative, no fluff",
+    "Linear's terse, confident developer-tool marketing voice",
+    "a real terminal session typing a real command, not a mocked-up screenshot"
+  ],
+  "mandatories": "brand tokens sourced from docs.mcp-use.com (contrast-fixed); CC BY attribution for the music bed if applicable; @pietrozullo tagged in the X caption and the LinkedIn tag",
+  "success_criteria": "Pietro Zullo (or Manufact's own account) replies or quote-posts the video; the story reads completely with the sound off",
+  "platform": "x"
+}
