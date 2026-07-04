@@ -1,0 +1,192 @@
+{
+  "date": "2026-07-04",
+  "project": "caveman",
+  "design": {
+    "framework": "SCHEMATIC",
+    "tokens": {
+      "canvas": "#0b0b0c",
+      "ink": "#f2f0eb",
+      "ink_muted": "#888888",
+      "accent": "#f68d50",
+      "hairline": "#1a1a1a"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.3,
+      "scene_out_s": 0.2,
+      "stagger_s": 0.2
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.06,
+      "vignette": 0.22,
+      "halation": 0.05,
+      "lighting_arc": 0.3
+    },
+    "background": {
+      "style": "aurora",
+      "intensity": 0.65
+    },
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "held_subject": "caveman",
+    "beat": {
+      "bpm": 129.2,
+      "offset_s": 30.0,
+      "aligned": true,
+      "median_drift_ms": 186.0
+    }
+  },
+  "scenes": [
+    {
+      "template": "logo_reveal",
+      "camera": "push_in",
+      "duration_s": 3.23,
+      "word": "caveman",
+      "tagline": "fewer words, fewer tokens billed",
+      "sheen": true
+    },
+    {
+      "template": "diagram",
+      "camera": "orbit",
+      "duration_s": 3.27,
+      "eyebrow": "how it works",
+      "nodes": [
+        {
+          "label": "install hook",
+          "x": 12,
+          "y": 50
+        },
+        {
+          "label": "system prompt",
+          "x": 38,
+          "y": 20
+        },
+        {
+          "label": "terse reply",
+          "x": 64,
+          "y": 50
+        },
+        {
+          "label": "fewer tokens",
+          "x": 88,
+          "y": 20
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2
+        },
+        {
+          "from": 2,
+          "to": 3
+        }
+      ]
+    },
+    {
+      "template": "terminal",
+      "camera": "static_breathe",
+      "duration_s": 3.76,
+      "title": "claude code",
+      "prompt_char": ">",
+      "lines": [
+        {
+          "text": "/caveman",
+          "prompt": true
+        },
+        {
+          "text": "Me ready.",
+          "prompt": false
+        }
+      ],
+      "sheen": true
+    },
+    {
+      "template": "mono_block",
+      "camera": "parallax_drift",
+      "duration_s": 2.81,
+      "lines": [
+        "costs input tokens too",
+        "sometimes net negative"
+      ],
+      "accent_idx": 1
+    },
+    {
+      "template": "stack",
+      "camera": "crash_zoom",
+      "duration_s": 3.53,
+      "eyebrow": "the benchmark",
+      "items": [
+        {
+          "name": "before",
+          "descriptor": "1180 tokens"
+        },
+        {
+          "name": "after",
+          "descriptor": "159 tokens"
+        },
+        {
+          "name": "typical",
+          "descriptor": "65% cut"
+        }
+      ]
+    },
+    {
+      "template": "flash",
+      "camera": "tilt_reveal",
+      "duration_s": 3.04,
+      "word": "wenyan",
+      "caption": "named for classical chinese prose",
+      "emphasize": true
+    },
+    {
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "duration_s": 3.74,
+      "eyebrow": "star history",
+      "values": [
+        4100,
+        15000,
+        30000,
+        45000,
+        60000,
+        70000,
+        79000,
+        82000
+      ],
+      "value_label": "82k stars",
+      "caption": "climbing since april"
+    },
+    {
+      "template": "close",
+      "camera": "ken_burns",
+      "duration_s": 3.5,
+      "primary": "fewer tokens",
+      "accent": "caveman",
+      "subtitle": "still just talking different",
+      "emphasize": true,
+      "sheen": true
+    }
+  ]
+}

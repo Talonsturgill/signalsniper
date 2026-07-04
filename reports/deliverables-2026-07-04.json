@@ -1,0 +1,11 @@
+{
+  "date": "2026-07-04",
+  "project_url": "https://github.com/JuliusBrussee/caveman",
+  "creator_handle": "@julius_brussee",
+  "caption": "@julius_brussee caveman crossed 82k stars. it rewrites the agent's own system prompt so replies come back in caveman speak, cutting output tokens without a proxy or server.",
+  "capability_fact": "it rewrites the agent's own system prompt so replies come back in caveman speak",
+  "first_reply": "the repo: https://github.com/JuliusBrussee/caveman and the docs: https://juliusbrussee.github.io/caveman/",
+  "why_this_one": "julius is 19 and the readme openly admits the trick can backfire on prompts that were already short, that kind of honesty is rarer than a viral star count.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. EDM Detection Mode by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+}

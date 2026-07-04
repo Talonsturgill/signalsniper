@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "canvas": "#08090a",
+    "ink": "#e5e7eb",
+    "ink_muted": "#88898c",
+    "accent": "#f36716",
+    "hairline": "#292a2b"
+  },
+  "provenance": {
+    "canvas": "frequency heuristic (darkest common)",
+    "ink": "frequency heuristic (lightest common)",
+    "accent": "frequency heuristic (most saturated)",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.85)"
+  },
+  "confidence": "low",
+  "dark_canvas": true,
+  "source_url": "https://caveman.so",
+  "notes": [
+    "stylesheet mined: https://caveman.so/_next/static/chunks/0etj21f2jxp_g.css?dpl=dpl_H99CFBuoFG81BD8revwhFoRa7fLV"
+  ]
+}

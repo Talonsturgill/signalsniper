@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-04",
+  "project": "caveman",
+  "project_url": "https://github.com/JuliusBrussee/caveman",
+  "audience": "developers who run coding agents daily and watch their own token bill climb",
+  "single_takeaway": "Caveman makes the agent answer in stripped-down fragments instead of full sentences, and documents exactly when that trick does not pay off.",
+  "viewer_action": "star the repo or quote the video",
+  "desired_feeling": "quietly impressed at a dumb-sounding trick backed by honest engineering",
+  "tone_adjectives": ["deadpan", "precise", "unshowy"],
+  "references": ["a terminal demo, not a slide deck", "an engineering postmortem tone, not a hype reel"],
+  "mandatories": "brand tokens sourced from caveman.so and juliusbrussee.github.io/caveman, CC BY attribution, @julius_brussee tagged",
+  "success_criteria": "julius_brussee quote-posts it, the story reads fully muted",
+  "platform": "x"
+}

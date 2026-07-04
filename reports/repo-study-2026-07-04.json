@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-04",
+  "project_url": "https://github.com/JuliusBrussee/caveman",
+  "components": [
+    "install.sh / install.ps1 installer (Node >= 18)",
+    "skill file injected into the agent's system prompt at install time",
+    "local hooks that enable caveman mode by default on Claude Code sessions",
+    "session-log parser powering /caveman-stats",
+    "compression levels: lite, full, ultra, wenyan"
+  ],
+  "commands": [
+    {"text": "curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh | bash", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"},
+    {"text": "/caveman", "source": "https://juliusbrussee.github.io/caveman/"},
+    {"text": "/caveman-stats", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"},
+    {"text": "/caveman-commit", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"},
+    {"text": "/caveman-compress <file>", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"}
+  ],
+  "outputs": [
+    {"text": "Me ready.", "source": "https://juliusbrussee.github.io/caveman/"},
+    {"text": "New object ref each render. Inline object prop = new ref = re-render. Wrap in useMemo.", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"},
+    {"text": "Bug in auth middleware. Token expiry check use < not <=. Fix:", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"},
+    {"text": "1180", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"},
+    {"text": "159", "source": "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md"}
+  ],
+  "architecture_facts": [
+    "installs as a skill file injected straight into the agent's own system prompt, no separate server or proxy",
+    "ships local hooks so Claude Code sessions start in caveman mode without a manual toggle",
+    "reads local session logs to total token and dollar savings for /caveman-stats",
+    "runs with zero telemetry, entirely on the developer's machine after install",
+    "documents its own failure mode: the skill adds roughly 1 to 1.5k input tokens per turn, so it can be net negative on prompts that were already terse",
+    "an install hook wires the skill into the agent at session start",
+    "the skill rewrites the agent's own system prompt with brevity rules",
+    "the agent's replies come back as a terse reply instead of full sentences",
+    "the payoff is simply fewer tokens billed per turn"
+  ],
+  "surprising_detail": "the highest compression tier isn't called turbo or max, it's wenyan, named after classical literary Chinese prose, and the README is honest that the skill can lose net tokens on already-terse workloads"
+}

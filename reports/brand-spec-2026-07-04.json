@@ -1,0 +1,74 @@
+{
+  "date": "2026-07-04",
+  "brand_slug": "caveman-native-assisted",
+  "aesthetic_slug": "caveman-native-assisted",
+  "framework": "SCHEMATIC",
+  "source_url": "https://caveman.so",
+  "provenance_note": "brand_extract.py on caveman.so returned confidence=low (frequency heuristic only) but its fire-orange accent #f36716 matches the project's visible identity (a 'primitive fire' motif on a token-compression tool). A second pass on the docs subdomain (juliusbrussee.github.io/caveman) returned confidence=high for canvas and ink via real CSS variables (--bg, --text-primary) but its own accent was just white-on-white (no real accent declared). Per routine step 6.3, assembled the token set from both: canvas+ink from the high-confidence docs site, accent from the coherent low-confidence caveman.so evidence.",
+  "tokens": {
+    "canvas": "#0b0b0c",
+    "ink": "#f2f0eb",
+    "ink_muted": "#888888",
+    "accent": "#f68d50",
+    "hairline": "#1a1a1a"
+  },
+  "provenance": {
+    "canvas": "juliusbrussee.github.io/caveman css var --bg, nudged off pure black (confidence high)",
+    "ink": "juliusbrussee.github.io/caveman css var --text-primary, softened from pure white (confidence high)",
+    "accent": "caveman.so frequency-heuristic most-saturated color (#f36716, the site's own fire-orange), lightened to #f68d50 in the screening loop: the raw value sat right on the readability gate's dark/light luma boundary (~136), which starved the inverted flash scene's luma spread (112, needed 120); lightening to luma ~165 gave the bright field real margin without losing the fire-orange identity",
+    "ink_muted": "juliusbrussee.github.io/caveman css var --text-secondary",
+    "hairline": "juliusbrussee.github.io/caveman css var --border"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.01,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "fade",
+    "scene_in_s": 0.3,
+    "scene_out_s": 0.2,
+    "stagger_s": 0.2
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 6
+  },
+  "texture": {
+    "grain": 0.06,
+    "vignette": 0.22,
+    "halation": 0.05,
+    "lighting_arc": 0.3
+  },
+  "background": {
+    "style": "aurora",
+    "intensity": 0.65
+  },
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_floor_luma": ">=230 (ink #f2f0eb measures ~240, clear of floor)",
+    "accent_is_graphic_not_text": "raw #f68d50 (luma ~165, lightened from the mined #f36716 to clear the flash scene's inverted-field spread floor) stays on dots, fills, strokes, and glows; --accent-ink (accent blended toward ink to ~205 luma) used for any accent-colored hero text so it doesn't read dim on near-black",
+    "muted_content_rule": "activity lines and detail rows use --muted-content (muted blended 60% toward ink); raw ink_muted (#888888) stays for decorative-only corner tags",
+    "per_scene_light_source": {
+      "1_title": "hero wordmark 'caveman' in full ink weight fills most of the frame width, JetBrainsMono at hero scale -- the light source IS the type mass, poster-ready at frame 0",
+      "2_diagram": "architecture nodes/rules in ink with one accent node (the skill-injection step) glowing as the through-line; rule-lines carry the midground plate",
+      "3_terminal": "terminal pane on a slightly lifted near-black plate so typed ink text (the real /caveman command and output) keeps contrast; accent tags the prompt char",
+      "4_stack_receipt": "bold ink numerals (1,180 to 159 tokens) at hero scale against the dark plate, accent used only on the down-arrow motion/glyph, not the numeral text",
+      "5_sparkline": "sparkline drawn in accent with an end-dot glow, big_number star count-up in full ink -- brightest, busiest frame in the piece",
+      "6_flash_inverted": "INVERTED beat: bright accent-lit field, dark ink type carrying the 'wenyan' surprising detail -- the one polarity flip, contrast budget spent here",
+      "7_mono_block_honesty": "mono_block quoting the README's own net-negative caveat in ink on the dark plate, small accent rule underneath",
+      "8_close": "wordmark rhymes with scene 1 composition for the autoloop, same type mass as the light source"
+    },
+    "inverted_beat": "scene 6 (flash) flips to a bright accent-lit field so the piece isn't one flat near-black wash for the whole runtime"
+  }
+}
