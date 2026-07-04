@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-04",
+  "slug": "2026-07-04b",
+  "run_note": "Second tribute of 2026-07-04 (first run shipped caveman). Distinct slug so the merged caveman artifacts are never overwritten.",
+  "project": "video-use",
+  "project_url": "https://github.com/browser-use/video-use",
+  "claims": [
+    {
+      "claim": "just crossed 14k stars",
+      "value": 14585,
+      "sources": [
+        "https://github.com/browser-use/video-use",
+        "https://github.com/browser-use"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "climbing roughly 4,000 stars a week",
+      "value": "+4056/week",
+      "sources": [
+        "https://github.com/trending?since=weekly",
+        "https://github.com/browser-use/video-use"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "100% open source, MIT licensed",
+      "sources": [
+        "https://github.com/browser-use/video-use",
+        "https://raw.githubusercontent.com/browser-use/video-use/main/README.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "the model reasons over the packed text transcript, not the video frames",
+      "sources": [
+        "https://raw.githubusercontent.com/browser-use/video-use/main/README.md",
+        "https://raw.githubusercontent.com/browser-use/video-use/main/SKILL.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "it self-evaluates every cut boundary and re-renders, up to three passes",
+      "sources": [
+        "https://raw.githubusercontent.com/browser-use/video-use/main/SKILL.md",
+        "https://raw.githubusercontent.com/browser-use/video-use/main/README.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "built by Magnus Muller and Gregor Zunic, the browser-use team (YC W25)",
+      "sources": [
+        "https://github.com/browser-use",
+        "https://www.ycombinator.com/companies/browser-use"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    }
+  ],
+  "shippable_numerals": ["just crossed 14k stars"],
+  "notes": "Only one engagement numeral ships (stars), per v7 caption budget. No Hacker News ranking claim: no HN thread found for video-use, so any HN rank is unverifiable and excluded. The 45M-tokens/12KB README illustration is deliberately NOT shipped as a hard numeral; the same idea ships as a capability fact with no number (the model reads the transcript, never the frames)."
+}

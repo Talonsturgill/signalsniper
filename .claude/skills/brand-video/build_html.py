@@ -1574,6 +1574,19 @@ def render_scene(idx, scene):
         # with "$". Spec sets prompt_char to match the tool being shown.
         prompt_char = scene.get("prompt_char", "$")
 
+        # Adaptive body size: base 5.6cqw comfortably fits ~26 mono chars in the
+        # 94%-wide frame; longer command lines scale down so nothing clips
+        # (terminal-line is white-space: pre and never wraps).
+        def _line_cost(line):
+            t = line["text"] if isinstance(line, dict) else line
+            is_p = line.get("prompt", True) if isinstance(line, dict) else True
+            return len(t) + (2 if is_p else 0)
+        _eff = max((_line_cost(l) for l in lines), default=1)
+        # Empirically ~23 char-equiv fit at 5.6cqw in the ~90cqw text area (mono
+        # advance plus the hairline text-stroke). Target 84cqw (a 6cqw safety
+        # margin) so long command lines scale down and never clip.
+        _body_fs = min(5.6, max(3.5, 84.0 / (0.72 * _eff)))
+
         def render_line(i, line):
             text = line["text"] if isinstance(line, dict) else line
             show_prompt = line.get("prompt", True) if isinstance(line, dict) else True
@@ -1600,7 +1613,7 @@ def render_scene(idx, scene):
       <div class="terminal-dot"></div>
       {title_html}
     </div>
-    <div class="terminal-body">{lines_html}</div>
+    <div class="terminal-body" style="font-size:{_body_fs:.2f}cqw">{lines_html}</div>
   </div>
 </section>"""
 

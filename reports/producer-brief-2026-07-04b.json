@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-04b",
+  "project": "video-use",
+  "project_url": "https://github.com/browser-use/video-use",
+  "audience": "AI engineers and build-in-public devs who live in Claude Code and already follow browser-use",
+  "single_takeaway": "video-use turns your coding agent into a video editor that works from the transcript, never the frames.",
+  "viewer_action": "star video-use and quote the post",
+  "desired_feeling": "that is the smartest reframe of video editing I have seen this week",
+  "tone_adjectives": ["bold", "precise", "admiring"],
+  "references": ["browser-use's own launch clips", "a film-cut EDL on a timeline", "a live terminal session"],
+  "mandatories": "native browser-use brand tokens, CC BY music attribution, creators tagged (@browser_use, @mamagnus00, @gregpr07)",
+  "success_criteria": "the browser-use team quote-posts it, and the story reads fully muted",
+  "platform": "x"
+}

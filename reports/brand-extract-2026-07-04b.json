@@ -1,0 +1,23 @@
+{
+  "tokens": {
+    "canvas": "#09090b",
+    "ink": "#6983c0",
+    "ink_muted": "#4e608d",
+    "accent": "#6983c0",
+    "hairline": "#27272a"
+  },
+  "provenance": {
+    "canvas": "css var --bg",
+    "ink": "css var --tw-prose-links (contrast-fixed)",
+    "accent": "css var --tw-prose-links (lightness-nudged from #111827)",
+    "hairline": "css var --border",
+    "ink_muted": "derived mix(ink, canvas)"
+  },
+  "confidence": "high",
+  "dark_canvas": true,
+  "source_url": "https://browser-use.com",
+  "notes": [
+    "stylesheet mined: https://browser-use.com/_next/static/css/90c3305cacb22890.css",
+    "stylesheet mined: https://browser-use.com/_next/static/css/cfe2c61c29baa228.css"
+  ]
+}

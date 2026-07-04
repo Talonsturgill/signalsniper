@@ -208,5 +208,12 @@
     "aesthetic_slug": "caveman-native-assisted",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/JuliusBrussee/caveman"
+  },
+  {
+    "date": "2026-07-04b",
+    "brand_slug": "browser-use-native-assisted",
+    "aesthetic_slug": "browser-use-native-assisted",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/browser-use/video-use"
   }
 ]

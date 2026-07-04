@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-04b",
+  "project": "video-use",
+  "concepts": [
+    {
+      "name": "The loop that watches itself",
+      "world": "Inside the agent's editing loop, a living pipeline diagram.",
+      "shows": "The six-stage loop drawing on, a terminal session kicking it off, and the self-eval edge looping render back on itself.",
+      "money_shot": "The self-eval node pulsing and the feedback edge firing a re-render.",
+      "why_repost": "browser-use loves showing the mechanism, not the marketing.",
+      "why_stop_scroll": "A diagram that loops back on itself is a rare shape in the feed.",
+      "light": "Ink nodes on near-black, one accent node glowing; terminal plate.",
+      "argument": "The strongest substance play: it foregrounds the self-correcting loop, which is the genuinely novel engineering. Risk: a pure process film can read cool but not bold, and the scroll-stopper (the loop) arrives late."
+    },
+    {
+      "name": "Never watches",
+      "world": "A manifesto in browser-use blue-on-near-black: a video editor that never looks at the video.",
+      "shows": "Wordmark, the raw-in cut-out claim, a real Claude Code prompt, the loop, the discipline, then the inverted reveal.",
+      "money_shot": "An inverted blue flash: 'never watches' in dark ink on a bright accent field.",
+      "why_repost": "It is the most surprising, quotable framing of their own tool, in their own colors.",
+      "why_stop_scroll": "'An editor that never watches the video' is a pattern interrupt you have to resolve.",
+      "light": "Near-white manifesto type carries the frames; one inverted accent flash spends the contrast budget at the peak.",
+      "argument": "Chosen. It is the boldest and most quotable, and the counterintuitive reveal earns the scroll-stop, while the terminal, the loop diagram, and the discipline beat give it real substance so it is a claim backed by mechanism, not a slogan."
+    },
+    {
+      "name": "Raw in, cut out",
+      "world": "A before-and-after receipt: a messy folder of clips becomes one finished file.",
+      "shows": "A split of raw takes versus final.mp4, one typed sentence between them.",
+      "money_shot": "final.mp4 landing on a bright result plate.",
+      "why_repost": "Proof over pitch, the transformation is the flex.",
+      "why_stop_scroll": "One sentence turning raw footage into a cut looks like magic.",
+      "light": "Split panes, a bright result plate at the payoff.",
+      "argument": "The most legible outcome, but the transformation alone undersells the how, and a before/after leans on the same receipt shape ECC and caveman already used this week."
+    }
+  ],
+  "pick": "Never watches",
+  "wow_bets": [
+    "The inverted blue 'never watches' money shot, the one polarity flip in the piece",
+    "The self-eval feedback edge in the loop diagram (it grades its own cut and re-renders)",
+    "The terminal typing the real one-line prompt, edit these into a launch video"
+  ],
+  "runtime_plan": "8 scenes, ~28s, a beat every ~3.5s, an in-scene event in every scene (words slam, prompt types, nodes draw, edge fires, field flips, curve climbs)."
+}
