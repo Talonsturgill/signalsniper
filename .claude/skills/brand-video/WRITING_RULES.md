@@ -113,6 +113,27 @@ The post's first reply carries the repo link (links in the body are reach-penali
 ## The deliverables file and gate (v7)
 
 Step 13.5 writes `reports/deliverables-$DATE.json`:
-`{date, project_url, creator_handle, caption, capability_fact, first_reply, why_this_one, track_license, attribution_reply}`
+`{date, project_url, creator_handle, caption, capability_fact, first_reply, why_this_one, track_license, attribution_reply, linkedin_caption, linkedin_hashtags, linkedin_tag}`
 
 `deliverables_check.py` validates: handle-first caption, effective lengths (URLs count 23), forbidden characters, the engagement-metric budget, the capability fact, the first-reply link, zero 4-gram overlap between caption and why-this-one, and CC BY attribution format. With `--spec`/`--repo-study` it adds the video-substance checks; with `--gmail reports/gmail-$DATE.html` it validates the exact HTML to be sent (repo link present, First-reply block present, MP4 + GIF links, no local paths, no style blocks). Non-zero exit → the run does not deliver.
+
+## LinkedIn caption (v9, second surface)
+
+The SAME video ships to X and to LinkedIn. The X caption is unchanged. LinkedIn gets its OWN caption in the operator's voice, delivered in the Gmail as one copy-paste block (caption + hashtags together) next to the person/company LinkedIn URL to tag.
+
+**Voice.** Chill and human, first person, like the operator telling a peer about something cool. Painfully SPECIFIC — a real number, a real name, the exact thing it does — because specificity is what reads as true, not a machine. Take a clear stance ("this is the cleanest agent-memory I've seen" beats "some thoughts on agent memory"). Plain words. Short, clipped sentences. Opening with a one-line hook, even a one-word sentence, is good. Never over-the-top, never salesy.
+
+**Hard rules (gated by `deliverables_check.py --linkedin` inside the copy pass).**
+- NO em dash, en dash, colon, or semicolon. None — rewrite the sentence instead.
+- Few commas. Roughly one per sentence at most; if a sentence needs three commas, split it.
+- NO AI tells. The banned list lives in `deliverables_check.py` (`LINKEDIN_AI_TELLS`): delve, leverage, utilize, harness, streamline, elevate, revolutionize, robust, seamless, innovative, cutting-edge, pivotal, tapestry, realm, testament, moreover, furthermore, "in today's fast-paced world", "worth noting", "dive into", "unlock the", and their friends. `delve` is the single loudest tell. Read it aloud; if it sounds like a brand deck or a bot, it fails.
+- 3 to 5 hashtags, at the END, on their own line, topical and plain (`#AI #DevTools #OpenSource`) — not #ThoughtLeadership fluff. 6+ tanks reach.
+- A tight paragraph or two (roughly 250–1000 chars). Not an essay, not a one-liner. Say what it does and why it's cool.
+- Emojis sparingly if at all; no emoji bullet lists (that reads as AI).
+
+**Preplan → draft → refine (all three, like the rest of the pipeline).**
+1. **Preplan:** name the ONE genuinely cool thing (usually the repo-study `surprising_detail`) and the one specific fact that proves it. That is the spine.
+2. **Draft** it in the operator's voice, plain and specific, stance-first.
+3. **Refine:** read it out loud, cut every AI tell, cut commas, cut hedging, then run the gate. Iterate until green.
+
+**Tagging.** Find the creator's or the company's LinkedIn URL (site footer, GitHub profile, a search) during creator research and store `{name, url}` in `linkedin_tag` (null if genuinely unfindable). LinkedIn @-mentions can't be pasted as plain text, so the Gmail surfaces the name + URL with a "tag them when you compose" note; the operator types `@Name` in the composer and selects them.

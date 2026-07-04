@@ -63,6 +63,30 @@ GROWTH_SCENE_RE = re.compile(
 FORBIDDEN_CHARS = {"em dash": "—", "en dash": "–", "semicolon": ";"}
 SMART_QUOTES = set("‘’“”")
 
+# ---- LinkedIn caption (v9) ------------------------------------------------
+# Same video, second surface. The operator's voice: chill, specific, human.
+# Hard rules from the operator: no em/en dash, no colon, no semicolon, few
+# commas, NO AI tells, 3-5 hashtags. The tell list is the AI "fingerprint"
+# (delve/leverage/robust/seamless/tapestry/moreover/"in today's fast-paced
+# world"...) that readers register as machine-written even when they can't say
+# why -- researched, not guessed. "delve" is the single strongest signal.
+LINKEDIN_FORBIDDEN = {"em dash": "—", "en dash": "–", "semicolon": ";", "colon": ":"}
+LINKEDIN_AI_TELLS = [
+    "delve", "delving", "delved", "leverage", "leverages", "leveraging",
+    "utilize", "utilizes", "utilizing", "harness", "harnessing", "streamline",
+    "streamlines", "streamlining", "underscore", "underscores", "elevate",
+    "elevates", "elevating", "revolutionize", "revolutionizes", "revolutionary",
+    "supercharge", "supercharges", "spearhead", "robust", "seamless",
+    "seamlessly", "innovative", "cutting-edge", "pivotal", "bespoke",
+    "unparalleled", "world-class", "next-level", "game-changer", "game changer",
+    "game-changing", "tapestry", "realm", "synergy", "testament", "moreover",
+    "furthermore", "consequently", "notably", "boasts", "boasting",
+    "meticulous", "meticulously", "paradigm", "in today's", "fast-paced world",
+    "digital age", "worth noting", "important to note", "dive into", "deep dive",
+    "delve into", "embark on", "embark upon", "navigate the", "in the realm of",
+    "unlock the", "at the end of the day", "look no further", "a testament to",
+]
+
 
 def effective_len(text):
     """X counts every URL as 23 chars (t.co)."""
@@ -101,7 +125,8 @@ def check_copy_rules(field, text, fails, allow_final_question=False):
 def check_deliverables(d, fails):
     """Every check that CAN run does run — one pass surfaces every problem."""
     required = ["date", "project_url", "creator_handle", "caption",
-                "capability_fact", "first_reply", "why_this_one", "track_license"]
+                "capability_fact", "first_reply", "why_this_one", "track_license",
+                "linkedin_caption", "linkedin_hashtags"]
     missing = [k for k in required if not d.get(k)]
     if missing:
         fails.append(f"deliverables: missing fields {missing}")
@@ -252,12 +277,64 @@ def check_gmail(html, d, fails):
         fails.append("gmail: <style> block present — inline styles only")
     if d["track_license"].startswith("CC BY") and "licensed under CC BY" not in html:
         fails.append("gmail: CC BY attribution line missing")
+    # v9: the LinkedIn caption + hashtags must ship as their own copy-paste block
+    if not re.search(r"linked\s*in", html, re.I):
+        fails.append("gmail: no LinkedIn block -- the LinkedIn caption + hashtags must ship as one copy-paste block")
+    li = (d.get("linkedin_caption", "") or "").strip()
+    if li and li[:24] not in html:
+        fails.append("gmail: LinkedIn caption text not found in the HTML block")
+    tags = d.get("linkedin_hashtags", "")
+    tags_str = tags if isinstance(tags, str) else " ".join(tags)
+    first_tag = re.search(r"#\w+", tags_str)
+    if first_tag and first_tag.group(0) not in html:
+        fails.append("gmail: LinkedIn hashtags not found in the HTML block")
+
+
+def check_linkedin(d, fails):
+    """Editorial gate for the LinkedIn caption + hashtags (v9). The operator's
+    voice: no em/en dash, no colon, no semicolon; commas kept low; no AI tells;
+    a tight paragraph or two; 3-5 hashtags at the end. LinkedIn @-mentions can't
+    be typed as plain text, so a linkedin_tag (name + profile URL) rides
+    alongside in the deliverables for the operator to @-mention by hand."""
+    cap = d.get("linkedin_caption", "")
+    if not cap:
+        return  # a missing caption is reported by the required-fields check
+    low = cap.lower()
+
+    for label, ch in LINKEDIN_FORBIDDEN.items():
+        if ch in cap:
+            fails.append(f"linkedin_caption: {label} ({ch!r}) present -- the operator forbids it")
+
+    hits = sorted({t for t in LINKEDIN_AI_TELLS
+                   if re.search(r"(?<!\w)" + re.escape(t) + r"(?!\w)", low)})
+    if hits:
+        fails.append(f"linkedin_caption: AI-tell word(s)/phrase(s) {hits[:8]} -- "
+                     "rewrite plainer, in a real human voice (be specific, take a stance)")
+
+    commas = cap.count(",")
+    sentences = max(1, len(re.findall(r"[.!?]+", cap)))
+    if commas > sentences + 1:
+        fails.append(f"linkedin_caption: {commas} commas across ~{sentences} sentences -- too many; "
+                     "keep the sentences short and clipped")
+
+    n = len(cap.strip())
+    if n < 200:
+        fails.append(f"linkedin_caption: {n} chars -- too thin; say what it does and why it is cool")
+    if n > 1300:
+        fails.append(f"linkedin_caption: {n} chars -- too long; a tight paragraph or two, not an essay")
+
+    tags = d.get("linkedin_hashtags", "")
+    tags_str = tags if isinstance(tags, str) else " ".join(tags)
+    hcount = len(re.findall(r"#\w+", tags_str))
+    if not (3 <= hcount <= 5):
+        fails.append(f"linkedin_hashtags: {hcount} hashtag(s) -- use 3 to 5 (6+ triggers a LinkedIn reach penalty)")
 
 
 def run_checks(deliv_path, spec_path=None, study_path=None, gmail_path=None):
     fails = []
     d = json.loads(Path(deliv_path).read_text())
     check_deliverables(d, fails)
+    check_linkedin(d, fails)
 
     if spec_path or study_path:
         if not (spec_path and study_path):
@@ -317,6 +394,14 @@ def selftest():
     good["why_this_one"] = ("He won the Anthropic x Forum Ventures hackathon in NYC by shipping "
                             "zenith.chat in 8 hours without typing a line, then open sourced the "
                             "whole setup once the guide thread crossed 900k views.")
+    good["linkedin_caption"] = ("ECC is one config layer that carries a stack of agents and skills "
+                                "across Claude Code, Codex, Cursor, and OpenCode. Affaan built it in a "
+                                "weekend and open sourced the whole thing. The part that got me is the "
+                                "security scan baked in so your agent setup gets checked before it ships. "
+                                "If you run more than one coding agent this saves you from wiring the same "
+                                "config five times over. Worth a look if you live in these tools all day.")
+    good["linkedin_hashtags"] = "#AI #DevTools #OpenSource #CodingAgents"
+    good["linkedin_tag"] = {"name": "Affaan Mustafa", "url": "https://www.linkedin.com/in/affaanmustafa"}
     good_p = write("good.json", good)
     f2 = run_checks(good_p)
     assert f2 == [], f2
@@ -331,12 +416,24 @@ def selftest():
     assert any("repo URL not present" in x for x in f3), f3
     assert any("First reply" in x for x in f3), f3
 
-    # Case 4: gmail with the block — PASS.
+    # Case 4: gmail with the first-reply block AND the LinkedIn copy-paste block — PASS.
     good_html = bad_html.replace(
         "repo link goes in the first comment, not the post body",
-        "<b>First reply (paste right after posting)</b> https://github.com/affaan-m/ECC ")
+        "<b>First reply (paste right after posting)</b> https://github.com/affaan-m/ECC "
+        "<b>Post to LinkedIn</b> " + good["linkedin_caption"] + " " + good["linkedin_hashtags"] + " ")
     f4 = run_checks(good_p, gmail_path=write("good.html", good_html))
     assert f4 == [], f4
+
+    # Case 4b: LinkedIn caption with an em dash, AI tells, and too few hashtags — must FAIL.
+    bad_li = dict(good)
+    bad_li["linkedin_caption"] = ("This tool will revolutionize how you work — it is a robust and seamless "
+                                  "way to leverage your agents. In today's fast-paced world you have to "
+                                  "delve into it.")
+    bad_li["linkedin_hashtags"] = "#AI #DevTools"
+    f4b = run_checks(write("badli.json", bad_li))
+    assert any("em dash" in x for x in f4b), f4b
+    assert any("AI-tell" in x for x in f4b), f4b
+    assert any("hashtag" in x for x in f4b), f4b
 
     # Case 5: terminal scene typing a command the repo study never verified —
     # the invented `ecc security-review` case. Must FAIL; and only 1 backed scene.
@@ -377,9 +474,9 @@ def selftest():
                     study_path=write("study1.json", study_full))
     assert any("growth-metric scenes" in x for x in f7), f7
 
-    print("SELFTEST PASSED (7 cases: shipped-caption FAIL, corrected PASS, "
-          "linkless-gmail FAIL, linked-gmail PASS, invented-command FAIL, "
-          "studied-command PASS, growth-cap FAIL)")
+    print("SELFTEST PASSED (8 cases: shipped-caption FAIL, corrected PASS, "
+          "linkless-gmail FAIL, linked-gmail PASS, linkedin-tells FAIL, "
+          "invented-command FAIL, studied-command PASS, growth-cap FAIL)")
 
 
 def main():
