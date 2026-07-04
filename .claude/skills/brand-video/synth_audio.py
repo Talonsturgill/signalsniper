@@ -359,32 +359,159 @@ def typewriter_tick(seed, dur=0.06):
     return noise * env * 0.10
 
 
-def build_foley(total_s, transitions, emphases, rich=False):
-    """Foley bus. Default (rich=False) keeps the legacy minimal bed used inside
-    the synth preview. rich=True is the shipping foley layered OVER the music
-    bed by the finishing mux: whoosh into impact at every cut (movement +
-    arrival, pixflow grammar), a stamp on emphasized beats, ducked by the mixer.
-    """
+def riser(seed, dur=0.85):
+    """Rising-pitch noise+tone that ratchets tension into a hit (trailer grammar:
+    the whoosh/riser is the build-up, the braam is the payoff)."""
+    n_samp = sec(dur)
+    np.random.seed(seed)
+    t = np.linspace(0, dur, n_samp, False)
+    noise = np.random.uniform(-1, 1, n_samp)
+    b, a = sig.butter(3, [300, 9000], btype='band', fs=SR)
+    noise = sig.lfilter(b, a, noise)
+    tone_f = 190 * np.exp(t / dur * 1.7)
+    tone = np.sin(np.cumsum(2 * np.pi * tone_f / SR))
+    env = (t / dur) ** 2.0
+    return (noise * 0.5 + tone * 0.4) * env * 0.28
+
+
+def braam(freq=70, dur=1.1):
+    """Big brassy detuned cinematic hit -- the ubiquitous trailer 'braam'."""
+    n_samp = sec(dur)
+    t = np.linspace(0, dur, n_samp, False)
+    wave = np.zeros_like(t)
+    for f in (freq, freq * 1.5, freq * 2.01, freq * 3.0):
+        for h in range(1, 6):
+            wave += np.sin(2 * np.pi * f * h * t * 1.001) / (h * 1.2)
+    wave = np.tanh(wave * 0.8)
+    b, a = sig.butter(3, 2200, btype='low', fs=SR)
+    wave = sig.lfilter(b, a, wave)
+    env = np.ones_like(t)
+    att = sec(0.02)
+    env[:att] = np.linspace(0, 1, att)
+    env *= np.exp(-t * 1.6)
+    return wave * env * 0.5
+
+
+def tape_stop(seed, dur=0.5):
+    """Pitch-plummeting tape-stop into a cut (modern/electronic transition)."""
+    n_samp = sec(dur)
+    np.random.seed(seed)
+    t = np.linspace(0, dur, n_samp, False)
+    f = 380 * np.exp(-t * 7) + 30
+    tone = np.sin(np.cumsum(2 * np.pi * f / SR))
+    noise = np.random.uniform(-1, 1, n_samp)
+    b, a = sig.butter(3, [200, 4000], btype='band', fs=SR)
+    noise = sig.lfilter(b, a, noise)
+    env = np.exp(-t * 3.5)
+    return (tone * 0.6 + noise * 0.3) * env * 0.4
+
+
+def soft_click(seed, dur=0.05):
+    """A discreet UI click for restrained cuts (the research: do not overdo it)."""
+    n_samp = sec(dur)
+    np.random.seed(seed)
+    noise = np.random.uniform(-1, 1, n_samp)
+    b, a = sig.butter(2, [1200, 4500], btype='band', fs=SR)
+    noise = sig.lfilter(b, a, noise)
+    t = np.linspace(0, dur, n_samp, False)
+    env = np.exp(-t * 90)
+    return noise * env * 0.18
+
+
+def sub_boom(freq=44, dur=0.7):
+    """Deep sub impact/'drop' -- releases tension, a beat to soak it in."""
+    n_samp = sec(dur)
+    t = np.linspace(0, dur, n_samp, False)
+    f = freq * np.exp(-t * 3) + 28
+    body = np.tanh(np.sin(np.cumsum(2 * np.pi * f / SR)) * 1.2)
+    env = np.exp(-t * 3.2)
+    att = sec(0.004)
+    env[:att] *= np.linspace(0, 1, att)
+    return body * env * 0.7
+
+
+def reverse_swell(seed, dur=0.7):
+    """Reverse-cymbal-style swell that crescendos INTO the cut."""
+    n_samp = sec(dur)
+    np.random.seed(seed)
+    t = np.linspace(0, dur, n_samp, False)
+    noise = np.random.uniform(-1, 1, n_samp)
+    b, a = sig.butter(4, [800, 8000], btype='band', fs=SR)
+    noise = sig.lfilter(b, a, noise)
+    env = (t / dur) ** 2.2
+    return noise * env * 0.30
+
+
+# Foley families. Each video is assigned ONE (non-repeating via variety_check)
+# so the transient grammar -- the "swipe" the viewer hears -- differs every day.
+# Grounded in trailer/motion sound grammar: whoosh+hit is a build-up/payoff pair;
+# risers pair with braams; a drop is a dead-stop; and not every cut needs a swipe.
+FOLEY_STYLES = ("whoosh_thud", "riser_braam", "tapestop_drop",
+                "click_minimal", "sub_impact", "reverse_swell")
+
+
+def build_foley(total_s, transitions, emphases, rich=False,
+                style="whoosh_thud", seed_base=1000):
+    """Foley bus. rich=False keeps the legacy minimal preview bed. rich=True is
+    the shipping stem layered OVER the music by the finishing mux, ducked by the
+    mixer. `style` selects the transient family (FOLEY_STYLES); `seed_base` is
+    date-derived so even a recurring family is never byte-identical."""
     track = np.zeros(int(SR * total_s))
     if not rich:
         for em in emphases:
-            if em < 0 or em >= total_s:
-                continue
-            add(track, thud(dur=0.45), em, gain=0.22)
+            if 0 <= em < total_s:
+                add(track, thud(dur=0.45), em, gain=0.22)
         return track
+    if style not in FOLEY_STYLES:
+        style = "whoosh_thud"
     em_set = set(round(e, 2) for e in emphases)
+    S = seed_base
     for i, tt in enumerate(transitions):
         if tt <= 0.1 or tt >= total_s - 0.1:
             continue
-        add(track, whoosh(seed=1000 + i, dur=0.42), tt - 0.24, gain=0.55)
-        # emphasized boundaries get the stamp instead of the plain thud
-        if round(tt, 2) not in em_set:
-            add(track, thud(dur=0.34), tt - 0.01, gain=0.38)
+        is_em = round(tt, 2) in em_set
+        if style == "whoosh_thud":
+            add(track, whoosh(S + i, 0.42), tt - 0.24, gain=0.55)
+            if not is_em:
+                add(track, thud(0.34), tt - 0.01, gain=0.38)
+        elif style == "riser_braam":
+            add(track, whoosh(S + i, 0.28), tt - 0.14, gain=0.26)
+            if not is_em:
+                add(track, soft_click(S + i, 0.05), tt, gain=0.5)
+        elif style == "tapestop_drop":
+            if i % 2 == 0:
+                add(track, tape_stop(S + i, 0.5), tt - 0.26, gain=0.5)
+            if not is_em:
+                add(track, soft_click(S + i, 0.05), tt, gain=0.42)
+        elif style == "click_minimal":
+            add(track, soft_click(S + i, 0.05), tt, gain=0.6)
+        elif style == "sub_impact":
+            add(track, transition_swell(S + i, 0.9, 0.92), tt - 0.72, gain=0.5)
+            if not is_em:
+                add(track, soft_click(S + i, 0.05), tt, gain=0.34)
+        elif style == "reverse_swell":
+            add(track, reverse_swell(S + i, 0.68), tt - 0.66, gain=0.5)
+            if not is_em:
+                add(track, thud(0.3), tt - 0.01, gain=0.30)
     for j, em in enumerate(emphases):
-        if em < 0 or em >= total_s:
+        if not (0 <= em < total_s):
             continue
-        add(track, thud(dur=0.5), em - 0.01, gain=0.62)
-        add(track, glitch_hit(seed=2000 + j, dur=0.12), em, gain=0.30)
+        if style == "whoosh_thud":
+            add(track, thud(0.5), em - 0.01, gain=0.62)
+            add(track, glitch_hit(S + 2000 + j, 0.12), em, gain=0.30)
+        elif style == "riser_braam":
+            add(track, riser(S + 3000 + j, 0.8), em - 0.8, gain=0.5)
+            add(track, braam(70, 1.1), em, gain=0.55)
+        elif style == "tapestop_drop":
+            add(track, sub_boom(46, 0.7), em, gain=0.62)
+        elif style == "click_minimal":
+            add(track, sub_boom(44, 0.5), em, gain=0.42)
+        elif style == "sub_impact":
+            add(track, sub_boom(42, 0.8), em, gain=0.7)
+            add(track, thud(0.4), em, gain=0.3)
+        elif style == "reverse_swell":
+            add(track, thud(0.5), em, gain=0.5)
+            add(track, sub_boom(48, 0.5), em, gain=0.35)
     return track
 
 
@@ -426,9 +553,11 @@ def build_track(palette, total_s, transitions, emphases):
     return master_chain(music + foley, total_s)
 
 
-def build_foley_track(total_s, transitions, emphases):
+def build_foley_track(total_s, transitions, emphases,
+                      style="whoosh_thud", seed_base=1000):
     """Foley-only stem for the finishing mux (no pad, no normalization frenzy)."""
-    foley = build_foley(total_s, transitions, emphases, rich=True)
+    foley = build_foley(total_s, transitions, emphases, rich=True,
+                        style=style, seed_base=seed_base)
     peak = np.max(np.abs(foley))
     if peak > 0:
         foley = foley / peak * 0.7
@@ -449,16 +578,24 @@ def main():
     parser.add_argument("--palette", default="ambient", choices=list(PALETTES))
     parser.add_argument("--bv-meta", help="Inline JSON {total_s, timeline:[{start}], emphases:[], audio_palette:'..'}")
     parser.add_argument("--foley-only", action="store_true",
-                        help="Emit only the rich foley stem (whoosh+impact at cuts, stamp on emphases) for the finishing mux")
+                        help="Emit only the rich foley stem (transient grammar at cuts, hit on emphases) for the finishing mux")
+    parser.add_argument("--foley-style", default=None, choices=list(FOLEY_STYLES),
+                        help="Transient family for the shipping foley (defaults to bv-meta.foley_style or whoosh_thud)")
+    parser.add_argument("--seed", type=int, default=None,
+                        help="Date-derived seed so a recurring foley family is never byte-identical")
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
+    foley_style = args.foley_style
+    seed_base = 1000 if args.seed is None else 1000 + (args.seed % 90000)
     if args.bv_meta:
         meta = json.loads(args.bv_meta)
         total = float(meta["total_s"])
         transitions = [float(s["start"]) for s in meta["timeline"][1:]]
         emphases = [float(x) for x in meta.get("emphases", [])]
         palette = meta.get("audio_palette") or "ambient"
+        if foley_style is None:
+            foley_style = meta.get("foley_style")
     else:
         if args.total is None:
             raise SystemExit("Provide --total or --bv-meta")
@@ -472,7 +609,9 @@ def main():
         palette = "ambient"
 
     if args.foley_only:
-        audio = build_foley_track(total, transitions, emphases)
+        audio = build_foley_track(total, transitions, emphases,
+                                  style=(foley_style or "whoosh_thud"),
+                                  seed_base=seed_base)
     else:
         audio = build_track(palette, total, transitions, emphases)
     out = Path(args.output)
