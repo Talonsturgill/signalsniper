@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-04c",
+  "brand_slug": "mcp-use-native",
+  "preset_slug": "mcp-use-native",
+  "framework": "CLASSIC",
+  "rationale_one_line": "CLASSIC is tied-least-used (3/31) and not the most-recent framework (MANIFESTO), leaving room for a straightforward hook-proof-close arc that lets the real product beats (terminal, diagram) and the founder's own quote carry the story without a heavier structural conceit.",
+  "writing_tone_notes": "Plain, confident, builder-to-builder. No hype adjectives -- let the real commands and the founder's own words do the work. Orange-on-near-black, JetBrainsMono display for a developer-tool register.",
+  "do_rules": [
+    "lead every claim with something literally documented (command, architecture fact, or the founder's own quoted words)",
+    "keep it fast and snappy -- hard cuts, no stylized transition, matches the 'shipping fast' energy of a YC launch"
+  ],
+  "dont_rules": [
+    "no invented terminal output",
+    "no on-screen star count this run (variety gate: growth beat ran the last 2 videos)",
+    "don't over-explain MCP itself -- assume the audience already knows what the protocol is"
+  ]
+}

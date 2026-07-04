@@ -1,19 +1,5 @@
 [
   {
-    "date": "2026-05-31",
-    "brand_slug": null,
-    "aesthetic_slug": "cctv",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/ruvnet/RuView"
-  },
-  {
-    "date": "2026-06-01",
-    "brand_slug": "voltagent",
-    "aesthetic_slug": "voltagent",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
-  },
-  {
     "date": "2026-06-02",
     "brand_slug": "clickhouse",
     "aesthetic_slug": "clickhouse",
@@ -215,5 +201,12 @@
     "aesthetic_slug": "browser-use-native-assisted",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/browser-use/video-use"
+  },
+  {
+    "date": "2026-07-04c",
+    "brand_slug": "mcp-use-native",
+    "aesthetic_slug": "mcp-use-native",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/mcp-use/mcp-use"
   }
 ]

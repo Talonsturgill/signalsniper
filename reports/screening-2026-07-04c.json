@@ -1,0 +1,73 @@
+{
+  "raw_unique_ratio": 0.869,
+  "raw_max_interior_dup_ms": 200,
+  "raw_min_unique_per_sec": 17,
+  "scene_durations": [
+    3.91,
+    3.85,
+    4.11,
+    4.16,
+    3.51,
+    3.02,
+    4.0
+  ],
+  "readability": [
+    {
+      "scene": 0,
+      "polarity": "dark",
+      "ink": 243,
+      "spread": 233
+    },
+    {
+      "scene": 1,
+      "polarity": "dark",
+      "ink": 244,
+      "spread": 234
+    },
+    {
+      "scene": 2,
+      "polarity": "dark",
+      "ink": 244,
+      "spread": 235
+    },
+    {
+      "scene": 3,
+      "polarity": "dark",
+      "ink": 245,
+      "spread": 235
+    },
+    {
+      "scene": 4,
+      "polarity": "dark",
+      "ink": 247,
+      "spread": 237
+    },
+    {
+      "scene": 5,
+      "polarity": "light",
+      "ink": 24,
+      "spread": 139
+    },
+    {
+      "scene": 6,
+      "polarity": "dark",
+      "ink": 243,
+      "spread": 233
+    }
+  ],
+  "chroma_cast": {
+    "final_RG": 2.99,
+    "final_BG": -6.57,
+    "raw_RG": 4.21,
+    "raw_BG": -3.45
+  },
+  "frames": 664,
+  "longest_still_s": 0.2,
+  "energy_peak_pos": 0.881,
+  "poster_luma_std": 28.59,
+  "audio_range_db": 17.2,
+  "cut_onset_median_ms": 40.0,
+  "duration_s": 26.56,
+  "warnings": [],
+  "failures": []
+}
