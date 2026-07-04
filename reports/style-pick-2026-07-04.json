@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-04",
+  "brand_slug": "caveman-native-assisted",
+  "preset_slug": null,
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "caveman.so read low-confidence on extraction but its fire-orange accent is the project's own visible identity; the docs subdomain read high-confidence for canvas and ink, so the assembled near-black-and-cream-with-orange palette is project-native, just stitched from two owned URLs instead of one.",
+  "writing_tone_notes": "Deadpan and matter-of-fact about a silly premise. Let the mechanism (skill rewrites the system prompt, agent replies in fragments) carry the humor; don't editorialize about how funny 'caveman speak' is. Admiring of the honesty in the README's own caveat, not just the stunt.",
+  "do_rules": [
+    "Show the actual before/after token counts (1,180 to 159) as an on-screen number, not just a percentage",
+    "Type a real /caveman command and a real terse output line, sourced from the README",
+    "Diagram the mechanism (skill injected into system prompt, zero telemetry) since that is the substance beat, not just the growth chart"
+  ],
+  "dont_rules": [
+    "Don't claim number 1 on Hacker News, only the project's own landing page states it and it could not be independently confirmed",
+    "Don't repeat '82k stars' in both the tweet and a scene card",
+    "No question-hook captions"
+  ]
+}

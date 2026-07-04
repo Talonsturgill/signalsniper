@@ -253,5 +253,10 @@
     "date": "2026-07-03",
     "slug": "beauty-flow",
     "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-07-04",
+    "slug": "edm-detection-mode",
+    "project_url": "https://github.com/JuliusBrussee/caveman"
   }
 ]

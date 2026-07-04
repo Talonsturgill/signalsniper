@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-04",
+  "project_url": "https://github.com/JuliusBrussee/caveman",
+  "claims": [
+    {
+      "claim": "82k+ stars",
+      "sources": [
+        "https://github.com/JuliusBrussee/caveman",
+        "https://www.star-history.com/juliusbrussee/caveman/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "65% average output-token reduction (vendor benchmark, range 22-87%)",
+      "sources": [
+        "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md",
+        "https://caveman.so/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "1,180 tokens to 159 tokens on the React re-render benchmark (87% cut)",
+      "sources": [
+        "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/README.md",
+        "https://juliusbrussee.github.io/caveman/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-04"
+    },
+    {
+      "claim": "4.6k forks",
+      "sources": [
+        "https://github.com/JuliusBrussee/caveman"
+      ],
+      "verified": false,
+      "as_of": "2026-07-04",
+      "note": "single-source only, not used in shipped copy"
+    },
+    {
+      "claim": "number 1 on Hacker News",
+      "sources": [
+        "https://caveman.so/"
+      ],
+      "verified": false,
+      "as_of": "2026-07-04",
+      "note": "only the project's own landing page states this; could not independently confirm rank via HN API (rate-limited) or a second source, so this claim is NOT used in shipped copy"
+    }
+  ]
+}

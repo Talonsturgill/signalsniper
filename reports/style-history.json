@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-05-29",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-paper",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/Lum1104/Understand-Anything"
-  },
-  {
     "date": "2026-05-31",
     "brand_slug": null,
     "aesthetic_slug": "cctv",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "claude",
     "framework": "RECEIPT",
     "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-07-04",
+    "brand_slug": "caveman-native-assisted",
+    "aesthetic_slug": "caveman-native-assisted",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/JuliusBrussee/caveman"
   }
 ]

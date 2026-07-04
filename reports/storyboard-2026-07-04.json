@@ -1,0 +1,100 @@
+{
+  "date": "2026-07-04",
+  "project": "caveman",
+  "framework": "SCHEMATIC",
+  "concept": "Take the viewer inside the mechanism, not the scoreboard: a wordmark poster, a 4-node diagram of how the skill actually rewrites the system prompt, a real terminal invocation with its real output, the README's own honest caveat, the token receipt that proves the trick works, an inverted beat naming the wenyan tier as a repo-reader's easter egg, the star climb, and a close that rhymes with the open.",
+  "money_shot_note": "Scene 6 (flash, inverted polarity) naming wenyan is the peak: it is the one detail that proves the video's maker actually read the code, not just the star chart, and it lands at 71% of the runtime.",
+  "transition_strategy": "Hard cuts on the beat throughout, slightly softer fade in/out on the honesty (mono_block) beat to mark it as a tonal pause before the receipt and the inverted peak.",
+  "music_direction": "electronic, mid-tempo, mechanical but not aggressive, room for the inverted beat to land as a genuine accent hit",
+  "energy_curve": [0.35, 0.45, 0.55, 0.5, 0.75, 0.9, 0.8, 0.5],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "establish the project name as the frame-0 poster before any claim is made",
+      "template": "logo_reveal",
+      "camera": "push_in",
+      "copy_note": "wordmark plus a tagline that states the mechanism in one line",
+      "sound_cue": "soft synth swell under the kinetic wordmark settle",
+      "transition": "hard cut",
+      "energy": 0.35,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "show the actual architecture so the trick reads as engineering, not a joke",
+      "template": "diagram",
+      "camera": "orbit",
+      "copy_note": "4 nodes: install hook, system prompt, terse reply, fewer tokens, drawn on in sequence",
+      "sound_cue": "four short ticks as each node draws on",
+      "transition": "hard cut",
+      "energy": 0.45,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "prove the mechanism with a real invocation and its real documented output",
+      "template": "terminal",
+      "camera": "static_breathe",
+      "copy_note": "types /caveman, replies Me ready., sourced verbatim from the project's own docs page",
+      "sound_cue": "keystroke ticks typing on, a soft chime on the reply line",
+      "transition": "hard cut",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "give the project's own documented honesty its moment, the tonal pause before the payoff",
+      "template": "mono_block",
+      "camera": "parallax_drift",
+      "copy_note": "the skill costs input tokens too, documented as net negative sometimes",
+      "sound_cue": "quieter bed, single low tone",
+      "transition": "soft fade",
+      "energy": 0.5,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "land the receipt: the actual before and after token counts that justify the whole premise",
+      "template": "stack",
+      "camera": "crash_zoom",
+      "copy_note": "before 1180 tokens out, after 159 tokens out, cut 87 percent, average 65 percent typical cut",
+      "sound_cue": "rising synth stab under each stat landing",
+      "transition": "hard cut",
+      "energy": 0.75,
+      "money_shot": false
+    },
+    {
+      "beat": 6,
+      "intent": "reward a close reader with the one detail only someone who opened the repo would know, the inverted-polarity peak",
+      "template": "flash",
+      "camera": "tilt_reveal",
+      "copy_note": "word wenyan, caption naming it as classical chinese prose",
+      "sound_cue": "full accent hit, brief silence after",
+      "transition": "hard cut",
+      "energy": 0.9,
+      "money_shot": true
+    },
+    {
+      "beat": 7,
+      "intent": "show the scoreboard is real, after the mechanics have already earned it",
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "copy_note": "star curve from launch to 82k, count-up value label",
+      "sound_cue": "synth arpeggio climbing with the line draw",
+      "transition": "hard cut",
+      "energy": 0.8,
+      "money_shot": false
+    },
+    {
+      "beat": 8,
+      "intent": "close on a composition that rhymes with the open so the autoloop reads clean",
+      "template": "close",
+      "camera": "ken_burns",
+      "copy_note": "reframe the thesis without repeating scene 1's tagline wording",
+      "sound_cue": "swell resolves back to the opening pad",
+      "transition": "hard cut",
+      "energy": 0.5,
+      "money_shot": false
+    }
+  ]
+}

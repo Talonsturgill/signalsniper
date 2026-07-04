@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-04",
+  "project": "caveman",
+  "project_url": "https://github.com/JuliusBrussee/caveman",
+  "concepts": [
+    {
+      "name": "A. The Growth Chart",
+      "world": "A dashboard world: star counters, velocity graphs, the internet noticing.",
+      "shows": "Open on the wordmark, cut straight to a sparkline of the star climb, close on a count-up.",
+      "money_shot": "The star counter crossing 82k with a glow.",
+      "would_creator_repost": "Flattering but generic. Every viral repo gets this exact video.",
+      "would_stranger_stop": "A star chart alone does not explain what the tool DOES.",
+      "verdict": "REJECTED. All scoreboard, no mechanics. Exactly the failure mode the routine's own substance layer exists to prevent."
+    },
+    {
+      "name": "B. Inside the Skill",
+      "world": "A terminal and a system prompt, the actual machinery of the trick: type a command, watch the agent answer in fragments, see the architecture that makes it work.",
+      "shows": "A 4-node diagram (install hook, system prompt, terse reply, fewer tokens), a real /caveman invocation with the real 'Me ready.' output, the honest README caveat that the skill can be net-negative, and the token receipt (1,180 down to 159) as the payoff before a single growth beat.",
+      "money_shot": "An inverted flash beat naming the wenyan compression tier, the one detail that proves someone actually read the code.",
+      "would_creator_repost": "Yes. It shows the trick working AND is honest about its limits, which is rarer and more flattering than pure hype.",
+      "would_stranger_stop": "The terminal typing and the before/after numbers are a real demo, not an abstract claim.",
+      "verdict": "SELECTED. Diegetic, product-first, satisfies the substance floor (product beats before the receipt), gives SCHEMATIC framework a natural architecture-diagram spine."
+    },
+    {
+      "name": "C. The Joke Taken Seriously",
+      "world": "A mock-anthropological framing, caveman iconography, a wink at the silly premise.",
+      "shows": "Skull emoji, cave-painting type treatment, a tongue-in-cheek tone throughout.",
+      "money_shot": "A big comedic flourish on the word CAVEMAN.",
+      "would_creator_repost": "Risky. Could read as mocking rather than admiring, and WRITING_RULES bars sycophancy in either direction.",
+      "would_stranger_stop": "Maybe, but at the cost of looking like a meme account rather than a peer admiring real engineering.",
+      "verdict": "REJECTED. Tone risk too high, and it does not naturally carry the substance floor's product beats."
+    }
+  ],
+  "selected": "B. Inside the Skill",
+  "wow_bets": [
+    "Real terminal output (Me ready.) sourced straight from the docs, not invented",
+    "The README's own honesty about net-negative cases as an on-screen beat, which is rarer than pure hype",
+    "wenyan as the inverted-polarity surprise beat, a detail only a repo reader would know",
+    "Token receipt (1,180 to 159) landing as its own scene before the star count, so the mechanism outweighs the scoreboard"
+  ]
+}
