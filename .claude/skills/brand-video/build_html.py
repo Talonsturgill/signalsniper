@@ -605,6 +605,40 @@ body {{
   100% {{ transform: scale(1.000); }}
 }}
 
+/* ---------------- transition_style boundary treatments ----------------
+   Real editing grammar: the hard cut is the invisible default; stylized
+   boundaries are reserved and VARIED (StudioBinder/Adobe: stylizing every
+   cut is overdoing it). The variety gate forbids repeating a style. */
+.stage.glitch-cut .stage-inner {{
+  animation: glitchCut 0.18s steps(3) 1;
+}}
+@keyframes glitchCut {{
+  0%   {{ transform: translate(0,0); filter: none; }}
+  30%  {{ transform: translate(-0.55%,0); filter: hue-rotate(10deg) saturate(1.35); }}
+  60%  {{ transform: translate(0.6%,0); filter: saturate(1.2); }}
+  100% {{ transform: translate(0,0); filter: none; }}
+}}
+.stage.push-cut .stage-inner {{
+  animation: pushCut 0.26s cubic-bezier(0.16,1,0.3,1) 1;
+}}
+@keyframes pushCut {{
+  0%   {{ transform: translateX(2.4%); }}
+  100% {{ transform: translateX(0); }}
+}}
+.boundary-veil {{
+  position: absolute; inset: 0; opacity: 0; pointer-events: none; z-index: 44;
+}}
+.boundary-veil.fire-dip {{
+  background: var(--canvas);
+  animation: veilDip 0.30s ease-out forwards;
+}}
+@keyframes veilDip {{ 0% {{ opacity: 0; }} 45% {{ opacity: 0.82; }} 100% {{ opacity: 0; }} }}
+.boundary-veil.fire-bloom {{
+  background: var(--accent); mix-blend-mode: screen;
+  animation: veilBloom 0.34s ease-out forwards;
+}}
+@keyframes veilBloom {{ 0% {{ opacity: 0; }} 22% {{ opacity: 0.30; }} 100% {{ opacity: 0; }} }}
+
 /* ---------------- emphasize flash ---------------- */
 .emphasize-flash {{
   position: absolute;
@@ -1779,6 +1813,7 @@ def build_js(spec, timeline, total_s, emphases):
     scale_from = preset["scale_from"]
 
     tracking_em = spec["design"].get("typography", {}).get("letter_spacing_em", -0.02)
+    transition_style = spec["design"].get("transition_style", "cut_kick")
 
     tl_json = json.dumps(timeline)
     return r"""
@@ -1790,6 +1825,7 @@ const STAGGER_S = """ + f"{stagger_s}" + r""";
 const Y_PX = """ + f"{y_px}" + r""";
 const SCALE_FROM = """ + f"{scale_from}" + r""";
 const TRACKING_EM = """ + f"{tracking_em}" + r""";
+const TRANSITION_STYLE = """ + json.dumps(transition_style) + r""";
 const COLD_OPEN_S = 1.2;
 const EMPHASES = """ + json.dumps(emphases) + r""";
 
@@ -2396,8 +2432,30 @@ const stageEl = document.getElementById("stage");
 const empFlashEl = document.querySelector(".emphasize-flash");
 const heldEl = document.querySelector(".held-subject");
 
-function fireChromCut() {
+const boundaryVeilEl = document.querySelector(".boundary-veil");
+function fireBoundary() {
   if (!stageEl) return;
+  const s = TRANSITION_STYLE;
+  if (s === "hard_cut") return;                 // clean invisible cut (the pro default)
+  if (s === "glitch") {
+    stageEl.classList.add("glitch-cut");
+    setTimeout(() => stageEl.classList.remove("glitch-cut"), CUT_FILTER_MS);
+    return;
+  }
+  if (s === "push") {
+    stageEl.classList.add("push-cut");
+    setTimeout(() => stageEl.classList.remove("push-cut"), 280);
+    return;
+  }
+  if (s === "dip" || s === "bloom") {
+    if (boundaryVeilEl) {
+      boundaryVeilEl.classList.remove("fire-dip", "fire-bloom");
+      void boundaryVeilEl.offsetWidth;                    // reflow so the anim re-runs
+      boundaryVeilEl.classList.add(s === "dip" ? "fire-dip" : "fire-bloom");
+    }
+    return;
+  }
+  // cut_kick (legacy default): subtle scale pulse
   stageEl.classList.add("chrom-cut");
   setTimeout(() => stageEl.classList.remove("chrom-cut"), CUT_FILTER_MS);
 }
@@ -2425,8 +2483,8 @@ function tick() {
 
   if (activeIdx !== -1 && activeIdx !== lastSceneIdx) {
     if (lastSceneIdx !== -1) {
-      // scene boundary detected: flash chromatic aberration on the cut
-      fireChromCut();
+      // scene boundary detected: fire the video's chosen transition treatment
+      fireBoundary();
     }
     if (activeIdx >= 0 && TL[activeIdx] && TL[activeIdx].emphasize) {
       fireEmphasizeFlash();
@@ -2658,6 +2716,7 @@ def build_html(spec):
   {held_html}
   <div class="lighting-arc"><div class="la-warm"></div><div class="la-cool"></div></div>
   <div class="emphasize-flash" aria-hidden="true"></div>
+  <div class="boundary-veil" aria-hidden="true"></div>
   <div class="texture">
     <div class="texture-grain"></div>
     <div class="texture-vignette"></div>

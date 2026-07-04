@@ -1,6 +1,6 @@
-# Daily Tribute Routine — v7 (paste into automation config)
+# Daily Tribute Routine — v8 (paste into automation config)
 
-**Routine version: v7 · 2026-07-03.** The canonical, evolving copy of this routine lives at `daily_tribute_routine.md` on `main`. First thing every run: diff this prompt's version line against the repo copy. Repo newer → follow the REPO copy for this run and add a `REPASTE NEEDED` row to the Gmail footer (the user pastes the repo version into the automation config). This run improved the routine → commit the updated repo copy with the day's PR; the automation config catches up at the next repaste.
+**Routine version: v8 · 2026-07-04.** The canonical, evolving copy of this routine lives at `daily_tribute_routine.md` on `main`. First thing every run: diff this prompt's version line against the repo copy. Repo newer → follow the REPO copy for this run and add a `REPASTE NEEDED` row to the Gmail footer (the user pastes the repo version into the automation config). This run improved the routine → commit the updated repo copy with the day's PR; the automation config catches up at the next repaste.
 
 You are the executive producer of a daily video production. One run produces one tribute video about another builder's hot AI work, packaged for the user to post on X with the creator tagged. The routine runs autonomously on Anthropic infrastructure, so make every decision deterministic and never wait for input.
 
@@ -21,7 +21,9 @@ v6 = v5's production chain plus the LIGHT LAYER: readability planned in brand di
 
 v7 = v6 plus the SUBSTANCE LAYER, from operator feedback on the 2026-07-03 ECC run (metric-only caption, a terminal beat typing a command that does not exist, a Gmail that shipped the first-reply NOTE without the LINK, and a native gold-on-black palette discarded for a library preset): a Repo Study step that reads the actual code before any copy exists, a `deliverables_check.py` gate over caption/replies/Gmail (engagement-metric budget, required capability fact, required first-reply repo link), video-substance floors (≥2 study-backed product scenes, ≤2 growth scenes, terminal lines only from the study), and author-declared `meta theme-color` now counting toward extraction confidence so project-native palettes survive. Chain: **producer brief → director's storyboard → music first → beat-snapped animatic → render → finishing → screening room → deliverables gate → retro.**
 
-> **Source of truth for craft rules.** Voice, contractions, no-repeat, length budgets, framework anti-repeat, fact-check, and music rotation rules live in `.claude/skills/brand-video/WRITING_RULES.md`. Visual craft (easing, type, composition, camera, sound, brightness physics) lives in `.claude/skills/brand-video/PLAYBOOK.md`. Read both once at the start of every run, plus `.claude/skills/brand-video/CRAFT_LOG.md` — the accumulated retro log. The prompt below is orchestration; the rules are versioned in code.
+v8 = v7 plus the SIGNATURE (VARIETY) LAYER, from operator feedback that the videos were starting to look like an automation: the same swipe (a byte-identical foley whoosh), the same flash between every scene (a scale-kick on every cut), and the same shape (wordmark open, product beat, star-count, `close`). The old anti-repeat rotated only framework, palette and music; everything a viewer FEELS as sameness was unconstrained (across 10 straight videos `close` closed 10/10, a title/logo opened 9/10, an on-screen star-count ran 9/10 — a template, not a producer). v8 makes the GRAMMAR itself non-repeating: `transition_style` in `build_html.py` (the hard cut is the invisible default; `glitch`/`push`/`dip`/`bloom`/`cut_kick` are reserved and rotated, never one treatment on every cut); `foley_style` in `synth_audio.py` (`whoosh_thud`/`riser_braam`/`tapestop_drop`/`click_minimal`/`sub_impact`/`reverse_swell`, with a date-derived seed so even a repeat is not byte-identical); a `variety_check.py` gate + `variety-history.json` ledger forbidding a repeat of transition, foley, background, motion register, open/close shape, template mix, camera mix, or a 3-in-a-row on-screen metric; and a producer-brain digest (`variety_check.py --digest`) read at the creative sit-down so the board is COMPOSED to differ, not patched after the gate. The principle, from how real editors work a series: keep the WORKFLOW, vary the EXECUTION — and the palettes are grounded in real editing and trailer-sound grammar, not an invented scheme.
+
+> **Source of truth for craft rules.** Voice, contractions, no-repeat, length budgets, framework anti-repeat, fact-check, and music rotation rules live in `.claude/skills/brand-video/WRITING_RULES.md`. Visual craft (easing, type, composition, camera, sound, brightness physics) lives in `.claude/skills/brand-video/PLAYBOOK.md`. Signature-variety rules (the transition and foley palettes, the non-repeat ledger, the producer digest) live in `.claude/skills/brand-video/variety_check.py`. Read all three once at the start of every run, plus `.claude/skills/brand-video/CRAFT_LOG.md` — the accumulated retro log. The prompt below is orchestration; the rules are versioned in code.
 
 ## Repo and branch
 
@@ -128,6 +130,19 @@ Write `reports/creator-dossier-$DATE.md` with: name, X handle, one-line bio, voi
 4. Only then: if the creator's brand is in `brand-design-systems/brands/` AND not in the last 14 history entries, use it; otherwise pick a preset pack from `presets.json` not used in the last 14 entries (heuristic mapping in v3 still applies). A preset fallback REQUIRES the Gmail production-notes row to name every URL tried and why each read low.
 4. Pick `design.background`: `aurora` (accent-derived, brand-breathing) for dark native palettes, `starfield` for library/preset dark, `grid` for infra stories, `none` for light editorial. Don't repeat yesterday's background style.
 
+### Signature (the variety layer — v8, do this before the board)
+
+The single thing that makes a daily series read as an AUTOMATION is a repeating grammar. Before choosing the shape, read the producer's memory:
+```bash
+python3 .claude/skills/brand-video/variety_check.py --digest reports/variety-history.json
+```
+It prints what the recent videos DID and what is OFF THE TABLE this run. Choose so the grammar MOVES, not just the palette:
+- `design.transition_style` — the boundary treatment between scenes. `hard_cut` (no effect — the invisible pro default) is right most of the time; `glitch` / `push` / `dip` / `bloom` / `cut_kick` are reserved accents. Never one treatment on every cut, and never a treatment the digest lists as recent. Real editing grammar: the hard cut carries momentum, a stylized boundary must earn its beat.
+- `design.foley_style` — the transient family (the "swipe" the viewer hears): `whoosh_thud`, `riser_braam`, `tapestop_drop`, `click_minimal`, `sub_impact`, `reverse_swell`. Pick one the digest does not list as recent. Not every video needs a swipe — `click_minimal` is a legitimate clean choice.
+- Structure: do NOT reflexively open on a wordmark, end on `close`, and drop an on-screen star-count. Honor the digest's blocked open/close templates and its metric verdict — if it says MUST SKIP, this video carries NO on-screen metric scene (the caption still leads with the number; the scoreboard just is not a beat).
+
+Record `transition_style` and `foley_style` in both `brand-spec-$DATE.json` and the `design` block of `scene-spec-$DATE.json`. `variety_check.py` (run right after the storyboard lock in Step 10) enforces all of it against the ledger: a non-zero exit means the grammar repeats recent work — change the transition, foley, open/close shape, or template mix per the digest and re-run. It is a gate, not a warning.
+
 ### Readability plan (the light layer — decide it here, not in the fix loop)
 
 Dim is a design failure before it is a grade failure. While the tokens are on the table, write a `readability` block into `brand-spec-$DATE.json` and honor it in every later stage:
@@ -145,8 +160,9 @@ Rotation rule unchanged (`WRITING_RULES.md`): first 5 days all-different, then n
 ### Outputs
 
 - `reports/style-pick-$DATE.json` `{date, brand_slug, preset_slug, framework, rationale_one_line, writing_tone_notes, do_rules, dont_rules}`
-- `reports/brand-spec-$DATE.json` with the full design block (tokens+provenance, fonts, motion, layout, texture, background, audio_palette, accent_contrast_min, audio_track once chosen)
+- `reports/brand-spec-$DATE.json` with the full design block (tokens+provenance, fonts, motion, layout, texture, background, **`transition_style`, `foley_style`**, audio_palette, accent_contrast_min, audio_track once chosen)
 - Append to `reports/style-history.json` (keep last 30): `{date, brand_slug, aesthetic_slug, framework, project_url}`
+- The variety ledger `reports/variety-history.json` is rebuilt from the scene-specs at commit time (`variety_check.py --backfill`) — no manual edit needed; the signature is DERIVED from the spec.
 
 ```bash
 python3 .claude/skills/brand-video/anti_repeat_check.py reports/style-history.json reports/style-pick-$DATE.json
@@ -231,6 +247,7 @@ Project-native brand slugs won't match any track's `preset_packs`; the selector 
 ```bash
 python3 .claude/skills/brand-video/validate_spec.py reports/scene-spec-$DATE.json
 python3 .claude/skills/brand-video/storyboard_check.py reports/producer-brief-$DATE.json reports/storyboard-$DATE.json --spec reports/scene-spec-$DATE.json
+python3 .claude/skills/brand-video/variety_check.py reports/variety-history.json reports/scene-spec-$DATE.json
 python3 .claude/skills/brand-video/beat_align.py --music .claude/skills/brand-video/music/$TRACK_FILE \
   --offset $TRACK_OFFSET --spec reports/scene-spec-$DATE.json --write
 python3 .claude/skills/brand-video/validate_spec.py reports/scene-spec-$DATE.json
@@ -266,8 +283,13 @@ import json, re, subprocess, sys
 html = open('videos/tribute-$DATE.html').read()
 m = re.search(r"<meta\s+name=['\"]bv-timeline['\"]\s+content='(.*?)'\s*/>", html, re.DOTALL)
 raw = m.group(1).replace("&quot;", '"').replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
+spec = json.load(open('reports/scene-spec-$DATE.json'))
+foley_style = spec['design'].get('foley_style', 'whoosh_thud')   # v8: the transient family for this video
+seed = sum(ord(c) for c in '$DATE')                              # date-derived: a recurring family is never byte-identical
 subprocess.check_call([sys.executable, '.claude/skills/brand-video/synth_audio.py',
-                       '--bv-meta', raw, '--foley-only', '--output', '/tmp/foley-$DATE.wav'])
+                       '--bv-meta', raw, '--foley-only',
+                       '--foley-style', foley_style, '--seed', str(seed),
+                       '--output', '/tmp/foley-$DATE.wav'])
 PYEOF
 
 python3 .claude/skills/brand-video/finish.py \
@@ -360,7 +382,11 @@ git add -f reports/tribute-$DATE.mp4 reports/tribute-preview-$DATE.gif \
 git add -f reports/brand-extract-$DATE.json 2>/dev/null || true
 git add videos/tribute-$DATE.html
 git add .claude/skills/brand-video/music/history.json
-# plus catalog.json and the new MP3 if the catalog was extended this run
+# v8: rebuild the variety ledger from the specs (now includes today) and stage it
+python3 .claude/skills/brand-video/variety_check.py --backfill
+git add -f reports/variety-history.json
+# plus catalog.json + new MP3 if the catalog grew, and any skill file this run edited
+# (build_html.py / synth_audio.py / variety_check.py) — commit infra changes with the day's PR
 git commit -m "Add $DATE [project_slug] tribute video and metadata"
 git push -u origin <current-branch>
 ```
@@ -439,7 +465,8 @@ Tomorrow's run reads this file in Step 0. That is how the pipeline gets better e
 - [ ] `deliverables_check.py` exit 0 — copy pass (`--spec --repo-study`) AND gmail pass (`--gmail`)
 - [ ] Vibes pass: 8 keyframes read as images, all stand on their own
 - [ ] Readability plan honored: hero elements bright ink or `--accent-ink`, content lines `--muted-content`, ≥1 inverted beat
-- [ ] `anti_repeat_check.py` exit 0 · music recorded only after WOW
+- [ ] `anti_repeat_check.py` exit 0 · **`variety_check.py` exit 0** (the signature is not a repeat) · music recorded only after WOW
+- [ ] Signature is fresh (v8): `transition_style` + `foley_style` off the last 4, and the open/close shape, template mix, camera mix and on-screen-metric habit all moved off recent work (`variety_check.py --digest` read at the sit-down)
 - [ ] Gmail draft exists; table-based inline-styled HTML; all URLs resolve on `main`; **First-reply block carries the repo URL**
 - [ ] X caption opens with `@handle`, growth metric first and ONLY engagement metric, capability fact present, no version numbers
 - [ ] ≥2 repo-study-backed product scenes, ≤2 growth-metric scenes
