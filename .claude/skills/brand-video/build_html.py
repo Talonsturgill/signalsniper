@@ -658,6 +658,15 @@ body {{
   100% {{ opacity: 0;   }}
 }}
 
+/* -------- money-shot punch (v10 WOW): a scale kick with overshoot on the peak,
+   the "button" the whole edit builds to. easeOutBack gives the alive settle. -- */
+.stage.money-punch {{ animation: moneyPunch 0.46s cubic-bezier(0.34, 1.56, 0.64, 1); }}
+@keyframes moneyPunch {{
+  0%   {{ transform: scale(1.000); }}
+  38%  {{ transform: scale(1.021); }}
+  100% {{ transform: scale(1.000); }}
+}}
+
 /* ---------------- texture overlay (always on) ---------------- */
 .texture {{
   position: absolute;
@@ -1902,11 +1911,14 @@ function applySceneAnimations(idx, sceneT, dur) {
   if (idx === 0) { sceneT += COLD_OPEN_S; dur += COLD_OPEN_S; }
   // Scrub the paused camera animation to the exact scene time.
   el.style.animationDelay = `${(-sceneT).toFixed(3)}s`;
-  // Entrance decelerates, exit accelerates (Material/Carbon asymmetric easing).
-  let op = 1;
-  if (sceneT < FADE_IN_S) op = idx === 0 ? 1 : easeOut(clamp01(sceneT / FADE_IN_S));
-  else if (sceneT > dur - FADE_OUT_S) op = easeOut(clamp01((dur - sceneT) / FADE_OUT_S));
-  el.style.opacity = op.toFixed(3);
+  // v10 HARD CUT: the scene is fully present at the splice -- no scene-level
+  // fade-out to empty canvas then fade-in from black between beats. That dip
+  // (every scene dissolving through the empty canvas) was the single biggest
+  // "slideshow" tell. The scene's CONTENT animates in over the already-visible
+  // frame instead (a film cut, then elements settle) -- see the per-child
+  // entrance below and each template's own animator. The poster (idx 0) opens
+  // pre-landed; the finishing 25->50fps blend softens the one-frame splice.
+  el.style.opacity = 1;
 
   const tpl = el.dataset.tpl;
   if (tpl === "diagram") { animateDiagram(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
@@ -2427,6 +2439,7 @@ function walkReset(node) {
 // ---- Phase 4: chromatic aberration on scene boundaries + emphasize flash ----
 const SCENE_BOUNDARIES = TL.slice(1).map(s => s.start);
 let lastSceneIdx = -1;
+let effectSpent = false;   // the reserved transition effect is spent ONCE, on the money shot
 const CUT_FILTER_MS = 180;
 const stageEl = document.getElementById("stage");
 const empFlashEl = document.querySelector(".emphasize-flash");
@@ -2460,11 +2473,20 @@ function fireBoundary() {
   setTimeout(() => stageEl.classList.remove("chrom-cut"), CUT_FILTER_MS);
 }
 function fireEmphasizeFlash() {
-  if (!empFlashEl) return;
-  empFlashEl.classList.remove("fire");
-  // force reflow so the animation re-runs
-  void empFlashEl.offsetWidth;
-  empFlashEl.classList.add("fire");
+  if (empFlashEl) {
+    empFlashEl.classList.remove("fire");
+    void empFlashEl.offsetWidth;                 // force reflow so the anim re-runs
+    empFlashEl.classList.add("fire");
+  }
+  // v10 WOW: the money shot also gets a scale-punch on the whole stage -- the
+  // peak "button" the edit builds to (the craft log kept asking for a bigger
+  // camera event on the money shot than the surrounding beats).
+  if (stageEl) {
+    stageEl.classList.remove("money-punch");
+    void stageEl.offsetWidth;
+    stageEl.classList.add("money-punch");
+    setTimeout(() => stageEl.classList.remove("money-punch"), 480);
+  }
 }
 
 function tick() {
@@ -2482,13 +2504,17 @@ function tick() {
   }
 
   if (activeIdx !== -1 && activeIdx !== lastSceneIdx) {
-    if (lastSceneIdx !== -1) {
-      // scene boundary detected: fire the video's chosen transition treatment
+    const emph = !!(TL[activeIdx] && TL[activeIdx].emphasize);
+    const isLast = activeIdx === TL.length - 1;
+    if (lastSceneIdx !== -1 && emph && !isLast && !effectSpent) {
+      // The ONE reserved effect transition, spent on the money shot only (not the
+      // close, never more than once). Pros hard-cut ~99% of the time; a styled
+      // effect on every cut is the slideshow tell. Every other boundary is a
+      // clean hard cut carried by the motion and the music.
       fireBoundary();
+      effectSpent = true;
     }
-    if (activeIdx >= 0 && TL[activeIdx] && TL[activeIdx].emphasize) {
-      fireEmphasizeFlash();
-    }
+    if (emph) fireEmphasizeFlash();   // flash + scale-punch on each peak (money shot, close)
     lastSceneIdx = activeIdx;
   }
 

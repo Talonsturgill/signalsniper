@@ -106,6 +106,49 @@ def ngrams(text, n=4):
     return {tuple(words[i:i + n]) for i in range(len(words) - n + 1)}
 
 
+# ---------------- explainer layer (v10): the words must name the ONE thing -----
+_STOPWORDS = {
+    "the", "a", "an", "and", "or", "but", "of", "to", "in", "on", "for", "with",
+    "that", "this", "it", "its", "is", "are", "was", "be", "by", "you", "your",
+    "from", "as", "at", "into", "than", "then", "now", "not", "no", "just",
+    "every", "each", "one", "already", "instead", "without", "which", "what",
+    "who", "when", "how", "they", "them", "their", "so", "can", "will", "more",
+}
+
+
+def salient_words(text):
+    return {w for w in re.findall(r"[a-z0-9]+", (text or "").lower())
+            if len(w) > 3 and w not in _STOPWORDS}
+
+
+def check_differentiator(d, fails):
+    """v10 explainer layer. Good explainer copy isolates the ONE thing that makes
+    the project genuinely different (Duarte's Big Idea; Mayer's coherence
+    principle), not a feature list -- and the words the viewer actually reads must
+    be built on it. The picture-illustrates-the-words half of the ask is a critic
+    judgment (routine Step 11) forced by the per-scene `illustrates` field; here we
+    gate the mechanically-checkable half: the differentiator exists, is a single
+    idea, and the caption is actually about it."""
+    diff = (d.get("differentiator") or "").strip()
+    if not diff:
+        fails.append("differentiator: missing (v10) -- state the ONE thing that makes this "
+                     "project genuinely cool/different in a single sentence; the caption must "
+                     "be built on it (Duarte Big Idea), not a feature list")
+        return
+    sentences = [s for s in re.split(r"[.!?]+", diff) if s.strip()]
+    if len(sentences) > 1:
+        fails.append(f"differentiator: {len(sentences)} sentences -- isolate ONE differentiator "
+                     "(a feature list overloads and the viewer tunes out)")
+    if diff.count(",") >= 3:
+        fails.append("differentiator: reads as a feature list (3+ commas) -- name the single "
+                     "thing only this project does")
+    dw = salient_words(diff)
+    reflected = salient_words(d.get("caption", "")) | salient_words(d.get("capability_fact", ""))
+    if dw and not (dw & reflected):
+        fails.append("differentiator: not reflected in the caption or capability_fact -- the "
+                     "words on screen must name what makes the project different (share a key term)")
+
+
 def check_copy_rules(field, text, fails, allow_final_question=False):
     for label, ch in FORBIDDEN_CHARS.items():
         if ch in text:
@@ -173,6 +216,8 @@ def check_deliverables(d, fails):
         if not re.match(r"^Music\. .+ by .+, licensed under CC BY", attr):
             fails.append("attribution_reply: CC BY track requires verbatim "
                          "'Music. <title> by <artist> (<source>), licensed under CC BY ...'")
+
+    check_differentiator(d, fails)
 
 
 def harvest_strings(scene):
@@ -402,6 +447,7 @@ def selftest():
                                 "config five times over. Worth a look if you live in these tools all day.")
     good["linkedin_hashtags"] = "#AI #DevTools #OpenSource #CodingAgents"
     good["linkedin_tag"] = {"name": "Affaan Mustafa", "url": "https://www.linkedin.com/in/affaanmustafa"}
+    good["differentiator"] = "One config layer carries your agents and skills across every coding tool."
     good_p = write("good.json", good)
     f2 = run_checks(good_p)
     assert f2 == [], f2
@@ -474,9 +520,20 @@ def selftest():
                     study_path=write("study1.json", study_full))
     assert any("growth-metric scenes" in x for x in f7), f7
 
-    print("SELFTEST PASSED (8 cases: shipped-caption FAIL, corrected PASS, "
+    # Case 8 (v10): differentiator missing, and a feature-list differentiator — must FAIL.
+    no_diff = dict(good); no_diff.pop("differentiator")
+    f8 = run_checks(write("nodiff.json", no_diff))
+    assert any("differentiator: missing" in x for x in f8), f8
+    listy = dict(good)
+    listy["differentiator"] = ("It has agents, and skills, and adapters, and a scanner, "
+                               "and a CLI, and a dashboard.")
+    f8b = run_checks(write("listy.json", listy))
+    assert any("feature list" in x for x in f8b), f8b
+
+    print("SELFTEST PASSED (10 cases: shipped-caption FAIL, corrected PASS, "
           "linkless-gmail FAIL, linked-gmail PASS, linkedin-tells FAIL, "
-          "invented-command FAIL, studied-command PASS, growth-cap FAIL)")
+          "invented-command FAIL, studied-command PASS, growth-cap FAIL, "
+          "no-differentiator FAIL, feature-list-differentiator FAIL)")
 
 
 def main():

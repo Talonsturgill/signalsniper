@@ -193,6 +193,57 @@ def readability(spec, mp4, fails, warns, report):
         print(f"  [PASS] readability ({len(scene_stats)} scenes, per-scene polarity, min luma spread {mn})")
 
 
+BRIGHT_SCENE_LUMA = 55.0      # a scene whose mean luma clears this is "not dark"
+BRIGHT_MEAN_FLOOR = 46.0      # whole-video mean-luma floor
+BRIGHT_FRACTION_MIN = 0.30    # at least this share of scenes must be bright
+
+
+def brightness(spec, mp4, fails, warns, report):
+    """The client's standing note: 'every single video just seems dark, no matter
+    what.' The readability gate only checks that TEXT is legible -- a video can be
+    ~90% near-black and still pass it (the 2026-07-05 cut measured mean luma 33,
+    88% of the runtime below luma 30). This gate measures the FRAME, not the type:
+    a video must not read as uniformly dark. It passes if the overall mean luma
+    clears a floor OR enough scenes are genuinely bright -- a lighter canvas,
+    bright content plates/panels, or a second inverted (bright-field) beat. This
+    is the color-script idea as a gate: plan >= 2 brightness beats, don't wash the
+    whole runtime in one dark value."""
+    durs = [float(sc.get("duration_s", 3.0)) for sc in spec["scenes"]]
+    mids, acc = [], 0.0
+    for d in durs:
+        mids.append(acc + d / 2)
+        acc += d
+    means = []
+    for t in mids:
+        cmd = ["ffmpeg", "-v", "error", "-ss", str(t), "-i", str(mp4),
+               "-frames:v", "1", "-vf", "scale=540:540", "-pix_fmt", "gray",
+               "-f", "rawvideo", "-"]
+        buf = subprocess.run(cmd, capture_output=True).stdout
+        if len(buf) < 540 * 540:
+            continue
+        fr = np.frombuffer(buf[: 540 * 540], dtype=np.uint8).astype(np.float32)
+        means.append(float(fr.mean()))
+    if not means:
+        warns.append("brightness: could not sample the video")
+        return
+    overall = float(np.mean(means))
+    bright_frac = float(np.mean([m > BRIGHT_SCENE_LUMA for m in means]))
+    report["brightness"] = {"overall_mean_luma": round(overall, 1),
+                            "bright_scene_fraction": round(bright_frac, 2),
+                            "per_scene_mean_luma": [round(m) for m in means]}
+    if overall < BRIGHT_MEAN_FLOOR and bright_frac < BRIGHT_FRACTION_MIN:
+        dark_scenes = [i for i, m in enumerate(means) if m <= BRIGHT_SCENE_LUMA]
+        fails.append(
+            f"brightness: video reads dark (mean luma {overall:.0f}/255, only {bright_frac:.0%} "
+            f"of scenes bright; dark scenes {dark_scenes}). The client's standing note is that "
+            f"every video seems dark. Fix it at DESIGN time, not the grade: use a lighter canvas, "
+            f"add bright content plates/panels, or add a second inverted bright-field beat so "
+            f">= {BRIGHT_FRACTION_MIN:.0%} of scenes clear mean luma {BRIGHT_SCENE_LUMA:.0f} "
+            f"(plan >= 2 brightness beats -- a color script, not one dark wash).")
+    else:
+        print(f"  [PASS] brightness (mean luma {overall:.0f}/255, {bright_frac:.0%} of scenes bright)")
+
+
 def chroma_neutrality(mp4, raw, fails, warns, report):
     """The finishing chain must not invent color the page never rendered.
     Sample frames across the final and the raw capture, compare median R-G
@@ -258,6 +309,7 @@ def main():
         raw_motion = frame_pacing(args.raw, spec, fails, warns, report)
     cadence(spec, fails, warns, report)
     readability(spec, args.mp4, fails, warns, report)
+    brightness(spec, args.mp4, fails, warns, report)
     chroma_neutrality(args.mp4, args.raw, fails, warns, report)
 
     frames = decode_gray(args.mp4)

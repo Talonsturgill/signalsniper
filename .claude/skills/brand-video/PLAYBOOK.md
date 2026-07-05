@@ -106,9 +106,19 @@ Every video: ≥1 hero; prefer one REAL-product beat (terminal for CLIs, diagram
 ## Sound design
 
 - Palettes (`ambient`/`electronic`/`acoustic`) drive the PREVIEW score only; the shipped bed is licensed CC BY music.
-- The shipped foley stem (`synth_audio.py --foley-only`): whoosh 240ms before each cut into an impact at the cut, stamp+glitch on emphasized beats. `finish.py` sidechain-ducks the music under it.
+- The shipped foley stem (`synth_audio.py --foley-only`, v10): NO per-cut swipe — a whoosh on every boundary is the amateur-slideshow tell (and the operator's top gripe). The transient family (`foley_style`) fires ONLY on the money/emphasis beat (the trailer "button"); the ordinary hard cut is carried by the music. `finish.py` sidechain-ducks the bed under the hit.
 - Music-first editing: pick the track, THEN `beat_align.py` retimes scene durations onto its onsets (±0.45s window, scenes stay 2.5–4.5s), cuts lead transients by one frame.
 - Targets: −14 LUFS integrated, ≤−1.5 dBTP, measured two-pass, `linear=true` so ducking survives.
+
+## Cinematic grammar (v10 — cut like an editor, color like a colorist, light like a DP)
+
+Full cited evidence base: `CINEMATIC_RESEARCH.md`. The rules, each enforced as a gate:
+
+- **Hard cuts by default.** No scene-to-scene dissolve (the renderer no longer fades scenes out-to-black then in-from-black). Pros hard-cut ~99% of the time; an effect on every cut is the slideshow tell. The ONE reserved `transition_style` effect fires on the money-shot cut only. Motion carries THROUGH the cut (a scene enters already moving), never stop-then-start.
+- **Easing library — never `linear` on a reveal/move.** Entrances ease-out, exits ease-in/accelerate, hero words overshoot: easeOutCubic `0.33,1,0.68,1`, easeOutExpo `0.16,1,0.3,1`, **easeOutBack `0.34,1.56,0.64,1`** (the money-punch), easeInOutCubic `0.65,0,0.35,1`. Stagger multi-word reveals ~60–120 ms.
+- **Color anti-repeat + color script.** Consecutive videos: accent Δhue ≥ 60° AND ΔE00 ≥ 11, OR a canvas-value / temperature flip (`variety_check.py`). Plan ≥ 2 temperature beats across the runtime (60-30-10 dominant/secondary/accent); teal-orange is the "every video looks the same" grade — rotate the hue family.
+- **Brightness is a FRAME property, not a type property.** The brightness gate FAILs a dark wash (mean luma < 46 AND < 30% bright scenes). Earn it with a lighter canvas or ≥ 2 bright beats (bright plates, a second inverted flash); never lift it in the grade.
+- **The picture illustrates the word.** Each scene declares `illustrates` (how the visual enacts its copy — Mayer's dual-coding); the copy names ONE `differentiator` (Duarte's Big Idea), not a feature list.
 
 ## The production chain (who does what)
 

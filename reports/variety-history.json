@@ -21,7 +21,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#7DD9FF",
+    "canvas_hex": "#15171A",
+    "accent_hue": 197.53846153846152,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-05-23",
@@ -47,7 +52,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#D9A35C",
+    "canvas_hex": "#171411",
+    "accent_hue": 34.08,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-05-24",
@@ -72,7 +82,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#1B5BFF",
+    "canvas_hex": "#FFFFFF",
+    "accent_hue": 223.1578947368421,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-05-25",
@@ -96,7 +111,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#D2371B",
+    "canvas_hex": "#F1E8D6",
+    "accent_hue": 9.180327868852459,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-05-26",
@@ -121,7 +141,12 @@
       "parallax_drift",
       "pull_back"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#BC684D",
+    "canvas_hex": "#F5EFE3",
+    "accent_hue": 14.594594594594593,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-05-28",
@@ -146,7 +171,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#D8421C",
+    "canvas_hex": "#F5F5F0",
+    "accent_hue": 12.127659574468087,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-05-29",
@@ -171,7 +201,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#9C3B2C",
+    "canvas_hex": "#F4EFE3",
+    "accent_hue": 8.035714285714286,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-05-31",
@@ -198,7 +233,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#FF3B30",
+    "canvas_hex": "#1B1B1B",
+    "accent_hue": 3.18840579710145,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-01",
@@ -223,7 +263,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#00d992",
+    "canvas_hex": "#050507",
+    "accent_hue": 160.36866359447004,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-02",
@@ -248,7 +293,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#faff69",
+    "canvas_hex": "#0a0a0a",
+    "accent_hue": 62.00000000000001,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-03",
@@ -274,7 +324,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#4f8bff",
+    "canvas_hex": "#0f0f0f",
+    "accent_hue": 219.54545454545456,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-04",
@@ -299,7 +354,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#3ecf8e",
+    "canvas_hex": "#1c1c1c",
+    "accent_hue": 153.1034482758621,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-05",
@@ -324,7 +384,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#828fff",
+    "canvas_hex": "#010102",
+    "accent_hue": 233.76,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-06",
@@ -351,7 +416,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#057dbc",
+    "canvas_hex": "#ffffff",
+    "accent_hue": 200.65573770491804,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-07",
@@ -377,7 +447,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#37F712",
+    "canvas_hex": "#0A0A0A",
+    "accent_hue": 110.3056768558952,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-08",
@@ -405,7 +480,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#7DD9FF",
+    "canvas_hex": "#15171A",
+    "accent_hue": 197.53846153846152,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-10",
@@ -432,7 +512,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#ff6161",
+    "canvas_hex": "#07080a",
+    "accent_hue": 0.0,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-11",
@@ -460,7 +545,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#1B5BFF",
+    "canvas_hex": "#FFFFFF",
+    "accent_hue": 223.1578947368421,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-12",
@@ -488,7 +578,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#d04200",
+    "canvas_hex": "#f7f7f4",
+    "accent_hue": 19.03846153846154,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-13",
@@ -514,7 +609,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#C0552E",
+    "canvas_hex": "#F5EFE3",
+    "accent_hue": 16.027397260273972,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-14",
@@ -539,7 +639,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#D8421C",
+    "canvas_hex": "#F5F5F0",
+    "accent_hue": 12.127659574468087,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-15",
@@ -565,7 +670,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#9C3B2C",
+    "canvas_hex": "#F4EFE3",
+    "accent_hue": 8.035714285714286,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-16",
@@ -592,7 +702,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#FF3B30",
+    "canvas_hex": "#1B1B1B",
+    "accent_hue": 3.18840579710145,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-17",
@@ -620,7 +735,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#D2371B",
+    "canvas_hex": "#F1E8D6",
+    "accent_hue": 9.180327868852459,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-18",
@@ -647,7 +767,12 @@
       "push_in",
       "static_breathe"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#0062D6",
+    "canvas_hex": "#FFFFFF",
+    "accent_hue": 212.5233644859813,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-19",
@@ -674,7 +799,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#157F3C",
+    "canvas_hex": "#FFFFFF",
+    "accent_hue": 142.07547169811323,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-20",
@@ -701,7 +831,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#E0913E",
+    "canvas_hex": "#16130F",
+    "accent_hue": 30.740740740740737,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-21",
@@ -729,7 +864,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#00D992",
+    "canvas_hex": "#050507",
+    "accent_hue": 160.36866359447004,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-22",
@@ -757,7 +897,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#0056b3",
+    "canvas_hex": "#fdfcfc",
+    "accent_hue": 211.1731843575419,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-06-23",
@@ -783,7 +928,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#37F712",
+    "canvas_hex": "#0A0A0A",
+    "accent_hue": 110.3056768558952,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-24",
@@ -810,7 +960,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#7DD9FF",
+    "canvas_hex": "#15171A",
+    "accent_hue": 197.53846153846152,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-26",
@@ -837,7 +992,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#C2EF4E",
+    "canvas_hex": "#1F1633",
+    "accent_hue": 76.77018633540372,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-06-27",
@@ -865,7 +1025,12 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#1B5BFF",
+    "canvas_hex": "#FFFFFF",
+    "accent_hue": 223.1578947368421,
+    "temp": "cool",
+    "canvas_value": "light"
   },
   {
     "date": "2026-07-01",
@@ -897,7 +1062,12 @@
       "rack_focus",
       "tilt_reveal"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#4a9eff",
+    "canvas_hex": "#0c0c0b",
+    "accent_hue": 212.15469613259668,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-07-02",
@@ -927,7 +1097,12 @@
       "rack_focus",
       "tilt_reveal"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#ff4536",
+    "canvas_hex": "#0b0e14",
+    "accent_hue": 4.477611940298506,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-07-03",
@@ -959,7 +1134,12 @@
       "rack_focus",
       "tilt_reveal"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#8B4226",
+    "canvas_hex": "#F5EFE3",
+    "accent_hue": 16.63366336633664,
+    "temp": "warm",
+    "canvas_value": "light"
   },
   {
     "date": "2026-07-04",
@@ -991,7 +1171,12 @@
       "static_breathe",
       "tilt_reveal"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#f68d50",
+    "canvas_hex": "#0b0b0c",
+    "accent_hue": 22.04819277108434,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-07-04b",
@@ -1023,7 +1208,12 @@
       "rack_focus",
       "tilt_reveal"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#8ea3d6",
+    "canvas_hex": "#09090b",
+    "accent_hue": 222.5,
+    "temp": "cool",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-07-04c",
@@ -1053,7 +1243,12 @@
       "static_breathe",
       "tilt_reveal"
     ],
-    "has_growth_beat": false
+    "has_growth_beat": false,
+    "accent_hex": "#ff7f33",
+    "canvas_hex": "#0b0c0e",
+    "accent_hue": 22.352941176470587,
+    "temp": "warm",
+    "canvas_value": "dark"
   },
   {
     "date": "2026-07-05",
@@ -1083,6 +1278,11 @@
       "pull_back",
       "push_in"
     ],
-    "has_growth_beat": true
+    "has_growth_beat": true,
+    "accent_hex": "#ff7a61",
+    "canvas_hex": "#0a0a0a",
+    "accent_hue": 9.493670886075954,
+    "temp": "warm",
+    "canvas_value": "dark"
   }
 ]

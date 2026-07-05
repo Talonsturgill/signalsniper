@@ -7,11 +7,13 @@ Three palettes:
 - electronic:  arpeggiated synth + sub pulse + glitch hits + harder mallets (mono register)
 - acoustic:    felt piano clusters + soft strings + paper foley + wood mallets (refined register)
 
-A foley layer rides on top of every palette:
-- whoosh 200ms before each scene boundary
-- thud on impact at the boundary
-- typewriter ticks at UI moments
-- stamp on emphasize beats
+A foley layer rides on top of every palette. It is DELIBERATELY not a per-cut
+swipe: pros put the transient on the money beat (the trailer "button") and let
+the music carry the ordinary hard cut. A whoosh on every boundary is the single
+loudest amateur-slideshow tell. So (v10):
+- NO whoosh/swish between scenes (removed -- it was the operator's top gripe)
+- one motivated hit on emphasize/money beats only
+- typewriter ticks stay at literal UI/typing moments
 
 Usage:
     python synth_audio.py --bv-meta '<json>' --output out.wav
@@ -463,36 +465,14 @@ def build_foley(total_s, transitions, emphases, rich=False,
                 add(track, thud(dur=0.45), em, gain=0.22)
         return track
     if style not in FOLEY_STYLES:
-        style = "whoosh_thud"
-    em_set = set(round(e, 2) for e in emphases)
+        style = FOLEY_STYLES[0]
     S = seed_base
-    for i, tt in enumerate(transitions):
-        if tt <= 0.1 or tt >= total_s - 0.1:
-            continue
-        is_em = round(tt, 2) in em_set
-        if style == "whoosh_thud":
-            add(track, whoosh(S + i, 0.42), tt - 0.24, gain=0.55)
-            if not is_em:
-                add(track, thud(0.34), tt - 0.01, gain=0.38)
-        elif style == "riser_braam":
-            add(track, whoosh(S + i, 0.28), tt - 0.14, gain=0.26)
-            if not is_em:
-                add(track, soft_click(S + i, 0.05), tt, gain=0.5)
-        elif style == "tapestop_drop":
-            if i % 2 == 0:
-                add(track, tape_stop(S + i, 0.5), tt - 0.26, gain=0.5)
-            if not is_em:
-                add(track, soft_click(S + i, 0.05), tt, gain=0.42)
-        elif style == "click_minimal":
-            add(track, soft_click(S + i, 0.05), tt, gain=0.6)
-        elif style == "sub_impact":
-            add(track, transition_swell(S + i, 0.9, 0.92), tt - 0.72, gain=0.5)
-            if not is_em:
-                add(track, soft_click(S + i, 0.05), tt, gain=0.34)
-        elif style == "reverse_swell":
-            add(track, reverse_swell(S + i, 0.68), tt - 0.66, gain=0.5)
-            if not is_em:
-                add(track, thud(0.3), tt - 0.01, gain=0.30)
+    # v10: NO per-cut transient. A whoosh/swish on every scene boundary is the
+    # single loudest "amateur slideshow" tell (and the operator's top gripe).
+    # The ordinary hard cut is carried by the music; the transient family below
+    # fires ONLY on the money/emphasis beat -- the motivated "button". The
+    # `transitions` list is intentionally unused for foley now.
+    _ = transitions
     for j, em in enumerate(emphases):
         if not (0 <= em < total_s):
             continue
