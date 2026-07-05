@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-05",
+  "project": "T3MP3ST",
+  "project_url": "https://github.com/elder-plinius/T3MP3ST",
+  "audience": "AI engineers and red-teamers who follow agentic tooling and want their coding agent doing more than autocomplete",
+  "single_takeaway": "T3MP3ST turns the coding agent you already run into a zero-day hunter, and admits only one of eight operators is proven",
+  "viewer_action": "star the repo, or quote-post the video",
+  "desired_feeling": "impressed that a security tool would show you what still doesn't work",
+  "tone_adjectives": ["urgent", "honest", "sharp"],
+  "references": ["wire-report trailer opens (StudioBinder dispatch grammar)", "real security-CLI terminal captures, not stock hacker montage"],
+  "mandatories": "t3mp3st-native brand tokens sourced from pliny.gg, CC BY attribution, @elder_plinius tagged, no invented benchmark percentages",
+  "success_criteria": "the creator reposts it and the honest kill-chain diagram gets people to actually read the README",
+  "platform": "x"
+}

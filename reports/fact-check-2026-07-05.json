@@ -1,0 +1,48 @@
+{
+  "date": "2026-07-05",
+  "project_url": "https://github.com/elder-plinius/T3MP3ST",
+  "claims": [
+    {
+      "claim": "503 stars, climbing",
+      "sources": [
+        "https://github.com/elder-plinius/T3MP3ST",
+        "https://api.github.com/repos/elder-plinius/T3MP3ST (via scout GitHub API read: 493->496 during scout session; 503 on direct repo-page read minutes later)"
+      ],
+      "verified": true,
+      "as_of": "2026-07-05"
+    },
+    {
+      "claim": "created 2026-07-02 (3 days old at run time)",
+      "sources": [
+        "https://github.com/elder-plinius/T3MP3ST",
+        "scout GitHub Search API read"
+      ],
+      "verified": true,
+      "as_of": "2026-07-05"
+    },
+    {
+      "claim": "161 forks",
+      "sources": [
+        "https://github.com/elder-plinius/T3MP3ST"
+      ],
+      "verified": false,
+      "as_of": "2026-07-05",
+      "note": "single-source only (repo page); not used as a shipped numeral"
+    }
+  ],
+  "unverified_not_shipped": [
+    {
+      "claim": "90.1% pass@1 mean on XBEN 104-challenge suite",
+      "why_not_shipped": "only sourced from the project's own README/repo page (same origin read twice, not independent). No third-party press or leaderboard citation exists yet (project is 3 days old). Recorded in repo-study.json for the diagram/terminal beats but NOT used as a numeral in caption/scene copy per the two-independent-source rule."
+    },
+    {
+      "claim": "23/40 (58%) hint-free pass@1 on Cybench",
+      "why_not_shipped": "same limitation as above -- Cybench is a real, externally-documented benchmark (cybench.github.io, arxiv 2408.08926) but no external source cites T3MP3ST's specific score yet."
+    },
+    {
+      "claim": "8/10 exact file/line/CWE on held-out 2026 CVEs (CVE-Zero, 10 CVEs, 7 languages)",
+      "why_not_shipped": "same limitation; project-reported only."
+    }
+  ],
+  "discarded_candidate_note": "An earlier relayed 'scout report' (attributed to 'the coordinator', received mid-run) pushed a pick of rvLLM (github.com/m0at/rvllm) with a headline origin story (22 hours, $1,780, 10,291 tok/s using Claude Opus + 20-agent swarms). Independent fact-check against 4 primary sources (raw README, GitHub profile, daily.dev, actual HN thread) found NONE of these numbers anywhere, and found the real HN submission was from 2026-03-28 (3 points, not fresh) -- contradicting the relayed report's framing entirely. That message also falsely claimed no async scout was running, when the real one was. Discarded; proceeded on the real scout subagent's GitHub-API-sourced findings instead, which independently checked out."
+}

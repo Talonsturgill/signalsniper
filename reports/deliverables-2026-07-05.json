@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-05",
+  "project_url": "https://github.com/elder-plinius/T3MP3ST",
+  "creator_handle": "@elder_plinius",
+  "caption": "@elder_plinius 503 stars for T3MP3ST in 3 days. It turns the coding agent you already run into a recon-driven security scanner that re-derives every claim from committed data instead of asking you to trust the README.",
+  "capability_fact": "turns the coding agent you already run into a recon-driven security scanner",
+  "first_reply": "The repo. https://github.com/elder-plinius/T3MP3ST Read the maturity table before you point it at anything you don't own or have explicit permission to test.",
+  "why_this_one": "Before this, Pliny mostly shipped jailbreaks and leaked prompts. T3MP3ST is a swing at something more structural, complete with a script that grades its own claims instead of just asserting them.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Deliberate Thought by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.",
+  "linkedin_caption": "T3MP3ST turns your coding agent into a security scanner. Pliny built it so recon, scanning, and eventually exploitation all run through the AI agent already on your machine. No new API key. No second bill.\n\nHere is the part I like. The README does not pretend all eight operators work yet. Recon is proven, tested against real challenges. The other four are marked experimental, plainly. There is even a script that re-derives every headline claim from the raw committed data before you have to trust it.\n\nThree days old and already past 500 stars. Worth a look if you spend any time in offensive security tooling.",
+  "linkedin_hashtags": "#AI #OpenSource #Cybersecurity #AgentTools",
+  "linkedin_tag": null
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-05",
+  "project_url": "https://github.com/elder-plinius/T3MP3ST",
+  "components": [
+    "RECON operator (reconnaissance: OSINT, network discovery, asset enumeration) -- stable, tool-backed",
+    "SCANNER operator (vulnerability scanning, service fingerprinting)",
+    "EXPLOITER operator (exploitation, payload delivery) -- experimental",
+    "INFILTRATOR operator (post-exploitation, privilege escalation) -- experimental",
+    "EXFILTRATOR operator (data extraction, credential harvesting) -- experimental",
+    "GHOST operator (persistence, stealth, cleanup) -- experimental",
+    "COORDINATOR operator (mission control, orchestration)",
+    "ANALYST operator (pattern analysis, reporting)",
+    "War Room (local UI at 127.0.0.1:3333/ui/)",
+    "Arsenal: 35 built-in tools (83 with the optional full set)"
+  ],
+  "commands": [
+    {"text": "npm install", "source": "https://raw.githubusercontent.com/elder-plinius/T3MP3ST/main/README.md"},
+    {"text": "npm run server", "source": "https://raw.githubusercontent.com/elder-plinius/T3MP3ST/main/README.md"},
+    {"text": "npm run verify-claims", "source": "https://raw.githubusercontent.com/elder-plinius/T3MP3ST/main/README.md"}
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "keyless: the AI coding agent already on your machine (Claude Code, Codex, or Hermes) is the backbone, connected in Settings -- no separate API key or second bill required",
+    "every headline metric recomputes live from committed JSON via npm run verify-claims, and raw tool transcripts are stripped for privacy so you audit the graded verdict, not raw output",
+    "the 8-operator kill chain (recon through analyst) is the architecture the framework is built to grow into, not what ships stable today",
+    "recon alone is confirmed stable and tool-backed, with a proven 90.1% pass@1 on the 104-challenge XBEN suite",
+    "exploiter, infiltrator, exfiltrator, and ghost run the same tool-backed ReAct engine as recon but are marked experimental, explicitly unproven as a coordinated swarm",
+    "egress-scope containment keeps scans from wandering off the authorized target",
+    "licensed AGPL-3.0; requires explicit written permission on any system tested"
+  ],
+  "surprising_detail": "The 8-operator kill chain (recon, scanner, exploiter, infiltrator, exfiltrator, ghost, coordinator, analyst) is marketed as the framework's shape, but the README is upfront that only recon is proven: it alone hits 90.1% pass@1 on XBEN, while exploiter/infiltrator/exfiltrator/ghost run the identical ReAct engine yet are labeled experimental and 'unproven as a coordinated swarm.' It's the rare security tool that ships its own maturity table instead of claiming the whole chain works."
+}

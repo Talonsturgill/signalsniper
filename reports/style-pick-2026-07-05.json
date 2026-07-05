@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-05",
+  "brand_slug": "t3mp3st-native",
+  "preset_slug": null,
+  "framework": "DISPATCH",
+  "rationale_one_line": "an intel-briefing framework for a red-team dispatch: T3MP3ST turns your local agent into a zero-day hunter, and the wire ticker sells that as a live report, not a product pitch",
+  "writing_tone_notes": "playful-menacing, terse, confident, no hedging -- matches Pliny's own voice (GODMODE energy) without imitating meme-speak; declarative build-in-public tone per WRITING_RULES",
+  "do_rules": [
+    "lead with the honest maturity fact (recon proven, rest experimental) -- it is more interesting than a generic 'AI hacks things' pitch",
+    "keep the kill chain diagram visually honest: one lit node, not eight",
+    "use the exact npm commands from repo-study, nothing invented"
+  ],
+  "dont_rules": [
+    "no invented benchmark percentages in shipped copy (unverified beyond the project's own README)",
+    "no over-claiming all 8 operators are live",
+    "no attributing a real name to a pseudonymous creator"
+  ]
+}
