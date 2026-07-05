@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2026-07-04",
+    "arc": "teardown",
+    "device": "node_diagram",
+    "hero": "scale_reveal",
+    "open": "wordmark_reveal",
+    "close": "wordmark_lockup",
+    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "BIG_NUMBER", "WORDMARK"],
+    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "data_viz", "kinetic_type"]
+  },
+  {
+    "date": "2026-07-04b",
+    "arc": "pas",
+    "device": "node_diagram",
+    "hero": "scale_reveal",
+    "open": "wordmark_reveal",
+    "close": "wordmark_lockup",
+    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "SPARKLINE", "WORDMARK"],
+    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "data_viz", "kinetic_type"]
+  },
+  {
+    "date": "2026-07-04c",
+    "arc": "pas",
+    "device": "node_diagram",
+    "hero": "scale_reveal",
+    "open": "wordmark_reveal",
+    "close": "wordmark_lockup",
+    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "SPARKLINE", "WORDMARK"],
+    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "data_viz", "kinetic_type"]
+  },
+  {
+    "date": "2026-07-05",
+    "arc": "teardown",
+    "device": "node_diagram",
+    "hero": "data_spike",
+    "open": "wordmark_reveal",
+    "close": "wordmark_lockup",
+    "scene_seq": ["WORDMARK", "DIAGRAM", "TERMINAL", "MONO_BLOCK", "FLASH", "SPARKLINE", "WORDMARK"],
+    "device_seq": ["diegetic_ui", "node_diagram", "terminal", "kinetic_type", "kinetic_type", "data_viz", "kinetic_type"]
+  },
+  {
+    "date": "2026-07-05b",
+    "arc": "before_after_bridge",
+    "device": "node_diagram",
+    "hero": "side_by_side_flip",
+    "open": "wordmark_reveal",
+    "close": "wordmark_lockup",
+    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "SPLIT", "WORDMARK"],
+    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "split_compare", "kinetic_type"]
+  }
+]

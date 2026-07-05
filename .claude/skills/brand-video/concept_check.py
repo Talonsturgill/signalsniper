@@ -77,6 +77,22 @@ HEROES = [
 BANKS = {"arc": ARCS, "device": DEVICES, "open": OPENS, "close": CLOSES, "hero": HEROES}
 CATEGORICALS = ["arc", "device", "hero", "open", "close"]
 
+# How each visual device maps onto the CURRENT renderer. The 6 with a template
+# are buildable today (v11 #1); the 6 mapped to None need the visual-renderer
+# rewrite (v11 #2 -- shader background, morph, continuous camera). Until then the
+# producer's-reasoning phase must pick from renderable devices; the full bank
+# still exists so the gate and the concept schema are ready when #2 lands.
+REALIZATION_NOW = {
+    "kinetic_type": "title", "diegetic_ui": "panes", "data_viz": "sparkline",
+    "node_diagram": "diagram", "terminal": "terminal", "split_compare": "split",
+    "screen_capture": None, "metaphor_illustration": None, "object_metaphor": None,
+    "continuous_camera": None, "transformation_morph": None, "photographic_collage": None,
+}
+
+
+def renderable_devices():
+    return [d for d in DEVICES if REALIZATION_NOW.get(d)]
+
 # thresholds (see module docstring / research)
 D_PREV_MIN = 0.55       # hard fail vs the previous video
 NOVELTY_MIN = 0.50      # rolling-window novelty floor
@@ -204,6 +220,28 @@ def digest(history_path, n=ARCHIVE_N):
           f"(D >= {D_PREV_MIN}) and not crowded against the last {n} (novelty >= {NOVELTY_MIN}).")
 
 
+def backfill(out_path="reports/concept-history.json", keep=40):
+    """Rebuild the series-memory archive from reports/concept-*.json (the shipped
+    concepts). The gate and the producer digest read this."""
+    import glob
+    import re
+    def key(p):
+        m = re.search(r"concept-(\d{4}-\d{2}-\d{2}\w?)", p)
+        return m.group(1) if m else p
+    files = [f for f in sorted(glob.glob("reports/concept-*.json"), key=key)
+             if "concept-history" not in f]
+    out = []
+    for f in files:
+        try:
+            c = json.loads(Path(f).read_text())
+            out.append({k: c.get(k) for k in (["date"] + CATEGORICALS + ["scene_seq", "device_seq"])})
+        except Exception as e:
+            print(f"  skip {f}: {e}")
+    out = out[-keep:]
+    Path(out_path).write_text(json.dumps(out, indent=2))
+    print(f"wrote {out_path} with {len(out)} concepts (from {len(files)} files)")
+
+
 def selftest():
     import tempfile
     tmp = Path(tempfile.mkdtemp(prefix="concept_"))
@@ -243,12 +281,18 @@ def main():
     p.add_argument("concept", nargs="?")
     p.add_argument("--digest", action="store_true")
     p.add_argument("--banks", action="store_true")
+    p.add_argument("--backfill", action="store_true")
     p.add_argument("--selftest", action="store_true")
     args = p.parse_args()
     if args.selftest:
         selftest(); return
+    if args.backfill:
+        backfill(); return
     if args.banks:
-        print(json.dumps(BANKS, indent=2)); return
+        out = {k: v for k, v in BANKS.items()}
+        out["_device_renderable_now"] = renderable_devices()
+        out["_device_needs_visual_rewrite_v11_#2"] = [d for d in DEVICES if not REALIZATION_NOW.get(d)]
+        print(json.dumps(out, indent=2)); return
     if args.digest:
         if not args.history:
             p.error("--digest needs <history.json>")
