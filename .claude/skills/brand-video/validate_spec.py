@@ -53,6 +53,8 @@ LIMITS = {
     "screen_capture": {"url": 44, "title": 30, "line": 42},
     "metaphor":     {"label": 22, "eyebrow": 32},
     "oner":         {"eyebrow": 32, "block": 26},
+    "object":       {"glyph": 16, "label": 24, "eyebrow": 32},
+    "montage":      {"eyebrow": 32, "tile": 22},
 }
 
 VALID_TEMPLATES = set(LIMITS.keys())

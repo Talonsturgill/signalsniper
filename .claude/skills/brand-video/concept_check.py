@@ -59,7 +59,8 @@ DEVICES = [
     "kinetic_type", "diegetic_ui", "screen_capture", "metaphor_illustration",
     "data_viz", "node_diagram", "terminal", "object_metaphor",
     "split_compare", "continuous_camera", "transformation_morph",
-    "photographic_collage",
+    "montage",   # was "photographic_collage" -- photos need licensed assets this
+                 # automation cannot source; montage is the code-native equivalent
 ]
 OPENS = [
     "cold_open_result", "question_on_black", "number_slam", "problem_friction",
@@ -77,11 +78,10 @@ HEROES = [
 BANKS = {"arc": ARCS, "device": DEVICES, "open": OPENS, "close": CLOSES, "hero": HEROES}
 CATEGORICALS = ["arc", "device", "hero", "open", "close"]
 
-# How each visual device maps onto the CURRENT renderer. The 6 with a template
-# are buildable today (v11 #1); the 6 mapped to None need the visual-renderer
-# rewrite (v11 #2 -- shader background, morph, continuous camera). Until then the
-# producer's-reasoning phase must pick from renderable devices; the full bank
-# still exists so the gate and the concept schema are ready when #2 lands.
+# How each visual device maps onto the renderer. All 12 are now buildable in code
+# (v11 #2 complete) -- no external assets: object_metaphor draws from a built-in
+# procedural line-glyph bank, and the photo-based "collage" was replaced by a
+# code-native `montage` (a mosaic of generated tiles). The producer picks any.
 REALIZATION_NOW = {
     "kinetic_type": "title", "diegetic_ui": "panes", "data_viz": "sparkline",
     "node_diagram": "diagram", "terminal": "terminal", "split_compare": "split",
@@ -89,7 +89,8 @@ REALIZATION_NOW = {
     "screen_capture": "screen_capture",
     "metaphor_illustration": "metaphor",
     "continuous_camera": "oner",
-    "object_metaphor": None, "photographic_collage": None,
+    "object_metaphor": "object",
+    "montage": "montage",
 }
 
 
