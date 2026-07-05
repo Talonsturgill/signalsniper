@@ -64,6 +64,24 @@ CAMERA_MOVES = {
 
 BACKGROUND_STYLES = {"starfield", "aurora", "grid", "shader", "none"}
 
+# v11 #2: procedural line-icon glyphs for the `object` device (object_metaphor).
+# 100x100 viewBox, stroke-only line art (the renderer strokes them in the accent).
+# The producer picks the glyph that symbolizes the project -- no external assets.
+GLYPHS = {
+    "shield":  '<path d="M50 16 L80 28 V50 C80 70 67 82 50 88 C33 82 20 70 20 50 V28 Z"/>',
+    "lock":    '<rect x="32" y="46" width="36" height="30" rx="4"/><path d="M39 46 V38 a11 11 0 0 1 22 0 V46"/>',
+    "graph":   '<circle cx="28" cy="32" r="6"/><circle cx="72" cy="38" r="6"/><circle cx="50" cy="72" r="6"/><line x1="28" y1="32" x2="72" y2="38"/><line x1="28" y1="32" x2="50" y2="72"/><line x1="72" y1="38" x2="50" y2="72"/>',
+    "bolt":    '<path d="M56 14 L30 54 H48 L44 86 L72 44 H54 Z"/>',
+    "cube":    '<path d="M50 18 L80 34 V64 L50 82 L20 64 V34 Z"/><path d="M50 18 V50 M50 50 L80 34 M50 50 L20 34"/>',
+    "layers":  '<path d="M50 22 L82 38 L50 54 L18 38 Z"/><path d="M18 52 L50 68 L82 52"/><path d="M18 64 L50 80 L82 64"/>',
+    "database": '<ellipse cx="50" cy="28" rx="28" ry="10"/><path d="M22 28 V72 a28 10 0 0 0 56 0 V28"/><path d="M22 50 a28 10 0 0 0 56 0"/>',
+    "eye":     '<path d="M14 50 C30 30 70 30 86 50 C70 70 30 70 14 50 Z"/><circle cx="50" cy="50" r="11"/>',
+    "target":  '<circle cx="50" cy="50" r="10"/><circle cx="50" cy="50" r="22"/><circle cx="50" cy="50" r="34"/><line x1="50" y1="4" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="96"/><line x1="4" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="96" y2="50"/>',
+    "branch":  '<circle cx="30" cy="24" r="7"/><circle cx="30" cy="76" r="7"/><circle cx="70" cy="50" r="7"/><path d="M30 31 V69"/><path d="M30 42 C30 50 62 50 63 50"/>',
+    "spark":   '<path d="M50 14 L58 42 L86 50 L58 58 L50 86 L42 58 L14 50 L42 42 Z"/>',
+    "window":  '<rect x="18" y="22" width="64" height="52" rx="5"/><path d="M18 36 H82"/>',
+}
+
 
 def esc(s):
     return (
@@ -1047,6 +1065,18 @@ body {{
 .on-eyebrow {{ position: absolute; top: 13cqw; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); opacity: 0; z-index: 3; }}
 .on-track {{ position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; will-change: transform; }}
 .on-block {{ flex: 0 0 auto; height: 34cqw; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 8.5cqw; line-height: 1.0; text-align: center; padding: 0 7cqw; white-space: nowrap; color: var(--ink); will-change: opacity, transform, filter; }}
+
+/* ---- object (object_metaphor: a procedural line-icon, v11 #2) ---- */
+.ob-eyebrow {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 2.5cqw; opacity: 0; }}
+.ob-svg {{ width: 42cqw; height: 42cqw; overflow: visible; transform-origin: center center; }}
+.ob-svg * {{ fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }}
+.ob-label {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 6.4cqw; color: var(--ink); margin-top: 3cqw; opacity: 0; }}
+
+/* ---- montage (code-native tile mosaic, v11 #2) ---- */
+.mt-eyebrow {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 3cqw; opacity: 0; }}
+.mt-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 2.2cqw; width: 74cqw; }}
+.mt-tile {{ background: rgba(255,255,255,0.05); border: 0.12cqw solid var(--hairline); border-radius: 1.6cqw; padding: 3.5cqw 3cqw; min-height: 15cqw; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 3.5cqw; line-height: 1.1; color: var(--ink); opacity: 0; will-change: opacity, transform; }}
+.mt-tile[data-i="0"] {{ color: var(--accent-ink); }}
 .flash-word {{
   font-family: var(--display);
   font-weight: var(--display-weight);
@@ -1721,6 +1751,30 @@ def render_scene(idx, scene):
   <div class="on-track">{blocks_html}</div>
 </section>"""
 
+    if tpl == "object":
+        # v11 #2 device `object_metaphor`: a symbolic line-icon that assembles and
+        # settles, standing for the system. Glyph from the built-in GLYPHS bank.
+        eyebrow_html = f'<div class="ob-eyebrow">{esc(scene["eyebrow"])}</div>' if scene.get("eyebrow") else ""
+        inner = GLYPHS.get(scene.get("glyph", "spark"), GLYPHS["spark"])
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="object"{extra_attrs}>
+  {eyebrow_html}
+  <svg class="ob-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">{inner}</svg>
+  <div class="ob-label">{esc(scene['label'])}</div>
+</section>"""
+
+    if tpl == "montage":
+        # v11 #2 device `montage` (replaces photographic_collage -- code-native, no
+        # photos): a mosaic of generated tiles that assemble into the product's facets.
+        eyebrow_html = f'<div class="mt-eyebrow">{esc(scene["eyebrow"])}</div>' if scene.get("eyebrow") else ""
+        tiles = scene.get("tiles", [])
+        tiles_html = "".join(f'<div class="mt-tile" data-i="{i}">{esc(tl)}</div>' for i, tl in enumerate(tiles))
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="montage"{extra_attrs}>
+  {eyebrow_html}
+  <div class="mt-grid" data-n="{len(tiles)}">{tiles_html}</div>
+</section>"""
+
     if tpl == "big_number":
         sub_html = (
             f"""<div class="bn-sub">{esc(scene['sub'])}</div>"""
@@ -2062,6 +2116,8 @@ function applySceneAnimations(idx, sceneT, dur) {
   if (tpl === "screen_capture") { animateScreenCapture(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "metaphor") { animateMetaphor(el, sceneT, dur); return; }
   if (tpl === "oner") { animateOner(el, sceneT, dur); return; }
+  if (tpl === "object") { animateObject(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "montage") { animateMontage(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "big_number") { animateBigNumber(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "terminal") { animateTerminal(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "split") { animateSplit(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
@@ -2215,6 +2271,41 @@ function animateDiagram(el, t, dur) {
     particles[p].setAttribute("cy", cy.toFixed(2));
     const fade = Math.min(1, Math.min(tNorm, 1 - tNorm) * 5);
     particles[p].style.opacity = (0.95 * fade).toFixed(3);
+  }
+}
+
+function animateObject(el, t, dur) {
+  const eb = el.querySelector(".ob-eyebrow");
+  const svg = el.querySelector(".ob-svg");
+  const label = el.querySelector(".ob-label");
+  if (eb) { const e = easeOut(clamp01(t/0.4)); eb.style.opacity = (e*0.9).toFixed(3); }
+  if (svg) {
+    svg.style.opacity = clamp01(t/0.4).toFixed(3);          // lift (hideScene) + fade
+    const e = easeOutBack(clamp01(t/0.7));
+    const rot = -10*(1 - easeOut(clamp01(t/0.9)));
+    svg.style.transform = `scale(${(0.62 + 0.38*e).toFixed(3)}) rotate(${rot.toFixed(1)}deg)`;
+    const parts = svg.children;                              // stagger the strokes on
+    for (let i = 0; i < parts.length; i++) {
+      const local = t - 0.2 - i*0.12;
+      parts[i].style.opacity = (local < 0 ? 0 : clamp01(local/0.4)).toFixed(3);
+    }
+  }
+  if (label) { const e = easeOut(clamp01((t - dur*0.42)/0.5)); label.style.opacity = e.toFixed(3);
+    label.style.transform = `translateY(${(10*(1-e)).toFixed(1)}px)`; }
+}
+
+function animateMontage(el, t, dur) {
+  const eb = el.querySelector(".mt-eyebrow");
+  const grid = el.querySelector(".mt-grid");
+  const tiles = el.querySelectorAll(".mt-tile");
+  if (eb) { const e = easeOut(clamp01(t/0.4)); eb.style.opacity = (e*0.9).toFixed(3); }
+  if (grid) grid.style.opacity = 1;                          // lift (hideScene)
+  for (let i = 0; i < tiles.length; i++) {
+    const local = t - 0.25 - i*0.14;
+    if (local < 0) { tiles[i].style.opacity = 0; tiles[i].style.transform = "scale(0.9)"; continue; }
+    const e = easeOutBack(clamp01(local/0.45));
+    tiles[i].style.opacity = clamp01(local/0.25).toFixed(3);
+    tiles[i].style.transform = `scale(${(0.9 + 0.1*e).toFixed(3)})`;
   }
 }
 
