@@ -62,7 +62,7 @@ CAMERA_MOVES = {
     "none",
 }
 
-BACKGROUND_STYLES = {"starfield", "aurora", "grid", "none"}
+BACKGROUND_STYLES = {"starfield", "aurora", "grid", "shader", "none"}
 
 
 def esc(s):
@@ -188,6 +188,10 @@ def background_html(spec):
             f'<div class="bg-grid" aria-hidden="true" style="--grid-opacity:{0.13 * intensity:.3f}">'
             f'<div class="plane"></div></div>'
         )
+    if style == "shader":
+        # v11 #2: a real GPU-rendered lit gradient-flow field in the brand colors.
+        # Reads --canvas/--accent at runtime; renders behind all content (z-index 1).
+        return '<canvas id="bgShader" class="bg-shader" aria-hidden="true"></canvas>'
     # aurora: three accent-derived blobs drifting behind the scenes.
     # Hue spread stays tight (+/-24deg) so the field reads as the BRAND color
     # breathing, not a rainbow; dark opacity is low so near-black stays black.
@@ -591,6 +595,14 @@ body {{
   pointer-events: none;
   z-index: 1;
   opacity: 0.85;
+}}
+.bg-shader {{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;   /* below .stage-inner (the scenes) -- the field is opaque, must sit behind */
 }}
 
 .bv-defs {{ position: absolute; width: 0; height: 0; pointer-events: none; }}
@@ -2596,6 +2608,92 @@ function startParticleBackground() {
   requestAnimationFrame(pf);
 }
 startParticleBackground();
+
+// ---- v11 #2: WebGL shader background — real depth, light and flow in brand color ----
+function startShaderBackground() {
+  const canvas = document.getElementById("bgShader");
+  if (!canvas) return;
+  const gl = canvas.getContext("webgl", {antialias: false, preserveDrawingBuffer: true})
+          || canvas.getContext("experimental-webgl");
+  if (!gl) return;                       // no WebGL -> field simply absent, page still valid
+  const cs = getComputedStyle(document.documentElement);
+  function toRGB(v, fb) {
+    v = (v || "").trim();
+    let m = v.match(/^#([0-9a-fA-F]{6})$/);
+    if (m) { const n = parseInt(m[1], 16); return [(n>>16&255)/255, (n>>8&255)/255, (n&255)/255]; }
+    m = v.match(/^#([0-9a-fA-F]{3})$/);
+    if (m) { const s = m[1]; return [parseInt(s[0]+s[0],16)/255, parseInt(s[1]+s[1],16)/255, parseInt(s[2]+s[2],16)/255]; }
+    m = v.match(/rgba?\(([^)]+)\)/);
+    if (m) { const p = m[1].split(",").map(parseFloat); return [p[0]/255, p[1]/255, p[2]/255]; }
+    return fb;
+  }
+  const canvasCol = toRGB(cs.getPropertyValue("--canvas"), [0.04, 0.04, 0.05]);
+  const accentCol = toRGB(cs.getPropertyValue("--accent"), [1, 1, 1]);
+  const lum = 0.2126*canvasCol[0] + 0.7152*canvasCol[1] + 0.0722*canvasCol[2];
+  const isDark = lum < 0.45 ? 1.0 : 0.0;
+
+  const vsrc = "attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }";
+  const fsrc = [
+    "precision highp float;",
+    "uniform vec2 u_res; uniform float u_time; uniform vec3 u_canvas; uniform vec3 u_accent; uniform float u_dark;",
+    "float hash(vec2 p){ p = fract(p*vec2(123.34,345.45)); p += dot(p, p+34.345); return fract(p.x*p.y); }",
+    "float noise(vec2 p){ vec2 i=floor(p); vec2 f=fract(p); f=f*f*(3.0-2.0*f);",
+    "  float a=hash(i), b=hash(i+vec2(1.,0.)), c=hash(i+vec2(0.,1.)), d=hash(i+vec2(1.,1.));",
+    "  return mix(mix(a,b,f.x), mix(c,d,f.x), f.y); }",
+    "float fbm(vec2 p){ float v=0.0, a=0.5; for(int i=0;i<3;i++){ v+=a*noise(p); p*=2.03; a*=0.5; } return v; }",
+    "void main(){",
+    "  vec2 uv = gl_FragCoord.xy/u_res;",
+    "  vec2 p = uv*2.6; float t = u_time*0.045;",
+    "  vec2 q = vec2(fbm(p+vec2(0.0,t)), fbm(p+vec2(5.2,-t)));",
+    "  float n = fbm(p+1.9*q); n = smoothstep(0.12, 0.96, n);",
+    "  vec3 col = mix(u_canvas, u_accent, n*n*(u_dark>0.5 ? 0.85 : 0.7));",
+    "  vec2 lp = vec2(0.30+0.06*sin(u_time*0.05), 0.28+0.05*cos(u_time*0.045));",
+    "  float light = smoothstep(0.95, 0.0, distance(uv, lp));",
+    "  col += u_accent*light*(u_dark>0.5 ? 0.12 : 0.06);",
+    "  float vig = smoothstep(1.2, 0.35, distance(uv, vec2(0.5))); col *= mix(0.70, 1.0, vig);",
+    "  col += (hash(uv*u_res + u_time) - 0.5)*0.018;",
+    "  gl_FragColor = vec4(col, 1.0);",
+    "}"
+  ].join("\n");
+
+  function sh(type, src) {
+    const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { console.warn("bgShader compile:", gl.getShaderInfoLog(s)); return null; }
+    return s;
+  }
+  const vs = sh(gl.VERTEX_SHADER, vsrc), fs = sh(gl.FRAGMENT_SHADER, fsrc);
+  if (!vs || !fs) return;
+  const prog = gl.createProgram(); gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+  gl.useProgram(prog);
+  const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  const uRes = gl.getUniformLocation(prog, "u_res"), uTime = gl.getUniformLocation(prog, "u_time"),
+        uCanvas = gl.getUniformLocation(prog, "u_canvas"), uAccent = gl.getUniformLocation(prog, "u_accent"),
+        uDark = gl.getUniformLocation(prog, "u_dark");
+  gl.uniform3fv(uCanvas, canvasCol); gl.uniform3fv(uAccent, accentCol); gl.uniform1f(uDark, isDark);
+
+  // Render at a capped internal resolution (the field is soft; CSS upscales it) so
+  // software WebGL in headless Chromium can hold frame rate.
+  function fit() {
+    const rect = canvas.getBoundingClientRect(); const cap = 200;
+    const s = Math.min(1, cap/Math.max(rect.width, rect.height, 1));
+    canvas.width = Math.max(2, Math.floor(rect.width*s));
+    canvas.height = Math.max(2, Math.floor(rect.height*s));
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(uRes, canvas.width, canvas.height);
+  }
+  fit(); window.addEventListener("resize", fit);
+
+  function draw() {
+    gl.uniform1f(uTime, performance.now()/1000 + 6.0);  // +6s: field is mid-flow at content start
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+}
+startShaderBackground();
 
 let audioCtx = null;
 let masterGain = null;
