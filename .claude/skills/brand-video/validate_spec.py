@@ -50,6 +50,9 @@ LIMITS = {
     "wire_dispatch": {"ticker": 38, "dateline": 24, "headline": 44, "lede": 96},
     "panes":        {"eyebrow": 24, "name": 14, "line": 24},
     "morph":        {"before": 20, "after": 20, "eyebrow": 32},
+    "screen_capture": {"url": 44, "title": 30, "line": 42},
+    "metaphor":     {"label": 22, "eyebrow": 32},
+    "oner":         {"eyebrow": 32, "block": 26},
 }
 
 VALID_TEMPLATES = set(LIMITS.keys())

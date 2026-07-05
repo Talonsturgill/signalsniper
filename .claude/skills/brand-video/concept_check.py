@@ -86,8 +86,10 @@ REALIZATION_NOW = {
     "kinetic_type": "title", "diegetic_ui": "panes", "data_viz": "sparkline",
     "node_diagram": "diagram", "terminal": "terminal", "split_compare": "split",
     "transformation_morph": "morph",
-    "screen_capture": None, "metaphor_illustration": None, "object_metaphor": None,
-    "continuous_camera": None, "photographic_collage": None,
+    "screen_capture": "screen_capture",
+    "metaphor_illustration": "metaphor",
+    "continuous_camera": "oner",
+    "object_metaphor": None, "photographic_collage": None,
 }
 
 
