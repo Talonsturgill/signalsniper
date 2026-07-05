@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-05",
+  "project": "T3MP3ST",
+  "concepts": [
+    {
+      "name": "THE HONEST DISPATCH",
+      "world": "A live security wire report: the viewer is reading an intel dispatch about a new capability just landing, not a product ad.",
+      "shows_not_tells": "A wire ticker + headline opens the report; the 8-operator kill chain diagram draws on with only RECON lit accent-red (the rest dim), proving in one image what the repo's own status table says in words. The real npm commands get typed. A status readout (mono_block) states the maturity split as text on screen, not narration.",
+      "money_shot": "The flash burst on 'zero-day hunter' -- the one moment the full frame goes alarm-red, right after the kill-chain diagram has already earned the phrase by showing what's actually proven.",
+      "why_creator_reposts": "Pliny's currency is being real, not hype -- a tribute that shows the honest maturity table (not oversold as '8 operators live') respects exactly the thing this persona values: receipts over claims.",
+      "why_stranger_stops": "An alarm-red flash on a near-black feed reads as urgent and different from the usual blue-gradient SaaS clip; the kill chain diagram is genuinely interesting to look at even muted.",
+      "light_plan": "wire_dispatch: bright ticker+headline. diagram: one glowing red node against dim others -- the frame's light source IS the honesty. terminal: bright prompt text in a widened pane. mono_block: status lines bright, the 'stable' line lifted brighter. flash: full-bleed red field, the one inverted beat. sparkline: red curve climbing on black. logo_reveal: bright wordmark close.",
+      "framework": "DISPATCH"
+    },
+    {
+      "name": "GODMODE TERMINAL",
+      "world": "First-person: the viewer IS inside the War Room UI as a scan runs live, watching panes flip state.",
+      "shows_not_tells": "Diegetic panes for each operator (RECON/SCANNER/EXPLOITER/GHOST) flipping between idle/working/blocked states as if watched live.",
+      "money_shot": "A pane flipping from 'blocked' to 'working' as recon's real result lands.",
+      "why_creator_reposts": "Feels like an ops-room screen capture, close to the persona's own hacker aesthetic.",
+      "why_stranger_stops": "UI-heavy scenes read as authentic screen-capture, which stops scroll for a technical audience.",
+      "light_plan": "Panes carry most of the runtime; risk of a uniform mid-luma wash across every pane scene with only one true color-break, since flash/inverted beats have nowhere natural to live in an all-panes structure.",
+      "framework": "SCHEMATIC",
+      "why_not_picked": "No documented terminal OUTPUT exists in the README to ground pane state-flips truthfully -- the 'live scan' moments would have to dramatize activity beyond what repo-study actually sourced. Riskier on the substance gate and weaker on the light plan (mostly one register, thin on genuine color-breaking beats) than Concept A."
+    },
+    {
+      "name": "THE MATURITY RECEIPT",
+      "world": "An audit/compliance report handed to the viewer: ticket stub, star count, a formal-looking readout.",
+      "shows_not_tells": "big_number count-up on stars, a sparkline of growth, a receipt-style status stamp.",
+      "money_shot": "The star count landing on its final tally with a stamp animation.",
+      "why_creator_reposts": "Plausible, but generic -- this structure has shipped multiple times already this week (07-01 herdr, 07-03 ECC) and doesn't say anything specific to a red-team persona.",
+      "why_stranger_stops": "Star counts alone are a weaker hook than an alarm-red flash on a security tool.",
+      "light_plan": "Workable but thinner -- mostly bright-on-dark numeral scenes, no natural inverted beat.",
+      "framework": "RECEIPT",
+      "why_not_picked": "Leans on growth-metric beats (big_number + sparkline both centered on the star count) which pushes toward the growth-scene cap with less room for the honest-maturity substance angle that makes this project's story specific rather than generic. Also RECEIPT's shape (ticket/audit paperwork) doesn't fit a red-team persona's actual aesthetic the way a wire dispatch does."
+    }
+  ],
+  "picked": "THE HONEST DISPATCH",
+  "wow_bets": [
+    "the kill-chain diagram with exactly one lit node is a genuinely uncommon thing to see in a hype-driven feed -- honesty as the spectacle",
+    "the flash-to-alarm-red money shot gives one true inverted beat that a near-black security aesthetic rarely earns cleanly",
+    "closing the loop: open on the wire dispatch's headline (T3MP3ST in ink), close on the wordmark in the same ink -- the autoloop rhymes without repeating the open template (wire_dispatch != logo_reveal)"
+  ]
+}

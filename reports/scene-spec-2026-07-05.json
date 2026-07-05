@@ -1,0 +1,179 @@
+{
+  "date": "2026-07-05",
+  "project": "T3MP3ST",
+  "project_url": "https://github.com/elder-plinius/T3MP3ST",
+  "design": {
+    "framework": "DISPATCH",
+    "tokens": {
+      "canvas": "#0a0a0a",
+      "ink": "#fff1e5",
+      "ink_muted": "#988f89",
+      "accent": "#ff7a61",
+      "hairline": "#2e2c2a"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.005,
+      "case": "preserve",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.22,
+      "scene_out_s": 0.16,
+      "stagger_s": 0.14
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.06,
+      "vignette": 0.24,
+      "halation": 0.05,
+      "lighting_arc": 0.3
+    },
+    "background": {
+      "style": "grid",
+      "intensity": 0.5
+    },
+    "transition_style": "glitch",
+    "foley_style": "riser_braam",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "held_subject": "T3MP3ST",
+    "beat": {
+      "bpm": 136.0,
+      "offset_s": 30.0,
+      "aligned": true,
+      "median_drift_ms": 117.0
+    }
+  },
+  "scenes": [
+    {
+      "template": "wire_dispatch",
+      "camera": "push_in",
+      "duration_s": 3.44,
+      "ticker": "RED TEAM WIRE",
+      "dateline": "OPEN SOURCE, JULY 2026",
+      "headline": "T3MP3ST",
+      "lede": "your coding agent, now a zero day hunter"
+    },
+    {
+      "template": "diagram",
+      "camera": "orbit",
+      "duration_s": 4.2,
+      "eyebrow": "the kill chain, staged",
+      "nodes": [
+        {
+          "label": "recon",
+          "x": 15,
+          "y": 55,
+          "accent": true
+        },
+        {
+          "label": "scanner",
+          "x": 38,
+          "y": 30
+        },
+        {
+          "label": "exploiter",
+          "x": 62,
+          "y": 55
+        },
+        {
+          "label": "ghost",
+          "x": 85,
+          "y": 30
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "accent": true
+        },
+        {
+          "from": 2,
+          "to": 3
+        }
+      ]
+    },
+    {
+      "template": "terminal",
+      "camera": "parallax_drift",
+      "duration_s": 4.07,
+      "title": "quickstart",
+      "prompt_char": "$",
+      "lines": [
+        {
+          "text": "npm install",
+          "prompt": true
+        },
+        {
+          "text": "npm run server",
+          "prompt": true
+        },
+        {
+          "text": "npm run verify-claims",
+          "prompt": true
+        }
+      ],
+      "sheen": true
+    },
+    {
+      "template": "mono_block",
+      "camera": "ken_burns",
+      "duration_s": 3.48,
+      "lines": [
+        "recon stable and proven",
+        "four operators, next",
+        "still experimental"
+      ],
+      "accent_idx": 0
+    },
+    {
+      "template": "flash",
+      "camera": "crash_zoom",
+      "duration_s": 3.02,
+      "word": "zero day hunter",
+      "caption": "recon proved it",
+      "emphasize": true
+    },
+    {
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "duration_s": 3.92,
+      "values": [
+        15,
+        60,
+        140,
+        260,
+        380,
+        503
+      ],
+      "value_label": "503 stars",
+      "caption": "still climbing"
+    },
+    {
+      "template": "logo_reveal",
+      "camera": "pull_back",
+      "duration_s": 4.0,
+      "word": "T3MP3ST",
+      "tagline": "built honest. shipping fast.",
+      "emphasize": true,
+      "sheen": true
+    }
+  ]
+}

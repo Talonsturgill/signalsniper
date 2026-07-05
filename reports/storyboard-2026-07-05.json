@@ -1,0 +1,89 @@
+{
+  "date": "2026-07-05",
+  "project": "T3MP3ST",
+  "framework": "DISPATCH",
+  "concept": "A live security wire report, not a product pitch: the viewer reads a dispatch announcing a new capability, watches the kill-chain diagram prove exactly what's real (one lit node, not eight), gets the real commands, hears the maturity split stated plainly, then the frame goes alarm-red on the phrase that's earned everything shown so far.",
+  "money_shot_note": "scene 5 (flash): the full frame cuts to the accent-red field on 'zero-day hunter' -- it only lands because scenes 2-4 already proved the claim instead of asserting it.",
+  "transition_strategy": "hard cut is the default for this run's cuts; glitch (the reserved accent) is spent exactly once, on the cut INTO the flash money shot, so it earns its beat instead of tiling every transition.",
+  "music_direction": "electronic bed, driving pulse building through the terminal and mono_block scenes; riser_braam foley climbs into the glitch-cut and peaks at the flash impact; settles for the sparkline and close.",
+  "energy_curve": [0.42, 0.55, 0.60, 0.50, 0.95, 0.72, 0.55],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "cold-open the dispatch: announce a live capability report landing, plant the project name as the poster frame",
+      "template": "wire_dispatch",
+      "camera": "push_in",
+      "copy_note": "headline reads T3MP3ST; ticker sets the wire-report frame; lede states the pitch in one line",
+      "sound_cue": "wire ticker types on with a soft type-clack",
+      "transition": "cut",
+      "energy": 0.42,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "prove the kill chain is real by showing exactly which operator is lit and which aren't, before any hype language",
+      "template": "diagram",
+      "camera": "orbit",
+      "copy_note": "eyebrow names the kill chain; node labels are the operators, only recon accented",
+      "sound_cue": "orbit drift under a low synth pad",
+      "transition": "cut",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "ground the pitch in the exact commands a viewer could run tonight",
+      "template": "terminal",
+      "camera": "parallax_drift",
+      "copy_note": "pane title is the quickstart; lines are the exact npm commands from repo-study, nothing invented",
+      "sound_cue": "typewriter clicks on each command line",
+      "transition": "cut",
+      "energy": 0.60,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "state the maturity split as text on screen so the honesty is explicit, not implied",
+      "template": "mono_block",
+      "camera": "static_breathe",
+      "copy_note": "lines state the split plainly: recon stable, the rest experimental",
+      "sound_cue": "a held tone, no swipe -- let the honesty land quiet",
+      "transition": "cut",
+      "energy": 0.50,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "land the money shot: the full frame goes alarm red on the phrase that earns everything shown so far",
+      "template": "flash",
+      "camera": "crash_zoom",
+      "copy_note": "word is the earned phrase; caption is the one-line proof",
+      "sound_cue": "riser_braam foley peaks here, glitch transition in",
+      "transition": "glitch",
+      "energy": 0.95,
+      "money_shot": true
+    },
+    {
+      "beat": 6,
+      "intent": "resolve the momentum thread: the count is real and still climbing, days in",
+      "template": "sparkline",
+      "camera": "dolly_up",
+      "copy_note": "value_label is the verified star count; caption notes it's still climbing",
+      "sound_cue": "an ascending pluck line under the dolly",
+      "transition": "cut",
+      "energy": 0.72,
+      "money_shot": false
+    },
+    {
+      "beat": 7,
+      "intent": "close on the wordmark so the autoloop rhymes with the open without repeating its template",
+      "template": "logo_reveal",
+      "camera": "pull_back",
+      "copy_note": "wordmark plus a tagline that closes the honesty thesis",
+      "sound_cue": "sheen pass on the wordmark, tail out",
+      "transition": "cut",
+      "energy": 0.55,
+      "money_shot": false
+    }
+  ]
+}

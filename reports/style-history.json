@@ -208,5 +208,12 @@
     "aesthetic_slug": "mcp-use-native",
     "framework": "CLASSIC",
     "project_url": "https://github.com/mcp-use/mcp-use"
+  },
+  {
+    "date": "2026-07-05",
+    "brand_slug": "t3mp3st-native",
+    "aesthetic_slug": "t3mp3st-native",
+    "framework": "DISPATCH",
+    "project_url": "https://github.com/elder-plinius/T3MP3ST"
   }
 ]

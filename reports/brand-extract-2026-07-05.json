@@ -1,0 +1,36 @@
+{
+  "attempts": [
+    {
+      "url": "https://github.com/elder-plinius/T3MP3ST",
+      "result": {"error": "insufficient signal", "notes": ["no colors found"]},
+      "exit_code": 3,
+      "note": "T3MP3ST has no dedicated project site; GitHub's own chrome carries no project-declared theme"
+    },
+    {
+      "url": "https://pliny.gg",
+      "result": {
+        "tokens": {
+          "canvas": "#0a0a0a",
+          "ink": "#fff1e5",
+          "ink_muted": "#988f89",
+          "accent": "#f80f0f",
+          "hairline": "#2e2c2a"
+        },
+        "provenance": {
+          "accent": "css var --accent (lightness-nudged from #e90606)",
+          "canvas": "frequency heuristic (darkest common)",
+          "ink": "frequency heuristic (lightest common)",
+          "ink_muted": "derived mix(ink, canvas)",
+          "hairline": "derived mix(ink, canvas, 0.85)"
+        },
+        "confidence": "medium",
+        "dark_canvas": true,
+        "source_url": "https://pliny.gg",
+        "notes": []
+      },
+      "exit_code": 0,
+      "note": "used per step 6.2 (second owned URL -- the creator's own site, since no project site exists). Confidence medium, author-declared accent css var. Accent token subsequently lightened from #f80f0f to #ff7a61 (same hue) after the screening gate failed readability on the flash scene -- see brand-spec token_provenance for the full account."
+    }
+  ],
+  "used": "https://pliny.gg"
+}

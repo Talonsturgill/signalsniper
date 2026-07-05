@@ -1,0 +1,65 @@
+{
+  "date": "2026-07-05",
+  "project": "T3MP3ST",
+  "framework": "DISPATCH",
+  "tokens": {
+    "canvas": "#0a0a0a",
+    "ink": "#fff1e5",
+    "ink_muted": "#988f89",
+    "accent": "#ff7a61",
+    "hairline": "#2e2c2a"
+  },
+  "token_provenance": {
+    "canvas": "brand_extract.py on https://pliny.gg (creator's own site; T3MP3ST has no dedicated project site) -- frequency heuristic, darkest common, confidence medium",
+    "ink": "brand_extract.py on pliny.gg -- frequency heuristic, lightest common, confidence medium",
+    "accent": "brand_extract.py on pliny.gg extracted an author-declared css var --accent as #f80f0f (601-luma ~85), then LIGHTENED to #ff7a61 (same hue, 601-luma ~159) after the screening gate FAILed readability on the flash scene -- the flash template fills the full-bleed background with the raw accent and puts canvas-colored text on top (an inverted/light-polarity beat by design), so the accent itself has to actually BE bright. #f80f0f was too dark to read as a light field, same failure class as the 2026-07-04c mcp-use entry (accent luma 115.7, lightened to 156.4) and the 2026-07-04 caveman entry. Fixed at the token, not the renderer, preserving hue.",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.85)",
+    "attempt_log": "tried github.com/elder-plinius/T3MP3ST first (exit 3, insufficient signal, no colors found -- GitHub's own chrome carries no project-declared theme); fell back to the creator's owned site pliny.gg per step 6.2, which returned confidence medium with an author-declared accent var. Judged against the site by eye: near-black canvas with hot alarm-red is authentically the persona's look, not a generic dark preset."
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "Inter",
+    "italic": "Inter"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.005,
+    "case": "preserve",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "scale",
+    "scene_in_s": 0.22,
+    "scene_out_s": 0.16,
+    "stagger_s": 0.14
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 0
+  },
+  "texture": {
+    "grain": 0.06,
+    "vignette": 0.24,
+    "halation": 0.05,
+    "lighting_arc": 0.30
+  },
+  "background": {
+    "style": "grid",
+    "intensity": 0.5
+  },
+  "transition_style": "glitch",
+  "foley_style": "riser_braam",
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "held_subject": "T3MP3ST",
+  "readability_plan": {
+    "ink_floor": "dark canvas, primary ink >= 230 luma (#fff1e5 measures ~244, clears with margin)",
+    "accent_as_graphic": "raw #ff7a61 (luma ~159, lightened post-gate-fail) carries the diagram's lit recon node, dots, glows, and the flash scene's full-bleed field; any OTHER text-scale accent use relies on build_html's auto-derived --accent-ink",
+    "muted_carries_content": "diagram node labels and mono_block status lines use --muted-content, not raw --ink-muted",
+    "light_per_scene": "wire_dispatch: ticker+headline at full ink brightness, dateline in muted-content. diagram: recon node glows accent, other node labels in muted-content -- the honesty-of-maturity visual. terminal: prompt lines bright ink/accent-ink in a widened pane. mono_block: status lines in ink, the recon line lifted to accent-ink. flash: full-bleed accent field is the one inverted/bright beat. sparkline: curve in raw accent, value label in accent-ink. logo_reveal: bright ink wordmark + sheen, tagline in muted-content.",
+    "inverted_beat": "flash (scene 5 of 7) is the color-break: accent field burst instead of dark canvas"
+  }
+}
