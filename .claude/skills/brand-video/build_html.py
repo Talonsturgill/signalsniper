@@ -1023,6 +1023,30 @@ body {{
 }}
 .morph-before {{ color: var(--ink); }}
 .morph-after {{ color: var(--accent-ink); }}
+
+/* ---- screen_capture (watch-it-work app window, v11 #2) ---- */
+.sc-title {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 3cqw; opacity: 0; }}
+.sc-window {{ width: 78cqw; border-radius: 2.2cqw; overflow: hidden; background: rgba(0,0,0,0.30); border: 0.14cqw solid var(--hairline); box-shadow: 0 3cqw 9cqw rgba(0,0,0,0.45); opacity: 0; }}
+.sc-chrome {{ display: flex; align-items: center; gap: 1cqw; padding: 1.4cqw 1.8cqw; background: rgba(255,255,255,0.05); border-bottom: 0.1cqw solid var(--hairline); }}
+.sc-dot {{ width: 1.2cqw; height: 1.2cqw; border-radius: 50%; background: var(--ink-muted); opacity: 0.5; }}
+.sc-address {{ flex: 1; margin-left: 1.5cqw; font-family: var(--mono); font-size: 1.9cqw; color: var(--muted-content); background: rgba(0,0,0,0.32); border-radius: 1cqw; padding: 0.7cqw 1.4cqw; white-space: nowrap; overflow: hidden; }}
+.sc-body {{ padding: 4cqw 4.5cqw 5cqw; min-height: 34cqw; display: flex; flex-direction: column; justify-content: center; gap: 2.2cqw; }}
+.sc-line {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 4.6cqw; line-height: 1.05; color: var(--ink); opacity: 0; }}
+.sc-line:first-child {{ color: var(--accent-ink); }}
+
+/* ---- metaphor_illustration (generative network, v11 #2) ---- */
+.mp-eyebrow {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 1.5cqw; opacity: 0; }}
+.mp-svg {{ width: 60cqw; height: 60cqw; overflow: visible; }}
+.mp-dot {{ fill: var(--accent); }}
+.mp-edge {{ stroke: var(--accent); stroke-width: 0.16; }}
+.mp-core {{ fill: var(--accent); }}
+.mp-label {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 6.4cqw; color: var(--ink); margin-top: 0.5cqw; opacity: 0; }}
+
+/* ---- oner (continuous_camera, v11 #2) ---- */
+.scene[data-tpl="oner"] {{ overflow: hidden; }}
+.on-eyebrow {{ position: absolute; top: 13cqw; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); opacity: 0; z-index: 3; }}
+.on-track {{ position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; will-change: transform; }}
+.on-block {{ flex: 0 0 auto; height: 34cqw; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 8.5cqw; line-height: 1.0; text-align: center; padding: 0 7cqw; white-space: nowrap; color: var(--ink); will-change: opacity, transform, filter; }}
 .flash-word {{
   font-family: var(--display);
   font-weight: var(--display-weight);
@@ -1652,6 +1676,51 @@ def render_scene(idx, scene):
   {sheen_div(scene)}
 </section>"""
 
+    if tpl == "screen_capture":
+        # v11 #2 device `screen_capture`: watch-it-work -- a live app window; the
+        # address types a URL, then the product's output reveals in the body.
+        title_html = f'<div class="sc-title">{esc(scene["title"])}</div>' if scene.get("title") else ""
+        lines_html = "".join(f'<div class="sc-line">{esc(l)}</div>' for l in scene.get("lines", []))
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="screen_capture"{extra_attrs}>
+  {title_html}
+  <div class="sc-window">
+    <div class="sc-chrome"><span class="sc-dot"></span><span class="sc-dot"></span><span class="sc-dot"></span><div class="sc-address" data-full="{esc(scene['url'])}"></div></div>
+    <div class="sc-body">{lines_html}</div>
+  </div>
+  {sheen_div(scene)}
+</section>"""
+
+    if tpl == "metaphor":
+        # v11 #2 device `metaphor_illustration`: an abstract generative network --
+        # scattered accent nodes converge into a ring around a glowing core, edges
+        # drawing between neighbors. A different visual WORLD from type/diagram.
+        eyebrow_html = f'<div class="mp-eyebrow">{esc(scene["eyebrow"])}</div>' if scene.get("eyebrow") else ""
+        dots = "".join(f'<circle class="mp-dot" r="0.9" data-i="{i}"></circle>' for i in range(26))
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="metaphor"{extra_attrs}>
+  {eyebrow_html}
+  <svg class="mp-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <g class="mp-edges"></g>
+    <g class="mp-dots">{dots}</g>
+    <circle class="mp-core" cx="50" cy="47" r="0"></circle>
+  </svg>
+  <div class="mp-label">{esc(scene['label'])}</div>
+</section>"""
+
+    if tpl == "oner":
+        # v11 #2 device `continuous_camera`: a single sustained vertical camera move
+        # through a stack of lines -- the centered line is bright and large, the
+        # others recede (depth). A oner, no cuts inside the beat.
+        eyebrow_html = f'<div class="on-eyebrow">{esc(scene["eyebrow"])}</div>' if scene.get("eyebrow") else ""
+        blocks_html = "".join(f'<div class="on-block" data-i="{i}">{esc(b)}</div>'
+                              for i, b in enumerate(scene.get("blocks", [])))
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="oner"{extra_attrs}>
+  {eyebrow_html}
+  <div class="on-track">{blocks_html}</div>
+</section>"""
+
     if tpl == "big_number":
         sub_html = (
             f"""<div class="bn-sub">{esc(scene['sub'])}</div>"""
@@ -1990,6 +2059,9 @@ function applySceneAnimations(idx, sceneT, dur) {
   if (tpl === "diagram") { animateDiagram(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "flash") { animateFlash(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "morph") { animateMorph(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "screen_capture") { animateScreenCapture(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "metaphor") { animateMetaphor(el, sceneT, dur); return; }
+  if (tpl === "oner") { animateOner(el, sceneT, dur); return; }
   if (tpl === "big_number") { animateBigNumber(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "terminal") { animateTerminal(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "split") { animateSplit(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
@@ -2143,6 +2215,92 @@ function animateDiagram(el, t, dur) {
     particles[p].setAttribute("cy", cy.toFixed(2));
     const fade = Math.min(1, Math.min(tNorm, 1 - tNorm) * 5);
     particles[p].style.opacity = (0.95 * fade).toFixed(3);
+  }
+}
+
+function animateScreenCapture(el, t, dur) {
+  const title = el.querySelector(".sc-title");
+  const win = el.querySelector(".sc-window");
+  const addr = el.querySelector(".sc-address");
+  const lines = el.querySelectorAll(".sc-line");
+  if (title) { const e = easeOut(clamp01(t/0.4)); title.style.opacity = (e*0.9).toFixed(3);
+    title.style.transform = `translateY(${(8*(1-e)).toFixed(1)}px)`; }
+  if (win) {                       // direct child -> hideScene zeroes it; lift + enter
+    const e = easeOutBack(clamp01(t/0.5));
+    win.style.opacity = clamp01(t/0.25).toFixed(3);
+    win.style.transform = `translateY(${(14*(1-e)).toFixed(1)}px) scale(${(0.96 + 0.04*e).toFixed(3)})`;
+  }
+  if (addr) typeText(addr, t, 0.35, 26);
+  const bodyStart = Math.min(1.35, dur*0.42);
+  for (let i = 0; i < lines.length; i++) {
+    const local = t - bodyStart - i*0.22;
+    if (local < 0) { lines[i].style.opacity = 0; lines[i].style.transform = "translateY(8px)"; continue; }
+    const e = easeOut(Math.min(1, local/0.35));
+    lines[i].style.opacity = e.toFixed(3);
+    lines[i].style.transform = `translateY(${(8*(1-e)).toFixed(1)}px)`;
+  }
+}
+
+function animateMetaphor(el, t, dur) {
+  const eb = el.querySelector(".mp-eyebrow");
+  const svg = el.querySelector(".mp-svg");
+  const dots = el.querySelectorAll(".mp-dot");
+  const core = el.querySelector(".mp-core");
+  const edgesG = el.querySelector(".mp-edges");
+  const label = el.querySelector(".mp-label");
+  if (svg) svg.style.opacity = 1;              // lift (hideScene)
+  if (eb) { const e = easeOut(clamp01(t/0.4)); eb.style.opacity = (e*0.9).toFixed(3); }
+  const p = easeInOutCubic(clamp01(t/(dur*0.72)));   // scattered -> ring convergence
+  const cx = 50, cy = 47, R = 29;
+  const pts = [];
+  for (let i = 0; i < dots.length; i++) {
+    const ang = (i/dots.length)*Math.PI*2;
+    const sx = 50 + Math.cos(ang*3.7 + i)*46, sy = 47 + Math.sin(ang*2.3 + i*1.7)*44;
+    const tx = cx + Math.cos(ang)*R, ty = cy + Math.sin(ang)*R;
+    const x = sx + (tx-sx)*p, y = sy + (ty-sy)*p;
+    dots[i].setAttribute("cx", x.toFixed(2)); dots[i].setAttribute("cy", y.toFixed(2));
+    dots[i].style.opacity = clamp01(0.3 + p*0.7).toFixed(3);
+    pts.push([x, y]);
+  }
+  if (edgesG) {
+    if (edgesG.childNodes.length !== dots.length) {
+      edgesG.innerHTML = "";
+      for (let i = 0; i < dots.length; i++) {
+        const ln = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        ln.setAttribute("class", "mp-edge"); edgesG.appendChild(ln);
+      }
+    }
+    const eo = clamp01((p-0.5)*2);
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i], b = pts[(i+1) % pts.length], ln = edgesG.childNodes[i];
+      ln.setAttribute("x1", a[0].toFixed(2)); ln.setAttribute("y1", a[1].toFixed(2));
+      ln.setAttribute("x2", b[0].toFixed(2)); ln.setAttribute("y2", b[1].toFixed(2));
+      ln.style.opacity = (eo*0.42).toFixed(3);
+    }
+  }
+  if (core) { const cr = easeOutBack(clamp01((t - dur*0.35)/(dur*0.4)))*4.5; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
+  if (label) { const e = easeOut(clamp01((t - dur*0.40)/0.5)); label.style.opacity = e.toFixed(3);
+    label.style.transform = `translateY(${(10*(1-e)).toFixed(1)}px)`; }
+}
+
+function animateOner(el, t, dur) {
+  const eb = el.querySelector(".on-eyebrow");
+  const track = el.querySelector(".on-track");
+  const blocks = el.querySelectorAll(".on-block");
+  if (eb) { const e = easeOut(clamp01(t/0.4)); eb.style.opacity = (e*0.7).toFixed(3); }
+  if (!track || !blocks.length) return;
+  track.style.opacity = 1;                     // lift (hideScene)
+  const n = blocks.length;
+  const stagePx = el.getBoundingClientRect().width || 1080;   // square stage
+  const bh = 0.34 * stagePx;                    // .on-block height = 34cqw
+  const p = clamp01((t/dur - 0.08)/0.84);       // block 0 centered ~start, last ~end
+  const centerIdx = p*(n - 1);
+  track.style.transform = `translateY(${(stagePx/2 - (centerIdx + 0.5)*bh).toFixed(1)}px)`;
+  for (let i = 0; i < n; i++) {
+    const d = Math.abs(i - centerIdx), focus = clamp01(1 - d*0.9);
+    blocks[i].style.opacity = (0.10 + 0.90*focus).toFixed(3);
+    blocks[i].style.transform = `scale(${(0.72 + 0.28*focus).toFixed(3)})`;
+    blocks[i].style.filter = d > 0.6 ? `blur(${Math.min(3.2, d*1.7).toFixed(1)}px)` : "none";
   }
 }
 
