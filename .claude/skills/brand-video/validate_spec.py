@@ -49,6 +49,7 @@ LIMITS = {
     "word_cascade": {"word": 14},
     "wire_dispatch": {"ticker": 38, "dateline": 24, "headline": 44, "lede": 96},
     "panes":        {"eyebrow": 24, "name": 14, "line": 24},
+    "morph":        {"before": 20, "after": 20, "eyebrow": 32},
 }
 
 VALID_TEMPLATES = set(LIMITS.keys())
@@ -56,7 +57,7 @@ VALID_CAMERAS = {"push_in", "pull_back", "ken_burns", "crash_zoom", "orbit", "pa
                  "static_breathe", "rack_focus", "dolly_up", "tilt_reveal", "none"}
 VALID_PALETTES = {"ambient", "electronic", "acoustic"}
 VALID_FRAMEWORKS = {"CLASSIC", "RECEIPT", "SCHEMATIC", "MANIFESTO", "DISPATCH"}
-VALID_BACKGROUNDS = {"starfield", "aurora", "grid", "none"}
+VALID_BACKGROUNDS = {"starfield", "aurora", "grid", "shader", "none"}
 
 
 def hex_to_rgb(h):

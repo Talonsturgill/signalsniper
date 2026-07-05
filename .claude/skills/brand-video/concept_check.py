@@ -85,8 +85,9 @@ CATEGORICALS = ["arc", "device", "hero", "open", "close"]
 REALIZATION_NOW = {
     "kinetic_type": "title", "diegetic_ui": "panes", "data_viz": "sparkline",
     "node_diagram": "diagram", "terminal": "terminal", "split_compare": "split",
+    "transformation_morph": "morph",
     "screen_capture": None, "metaphor_illustration": None, "object_metaphor": None,
-    "continuous_camera": None, "transformation_morph": None, "photographic_collage": None,
+    "continuous_camera": None, "photographic_collage": None,
 }
 
 

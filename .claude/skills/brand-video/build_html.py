@@ -988,6 +988,41 @@ body {{
 
 /* ---- flash ---- */
 .scene[data-tpl="flash"] {{ background: var(--accent); }}
+
+/* ---- morph (transformation_morph device, v11 #2) ---- */
+.morph-eyebrow {{
+  font-family: var(--mono);
+  font-size: 1.7cqw;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: var(--muted-content);
+  margin-bottom: 3.5cqw;
+  opacity: 0;
+}}
+.morph-stage {{
+  position: relative;
+  width: 100%;
+  height: 22cqw;
+}}
+.morph-word {{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  font-variation-settings: "wght" var(--display-weight);
+  font-size: 8cqw;
+  line-height: 1.0;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+  opacity: 0;
+}}
+.morph-before {{ color: var(--ink); }}
+.morph-after {{ color: var(--accent-ink); }}
 .flash-word {{
   font-family: var(--display);
   font-weight: var(--display-weight);
@@ -1598,6 +1633,25 @@ def render_scene(idx, scene):
   {caption_html}
 </section>"""
 
+    if tpl == "morph":
+        # v11 #2 device `transformation_morph`: BEFORE literally becomes AFTER --
+        # one word scales up + blurs out while the other scales in from blur, a
+        # signature motion-graphics move no other template does. Serves the
+        # before/after and transformation arcs.
+        eyebrow_html = (
+            f'<div class="morph-eyebrow">{esc(scene["eyebrow"])}</div>'
+            if scene.get("eyebrow") else ""
+        )
+        return f"""
+<section class="scene" data-idx="{idx}" data-tpl="morph"{extra_attrs}>
+  {eyebrow_html}
+  <div class="morph-stage">
+    <div class="morph-word morph-before">{esc(scene['before'])}</div>
+    <div class="morph-word morph-after">{esc(scene['after'])}</div>
+  </div>
+  {sheen_div(scene)}
+</section>"""
+
     if tpl == "big_number":
         sub_html = (
             f"""<div class="bn-sub">{esc(scene['sub'])}</div>"""
@@ -1935,6 +1989,7 @@ function applySceneAnimations(idx, sceneT, dur) {
   const tpl = el.dataset.tpl;
   if (tpl === "diagram") { animateDiagram(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "flash") { animateFlash(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
+  if (tpl === "morph") { animateMorph(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "big_number") { animateBigNumber(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "terminal") { animateTerminal(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
   if (tpl === "split") { animateSplit(el, sceneT, dur); animateSheen(el, sceneT, dur); return; }
@@ -2088,6 +2143,38 @@ function animateDiagram(el, t, dur) {
     particles[p].setAttribute("cy", cy.toFixed(2));
     const fade = Math.min(1, Math.min(tNorm, 1 - tNorm) * 5);
     particles[p].style.opacity = (0.95 * fade).toFixed(3);
+  }
+}
+
+function animateMorph(el, t, dur) {
+  const before = el.querySelector(".morph-before");
+  const after = el.querySelector(".morph-after");
+  const eb = el.querySelector(".morph-eyebrow");
+  // hideScene() zeroes every direct child's opacity while the scene is inactive;
+  // the .morph-stage wrapper must be lifted back or it hides the words (its
+  // grandchildren) even though they are opacity 1.
+  const stage = el.querySelector(".morph-stage");
+  if (stage) stage.style.opacity = 1;
+  if (eb) { const e = easeOut(clamp01(t/0.45)); eb.style.opacity = (e*0.9).toFixed(3);
+    eb.style.transform = `translateY(${(8*(1-e)).toFixed(1)}px)`; }
+  // Morph window sits AFTER the scene midpoint so the readability gate (which
+  // samples each scene's midpoint) lands on the sharp "before", not the blur.
+  const mStart = dur*0.54, mEnd = dur*0.74;
+  const k = clamp01((t - mStart)/Math.max(0.001, mEnd - mStart));  // 0..1 through the morph
+  const eK = easeInOutCubic(k);
+  if (before) {
+    const enter = easeOutBack(clamp01(t/0.5));
+    const held = t < mStart ? (0.86 + 0.14*enter) : 1.0;
+    before.style.opacity = (t < 0.03 ? 0 : clamp01(1 - k*1.2)).toFixed(3);
+    before.style.transform = `scale(${(held*(1 + 0.55*eK)).toFixed(3)})`;
+    before.style.filter = k > 0 ? `blur(${(11*eK).toFixed(1)}px)` : "none";
+  }
+  if (after) {
+    const settle = easeOutBack(clamp01((t - mEnd)/0.5));
+    after.style.opacity = clamp01((k - 0.12)*1.35).toFixed(3);
+    const sc = t < mEnd ? (0.55 + 0.5*eK) : (0.93 + 0.07*settle);
+    after.style.transform = `scale(${sc.toFixed(3)})`;
+    after.style.filter = k < 1 ? `blur(${(13*(1 - eK)).toFixed(1)}px)` : "none";
   }
 }
 
