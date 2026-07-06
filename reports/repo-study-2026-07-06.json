@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-06",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "components": [
+    "shim (mcpsnoop -- <server>): spawned in place of the real server, forwards stdio bytes verbatim while copying each JSON-RPC frame to the hub",
+    "hub + TUI (mcpsnoop, no args): rendezvous with the shim via a well-known socket and on-disk logs, renders live traffic",
+    "capability inspector (key c)",
+    "frame inspector (key enter)",
+    "replay engine (key r) -- reruns a captured call against a fresh, isolated copy of the server",
+    "HTTP reverse-proxy mode for streamable-HTTP servers (--target/--listen)",
+    "demo subcommand (scripted session, nothing to set up)"
+  ],
+  "commands": [
+    {"text": "go install github.com/kerlenton/mcpsnoop/cmd/mcpsnoop@latest", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "brew tap kerlenton/mcpsnoop", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "brew install mcpsnoop", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "mcpsnoop demo", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "mcpsnoop", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "mcpsnoop -- npx -y @modelcontextprotocol/server-everything", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/docs/DEMO.md"},
+    {"text": "mcpsnoop http --target http://localhost:3000/mcp --listen :7000", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "claude mcp add everything -- mcpsnoop -- npx -y @modelcontextprotocol/server-everything", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/docs/DEMO.md"}
+  ],
+  "outputs": [
+    {"text": "Waiting for MCP traffic...", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/docs/DEMO.md"},
+    {"text": "trigger-long-running-operation (~5s, SLOW)", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/docs/DEMO.md"},
+    {"text": "tool:search status:slow", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"},
+    {"text": "dir:s2c kind:req", "source": "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/README.md"}
+  ],
+  "architecture_facts": [
+    "sits in the actual data path as a transparent proxy, unlike the official MCP Inspector which connects as its own separate client and never sees real client-server traffic",
+    "the shim forwards stdio bytes verbatim while mirroring each JSON-RPC frame to the hub over a well-known socket plus on-disk logs, so startup order does not matter",
+    "streamable-HTTP servers run through mcpsnoop as a reverse proxy instead of a stdio shim",
+    "single Go 1.26 binary, zero runtime dependencies, TUI built on Charm's Bubble Tea stack with vim-style keybindings",
+    "replay reruns a captured tool call against a fresh, isolated copy of the server, not the live one"
+  ],
+  "surprising_detail": "The README bakes a growth loop into its own install instructions: Homebrew core only accepts projects past a stars/forks/watchers notability bar, so the docs directly ask readers to star the repo so the tap-free `brew install mcpsnoop` can qualify -- the distribution channel is wired to the star count."
+}

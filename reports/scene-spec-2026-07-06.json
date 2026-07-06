@@ -1,0 +1,151 @@
+{
+  "date": "2026-07-06",
+  "project": "mcpsnoop",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "design": {
+    "framework": "SCHEMATIC",
+    "tokens": {
+      "canvas": "#12161c",
+      "ink": "#f2f6f8",
+      "ink_muted": "#7c8894",
+      "accent": "#1fb6ff",
+      "hairline": "#232b33"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "JetBrainsMono",
+      "italic": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.005,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 0
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.22,
+      "halation": 0.0,
+      "lighting_arc": 0.2
+    },
+    "background": {
+      "style": "shader",
+      "intensity": 0.75
+    },
+    "transition_style": "dip",
+    "foley_style": "click_minimal",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 4.5,
+    "held_subject": "mcpsnoop",
+    "beat": {
+      "bpm": 83.4,
+      "offset_s": 30.0,
+      "aligned": true,
+      "median_drift_ms": 89.8
+    }
+  },
+  "scenes": [
+    {
+      "template": "panes",
+      "camera": "push_in",
+      "duration_s": 4.5,
+      "eyebrow": "mcpsnoop: official view",
+      "panes": [
+        {
+          "name": "client",
+          "lines": [
+            "initialize",
+            "tools/list"
+          ],
+          "state": "done"
+        },
+        {
+          "name": "server",
+          "lines": [
+            "capabilities ok",
+            "tools ready"
+          ],
+          "state": "done"
+        },
+        {
+          "name": "inspector",
+          "lines": [
+            "its own session only"
+          ],
+          "state": "working"
+        }
+      ]
+    },
+    {
+      "template": "two_line",
+      "camera": "rack_focus",
+      "duration_s": 3.8,
+      "lines": [
+        "the inspector is",
+        "its own client"
+      ],
+      "accent_idx": 1
+    },
+    {
+      "template": "terminal",
+      "camera": "static_breathe",
+      "duration_s": 4.5,
+      "title": "quickstart",
+      "prompt_char": "$",
+      "lines": [
+        {
+          "text": "mcpsnoop demo",
+          "prompt": true
+        },
+        {
+          "text": "waiting for mcp traffic...",
+          "prompt": false
+        }
+      ],
+      "sheen": true
+    },
+    {
+      "template": "split",
+      "camera": "dolly_up",
+      "duration_s": 5.0,
+      "left": {
+        "label": "inspector",
+        "value": "never sees it"
+      },
+      "right": {
+        "label": "mcpsnoop",
+        "value": "gets it"
+      },
+      "emphasize": true
+    },
+    {
+      "template": "flash",
+      "camera": "pull_back",
+      "duration_s": 3.94,
+      "word": "every real call",
+      "caption": "requests, responses, and hangs"
+    },
+    {
+      "template": "close",
+      "camera": "tilt_reveal",
+      "duration_s": 4.5,
+      "primary": "wireshark for mcp",
+      "accent": "by semyon usachev",
+      "subtitle": "run mcpsnoop demo",
+      "emphasize": true,
+      "sheen": true
+    }
+  ]
+}

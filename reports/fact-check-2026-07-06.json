@@ -1,0 +1,77 @@
+{
+  "date": "2026-07-06",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "claims": [
+    {
+      "claim": "197 GitHub stars",
+      "sources": [
+        "https://github.com/kerlenton/mcpsnoop",
+        "https://github.com/kerlenton?tab=repositories"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "9 forks",
+      "sources": [
+        "https://github.com/kerlenton/mcpsnoop",
+        "https://github.com/kerlenton?tab=repositories"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "MIT license",
+      "sources": [
+        "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/LICENSE",
+        "https://github.com/kerlenton/mcpsnoop"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "Written in Go",
+      "sources": [
+        "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/go.mod",
+        "https://github.com/kerlenton/mcpsnoop"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "Repo created 2026-06-27",
+      "sources": [
+        "GitHub API repo object created_at=2026-06-27T10:25:09Z",
+        "LICENSE copyright year 2026 + Show HN launch 2026-07-03 (6 days later) consistency check"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "Show HN: 63 points, 22 comments, posted 2026-07-03",
+      "sources": [
+        "https://hn.algolia.com/api/v1/search?query=mcpsnoop&tags=story",
+        "https://hn.algolia.com/api/v1/items/48777144"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "Creator's X handle is @krlntn",
+      "sources": [
+        "https://github.com/kerlenton (profile sidebar links to x.com/krlntn)",
+        "telegram.me/krlntn and Instagram krlntn.l cross-platform handle consistency"
+      ],
+      "verified": true,
+      "as_of": "2026-07-06"
+    },
+    {
+      "claim": "6 open issues (not shipped as a numeral -- single-source only)",
+      "sources": [
+        "GitHub API open_issues_count=6"
+      ],
+      "verified": false,
+      "as_of": "2026-07-06"
+    }
+  ]
+}

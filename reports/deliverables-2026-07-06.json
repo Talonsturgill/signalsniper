@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-06",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "creator_handle": "@krlntn",
+  "caption": "@krlntn 197 stars for mcpsnoop in 9 days. It sits inside the real MCP data path, so it sees the exact tool call your client made instead of the replay the official inspector watches.",
+  "capability_fact": "sits inside the real MCP data path, so it sees the exact tool call your client made",
+  "differentiator": "mcpsnoop sits inside the real MCP data path, so it sees the exact tool call your client made instead of the separate replay the official inspector watches.",
+  "first_reply": "The repo. https://github.com/kerlenton/mcpsnoop Docs and a scripted demo are both in the README if you want to see it live first.",
+  "why_this_one": "kerlenton's other repos are a raytracer, a malloc, a SQLite clone, all built from scratch to understand them. mcpsnoop reads the same way, a debugging tool for a protocol nobody else has bothered to properly instrument yet.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Movement Proposition by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.",
+  "linkedin_caption": "mcpsnoop is a live traffic inspector for MCP. Wrap your server command with it and watch every JSON-RPC frame your AI client and server actually exchange, in a terminal UI.\n\nHere is the thing that got me. The official MCP Inspector connects as its own separate client. It never sees what your real client sent. A tool that silently never got called. A call with the wrong arguments. A request that just hangs. None of that shows up on the official inspector. mcpsnoop sits in the real path instead, so it catches all of it live.\n\nNine days old, already at 197 stars off a single Show HN post. Worth a look if you build or debug anything on MCP.",
+  "linkedin_hashtags": "#AI #DevTools #OpenSource #MCP",
+  "linkedin_tag": null
+}

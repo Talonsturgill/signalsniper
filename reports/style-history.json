@@ -1,19 +1,5 @@
 [
   {
-    "date": "2026-06-02",
-    "brand_slug": "clickhouse",
-    "aesthetic_slug": "clickhouse",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/D4Vinci/Scrapling"
-  },
-  {
-    "date": "2026-06-03",
-    "brand_slug": "composio",
-    "aesthetic_slug": "composio",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/jlowin/fastmcp"
-  },
-  {
     "date": "2026-06-04",
     "brand_slug": "supabase",
     "aesthetic_slug": "supabase",
@@ -215,5 +201,12 @@
     "aesthetic_slug": "t3mp3st-native",
     "framework": "DISPATCH",
     "project_url": "https://github.com/elder-plinius/T3MP3ST"
+  },
+  {
+    "date": "2026-07-06",
+    "brand_slug": "mcpsnoop-native-assisted",
+    "aesthetic_slug": "mcpsnoop-native-assisted",
+    "framework": "SCHEMATIC",
+    "project_url": "https://github.com/kerlenton/mcpsnoop"
   }
 ]

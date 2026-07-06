@@ -1,0 +1,84 @@
+{
+  "date": "2026-07-06",
+  "project": "mcpsnoop",
+  "framework": "SCHEMATIC",
+  "concept": "Two near-identical terminals in mcpsnoop's real navy canvas convince you they are the same feed, then the frame splits and reveals they are watching two different conversations. The official inspector keeps rendering a clean handshake while the real client fires a tool call that only mcpsnoop receives, flagged slow at five seconds. The piece opens on the myth, punctures it, shows the one-line fix that puts mcpsnoop in the real path, lands the caught call as the money shot, pulses one bright beat, and closes on the wireshark-for-mcp thesis with the creator tagged.",
+  "money_shot_note": "Beat 4: the split holds both panes, inspector-left stays blank on the call, mcpsnoop-right lights teal and drops a SLOW flag on trigger-long-running-operation. The wow is impossible_possible: a call made visible that the other tool structurally could not see.",
+  "transition_strategy": "dip between myth and reality so the flip reads as a reveal, bloom into the money shot so the caught call blooms out of the split, dip back down into the thesis.",
+  "music_direction": "Sparse low navy pad with a mechanical pulse, one rising tension note under the blind-spot beat, a single bright synth stab on the SLOW flag at the money shot, then settle. Restrained, never triumphant.",
+  "energy_curve": [0.3, 0.48, 0.62, 0.92, 0.72, 0.5],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "State the myth so the viewer trusts the official inspector's tidy view before it breaks",
+      "template": "panes",
+      "camera": "push_in",
+      "copy_note": "the official inspector shows a clean stream, handshake and tools in order",
+      "sound_cue": "low navy pad in, single soft key click on the last word",
+      "transition": "dip",
+      "energy": 0.3,
+      "money_shot": false,
+      "illustrates": "a calm multi-pane UI closeup in the real canvas reads as authoritative and complete, so the copy's confidence is embodied by an interface that looks trustworthy"
+    },
+    {
+      "beat": 2,
+      "intent": "Puncture the myth by revealing the inspector is its own client watching a different conversation",
+      "template": "two_line",
+      "camera": "rack_focus",
+      "copy_note": "it connects as its own client, it never sees what your real client sent",
+      "sound_cue": "rising tension note, a tick as focus snaps",
+      "transition": "dip",
+      "energy": 0.48,
+      "money_shot": false,
+      "illustrates": "rack focus pulls sharpness onto the second line of type, the visual literally shifts what is in focus to enact you were looking at the wrong thing"
+    },
+    {
+      "beat": 3,
+      "intent": "Deliver the fix as real product truth: one documented command puts mcpsnoop in the path",
+      "template": "terminal",
+      "camera": "static_breathe",
+      "copy_note": "wrap the launch and sit in the real path, typed live",
+      "sound_cue": "per-keystroke click, soft enter thunk",
+      "transition": "dip",
+      "energy": 0.62,
+      "money_shot": false,
+      "illustrates": "a real terminal types the exact documented command in JetBrains Mono, the breathing frame keeps attention on the keystrokes so the fix is felt as one concrete action"
+    },
+    {
+      "beat": 4,
+      "intent": "Show the caught call the inspector structurally cannot see, the video's money shot",
+      "template": "split",
+      "camera": "dolly_up",
+      "copy_note": "the call your client actually made, flagged slow at five seconds",
+      "sound_cue": "bright synth stab on the slow flag, pad swells then cuts",
+      "transition": "bloom",
+      "energy": 0.92,
+      "money_shot": true,
+      "illustrates": "the split holds inspector-blank against mcpsnoop-live, the crash zoom drives into the teal slow flag as it appears only on the right, so it sees what the other cannot is the composition itself"
+    },
+    {
+      "beat": 5,
+      "intent": "Land the thesis on a full bright field, break the dark, give the feed a pulse",
+      "template": "flash",
+      "camera": "pull_back",
+      "copy_note": "every real frame, requests, responses, and the ones that just hang",
+      "sound_cue": "reverse swell into a clean bright hit, then air",
+      "transition": "dip",
+      "energy": 0.72,
+      "money_shot": false,
+      "illustrates": "a full-bleed sky-blue accent field with cool near-white type, the pull back turns the caught single call into the general promise, a bright inverted beat"
+    },
+    {
+      "beat": 6,
+      "intent": "Close on the positioning thesis and tag the builder",
+      "template": "close",
+      "camera": "tilt_reveal",
+      "copy_note": "wireshark for mcp, by semyon usachev",
+      "sound_cue": "pad resolves to a single sustained low note, final soft click",
+      "transition": "dip",
+      "energy": 0.5,
+      "money_shot": false,
+      "illustrates": "a tilt reveal settles the thesis line into the navy canvas with the handle beneath, a lowercase typographic lockup rather than a logo animation, honoring the terminal-only stance"
+    }
+  ]
+}

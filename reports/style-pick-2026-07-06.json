@@ -1,0 +1,11 @@
+{
+  "date": "2026-07-06",
+  "brand_slug": "mcpsnoop-native-assisted",
+  "preset_slug": null,
+  "aesthetic_slug": "mcpsnoop-native-assisted",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "SCHEMATIC fits a debugging/inspection tool best: the video's whole argument is architectural (the inspector sits outside the real data path, mcpsnoop sits inside it), and SCHEMATIC was not the immediately-previous framework (DISPATCH, 2026-07-05).",
+  "writing_tone_notes": "dry, precise, engineer-to-engineer, terminal-purist -- no hype adjectives, let the split-screen reveal carry the drama",
+  "do_rules": ["lowercase product name always", "only documented commands in terminal beats", "one inverted bright beat plus the money-shot bright panel"],
+  "dont_rules": ["no wordmark open or close", "no node_diagram/architecture-box treatment", "no growth-metric scene on the board (star count lives in the caption only)"]
+}
