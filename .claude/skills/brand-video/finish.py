@@ -70,7 +70,7 @@ def build_video_chain(grade, bloom):
         # brightness-preserving filmic: gentle shadow LIFT + highlight glide.
         # The old curve crushed 0.25->0.22 and dimmed every dark-canvas video.
         steps.append("curves=master='0/0 0.25/0.27 0.5/0.54 0.75/0.80 1/1'")
-        steps.append("eq=saturation=1.07:contrast=1.02:gamma=1.03")
+        steps.append("eq=saturation=1.0:contrast=1.02:gamma=1.03")
     chain_a = ",".join(steps)
     post = [
         # blend-interpolate 25 -> 50fps: intermediate frames are crossfades,

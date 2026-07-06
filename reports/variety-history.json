@@ -1,34 +1,5 @@
 [
   {
-    "date": "2026-05-22",
-    "project_url": "https://github.com/karpathy/autoresearch",
-    "framework": "RECEIPT",
-    "background": null,
-    "motion_register": "fade",
-    "transition_style": "cut_kick",
-    "foley_style": "whoosh_thud",
-    "open_template": "title",
-    "close_template": "close",
-    "templates": [
-      "big_number",
-      "close",
-      "fix",
-      "title"
-    ],
-    "cameras": [
-      "ken_burns",
-      "orbit",
-      "pull_back",
-      "push_in"
-    ],
-    "has_growth_beat": true,
-    "accent_hex": "#7DD9FF",
-    "canvas_hex": "#15171A",
-    "accent_hue": 197.53846153846152,
-    "temp": "cool",
-    "canvas_value": "dark"
-  },
-  {
     "date": "2026-05-23",
     "project_url": "https://github.com/can1357/oh-my-pi",
     "framework": "SCHEMATIC",
@@ -1283,6 +1254,39 @@
     "canvas_hex": "#0a0a0a",
     "accent_hue": 9.493670886075954,
     "temp": "warm",
+    "canvas_value": "dark"
+  },
+  {
+    "date": "2026-07-06",
+    "project_url": "https://github.com/kerlenton/mcpsnoop",
+    "framework": "SCHEMATIC",
+    "background": "shader",
+    "motion_register": "cut",
+    "transition_style": "dip",
+    "foley_style": "click_minimal",
+    "open_template": "panes",
+    "close_template": "close",
+    "templates": [
+      "close",
+      "flash",
+      "panes",
+      "split",
+      "terminal",
+      "two_line"
+    ],
+    "cameras": [
+      "dolly_up",
+      "pull_back",
+      "push_in",
+      "rack_focus",
+      "static_breathe",
+      "tilt_reveal"
+    ],
+    "has_growth_beat": false,
+    "accent_hex": "#1fb6ff",
+    "canvas_hex": "#12161c",
+    "accent_hue": 199.55357142857144,
+    "temp": "cool",
     "canvas_value": "dark"
   }
 ]

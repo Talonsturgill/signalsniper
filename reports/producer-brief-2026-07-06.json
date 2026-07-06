@@ -1,0 +1,18 @@
+{
+  "date": "2026-07-06",
+  "project": "mcpsnoop",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "audience": "Engineers building or debugging MCP servers and agent tooling who use Claude Desktop, Cursor, or Claude Code with custom MCP servers and have been burned by a tool call that silently misbehaved.",
+  "single_takeaway": "mcpsnoop sits in the real client-server data path and shows the tool calls the official inspector structurally cannot see.",
+  "viewer_action": "star the repo and run mcpsnoop demo to see the live stream with nothing to set up",
+  "desired_feeling": "the unsettled recognition that your debugger has been lying to you, then relief that the honest one exists",
+  "tone_adjectives": ["dry", "precise", "terminal-purist"],
+  "references": [
+    "Wireshark and tshark live packet capture, the creator's own stated analogy",
+    "charmbracelet Bubble Tea TUI texture, its real framework",
+    "investigative split editing: shown-version versus what-really-happened"
+  ],
+  "mandatories": "canvas #12161c, accent #1fb6ff, secondary accent teal #00a6a4, cool near-white ink, JetBrains Mono lowercase throughout, terminal beats use only documented commands and outputs verbatim, tag the creator (Semyon Usachev, @krlntn) at the close, CC BY music attribution if required",
+  "success_criteria": "a viewer who has never heard of mcpsnoop can state the blind-spot idea after one watch, the money shot lands the slow-flagged real call visibly with no narration needed, and the story reads fully muted",
+  "platform": "x"
+}

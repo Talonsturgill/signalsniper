@@ -1,0 +1,64 @@
+{
+  "date": "2026-07-06",
+  "project": "mcpsnoop",
+  "framework": "SCHEMATIC",
+  "tokens": {
+    "canvas": "#12161c",
+    "ink": "#f2f6f8",
+    "ink_muted": "#7c8894",
+    "accent": "#1fb6ff",
+    "hairline": "#232b33"
+  },
+  "token_provenance": {
+    "canvas": "most-frequent pixel color across sampled frames of docs/demo.gif -- the tool's real rendered TUI background",
+    "ink": "assembled near-white, cool-toned to match the accent family -- the terminal's literal rendered foreground sampled at ~luma 190-210, too dim to clear the dark-canvas ink floor (>=230 luma), so lifted at the token per the browser-use (2026-07-04b) precedent",
+    "accent": "dominant saturated pixel color in the official assets/png/mcpsnoop-lockup.png wordmark (#1fb6ff, hue 200deg) -- the author's own rendered logo color",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.9)"
+  },
+  "fonts": {
+    "display": "JetBrainsMono",
+    "body": "JetBrainsMono",
+    "italic": "JetBrainsMono"
+  },
+  "typography": {
+    "display_weight": 700,
+    "body_weight": 400,
+    "letter_spacing_em": -0.005,
+    "case": "lower",
+    "italic_descriptors": false
+  },
+  "motion": {
+    "register": "cut",
+    "scene_in_s": 0.06,
+    "scene_out_s": 0.05,
+    "stagger_s": 0.10
+  },
+  "layout": {
+    "padding_pct": 7,
+    "rule_thickness_px": 1,
+    "stage_radius_px": 0
+  },
+  "texture": {
+    "grain": 0.05,
+    "vignette": 0.22,
+    "halation": 0.0,
+    "lighting_arc": 0.2
+  },
+  "background": {
+    "style": "shader",
+    "intensity": 0.75
+  },
+  "transition_style": "dip",
+  "foley_style": "click_minimal",
+  "audio_palette": "electronic",
+  "accent_contrast_min": 4.5,
+  "held_subject": "mcpsnoop",
+  "readability_plan": {
+    "ink_floor": "dark canvas, primary ink >= 230 luma (#f2f6f8 clears this at contrast 16.69:1)",
+    "accent_as_graphic": "raw #1fb6ff stays on the shader field, split-panel fills, teal-flagged status text, and the flash burst; any text-scale accent use relies on build_html's auto-derived --accent-ink",
+    "muted_carries_content": "panes activity lines and detail rows use --muted-content, not raw --ink-muted",
+    "light_per_scene": "panes (beat 1): calm bright pane chrome on dark canvas. two_line (beat 2): accent-lit second line under rack focus. terminal (beat 3): bright ink body, prompt-line accent. split (beat 4, money shot): mcpsnoop-side panel lifts to a bright teal-accented fill against the dim inspector side, the frame's brightest moment. flash (beat 5): full-bleed sky-blue accent field with cool near-white type, the second bright beat. close (beat 6): bright hero thesis line on dark canvas.",
+    "inverted_beats": "split (beat 4, right panel only) and flash (beat 5, full field) are the two color-break bright beats -- roughly a third of the runtime reads bright, clearing the frame brightness floor by design rather than in the grade"
+  }
+}

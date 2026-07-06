@@ -1,0 +1,50 @@
+{
+  "date": "2026-07-06",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "interrogate": {
+    "truths": [
+      "It physically sits IN the real client-server data path via a shim that mirrors every JSON-RPC frame to a hub and TUI.",
+      "The official MCP Inspector is structurally blind. It connects as its own separate client, so it never sees the traffic the real client actually sent.",
+      "It catches calls that go wrong in ways a re-run cannot reproduce: a tool silently never called, unexpected arguments, or a call that just hangs.",
+      "Hung-call detection renders live as PENDING with a running timer, and slow calls get flagged SLOW.",
+      "Replay reruns any captured call against a fresh isolated copy of the server.",
+      "A real filter query language (tool:, status:, dir:, kind:, id:), not fuzzy search.",
+      "Single Go binary, zero runtime deps, Bubble Tea TUI, vim keys, branding always lowercase.",
+      "The README bakes a growth loop into its own install docs: the Homebrew notability bar means a star literally helps it qualify for a tap-free brew install."
+    ],
+    "crossed_out_as_generic": [
+      "Single Go binary and zero runtime deps (every Go CLI claims this)",
+      "Vim keybindings (table stakes for a TUI)",
+      "AI client integration (every MCP tool claims this)"
+    ],
+    "singular_truth": "mcpsnoop is the only tool actually standing in the real data path between client and server, so it sees the exact frames that were really exchanged.",
+    "money_thing": "The call the official Inspector can never show you, because that call was never part of the Inspector's own conversation. mcpsnoop catches it live and flags it slow."
+  },
+  "generate": [
+    {"id": "A_myth_vs_reality_split", "arc": "myth_vs_reality", "device": "split_compare", "pitch": "The Inspector looks like it shows you everything. Split the frame, reveal it is watching a different conversation than your app is having, and mcpsnoop catches the real one."},
+    {"id": "B_watch_it_work_terminal", "arc": "watch_it_work", "device": "terminal", "pitch": "Pure live capture. Wrap a server, watch the JSON-RPC stream scroll, one call locks to PENDING with a climbing timer, then flips to SLOW."},
+    {"id": "C_head_to_head_diegetic", "arc": "head_to_head", "device": "diegetic_ui", "pitch": "Same server, two watchers. Inspector on the left, mcpsnoop on the right, and only one shows the tool the client actually invoked."},
+    {"id": "D_sustained_metaphor_kinetic", "arc": "sustained_metaphor", "device": "kinetic_type", "pitch": "A wiretap on the wire. Type as packets, the metaphor rides the whole cut, mcpsnoop is the tap the packets do not know is there."}
+  ],
+  "rejected_default": "The obvious treatment is two boxes (client, server) with an arrow between them and a terminal pane underneath, the classic architecture-diagram-plus-CLI explainer. Rejected: node_diagram is banned this run, but it also flattens the whole point. The drama here is not the topology, it is that one supposed observer is looking at the wrong conversation. A static wire diagram cannot dramatize a blind spot; only a split-compare that pulls the two conversations apart can.",
+  "pressure_test": "Concept B is the safe, likely-recent shape and leans terminal-heavy, so it was dropped as the lead. Concept C risks reading like the banned side_by_side_flip hero, kept only as staging DNA. Concept D is charming but thin on real product truth. Concept A carries the money_thing most directly with a fresh device, so it was committed, borrowing B's live-capture energy for the money shot and C's dual-watcher staging inside the split.",
+  "arc": "myth_vs_reality",
+  "device": "split_compare",
+  "hero": "impossible_possible",
+  "open": "ui_closeup",
+  "close": "thesis_card",
+  "logline": "The official inspector swears it shows you everything, mcpsnoop stands in the real data path and catches the call the inspector was never even part of.",
+  "scene_seq": ["THE_MYTH", "THE_BLIND_SPOT", "THE_FIX", "THE_CATCH", "THE_PUNCH", "THESIS"],
+  "device_seq": ["diegetic_ui", "kinetic_type", "terminal", "split_compare", "kinetic_type", "kinetic_type"],
+  "references": [
+    "Wireshark and tshark live packet capture, the creator's own stated analogy",
+    "the charmbracelet Bubble Tea TUI look, its actual framework, for authentic terminal texture",
+    "investigative-documentary split editing: what they were shown versus what actually happened"
+  ],
+  "self_critique": {
+    "recognizably_ours": true,
+    "shows_the_one_cool_thing": true,
+    "reads_as_different_production": true,
+    "notes": "Real canvas #12161c, sky-blue wordmark accent, teal live-highlight, JetBrains Mono, lowercase everywhere. No wordmark open or close, split_compare device, myth_vs_reality arc: all fresh against the last five videos."
+  }
+}

@@ -6,8 +6,24 @@
     "hero": "scale_reveal",
     "open": "wordmark_reveal",
     "close": "wordmark_lockup",
-    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "BIG_NUMBER", "WORDMARK"],
-    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "data_viz", "kinetic_type"]
+    "scene_seq": [
+      "WORDMARK",
+      "HOOK",
+      "DIAGRAM",
+      "TERMINAL",
+      "FLASH",
+      "BIG_NUMBER",
+      "WORDMARK"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "kinetic_type",
+      "node_diagram",
+      "terminal",
+      "kinetic_type",
+      "data_viz",
+      "kinetic_type"
+    ]
   },
   {
     "date": "2026-07-04b",
@@ -16,8 +32,24 @@
     "hero": "scale_reveal",
     "open": "wordmark_reveal",
     "close": "wordmark_lockup",
-    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "SPARKLINE", "WORDMARK"],
-    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "data_viz", "kinetic_type"]
+    "scene_seq": [
+      "WORDMARK",
+      "HOOK",
+      "DIAGRAM",
+      "TERMINAL",
+      "FLASH",
+      "SPARKLINE",
+      "WORDMARK"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "kinetic_type",
+      "node_diagram",
+      "terminal",
+      "kinetic_type",
+      "data_viz",
+      "kinetic_type"
+    ]
   },
   {
     "date": "2026-07-04c",
@@ -26,8 +58,24 @@
     "hero": "scale_reveal",
     "open": "wordmark_reveal",
     "close": "wordmark_lockup",
-    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "SPARKLINE", "WORDMARK"],
-    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "data_viz", "kinetic_type"]
+    "scene_seq": [
+      "WORDMARK",
+      "HOOK",
+      "DIAGRAM",
+      "TERMINAL",
+      "FLASH",
+      "SPARKLINE",
+      "WORDMARK"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "kinetic_type",
+      "node_diagram",
+      "terminal",
+      "kinetic_type",
+      "data_viz",
+      "kinetic_type"
+    ]
   },
   {
     "date": "2026-07-05",
@@ -36,8 +84,24 @@
     "hero": "data_spike",
     "open": "wordmark_reveal",
     "close": "wordmark_lockup",
-    "scene_seq": ["WORDMARK", "DIAGRAM", "TERMINAL", "MONO_BLOCK", "FLASH", "SPARKLINE", "WORDMARK"],
-    "device_seq": ["diegetic_ui", "node_diagram", "terminal", "kinetic_type", "kinetic_type", "data_viz", "kinetic_type"]
+    "scene_seq": [
+      "WORDMARK",
+      "DIAGRAM",
+      "TERMINAL",
+      "MONO_BLOCK",
+      "FLASH",
+      "SPARKLINE",
+      "WORDMARK"
+    ],
+    "device_seq": [
+      "diegetic_ui",
+      "node_diagram",
+      "terminal",
+      "kinetic_type",
+      "kinetic_type",
+      "data_viz",
+      "kinetic_type"
+    ]
   },
   {
     "date": "2026-07-05b",
@@ -46,7 +110,47 @@
     "hero": "side_by_side_flip",
     "open": "wordmark_reveal",
     "close": "wordmark_lockup",
-    "scene_seq": ["WORDMARK", "HOOK", "DIAGRAM", "TERMINAL", "FLASH", "SPLIT", "WORDMARK"],
-    "device_seq": ["kinetic_type", "kinetic_type", "node_diagram", "terminal", "kinetic_type", "split_compare", "kinetic_type"]
+    "scene_seq": [
+      "WORDMARK",
+      "HOOK",
+      "DIAGRAM",
+      "TERMINAL",
+      "FLASH",
+      "SPLIT",
+      "WORDMARK"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "kinetic_type",
+      "node_diagram",
+      "terminal",
+      "kinetic_type",
+      "split_compare",
+      "kinetic_type"
+    ]
+  },
+  {
+    "date": "2026-07-06",
+    "arc": "myth_vs_reality",
+    "device": "split_compare",
+    "hero": "impossible_possible",
+    "open": "ui_closeup",
+    "close": "thesis_card",
+    "scene_seq": [
+      "THE_MYTH",
+      "THE_BLIND_SPOT",
+      "THE_FIX",
+      "THE_CATCH",
+      "THE_PUNCH",
+      "THESIS"
+    ],
+    "device_seq": [
+      "diegetic_ui",
+      "kinetic_type",
+      "terminal",
+      "split_compare",
+      "kinetic_type",
+      "kinetic_type"
+    ]
   }
 ]

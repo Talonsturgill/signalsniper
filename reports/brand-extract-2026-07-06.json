@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-06",
+  "project_url": "https://github.com/kerlenton/mcpsnoop",
+  "automated_attempt": {
+    "url_tried": "https://github.com/kerlenton/mcpsnoop",
+    "result": "exit 3, insufficient signal, no colors found",
+    "reason": "no dedicated marketing/docs site exists for this project (homepage field empty); the GitHub repo page itself is GitHub's own theme, not the project's, so the CSS/meta-theme-color heuristics found nothing to mine"
+  },
+  "manual_assisted_extraction": {
+    "method": "the project's own visible identity was pulled directly from its authored visual assets in the repo, per routine Step 6.3 (native-assisted): the logo lockup PNG (rendered by the author) and the demo.gif (the real TUI, screen-captured from the actual tool)",
+    "sources_fetched": [
+      "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/assets/png/mcpsnoop-lockup.png",
+      "https://raw.githubusercontent.com/kerlenton/mcpsnoop/main/docs/demo.gif"
+    ],
+    "findings": {
+      "logo_accent": "#1fb6ff -- dominant saturated color in the official wordmark lockup (hue 200deg, sat 0.88, val 1.00), sampled by pixel-frequency analysis (Pillow) after excluding near-black/near-white pixels",
+      "tui_canvas": "#12161c -- most frequent pixel color across two sampled demo.gif frames (the real terminal background the tool renders on), near-black but not pure #000",
+      "tui_secondary_accent": "#00a6a4 -- the app's own 'live session' highlight/badge teal, fully saturated (hue 179deg), seen in the sessions[] active-row bar and the mcpsnoop corner label -- confirms the identity is a cool blue/teal family, not a one-off logo choice",
+      "tui_foreground_note": "the terminal's literal rendered foreground text sampled at ~#c7c6c6-#d8d7d8 (luma ~190-210), which is a typical dim default terminal gray -- too dim to clear the dark-canvas ink floor (>=230 luma), so ink was NOT copied verbatim; a near-white cool-toned ink was assembled instead, consistent with the same hue family (see token_provenance)",
+      "excluded": "a warm rust/orange (~#4f2b26, hue 7-10deg) also appears in the demo frames but belongs to the Claude Code app icon shown incidentally in the demo, not to mcpsnoop's own identity -- excluded from the palette"
+    }
+  },
+  "verdict": "native-assisted -- brand_slug: mcpsnoop-native-assisted. The accent (#1fb6ff) and canvas (#12161c) are both drawn directly from the author's own rendered assets (the logo and the live TUI), judged coherent against the visible identity of the tool by eye before adopting."
+}
