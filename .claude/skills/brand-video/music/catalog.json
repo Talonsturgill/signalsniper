@@ -1405,6 +1405,462 @@
       "author": "Kevin MacLeod",
       "source": "https://incompetech.com/music/royalty-free/index.html?keywords=Exit+the+Premises",
       "attribution_required": "Music. Exit the Premises by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "winter-waltz",
+      "title": "Winter Waltz",
+      "file": "WinterWaltz.mp3",
+      "duration_s": 200.0,
+      "mood": "wistful solo-piano waltz, snowfall stillness",
+      "register": "acoustic",
+      "fits": "editorial-paper, gallery, claude, CLASSIC, MANIFESTO",
+      "preset_packs": [
+        "editorial-paper",
+        "gallery",
+        "claude"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 20.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Winter Waltz by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "meanwhile",
+      "title": "Meanwhile",
+      "file": "Meanwhile.mp3",
+      "duration_s": 325.9,
+      "mood": "chill lo-fi warmth, unhurried and human",
+      "register": "ambient",
+      "fits": "subway-chrome, gallery, CLASSIC, RECEIPT",
+      "preset_packs": [
+        "subway-chrome",
+        "gallery"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "RECEIPT"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Meanwhile by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "ride-the-wind",
+      "title": "Ride The Wind",
+      "file": "RideTheWind.mp3",
+      "duration_s": 269.7,
+      "mood": "uplifting adventurous cinematic swell",
+      "register": "ambient",
+      "fits": "gallery, editorial-90s, CLASSIC, DISPATCH, MANIFESTO",
+      "preset_packs": [
+        "gallery",
+        "editorial-90s"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "DISPATCH",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Ride The Wind by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "amberlight",
+      "title": "Amberlight",
+      "file": "Amberlight.mp3",
+      "duration_s": 282.9,
+      "mood": "warm nostalgic piano and strings, golden hour",
+      "register": "acoustic",
+      "fits": "editorial-paper, claude, gallery, CLASSIC, MANIFESTO",
+      "preset_packs": [
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 25.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Amberlight by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "simulacra",
+      "title": "Simulacra",
+      "file": "Simulacra.mp3",
+      "duration_s": 234.3,
+      "mood": "dark sci-fi synth pulse, unsettled and modern",
+      "register": "electronic",
+      "fits": "subway-chrome, mono-terminal, cctv, SCHEMATIC, DISPATCH, MANIFESTO",
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal",
+        "cctv"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "DISPATCH",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Simulacra by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "honour-among-thieves",
+      "title": "Honour Among Thieves",
+      "file": "HonourAmongThieves.mp3",
+      "duration_s": 240.0,
+      "mood": "heroic orchestral build, resolve and grit",
+      "register": "ambient",
+      "fits": "gallery, editorial-90s, MANIFESTO, DISPATCH, CLASSIC",
+      "preset_packs": [
+        "gallery",
+        "editorial-90s"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "DISPATCH",
+        "CLASSIC"
+      ],
+      "default_offset_s": 45.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Honour Among Thieves by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "incredulity",
+      "title": "Incredulity",
+      "file": "Incredulity.mp3",
+      "duration_s": 374.2,
+      "mood": "tense suspense build, quiet dread",
+      "register": "ambient",
+      "fits": "subway-chrome, cctv, DISPATCH, SCHEMATIC",
+      "preset_packs": [
+        "subway-chrome",
+        "cctv"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "SCHEMATIC"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Incredulity by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "echoes-of-home",
+      "title": "Echoes Of Home",
+      "file": "EchoesOfHome.mp3",
+      "duration_s": 291.8,
+      "mood": "emotional hopeful strings, a homecoming",
+      "register": "ambient",
+      "fits": "gallery, editorial-paper, CLASSIC, MANIFESTO",
+      "preset_packs": [
+        "gallery",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 45.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Echoes Of Home by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "eyes-in-the-void",
+      "title": "Eyes In The Void",
+      "file": "EyesInTheVoid.mp3",
+      "duration_s": 264.1,
+      "mood": "ominous dark sci-fi drone and pulse",
+      "register": "electronic",
+      "fits": "mono-terminal, cctv, subway-chrome, SCHEMATIC, DISPATCH",
+      "preset_packs": [
+        "mono-terminal",
+        "cctv",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "DISPATCH"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Eyes In The Void by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "penumbra-sb",
+      "title": "Penumbra",
+      "file": "SB-Penumbra.mp3",
+      "duration_s": 449.8,
+      "mood": "brooding dark-cinematic shadow, slow menace",
+      "register": "ambient",
+      "fits": "subway-chrome, cctv, MANIFESTO, DISPATCH, SCHEMATIC",
+      "preset_packs": [
+        "subway-chrome",
+        "cctv"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "DISPATCH",
+        "SCHEMATIC"
+      ],
+      "default_offset_s": 50.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Penumbra by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "born-of-the-sky",
+      "title": "Born Of The Sky",
+      "file": "BornOfTheSky.mp3",
+      "duration_s": 187.5,
+      "mood": "soaring epic lift, wide and bright",
+      "register": "ambient",
+      "fits": "gallery, editorial-90s, MANIFESTO, DISPATCH, CLASSIC",
+      "preset_packs": [
+        "gallery",
+        "editorial-90s"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "DISPATCH",
+        "CLASSIC"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Born Of The Sky by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "origami",
+      "title": "Origami",
+      "file": "Origami.mp3",
+      "duration_s": 189.3,
+      "mood": "delicate minimalist piano, precise and calm",
+      "register": "acoustic",
+      "fits": "editorial-paper, claude, gallery, CLASSIC, RECEIPT",
+      "preset_packs": [
+        "editorial-paper",
+        "claude",
+        "gallery"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "RECEIPT"
+      ],
+      "default_offset_s": 20.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Origami by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "song-of-the-forge",
+      "title": "Song Of The Forge",
+      "file": "SongOfTheForge.mp3",
+      "duration_s": 205.9,
+      "mood": "driving percussive industrial pulse, forward momentum",
+      "register": "electronic",
+      "fits": "subway-chrome, cctv, geominimal, RECEIPT, SCHEMATIC, MANIFESTO",
+      "preset_packs": [
+        "subway-chrome",
+        "cctv",
+        "geominimal"
+      ],
+      "frameworks": [
+        "RECEIPT",
+        "SCHEMATIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Song Of The Forge by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "wildflowers",
+      "title": "Wildflowers",
+      "file": "Wildflowers.mp3",
+      "duration_s": 322.2,
+      "mood": "gentle pastoral warmth, open and tender",
+      "register": "acoustic",
+      "fits": "editorial-paper, gallery, claude, CLASSIC, MANIFESTO",
+      "preset_packs": [
+        "editorial-paper",
+        "gallery",
+        "claude"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 30.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Wildflowers by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "starfire",
+      "title": "Starfire",
+      "file": "Starfire.mp3",
+      "duration_s": 341.1,
+      "mood": "bright energetic epic, momentum and awe",
+      "register": "ambient",
+      "fits": "gallery, editorial-90s, MANIFESTO, DISPATCH, CLASSIC",
+      "preset_packs": [
+        "gallery",
+        "editorial-90s"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "DISPATCH",
+        "CLASSIC"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Starfire by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "memories-of-stone",
+      "title": "Memories Of Stone",
+      "file": "MemoriesOfStone.mp3",
+      "duration_s": 330.4,
+      "mood": "solemn reflective cinematic, weight and time",
+      "register": "ambient",
+      "fits": "gallery, editorial-paper, CLASSIC, MANIFESTO",
+      "preset_packs": [
+        "gallery",
+        "editorial-paper"
+      ],
+      "frameworks": [
+        "CLASSIC",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 45.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Memories Of Stone by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "phoenix",
+      "title": "Phoenix",
+      "file": "Phoenix2026.mp3",
+      "duration_s": 354.4,
+      "mood": "triumphant rise from the ashes, epic surge",
+      "register": "ambient",
+      "fits": "gallery, editorial-90s, MANIFESTO, DISPATCH",
+      "preset_packs": [
+        "gallery",
+        "editorial-90s"
+      ],
+      "frameworks": [
+        "MANIFESTO",
+        "DISPATCH"
+      ],
+      "default_offset_s": 50.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Phoenix by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "aphelion",
+      "title": "Aphelion",
+      "file": "Aphelion.mp3",
+      "duration_s": 422.3,
+      "mood": "vast spacey drift, cold and boundless",
+      "register": "ambient",
+      "fits": "subway-chrome, gallery, SCHEMATIC, MANIFESTO, CLASSIC",
+      "preset_packs": [
+        "subway-chrome",
+        "gallery"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "MANIFESTO",
+        "CLASSIC"
+      ],
+      "default_offset_s": 60.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Aphelion by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "convergence",
+      "title": "Convergence",
+      "file": "Convergence.mp3",
+      "duration_s": 219.6,
+      "mood": "building electronic-orchestral hybrid, systems locking in",
+      "register": "electronic",
+      "fits": "subway-chrome, mono-terminal, SCHEMATIC, DISPATCH, RECEIPT",
+      "preset_packs": [
+        "subway-chrome",
+        "mono-terminal"
+      ],
+      "frameworks": [
+        "SCHEMATIC",
+        "DISPATCH",
+        "RECEIPT"
+      ],
+      "default_offset_s": 40.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Convergence by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
+    },
+    {
+      "slug": "unraveling",
+      "title": "Unraveling",
+      "file": "Unraveling.mp3",
+      "duration_s": 444.1,
+      "mood": "dramatic emotional tension, coming apart",
+      "register": "ambient",
+      "fits": "gallery, subway-chrome, DISPATCH, MANIFESTO",
+      "preset_packs": [
+        "gallery",
+        "subway-chrome"
+      ],
+      "frameworks": [
+        "DISPATCH",
+        "MANIFESTO"
+      ],
+      "default_offset_s": 45.0,
+      "license": "CC BY 4.0",
+      "author": "Scott Buckley",
+      "source": "https://www.scottbuckley.com.au/library/",
+      "attribution_required": "Music. Unraveling by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0."
     }
   ]
 }
