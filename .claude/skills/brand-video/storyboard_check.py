@@ -18,8 +18,13 @@ import json
 import sys
 from pathlib import Path
 
+# v11 #2: the six code-native devices render now (build_html.py) and validate_spec.py
+# already knows them; the board gate was the last stale list. All six are legitimate
+# visual heroes (a mosaic, an app window, a generative network, a morph, a oner, a
+# procedural glyph), so they count toward the visual-hero requirement.
 HERO_TPLS = {"diagram", "terminal", "big_number", "flash", "split",
-             "sparkline", "logo_reveal", "word_cascade", "wire_dispatch", "panes"}
+             "sparkline", "logo_reveal", "word_cascade", "wire_dispatch", "panes",
+             "morph", "screen_capture", "metaphor", "oner", "object", "montage"}
 VALID_TEMPLATES = HERO_TPLS | {"title", "stack", "two_line", "three_line",
                                "fix", "mono_block", "quote", "close"}
 VALID_CAMERAS = {"push_in", "pull_back", "ken_burns", "crash_zoom", "orbit",

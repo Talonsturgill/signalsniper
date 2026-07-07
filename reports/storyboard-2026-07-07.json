@@ -1,0 +1,89 @@
+{
+  "date": "2026-07-07",
+  "project": "claude-video",
+  "framework": "CLASSIC",
+  "concept": "Give a blind agent eyes. Open inside a Claude session that can't see a video, watch one command install the skill, watch a video collapse into a mosaic of extracted frames (near-dupes greyed out), watch the captions/frames/audio pipeline run, then land on Claude answering a question about a specific second from what it actually saw. Close on a bright 'now it watches' button. Violet AI-perception world.",
+  "money_shot_note": "Scene 5, the grounded answer: the app window reveals Claude answering about 0:30 from a frame it saw, not the title. It's the peak because it's the payoff of the whole premise (an agent seeing), and it lands with a scale-punch on the reserved push cut.",
+  "transition_strategy": "Hard cuts by default (no dissolves). The single reserved effect (push) fires once, on the cut INTO the money shot. Motion carries through cuts.",
+  "music_direction": "Electronic, forward, a clean build with a clear button at ~65% for the money beat; cuts snap to onsets.",
+  "energy_curve": [0.42, 0.55, 0.66, 0.60, 0.90, 0.62, 0.72],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "Hook on the friction every agent builder feels: a plain agent sees the title, not one frame of the video.",
+      "template": "screen_capture",
+      "camera": "push_in",
+      "copy_note": "Window titled claude-video. Address types a youtube link and a question; body shows the bare agent conceding it can only see the title.",
+      "sound_cue": "low room tone, a single soft key",
+      "transition": "hard_cut",
+      "energy": 0.42,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "Show how little it takes to fix that: one documented command installs the skill everywhere.",
+      "template": "terminal",
+      "camera": "rack_focus",
+      "copy_note": "Shell prompt types the real npx install line; title reads 'install once, 50+ agents'.",
+      "sound_cue": "typewriter ticks",
+      "transition": "hard_cut",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "Make the core idea visible: a video becomes a mosaic of real frames, near-duplicates dropped to save tokens.",
+      "template": "montage",
+      "camera": "parallax_drift",
+      "copy_note": "12 tiles assemble as timestamps; a few read 'dup' and grey out (the dedup made visible). Eyebrow: frames, near-dupes dropped.",
+      "sound_cue": "granular ticks as tiles land",
+      "transition": "hard_cut",
+      "energy": 0.66,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "Prove the engineering: captions first for free, ffmpeg frames, whisper only when needed.",
+      "template": "panes",
+      "camera": "ken_burns",
+      "copy_note": "Three status panes (captions done, frames working, audio idle->done). Eyebrow: captions first, then whisper.",
+      "sound_cue": "soft status blips",
+      "transition": "hard_cut",
+      "energy": 0.60,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "The payoff: Claude answers about a specific second from a frame it actually saw, not the title.",
+      "template": "screen_capture",
+      "camera": "dolly_up",
+      "copy_note": "The window reveals the grounded answer with a scale-punch. Accent-ink lead line lands the moment.",
+      "sound_cue": "the button -- one tapestop drop into a bloom",
+      "transition": "push",
+      "energy": 0.90,
+      "money_shot": true
+    },
+    {
+      "beat": 6,
+      "intent": "Land the receipt once: the star count is climbing days after launch.",
+      "template": "big_number",
+      "camera": "push_in",
+      "copy_note": "5,000 counts up; caption 'stars in days', sub 'and climbing fast'. The only scoreboard beat.",
+      "sound_cue": "a rising sub as the number climbs",
+      "transition": "hard_cut",
+      "energy": 0.62,
+      "money_shot": false
+    },
+    {
+      "beat": 7,
+      "intent": "Button the thesis and rhyme the open: the blind agent now watches. A bright call to look.",
+      "template": "flash",
+      "camera": "tilt_reveal",
+      "copy_note": "Full violet field, dark ink: 'now it watches'. Caption names the skill. The brightest beat and the loop seam.",
+      "sound_cue": "a clean tail swell settling",
+      "transition": "hard_cut",
+      "energy": 0.72,
+      "money_shot": false
+    }
+  ]
+}

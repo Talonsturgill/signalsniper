@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-07",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "components": [
+    "watch.py orchestrator",
+    "download.py yt-dlp wrapper",
+    "frames.py ffmpeg frame extraction",
+    "transcribe.py caption and whisper handling",
+    "whisper.py Groq and OpenAI clients",
+    "yt-dlp",
+    "ffmpeg",
+    "whisper",
+    "frames",
+    "captions",
+    "transcript"
+  ],
+  "commands": [
+    {
+      "text": "npx skills add bradautomates/claude-video -g",
+      "source": "https://raw.githubusercontent.com/bradautomates/claude-video/main/README.md"
+    },
+    {
+      "text": "/plugin install watch@claude-video",
+      "source": "https://raw.githubusercontent.com/bradautomates/claude-video/main/README.md"
+    }
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "yt-dlp pulls free captions first before anything is downloaded",
+    "ffmpeg extracts scene-aware frames at an auto-chosen fps",
+    "whisper transcribes the audio only when a video has no captions",
+    "near-duplicate frames are dropped by comparing grayscale thumbnails to save tokens",
+    "Claude receives the extracted frames plus a timestamped transcript",
+    "detail modes trade tokens for coverage (efficient keyframes, balanced scene-aware, token-burner uncapped)",
+    "one command installs the skill across 50+ Agent Skills hosts or as a Claude Code plugin"
+  ],
+  "surprising_detail": "It grabs free captions first and only pays for Whisper when a video has none, and it drops near-identical frames by comparing grayscale thumbnails so you are not spending context on ten copies of the same shot.",
+  "prompt_char_notes": "The /watch invocation runs inside a Claude Code session (prompt '>'); npx install runs in a shell (prompt '$'). Terminal scene uses the shell install line so the prompt char matches.",
+  "sources_read": [
+    "https://github.com/bradautomates/claude-video",
+    "https://raw.githubusercontent.com/bradautomates/claude-video/main/README.md",
+    "https://github.com/bradautomates"
+  ]
+}

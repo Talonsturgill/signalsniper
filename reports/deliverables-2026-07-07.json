@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-07",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "creator_handle": "@bradbonanno",
+  "caption": "@bradbonanno shipped claude-video days ago and it's near 5,000 stars. One skill that gives any Claude agent real eyes on video. It pulls frames and a timestamped transcript from a link, so Claude answers from the frames it actually saw.",
+  "capability_fact": "gives any Claude agent real eyes on video",
+  "differentiator": "It hands Claude real frames and a timestamped transcript from any video, so Claude answers from the moment it saw.",
+  "first_reply": "Give your own agent eyes. https://github.com/bradautomates/claude-video",
+  "why_this_one": "Brad builds these in public and open sources them. The clever part here is the token economy. It grabs free captions before ever paying for Whisper, and it drops near-identical frames so your agent isn't reading ten copies of the same shot.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Werq by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.",
+  "linkedin_caption": "Most agents are blind to video. They read the title and guess. Brad Bonanno built a skill that fixes that. It is called claude-video. You point it at a link and it pulls real frames and a timestamped transcript and hands both to Claude. So Claude answers from what it actually saw in the video not from the title. The part I like is how careful it is with your tokens. It grabs free captions first and only pays for Whisper when a video has none. It even drops near duplicate frames so you are not burning context on ten copies of the same shot. One line installs it and it went near 5000 stars in a few days. If your agent touches video this one is worth a look.",
+  "linkedin_hashtags": "#AI #ClaudeAI #DevTools #AIAgents",
+  "linkedin_tag": {"name": "Brad Bonanno", "url": "https://www.linkedin.com/in/bradbonanno/"}
+}

@@ -152,5 +152,31 @@
       "kinetic_type",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-07",
+    "arc": "watch_it_work",
+    "device": "montage",
+    "hero": "elegant_output",
+    "open": "problem_friction",
+    "close": "call_to_look",
+    "scene_seq": [
+      "BLIND_AGENT",
+      "ONE_COMMAND",
+      "FRAMES_MOSAIC",
+      "HOW_IT_WORKS",
+      "GROUNDED_ANSWER",
+      "STILL_CLIMBING",
+      "GIVE_IT_EYES"
+    ],
+    "device_seq": [
+      "screen_capture",
+      "terminal",
+      "montage",
+      "diegetic_ui",
+      "screen_capture",
+      "data_viz",
+      "kinetic_type"
+    ]
   }
 ]

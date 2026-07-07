@@ -278,5 +278,10 @@
     "date": "2026-07-06",
     "slug": "movement-proposition",
     "project_url": "https://github.com/kerlenton/mcpsnoop"
+  },
+  {
+    "date": "2026-07-07",
+    "slug": "werq",
+    "project_url": "https://github.com/bradautomates/claude-video"
   }
 ]

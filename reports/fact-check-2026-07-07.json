@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-07",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "claims": [
+    {
+      "claim": "near 5,000 stars",
+      "detail": "Repo star count reads ~5,000 (4,963 on the trending page, rendered 5k on the repo header) and is the single engagement metric shipped in the caption.",
+      "sources": [
+        "https://github.com/bradautomates/claude-video",
+        "https://github.com/trending/python?since=daily"
+      ],
+      "verified": true,
+      "as_of": "2026-07-07"
+    },
+    {
+      "claim": "climbing ~950 stars a day (evidence of recency, not shipped as a hard numeral)",
+      "detail": "GitHub trending shows +953 stars in the last day on a ~5k base (~24%/day), which is why the caption/why-this-one can say the project shipped days ago. Used to support the 'days ago / just shipped' narrative only.",
+      "sources": [
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/bradautomates/claude-video"
+      ],
+      "verified": true,
+      "as_of": "2026-07-07"
+    },
+    {
+      "claim": "installs across 50+ Agent Skills hosts with one command",
+      "detail": "README documents `npx skills add bradautomates/claude-video -g` for '50+ Agent Skills hosts' (Codex, Cursor, Copilot, Gemini CLI, etc.) plus a Claude Code plugin path. Not shipped as a numeral in the X caption; used in the LinkedIn caption and video substance.",
+      "sources": [
+        "https://raw.githubusercontent.com/bradautomates/claude-video/main/README.md",
+        "https://github.com/bradautomates/claude-video"
+      ],
+      "verified": true,
+      "as_of": "2026-07-07"
+    },
+    {
+      "claim": "MIT licensed, Python (~95%)",
+      "detail": "Repo header shows MIT license and Python 94.9%.",
+      "sources": [
+        "https://github.com/bradautomates/claude-video",
+        "https://raw.githubusercontent.com/bradautomates/claude-video/main/README.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-07"
+    }
+  ],
+  "notes": "Third-party aggregators (sourcepulse, trendingrepo) show stale lower crawls (1.2k, 2.5k) and were NOT used as sources; the two live GitHub surfaces agree at ~5k. No creator X handle is verifiable (YouTube @bradbonanno + LinkedIn only); operator approved shipping without one. No absolute star number is rounded up in shipped copy beyond '~5,000'."
+}

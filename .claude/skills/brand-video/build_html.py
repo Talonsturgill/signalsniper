@@ -1075,7 +1075,7 @@ body {{
 /* ---- montage (code-native tile mosaic, v11 #2) ---- */
 .mt-eyebrow {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 3cqw; opacity: 0; }}
 .mt-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 2.2cqw; width: 74cqw; }}
-.mt-tile {{ background: rgba(255,255,255,0.05); border: 0.12cqw solid var(--hairline); border-radius: 1.6cqw; padding: 3.5cqw 3cqw; min-height: 15cqw; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 3.5cqw; line-height: 1.1; color: var(--ink); opacity: 0; will-change: opacity, transform; }}
+.mt-tile {{ background: rgba(255,255,255,0.10); border: 0.12cqw solid var(--hairline); border-radius: 1.6cqw; padding: 3cqw 3cqw; min-height: 15cqw; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--display); font-weight: 700; font-variation-settings: "wght" 700; font-size: 4.8cqw; line-height: 1.1; color: var(--ink); -webkit-text-stroke: 2.4px currentColor; opacity: 0; will-change: opacity, transform; }}
 .mt-tile[data-i="0"] {{ color: var(--accent-ink); }}
 .flash-word {{
   font-family: var(--display);
@@ -1431,8 +1431,9 @@ body {{
 }}
 .pane-name {{
   font-family: var(--mono);
-  font-size: 2.7cqw;
+  font-size: 3.2cqw;
   color: var(--ink);
+  -webkit-text-stroke: 2.0px currentColor;
   letter-spacing: 0.04em;
   text-transform: none;
   white-space: nowrap;
