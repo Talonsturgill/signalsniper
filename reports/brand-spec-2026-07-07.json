@@ -1,0 +1,49 @@
+{
+  "date": "2026-07-07",
+  "project": "claude-video",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "brand_slug": "vision-violet",
+  "preset_slug": "perception-violet",
+  "aesthetic_slug": "perception-violet",
+  "framework": "CLASSIC",
+  "palette_provenance": "Not project-native: the creator's brand (Solaris blue, hue ~200) and Claude terracotta (hue ~9) both fall inside the color anti-repeat exclusion zone this run. A green terminal (mono-terminal) shipped on 2026-06-23, so to honor the aesthetic anti-repeat AND the operator's sameness note, chose a custom violet 'AI-perception' console -- the color of a model seeing -- built on the subway-chrome base (JetBrains Mono display + Inter body, fade register, electronic bed). Accent violet hue ~266 sits >= 60 off both recent accents (07-05 warm 9, 07-06 cool 200). Canvas lifted to luma ~49 (dark slate-violet, not near-black) so the frame clears the brightness floor by design.",
+  "design": {
+    "tokens": {
+      "canvas": "#322E3B",
+      "ink": "#EFEDF5",
+      "accent": "#CBA0FF",
+      "ink_muted": "#8B84A0",
+      "hairline": "#423E4C"
+    },
+    "fonts": {"display": "JetBrainsMono", "body": "Inter", "italic": "Inter"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.01, "case": "lower", "italic_descriptors": false},
+    "motion": {"register": "fade", "scene_in_s": 0.32, "scene_out_s": 0.22, "stagger_s": 0.16},
+    "layout": {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture": {"grain": 0.05, "vignette": 0.20, "halation": 0.03, "lighting_arc": 0.22},
+    "background": {"style": "grid"},
+    "transition_style": "push",
+    "foley_style": "tapestop_drop",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.5,
+    "audio_track": null
+  },
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_floor_luma": 237,
+    "accent_ink_note": "renderer derives --accent-ink (violet blended to ~205 luma) for text-scale accent; raw #B074FF kept for dots/fills/glows.",
+    "muted_content_note": "activity/detail lines use --muted-content; raw ink_muted only for decorative tags.",
+    "per_scene_light_source": [
+      "s1 screen_capture: accent-ink lead line in the window",
+      "s2 terminal: bright typed command on dark frame",
+      "s3 montage: 12 bright tiles (the light source)",
+      "s4 panes: bright status names + state dots",
+      "s5 screen_capture money: bright grounded answer, accent-ink lead",
+      "s6 big_number: bright count-up numeral",
+      "s7 flash: full violet field (brightest beat)"
+    ],
+    "inverted_beats": ["s7 flash (bright violet field, dark ink)"],
+    "brightness_beats": ["s3 montage (bright tile mosaic)", "s7 flash (full accent field)"],
+    "brightness_plan": "Canvas luma ~49 keeps the overall frame mean above the 46 floor by construction; the mosaic and the flash are the two planned bright beats (a color script, not a grade lift).",
+    "color_anti_repeat": "accent hue ~266 vs 07-05 (#ff7a61 hue 9, warm) and 07-06 (#1fb6ff hue 200, cool): >= 60 off both AND large delta-E; distinct from the 06-23 green terminal too."
+  }
+}

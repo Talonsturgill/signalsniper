@@ -1,0 +1,89 @@
+{
+  "raw_unique_ratio": 0.994,
+  "raw_max_interior_dup_ms": 40,
+  "raw_min_unique_per_sec": 21,
+  "scene_durations": [
+    4.05,
+    3.83,
+    4.09,
+    4.06,
+    4.34,
+    3.72,
+    3.2
+  ],
+  "readability": [
+    {
+      "scene": 0,
+      "polarity": "dark",
+      "ink": 200,
+      "spread": 165
+    },
+    {
+      "scene": 1,
+      "polarity": "dark",
+      "ink": 243,
+      "spread": 196
+    },
+    {
+      "scene": 2,
+      "polarity": "dark",
+      "ink": 244,
+      "spread": 196
+    },
+    {
+      "scene": 3,
+      "polarity": "dark",
+      "ink": 205,
+      "spread": 158
+    },
+    {
+      "scene": 4,
+      "polarity": "dark",
+      "ink": 206,
+      "spread": 170
+    },
+    {
+      "scene": 5,
+      "polarity": "dark",
+      "ink": 201,
+      "spread": 153
+    },
+    {
+      "scene": 6,
+      "polarity": "light",
+      "ink": 67,
+      "spread": 135
+    }
+  ],
+  "brightness": {
+    "overall_mean_luma": 75.0,
+    "bright_scene_fraction": 0.57,
+    "per_scene_mean_luma": [
+      46,
+      54,
+      66,
+      58,
+      48,
+      65,
+      188
+    ]
+  },
+  "chroma_cast": {
+    "final_RG": 4.03,
+    "final_BG": 11.79,
+    "raw_RG": 3.82,
+    "raw_BG": 11.07
+  },
+  "frames": 683,
+  "longest_still_s": 0.04,
+  "energy_peak_pos": 0.918,
+  "poster_luma_std": 7.68,
+  "audio_range_db": 2.6,
+  "cut_onset_median_ms": 37.4,
+  "duration_s": 27.3,
+  "warnings": [
+    "energy arc peaks at 92%; aim for 60-80%",
+    "audio bed is flat (2.6 dB range); the mix should breathe around the hits"
+  ],
+  "failures": []
+}

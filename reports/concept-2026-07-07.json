@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-07",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "singular_truth": "A text-only agent is blind to video. claude-video hands Claude the actual pixels: it pulls real frames plus a timestamped transcript from any link, so Claude answers from what it SAW at a given second, not from the title or metadata.",
+  "money_thing": "The frame mosaic. A video collapses into a grid of extracted keyframes, near-duplicates dropped, and Claude reads them to answer a question about one specific moment.",
+  "logline": "Watch a blind agent get eyes: one skill turns a video link into frames and a timestamped transcript, and Claude answers from what it actually saw.",
+  "rejected_default": "The obvious treatment for an agent-tooling repo is wordmark open -> node diagram of the pipeline -> terminal typing a command -> flash -> wordmark close. Rejected: it is exactly the recipe the last 5 videos ran (node_diagram 5/6). This project's singular truth is VISUAL (frames), so the money device must be a frame mosaic (montage), not a boxes-and-arrows diagram. The pipeline still appears, but as a diegetic 3-pane status beat, not the hero.",
+  "arc": "watch_it_work",
+  "device": "montage",
+  "hero": "elegant_output",
+  "open": "problem_friction",
+  "close": "call_to_look",
+  "scene_seq": ["BLIND_AGENT", "ONE_COMMAND", "FRAMES_MOSAIC", "HOW_IT_WORKS", "GROUNDED_ANSWER", "STILL_CLIMBING", "GIVE_IT_EYES"],
+  "device_seq": ["screen_capture", "terminal", "montage", "diegetic_ui", "screen_capture", "data_viz", "kinetic_type"],
+  "references": ["a product demo screen-recording (Loom/Descript walkthroughs)", "contact-sheet / film-strip photography (a mosaic of frames)", "a violet AI-perception console as the world color"],
+  "self_critique": {
+    "recognizably_ours": "yes -- kinetic type, a terminal beat, a growth receipt and the brand grammar are all intact; only the SHAPE moved.",
+    "shows_the_one_cool_thing": "yes -- the frame mosaic (money_thing) is scene 3 and the grounded answer it enables is the money shot (scene 5).",
+    "reads_as_a_different_production": "yes -- montage + screen_capture + a violet perception world is nothing like the last 3 (node-diagram / split-compare on warm-orange and cyan-blue). Devices, open, close, palette and grammar all differ."
+  }
+}

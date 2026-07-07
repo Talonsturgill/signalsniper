@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-07",
+  "project": "claude-video",
+  "differentiator": "It hands Claude real frames and a timestamped transcript from any video, so Claude answers from what it actually saw at a given moment, not the title.",
+  "concepts": [
+    {
+      "name": "GIVE IT EYES (chosen)",
+      "world": "A machine-vision green terminal world. We open inside a Claude session that is blind to a video, then watch the skill give it sight: one command, a contact-sheet of extracted frames (near-dupes greyed out), the three-stage pipeline running, and finally Claude answering a question about a specific second from what it SAW.",
+      "shows": "A blind agent -> the install -> a frame mosaic assembling -> captions/frames/audio panes -> the grounded answer landing -> the star receipt -> a bright 'now it watches' button.",
+      "money_shot": "Scene 5: the grounded answer reveals in the app window ('at 0:30 he opens the terminal / claude read the frame, not the title') with a scale-punch.",
+      "world_color": "violet AI-perception console (the color of a model seeing), a palette no recent tribute has touched",
+      "why_creator_reposts": "It shows his engineering, not just his star chart -- the frame dedup and captions-first economy are on screen, and the payoff is his tool doing something models can't do alone.",
+      "why_stranger_stops": "Cold friction hook ('a plain agent sees the title, not one frame') is a problem every agent builder feels, and the frame mosaic is a visual no other tribute this month has used.",
+      "chosen": true
+    },
+    {
+      "name": "THE CONTACT SHEET",
+      "world": "Pure montage: the whole video is a photographer's contact sheet, 30 seconds of frames, and a marker circles the one frame that answers the question.",
+      "shows": "A grid of frames filling the screen, dupes fading, one frame lighting up as the answer.",
+      "money_shot": "The single frame igniting out of the grid.",
+      "why_creator_reposts": "Beautiful, but it under-shows the pipeline and the install-anywhere reach.",
+      "why_stranger_stops": "Gorgeous but risks reading as abstract art, not a tool. Folded its best beat (the mosaic) into the chosen concept as scene 3.",
+      "chosen": false
+    },
+    {
+      "name": "THE UNMUTE",
+      "world": "Split of what an agent 'hears' (a thin transcript) vs what it now 'sees' (frames + transcript), a before/after.",
+      "shows": "Left: title only. Right: frames streaming in.",
+      "money_shot": "The right pane flooding with frames.",
+      "why_creator_reposts": "Clear, but before/after + split is exactly the 07-06 shape (split_compare) and is banned this run.",
+      "why_stranger_stops": "Good tension, but structurally a repeat. Rejected on the concept gate grounds.",
+      "chosen": false
+    }
+  ],
+  "wow_bets": [
+    "The frame mosaic assembling with 'dup' tiles greying out -- the dedup made visible.",
+    "The grounded answer as the money shot (elegant_output), scale-punched on the money-cut.",
+    "A violet AI-perception world, a palette no recent tribute has touched."
+  ],
+  "color_script": "Deep slate-violet canvas (luma ~49) holds most beats; brightness lives in two planned beats -- the frame mosaic (scene 3, bright tiles) and the full-bleed violet FLASH button (scene 7). >= 2 brightness beats by design; the frame passes the brightness gate without leaning on the grade. Accent violet hue ~266 sits >= 60 off both recent palettes (07-05 warm 9, 07-06 cool 200) and is a different world from the 06-23 green terminal.",
+  "light_plan": "s1 screen_capture: bright accent-ink first line in the window. s2 terminal: bright typed command on dark frame. s3 montage: 12 bright tiles (the light source). s4 panes: bright status names + state dots. s5 money screen_capture: the answer in bright ink, accent-ink lead line. s6 big_number: bright count-up numeral. s7 flash: full violet field, the brightest beat. Every scene owns a bright element >= hero scale.",
+  "illustrates_plan": "Each scene's copy is enacted by its picture: friction shown as a blind window; the command shown typed; frames shown as a real mosaic with dedup; the pipeline shown as running panes; the answer shown grounded in a seen frame; growth shown as a climbing number; the thesis shown as a bright button. No decorative scenes.",
+  "cutting_plan": "Hard cuts by default (no dissolve). The one reserved transition effect (push) fires on the money-shot cut (into scene 5). Foley transient (tapestop_drop) lands only on the money beat. Motion carries THROUGH cuts (the mosaic is already assembling when scene 3 enters; the count is already climbing when scene 6 enters)."
+}

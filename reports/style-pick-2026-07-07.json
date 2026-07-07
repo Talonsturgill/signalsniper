@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-07",
+  "brand_slug": "vision-violet",
+  "preset_slug": "perception-violet",
+  "aesthetic_slug": "perception-violet",
+  "framework": "CLASSIC",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "rationale_one_line": "A violet AI-perception console for a skill that lets Claude see video; violet (hue ~266) sits >= 60 off both recent palettes and is distinct from the 06-23 green terminal the anti-repeat flagged.",
+  "writing_tone_notes": "Peer-to-peer, build-in-public, admiring the engineering not the star chart. Contractions. Lowercase display. Specifics over adjectives.",
+  "do_rules": [
+    "Lead the story with the product doing its job (watch it work), place the receipt after.",
+    "Show the frame mosaic and the grounded answer -- the two beats only someone who read the repo would make.",
+    "Keep violet as the world; brightness lives in the mosaic and the flash button."
+  ],
+  "dont_rules": [
+    "No node diagram (the banned default); no wordmark open; no logo/thesis close.",
+    "No second engagement metric in the caption; one growth beat max on screen.",
+    "No invented terminal lines -- only the documented install command."
+  ]
+}

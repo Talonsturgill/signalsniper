@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-07",
+  "project": "claude-video",
+  "project_url": "https://github.com/bradautomates/claude-video",
+  "audience": "agent builders and Claude Code power users who hit the wall that models can't watch video",
+  "single_takeaway": "One skill gives any Claude agent real eyes on video by turning a link into frames plus a timestamped transcript.",
+  "viewer_action": "star the repo and install the watch skill",
+  "desired_feeling": "that quiet 'oh, that's the missing piece' click, plus respect for how frugally it's built",
+  "tone_adjectives": ["precise", "admiring", "matter-of-fact"],
+  "references": ["a Loom-style product screen-recording", "a photographer's contact sheet", "night-vision green"],
+  "mandatories": "vision-violet tokens off the subway-chrome base (palette provenance recorded); CC BY music attribution; creator tagged on LinkedIn (X handle unverified, flagged)",
+  "success_criteria": "Brad reposts it because it shows his engineering, and the story reads fully muted",
+  "platform": "x"
+}

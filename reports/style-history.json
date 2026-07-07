@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-06-04",
-    "brand_slug": "supabase",
-    "aesthetic_slug": "supabase",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/chopratejas/headroom"
-  },
-  {
     "date": "2026-06-05",
     "brand_slug": "linear.app",
     "aesthetic_slug": "linear.app",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "mcpsnoop-native-assisted",
     "framework": "SCHEMATIC",
     "project_url": "https://github.com/kerlenton/mcpsnoop"
+  },
+  {
+    "date": "2026-07-07",
+    "brand_slug": "vision-violet",
+    "aesthetic_slug": "perception-violet",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/bradautomates/claude-video"
   }
 ]
