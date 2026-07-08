@@ -178,5 +178,33 @@
       "data_viz",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-08",
+    "arc": "sustained_metaphor",
+    "device": "transformation_morph",
+    "hero": "morph_complete",
+    "open": "metaphor_object_enter",
+    "close": "loop_back_to_open",
+    "scene_seq": [
+      "object_open",
+      "thesis",
+      "file_panes",
+      "mechanism_quote",
+      "clear_flash",
+      "restore_morph",
+      "stars_number",
+      "loop_object_close"
+    ],
+    "device_seq": [
+      "object_metaphor",
+      "kinetic_type",
+      "diegetic_ui",
+      "diegetic_ui",
+      "kinetic_type",
+      "transformation_morph",
+      "data_viz",
+      "object_metaphor"
+    ]
   }
 ]

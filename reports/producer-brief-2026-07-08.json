@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-08",
+  "project": "planning-with-files",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "audience": "builders who run coding agents and have watched one lose the plot after a /clear or a crash",
+  "single_takeaway": "planning-with-files keeps the agent's plan in a file on disk, so a wipe can't erase it and the agent picks up right where it left off.",
+  "viewer_action": "star the repo / quote the video",
+  "desired_feeling": "relief and recognition -- that's the fix I needed",
+  "tone_adjectives": ["calm", "sturdy", "peer-to-peer"],
+  "references": ["a save icon that outlives a power cut", "amber-phosphor logs at night", "a match-cut carrying an idea across a hard boundary"],
+  "mandatories": "designed amber palette (no native brand extractable, noted); CC BY music attribution; creator @OthmanAmmarAdi tagged",
+  "success_criteria": "the creator quote-posts it; the story reads fully muted; the wipe-and-restore lands as the peak",
+  "platform": "x"
+}

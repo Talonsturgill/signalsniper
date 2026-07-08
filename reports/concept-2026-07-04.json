@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-04",
+  "arc": "teardown",
+  "device": "node_diagram",
+  "hero": "scale_reveal",
+  "open": "wordmark_reveal",
+  "close": "wordmark_lockup",
+  "scene_seq": [
+    "WORDMARK",
+    "HOOK",
+    "DIAGRAM",
+    "TERMINAL",
+    "FLASH",
+    "BIG_NUMBER",
+    "WORDMARK"
+  ],
+  "device_seq": [
+    "kinetic_type",
+    "kinetic_type",
+    "node_diagram",
+    "terminal",
+    "kinetic_type",
+    "data_viz",
+    "kinetic_type"
+  ],
+  "note": "reconstructed 2026-07-08 from concept-history.json (individual file was never committed); preserves series memory so concept_check --backfill is non-destructive"
+}

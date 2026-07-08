@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-08",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "claims": [
+    {
+      "claim": "25k stars",
+      "value": "25020",
+      "sources": [
+        "https://api.github.com/repos/OthmanAdi/planning-with-files",
+        "https://github.com/OthmanAdi/planning-with-files"
+      ],
+      "verified": true,
+      "as_of": "2026-07-08"
+    },
+    {
+      "claim": "open-sourced January 2026 (created 2026-01-03)",
+      "value": "2026-01-03",
+      "sources": [
+        "https://api.github.com/repos/OthmanAdi/planning-with-files",
+        "https://landscape.jimmysong.io/projects/planning-with-files/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-08"
+    },
+    {
+      "claim": "three markdown files (task_plan.md, findings.md, progress.md)",
+      "value": "3",
+      "sources": [
+        "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md",
+        "https://github.com/OthmanAdi/planning-with-files"
+      ],
+      "verified": true,
+      "as_of": "2026-07-08"
+    },
+    {
+      "claim": "works across 60+ agents via the SKILL.md standard",
+      "value": "60",
+      "sources": [
+        "https://github.com/OthmanAdi/planning-with-files",
+        "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-08"
+    },
+    {
+      "claim": "latest release v3.4.0 dated Jul 6 2026",
+      "value": "v3.4.0",
+      "sources": [
+        "https://github.com/OthmanAdi/planning-with-files/releases",
+        "https://github.com/OthmanAdi/planning-with-files"
+      ],
+      "verified": true,
+      "as_of": "2026-07-08"
+    }
+  ]
+}

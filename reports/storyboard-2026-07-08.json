@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-08",
+  "project": "planning-with-files",
+  "framework": "MANIFESTO",
+  "concept": "STILL THERE. Your agent's working memory, written to disk as plain markdown, so a context wipe can't erase the plan. Open on the plan as an object, establish the three real files and the re-read-before-every-move discipline, then hit a hard /clear white-out and restore the plan from disk as the money shot. Close by rhyming the open for a clean loop. Warm amber field, hard cuts, one bloom on the restore.",
+  "money_shot_note": "Scene 6 (morph): the /clear wipes everything, then 'gone' morphs into 'still there' as the plan reconstitutes from disk. It is the ONE thing only this project does, placed at ~68% of the runtime, carried by the single reserved bloom transition and a reverse-swell foley button.",
+  "transition_strategy": "Hard cuts by default (cut register). The one reserved effect is a bloom, fired only on the cut into the restore money shot. No swipe between scenes.",
+  "music_direction": "Ambient, warm, patient. A held pad that drops out on the /clear and swells back on the restore, so the music carries the wipe.",
+  "energy_curve": [0.40, 0.52, 0.62, 0.66, 0.80, 0.92, 0.70, 0.55],
+  "scenes": [
+    {"beat": 1, "intent": "poster: the plan as a persistent object, name readable at frame 0", "template": "object", "camera": "push_in", "copy_note": "glyph database, label planning-with-files, eyebrow your agent's memory", "sound_cue": "warm pad in", "transition": "hard cut", "energy": 0.40, "money_shot": false},
+    {"beat": 2, "intent": "the thesis, three bright lines", "template": "three_line", "camera": "static_breathe", "copy_note": "agents forget / this plan doesn't / it lives on disk", "sound_cue": "pad holds", "transition": "hard cut", "energy": 0.52, "money_shot": false},
+    {"beat": 3, "intent": "product truth: the three real files running with live status", "template": "panes", "camera": "ken_burns", "copy_note": "task_plan.md working, findings.md done, progress.md flips to working", "sound_cue": "soft key ticks", "transition": "hard cut", "energy": 0.62, "money_shot": false},
+    {"beat": 4, "intent": "product truth: quote the real mechanism (hooks re-read, deterministic gate)", "template": "mono_block", "camera": "push_in", "copy_note": "three lines quoting how it works, accent the gate line", "sound_cue": "rising tone", "transition": "hard cut", "energy": 0.66, "money_shot": false},
+    {"beat": 5, "intent": "the wipe: a hard /clear white-out (tension + brightness beat)", "template": "flash", "camera": "crash_zoom", "copy_note": "word /clear, caption context gone", "sound_cue": "music drops out", "transition": "hard cut", "energy": 0.80, "money_shot": false},
+    {"beat": 6, "intent": "MONEY SHOT: the plan restores from disk, gone morphs to still there", "template": "morph", "camera": "dolly_up", "copy_note": "before gone, after still there, eyebrow reads the file back", "sound_cue": "reverse-swell button, pad swells back", "transition": "bloom", "energy": 0.92, "money_shot": true},
+    {"beat": 7, "intent": "the receipt, once: 25k stars since january", "template": "big_number", "camera": "rack_focus", "copy_note": "25k count-up, caption stars since january, sub built solo in the open", "sound_cue": "pad resolves", "transition": "hard cut", "energy": 0.70, "money_shot": false},
+    {"beat": 8, "intent": "close: rhyme the open object for the loop, credit the builder", "template": "object", "camera": "orbit", "copy_note": "glyph database again, label the plan persists, eyebrow the handle", "sound_cue": "pad out", "transition": "hard cut", "energy": 0.55, "money_shot": false}
+  ]
+}

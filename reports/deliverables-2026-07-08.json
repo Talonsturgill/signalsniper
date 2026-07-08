@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-08",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "creator_handle": "@OthmanAmmarAdi",
+  "caption": "@OthmanAmmarAdi planning-with-files just crossed 25k stars. It keeps your agent's plan in three markdown files on disk, so a /clear or a crash can't erase it. Hooks re-read the plan before every move and it picks up right where it left off.",
+  "capability_fact": "keeps your agent's plan in three markdown files on disk, so a /clear or a crash can't erase it",
+  "differentiator": "The plan lives on disk as plain markdown, so a context wipe or a crash can't erase it and the agent reads it back and continues.",
+  "first_reply": "grab it here https://github.com/OthmanAdi/planning-with-files",
+  "why_this_one": "Othman went past writing the plan down. The completion gate is deterministic, so an agent can't fake its way to done, and after read-only bots got their plans hijacked he shipped a one-flag opt-out. Reliability, not a prompt trick.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Penumbra by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Been watching coding agents lose the plot after a /clear for a year now. Othman Adi fixed it in the simplest way possible. planning-with-files keeps the agent's plan in three plain markdown files on disk. task_plan, findings, progress. When the context gets wiped the plan is still sitting right there and the agent reads it back and keeps going. Hooks pull it up before every move so it can't drift. It just crossed 25k stars and he built it solo in the open. This is the cleanest take on agent memory I have seen. Take a look if you run agents on long tasks.",
+  "linkedin_hashtags": "#AI #DevTools #AIAgents #OpenSource",
+  "linkedin_tag": {"name": "Othman Adi", "url": "https://www.linkedin.com/in/codingwithadi"}
+}
