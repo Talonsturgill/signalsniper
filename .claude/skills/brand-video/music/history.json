@@ -1,5 +1,290 @@
 [
   {
+    "date": "2026-05-09",
+    "slug": "tyrant",
+    "project_url": "https://github.com/rohitg00/agentmemory"
+  },
+  {
+    "date": "2026-05-09",
+    "slug": "inspired",
+    "project_url": "https://github.com/AmElmo/proofshot"
+  },
+  {
+    "date": "2026-05-10",
+    "slug": "local-forecast-elevator",
+    "project_url": "https://github.com/millionco/react-doctor"
+  },
+  {
+    "date": "2026-05-11",
+    "slug": "lightless-dawn",
+    "project_url": "https://github.com/jundot/omlx"
+  },
+  {
+    "date": "2026-05-12",
+    "slug": "backed-vibes-clean",
+    "project_url": "https://github.com/tinyhumansai/openhuman"
+  },
+  {
+    "date": "2026-05-13",
+    "slug": "decisions",
+    "project_url": "https://github.com/cactus-compute/needle"
+  },
+  {
+    "date": "2026-05-14",
+    "slug": "investigations",
+    "project_url": "https://github.com/mattpocock/skills"
+  },
+  {
+    "date": "2026-05-15",
+    "slug": "faceoff",
+    "project_url": "https://github.com/NousResearch/hermes-agent"
+  },
+  {
+    "date": "2026-05-16",
+    "slug": "sovereign",
+    "project_url": "https://github.com/santifer/career-ops"
+  },
+  {
+    "date": "2026-05-17",
+    "slug": "hyperfun",
+    "project_url": "https://github.com/statewright/statewright"
+  },
+  {
+    "date": "2026-05-18",
+    "slug": "constance",
+    "project_url": "https://github.com/MinishLab/semble"
+  },
+  {
+    "date": "2026-05-19",
+    "slug": "crypto",
+    "project_url": "https://github.com/tech-leads-club/agent-skills"
+  },
+  {
+    "date": "2026-05-20",
+    "slug": "long-stroll",
+    "project_url": "https://github.com/tirth8205/code-review-graph"
+  },
+  {
+    "date": "2026-05-21",
+    "slug": "hidden-agenda",
+    "project_url": "https://github.com/pyrex41/Shen-Backpressure"
+  },
+  {
+    "date": "2026-05-22",
+    "slug": "voltaic",
+    "project_url": "https://github.com/karpathy/autoresearch"
+  },
+  {
+    "date": "2026-05-23",
+    "slug": "the-builder",
+    "project_url": "https://github.com/can1357/oh-my-pi"
+  },
+  {
+    "date": "2026-05-24",
+    "slug": "floating-cities",
+    "project_url": "https://github.com/yoheinakajima/activegraph"
+  },
+  {
+    "date": "2026-05-25",
+    "slug": "carefree",
+    "project_url": "https://github.com/virattt/dexter"
+  },
+  {
+    "date": "2026-05-26",
+    "slug": "penumbra",
+    "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-05-28",
+    "slug": "cheery-monday",
+    "project_url": "https://github.com/thedotmack/claude-mem"
+  },
+  {
+    "date": "2026-05-29",
+    "slug": "cipher2",
+    "project_url": "https://github.com/Lum1104/Understand-Anything"
+  },
+  {
+    "date": "2026-05-31",
+    "slug": "mechanolith",
+    "project_url": "https://github.com/ruvnet/RuView"
+  },
+  {
+    "date": "2026-06-01",
+    "slug": "the-complex",
+    "project_url": "https://github.com/pewdiepie-archdaemon/odysseus"
+  },
+  {
+    "date": "2026-06-02",
+    "slug": "volatile-reaction",
+    "project_url": "https://github.com/D4Vinci/Scrapling"
+  },
+  {
+    "date": "2026-06-03",
+    "slug": "ouroboros",
+    "project_url": "https://github.com/jlowin/fastmcp"
+  },
+  {
+    "date": "2026-06-04",
+    "slug": "exhilarate",
+    "project_url": "https://github.com/chopratejas/headroom"
+  },
+  {
+    "date": "2026-06-05",
+    "slug": "quasi-motion",
+    "project_url": "https://boxes.dev"
+  },
+  {
+    "date": "2026-06-06",
+    "slug": "marty-gots-a-plan",
+    "project_url": "https://github.com/mvanhorn/last30days-skill"
+  },
+  {
+    "date": "2026-06-07",
+    "slug": "voxel-revolution",
+    "project_url": "https://github.com/Leonxlnx/taste-skill"
+  },
+  {
+    "date": "2026-06-08",
+    "slug": "static-motion",
+    "project_url": "https://github.com/Panniantong/Agent-Reach"
+  },
+  {
+    "date": "2026-06-10",
+    "slug": "mistake-the-getaway",
+    "project_url": "https://github.com/evalstate/fast-agent"
+  },
+  {
+    "date": "2026-06-11",
+    "slug": "gymnopedie-no-1",
+    "project_url": "https://github.com/kenn-io/agentsview"
+  },
+  {
+    "date": "2026-06-12",
+    "slug": "wholesome",
+    "project_url": "https://github.com/trycua/cua"
+  },
+  {
+    "date": "2026-06-13",
+    "slug": "pamgaea",
+    "project_url": "https://github.com/DanMcInerney/architect-loop"
+  },
+  {
+    "date": "2026-06-14",
+    "slug": "retrofuture-clean",
+    "project_url": "https://github.com/LMCache/LMCache"
+  },
+  {
+    "date": "2026-06-15",
+    "slug": "clean-soul",
+    "project_url": "https://github.com/Ar9av/obsidian-wiki"
+  },
+  {
+    "date": "2026-06-16",
+    "slug": "darkest-child",
+    "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
+  },
+  {
+    "date": "2026-06-17",
+    "slug": "frost-waltz",
+    "project_url": "https://github.com/stevesolun/ctx"
+  },
+  {
+    "date": "2026-06-18",
+    "slug": "digital-lemonade",
+    "project_url": "https://github.com/alexzhang13/rlm"
+  },
+  {
+    "date": "2026-06-19",
+    "slug": "newer-wave",
+    "project_url": "https://github.com/ollama/ollama"
+  },
+  {
+    "date": "2026-06-20",
+    "slug": "reawakening",
+    "project_url": "https://github.com/obra/superpowers"
+  },
+  {
+    "date": "2026-06-21",
+    "slug": "cyborg-ninja",
+    "project_url": "https://github.com/calesthio/OpenMontage"
+  },
+  {
+    "date": "2026-06-22",
+    "slug": "black-vortex",
+    "project_url": "https://github.com/raiyanyahya/recall"
+  },
+  {
+    "date": "2026-06-23",
+    "slug": "electrodoodle",
+    "project_url": "https://github.com/oakdotspace/oak"
+  },
+  {
+    "date": "2026-06-24",
+    "slug": "controlled-chaos",
+    "project_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
+  },
+  {
+    "date": "2026-06-26",
+    "slug": "gearhead",
+    "project_url": "https://github.com/NotASithLord/peerd"
+  },
+  {
+    "date": "2026-06-27",
+    "slug": "sincerely",
+    "project_url": "https://github.com/workweave/router"
+  },
+  {
+    "date": "2026-07-01",
+    "slug": "district-four",
+    "project_url": "https://github.com/ogulcancelik/herdr"
+  },
+  {
+    "date": "2026-07-02",
+    "slug": "industrial-cinematic",
+    "project_url": "https://github.com/usestrix/strix"
+  },
+  {
+    "date": "2026-07-01",
+    "slug": "exit-the-premises",
+    "project_url": "https://github.com/ogulcancelik/herdr"
+  },
+  {
+    "date": "2026-07-03",
+    "slug": "beauty-flow",
+    "project_url": "https://github.com/affaan-m/ECC"
+  },
+  {
+    "date": "2026-07-04",
+    "slug": "edm-detection-mode",
+    "project_url": "https://github.com/JuliusBrussee/caveman"
+  },
+  {
+    "date": "2026-07-04b",
+    "slug": "frozen-star",
+    "project_url": "https://github.com/browser-use/video-use"
+  },
+  {
+    "date": "2026-07-04c",
+    "slug": "windswept",
+    "project_url": "https://github.com/mcp-use/mcp-use"
+  },
+  {
+    "date": "2026-07-05",
+    "slug": "deliberate-thought",
+    "project_url": "https://github.com/elder-plinius/T3MP3ST"
+  },
+  {
+    "date": "2026-07-06",
+    "slug": "movement-proposition",
+    "project_url": "https://github.com/kerlenton/mcpsnoop"
+  },
+  {
+    "date": "2026-07-07",
+    "slug": "werq",
+    "project_url": "https://github.com/bradautomates/claude-video"
+  },
+  {
     "date": "2026-07-08",
     "slug": "penumbra-sb",
     "project_url": "https://github.com/OthmanAdi/planning-with-files"
