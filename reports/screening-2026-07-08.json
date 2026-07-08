@@ -1,0 +1,94 @@
+{
+  "raw_unique_ratio": 0.99,
+  "raw_max_interior_dup_ms": 40,
+  "raw_min_unique_per_sec": 22,
+  "scene_durations": [
+    3.23,
+    3.34,
+    4.04,
+    3.37,
+    2.67,
+    4.3,
+    3.39,
+    3.2
+  ],
+  "readability": [
+    {
+      "scene": 0,
+      "polarity": "dark",
+      "ink": 210,
+      "spread": 179
+    },
+    {
+      "scene": 1,
+      "polarity": "dark",
+      "ink": 246,
+      "spread": 213
+    },
+    {
+      "scene": 2,
+      "polarity": "dark",
+      "ink": 224,
+      "spread": 187
+    },
+    {
+      "scene": 3,
+      "polarity": "dark",
+      "ink": 246,
+      "spread": 209
+    },
+    {
+      "scene": 4,
+      "polarity": "light",
+      "ink": 38,
+      "spread": 162
+    },
+    {
+      "scene": 5,
+      "polarity": "dark",
+      "ink": 243,
+      "spread": 210
+    },
+    {
+      "scene": 6,
+      "polarity": "dark",
+      "ink": 200,
+      "spread": 166
+    },
+    {
+      "scene": 7,
+      "polarity": "dark",
+      "ink": 197,
+      "spread": 163
+    }
+  ],
+  "brightness": {
+    "overall_mean_luma": 80.9,
+    "bright_scene_fraction": 1.0,
+    "per_scene_mean_luma": [
+      64,
+      65,
+      69,
+      69,
+      190,
+      63,
+      65,
+      62
+    ]
+  },
+  "chroma_cast": {
+    "final_RG": 19.52,
+    "final_BG": -29.85,
+    "raw_RG": 18.18,
+    "raw_BG": -26.56
+  },
+  "frames": 689,
+  "longest_still_s": 0.04,
+  "energy_peak_pos": 0.635,
+  "poster_luma_std": 26.83,
+  "audio_range_db": 13.3,
+  "cut_onset_median_ms": 44.9,
+  "duration_s": 27.54,
+  "warnings": [],
+  "failures": []
+}

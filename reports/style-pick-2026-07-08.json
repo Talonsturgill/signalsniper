@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-08",
+  "brand_slug": "pwf-amber-assisted",
+  "preset_slug": null,
+  "aesthetic_slug": "amber-ledger",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "rationale_one_line": "No native brand exists (GitHub-hosted, no project site); a designed warm amber-phosphor 'ledger' palette fits the plain-text/markdown identity and, being warm (hue 36), clears the color anti-repeat off the last two cool-dark videos by both hue distance and a temperature flip.",
+  "writing_tone_notes": "Peer-to-peer build-in-public. Admire the engineering (persistence, the completion gate), not the star chart. Contractions, lowercase display, specifics over adjectives. Three short sentences beat one long one.",
+  "do_rules": [
+    "Lead the story with the ONE cool thing: the plan surviving a wipe. Board the product beats (the three files, the re-read) then the receipt.",
+    "Keep amber as the world; brightness lives in the /clear white-out and the count-up.",
+    "Close by rhyming the open (the plan object) so the X autoloop reads clean."
+  ],
+  "dont_rules": [
+    "No node diagram, no terminal beat (the rejected default); no wordmark open; no logo/thesis close.",
+    "No second engagement metric in the caption; one growth beat max on screen.",
+    "No invented numbers -- only fact-checked claims; panes carry names, not unverified counts."
+  ]
+}

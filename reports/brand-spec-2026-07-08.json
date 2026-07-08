@@ -1,0 +1,50 @@
+{
+  "date": "2026-07-08",
+  "project": "planning-with-files",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "brand_slug": "pwf-amber-assisted",
+  "preset_slug": null,
+  "aesthetic_slug": "amber-ledger",
+  "framework": "MANIFESTO",
+  "palette_provenance": "Not project-native and not a library preset: brand_extract.py found no colors on the GitHub repo (no project site), and a second pass on the creator's dev.to profile returned only dev.to's own platform chrome (a gray #848484 profile default), not an identity. With nothing to mine, a designed 'amber ledger' palette was assembled to fit the project's plain-text/markdown/log identity -- a warm amber-phosphor accent (the light that stays on) on a near-black canvas. Steered warm deliberately: accent hue 36 sits >= 60 off both recent accents (07-06 #1fb6ff hue 200 cool, 07-07 #CBA0FF hue 267 cool) AND flips temperature cool->warm, clearing the color anti-repeat two ways. URLs tried: https://github.com/OthmanAdi/planning-with-files (no colors), https://dev.to/othmanadi (platform chrome only).",
+  "design": {
+    "tokens": {
+      "canvas": "#0b0c10",
+      "ink": "#F3F0E7",
+      "accent": "#FFB13C",
+      "ink_muted": "#8B8578",
+      "hairline": "#1e1f24"
+    },
+    "fonts": {"display": "IBMPlexSerif", "body": "Inter", "italic": "Inter", "mono": "JetBrainsMono"},
+    "typography": {"display_weight": 600, "body_weight": 400, "letter_spacing_em": -0.01, "case": "lower", "italic_descriptors": false},
+    "motion": {"register": "cut", "scene_in_s": 0.22, "scene_out_s": 0.14, "stagger_s": 0.12},
+    "layout": {"padding_pct": 6, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture": {"grain": 0.05, "vignette": 0.20, "halation": 0.04, "lighting_arc": 0.24},
+    "background": {"style": "shader"},
+    "transition_style": "bloom",
+    "foley_style": "reverse_swell",
+    "audio_palette": "ambient",
+    "accent_contrast_min": 3.0,
+    "audio_track": null
+  },
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_floor_luma": 237,
+    "accent_ink_note": "renderer derives --accent-ink (amber blended to ~205 luma) for text-scale accent; raw #FFB13C (luma ~185) kept for dots/fills/glows.",
+    "muted_content_note": "activity/detail lines use --muted-content; raw ink_muted only for decorative tags.",
+    "per_scene_light_source": [
+      "s1 object: bright amber database glyph + serif label (the name, the poster)",
+      "s2 three_line: three bright serif lines, accent third line",
+      "s3 panes: bright file names + state dots on the three cards",
+      "s4 metaphor: bright accent network converging on a glowing core",
+      "s5 flash: full white-out field (brightest beat, the /clear)",
+      "s6 morph money: bright 'still there' scaling in with a bloom",
+      "s7 big_number: bright count-up to 25k",
+      "s8 object: bright glyph again, rhyming the open"
+    ],
+    "inverted_beats": ["s5 flash (full bright field, dark ink -- the /clear white-out)"],
+    "brightness_beats": ["s5 flash (full white-out)", "s7 big_number (bright count-up)"],
+    "brightness_plan": "The shader amber field lifts every frame above the mean-luma floor by construction (measured lift on prior shader runs 37->111). Two explicit bright beats -- the /clear white-out and the count-up -- give a color script, not one dark wash. A near-black canvas earns its brightness rather than hoping the grade lifts it.",
+    "color_anti_repeat": "accent hue 36 (warm amber) vs 07-06 (#1fb6ff hue 200 cool) and 07-07 (#CBA0FF hue 267 cool): >= 60 off both AND a temperature flip cool->warm AND large delta-E. Within the runtime, the amber field vs the white-out flash gives a value/temperature beat."
+  }
+}

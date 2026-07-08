@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-06-05",
-    "brand_slug": "linear.app",
-    "aesthetic_slug": "linear.app",
-    "framework": "SCHEMATIC",
-    "project_url": "https://boxes.dev"
-  },
-  {
     "date": "2026-06-06",
     "brand_slug": "wired",
     "aesthetic_slug": "wired",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "perception-violet",
     "framework": "CLASSIC",
     "project_url": "https://github.com/bradautomates/claude-video"
+  },
+  {
+    "date": "2026-07-08",
+    "brand_slug": "pwf-amber-assisted",
+    "aesthetic_slug": "amber-ledger",
+    "framework": "MANIFESTO",
+    "project_url": "https://github.com/OthmanAdi/planning-with-files"
   }
 ]

@@ -1020,7 +1020,7 @@ body {{
 .morph-stage {{
   position: relative;
   width: 100%;
-  height: 22cqw;
+  height: 28cqw;
 }}
 .morph-word {{
   position: absolute;
@@ -1031,7 +1031,12 @@ body {{
   font-family: var(--display);
   font-weight: var(--display-weight);
   font-variation-settings: "wght" var(--display-weight);
-  font-size: 8cqw;
+  /* v11 (2026-07-08): the money-shot word IS the frame's brightest element and
+     must own the readability gate's top percentile. At 8cqw a short serif word
+     ("gone") covered <0.7% of pixels, so p99.3 sampled the lit shader behind it
+     and the money shot failed the luma floor. 14cqw makes the bright ink own the
+     top percentile (and reads bigger, which the peak beat wants anyway). */
+  font-size: 14cqw;
   line-height: 1.0;
   white-space: nowrap;
   letter-spacing: -0.02em;
@@ -1057,8 +1062,12 @@ body {{
 .mp-svg {{ width: 60cqw; height: 60cqw; overflow: visible; }}
 .mp-dot {{ fill: var(--accent); }}
 .mp-edge {{ stroke: var(--accent); stroke-width: 0.16; }}
-.mp-core {{ fill: var(--accent); }}
-.mp-label {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 6.4cqw; color: var(--ink); margin-top: 0.5cqw; opacity: 0; }}
+/* v11 (2026-07-08): the converged core is the scene's light source (the plan
+   everything re-reads). Raw --accent grades below the readability floor, so the
+   core uses the lifted --accent-ink and grows bigger (see animateMetaphor) to
+   own the top percentile; the label is nudged up a touch for coverage too. */
+.mp-core {{ fill: var(--accent-ink); }}
+.mp-label {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 7.0cqw; color: var(--ink); margin-top: 0.5cqw; opacity: 0; }}
 
 /* ---- oner (continuous_camera, v11 #2) ---- */
 .scene[data-tpl="oner"] {{ overflow: hidden; }}
@@ -1431,10 +1440,13 @@ body {{
 }}
 .pane-name {{
   font-family: var(--mono);
-  font-size: 3.2cqw;
+  /* v11 (2026-07-08): 2.95cqw (was 3.2) so a 12+ char filename plus a long
+     state badge ("task_plan.md" + WORKING) fits the narrow pane instead of the
+     badge clipping at the overflow:hidden edge. */
+  font-size: 2.95cqw;
   color: var(--ink);
   -webkit-text-stroke: 2.0px currentColor;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -1442,9 +1454,9 @@ body {{
 .pane-badge {{
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 2.1cqw;
+  font-size: 1.85cqw;
   white-space: nowrap;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--state-color, var(--ink-muted));
 }}
@@ -2370,7 +2382,7 @@ function animateMetaphor(el, t, dur) {
       ln.style.opacity = (eo*0.42).toFixed(3);
     }
   }
-  if (core) { const cr = easeOutBack(clamp01((t - dur*0.35)/(dur*0.4)))*4.5; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
+  if (core) { const cr = easeOutBack(clamp01((t - dur*0.30)/(dur*0.35)))*6.5; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
   if (label) { const e = easeOut(clamp01((t - dur*0.40)/0.5)); label.style.opacity = e.toFixed(3);
     label.style.transform = `translateY(${(10*(1-e)).toFixed(1)}px)`; }
 }

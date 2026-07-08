@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-08",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "singular_truth": "The plan is a plain markdown file on disk, not context. So when the session is wiped (/clear, a crash), the plan is still there and the agent reads it back and continues exactly where it left off.",
+  "money_thing": "A hard context wipe blanks everything, then the plan re-materializes from disk intact and the work resumes. Memory that a wipe can't erase.",
+  "logline": "Your agent's working memory, written to disk, so nothing you can throw at it makes it forget the plan.",
+  "rejected_default": "The obvious treatment for an agent-tooling project is a node-diagram of the hook flow plus a terminal typing the install command, flash between, wordmark bookends. Rejected: it buries the ONE cool thing (the plan surviving a wipe) inside plumbing, and it is exactly the shape the last several videos used. The singular truth here is emotional (persistence through erasure), not architectural, so it wants a metaphor and a before/after transform, not a wiring diagram.",
+  "arc": "sustained_metaphor",
+  "device": "transformation_morph",
+  "hero": "morph_complete",
+  "open": "metaphor_object_enter",
+  "close": "loop_back_to_open",
+  "scene_seq": ["object_open", "thesis", "file_panes", "mechanism_quote", "clear_flash", "restore_morph", "stars_number", "loop_object_close"],
+  "device_seq": ["object_metaphor", "kinetic_type", "diegetic_ui", "diegetic_ui", "kinetic_type", "transformation_morph", "data_viz", "object_metaphor"],
+  "references": ["a save icon that outlives a power cut", "colorist amber-phosphor logs (the light that stays on)", "the match-cut in 2001 as a transform that carries an idea across a hard boundary"],
+  "self_critique": {
+    "ours": "yes -- brand grammar intact (silent-first, poster frame carries the name, money shot at ~68%, close rhymes the open for the loop), just a fresh concept and device.",
+    "shows_the_one_cool_thing": "yes -- the wipe (flash) and the restore (morph money shot) ARE the singular truth, dead center of the runtime.",
+    "different_from_last_3": "yes -- last three were montage/split_compare/node_diagram on cool-dark palettes; this is a transformation_morph metaphor on a warm amber field, all five categoricals differ from the previous video."
+  }
+}

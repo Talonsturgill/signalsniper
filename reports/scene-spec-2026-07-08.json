@@ -1,0 +1,162 @@
+{
+  "date": "2026-07-08",
+  "project": "planning-with-files",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "design": {
+    "framework": "MANIFESTO",
+    "tokens": {
+      "canvas": "#0b0c10",
+      "ink": "#F3F0E7",
+      "accent": "#FFB13C",
+      "ink_muted": "#8B8578",
+      "hairline": "#1e1f24"
+    },
+    "fonts": {
+      "display": "IBMPlexSerif",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.22,
+      "scene_out_s": 0.14,
+      "stagger_s": 0.12
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.2,
+      "halation": 0.04,
+      "lighting_arc": 0.24
+    },
+    "background": {
+      "style": "shader"
+    },
+    "transition_style": "bloom",
+    "foley_style": "reverse_swell",
+    "audio_palette": "ambient",
+    "accent_contrast_min": 3.0,
+    "audio_track": "SB-Penumbra.mp3",
+    "beat": {
+      "bpm": 123.0,
+      "offset_s": 50.0,
+      "aligned": true,
+      "median_drift_ms": 125.9
+    }
+  },
+  "scenes": [
+    {
+      "template": "object",
+      "camera": "push_in",
+      "duration_s": 3.23,
+      "glyph": "database",
+      "label": "planning-with-files",
+      "eyebrow": "your agent's memory",
+      "illustrates": "the database glyph assembling and settling enacts 'a plan that persists' -- memory drawn as a thing on disk, with the project name as the poster"
+    },
+    {
+      "template": "three_line",
+      "camera": "static_breathe",
+      "duration_s": 3.34,
+      "lines": [
+        "agents forget.",
+        "this plan doesn't.",
+        "it lives on disk."
+      ],
+      "accent_idx": 2,
+      "illustrates": "three bright serif lines land the thesis; the accent third line 'it lives on disk' names the singular truth the rest of the film shows"
+    },
+    {
+      "template": "panes",
+      "camera": "ken_burns",
+      "duration_s": 4.04,
+      "eyebrow": "three markdown files",
+      "panes": [
+        {
+          "name": "task_plan.md",
+          "lines": [
+            "the phases"
+          ],
+          "state": "working"
+        },
+        {
+          "name": "findings.md",
+          "lines": [
+            "research"
+          ],
+          "state": "done"
+        },
+        {
+          "name": "progress.md",
+          "lines": [
+            "session log"
+          ],
+          "state": "idle",
+          "flip_to": "working",
+          "flip_at": 0.6
+        }
+      ],
+      "sheen": true,
+      "illustrates": "the three real files running with live state (task_plan working, findings done, progress flipping to working) enact 'the plan is three files on disk' -- the product's actual mechanism shown, not described"
+    },
+    {
+      "template": "mono_block",
+      "camera": "push_in",
+      "duration_s": 3.37,
+      "lines": ["hooks re-read the plan", "before major decisions", "gate is deterministic"],
+      "accent_idx": 2,
+      "sheen": true,
+      "illustrates": "three lines quoted from how it works (hooks re-read the plan before major decisions, a deterministic completion gate) enact 'it doesn't just remember, it verifies' -- the real mechanism on screen, not described"
+    },
+    {
+      "template": "flash",
+      "camera": "crash_zoom",
+      "duration_s": 2.67,
+      "word": "/clear",
+      "caption": "context gone",
+      "illustrates": "a full white-out on '/clear' enacts the context wipe -- the frame is literally erased, the pattern interrupt that sets up the restore"
+    },
+    {
+      "template": "morph",
+      "camera": "dolly_up",
+      "duration_s": 4.3,
+      "before": "gone",
+      "after": "still there",
+      "eyebrow": "reads the file back",
+      "money_shot": true,
+      "emphasize": true,
+      "sheen": true,
+      "illustrates": "'gone' blurring out while 'still there' scales in from blur IS the restore -- the plan reconstitutes from disk after the wipe, the one thing only this project does"
+    },
+    {
+      "template": "big_number",
+      "camera": "rack_focus",
+      "duration_s": 3.39,
+      "numeral": "25k",
+      "caption": "stars since january",
+      "sub": "built solo, in the open",
+      "illustrates": "the count climbing to 25k enacts 'people came fast' -- the receipt shown as motion, once, not the whole story"
+    },
+    {
+      "template": "object",
+      "camera": "orbit",
+      "duration_s": 3.2,
+      "glyph": "database",
+      "label": "the plan persists",
+      "eyebrow": "@OthmanAmmarAdi",
+      "illustrates": "the same database glyph returns, rhyming the open so the X autoloop closes clean, and credits the builder"
+    }
+  ]
+}

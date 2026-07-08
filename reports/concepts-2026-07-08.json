@@ -1,0 +1,42 @@
+{
+  "date": "2026-07-08",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "differentiator": "The plan lives on disk as plain markdown, so a context wipe or crash can't erase it -- the agent reads the file back and picks up exactly where it left off.",
+  "concepts": [
+    {
+      "name": "STILL THERE (picked)",
+      "world": "A warm amber-phosphor field, like a log or a ledger left glowing on a screen at night. Everything is written down, and the writing outlasts the machine.",
+      "shows": "A plan appears as a file object. Three real markdown files (task_plan.md, findings.md, progress.md) run with live status. Hooks re-read the plan before each move. Then /clear hits and the frame whites out. The plan re-materializes from disk intact and the work resumes. It closes back on the file object, rhyming the open.",
+      "money_shot": "The restore: a hard wipe blanks the frame, then the morph reconstitutes the plan and the eyebrow reads 'reads the file back'. The one thing only this project does, dead center.",
+      "why_creator_reposts": "It dramatizes his actual thesis (markdown is the agent's working memory on disk) as a feeling, not a diagram. It flatters the engineering, not the star chart.",
+      "why_stranger_stops": "The wipe is a pattern interrupt. A white-out mid-video, then the thing you thought was gone snaps back. You watch to see how.",
+      "light": "Shader amber field lifts every frame; the /clear flash is a full bright white-out (the brightest beat); the 25k count-up is the second bright beat.",
+      "cuts": "Hard cuts by default; the reserved bloom fires once on the restore cut; motion carries through (the metaphor network is already converging when its scene enters)."
+    },
+    {
+      "name": "THE LEDGER",
+      "world": "An accountant's ledger metaphor: the agent balances its own books, every decision written to a line before it acts.",
+      "shows": "Lines of a plan being written and checked off, a completion gate stamping done only when the ledger actually moved.",
+      "money_shot": "The gate refusing to stamp 'done' because the ledger didn't progress (the deterministic completion gate).",
+      "why_creator_reposts": "Honors the completion-gate engineering. But it is drier and leans on a rules idea that is hard to make visceral in 3 seconds.",
+      "why_stranger_stops": "Weaker -- a ledger reads as bookkeeping, not a breakthrough.",
+      "light": "Warm, but risks a lot of small mono type (readability gate risk).",
+      "cuts": "Would lean terminal-ish, close to the rejected default."
+    },
+    {
+      "name": "THE HIJACK",
+      "world": "A thriller framing around the v3.4.0 bug: a read-only bot sharing a working directory gets its plan hijacked, fake completions written into its files.",
+      "shows": "Two agents on one directory, one writing fabricated 'done' into the other's plan, then the PLANNING_DISABLED=1 flag shutting it down.",
+      "money_shot": "The opt-out flag killing the hijack.",
+      "why_creator_reposts": "It is the surprising_detail and shows real reliability work. But it centers a bug over the core value, which could read as criticism, not tribute.",
+      "why_stranger_stops": "Intriguing but needs too much setup to land the stakes in 28s.",
+      "light": "Two-pane, workable, but the story is inside-baseball."
+    }
+  ],
+  "pick": "STILL THERE",
+  "wow_bets": [
+    "The /clear white-out into the morph restore -- a real pattern interrupt, not a slideshow.",
+    "The plan object bookends (open and close rhyme) for a clean X autoloop.",
+    "Warm amber field against a run of cool-dark videos -- it will look like a different production in the feed."
+  ]
+}

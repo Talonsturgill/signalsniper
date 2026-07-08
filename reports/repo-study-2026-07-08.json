@@ -1,0 +1,30 @@
+{
+  "date": "2026-07-08",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files",
+  "components": [
+    "three plan files on disk: task_plan.md (phases and progress), findings.md (research), progress.md (session log and test results)",
+    "hooks: PreToolUse, PostToolUse, and Stop hooks wired across 18+ IDEs",
+    "deterministic completion gate (v3.0.0+) that blocks Stop only when five conditions align",
+    "multi-agent shared state: the same markdown files are read/written by multiple agents in one working directory",
+    "SKILL.md standard: one skill definition installs across 60+ agents",
+    "PLANNING_DISABLED=1 per-invocation opt-out (v3.4.0)"
+  ],
+  "commands": [
+    {"text": "npx skills add OthmanAdi/planning-with-files --skill planning-with-files -g", "prompt_char": "$", "source": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"},
+    {"text": "/plugin marketplace add OthmanAdi/planning-with-files", "prompt_char": ">", "source": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"},
+    {"text": "/plugin install planning-with-files@planning-with-files", "prompt_char": ">", "source": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"}
+  ],
+  "outputs": [
+    {"text": "task_plan.md", "source": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"},
+    {"text": "findings.md", "source": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"},
+    {"text": "progress.md", "source": "https://raw.githubusercontent.com/OthmanAdi/planning-with-files/master/README.md"}
+  ],
+  "architecture_facts": [
+    "the plan lives on disk as markdown, not in the context window, so it survives /clear and crashes",
+    "hooks re-read the plan before major decisions instead of trusting the model to remember it",
+    "the completion gate is deterministic: Stop is blocked unless the ledger actually progressed since the last block",
+    "multiple agents coordinate through the same files rather than a shared context",
+    "one SKILL.md definition ports the behavior to 60+ agents"
+  ],
+  "surprising_detail": "v3.4.0 added a PLANNING_DISABLED=1 per-invocation opt-out because read-only research agents and CI review bots that shared a working directory with an incomplete plan were being hijacked by it, with fabricated completions appended to the plan files."
+}
