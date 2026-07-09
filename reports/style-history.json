@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-06-06",
-    "brand_slug": "wired",
-    "aesthetic_slug": "wired",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/mvanhorn/last30days-skill"
-  },
-  {
     "date": "2026-06-07",
     "brand_slug": null,
     "aesthetic_slug": "mono-terminal",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "amber-ledger",
     "framework": "MANIFESTO",
     "project_url": "https://github.com/OthmanAdi/planning-with-files"
+  },
+  {
+    "date": "2026-07-09",
+    "brand_slug": "graphify-native",
+    "aesthetic_slug": "graphify-native",
+    "framework": "CLASSIC",
+    "project_url": "https://github.com/safishamsi/graphify"
   }
 ]

@@ -1,0 +1,19 @@
+{
+  "date": "2026-07-09",
+  "project": "graphify",
+  "framework": "CLASSIC",
+  "concept": "Ask your codebase. We drop into a live graphify session where a builder stops grepping and asks for the path between two symbols. We name the gap grep leaves, show how graphify actually works (local tree-sitter parse, a real graph not embeddings, every edge EXTRACTED or INFERRED), show the three real files it writes, then pay it off with the money shot: a single green path lighting up through the graph as the ANSWER. The graph appears exactly once, as the climax, not as a node tour. Close on the thesis and the wordmark so the loop rhymes with the open.",
+  "money_shot_note": "Scene 5 (the diagram): the path lights up from DigestAuth through to Response, EXTRACTED edges solid and one INFERRED edge dashed, with a scale-punch on the cut. It is the peak because it is the literal answer to the question typed in scene 1.",
+  "transition_strategy": "Hard cuts throughout; the one reserved cut_kick fires on the cut INTO the money shot only. Motion carries through the cuts (scenes enter already moving).",
+  "music_direction": "Electronic bed, forward and clean. The single sub_impact foley transient lands on the money-shot cut, not on every boundary.",
+  "energy_curve": [0.4, 0.5, 0.55, 0.65, 0.9, 0.75, 0.6],
+  "scenes": [
+    {"beat": 1, "intent": "Drop into a live session running graphify on a repo; it writes a real queryable graph (poster carries the graphify name)", "template": "terminal", "camera": "rack_focus", "copy_note": "/graphify . then the real output files graph.html and graph.json", "sound_cue": "soft key ticks, no swipe", "transition": "hard_cut", "energy": 0.4, "money_shot": false},
+    {"beat": 2, "intent": "Name the gap grep leaves: files, never connections", "template": "two_line", "camera": "push_in", "copy_note": "grep hands you files, not how they connect", "sound_cue": "bed only", "transition": "hard_cut", "energy": 0.5, "money_shot": false},
+    {"beat": 3, "intent": "Show how it actually works (local parse, graph not embeddings, EXTRACTED/INFERRED)", "template": "mono_block", "camera": "parallax_drift", "copy_note": "three mechanism lines, the trust line accented", "sound_cue": "bed only", "transition": "hard_cut", "energy": 0.55, "money_shot": false},
+    {"beat": 4, "intent": "Make it concrete: one command writes three real files", "template": "panes", "camera": "dolly_up", "copy_note": "graph.html, graph.json, GRAPH_REPORT, all done", "sound_cue": "soft done-ticks", "transition": "hard_cut", "energy": 0.65, "money_shot": false},
+    {"beat": 5, "intent": "THE ANSWER: a single green path lights up through the graph", "template": "diagram", "camera": "orbit", "copy_note": "the answer is a path, DigestAuth to Response", "sound_cue": "sub_impact button on the cut in", "transition": "cut_kick", "energy": 0.9, "money_shot": true},
+    {"beat": 6, "intent": "Payoff line on a bright green field", "template": "flash", "camera": "crash_zoom", "copy_note": "one path, instead of a thousand files", "sound_cue": "bed swells", "transition": "hard_cut", "energy": 0.75, "money_shot": false},
+    {"beat": 7, "intent": "Thesis and wordmark, rhyming with the open for the loop", "template": "close", "camera": "pull_back", "copy_note": "stop grepping, start asking, graphify by @safishamsii", "sound_cue": "bed resolves", "transition": "hard_cut", "energy": 0.6, "money_shot": false}
+  ]
+}

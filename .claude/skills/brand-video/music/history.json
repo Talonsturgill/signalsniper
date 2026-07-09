@@ -288,5 +288,10 @@
     "date": "2026-07-08",
     "slug": "penumbra-sb",
     "project_url": "https://github.com/OthmanAdi/planning-with-files"
+  },
+  {
+    "date": "2026-07-09",
+    "slug": "aphelion",
+    "project_url": "https://github.com/safishamsi/graphify"
   }
 ]

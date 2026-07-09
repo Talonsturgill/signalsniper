@@ -1,0 +1,42 @@
+{
+  "date": "2026-07-09",
+  "project": "graphify",
+  "differentiator": "graphify parses your code locally into a real graph you traverse, so you ask a plain-English question and get back an actual path, not vector-search guesses.",
+  "concepts": [
+    {
+      "name": "Ask your codebase (WINNER)",
+      "world": "A live coding session. You are inside the terminal, mid-flow, and instead of grepping you type one graphify command and the codebase answers with a path.",
+      "shows": "The human types `/graphify path` between two symbols; a beat later a single green path lights up through the graph from one symbol to the other, every edge marked EXTRACTED or INFERRED. No node-tour, no orbiting cloud of dots. The graph appears exactly once, as the ANSWER.",
+      "money_shot": "The path lighting up through the graph (DigestAuth to Response) on a graphify-green traversal, with a scale-punch on the cut.",
+      "why_creator_reposts": "It shows the tool doing the ONE thing he pitches (query connections, do not grep) in his own green-on-dark colors, and it flatters the 'graph not embeddings' conviction he actually holds.",
+      "why_stranger_stops": "Everyone who has grepped a strange codebase feels the friction in the first two seconds. The payoff (a real path) is a satisfying answer to a question they have lived.",
+      "argument": "This is the winner because it dramatizes the PAYOFF, not the data structure. Every graph-tool video draws floating nodes; this one asks a question and gets an answer, which is what actually matters. It keeps a real product beat (the terminal command is documented verbatim), earns its one graph moment as the climax, and the EXTRACTED/INFERRED labels give the money shot a trust detail no competitor shows."
+    },
+    {
+      "name": "Grep vs graph (runner-up)",
+      "world": "A split screen: the old way (200 grep hits scrolling past) against the new way (one clean path).",
+      "shows": "Left pane floods with file paths; right pane resolves to a single traversal.",
+      "money_shot": "The right pane snapping to one path while the left keeps scrolling noise.",
+      "why_creator_reposts": "Clean contrast, very shareable.",
+      "why_stranger_stops": "The noise-vs-signal contrast is instantly legible.",
+      "argument": "Strong, but split_compare is on the variety avoid list this run (07-06 used it), and a full split video risks the edge-clip class the craft log flags. Folded its spirit into the winner as the scene-2 friction beat instead of the whole video."
+    },
+    {
+      "name": "The graph you did not know you had (rejected)",
+      "world": "A dark field where a codebase blooms into a full knowledge graph, communities and the 'god node' glowing.",
+      "shows": "Nodes converging, clusters forming, the most-connected node pulsing.",
+      "money_shot": "The god node lighting the whole graph.",
+      "why_creator_reposts": "Pretty.",
+      "why_stranger_stops": "Spectacle.",
+      "argument": "Rejected. This is exactly the node-diagram-tour default the v11 producer phase exists to kill. It shows the DATA STRUCTURE and hides the payoff (you can ask it a question). Beautiful and generic. Killed."
+    }
+  ],
+  "chosen": "Ask your codebase",
+  "wow_bets": [
+    "the path lighting up through the graph as the literal ANSWER to a typed question (money shot)",
+    "the EXTRACTED vs INFERRED edge labels giving the answer a visible trust detail",
+    "opening in media res on a real graphify session so frame 0 is a working tool, not a logo"
+  ],
+  "color_script": "A single-hue green world that MOVES in value: dark-green session (terminal, friction), lifts through the mechanism, peaks on the bright green flash payoff, resolves on the close. Two clear brightness beats: the flash field and the lit money-shot path. Steered off the last two videos (violet 267, amber 36) by staying green (142).",
+  "light_plan": "Bright element per scene: terminal = bright prompt + accent command line; two_line = bright ink; mono_block = bright ink + accent line; panes = green done-plates; diagram = the glowing green path (the light source IS the answer); flash = full bright green field; close = bright ink wordmark + accent line. Canvas lifted off near-black; flash and the lit path are the two designed brightness beats."
+}

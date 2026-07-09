@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-09",
+  "project": "graphify",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "audience": "Engineers who use a coding agent and have felt it grep the same strange codebase over and over without ever understanding how the pieces connect.",
+  "single_takeaway": "graphify turns your codebase into a real graph you can ask questions of, so instead of grepping you get back an actual path.",
+  "viewer_action": "star the repo and try /graphify on their own codebase",
+  "desired_feeling": "the quiet relief of finally being able to ask your code a question and get a straight answer",
+  "tone_adjectives": ["precise", "confident", "unshowy"],
+  "references": ["a real Claude Code session", "graph-database query framing", "a single-hue colorist green world"],
+  "mandatories": "graphify-native green-on-dark tokens (mined --bg and --accent), CC BY music attribution, creator @safishamsii tagged",
+  "success_criteria": "Safi quote-posts it because it shows his tool answering a question in his own colors; the story reads fully muted",
+  "platform": "x"
+}

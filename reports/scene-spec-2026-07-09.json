@@ -1,0 +1,217 @@
+{
+  "date": "2026-07-09",
+  "project": "graphify",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "design": {
+    "framework": "CLASSIC",
+    "brand_slug": "graphify-native",
+    "tokens": {
+      "canvas": "#132417",
+      "ink": "#e6f5ec",
+      "accent": "#4ade80",
+      "ink_muted": "#87918b",
+      "hairline": "#223026"
+    },
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.24,
+      "scene_out_s": 0.15,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.2,
+      "halation": 0.05,
+      "lighting_arc": 0.26
+    },
+    "background": {
+      "style": "aurora",
+      "intensity": 0.7
+    },
+    "transition_style": "cut_kick",
+    "foley_style": "sub_impact",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.0,
+    "beat": {
+      "bpm": 80.7,
+      "offset_s": 60.0,
+      "aligned": true,
+      "median_drift_ms": 164.6
+    }
+  },
+  "scenes": [
+    {
+      "template": "terminal",
+      "title": "graphify",
+      "prompt_char": ">",
+      "lines": [
+        {
+          "text": "/graphify .",
+          "prompt": true
+        },
+        {
+          "text": "graph.html",
+          "prompt": false
+        },
+        {
+          "text": "graph.json",
+          "prompt": false,
+          "accent": true
+        }
+      ],
+      "camera": "rack_focus",
+      "sheen": true,
+      "duration_s": 4.44,
+      "illustrates": "We drop into a live session running graphify on a repo and watch it write a real, queryable graph (graph.json), not a pile of search hits."
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "grep hands you files.",
+        "not how they connect."
+      ],
+      "accent_idx": 1,
+      "camera": "push_in",
+      "duration_s": 3.0,
+      "illustrates": "Two lines name the exact gap grep leaves: you get matching files, never the connection between them."
+    },
+    {
+      "template": "mono_block",
+      "lines": [
+        "tree-sitter reads your code.",
+        "a real graph, not embeddings.",
+        "every edge extracted or inferred."
+      ],
+      "accent_idx": 2,
+      "camera": "parallax_drift",
+      "duration_s": 4.3,
+      "illustrates": "Three mechanism lines enact how it works: a local deterministic parse, a graph rather than a vector index, and the trust label on every edge."
+    },
+    {
+      "template": "panes",
+      "eyebrow": "one command, three files",
+      "panes": [
+        {
+          "name": "graph.html",
+          "lines": [
+            "interactive map"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "graph.json",
+          "lines": [
+            "you can query"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "GRAPH_REPORT",
+          "lines": [
+            "read the report"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        }
+      ],
+      "camera": "dolly_up",
+      "duration_s": 3.97,
+      "illustrates": "The panes flip working to done as the three real files graphify writes land, turning the abstract graph into artifacts you actually open."
+    },
+    {
+      "template": "diagram",
+      "eyebrow": "the answer is a path",
+      "nodes": [
+        {
+          "label": "DigestAuth",
+          "x": 16,
+          "y": 32
+        },
+        {
+          "label": "AuthMiddleware",
+          "x": 48,
+          "y": 20,
+          "accent": true
+        },
+        {
+          "label": "Session",
+          "x": 52,
+          "y": 78,
+          "accent": true
+        },
+        {
+          "label": "Response",
+          "x": 84,
+          "y": 44
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1,
+          "accent": true
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "accent": true
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "accent": true
+        },
+        {
+          "from": 0,
+          "to": 2,
+          "accent": true,
+          "style": "dashed"
+        }
+      ],
+      "camera": "orbit",
+      "emphasize": true,
+      "money_shot": true,
+      "duration_s": 4.48,
+      "illustrates": "The graph draws on and one green path lights up from DigestAuth through to Response, so the word connection becomes a literal traversal, the solid edges extracted and the dashed one inferred."
+    },
+    {
+      "template": "flash",
+      "word": "one path",
+      "caption": "instead of a thousand files",
+      "camera": "crash_zoom",
+      "duration_s": 3.0,
+      "illustrates": "The frame floods graphify green and the payoff lands: one path replaces the thousand-file grep."
+    },
+    {
+      "template": "close",
+      "primary": "stop grepping.",
+      "accent": "start asking.",
+      "subtitle": "graphify by @safishamsii",
+      "camera": "pull_back",
+      "emphasize": true,
+      "sheen": true,
+      "duration_s": 3.8,
+      "illustrates": "The thesis lands as a two-beat imperative and the graphify wordmark returns, rhyming with the opening session so the autoloop closes clean."
+    }
+  ]
+}

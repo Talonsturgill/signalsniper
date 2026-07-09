@@ -206,5 +206,31 @@
       "data_viz",
       "object_metaphor"
     ]
+  },
+  {
+    "date": "2026-07-09",
+    "arc": "question_answer",
+    "device": "terminal",
+    "hero": "reaction_consequence",
+    "open": "in_media_res",
+    "close": "punchline",
+    "scene_seq": [
+      "LIVE_ASK",
+      "GREP_NOISE",
+      "HOW_GRAPH",
+      "OUTPUT_FILES",
+      "PATH_LIGHTS",
+      "ANSWER_FIELD",
+      "ASK_CLOSE"
+    ],
+    "device_seq": [
+      "terminal",
+      "kinetic_type",
+      "kinetic_type",
+      "diegetic_ui",
+      "node_diagram",
+      "kinetic_type",
+      "kinetic_type"
+    ]
   }
 ]

@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-09",
+  "brand_slug": "graphify-native",
+  "aesthetic_slug": "graphify-native",
+  "preset_slug": null,
+  "framework": "CLASSIC",
+  "rationale_one_line": "A clean question-answer demonstration (ask, friction, how, answer, close) fits CLASSIC's declarative vocabulary; the story needs no cascade, no scoreboard, no dateline.",
+  "writing_tone_notes": "Peer-to-peer, declarative, show-don't-tell. Lead the contrast (grep vs a real path), let the tool answer, no superlatives. Contractions where natural.",
+  "do_rules": [
+    "ship graphify's own green-on-dark identity (native --bg and --accent mined)",
+    "open in a live session so frame 0 is a working tool",
+    "spend the one graph moment on the ANSWER (a lit path), not a node tour",
+    "carry two designed brightness beats (the lit path and the flash field)"
+  ],
+  "dont_rules": [
+    "no node-diagram tour of the whole graph (the killed default)",
+    "no on-screen star or growth beat (variety MUST SKIP this run)",
+    "no invented terminal commands (only the documented /graphify invocations)",
+    "no version numbers as hooks"
+  ]
+}

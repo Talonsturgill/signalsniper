@@ -1,0 +1,35 @@
+{
+  "date": "2026-07-09",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "components": [
+    "tree-sitter AST parser (deterministic, local, no LLM)",
+    "NetworkX graph engine",
+    "Leiden community detection (finds clusters and the 'god node')",
+    "EXTRACTED vs INFERRED edge classifier",
+    "cross-file link resolver across nine core languages (Python, TypeScript, JavaScript, Go, Rust, Java, C, C++, Ruby)",
+    "MCP server that exposes the graph as agent tools",
+    "three outputs: graph.html, GRAPH_REPORT.md, graph.json"
+  ],
+  "commands": [
+    {"text": "pip install graphifyy && graphify install", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"},
+    {"text": "/graphify .", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"},
+    {"text": "/graphify query \"what connects attention to the optimizer?\"", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"},
+    {"text": "/graphify path \"DigestAuth\" \"Response\"", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"},
+    {"text": "/graphify explain \"SwinTransformer\"", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"}
+  ],
+  "outputs": [
+    {"text": "graph.html", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"},
+    {"text": "GRAPH_REPORT.md", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"},
+    {"text": "graph.json", "source": "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md"}
+  ],
+  "architecture_facts": [
+    "code is parsed locally with tree-sitter AST, so extraction is deterministic and nothing leaves your machine",
+    "it builds a real graph you traverse, not a vector index of embeddings",
+    "every relationship is tagged EXTRACTED (explicit in the source) or INFERRED (derived)",
+    "you query connections in plain English instead of grepping file by file",
+    "the graph can be served as an MCP server so an agent queries it as a tool",
+    "Leiden clustering surfaces the most-connected 'god node' and communities"
+  ],
+  "surprising_detail": "graphify does not embed your code into a vector store. It parses it locally with tree-sitter into an actual graph, so when you ask 'what connects auth to the database' it walks a real path and every edge on that path is labeled EXTRACTED or INFERRED, so you can tell what it read from what it guessed.",
+  "prompt_char": ">"
+}
