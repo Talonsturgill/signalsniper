@@ -1,0 +1,74 @@
+{
+  "date": "2026-07-09",
+  "project": "graphify",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "design": {
+    "framework": "CLASSIC",
+    "brand_slug": "graphify-native",
+    "tokens": {
+      "canvas": "#132417",
+      "ink": "#e6f5ec",
+      "accent": "#4ade80",
+      "ink_muted": "#87918b",
+      "hairline": "#223026"
+    },
+    "provenance": {
+      "canvas": "native css var --bg (#040806) lifted into graphify's own green family (~luma 29) to clear the frame-brightness floor and the operator's standing 'every video seems dark' note",
+      "accent": "native css var --accent (#22c55e, hue 142) lifted ~30 luma to #4ade80 (same 142 hue, graphify green) so the flash inverted field clears the readability spread floor and reads genuinely bright",
+      "ink": "site body ink #e6f5ec (frequency heuristic, near-white)",
+      "ink_muted": "extractor derived mix(ink, canvas)",
+      "hairline": "derived mix(ink, canvas) at the lifted canvas"
+    },
+    "extract_confidence": "medium",
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "scale",
+      "scene_in_s": 0.24,
+      "scene_out_s": 0.15,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.2,
+      "halation": 0.05,
+      "lighting_arc": 0.26
+    },
+    "background": {
+      "style": "aurora",
+      "intensity": 0.7
+    },
+    "transition_style": "cut_kick",
+    "foley_style": "sub_impact",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.0
+  },
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_luma_floor": 230,
+    "notes": "Dark green canvas (~luma 29). Hero/body text ships as --ink (#e6f5ec, ~242 luma) so p99.3 clears 180. Accent-scale TEXT uses the renderer's --accent-ink (accent lifted to ~205); raw #4ade80 stays on dots, edges, glow, and the flash field. Muted content lines use --muted-content; raw --ink-muted only for decorative tags.",
+    "bright_beats": [
+      "scene 5 diagram: the lit green path is the frame's light source (the ANSWER)",
+      "scene 6 flash: full-bleed bright green field (#4ade80 ~luma 167), inverted polarity measured on its own"
+    ],
+    "inverted_beats": ["scene 6 flash"],
+    "brightness_plan": "Canvas lifted off near-black plus a green aurora lift plus one full bright-green flash field targets overall mean luma >= 46; the flash and the lit path are the two designed brightness beats (color-script, not one dark wash)."
+  },
+  "color_gate_note": "accent hue 142 (green) sits 125 off 07-07 violet (267) and 106 off 07-08 amber (36), both >= 60, with ΔE00 far past 11; canvas stays dark. Passes variety_check color gate on hue+ΔE00."
+}

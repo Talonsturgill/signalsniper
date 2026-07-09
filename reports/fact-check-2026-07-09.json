@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-09",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "claims": [
+    {
+      "claim": "more than 76,000 stars",
+      "sources": [
+        "https://www.star-history.com/safishamsi/graphify/",
+        "https://skillsllm.com/skill/graphify"
+      ],
+      "verified": true,
+      "as_of": "2026-07-09",
+      "note": "Third-party star trackers report 76.6k (star-history) and 76.3k (skillsllm). GitHub repo page shows a higher figure (80.7k on the Graphify-Labs mirror). 'more than 76,000' is conservatively true across all sources. Shipped as the single caption growth metric."
+    },
+    {
+      "claim": "supports nine programming languages (Python, TypeScript, JavaScript, Go, Rust, Java, C, C++, Ruby)",
+      "sources": [
+        "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md",
+        "https://github.com/safishamsi/graphify"
+      ],
+      "verified": true,
+      "as_of": "2026-07-09",
+      "note": "README documents nine core languages parsed via tree-sitter, plus additional languages. Not shipped as a numeral in copy; kept for scene grounding."
+    },
+    {
+      "claim": "parses code locally with tree-sitter AST (deterministic, no LLM); builds a real graph, not vector embeddings",
+      "sources": [
+        "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md",
+        "https://github.com/safishamsi/graphify"
+      ],
+      "verified": true,
+      "as_of": "2026-07-09",
+      "note": "Capability fact / differentiator. Non-numeric; qualitative capability claim double-sourced against repo README and repo page."
+    },
+    {
+      "claim": "every edge is labeled EXTRACTED or INFERRED",
+      "sources": [
+        "https://raw.githubusercontent.com/safishamsi/graphify/main/README.md",
+        "https://github.com/safishamsi/graphify"
+      ],
+      "verified": true,
+      "as_of": "2026-07-09",
+      "note": "The two documented edge classifications. Used on the money-shot diagram and mono_block."
+    },
+    {
+      "claim": "YC S26; founder Safi Shamsi",
+      "sources": [
+        "https://uk.linkedin.com/in/safi-shamsi",
+        "https://github.com/safishamsi"
+      ],
+      "verified": true,
+      "as_of": "2026-07-09",
+      "note": "LinkedIn title: Founder & CEO @Graphify Labs, YC S26. GitHub profile confirms identity. Used in dossier / why-this-one, not shipped as a numeral."
+    }
+  ]
+}

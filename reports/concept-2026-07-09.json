@@ -1,0 +1,16 @@
+{
+  "date": "2026-07-09",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "singular_truth": "graphify does not embed your code into a vector store. It parses it locally with tree-sitter into a real graph you traverse, and every edge is labeled EXTRACTED or INFERRED, so you can ask a plain-English question and get back an actual path you can trust.",
+  "money_thing": "You ask your codebase 'what connects attention to the optimizer' and instead of 200 grep hits you get one real path walked through the graph, with each edge marked EXTRACTED or INFERRED.",
+  "logline": "Watch a coding agent stop grepping and start asking, then get a real path back from its own codebase.",
+  "rejected_default": "The reflexive 'draw the knowledge graph as a field of floating nodes and orbit it' tour. Every graph-tool video does exactly that, and it shows the DATA STRUCTURE instead of the PAYOFF. graphify's win is not that it has a graph, it is that you can ask it a question and get a trustworthy path, so the spine is a live query session (terminal), not a node tour. The graph appears exactly once, as the ANSWER lighting up, not as the subject.",
+  "arc": "question_answer",
+  "device": "terminal",
+  "hero": "reaction_consequence",
+  "open": "in_media_res",
+  "close": "punchline",
+  "scene_seq": ["LIVE_ASK", "GREP_NOISE", "HOW_GRAPH", "OUTPUT_FILES", "PATH_LIGHTS", "ANSWER_FIELD", "ASK_CLOSE"],
+  "device_seq": ["terminal", "kinetic_type", "kinetic_type", "diegetic_ui", "node_diagram", "kinetic_type", "kinetic_type"],
+  "references": ["a live Claude Code session where you can see the human type", "a colorist's single-hue green world (Matrix-adjacent, but warm-neutral not toxic)", "the 'query, don't grep' framing of graph databases"]
+}

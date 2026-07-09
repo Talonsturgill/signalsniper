@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-09",
+  "project_url": "https://github.com/safishamsi/graphify",
+  "creator_handle": "@safishamsii",
+  "caption": "@safishamsii's graphify just crossed 76,000 stars. It maps your codebase into a real graph you can query, so instead of grepping you ask and get back an actual path. Parsed locally with tree-sitter, every edge marked extracted or inferred.",
+  "capability_fact": "maps your codebase into a real graph you can query",
+  "differentiator": "graphify parses your code into a real graph you traverse, so you ask a plain question and get back an actual path instead of vector-search guesses.",
+  "first_reply": "The repo, MIT and pip-installable with graphifyy. https://github.com/safishamsi/graphify",
+  "why_this_one": "Safi came out of medical knowledge-graph research in Birmingham, carried the graph-over-embeddings idea into dev tooling, and rode it into YC S26 as a solo founder. The conviction is earned, not a pitch.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Aphelion by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Most code tools throw your repo into a vector store and hope semantic search finds the right chunk. graphify does the opposite. It parses your code locally with tree-sitter and builds an actual graph you can walk. So you ask what connects auth to the database and it hands back a real path instead of 200 grep hits. Every edge is tagged extracted or inferred so you know what it read and what it guessed. Safi Shamsi shipped it as a skill any coding agent can install and it just crossed 76k stars. I have wanted this exact thing every time an agent grepped the same file five times.",
+  "linkedin_hashtags": "#AI #DevTools #KnowledgeGraphs #CodingAgents",
+  "linkedin_tag": {"name": "Safi Shamsi", "url": "https://uk.linkedin.com/in/safi-shamsi"}
+}

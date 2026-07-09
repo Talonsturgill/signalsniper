@@ -1,0 +1,20 @@
+{
+  "tokens": {
+    "canvas": "#040806",
+    "ink": "#e6f5ec",
+    "ink_muted": "#87918b",
+    "accent": "#22c55e",
+    "hairline": "#252b28"
+  },
+  "provenance": {
+    "canvas": "css var --bg",
+    "accent": "css var --accent",
+    "ink": "frequency heuristic (lightest common)",
+    "ink_muted": "derived mix(ink, canvas)",
+    "hairline": "derived mix(ink, canvas, 0.85)"
+  },
+  "confidence": "medium",
+  "dark_canvas": true,
+  "source_url": "https://graphifylabs.ai/",
+  "notes": []
+}
