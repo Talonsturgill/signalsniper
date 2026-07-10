@@ -293,5 +293,10 @@
     "date": "2026-07-09",
     "slug": "aphelion",
     "project_url": "https://github.com/safishamsi/graphify"
+  },
+  {
+    "date": "2026-07-10",
+    "slug": "meanwhile",
+    "project_url": "https://github.com/unclecode/crawl4ai"
   }
 ]

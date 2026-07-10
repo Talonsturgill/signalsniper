@@ -1,0 +1,16 @@
+{
+  "date": "2026-07-10",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "singular_truth": "crawl4ai does not crawl a whole site. Its Adaptive Crawler scores each page's relevance against your query and keeps a running confidence, then STOPS once it decides it has learned enough. It reads a site the way a researcher does, following only what matters and quitting when the answer is covered, instead of spidering everything.",
+  "money_thing": "The confidence meter climbs as the crawler selectively follows only the relevant pages, crosses the 'enough' threshold, and the crawl HALTS mid-site. The crawler that knows when to stop.",
+  "logline": "Most crawlers read every page. Watch one score relevance live and stop the moment it knows it has enough.",
+  "rejected_default": "The reflexive crawler video: a terminal typing `crwl <url>` then a messy-HTML-on-the-left, clean-markdown-on-the-right split screen. Every scraper claims clean output, so that beat shows the commodity (markdown) and hides the actual differentiator (adaptive stopping). Terminal is also the template tell this series overuses. Rejected: the spine is the confidence curve deciding to stop, not a command demo, and the markdown is one supporting beat, not the thesis.",
+  "arc": "data_story",
+  "device": "data_viz",
+  "hero": "data_spike",
+  "open": "ui_closeup",
+  "close": "thesis_card",
+  "scene_seq": ["EVERY_PAGE", "SELECTIVE_MAP", "CONFIDENCE_RISE", "CLEAN_OUT", "THE_STOP", "STAR_RECEIPT", "KNOWS_WHEN"],
+  "device_seq": ["diegetic_ui", "metaphor_illustration", "data_viz", "diegetic_ui", "data_viz", "data_viz", "kinetic_type"],
+  "references": ["a colorist's bright editorial white world (Notion/Linear docs light mode, not another dark terminal)", "a lab instrument's confidence gauge crossing a setpoint", "the 'stop when you know enough' idea from active learning and best-first search"]
+}

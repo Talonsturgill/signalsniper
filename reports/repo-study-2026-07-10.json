@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-10",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "components": [
+    "AsyncWebCrawler (the core async crawler; used as `async with AsyncWebCrawler() as crawler`)",
+    "AdaptiveCrawler (scores page relevance to a query and stops when confident it has enough)",
+    "Content filters: PruningContentFilter, BM25ContentFilter",
+    "Extraction strategies: LLMExtractionStrategy, JsonCssExtractionStrategy, LLMTableExtraction",
+    "Deep-crawl strategies: BFS, DFS, Best-First",
+    "Markdown generators: DefaultMarkdownGenerator (produces result.markdown and result.markdown.fit_markdown)",
+    "Config objects: BrowserConfig, CrawlerRunConfig"
+  ],
+  "commands": [
+    {"text": "pip install -U crawl4ai", "source": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md"},
+    {"text": "crawl4ai-setup", "source": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md"},
+    {"text": "crwl https://www.nbcnews.com/business -o markdown", "source": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md"},
+    {"text": "crwl https://docs.crawl4ai.com --deep-crawl bfs --max-pages 10", "source": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md"}
+  ],
+  "outputs": [
+    {"text": "result.markdown", "source": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md"},
+    {"text": "result.markdown.fit_markdown", "source": "https://raw.githubusercontent.com/unclecode/crawl4ai/main/README.md"}
+  ],
+  "architecture_facts": [
+    "Turns raw web pages into clean, LLM-ready Markdown (result.markdown) with an optional filtered fit_markdown for RAG",
+    "The AdaptiveCrawler scores each page's relevance to the query and keeps a running confidence, exploring only relevant content instead of the whole site",
+    "Deep crawl supports BFS, DFS, and Best-First traversal so exploration order is a first-class choice, not fixed",
+    "Secure-by-default Docker deployment with browser control; runs fully local, no API key required for the crawl itself",
+    "Content filtering (Pruning / BM25) strips boilerplate before markdown so only signal survives"
+  ],
+  "surprising_detail": "The Adaptive Crawler does not crawl a whole site — it measures its own confidence that it has learned enough about your query and STOPS mid-site once it crosses that threshold, exploring only relevant pages instead of spidering everything."
+}

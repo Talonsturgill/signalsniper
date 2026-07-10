@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-06-07",
-    "brand_slug": null,
-    "aesthetic_slug": "mono-terminal",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/Leonxlnx/taste-skill"
-  },
-  {
     "date": "2026-06-08",
     "brand_slug": null,
     "aesthetic_slug": "subway-chrome",
@@ -208,5 +201,12 @@
     "aesthetic_slug": "graphify-native",
     "framework": "CLASSIC",
     "project_url": "https://github.com/safishamsi/graphify"
+  },
+  {
+    "date": "2026-07-10",
+    "brand_slug": "crawl4ai-native-assisted",
+    "aesthetic_slug": "crawl4ai-native-assisted",
+    "framework": "RECEIPT",
+    "project_url": "https://github.com/unclecode/crawl4ai"
   }
 ]

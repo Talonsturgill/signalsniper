@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-05-26",
-    "project_url": "https://github.com/affaan-m/ECC",
-    "framework": "DISPATCH",
-    "background": null,
-    "motion_register": "fade",
-    "transition_style": "cut_kick",
-    "foley_style": "whoosh_thud",
-    "open_template": "title",
-    "close_template": "close",
-    "templates": [
-      "close",
-      "quote",
-      "terminal",
-      "three_line",
-      "title"
-    ],
-    "cameras": [
-      "ken_burns",
-      "orbit",
-      "parallax_drift",
-      "pull_back"
-    ],
-    "has_growth_beat": false,
-    "accent_hex": "#BC684D",
-    "canvas_hex": "#F5EFE3",
-    "accent_hue": 14.594594594594593,
-    "temp": "warm",
-    "canvas_value": "light"
-  },
-  {
     "date": "2026-05-28",
     "project_url": "https://github.com/thedotmack/claude-mem",
     "framework": "CLASSIC",
@@ -1301,5 +1271,37 @@
     "accent_hue": 141.8918918918919,
     "temp": "cool",
     "canvas_value": "dark"
+  },
+  {
+    "date": "2026-07-10",
+    "project_url": "https://github.com/unclecode/crawl4ai",
+    "framework": "RECEIPT",
+    "background": "none",
+    "motion_register": "fade",
+    "transition_style": "hard_cut",
+    "foley_style": "riser_braam",
+    "open_template": "panes",
+    "close_template": "title",
+    "templates": [
+      "big_number",
+      "metaphor",
+      "panes",
+      "sparkline",
+      "title"
+    ],
+    "cameras": [
+      "crash_zoom",
+      "dolly_up",
+      "parallax_drift",
+      "pull_back",
+      "push_in",
+      "static_breathe"
+    ],
+    "has_growth_beat": true,
+    "accent_hex": "#0a8175",
+    "canvas_hex": "#f0ede4",
+    "accent_hue": 173.94957983193277,
+    "temp": "cool",
+    "canvas_value": "light"
   }
 ]

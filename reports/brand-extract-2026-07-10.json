@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "canvas": "#4a4a4a",
+    "ink": "#f2f0eb",
+    "ink_muted": "#abaaa7",
+    "accent": "#0be5d1",
+    "hairline": "#636262"
+  },
+  "provenance": {
+    "canvas": "css var --feedback-canvas-editor-tool-bg-hover",
+    "accent": "css var --feedback-primary-color (lightness-nudged from #09b5a5)",
+    "hairline": "derived mix(ink, canvas, 0.85)",
+    "ink": "frequency heuristic (lightest common) (softened from pure white)",
+    "ink_muted": "derived mix(ink, canvas)"
+  },
+  "confidence": "medium",
+  "dark_canvas": true,
+  "source_url": "https://crawl4ai.com",
+  "notes": [
+    "stylesheet mined: https://cdn.jsdelivr.net/npm/pushfeedback/dist/pushfeedback/pushfeedback.css"
+  ]
+}

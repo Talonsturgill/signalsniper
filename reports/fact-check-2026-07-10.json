@@ -1,0 +1,25 @@
+{
+  "date": "2026-07-10",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "claims": [
+    {
+      "claim": "72k stars",
+      "sources": [
+        "https://github.com/unclecode/crawl4ai",
+        "https://img.shields.io/github/stars/unclecode/crawl4ai.json"
+      ],
+      "verified": true,
+      "as_of": "2026-07-10",
+      "note": "GitHub repo page shows ~72,000 stars; shields.io live GitHub-stars badge returns message 72k. README body text still reads '51K+ star community' (stale) — the live count is used."
+    },
+    {
+      "claim": "v0.9.1 latest release (context only, NOT used in shipped copy)",
+      "sources": [
+        "https://github.com/unclecode/crawl4ai/releases"
+      ],
+      "verified": true,
+      "as_of": "2026-07-10",
+      "note": "Latest release v0.9.1. Version numbers are forbidden in the X caption; recorded only as recency evidence for picking this project."
+    }
+  ]
+}
