@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-10",
+  "project": "crawl4ai",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "audience": "AI engineers building RAG and agents who wire up a crawler and assume it has to spider the whole site",
+  "single_takeaway": "crawl4ai's Adaptive Crawler scores relevance and stops the moment it knows it has learned enough, so it reads a site like a researcher instead of a spider.",
+  "viewer_action": "star the repo / quote the video",
+  "desired_feeling": "the quiet respect of watching a tool make a smart decision on its own",
+  "tone_adjectives": ["precise", "clean", "assured"],
+  "references": ["a lab instrument's confidence gauge crossing a setpoint", "Linear/Notion light docs world", "active-learning 'stop when confident' framing"],
+  "mandatories": "crawl4ai teal on light warm-paper canvas (native-assisted), CC BY music attribution, @unclecode tagged",
+  "success_criteria": "Hossein quote-posts it because it shows the stopping intelligence, not the star count; the story reads fully muted",
+  "platform": "x"
+}

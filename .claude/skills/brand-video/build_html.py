@@ -324,7 +324,28 @@ def build_css(spec):
     hairline = t["hairline"]
     # overlay blend is invisible over near-black; screen lifts it
     sheen_blend = "screen" if _canvas_is_dark(canvas) else "overlay"
-    pane_bg = "rgba(255,255,255,0.06)" if _canvas_is_dark(canvas) else "rgba(0,0,0,0.035)"
+    # Light canvas: faint white-tint pane cards shipped washed out (2026-07-10
+    # readability FAIL, p0.7=162 then 138 with dark text -- thin glyphs never cover
+    # 0.7% of the frame). On a light canvas, render panes as dark code-panels (dark
+    # fill, light text) -- the dark code blocks you see inside light docs pages.
+    # This carries genuine dark coverage (the gate passes) AND gives an all-light run
+    # a real value-contrast beat, while the eyebrow wordmark stays dark ink on paper.
+    _pane_light = not _canvas_is_dark(canvas)
+    pane_bg = "rgba(255,255,255,0.06)" if not _pane_light else "rgba(20,24,26,0.97)"
+    pane_border = "rgba(255,255,255,0.10)" if _pane_light else "var(--hairline)"
+    pane_name_color = "var(--canvas)" if _pane_light else "var(--ink)"
+    pane_line_color = "rgba(240,237,228,0.72)" if _pane_light else "var(--muted-content)"
+    panes_eyebrow_color = "var(--ink)" if _pane_light else "var(--muted-content)"
+    # A big_number hero in --accent-ink reads ~60 luma; the finishing bloom lifts it
+    # past the light-canvas dark-ink ceiling (2026-07-10: scene 5 p0.7=77 > 70). On a
+    # light canvas the numeral ships in --ink (bold near-black); teal identity stays on
+    # the curve and nodes. Dark canvases keep the accent numeral.
+    bn_numeral_color = "var(--ink)" if _pane_light else "var(--accent-ink)"
+    # Light canvas: a teal metaphor core (accent-ink ~60, bloom-lifted) plus thin
+    # dots left too little sub-70 coverage (2026-07-10: scene metaphor p0.7=83). On a
+    # light canvas the core ships as a solid --ink disc (the decision point the network
+    # converges on) so the scene carries genuine dark coverage. Dark canvas keeps teal.
+    mp_core_fill = "var(--ink)" if _pane_light else "var(--accent-ink)"
     accent_ink = _text_safe_accent(accent, canvas)
     muted_content = _content_muted(ink_muted, ink, canvas)
 
@@ -1066,7 +1087,7 @@ body {{
    everything re-reads). Raw --accent grades below the readability floor, so the
    core uses the lifted --accent-ink and grows bigger (see animateMetaphor) to
    own the top percentile; the label is nudged up a touch for coverage too. */
-.mp-core {{ fill: var(--accent-ink); }}
+.mp-core {{ fill: {mp_core_fill}; }}
 .mp-label {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 7.0cqw; color: var(--ink); margin-top: 0.5cqw; opacity: 0; }}
 
 /* ---- oner (continuous_camera, v11 #2) ---- */
@@ -1116,7 +1137,7 @@ body {{
   font-size: 28cqw;
   line-height: 0.92;
   letter-spacing: -0.04em;
-  color: var(--accent-ink);
+  color: {bn_numeral_color};
   font-variant-numeric: tabular-nums;
   text-align: center;
 }}
@@ -1398,7 +1419,7 @@ body {{
   font-variation-settings: "wght" 600;
   font-size: 2.7cqw;
   letter-spacing: 0.34em;
-  color: var(--muted-content);
+  color: {panes_eyebrow_color};
   text-transform: uppercase;
   margin-bottom: 2.2cqw;
   opacity: 0;
@@ -1414,7 +1435,7 @@ body {{
 .panes-grid.n2 {{ grid-template-columns: 1fr; width: 74%; }}
 .pane {{
   background: {pane_bg};
-  border: 1px solid var(--hairline);
+  border: 1px solid {pane_border};
   border-radius: 6px;
   padding: 3.0cqw 3.0cqw;
   text-align: left;
@@ -1444,7 +1465,7 @@ body {{
      state badge ("task_plan.md" + WORKING) fits the narrow pane instead of the
      badge clipping at the overflow:hidden edge. */
   font-size: 2.95cqw;
-  color: var(--ink);
+  color: {pane_name_color};
   -webkit-text-stroke: 2.0px currentColor;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -1464,7 +1485,7 @@ body {{
   font-family: var(--mono);
   font-size: 2.7cqw;
   line-height: 1.6;
-  color: var(--muted-content);
+  color: {pane_line_color};
   display: block;
   opacity: 0;
   white-space: pre;
@@ -2382,7 +2403,7 @@ function animateMetaphor(el, t, dur) {
       ln.style.opacity = (eo*0.42).toFixed(3);
     }
   }
-  if (core) { const cr = easeOutBack(clamp01((t - dur*0.30)/(dur*0.35)))*6.5; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
+  if (core) { const cr = easeOutBack(clamp01((t - dur*0.30)/(dur*0.35)))*8.6; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
   if (label) { const e = easeOut(clamp01((t - dur*0.40)/0.5)); label.style.opacity = e.toFixed(3);
     label.style.transform = `translateY(${(10*(1-e)).toFixed(1)}px)`; }
 }

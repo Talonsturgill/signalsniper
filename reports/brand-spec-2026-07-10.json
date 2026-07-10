@@ -1,0 +1,76 @@
+{
+  "date": "2026-07-10",
+  "project": "crawl4ai",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "design": {
+    "framework": "RECEIPT",
+    "brand_slug": "crawl4ai-native-assisted",
+    "tokens": {
+      "canvas": "#f0ede4",
+      "ink": "#14181a",
+      "accent": "#0a8175",
+      "ink_muted": "#5c6162",
+      "hairline": "#d7d1c4"
+    },
+    "provenance": {
+      "canvas": "crawl4ai ships a light docs mode; canvas set to a warm editorial paper (#f0ede4, ~luma 237) \u2014 a deliberate canvas-value flip off the last two dark videos, which also clears the frame-brightness floor by construction",
+      "accent": "crawl4ai's teal, deepened for a light canvas. crawl4ai's electric teal (#09b5a5 / #0be5d1) washes out on cream at only 2.2:1 contrast, so the accent is deepened along the same ~173 hue to #0a8175 (a forest-teal) which clears the 3.0:1 accent floor at 4.07:1 while staying recognizably crawl4ai's color. The renderer auto-derives --accent-ink (blended toward ink) for teal-scale TEXT; raw #0a8175 carries the confidence curve, nodes, dots and glow with real contrast on the paper. (The extractor's #0be5d1 was the pushfeedback widget's --feedback-primary-color, not the site's identity.)",
+      "ink": "near-black cool ink #14181a (~luma 23) for a light canvas \u2014 clears the light-canvas ink floor (<= 60)",
+      "ink_muted": "mid-gray #5c6162 (~luma 96) for detail rows; --muted-content derives darker toward ink",
+      "hairline": "warm light hairline #d7d1c4 derived off the paper canvas"
+    },
+    "extract_confidence": "medium",
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.2,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.12,
+      "halation": 0.03,
+      "lighting_arc": 0.14
+    },
+    "background": {
+      "style": "none",
+      "intensity": 0.0
+    },
+    "transition_style": "hard_cut",
+    "foley_style": "riser_braam",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.0
+  },
+  "readability": {
+    "canvas_polarity": "light",
+    "ink_luma_floor": 60,
+    "notes": "Light warm-paper canvas (~luma 237). Hero/body text ships as --ink (#14181a, ~luma 23). Dark-canvas type sizes and colors did NOT transfer to light (per CRAFT_LOG) \u2014 three readability FAILs were root-caused and fixed in build_html.py so a light canvas ships genuine dark coverage, not thin gray glyphs: (1) panes render as dark code-panels (dark fill, light text) \u2014 the dark code blocks inside light docs pages; (2) the big_number hero numeral ships in --ink (a teal --accent-ink hero was bloom-lifted past the light-canvas ceiling); (3) the metaphor core is a solid --ink disc (the decision point the network converges on). Teal identity stays on the confidence curve, dots and glow (raw #0a8175, 4.07:1 on canvas). Final screening: all scenes pass, min luma spread 188, poster std 89.6.",
+    "bright_beats": [
+      "the whole runtime is a bright light frame (mean luma far above the 46 floor) \u2014 the operator's 'every video seems dark' complaint is answered by canvas, not grade",
+      "the saturated teal confidence curve is the graphic light source / focal pop in scenes 3 and 5 against the warm paper"
+    ],
+    "inverted_beats": [
+      "none \u2014 this is a deliberately all-light editorial run (the whole frame is the bright field). A forced dark inverted scene would reintroduce the exact darkness the canvas flip removes, so the contrast budget is spent on teal saturation against cream, not on a polarity flip. The renderer has no per-scene polarity flag, so a light run stays light; the money shot reads as the peak via the crash_zoom camera, the riser_braam foley button, and the curve reaching full glow on the threshold cross (emphasize)."
+    ],
+    "brightness_plan": "Bright light-canvas throughout \u2014 mean luma sits far above the 46 floor and every scene clears the bright-scene threshold, so the frame-brightness gate passes by construction. The color script is teal-saturation contrast (the curve and lit nodes pop against warm paper) plus camera dynamics, not a dark/light value swing; the standing 'every video seems dark' note is answered wholesale by the canvas."
+  },
+  "color_gate_note": "Accent is crawl4ai's teal (hue ~174), only 32 off 07-09's green (142) and 138 off 07-08's amber (36) \u2014 the HUE clause alone would FAIL against green. Satisfied instead by the CANVAS-VALUE FLIP: 07-08 and 07-09 were both dark; this run is a light warm-paper canvas (dark->light), which the variety color gate accepts. Temperature also reads differently (a warm paper world vs two dark cool/warm accent worlds)."
+}

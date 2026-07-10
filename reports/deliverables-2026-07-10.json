@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-10",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "creator_handle": "@unclecode",
+  "caption": "@unclecode crawl4ai just crossed 72k stars. The part most people miss is its adaptive crawler. It scores each page for relevance and stops the moment it knows enough, reading a site like a researcher instead of spidering everything. What led you to the stopping logic?",
+  "capability_fact": "scores each page for relevance and stops the moment it knows enough",
+  "differentiator": "crawl4ai's adaptive crawler scores each page's relevance and stops mid-site the moment it knows it has learned enough, instead of spidering the whole site.",
+  "first_reply": "Repo: https://github.com/unclecode/crawl4ai  Docs: https://docs.crawl4ai.com",
+  "why_this_one": "Most scraper posts brag about clean output. Hossein went further and taught the crawl to quit, scoring confidence per page and halting once the answer is covered. That restraint is the hard part, and the reason this reads as engineering and not a wrapper.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Meanwhile by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Everyone building RAG wires up a crawler and just lets it eat the whole site. crawl4ai does something smarter. It scores how relevant each page is and stops the second it knows it has enough. So it reads a site the way I would, following what matters and quitting when the answer is covered. Hossein has it at 72k stars now and the adaptive part is the reason I keep pointing people to it. Clean markdown is nice. Knowing when to stop is the real craft.",
+  "linkedin_hashtags": "#AI #RAG #OpenSource #DevTools",
+  "linkedin_tag": {"name": "Unclecode (Hossein)", "url": "https://www.linkedin.com/in/unclecode"}
+}

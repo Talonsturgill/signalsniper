@@ -1,0 +1,186 @@
+{
+  "date": "2026-07-10",
+  "project": "crawl4ai",
+  "project_url": "https://github.com/unclecode/crawl4ai",
+  "design": {
+    "framework": "RECEIPT",
+    "brand_slug": "crawl4ai-native-assisted",
+    "tokens": {
+      "canvas": "#f0ede4",
+      "ink": "#14181a",
+      "accent": "#0a8175",
+      "ink_muted": "#5c6162",
+      "hairline": "#d7d1c4"
+    },
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.2,
+      "scene_out_s": 0.27,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 6,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.12,
+      "halation": 0.03,
+      "lighting_arc": 0.14
+    },
+    "background": {
+      "style": "none",
+      "intensity": 0.0
+    },
+    "transition_style": "hard_cut",
+    "foley_style": "riser_braam",
+    "audio_palette": "electronic",
+    "accent_contrast_min": 3.0,
+    "beat": {
+      "bpm": 129.2,
+      "offset_s": 30.0,
+      "aligned": true,
+      "median_drift_ms": 124.2
+    }
+  },
+  "scenes": [
+    {
+      "template": "panes",
+      "eyebrow": "crawl4ai",
+      "panes": [
+        {
+          "name": "/docs",
+          "lines": [
+            "reading"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "/api",
+          "lines": [
+            "reading"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "/blog/2019",
+          "lines": [
+            "reading"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        }
+      ],
+      "camera": "static_breathe",
+      "sheen": true,
+      "duration_s": 3.88,
+      "illustrates": "We open on crawl4ai crawling a stack of pages, /docs, /api, even an old /blog/2019, one after another. The wordmark names the tool at frame 0 and the reading cards establish the crawler's job before the turn."
+    },
+    {
+      "template": "metaphor",
+      "label": "it scores what matters",
+      "camera": "parallax_drift",
+      "duration_s": 4.2,
+      "illustrates": "A site fans out into a network of nodes; only the pages relevant to the query converge and glow teal while the rest stay gray, so the words 'scores what matters' become crawl4ai visibly choosing what to read."
+    },
+    {
+      "template": "sparkline",
+      "eyebrow": "relevance, scored",
+      "values": [
+        0.05,
+        0.12,
+        0.2,
+        0.3,
+        0.42,
+        0.55,
+        0.66,
+        0.74
+      ],
+      "value_label": "score",
+      "caption": "page by page",
+      "camera": "push_in",
+      "duration_s": 4.0,
+      "illustrates": "A confidence curve draws upward as crawl4ai reads only the relevant pages, so the abstract idea of relevance becomes a live measurement climbing on screen, page by page."
+    },
+    {
+      "template": "panes",
+      "eyebrow": "only the signal survives",
+      "panes": [
+        {
+          "name": "markdown",
+          "lines": [
+            "the whole page"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "fit_markdown",
+          "lines": [
+            "only the signal"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        }
+      ],
+      "camera": "dolly_up",
+      "duration_s": 4.3,
+      "illustrates": "Two output panes land, the full result.markdown and the filtered result.markdown.fit_markdown, so the line 'only the signal survives' is enacted by the second pane keeping clean ranked content instead of the page's noise."
+    },
+    {
+      "template": "sparkline",
+      "values": [
+        0.28,
+        0.44,
+        0.6,
+        0.74,
+        0.86,
+        0.93,
+        0.96,
+        0.96
+      ],
+      "value_label": "enough",
+      "caption": "it stops when it knows enough",
+      "camera": "crash_zoom",
+      "emphasize": true,
+      "money_shot": true,
+      "sheen": true,
+      "duration_s": 4.41,
+      "illustrates": "The confidence crosses the threshold and the curve flattens at full teal glow as the crawl halts, so the phrase 'stops when it knows enough' is the curve itself deciding to stop mid-site. This is the differentiator shown, and the crash-zoom plus the one foley button make it the peak."
+    },
+    {
+      "template": "big_number",
+      "numeral": "72k",
+      "caption": "github stars",
+      "camera": "pull_back",
+      "duration_s": 3.97,
+      "illustrates": "The receipt lands once, after the mechanism earned it: 72k GitHub stars count up, so the scoreboard reads as the payoff rather than the pitch."
+    },
+    {
+      "template": "title",
+      "headline": "it knows when to stop",
+      "eyebrow": "crawl4ai",
+      "camera": "static_breathe",
+      "emphasize": true,
+      "sheen": true,
+      "duration_s": 3.8,
+      "illustrates": "The thesis lands as one line and the crawl4ai wordmark returns, rhyming with the opening panes so the autoloop closes clean on the single idea: a crawler that knows when to stop."
+    }
+  ]
+}

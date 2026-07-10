@@ -1,0 +1,40 @@
+{
+  "date": "2026-07-10",
+  "project": "crawl4ai",
+  "differentiator": "crawl4ai's Adaptive Crawler measures its own confidence and STOPS mid-site once it has learned enough for your query, instead of spidering every page.",
+  "concepts": [
+    {
+      "name": "The crawler that knows when to stop",
+      "world": "A bright, clean editorial instrument panel — crawl4ai's light docs world. A confidence gauge and a spreading site map, teal on warm paper. It feels like watching a careful researcher, not a spider farm.",
+      "shows": "A site fans out as a small map; only the relevant pages light teal while the rest stay gray. A confidence curve climbs alongside. It crosses the 'enough' line, the frame flips to a dark teal-lit field, and the crawl HALTS. Then the clean fit_markdown draws on, and the receipt (72k) lands.",
+      "money_shot": "The confidence curve crosses the threshold and the crawl stops mid-map — an inverted dark beat so the 'stop' reads as the peak.",
+      "why_repost": "It flatters the one thing Hossein actually built that nobody else bothers to show — the stopping intelligence — not the star count. A builder reposts the mechanism.",
+      "why_stop_scroll": "A crawler that QUITS on purpose is a counter-intuitive image; the bright paper world is a pattern break from the dark AI-tool feed."
+    },
+    {
+      "name": "Every page vs only what matters",
+      "world": "A split editorial page: a dense wall of every URL on the left, a sparse lit path on the right.",
+      "shows": "The wall of pages dims to gray; a handful light up as the only ones read.",
+      "money_shot": "The wall goes dark and one lit path remains.",
+      "why_repost": "Clean contrast, but it leans on split_compare which 07-06 already used and reads closer to the commodity 'clean output' story.",
+      "why_stop_scroll": "Strong contrast, but less singular than the stopping idea."
+    },
+    {
+      "name": "Markdown out of noise",
+      "world": "A messy webpage morphing into clean markdown.",
+      "shows": "HTML soup resolves into tidy fit_markdown.",
+      "money_shot": "The markdown lands.",
+      "why_repost": "Weakest — this is exactly the rejected default; every scraper claims it, and it hides the adaptive intelligence.",
+      "why_stop_scroll": "Familiar, low novelty."
+    }
+  ],
+  "picked": "The crawler that knows when to stop",
+  "wow_bets": [
+    "the confidence curve crossing the 'enough' line and the crawl HALTING (inverted dark money beat)",
+    "the selective site map: relevant pages light teal, the rest stay gray — the crawler choosing",
+    "a bright warm-paper world that reads clean at a glance in a sunlit room (no dark-room type)"
+  ],
+  "light_plan": "Bright light canvas holds every scene far above the brightness floor. Each scene owns a bright graphic focal element in dark ink or saturated teal: the wordmark + page cards (s1), the lit teal nodes (s2), the drawing curve (s3), the markdown plate (s4), the glowing curve at the threshold (s5), the count-up numeral (s6), the thesis wordmark (s7). The renderer has no per-scene polarity flip, so the run stays all-light on purpose — the whole point of the flip is to answer 'every video seems dark.'",
+  "color_script": "Warm paper world throughout with teal as the single saturated pop. The contrast beats are teal-saturation and camera dynamics (the curve and lit nodes against cream), not a dark/light value swing — a light editorial run is the deliberate opposite of the last two dark videos.",
+  "cut_plan": "Hard cuts throughout (no dissolve). Motion carries through each cut: the curve is already drawing when scene 3 enters, the map is already spreading when scene 2 enters. The one foley riser_braam button lands on the STOP; no swipe between scenes."
+}

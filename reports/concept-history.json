@@ -232,5 +232,31 @@
       "kinetic_type",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-10",
+    "arc": "data_story",
+    "device": "data_viz",
+    "hero": "data_spike",
+    "open": "ui_closeup",
+    "close": "thesis_card",
+    "scene_seq": [
+      "EVERY_PAGE",
+      "SELECTIVE_MAP",
+      "CONFIDENCE_RISE",
+      "CLEAN_OUT",
+      "THE_STOP",
+      "STAR_RECEIPT",
+      "KNOWS_WHEN"
+    ],
+    "device_seq": [
+      "diegetic_ui",
+      "metaphor_illustration",
+      "data_viz",
+      "diegetic_ui",
+      "data_viz",
+      "data_viz",
+      "kinetic_type"
+    ]
   }
 ]
