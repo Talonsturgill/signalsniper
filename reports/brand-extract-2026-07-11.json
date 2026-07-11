@@ -1,0 +1,13 @@
+{
+ "error": "insufficient signal",
+ "attempts": [
+  {
+   "url": "https://github.com/JustVugg/colibri",
+   "result": "no colors"
+  },
+  {
+   "url": "https://huggingface.co/jlnsrk/GLM-5.2-colibri-int4",
+   "result": "returned Hugging Face chrome green #97f295, hosting-platform identity not colibri, rejected"
+  }
+ ]
+}

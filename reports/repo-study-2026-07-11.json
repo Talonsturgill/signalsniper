@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-11",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "components": [
+    "a single C engine file c/glm.c (~2,400 lines) plus small headers",
+    "the dense core (~17B params: attention, shared experts, embeddings) kept resident in RAM at int4 (~9.9 GB)",
+    "the 21,504 routed experts held on disk (~370 GB int4), streamed on demand",
+    "a per-layer LRU cache for streamed experts, with an optional pinned hot-store",
+    "the OS page cache used as a free second-level cache",
+    "an int4 weight container with an int8 MTP (multi-token prediction) speculation head"
+  ],
+  "commands": [
+    {"text": "cd c && ./setup.sh", "source": "https://github.com/JustVugg/colibri"},
+    {"text": "./coli convert --model /nvme/glm52_i4", "source": "https://github.com/JustVugg/colibri"},
+    {"text": "COLI_MODEL=/nvme/glm52_i4 ./coli chat", "source": "https://github.com/JustVugg/colibri"},
+    {"text": "COLI_MODEL=/nvme/glm52_i4 COLI_API_KEY=local-secret ./coli serve", "source": "https://github.com/JustVugg/colibri"}
+  ],
+  "outputs": [
+    {"text": "colibri v1.0 - GLM-5.2 - 744B MoE - int4 - streaming CPU", "source": "https://github.com/JustVugg/colibri"},
+    {"text": "ready in 32s - resident 9.9 GB", "source": "https://github.com/JustVugg/colibri"}
+  ],
+  "architecture_facts": [
+    "GLM-5.2 is a 744-billion-parameter Mixture-of-Experts model that activates only about 40B params per token",
+    "colibri keeps only the ~17B dense core in memory and leaves the 21,504 routed experts on disk",
+    "for each token it streams in just the experts that token routes to, then caches them per layer with an LRU policy",
+    "so the resident footprint is ~9.9 GB and peak RSS is auto-capped near 20 GB, on a machine with about 25 GB of RAM",
+    "the whole engine is one portable C file with no BLAS, no Python at runtime, no GPU, and no Docker",
+    "cold decode is slow (roughly one word every 10-20 seconds) but MTP speculation adds 2.2-2.8 tokens per forward pass once the cache is warm"
+  ],
+  "surprising_detail": "The memory footprint tracks what a single token needs, not the size of the model. At any instant only the handful of experts a token routes to are awake in RAM; the other 700-plus billion parameters sit dormant on disk and are streamed in per layer. That is why a 744B model, ~370 GB on disk, runs in about 25 GB of RAM."
+}

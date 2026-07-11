@@ -298,5 +298,10 @@
     "date": "2026-07-10",
     "slug": "meanwhile",
     "project_url": "https://github.com/unclecode/crawl4ai"
+  },
+  {
+    "date": "2026-07-11",
+    "slug": "incredulity",
+    "project_url": "https://github.com/JustVugg/colibri"
   }
 ]

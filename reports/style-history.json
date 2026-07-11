@@ -1,212 +1,212 @@
 [
-  {
-    "date": "2026-06-08",
-    "brand_slug": null,
-    "aesthetic_slug": "subway-chrome",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/Panniantong/Agent-Reach"
-  },
-  {
-    "date": "2026-06-10",
-    "brand_slug": "raycast",
-    "aesthetic_slug": "raycast",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/evalstate/fast-agent"
-  },
-  {
-    "date": "2026-06-11",
-    "brand_slug": null,
-    "aesthetic_slug": "gallery",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/kenn-io/agentsview"
-  },
-  {
-    "date": "2026-06-12",
-    "brand_slug": "cursor",
-    "aesthetic_slug": "cursor",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/trycua/cua"
-  },
-  {
-    "date": "2026-06-13",
-    "brand_slug": null,
-    "aesthetic_slug": "claude",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/DanMcInerney/architect-loop"
-  },
-  {
-    "date": "2026-06-14",
-    "brand_slug": null,
-    "aesthetic_slug": "geominimal",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/LMCache/LMCache"
-  },
-  {
-    "date": "2026-06-15",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-paper",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/Ar9av/obsidian-wiki"
-  },
-  {
-    "date": "2026-06-16",
-    "brand_slug": null,
-    "aesthetic_slug": "cctv",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
-  },
-  {
-    "date": "2026-06-17",
-    "brand_slug": null,
-    "aesthetic_slug": "editorial-90s",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/stevesolun/ctx"
-  },
-  {
-    "date": "2026-06-18",
-    "brand_slug": "vercel",
-    "aesthetic_slug": "vercel",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/alexzhang13/rlm"
-  },
-  {
-    "date": "2026-06-19",
-    "brand_slug": "ollama",
-    "aesthetic_slug": "ollama",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/ollama/ollama"
-  },
-  {
-    "date": "2026-06-20",
-    "brand_slug": "warp",
-    "aesthetic_slug": "warp",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/obra/superpowers"
-  },
-  {
-    "date": "2026-06-21",
-    "brand_slug": "voltagent",
-    "aesthetic_slug": "voltagent",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/calesthio/OpenMontage"
-  },
-  {
-    "date": "2026-06-22",
-    "brand_slug": "opencode.ai",
-    "aesthetic_slug": "opencode.ai",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/raiyanyahya/recall"
-  },
-  {
-    "date": "2026-06-23",
-    "brand_slug": null,
-    "aesthetic_slug": "mono-terminal",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/oakdotspace/oak"
-  },
-  {
-    "date": "2026-06-24",
-    "brand_slug": null,
-    "aesthetic_slug": "subway-chrome",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
-  },
-  {
-    "date": "2026-06-26",
-    "brand_slug": "sentry",
-    "aesthetic_slug": "sentry",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/NotASithLord/peerd"
-  },
-  {
-    "date": "2026-06-27",
-    "brand_slug": null,
-    "aesthetic_slug": "gallery",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/workweave/router"
-  },
-  {
-    "date": "2026-07-01",
-    "brand_slug": "herdr-native",
-    "aesthetic_slug": "herdr-native",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/ogulcancelik/herdr"
-  },
-  {
-    "date": "2026-07-02",
-    "brand_slug": "strix-native",
-    "aesthetic_slug": "strix-native",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/usestrix/strix"
-  },
-  {
-    "date": "2026-07-03",
-    "brand_slug": null,
-    "aesthetic_slug": "claude",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/affaan-m/ECC"
-  },
-  {
-    "date": "2026-07-04",
-    "brand_slug": "caveman-native-assisted",
-    "aesthetic_slug": "caveman-native-assisted",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/JuliusBrussee/caveman"
-  },
-  {
-    "date": "2026-07-04b",
-    "brand_slug": "browser-use-native-assisted",
-    "aesthetic_slug": "browser-use-native-assisted",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/browser-use/video-use"
-  },
-  {
-    "date": "2026-07-04c",
-    "brand_slug": "mcp-use-native",
-    "aesthetic_slug": "mcp-use-native",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/mcp-use/mcp-use"
-  },
-  {
-    "date": "2026-07-05",
-    "brand_slug": "t3mp3st-native",
-    "aesthetic_slug": "t3mp3st-native",
-    "framework": "DISPATCH",
-    "project_url": "https://github.com/elder-plinius/T3MP3ST"
-  },
-  {
-    "date": "2026-07-06",
-    "brand_slug": "mcpsnoop-native-assisted",
-    "aesthetic_slug": "mcpsnoop-native-assisted",
-    "framework": "SCHEMATIC",
-    "project_url": "https://github.com/kerlenton/mcpsnoop"
-  },
-  {
-    "date": "2026-07-07",
-    "brand_slug": "vision-violet",
-    "aesthetic_slug": "perception-violet",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/bradautomates/claude-video"
-  },
-  {
-    "date": "2026-07-08",
-    "brand_slug": "pwf-amber-assisted",
-    "aesthetic_slug": "amber-ledger",
-    "framework": "MANIFESTO",
-    "project_url": "https://github.com/OthmanAdi/planning-with-files"
-  },
-  {
-    "date": "2026-07-09",
-    "brand_slug": "graphify-native",
-    "aesthetic_slug": "graphify-native",
-    "framework": "CLASSIC",
-    "project_url": "https://github.com/safishamsi/graphify"
-  },
-  {
-    "date": "2026-07-10",
-    "brand_slug": "crawl4ai-native-assisted",
-    "aesthetic_slug": "crawl4ai-native-assisted",
-    "framework": "RECEIPT",
-    "project_url": "https://github.com/unclecode/crawl4ai"
-  }
+ {
+  "date": "2026-06-10",
+  "brand_slug": "raycast",
+  "aesthetic_slug": "raycast",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/evalstate/fast-agent"
+ },
+ {
+  "date": "2026-06-11",
+  "brand_slug": null,
+  "aesthetic_slug": "gallery",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/kenn-io/agentsview"
+ },
+ {
+  "date": "2026-06-12",
+  "brand_slug": "cursor",
+  "aesthetic_slug": "cursor",
+  "framework": "CLASSIC",
+  "project_url": "https://github.com/trycua/cua"
+ },
+ {
+  "date": "2026-06-13",
+  "brand_slug": null,
+  "aesthetic_slug": "claude",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/DanMcInerney/architect-loop"
+ },
+ {
+  "date": "2026-06-14",
+  "brand_slug": null,
+  "aesthetic_slug": "geominimal",
+  "framework": "RECEIPT",
+  "project_url": "https://github.com/LMCache/LMCache"
+ },
+ {
+  "date": "2026-06-15",
+  "brand_slug": null,
+  "aesthetic_slug": "editorial-paper",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/Ar9av/obsidian-wiki"
+ },
+ {
+  "date": "2026-06-16",
+  "brand_slug": null,
+  "aesthetic_slug": "cctv",
+  "framework": "DISPATCH",
+  "project_url": "https://github.com/shuvonsec/claude-bug-bounty"
+ },
+ {
+  "date": "2026-06-17",
+  "brand_slug": null,
+  "aesthetic_slug": "editorial-90s",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/stevesolun/ctx"
+ },
+ {
+  "date": "2026-06-18",
+  "brand_slug": "vercel",
+  "aesthetic_slug": "vercel",
+  "framework": "RECEIPT",
+  "project_url": "https://github.com/alexzhang13/rlm"
+ },
+ {
+  "date": "2026-06-19",
+  "brand_slug": "ollama",
+  "aesthetic_slug": "ollama",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/ollama/ollama"
+ },
+ {
+  "date": "2026-06-20",
+  "brand_slug": "warp",
+  "aesthetic_slug": "warp",
+  "framework": "CLASSIC",
+  "project_url": "https://github.com/obra/superpowers"
+ },
+ {
+  "date": "2026-06-21",
+  "brand_slug": "voltagent",
+  "aesthetic_slug": "voltagent",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/calesthio/OpenMontage"
+ },
+ {
+  "date": "2026-06-22",
+  "brand_slug": "opencode.ai",
+  "aesthetic_slug": "opencode.ai",
+  "framework": "RECEIPT",
+  "project_url": "https://github.com/raiyanyahya/recall"
+ },
+ {
+  "date": "2026-06-23",
+  "brand_slug": null,
+  "aesthetic_slug": "mono-terminal",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/oakdotspace/oak"
+ },
+ {
+  "date": "2026-06-24",
+  "brand_slug": null,
+  "aesthetic_slug": "subway-chrome",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills"
+ },
+ {
+  "date": "2026-06-26",
+  "brand_slug": "sentry",
+  "aesthetic_slug": "sentry",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/NotASithLord/peerd"
+ },
+ {
+  "date": "2026-06-27",
+  "brand_slug": null,
+  "aesthetic_slug": "gallery",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/workweave/router"
+ },
+ {
+  "date": "2026-07-01",
+  "brand_slug": "herdr-native",
+  "aesthetic_slug": "herdr-native",
+  "framework": "DISPATCH",
+  "project_url": "https://github.com/ogulcancelik/herdr"
+ },
+ {
+  "date": "2026-07-02",
+  "brand_slug": "strix-native",
+  "aesthetic_slug": "strix-native",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/usestrix/strix"
+ },
+ {
+  "date": "2026-07-03",
+  "brand_slug": null,
+  "aesthetic_slug": "claude",
+  "framework": "RECEIPT",
+  "project_url": "https://github.com/affaan-m/ECC"
+ },
+ {
+  "date": "2026-07-04",
+  "brand_slug": "caveman-native-assisted",
+  "aesthetic_slug": "caveman-native-assisted",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/JuliusBrussee/caveman"
+ },
+ {
+  "date": "2026-07-04b",
+  "brand_slug": "browser-use-native-assisted",
+  "aesthetic_slug": "browser-use-native-assisted",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/browser-use/video-use"
+ },
+ {
+  "date": "2026-07-04c",
+  "brand_slug": "mcp-use-native",
+  "aesthetic_slug": "mcp-use-native",
+  "framework": "CLASSIC",
+  "project_url": "https://github.com/mcp-use/mcp-use"
+ },
+ {
+  "date": "2026-07-05",
+  "brand_slug": "t3mp3st-native",
+  "aesthetic_slug": "t3mp3st-native",
+  "framework": "DISPATCH",
+  "project_url": "https://github.com/elder-plinius/T3MP3ST"
+ },
+ {
+  "date": "2026-07-06",
+  "brand_slug": "mcpsnoop-native-assisted",
+  "aesthetic_slug": "mcpsnoop-native-assisted",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/kerlenton/mcpsnoop"
+ },
+ {
+  "date": "2026-07-07",
+  "brand_slug": "vision-violet",
+  "aesthetic_slug": "perception-violet",
+  "framework": "CLASSIC",
+  "project_url": "https://github.com/bradautomates/claude-video"
+ },
+ {
+  "date": "2026-07-08",
+  "brand_slug": "pwf-amber-assisted",
+  "aesthetic_slug": "amber-ledger",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/OthmanAdi/planning-with-files"
+ },
+ {
+  "date": "2026-07-09",
+  "brand_slug": "graphify-native",
+  "aesthetic_slug": "graphify-native",
+  "framework": "CLASSIC",
+  "project_url": "https://github.com/safishamsi/graphify"
+ },
+ {
+  "date": "2026-07-10",
+  "brand_slug": "crawl4ai-native-assisted",
+  "aesthetic_slug": "crawl4ai-native-assisted",
+  "framework": "RECEIPT",
+  "project_url": "https://github.com/unclecode/crawl4ai"
+ },
+ {
+  "date": "2026-07-11",
+  "brand_slug": "colibri-ember",
+  "aesthetic_slug": "ember-mono",
+  "framework": "SCHEMATIC",
+  "project_url": "https://github.com/JustVugg/colibri"
+ }
 ]

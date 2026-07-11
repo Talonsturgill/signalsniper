@@ -1,0 +1,87 @@
+{
+  "date": "2026-07-11",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "claims": [
+    {
+      "claim": "GLM-5.2 is a 744B-parameter Mixture-of-Experts model",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://www.together.ai/models/glm-52"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "GLM-5.2 activates about 40B parameters per token",
+      "sources": [
+        "https://www.together.ai/models/glm-52",
+        "https://localclaw.io/models/glm-5.2"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "colibri runs GLM-5.2 on a consumer machine with about 25 GB of RAM",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://chatforest.com/builders-log/colibri-engine-glm-5-2-744b-local-inference-disk-streaming-moe-builder-guide/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "The dense core (attention, shared experts, embeddings) stays resident at about 9.9 GB in int4",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://www.developersdigest.tech/blog/colibri-glm-52-slow-computer-local-inference"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "The 21,504 routed experts live on disk and are streamed on demand with a per-layer LRU cache",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://chatforest.com/builders-log/colibri-engine-glm-5-2-744b-local-inference-disk-streaming-moe-builder-guide/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "The int4 model is about 370 GB on disk",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://chatforest.com/builders-log/colibri-engine-glm-5-2-744b-local-inference-disk-streaming-moe-builder-guide/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "The engine is a single C file (c/glm.c) of about 2,400 lines, with no BLAS, no Python at runtime, and no GPU required",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://www.developersdigest.tech/blog/colibri-glm-52-slow-computer-local-inference"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "colibri has passed 2.6k stars (about 2,595) since it was created on 2026-07-01",
+      "sources": [
+        "https://github.com/JustVugg/colibri",
+        "https://trendshift.io/repositories/73945"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    },
+    {
+      "claim": "GLM-5.2 is MIT-licensed and was released by Z.ai on 2026-06-13",
+      "sources": [
+        "https://www.together.ai/models/glm-52",
+        "https://runaihome.com/blog/glm-5-2-local-hardware-guide-2026/"
+      ],
+      "verified": true,
+      "as_of": "2026-07-11"
+    }
+  ]
+}

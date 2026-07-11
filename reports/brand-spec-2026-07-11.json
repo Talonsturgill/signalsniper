@@ -1,0 +1,50 @@
+{
+  "date": "2026-07-11",
+  "project": "colibri",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "design": {
+    "framework": "SCHEMATIC",
+    "brand_slug": "colibri-ember",
+    "aesthetic_slug": "ember-mono",
+    "tokens": {
+      "canvas": "#0b0806",
+      "ink": "#f7f3ee",
+      "accent": "#ff7a45",
+      "ink_muted": "#9a9088",
+      "hairline": "#241c16"
+    },
+    "tokens_provenance": {
+      "canvas": "designed warm near-black (luma 8.7, not pure #000); pairs with the ember accent",
+      "ink": "designed warm cream-white (luma 244, clears the >=230 dark-canvas ink floor)",
+      "accent": "designed warm ember-orange (hue 17, luma 156); colibri = hummingbird, a warm light source; clears the color gate >=60 off green 142 and teal 174",
+      "ink_muted": "designed warm gray (luma 146)",
+      "hairline": "designed warm dark rule (luma 30)"
+    },
+    "fonts": {"display": "JetBrainsMono", "body": "Inter", "italic": "Inter", "mono": "JetBrainsMono"},
+    "typography": {"display_weight": 700, "body_weight": 400, "letter_spacing_em": -0.01, "case": "lower", "italic_descriptors": false},
+    "motion": {"register": "cut", "scene_in_s": 0.05, "scene_out_s": 0.05, "stagger_s": 0.1},
+    "layout": {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 4},
+    "texture": {"grain": 0.05, "vignette": 0.16, "halation": 0.05, "lighting_arc": 0.16},
+    "background": {"style": "shader", "intensity": 0.9},
+    "transition_style": "glitch",
+    "foley_style": "whoosh_thud",
+    "audio_palette": "electronic",
+    "held_subject": "colibri",
+    "accent_contrast_min": 3.0
+  },
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_luma": 244,
+    "accent_as_text": "text-scale accent auto-derives --accent-ink (~205 luma); raw #ff7a45 stays on the shader field, the flash inverted field, dots, strokes and glows",
+    "muted_content": "activity/detail rows use --muted-content (muted lifted 60% toward ink); raw ink_muted only for the corner wordmark ticker",
+    "bright_beats": [
+      "NAME_HOOK: bright cream wordmark on a lit ember shader",
+      "ONLY_WHAT_WAKES: streamed experts flare to accent-ink over a dim field",
+      "TWENTY_FIVE_GIGS: full-bleed bright ember flash (inverted field, dark ink)"
+    ],
+    "inverted_beat": "TWENTY_FIVE_GIGS flash",
+    "frame_brightness_plan": "dark canvas + shader lifts mean frame luma by construction (retro precedent 37->111); with >=3 bright beats the frame-brightness gate passes without lifting in the grade",
+    "notes": "watch mono display crowding at hero size (2026-07-02 strix lesson) -- keep big numerals inside title-safe"
+  },
+  "color_gate_note": "accent hue 17 is >=60 off both prior accents (07-09 green 142, 07-10 teal 174); also a warm<->cool temperature flip AND a dark<->light canvas-value flip vs 07-10 (light). Clears variety_check color gate three ways."
+}

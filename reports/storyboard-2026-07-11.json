@@ -1,0 +1,97 @@
+{
+  "date": "2026-07-11",
+  "project": "colibri",
+  "framework": "SCHEMATIC",
+  "concept": "THE DORMANT FIELD. A 744-billion-parameter model runs in 25 GB of RAM because only the experts a single token needs are ever awake. We open on the impossible pairing, state the myth (a model this big belongs in a datacenter), then SHOW the mechanism: a field of thousands of experts sits dark on disk while a few flare and stream in per token. We make the scale mismatch concrete (370 GB on disk vs 9.9 GB resident), land the payoff number (25 GB) full-frame, show the plain one-C-file engine, and restate the pairing to rhyme with the open. Node-diagram + terminal was the default and is explicitly killed.",
+  "money_shot_note": "TWENTY_FIVE_GIGS (scene 5 of 7, ~71%) is the peak: the whole memory footprint slams full-frame on a bright ember field. The split (disk vs RAM) now precedes the metaphor so the paradox lands before the explanation, and so the video's brightest plate scene is not at the midpoint. The one reserved glitch transition and whoosh-thud button fire only on the cut into the money shot.",
+  "transition_strategy": "Hard cuts throughout (register cut). Motion carries through the cuts (experts already streaming as ONLY_WHAT_WAKES enters, the split panels already sliding). The single reserved glitch effect fires once, on the cut into the money shot.",
+  "music_direction": "Electronic-leaning bed with a clear onset to land the money-shot cut on. Restrained under the dim body scenes, opening up at the flash. Foley whoosh-thud on the money beat only, no per-cut swipe.",
+  "energy_curve": [
+    0.45,
+    0.56,
+    0.72,
+    0.8,
+    0.92,
+    0.62,
+    0.58
+  ],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "Name the project and state the whole thesis as the hook (poster frame)",
+      "template": "logo_reveal",
+      "camera": "tilt_reveal",
+      "copy_note": "colibri / 744B model. 25 GB of RAM.",
+      "sound_cue": "soft ignition, bed enters",
+      "transition": "hard_cut",
+      "energy": 0.45,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "State the received wisdom the video will break (the myth)",
+      "template": "two_line",
+      "camera": "parallax_drift",
+      "copy_note": "A model this big / belongs in a datacenter. (accent line 2)",
+      "sound_cue": "low tension pad",
+      "transition": "hard_cut",
+      "energy": 0.56,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "Make the scale mismatch a spatial fact -- disk dormant vs RAM resident",
+      "template": "split",
+      "camera": "dolly_up",
+      "copy_note": "on disk 370 GB / 21,504 experts  |  in RAM 9.9 GB / dense core",
+      "sound_cue": "two-note settle",
+      "transition": "hard_cut",
+      "energy": 0.72,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "SHOW the mechanism -- thousands of experts dormant, a few flare and stream in (visual hero)",
+      "template": "metaphor",
+      "camera": "orbit",
+      "copy_note": "it wakes only the experts each token needs",
+      "sound_cue": "rising shimmer as experts flare",
+      "transition": "hard_cut",
+      "energy": 0.8,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "Land the impossible number full-frame (the payoff)",
+      "template": "flash",
+      "camera": "crash_zoom",
+      "copy_note": "25 GB / the whole footprint",
+      "sound_cue": "whoosh-thud button, bed opens",
+      "transition": "glitch",
+      "energy": 0.92,
+      "money_shot": true
+    },
+    {
+      "beat": 6,
+      "intent": "Show the plain engine -- how little it takes",
+      "template": "mono_block",
+      "camera": "rack_focus",
+      "copy_note": "one C file. / no BLAS. no Python. / no GPU. no Docker.",
+      "sound_cue": "bed settles",
+      "transition": "hard_cut",
+      "energy": 0.62,
+      "money_shot": false
+    },
+    {
+      "beat": 7,
+      "intent": "Restate the pairing to rhyme with the open for the autoloop",
+      "template": "close",
+      "camera": "pull_back",
+      "copy_note": "744B model. / 25 GB of RAM. / tiny engine, immense model.",
+      "sound_cue": "resolve, mallet on close",
+      "transition": "hard_cut",
+      "energy": 0.58,
+      "money_shot": false
+    }
+  ]
+}
