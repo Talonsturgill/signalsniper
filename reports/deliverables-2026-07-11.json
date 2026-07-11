@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-11",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "creator_handle": "@justvugg",
+  "caption": "@justvugg colibri just passed 2.6k stars in ten days. It runs GLM-5.2, a 744B model, in about 25 GB of RAM by keeping only the dense core resident and streaming the experts each token needs off disk. One C file. No BLAS, no Python, no GPU.",
+  "capability_fact": "It runs GLM-5.2, a 744B model, in about 25 GB of RAM by keeping only the dense core resident and streaming the experts each token needs off disk.",
+  "differentiator": "colibri only ever loads the handful of experts a single token needs, streamed from disk, so a 744-billion-parameter model runs in about 25 GB of RAM.",
+  "first_reply": "Repo, pure C and zero deps: https://github.com/JustVugg/colibri  The int4 weights it runs are mirrored on Hugging Face: https://huggingface.co/jlnsrk/GLM-5.2-colibri-int4",
+  "why_this_one": "What gets me is this isn't a fluke. Vincenzo keeps writing the hard low-level thing himself, from a GPT-2 trainer in C to this. And he shipped it as a Show HN about his slow computer, not a launch.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Incredulity by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Someone ran a 744 billion parameter model on a laptop with 25 GB of RAM. Not a typo. It is called colibri and it is one C file with no BLAS and no Python and no GPU. The trick is simple and kind of beautiful. A mixture of experts model only uses a few of its experts per token. So colibri keeps the dense core in memory and leaves the other 21,504 experts sitting on disk. It streams in only the ones each token actually needs. The whole thing runs at about 9.9 GB resident. This is the cleanest piece of local inference I have seen in a while. One person. Pure C. Go star it.",
+  "linkedin_hashtags": "#AI #LocalLLM #MachineLearning #OpenSource",
+  "linkedin_tag": null
+}

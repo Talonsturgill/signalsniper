@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-11",
+  "project": "colibri",
+  "differentiator": "colibri only ever loads the handful of experts a single token needs, streamed from disk, so a 744-billion-parameter model runs in about 25 GB of RAM.",
+  "concepts": [
+    {
+      "name": "THE DORMANT FIELD (chosen)",
+      "world": "A dark, warm room lit like an ember. The model is a vast field of thousands of dim points (the 21,504 experts) sitting dormant on disk. The picture is mostly darkness with a small warm light doing more than it should.",
+      "shows": "A wordmark hook states the impossible pairing. The myth lands (a model this big belongs in a datacenter). Then the field: per token, only a few points flare to accent and stream in, the rest stay dark. Then the scale mismatch made concrete (370 GB on disk vs 9.9 GB resident), then the payoff number (25 GB) full-frame, then the one-C-file engine, then a rhyming restate.",
+      "money_shot": "TWENTY_FIVE_GIGS: the whole footprint slams full-frame on a bright ember field, right after we have SEEN why it fits (only a few experts awake).",
+      "why_repost": "It flatters the actual cleverness (sparse activation + streaming), not the star count, and it is in a warm palette that reads like a considered piece about his work.",
+      "why_stop": "The 744B-in-25GB mismatch is a genuine double-take, and the dormant-field visual is unusual in a feed of talking-head demos."
+    },
+    {
+      "name": "HEAD TO HEAD (runner-up)",
+      "world": "A boxing-tale-of-the-tape world: the giant (744B) in one corner, the tiny machine (25 GB) in the other.",
+      "shows": "The size mismatch as a contest the small one wins on a technicality (sparsity).",
+      "money_shot": "The tiny corner lights up as the winner.",
+      "why_repost": "Fun, punchy.",
+      "why_not": "Risks a gimmicky sports frame that undersells the elegance of the mechanism, and head_to_head leans on split-compare which is less novel as a spine than the dormant field."
+    },
+    {
+      "name": "THE CONFESSION (runner-up)",
+      "world": "First person, the builder's slow computer at night, the journey framing ('I just wanted it to work at all costs, even slowly').",
+      "shows": "The human story of getting it to run.",
+      "money_shot": "The first token appearing after a long wait.",
+      "why_repost": "Deeply on his voice.",
+      "why_not": "The literal payoff (cold decode ~0.05 tok/s) looks broken on video and sells against the project. Keep the humility in the CAPTION, not the picture."
+    }
+  ],
+  "chosen": "THE DORMANT FIELD",
+  "color_script": {
+    "beats": [
+      "NAME_HOOK: warm near-black, bright cream ink, ember shader glow (bright)",
+      "THE_MYTH: near-black, cream ink, ember accent on line 2 (dim, tension)",
+      "ONLY_WHAT_WAKES: dim field, a few experts flare to accent-ink (rising light)",
+      "DISK_VS_RAM: two panels, disk side dim/dormant, RAM side lit (contrast beat)",
+      "TWENTY_FIVE_GIGS: full-bleed bright ember field, dark ink (peak, inverted polarity)",
+      "ONE_C_FILE: back to near-black, mono cream lines (rest)",
+      "CLOSE_RESTATE: near-black, ember accent on the number (payoff glow)"
+    ],
+    "temperature_beats": ">=2: the dim near-black body vs the full-bleed bright ember flash is the warm-value swing; the dormant-dark field vs the lit RAM panel is the second.",
+    "off_last_two": "warm ember (hue 17) is >=60 off 07-09 green (142) and 07-10 teal (174), plus a dark-canvas value flip vs 07-10's light canvas"
+  },
+  "light_plan": "Every scene owns a light source: the shader field lifts the dark scenes; the flare experts and the RAM panel are lit plates; the flash is a full bright field. >=3 genuinely bright beats so the frame-brightness gate passes by design.",
+  "cutting_plan": "Hard cuts by default (register cut). The ONE reserved effect (glitch) fires only on the cut INTO the money shot (TWENTY_FIVE_GIGS). Motion carries through cuts (experts already streaming as ONLY_WHAT_WAKES enters). No swipe between scenes; the foley whoosh-thud button lands only on the money beat.",
+  "illustrates_per_scene": {
+    "NAME_HOOK": "the wordmark names colibri at frame 0 and the tagline states the whole thesis (744B model, 25 GB of RAM) as the hook",
+    "THE_MYTH": "the received wisdom, sized big, is what the video is about to break",
+    "ONLY_WHAT_WAKES": "thousands of experts sit dark; a few flare and stream in per token, so 'only what each token needs' becomes literally visible",
+    "DISK_VS_RAM": "the 370 GB dormant on disk beside the 9.9 GB actually resident makes the sparsity a spatial fact, not a claim",
+    "TWENTY_FIVE_GIGS": "the whole footprint, full-frame and bright, is the impossible number landing after we have seen why it is possible",
+    "ONE_C_FILE": "the engine itself -- one C file, no BLAS, no Python, no GPU -- shown as the plain mono truth of how little it takes",
+    "CLOSE_RESTATE": "the pairing restated (744B / 25 GB) rhymes with the open so the autoloop replays the thesis"
+  }
+}

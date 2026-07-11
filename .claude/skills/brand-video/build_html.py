@@ -2403,7 +2403,7 @@ function animateMetaphor(el, t, dur) {
       ln.style.opacity = (eo*0.42).toFixed(3);
     }
   }
-  if (core) { const cr = easeOutBack(clamp01((t - dur*0.30)/(dur*0.35)))*8.6; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
+  if (core) { const cr = easeOutBack(clamp01((t - dur*0.30)/(dur*0.35)))*12.5; core.setAttribute("r", Math.max(0, cr).toFixed(2)); }
   if (label) { const e = easeOut(clamp01((t - dur*0.40)/0.5)); label.style.opacity = e.toFixed(3);
     label.style.transform = `translateY(${(10*(1-e)).toFixed(1)}px)`; }
 }

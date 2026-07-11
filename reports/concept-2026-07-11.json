@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-11",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "singular_truth": "colibri runs GLM-5.2, a 744-billion-parameter model that is about 370 GB on disk, on a consumer machine with roughly 25 GB of RAM. It does this because a MoE model only uses a handful of its experts per token. colibri keeps just the ~17B dense core resident (~9.9 GB int4) and leaves the 21,504 routed experts on disk, streaming in only the ones each token actually routes to. So the memory footprint tracks what one token needs, not the size of the whole model. And the whole engine is one C file with no BLAS, no Python, no GPU.",
+  "money_thing": "One of the largest open models alive passing through a memory straw the size of a browser tab, because at any instant only a few experts are awake. Tiny engine, immense model.",
+  "logline": "Everyone knows a 744-billion-parameter model needs a datacenter. Watch one run in 25 GB of RAM because it only ever wakes the experts a single token needs.",
+  "rejected_default": "The reflexive local-inference video: a terminal typing `./coli chat`, a spinner, then tokens dribbling out one word every fifteen seconds, over a node diagram of RAM and disk. Rejected for three reasons. (1) Terminal is off the table this run and is the series' single most overused device. (2) A slow token stream actively SELLS AGAINST the project (cold decode is ~0.05 tok/s, which looks broken on video). (3) The real marvel is not the command, it is WHY it fits in memory at all: only the experts a token needs are awake. So the spine is a metaphor that SHOWS thousands of experts dormant and a few lighting up, and the scale mismatch (370 GB on disk vs 9.9 GB resident), not a command demo. The node-diagram+terminal default is explicitly killed.",
+  "arc": "myth_vs_reality",
+  "device": "metaphor_illustration",
+  "hero": "impossible_possible",
+  "open": "wordmark_reveal",
+  "close": "number_restated",
+  "scene_seq": [
+    "NAME_HOOK",
+    "THE_MYTH",
+    "DISK_VS_RAM",
+    "ONLY_WHAT_WAKES",
+    "TWENTY_FIVE_GIGS",
+    "ONE_C_FILE",
+    "CLOSE_RESTATE"
+  ],
+  "device_seq": [
+    "kinetic_type",
+    "kinetic_type",
+    "split_compare",
+    "metaphor_illustration",
+    "kinetic_type",
+    "kinetic_type",
+    "kinetic_type"
+  ],
+  "references": [
+    "an ember or a single lit filament in a dark room -- a small warm light source carrying more than it looks like it should (the hummingbird's iridescent gorget, colibri = hummingbird)",
+    "a planetarium of thousands of dim points with a few flaring to life -- the field of experts, mostly dormant",
+    "the 'sparse activation' idea from Mixture-of-Experts and the 'you only pay for what you touch' idea from demand paging / mmap"
+  ],
+  "reasoning": {
+    "interrogate": [
+      "It runs a 744B model (true of very few things).",
+      "It runs it on ~25 GB of RAM (the singular fact).",
+      "It is one C file, zero deps (true of almost no LLM runtime).",
+      "It streams experts from disk on demand (the mechanism nobody else bothers to show).",
+      "It is by a solo dev who framed it as 'my slow computer' (humility, not a launch).",
+      "It is a MoE, so only ~40B of 744B params are active per token (the reason the trick works).",
+      "It is fast-trending (~2.6k stars) -- but that is true of any hot repo, so it is NOT singular.",
+      "singular_truth = the memory footprint tracks a single token's experts, not the model. money_thing = immense model, tiny memory."
+    ],
+    "generate": [
+      "A: THE STRAW -- an immense model visibly forced through a tiny opening; only a trickle (the active experts) passes at a time. device: metaphor/split.",
+      "B: THE DORMANT FIELD -- thousands of experts as dim points; per token, a few flare and stream in, the rest stay dark on disk. device: metaphor.",
+      "C: HEAD TO HEAD -- 744B (the giant) vs 25 GB (the machine); the tiny one wins on a technicality (sparsity). device: split.",
+      "D: THE CONFESSION -- the builder's 'slow computer' framing, the journey, the thing working 'even slowly'. device: kinetic_type first-person. (Warm but risks selling the slowness.)"
+    ],
+    "kill_the_default": "See rejected_default. Node-diagram + terminal is the obvious treatment and is explicitly rejected: terminal is off-table, the slow token stream sells against the project, and it hides the actual differentiator.",
+    "pressure_test": "Chose B (the dormant field) as the hero device, fused with A/C (the disk-vs-RAM scale mismatch) as the money beat, under a myth_vs_reality arc ('needs a datacenter' -> 'runs in 25 GB'). Previous 3 videos were data_story/question_answer/sustained_metaphor with data_viz/terminal/transformation_morph -- this shares none of those axes. Last video (07-10) was a light-canvas data curve; this is a dark-canvas warm-ember metaphor. hero impossible_possible has not run recently.",
+    "self_critique": {
+      "recognizably_ours": "yes -- brand grammar intact (wordmark poster, held subject, a hero device, a money shot at ~70%, a rhyming close, silent-readable copy).",
+      "shows_the_one_cool_thing": "yes -- ONLY_WHAT_WAKES shows dormant experts and a few streaming in; DISK_VS_RAM and TWENTY_FIVE_GIGS show the scale mismatch land.",
+      "different_from_last_3": "yes -- new arc, device, hero, open, close; dark warm-ember vs the recent cool/green/teal/light runs; metaphor-led, not data-viz or terminal."
+    }
+  }
+}

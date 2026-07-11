@@ -1,0 +1,140 @@
+{
+  "date": "2026-07-11",
+  "topic": "colibri, a pure-C engine that runs GLM-5.2 (744B MoE) in 25 GB of RAM",
+  "creator_handle": "@justvugg",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "design": {
+    "framework": "SCHEMATIC",
+    "brand_slug": "colibri-ember",
+    "aesthetic_slug": "ember-mono",
+    "tokens": {
+      "canvas": "#0b0806",
+      "ink": "#f7f3ee",
+      "accent": "#ff7a45",
+      "ink_muted": "#9a9088",
+      "hairline": "#241c16"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.05,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 4
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.16,
+      "halation": 0.05,
+      "lighting_arc": 0.16
+    },
+    "background": {
+      "style": "shader",
+      "intensity": 0.9
+    },
+    "transition_style": "glitch",
+    "foley_style": "whoosh_thud",
+    "audio_palette": "electronic",
+    "held_subject": "colibri",
+    "accent_contrast_min": 3.0,
+    "beat": {
+      "bpm": 123.0,
+      "offset_s": 50.0,
+      "aligned": true,
+      "median_drift_ms": 169.8
+    }
+  },
+  "scenes": [
+    {
+      "template": "logo_reveal",
+      "word": "colibri",
+      "tagline": "744B model. 25 GB of RAM.",
+      "camera": "tilt_reveal",
+      "sheen": true,
+      "duration_s": 3.65,
+      "illustrates": "The wordmark names colibri at frame 0 and the tagline states the whole thesis (a 744B model, 25 GB of RAM) as the hook, so the poster already carries the impossible pairing."
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "A model this big",
+        "needs a datacenter."
+      ],
+      "accent_idx": 1,
+      "camera": "parallax_drift",
+      "duration_s": 3.2,
+      "illustrates": "The received wisdom, sized large with the datacenter line in ember, is stated plainly so the video has a myth to break."
+    },
+    {
+      "template": "split",
+      "left": {
+        "label": "on disk",
+        "value": "370 GB"
+      },
+      "right": {
+        "label": "in RAM",
+        "value": "9.9 GB"
+      },
+      "camera": "dolly_up",
+      "duration_s": 3.86,
+      "illustrates": "The 370 GB dormant on disk beside the 9.9 GB actually resident makes the sparsity a spatial fact, not a number in a sentence."
+    },
+    {
+      "template": "metaphor",
+      "eyebrow": "21,504 experts on disk",
+      "label": "it wakes a few experts",
+      "camera": "orbit",
+      "duration_s": 4.29,
+      "illustrates": "A field of expert-nodes sits dim while only a few flare and converge into a glowing core, so 'it wakes a few experts each token' becomes literally visible rather than claimed."
+    },
+    {
+      "template": "flash",
+      "word": "25 GB",
+      "caption": "the whole footprint",
+      "camera": "crash_zoom",
+      "emphasize": true,
+      "duration_s": 3.3,
+      "illustrates": "The full memory footprint slams full-frame on a bright ember field, landing the impossible number right after we have seen why it is possible."
+    },
+    {
+      "template": "mono_block",
+      "lines": [
+        "one C file",
+        "no BLAS, no Python",
+        "no GPU, no Docker"
+      ],
+      "accent_idx": 0,
+      "camera": "rack_focus",
+      "sheen": true,
+      "duration_s": 4.11,
+      "illustrates": "The engine itself, in plain mono, shows how little it takes: one C file, no BLAS, no Python, no GPU, no Docker."
+    },
+    {
+      "template": "close",
+      "primary": "744B model.",
+      "accent": "25 GB of RAM.",
+      "subtitle": "tiny engine, immense model.",
+      "emphasize": true,
+      "sheen": true,
+      "camera": "pull_back",
+      "duration_s": 4.1,
+      "illustrates": "The pairing restated (744B model, 25 GB of RAM) rhymes with the open so the autoloop replays the thesis, and 'tiny engine, immense model' names the whole idea."
+    }
+  ]
+}

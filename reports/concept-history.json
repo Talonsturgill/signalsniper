@@ -258,5 +258,31 @@
       "data_viz",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-11",
+    "arc": "myth_vs_reality",
+    "device": "metaphor_illustration",
+    "hero": "impossible_possible",
+    "open": "wordmark_reveal",
+    "close": "number_restated",
+    "scene_seq": [
+      "NAME_HOOK",
+      "THE_MYTH",
+      "DISK_VS_RAM",
+      "ONLY_WHAT_WAKES",
+      "TWENTY_FIVE_GIGS",
+      "ONE_C_FILE",
+      "CLOSE_RESTATE"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "kinetic_type",
+      "split_compare",
+      "metaphor_illustration",
+      "kinetic_type",
+      "kinetic_type",
+      "kinetic_type"
+    ]
   }
 ]

@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-11",
+  "brand_slug": "colibri-ember",
+  "preset_slug": "ember-mono",
+  "framework": "SCHEMATIC",
+  "rationale_one_line": "colibri has no dedicated brand site (only a GitHub repo and a mirrored Hugging Face weights page), so a designed warm-ember-on-near-black palette honors the theme (colibri = hummingbird, a small warm light carrying an immense load) and SCHEMATIC fits the mechanism-reveal spine of how a 744B model fits in 25 GB.",
+  "writing_tone_notes": "Humble, journey-first, proof-over-hype. Match the creator's own 'my slow computer' framing. Let the scale mismatch carry the praise. No superlatives. Lowercase, mono-flavored, engineered.",
+  "do_rules": [
+    "Show the mechanism (dormant experts, a few waking) not a command demo",
+    "State the myth (needs a datacenter) then break it (runs in 25 GB)",
+    "Use verified numbers only: 744B, 25 GB, 9.9 GB, 21,504 experts, 370 GB",
+    "Keep the name ASCII on-screen: colibri (no accent)"
+  ],
+  "dont_rules": [
+    "No terminal / no command demo (off-table, and the slow token stream sells against the project)",
+    "No node-diagram-as-spine (the killed default)",
+    "No engagement metrics on screen (the caption carries the star count)",
+    "No line-count numeral on screen (1,300 vs 2,400 is contested; say 'one C file' instead)"
+  ],
+  "brand_extract_attempts": [
+    {"url": "https://github.com/JustVugg/colibri", "result": "no colors (JS-rendered, no reachable CSS custom properties)"},
+    {"url": "https://huggingface.co/jlnsrk/GLM-5.2-colibri-int4", "result": "returned Hugging Face's own chrome (green #97f295), the hosting platform's identity, not colibri's -- rejected as non-native"}
+  ]
+}

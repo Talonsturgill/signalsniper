@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-11",
+  "project": "colibri",
+  "project_url": "https://github.com/JustVugg/colibri",
+  "audience": "AI engineers and systems builders who follow local inference and assume a 744B model needs a datacenter",
+  "single_takeaway": "colibri runs a 744-billion-parameter model in about 25 GB of RAM by waking only the handful of experts each token actually needs.",
+  "viewer_action": "star the repo and quote the video",
+  "desired_feeling": "the quiet 'wait, that shouldn't fit' astonishment, then respect for the discipline behind it",
+  "tone_adjectives": ["understated", "precise", "astonishing"],
+  "references": ["a single lit filament in a dark room", "a planetarium where only a few points flare to life", "MoE sparse activation meets demand paging"],
+  "mandatories": "designed warm-ember palette (colibri has no brand site to mine), CC BY music attribution, creator @justvugg tagged",
+  "success_criteria": "@justvugg quote-posts it; the story reads fully muted; a stranger stops on the 744B-in-25GB mismatch",
+  "platform": "x"
+}
