@@ -303,5 +303,10 @@
     "date": "2026-07-11",
     "slug": "incredulity",
     "project_url": "https://github.com/JustVugg/colibri"
+  },
+  {
+    "date": "2026-07-12",
+    "slug": "unraveling",
+    "project_url": "https://github.com/Mesh-LLM/mesh-llm"
   }
 ]

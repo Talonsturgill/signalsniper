@@ -54,7 +54,11 @@ def detect_content_start(raw, hint, window=1.2):
     d = abs(fr[1:] - fr[:-1]).mean(axis=(1, 2))
     for i, x in enumerate(d):
         if x > 0.5:
-            return round(start + (i + 1) / 25.0, 3)
+            # +2 frames, not +1: on a gradual fade-in open the first frame whose
+            # delta clears the threshold is still mid-fade (near-blank), so the
+            # poster would land on it and read empty. One extra frame lands on
+            # solid content and is deterministic across capture trim jitter.
+            return round(start + (i + 2) / 25.0, 3)
     return hint
 
 

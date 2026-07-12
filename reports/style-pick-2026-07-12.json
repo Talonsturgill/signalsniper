@@ -1,0 +1,19 @@
+{
+  "date": "2026-07-12",
+  "brand_slug": "mesh-llm-native",
+  "preset_slug": null,
+  "aesthetic_slug": "mesh-blue",
+  "framework": "DISPATCH",
+  "rationale_one_line": "mesh-llm's own electric-blue-on-near-black identity (site --blue #3b82f6), in DISPATCH's field-report grammar, for a peer-to-peer network story told as a camera journey through the mesh.",
+  "writing_tone_notes": "Matter-of-fact and distributed. Show the mechanism, not the scoreboard. Neale's own understated register: state the impossible thing plainly and let the contrast carry it.",
+  "do_rules": [
+    "lead the caption with the growth metric, then a capability fact",
+    "use accent-ink for blue TEXT, raw #3b82f6 for the aurora field, dots, glows and the inverted flash",
+    "keep the mesh a felt journey (the oner), never a static diagram"
+  ],
+  "dont_rules": [
+    "no node-diagram of the mesh (the killed default)",
+    "no terminal beat (device off-table and it shows a command, not the idea)",
+    "no second engagement metric anywhere in the caption"
+  ]
+}

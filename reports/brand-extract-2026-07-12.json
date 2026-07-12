@@ -1,0 +1,22 @@
+{
+  "tokens": {
+    "canvas": "#09090b",
+    "ink": "#f4f4f5",
+    "ink_muted": "#a1a1aa",
+    "accent": "#787883",
+    "hairline": "#27272a"
+  },
+  "provenance": {
+    "canvas": "css var --background",
+    "ink": "css var --text",
+    "accent": "css var --primary (lightness-nudged from #18181b)",
+    "ink_muted": "css var --muted",
+    "hairline": "css var --border"
+  },
+  "confidence": "high",
+  "dark_canvas": true,
+  "source_url": "https://meshllm.cloud/",
+  "notes": [
+    "stylesheet mined: https://meshllm.cloud/assets/site.generated.css"
+  ]
+}

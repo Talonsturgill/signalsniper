@@ -1,0 +1,79 @@
+{
+  "date": "2026-07-12",
+  "project": "mesh-llm",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "design": {
+    "framework": "DISPATCH",
+    "brand_slug": "mesh-llm-native",
+    "aesthetic_slug": "mesh-blue",
+    "tokens": {
+      "canvas": "#14171d",
+      "ink": "#f4f4f5",
+      "accent": "#3b82f6",
+      "ink_muted": "#a1a1aa",
+      "hairline": "#27272a"
+    },
+    "tokens_provenance": {
+      "canvas": "lifted from site --background #09090b to the site's own dark surface --surface #14171d (luma ~23, still dark/native): the near-black #09090b dominated the frame and dragged mean luma under the brightness floor; #14171d keeps the inky native identity while lifting the frame across every scene",
+      "ink": "site css var --text #f4f4f5 (luma 244, clears the >=230 dark-canvas ink floor)",
+      "accent": "site css var --blue #3b82f6 (75 uses in site.generated.css, with --blue-glow; the extractor's --primary read a neutral gray, corrected to the site's real accent blue, hue 217)",
+      "ink_muted": "site css var --muted #a1a1aa (luma 163)",
+      "hairline": "site css var --border #27272a (luma 40)"
+    },
+    "secondary_accent": "#22c55e (site css var --green; the live/connected state)",
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.22,
+      "scene_out_s": 0.2,
+      "stagger_s": 0.14
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 5
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.18,
+      "halation": 0.06,
+      "lighting_arc": 0.16
+    },
+    "background": {
+      "style": "aurora",
+      "intensity": 0.85
+    },
+    "transition_style": "push",
+    "foley_style": "tapestop_drop",
+    "audio_palette": "electronic",
+    "held_subject": "mesh llm",
+    "accent_contrast_min": 3.0
+  },
+  "readability": {
+    "canvas_polarity": "dark",
+    "ink_luma": 244,
+    "accent_as_text": "text-scale accent auto-derives --accent-ink (~205 luma); raw #3b82f6 stays on the aurora field, dots, glows and the inverted flash field; green #22c55e is the connected-state pulse",
+    "muted_content": "pane detail rows and activity lines use --muted-content (muted lifted 60% toward ink); raw ink_muted only for the corner wordmark ticker",
+    "bright_beats": [
+      "FRICTION: large bright cream hero lines on near-black (scene 1)",
+      "ONER_MONEY: the centered glide line is large bright cream, a real light source at frame center (scene 5)",
+      "ONE_ENDPOINT: full-bleed BRIGHT blue flash, inverted field / dark ink (scene 6)"
+    ],
+    "inverted_beat": "scene 6 flash (bright blue field, dark ink)",
+    "frame_brightness_plan": "dark canvas, no shader (07-11 used it). Aurora blue field lifts the base; >=3 genuinely bright beats (s1 hero type, s5 oner centered line, s6 full-bleed blue flash) plus bright value cards in s2 target >=30% bright scenes so the frame-brightness gate passes without lifting in the grade.",
+    "notes": "oner centered line must be LARGE (coverage lesson from 07-08/07-10/07-11): a short bright word on the aurora field needs to own >0.7% of pixels or the top percentile reads the lit field behind it."
+  },
+  "color_gate_note": "accent blue hue 217: >=60deg off orange-17 (07-11) with large dE00, AND a dark<->light canvas-value flip vs the light 07-10 teal run. Clears the variety color gate against both previous videos (value flip vs 07-10, hue+dE vs 07-11)."
+}

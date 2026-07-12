@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-12",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "claims": [
+    {
+      "claim": "1,300 stars",
+      "detail": "GitHub shows 1.3k stars (API count 1,341) as of 2026-07-12",
+      "sources": [
+        "https://github.com/Mesh-LLM/mesh-llm",
+        "https://star-history.com/#Mesh-LLM/mesh-llm&Date"
+      ],
+      "verified": true,
+      "as_of": "2026-07-12"
+    },
+    {
+      "claim": "228 points on Hacker News",
+      "detail": "front-page HN story 'Mesh LLM: distributed AI computing on iroh', 228 points / 51 comments, posted 2026-07-11",
+      "sources": [
+        "https://news.ycombinator.com/item?id=48876505",
+        "https://hn.algolia.com/api/v1/search?query=mesh-llm&tags=story"
+      ],
+      "verified": true,
+      "as_of": "2026-07-12"
+    },
+    {
+      "claim": "one OpenAI-compatible endpoint",
+      "detail": "exposes pooled compute as one OpenAI-compatible /v1 API (default port 9337); plugs into Claude Code, goose, opencode and pi",
+      "sources": [
+        "https://raw.githubusercontent.com/Mesh-LLM/mesh-llm/main/README.md",
+        "https://www.iroh.computer/blog/mesh-llm"
+      ],
+      "verified": true,
+      "as_of": "2026-07-12"
+    },
+    {
+      "claim": "built on iroh peer-to-peer",
+      "detail": "distributed inference runs over iroh's NAT-traversing peer-to-peer transport; no central server; Rust, Apache-2.0",
+      "sources": [
+        "https://www.iroh.computer/blog/mesh-llm",
+        "https://github.com/Mesh-LLM/mesh-llm"
+      ],
+      "verified": true,
+      "as_of": "2026-07-12"
+    },
+    {
+      "claim": "splits a model across machines",
+      "detail": "the Skippy runtime stage-splits a model's layers across machines when it exceeds a single node's capacity (single-machine fit is tried first)",
+      "sources": [
+        "https://raw.githubusercontent.com/Mesh-LLM/mesh-llm/main/README.md",
+        "https://news.ycombinator.com/item?id=48876505"
+      ],
+      "verified": true,
+      "as_of": "2026-07-12"
+    }
+  ]
+}

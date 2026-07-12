@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-12",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "creator_handle": "@michaelneale",
+  "caption": "@michaelneale mesh llm just crossed 1,300 stars. It runs a model too big for any one machine by splitting its layers across a peer to peer mesh, then serves the whole thing as one OpenAI endpoint your agent already speaks to. Built on iroh. No datacenter.",
+  "capability_fact": "runs a model too big for any one machine by splitting its layers across a peer to peer mesh",
+  "differentiator": "It runs a model bigger than any single machine can hold by splitting its layers live across a peer-to-peer mesh.",
+  "first_reply": "The repo, if you want to pool some GPUs and run bigger models at home https://github.com/Mesh-LLM/mesh-llm",
+  "why_this_one": "Neale co-created Block's goose. Here he tries the whole model on your own box first and only spills the overflow onto peers, so nothing leaves home unless it truly has to. Quietly radical for self-hosting.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Unraveling by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Most people think running a big open model means renting a datacenter.\n\nMichael Neale built a way around that. Mesh LLM pools GPUs across separate machines over a peer to peer mesh and runs a model too big for any one box. It even tries to fit the whole thing on your own machine first and only spills the extra layers onto other peers.\n\nThe part I like most is that it looks like one normal OpenAI endpoint. Your agent talks to localhost and never knows the model is spread across the room. It plugs straight into Claude Code and goose.\n\nMore than a thousand stars in a few weeks. Built on iroh. Rust and Apache 2. This is the cleanest take on distributed inference I have seen in a while.",
+  "linkedin_hashtags": "#AI #LLM #DistributedSystems #OpenSource",
+  "linkedin_tag": {"name": "Michael Neale", "url": "https://au.linkedin.com/in/michaelneale"}
+}
