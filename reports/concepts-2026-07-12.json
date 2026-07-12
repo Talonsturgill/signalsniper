@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-12",
+  "project": "mesh-llm",
+  "differentiator": "It runs a model bigger than any single machine can hold by splitting its layers live across a peer-to-peer mesh, served as one ordinary OpenAI endpoint.",
+  "concepts": [
+    {
+      "name": "The Oner (through the mesh)",
+      "world": "You are a single token. The camera never cuts as it travels from your prompt, down through layers that live on different machines, and back out as one answer.",
+      "shows": "The distribution is a JOURNEY, not a diagram. A continuous vertical camera glide through stacked beats -- your prompt in, peers holding the layers, the answer out -- so the viewer physically feels the model spanning machines.",
+      "money_shot": "The oner flythrough: the centered line is bright and large while the peers recede in depth, and it lands on 'the answer returns'.",
+      "creator_repost": "Neale's whole pitch is 'distributed AI for the people' -- a video that makes the mesh feel like one living machine flatters the idea, not the metrics.",
+      "stranger_stops": "A camera moving through text you can read at a glance is rare in AI dev-tool clips; the motion itself is the hook.",
+      "argument": "This is the only concept that dramatizes the ONE cool thing (a model living across machines) as something you travel through rather than look at. It kills the node-diagram cliche outright and uses a device the last dozen videos never touched."
+    },
+    {
+      "name": "One Box, No",
+      "world": "A hard before/after. Your machine tries to hold the model and can't; the mesh holds it together.",
+      "shows": "A split beat -- one machine 'not enough' beside the mesh 'enough' -- then the model runs.",
+      "money_shot": "The split flip from red-fail to blue-live.",
+      "creator_repost": "Clear and punchy, but it argues by contrast, not by showing the mechanism.",
+      "stranger_stops": "The fail/succeed flip is legible in 2 seconds.",
+      "argument": "Strong and simple, but it stays at the level of a claim (won't fit vs fits) and never lets you SEE the layers spanning peers. Keep the split as a supporting beat, not the spine."
+    },
+    {
+      "name": "The Handshake",
+      "world": "A network operations feel -- peers discover each other over the mesh and light up 'connected'.",
+      "shows": "Diegetic panes of peers joining, a green live-state flip, telemetry.",
+      "money_shot": "Three peers flip to 'connected' and a big model's name resolves.",
+      "creator_repost": "On-brand for a P2P project, but a dashboard reads as infrastructure, not wonder.",
+      "stranger_stops": "Status lights flipping green is satisfying but familiar.",
+      "argument": "Good texture for ONE beat (peers connecting), not enough as a whole. Fold it in as the diegetic scene before the oner."
+    }
+  ],
+  "chosen": "The Oner (through the mesh)",
+  "wow_bets": [
+    "The continuous-camera oner as the money shot -- a device nothing in the last 12 runs used, and it makes distribution felt, not diagrammed.",
+    "mesh-llm's native electric-blue-on-near-black with green 'connected' accents, over an aurora blue field that reads like a live mesh.",
+    "The split ('one box' vs 'the mesh') and a diegetic peers-connect beat feed INTO the oner, so the concept builds to the flythrough instead of front-loading it."
+  ],
+  "color_script": "Two temperature beats across the runtime, steered off the last two videos (07-10 light teal, 07-11 dark warm orange): the body sits cool electric-blue on near-black; the peers-connect beat introduces a warm-adjacent green 'connected' pulse; the endpoint payoff flashes a BRIGHT full-bleed blue field (inverted, dark ink). Blue accent is >=60 off orange-17 and flips canvas value vs the 07-10 light run, so the color gate clears.",
+  "light_plan": {
+    "s1_two_line": "large bright cream hero lines on near-black; the friction stated in bright ink",
+    "s2_split": "two bright value cards, the 'mesh: enough' card lit in accent-ink blue",
+    "s3_mono_block": "bright cream mono lines, the mechanism; accent-ink on the key line",
+    "s4_panes": "diegetic peers; a green 'connected' state flip is the bright element",
+    "s5_oner_money": "the centered glide line is large and bright cream, a real light source at the frame center",
+    "s6_flash": "the inverted BRIGHT beat -- full-bleed blue field, dark ink; the frame's brightest moment",
+    "s7_logo_reveal": "bright cream wordmark on near-black, holds the after-state"
+  },
+  "brightness_note": "Dark canvas, no shader (07-11 used it). Brightness earned by design: aurora blue field lifts the base, plus >=3 genuinely bright beats (s5 oner centered line, s6 full-bleed blue flash, s1/s3 large bright hero type). Targets >=30% bright scenes so the frame-brightness gate passes without lifting in the grade."
+}

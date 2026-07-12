@@ -284,5 +284,31 @@
       "kinetic_type",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-12",
+    "arc": "before_after_bridge",
+    "device": "continuous_camera",
+    "hero": "elegant_output",
+    "open": "problem_friction",
+    "close": "after_state_held",
+    "scene_seq": [
+      "friction_too_big",
+      "split_box_vs_mesh",
+      "mechanism_split_layers",
+      "peers_connect_live",
+      "oner_pipeline_flythrough",
+      "one_endpoint_payoff",
+      "wordmark_after_state"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "split_compare",
+      "kinetic_type",
+      "diegetic_ui",
+      "continuous_camera",
+      "kinetic_type",
+      "kinetic_type"
+    ]
   }
 ]

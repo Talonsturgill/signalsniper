@@ -1,12 +1,5 @@
 [
  {
-  "date": "2026-06-10",
-  "brand_slug": "raycast",
-  "aesthetic_slug": "raycast",
-  "framework": "MANIFESTO",
-  "project_url": "https://github.com/evalstate/fast-agent"
- },
- {
   "date": "2026-06-11",
   "brand_slug": null,
   "aesthetic_slug": "gallery",
@@ -208,5 +201,12 @@
   "aesthetic_slug": "ember-mono",
   "framework": "SCHEMATIC",
   "project_url": "https://github.com/JustVugg/colibri"
+ },
+ {
+  "date": "2026-07-12",
+  "brand_slug": "mesh-llm-native",
+  "aesthetic_slug": "mesh-blue",
+  "framework": "DISPATCH",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm"
  }
 ]

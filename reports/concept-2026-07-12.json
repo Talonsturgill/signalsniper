@@ -1,0 +1,16 @@
+{
+  "date": "2026-07-12",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "singular_truth": "mesh-llm splits one model's layers across separate machines over a peer-to-peer mesh (built on iroh, NAT-traversing, no central server) and serves the whole thing as one ordinary OpenAI-compatible endpoint on localhost.",
+  "money_thing": "a model too big for any single machine runs anyway, its layers held live across other people's machines, behind one localhost endpoint your agent already speaks to.",
+  "logline": "Watch one prompt travel through a model that lives on many machines at once and come back as a single answer.",
+  "rejected_default": "The obvious treatment for a distributed-inference project is a node-diagram of a mesh plus a terminal typing the install command. Rejected: a static node graph makes the mesh look like an architecture slide, and a terminal demo of `mesh-llm serve` shows a command, not the ONE cool thing (a model living across machines). The singular truth is a JOURNEY -- a prompt flowing through layers on different peers -- so a continuous-camera oner that travels through the distributed pipeline shows it far better than a diagram, and it is a device the last dozen videos have not used.",
+  "arc": "before_after_bridge",
+  "device": "continuous_camera",
+  "hero": "elegant_output",
+  "open": "problem_friction",
+  "close": "after_state_held",
+  "scene_seq": ["friction_too_big", "split_box_vs_mesh", "mechanism_split_layers", "peers_connect_live", "oner_pipeline_flythrough", "one_endpoint_payoff", "wordmark_after_state"],
+  "device_seq": ["kinetic_type", "split_compare", "kinetic_type", "diegetic_ui", "continuous_camera", "kinetic_type", "kinetic_type"],
+  "references": ["a single unbroken Steadicam oner (Children of Men corridor) as the camera-through-the-system idea", "network telemetry / distributed-systems dashboards for the peers-connecting beat", "mesh-llm's own near-black + electric-blue site identity"]
+}

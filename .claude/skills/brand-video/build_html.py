@@ -1026,7 +1026,7 @@ body {{
 }}
 
 /* ---- flash ---- */
-.scene[data-tpl="flash"] {{ background: var(--accent); }}
+.scene[data-tpl="flash"] {{ background: color-mix(in srgb, var(--accent) 60%, #ffffff 40%); }}
 
 /* ---- morph (transformation_morph device, v11 #2) ---- */
 .morph-eyebrow {{
@@ -1094,7 +1094,7 @@ body {{
 .scene[data-tpl="oner"] {{ overflow: hidden; }}
 .on-eyebrow {{ position: absolute; top: 13cqw; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); opacity: 0; z-index: 3; }}
 .on-track {{ position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; will-change: transform; }}
-.on-block {{ flex: 0 0 auto; height: 34cqw; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 8.5cqw; line-height: 1.0; text-align: center; padding: 0 7cqw; white-space: nowrap; color: var(--ink); will-change: opacity, transform, filter; }}
+.on-block {{ flex: 0 0 auto; height: 34cqw; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 12cqw; line-height: 1.0; text-align: center; padding: 0 6cqw; white-space: nowrap; color: var(--ink); -webkit-text-stroke: 1.6px currentColor; will-change: opacity, transform, filter; }}
 
 /* ---- object (object_metaphor: a procedural line-icon, v11 #2) ---- */
 .ob-eyebrow {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 2.5cqw; opacity: 0; }}
@@ -2900,10 +2900,16 @@ function tick() {
     lastSceneIdx = activeIdx;
   }
 
-  // Held-subject wordmark: appears after the title beat, hides on accent-bg flash scenes.
+  // Held-subject wordmark: carries the project name. When the open is a big
+  // wordmark beat (title/logo_reveal) it waits for that beat to end so it does
+  // not double the name; otherwise it shows from t=0 so the poster frame always
+  // carries the project's name. Hides on beats that already show the name big
+  // (title/logo_reveal) and on accent-bg flash scenes.
   if (heldEl && TL.length > 1) {
     const activeTpl = activeIdx >= 0 ? TL[activeIdx].tpl : "";
-    const show = clamped >= TL[0].end - 0.25 && activeTpl !== "flash";
+    const firstBig = TL[0].tpl === "title" || TL[0].tpl === "logo_reveal";
+    const activeBig = activeTpl === "title" || activeTpl === "logo_reveal" || activeTpl === "flash";
+    const show = clamped >= (firstBig ? TL[0].end - 0.25 : 0) && !activeBig;
     heldEl.style.opacity = show ? 0.62 : 0;
   }
 

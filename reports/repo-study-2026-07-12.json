@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-12",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "components": [
+    "skippy runtime that splits the layers across the mesh",
+    "owner control plane",
+    "nostr discovery for published meshes",
+    "mixture of agents gateway (experimental)",
+    "flash-moe ssd backend plugin",
+    "openai-compatible v1 api on localhost 9337"
+  ],
+  "commands": [
+    {"text": "curl -fsSL https://raw.githubusercontent.com/Mesh-LLM/mesh-llm/main/install.sh | bash", "source": "https://raw.githubusercontent.com/Mesh-LLM/mesh-llm/main/README.md"},
+    {"text": "mesh-llm setup", "source": "https://raw.githubusercontent.com/Mesh-LLM/mesh-llm/main/README.md"},
+    {"text": "mesh-llm serve --auto", "source": "https://raw.githubusercontent.com/Mesh-LLM/mesh-llm/main/README.md"}
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "the skippy runtime splits the layers across the mesh when a model is too big for one machine",
+    "it serves the mesh as one openai endpoint on localhost 9337",
+    "single machine fit is tried first then it spills the overflow to peers",
+    "peers pool their gpus and memory over iroh",
+    "iroh is a nat-traversing peer-to-peer transport so there is no central server",
+    "it plugs into claude code goose opencode and pi as one openai endpoint",
+    "written in rust and licensed apache-2.0"
+  ],
+  "surprising_detail": "It tries to fit the whole model on your own machine first and only spills the overflow layers onto peer machines over the mesh, so nothing leaves home unless the model is genuinely too big to hold."
+}

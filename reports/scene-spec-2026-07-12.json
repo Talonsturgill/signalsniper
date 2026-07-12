@@ -1,0 +1,166 @@
+{
+  "date": "2026-07-12",
+  "topic": "mesh-llm, peer-to-peer distributed inference that runs a model too big for one machine and serves it as one OpenAI endpoint",
+  "creator_handle": "@michaelneale",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "design": {
+    "framework": "DISPATCH",
+    "brand_slug": "mesh-llm-native",
+    "aesthetic_slug": "mesh-blue",
+    "tokens": {
+      "canvas": "#14171d",
+      "ink": "#f4f4f5",
+      "accent": "#3b82f6",
+      "ink_muted": "#a1a1aa",
+      "hairline": "#27272a"
+    },
+    "fonts": {
+      "display": "SpaceGrotesk",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 600,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "fade",
+      "scene_in_s": 0.13,
+      "scene_out_s": 0.18,
+      "stagger_s": 0.07
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 5
+    },
+    "texture": {
+      "grain": 0.05,
+      "vignette": 0.18,
+      "halation": 0.06,
+      "lighting_arc": 0.16
+    },
+    "background": {
+      "style": "aurora",
+      "intensity": 0.85
+    },
+    "transition_style": "push",
+    "foley_style": "tapestop_drop",
+    "audio_palette": "electronic",
+    "held_subject": "mesh llm",
+    "accent_contrast_min": 3.0,
+    "beat": {
+      "bpm": 95.7,
+      "offset_s": 65.0,
+      "aligned": true,
+      "median_drift_ms": 63.4
+    }
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "a model too big",
+      "eyebrow": "mesh llm",
+      "camera": "push_in",
+      "duration_s": 3.47,
+      "illustrates": "The project is named (mesh llm, the eyebrow) above the friction every builder hits, a model too big to fit, so the poster frame carries the name and the hook at once."
+    },
+    {
+      "template": "split",
+      "left": {
+        "label": "one machine",
+        "value": "not enough"
+      },
+      "right": {
+        "label": "the mesh",
+        "value": "enough"
+      },
+      "camera": "ken_burns",
+      "duration_s": 3.44,
+      "illustrates": "One machine beside the mesh, not-enough beside enough, makes the whole before/after a single spatial contrast the eye reads instantly."
+    },
+    {
+      "template": "mono_block",
+      "lines": [
+        "splits the layers",
+        "across the mesh",
+        "one openai endpoint"
+      ],
+      "accent_idx": 2,
+      "camera": "push_in",
+      "sheen": true,
+      "duration_s": 3.97,
+      "illustrates": "The mechanism in plain mono: it splits the layers across the mesh and still serves one openai endpoint, so the how is stated in the project's own words before the flythrough shows it."
+    },
+    {
+      "template": "panes",
+      "eyebrow": "peers pool their gpus",
+      "panes": [
+        {
+          "name": "peer 01",
+          "lines": [
+            "holding layers"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "peer 02",
+          "lines": [
+            "over iroh"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "peer 03",
+          "lines": [
+            "gpu shared"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        }
+      ],
+      "camera": "parallax_drift",
+      "duration_s": 3.85,
+      "illustrates": "Three peers hold different pieces and flip to a live green connected state, so pooling gpus over iroh becomes a thing you watch happen rather than a claim."
+    },
+    {
+      "template": "oner",
+      "eyebrow": "one model, held in pieces",
+      "blocks": [
+        "your prompt",
+        "many machines",
+        "one answer"
+      ],
+      "camera": "dolly_up",
+      "emphasize": true,
+      "sheen": true,
+      "duration_s": 3.76,
+      "illustrates": "MONEY SHOT: one unbroken camera glide travels from your prompt, down through layers living on different peers, and out as a single answer, so the viewer physically feels the model spanning machines instead of reading a diagram of it."
+    },
+    {
+      "template": "flash",
+      "word": "one endpoint",
+      "caption": "the whole mesh, one url",
+      "camera": "crash_zoom",
+      "sheen": true,
+      "duration_s": 3.37,
+      "illustrates": "The payoff slams full-frame on a bright blue field: all of that distribution surfaces as one ordinary endpoint your agent already speaks to."
+    },
+    {
+      "template": "logo_reveal",
+      "word": "mesh llm",
+      "tagline": "distributed ai for the people",
+      "camera": "pull_back",
+      "emphasize": true,
+      "sheen": true,
+      "duration_s": 4.1,
+      "illustrates": "The wordmark holds the after-state with the project's own tagline, rhyming to the poster so the autoloop replays the promise: distributed ai, for the people."
+    }
+  ]
+}

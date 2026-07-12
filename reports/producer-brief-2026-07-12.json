@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-12",
+  "project": "mesh-llm",
+  "project_url": "https://github.com/Mesh-LLM/mesh-llm",
+  "audience": "builders who hit the 'my GPU can't hold this model' wall and self-hosters who want to run big open models without a datacenter",
+  "single_takeaway": "mesh-llm runs a model too big for any one machine by splitting its layers live across a peer-to-peer mesh, served as one ordinary OpenAI endpoint.",
+  "viewer_action": "star the repo",
+  "desired_feeling": "quiet awe that a model can live across machines and still answer like one endpoint",
+  "tone_adjectives": ["distributed", "matter-of-fact", "wondrous"],
+  "references": ["a single unbroken Steadicam oner", "distributed-systems telemetry", "mesh-llm's own near-black + electric-blue identity"],
+  "mandatories": "brand tokens mined from meshllm.cloud (native blue #3b82f6 on near-black); CC BY music attribution; creator @michaelneale tagged",
+  "success_criteria": "Michael Neale quote-posts it; the story reads fully muted; the oner makes distribution felt, not diagrammed",
+  "platform": "x"
+}

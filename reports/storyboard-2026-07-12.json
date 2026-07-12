@@ -1,0 +1,97 @@
+{
+  "date": "2026-07-12",
+  "project": "mesh-llm",
+  "framework": "DISPATCH",
+  "concept": "A before/after that becomes a journey. Open on the friction (a model too big for one machine), size the stakes with a hard split, state the mechanism (it splits the layers across the mesh), watch the peers connect, then TRAVEL through the distributed pipeline in one unbroken camera move -- the money shot -- and land on one endpoint. Close on the wordmark holding the after-state. The mesh is felt as a journey, never drawn as a diagram.",
+  "money_shot_note": "Scene 5, the oner: a single sustained camera glide through the pipeline (your prompt in, peers holding the layers, the answer out). It is the peak because it is the ONE thing only mesh-llm does -- a model living across machines -- shown as motion you travel through, not an architecture slide.",
+  "transition_strategy": "Hard cuts throughout (the invisible pro default). The one reserved effect, push, fires only on the cut INTO the oner (scene 5), a physical shove into the flythrough. No swipe/whoosh between scenes.",
+  "music_direction": "Electronic bed with forward momentum; the transient (tapestop_drop) is spent once, as the drop into the oner money shot.",
+  "energy_curve": [
+    0.42,
+    0.55,
+    0.62,
+    0.7,
+    0.9,
+    0.66,
+    0.5
+  ],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "name the project and state the friction on one poster frame (a model too big)",
+      "template": "title",
+      "camera": "push_in",
+      "copy_note": "mesh llm (eyebrow) + a model too big (headline)",
+      "sound_cue": "bed enters",
+      "transition": "hard_cut",
+      "energy": 0.42,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "size the stakes as a hard before/after",
+      "template": "split",
+      "camera": "ken_burns",
+      "copy_note": "one box: not enough | the mesh: enough",
+      "sound_cue": "low pulse",
+      "transition": "hard_cut",
+      "energy": 0.55,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "the mechanism, in plain mono (backed by the study)",
+      "template": "mono_block",
+      "camera": "push_in",
+      "copy_note": "splits the layers / across the mesh / one openai endpoint",
+      "sound_cue": "tick",
+      "transition": "hard_cut",
+      "energy": 0.62,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "peers connect live (diegetic, green state flip, backed)",
+      "template": "panes",
+      "camera": "parallax_drift",
+      "copy_note": "peers pool their gpus -> connected",
+      "sound_cue": "soft chirps",
+      "transition": "hard_cut",
+      "energy": 0.7,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "MONEY SHOT: travel through the distributed pipeline in one unbroken move",
+      "template": "oner",
+      "camera": "dolly_up",
+      "copy_note": "your prompt in / peers hold the layers / one answer out",
+      "sound_cue": "tapestop_drop button",
+      "transition": "push",
+      "energy": 0.9,
+      "money_shot": true
+    },
+    {
+      "beat": 6,
+      "intent": "the payoff: it looks like one endpoint (inverted BRIGHT beat)",
+      "template": "flash",
+      "camera": "crash_zoom",
+      "copy_note": "one endpoint / the whole mesh, one url",
+      "sound_cue": "impact tail",
+      "transition": "hard_cut",
+      "energy": 0.66,
+      "money_shot": false
+    },
+    {
+      "beat": 7,
+      "intent": "close holds the after-state and rhymes to the wordmark for the loop",
+      "template": "logo_reveal",
+      "camera": "pull_back",
+      "copy_note": "mesh llm / distributed ai for the people",
+      "sound_cue": "bed resolves",
+      "transition": "hard_cut",
+      "energy": 0.5,
+      "money_shot": false
+    }
+  ]
+}
