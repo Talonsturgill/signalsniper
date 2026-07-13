@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-13",
+  "project": "oh-my-pi",
+  "differentiator": "oh-my-pi wires the IDE's own machinery into the agent, so renames run through the language server and debugging attaches real debuggers, not guesses.",
+  "concepts": [
+    {
+      "name": "The wired-in IDE (CHOSEN)",
+      "world": "A live app window, omp's own light editor theme on warm paper. We never cut to abstract type for long. We watch the machinery work inside the window.",
+      "shows": "A rename cascades across the file tree on its own (language server). A debugger pauses at a breakpoint instead of a print. Then the money shot: a kernel cell where Python reads a file with tool.read and JavaScript charts it, never leaving the cell.",
+      "money_shot": "The loopback cell reaching back into the agent's own tools. One place, wired to everything.",
+      "why_repost": "It shows Can's actual engineering taste, the low-level moves a reverse engineer makes, not a star chart. He would repost a video that proves someone read the repo.",
+      "why_stop_scroll": "You have never seen a coding agent's sandboxed code call back into the agent. The cell doing that stops the scroll.",
+      "light": "Warm paper canvas, a solid dark editor window per screen_capture beat, deep magenta accents on the active elements. Bright by construction."
+    },
+    {
+      "name": "Hash vs line number",
+      "world": "Split screen, two editors racing the same edit.",
+      "shows": "Left editor loses the edit to a whitespace shift and a string-not-found error. Right editor anchors to a content hash and lands it clean.",
+      "money_shot": "The hash anchor holding while the line numbers slide.",
+      "why_repost": "Concrete and technical, but narrower than the wired-in story and it leans on one feature.",
+      "why_stop_scroll": "The failure everyone knows (the agent edited the wrong line) resolved in real time.",
+      "light": "Split polarity, one dark pane one light pane, natural contrast."
+    },
+    {
+      "name": "Reverse engineer's agent",
+      "world": "A dark kernel-debugger aesthetic, register windows and breakpoints.",
+      "shows": "The lldb / dlv / debugpy attach, a live stack, the agent stepping frames.",
+      "money_shot": "A breakpoint catching the real bug.",
+      "why_repost": "True to Can's background, but too inside-baseball for a scroll and it fights the brightness note by going dark.",
+      "why_stop_scroll": "Weaker for a general AI-engineering audience; the debugger is one beat, not the whole story."
+    }
+  ],
+  "pick": "The wired-in IDE",
+  "wow_bets": [
+    "The loopback kernel cell as the money shot, a thing no other agent shows.",
+    "omp's own warm-paper light theme with a magenta accent, recognizable and bright, flipping off two straight dark videos.",
+    "A recurring app window we keep cutting back to, so the video feels like one continuous session, not a slideshow of templates."
+  ]
+}

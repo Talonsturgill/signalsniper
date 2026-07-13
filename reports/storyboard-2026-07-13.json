@@ -1,0 +1,97 @@
+{
+  "date": "2026-07-13",
+  "project": "oh-my-pi",
+  "framework": "CLASSIC",
+  "concept": "One continuous session inside oh-my-pi's own light editor. We keep cutting back to the same warm-paper app window and watch the IDE machinery do work no CLI agent shows: a rename cascades on its own, a real debugger attaches, and a kernel cell reaches back into the agent's own tools. The words name the mechanism the picture just enacted. It closes by crediting the builder.",
+  "money_shot_note": "Scene 5, the loopback kernel cell. It is the one thing no other coding agent shows, so it is the peak and it gets the only stylized cut and the only foley button. The print-vs-debugger split runs earlier so the bright hash-anchor beat sits at the runtime midpoint.",
+  "transition_strategy": "Hard cuts throughout (register cut). The single reserved dip transition fires only on the cut INTO the money shot. No swipe between scenes; the foley click-button lands on the money beat alone.",
+  "music_direction": "Electronic, precise, mechanical, a build that lands its accent under the loopback cell. Not ambient wash.",
+  "energy_curve": [
+    0.48,
+    0.62,
+    0.72,
+    0.66,
+    0.95,
+    0.6,
+    0.55
+  ],
+  "scenes": [
+    {
+      "beat": 1,
+      "intent": "name the project on the poster frame and drop us straight into the thesis that the IDE is wired in",
+      "template": "title",
+      "camera": "push_in",
+      "copy_note": "eyebrow oh-my-pi, headline the IDE wired in",
+      "sound_cue": "soft key click on the headline set",
+      "transition": "hard cut",
+      "energy": 0.48,
+      "money_shot": false
+    },
+    {
+      "beat": 2,
+      "intent": "watch a single rename ripple through the file tree on its own because edits route through the language server",
+      "template": "screen_capture",
+      "camera": "push_in",
+      "copy_note": "window shows a rename propagating, imports updating",
+      "sound_cue": "quiet mechanical keys",
+      "transition": "hard cut",
+      "energy": 0.62,
+      "money_shot": false
+    },
+    {
+      "beat": 3,
+      "intent": "make the contrast literal, most agents print-debug while omp attaches real debuggers",
+      "template": "split",
+      "camera": "parallax_drift",
+      "copy_note": "left most agents print debugging, right oh-my-pi real debuggers",
+      "sound_cue": "two-tap set as panes land",
+      "transition": "hard cut",
+      "energy": 0.72,
+      "money_shot": false
+    },
+    {
+      "beat": 4,
+      "intent": "name the mechanism the rename just showed, hash anchors instead of line numbers",
+      "template": "mono_block",
+      "camera": "static_breathe",
+      "copy_note": "edits anchor to a content hash, not a line number",
+      "sound_cue": "single tick on the accent line",
+      "transition": "hard cut",
+      "energy": 0.66,
+      "money_shot": false
+    },
+    {
+      "beat": 5,
+      "intent": "the peak, a kernel cell reaches back into the agent's own tools and never leaves the cell",
+      "template": "screen_capture",
+      "camera": "crash_zoom",
+      "copy_note": "python reads with tool.read, javascript charts it, never leaves the cell",
+      "sound_cue": "the one foley button lands here",
+      "transition": "dip into this cut",
+      "energy": 0.95,
+      "money_shot": true
+    },
+    {
+      "beat": 6,
+      "intent": "land the adoption receipt after the mechanics earned it",
+      "template": "big_number",
+      "camera": "static_breathe",
+      "copy_note": "17k stars, three months in, built on Mario Zechner's Pi",
+      "sound_cue": "low settle",
+      "transition": "hard cut",
+      "energy": 0.6,
+      "money_shot": false
+    },
+    {
+      "beat": 7,
+      "intent": "credit the builder and rhyme the window frame with the open for a clean loop",
+      "template": "close",
+      "camera": "pull_back",
+      "copy_note": "oh-my-pi, at_can1357, built by a reverse engineer",
+      "sound_cue": "final soft click",
+      "transition": "hard cut",
+      "energy": 0.55,
+      "money_shot": false
+    }
+  ]
+}

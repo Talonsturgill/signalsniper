@@ -310,5 +310,31 @@
       "kinetic_type",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-13",
+    "arc": "watch_it_work",
+    "device": "screen_capture",
+    "hero": "one_command_all",
+    "open": "in_media_res",
+    "close": "builder_credit",
+    "scene_seq": [
+      "TITLE_INMEDIA",
+      "SC_RENAME",
+      "MONO_HASHLINE",
+      "SPLIT_DEBUG",
+      "SC_LOOPBACK",
+      "NUMBER_RECEIPT",
+      "CREDIT_CLOSE"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "screen_capture",
+      "kinetic_type",
+      "split_compare",
+      "screen_capture",
+      "data_viz",
+      "kinetic_type"
+    ]
   }
 ]

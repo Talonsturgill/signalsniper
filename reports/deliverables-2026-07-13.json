@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-13",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "creator_handle": "@_can1357",
+  "caption": "@_can1357 crossed 17k stars with oh-my-pi, a terminal coding agent with the IDE wired in. Renames run through your language server, it attaches real debuggers like lldb and debugpy, and its Python cells call back into the agent's own tools. Built on Mario Zechner's Pi.",
+  "capability_fact": "Renames run through your language server, it attaches real debuggers like lldb and debugpy, and its Python cells call back into the agent's own tools.",
+  "differentiator": "oh-my-pi wires the IDE's own machinery into the agent so renames run through the language server and debugging attaches real debuggers instead of guesses.",
+  "first_reply": "Everything is here if you want to read the code. https://github.com/can1357/oh-my-pi",
+  "why_this_one": "Can Boluk reverse engineers kernels and static analysis for a living. That lineage is all over omp. Hash anchored edits and a debugger first design are what someone who lives at the machine level builds, not another chat wrapper.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Starfire by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Most coding agents guess at your code from the outside. oh-my-pi does the opposite. It wires the IDE's own machinery into the agent. Renames go through the language server so your imports update on their own. It attaches real debuggers instead of printing values and hoping. The part that got me is the kernel bridge. Its Python and Bun cells can call back into the agent's own tools while they run, so a cell reads a file with tool.read and charts it in JavaScript and never leaves the cell. Can Boluk is a reverse engineer and it shows in every design choice. It just crossed 17k stars. Worth a read if you build agents.",
+  "linkedin_hashtags": "#AI #DevTools #AIAgents #OpenSource",
+  "linkedin_tag": null
+}
