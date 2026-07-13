@@ -1,0 +1,9 @@
+{
+  "date": "2026-07-13",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "claims": [
+    {"claim": "17k stars", "sources": ["https://github.com/can1357/oh-my-pi", "https://skillsllm.com/skill/oh-my-pi"], "verified": true, "as_of": "2026-07-13", "note": "GitHub repo page reads 17.5k; SkillsLLM reads 17.3k. Both independently >17k, so the shipped floor 17k is safe."},
+    {"claim": "built on Mario Zechner's Pi", "sources": ["https://github.com/can1357/oh-my-pi", "https://github.com/can1357/oh-my-pi/blob/main/README.md"], "verified": true, "as_of": "2026-07-13", "note": "README credits original creator Mario Zechner (Pi); Can Bolук built omp on top. Non-numeric attribution."},
+    {"claim": "latest release v16.4.8 on 2026-07-12", "sources": ["https://github.com/can1357/oh-my-pi", "https://github.com/can1357/oh-my-pi/releases"], "verified": true, "as_of": "2026-07-13", "note": "Freshness signal only; not shipped as an on-screen numeral (no version numbers in copy)."}
+  ]
+}

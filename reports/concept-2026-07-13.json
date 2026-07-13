@@ -1,0 +1,16 @@
+{
+  "date": "2026-07-13",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "singular_truth": "oh-my-pi is wired into the same machinery your IDE uses. Renames run through the language server, debugging attaches real debuggers, and its sandboxed kernels can call back into the agent's own tools. It edits by content-hash anchors, not by guessing line numbers.",
+  "money_thing": "The loopback kernel bridge: spawned Python and Bun code calls back into the agent's own tools mid-cell, so a cell reads a file with tool.read, charts it in JavaScript, and never leaves the cell.",
+  "logline": "Watch a terminal coding agent that isn't guessing at your code from the outside. It's wired into the IDE's own machinery, all the way down to code that reaches back through its own tools.",
+  "rejected_default": "The obvious treatment for a terminal coding agent is a node diagram of the 40+ provider fan-out, a terminal typing omp -p '...', a flash, and wordmark bookends. Rejected because a terminal box reduces the whole story to 'another CLI agent' and hides the actual singular truth, which is that the IDE machinery is wired in and code re-enters the agent's tools. We show the machinery working inside a live app window instead of typing a prompt at it.",
+  "arc": "watch_it_work",
+  "device": "screen_capture",
+  "hero": "one_command_all",
+  "open": "in_media_res",
+  "close": "builder_credit",
+  "scene_seq": ["TITLE_INMEDIA", "SC_RENAME", "MONO_HASHLINE", "SPLIT_DEBUG", "SC_LOOPBACK", "NUMBER_RECEIPT", "CREDIT_CLOSE"],
+  "device_seq": ["kinetic_type", "screen_capture", "kinetic_type", "split_compare", "screen_capture", "data_viz", "kinetic_type"],
+  "references": ["a live VS Code screen recording where a rename cascades across files", "a Jupyter cell that quietly reaches the whole toolchain", "an editor's debugger pausing on a breakpoint"]
+}

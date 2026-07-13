@@ -1,0 +1,151 @@
+{
+  "date": "2026-07-13",
+  "topic": "oh-my-pi",
+  "creator_handle": "@_can1357",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "design": {
+    "framework": "CLASSIC",
+    "brand_slug": "omp-native",
+    "aesthetic_slug": "paper-ide",
+    "tokens": {
+      "canvas": "#f5f0ea",
+      "ink": "#191926",
+      "accent": "#920864",
+      "ink_muted": "#4c4c58",
+      "hairline": "#ddd7cd"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 560,
+      "body_weight": 400,
+      "letter_spacing_em": -0.01,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.05,
+      "scene_out_s": 0.05,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 7,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.1,
+      "halation": 0.05,
+      "lighting_arc": 0.12
+    },
+    "background": {
+      "style": "grid",
+      "intensity": 0.4
+    },
+    "transition_style": "dip",
+    "foley_style": "click_minimal",
+    "audio_palette": "electronic",
+    "held_subject": "oh-my-pi",
+    "accent_contrast_min": 3.5,
+    "audio_track": {
+      "title": "Starfire",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "file": "Starfire.mp3",
+      "offset_s": 40.0
+    },
+    "beat": {
+      "bpm": 107.7,
+      "offset_s": 40.0,
+      "aligned": true,
+      "median_drift_ms": 44.4
+    }
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "headline": "the IDE, wired in",
+      "eyebrow": "oh-my-pi",
+      "camera": "push_in",
+      "duration_s": 3.86,
+      "illustrates": "The poster frame names the project (eyebrow oh-my-pi) above the one-line thesis, so a muted viewer sees the name and the claim, the IDE is wired in, in the first second."
+    },
+    {
+      "template": "screen_capture",
+      "url": "src/agent/tools.ts",
+      "lines": [
+        "rename one symbol",
+        "every import follows"
+      ],
+      "camera": "push_in",
+      "duration_s": 4.02,
+      "illustrates": "Inside a live editor window one symbol is renamed and the imports update on their own, showing that omp routes the edit through the language server instead of find-and-replacing text."
+    },
+    {
+      "template": "split",
+      "left": {
+        "label": "most agents",
+        "value": "print debugging"
+      },
+      "right": {
+        "label": "oh-my-pi",
+        "value": "real debuggers"
+      },
+      "camera": "parallax_drift",
+      "duration_s": 3.02,
+      "illustrates": "Two panes side by side make the contrast literal, the crowd printing values to guess while omp attaches real debuggers, so the split itself is the argument."
+    },
+    {
+      "template": "mono_block",
+      "lines": [
+        "edits anchor to a content hash",
+        "not a line number"
+      ],
+      "accent_idx": 0,
+      "camera": "static_breathe",
+      "duration_s": 3.83,
+      "illustrates": "The words name the mechanism the rename just enacted, a content-hash anchor rather than a line number, so the picture and the sentence reinforce the same idea."
+    },
+    {
+      "template": "screen_capture",
+      "title": "one kernel cell",
+      "url": "runtime/kernel.py",
+      "lines": [
+        "python reads with tool.read",
+        "javascript charts it",
+        "never leaves the cell"
+      ],
+      "camera": "crash_zoom",
+      "duration_s": 4.6,
+      "emphasize": true,
+      "sheen": true,
+      "money_shot": true,
+      "illustrates": "The peak shows spawned code reaching back into the agent's own tools, python reading a file with tool.read and javascript charting it in one cell, the one move no other coding agent shows."
+    },
+    {
+      "template": "big_number",
+      "numeral": "17k",
+      "caption": "stars and climbing",
+      "camera": "static_breathe",
+      "duration_s": 3.36,
+      "illustrates": "After the mechanics earned it, the count lands the scale of adoption in one near-black numeral so the receipt reads without a chart."
+    },
+    {
+      "template": "close",
+      "primary": "oh-my-pi",
+      "accent": "@_can1357",
+      "subtitle": "built by a reverse engineer",
+      "camera": "pull_back",
+      "duration_s": 3.7,
+      "emphasize": true,
+      "sheen": true,
+      "illustrates": "The close credits the builder and returns to the wordmark, rhyming with the opening frame so the autoloop seam reads clean."
+    }
+  ]
+}

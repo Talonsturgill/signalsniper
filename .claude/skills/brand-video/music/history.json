@@ -308,5 +308,10 @@
     "date": "2026-07-12",
     "slug": "unraveling",
     "project_url": "https://github.com/Mesh-LLM/mesh-llm"
+  },
+  {
+    "date": "2026-07-13",
+    "slug": "starfire",
+    "project_url": "https://github.com/can1357/oh-my-pi"
   }
 ]

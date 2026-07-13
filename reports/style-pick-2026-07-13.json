@@ -1,0 +1,11 @@
+{
+  "date": "2026-07-13",
+  "brand_slug": "omp-native",
+  "aesthetic_slug": "paper-ide",
+  "preset_slug": null,
+  "framework": "CLASSIC",
+  "rationale_one_line": "oh-my-pi's own author-declared light theme (warm paper, violet-black ink, magenta accent) shown as a live editor window, killing the terminal default and flipping the color gate off two straight dark videos.",
+  "writing_tone_notes": "Terse and technical, the way Can writes. Specifics over adjectives. Show the machinery working, don't praise it.",
+  "do_rules": ["show the IDE machinery working inside a live window", "use omp's own magenta on the active element only", "let the hard cut carry momentum"],
+  "dont_rules": ["no terminal prompt as the hero", "no node diagram of the provider fan-out", "no swipe sound between scenes"]
+}

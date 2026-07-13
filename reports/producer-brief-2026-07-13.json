@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-13",
+  "project": "oh-my-pi",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "audience": "AI engineers and agent builders who are tired of coding agents that guess at their code from the outside",
+  "single_takeaway": "oh-my-pi wires the IDE's own machinery into a terminal agent, so it edits and debugs through the language server and real debuggers instead of guessing.",
+  "viewer_action": "star the repo and quote the video",
+  "desired_feeling": "recognition, then respect. that is the correct way to build this.",
+  "tone_adjectives": ["precise", "technical", "understated"],
+  "references": ["a live VS Code rename cascading across files", "a Jupyter cell reaching the whole toolchain", "a debugger pausing on a breakpoint"],
+  "mandatories": "omp-native tokens mined from omp.sh; CC BY music attribution; creator @_can1357 tagged; frame 0 names the project",
+  "success_criteria": "Can Boluk quote-posts it because it proves someone read the repo; the story reads fully muted",
+  "platform": "x"
+}

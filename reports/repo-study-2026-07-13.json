@@ -1,0 +1,26 @@
+{
+  "date": "2026-07-13",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "components": [
+    "40+ LLM providers",
+    "32 built-in tools",
+    "14 LSP operations",
+    "28 DAP debugger operations",
+    "Python and Bun kernel workers",
+    "hashline edits"
+  ],
+  "commands": [
+    {"text": "omp -p \"list .ts files\"", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"},
+    {"text": "curl -fsSL https://omp.sh/install | sh", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"},
+    {"text": "brew install can1357/tap/omp", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"}
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "edits anchor to a content hash not a line number",
+    "renames route through the language server so imports update atomically",
+    "attaches real debuggers lldb dlv debugpy not print debugging",
+    "python and bun cells call back into the agent's own tools over a loopback bridge",
+    "reads eight existing config formats natively with no migration"
+  ],
+  "surprising_detail": "The agent's sandboxed Python and Bun cells can call back into the agent's own tools mid-execution over a loopback bridge, so a cell reads a file with tool.read, charts it from JavaScript, and never leaves the cell."
+}

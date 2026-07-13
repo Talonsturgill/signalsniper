@@ -1,0 +1,52 @@
+{
+  "date": "2026-07-13",
+  "brand_slug": "omp-native",
+  "confidence": "high",
+  "provenance": {
+    "method": "author-declared design tokens mined from omp.sh stylesheet (index-Cxvog3cH.css) plus the two meta theme-color declarations; brand_extract returned insufficient_signal on the SPA shell, so tokens were read directly from the stylesheet custom properties.",
+    "canvas": "meta theme-color light #f5f0ea; corroborated by --bg oklch(94% .006 80)",
+    "ink": "--fg oklch(22% .025 285) -> #191926",
+    "accent": "--accent oklch(44% .18 348) = --color-magenta family -> #920864 (deep, text-scale); bright fill --color-magenta oklch(70% .24 340) -> #f84fcc",
+    "ink_muted": "--fg-dim oklch(42% .02 285) -> #4c4c58",
+    "fonts": "--font-display Fraunces (bundled), --font-mono JetBrains Mono (bundled), --font-sans Geist approximated by bundled Inter"
+  },
+  "design": {
+    "framework": "CLASSIC",
+    "brand_slug": "omp-native",
+    "aesthetic_slug": "paper-ide",
+    "tokens": {
+      "canvas": "#f5f0ea",
+      "ink": "#191926",
+      "accent": "#920864",
+      "ink_muted": "#4c4c58",
+      "hairline": "#ddd7cd"
+    },
+    "fonts": {"display": "Fraunces", "body": "Inter", "italic": "Inter", "mono": "JetBrainsMono"},
+    "typography": {"display_weight": 560, "body_weight": 400, "letter_spacing_em": -0.01, "case": "lower", "italic_descriptors": false},
+    "motion": {"register": "cut", "scene_in_s": 0.05, "scene_out_s": 0.05, "stagger_s": 0.10},
+    "layout": {"padding_pct": 7, "rule_thickness_px": 1, "stage_radius_px": 6},
+    "texture": {"grain": 0.04, "vignette": 0.10, "halation": 0.05, "lighting_arc": 0.12},
+    "background": {"style": "grid", "intensity": 0.4},
+    "transition_style": "dip",
+    "foley_style": "click_minimal",
+    "audio_palette": "electronic",
+    "held_subject": "oh-my-pi",
+    "accent_contrast_min": 3.5
+  },
+  "readability": {
+    "canvas_value": "light",
+    "ink_floor": "primary ink #191926 luma 26 (<= 60 light-canvas floor)",
+    "accent_note": "deep magenta #920864 (contrast 7.6 on paper) is the text-scale accent; bright magenta #f84fcc is graphic-only (dots, glows, active markers).",
+    "per_scene_light": {
+      "1_title": "large near-black Fraunces headline on paper (dark hero coverage)",
+      "2_sc_rename": "solid dark editor window + big display code lines (dark coverage)",
+      "3_mono_hashline": "near-black mono lines, deep-magenta accent line",
+      "4_split_debug": "polarity contrast, magenta value on the omp side",
+      "5_sc_loopback": "money shot, dark editor window, magenta first line, scale punch",
+      "6_number_receipt": "near-black 17k numeral (bn uses --ink on light)",
+      "7_credit_close": "near-black wordmark + deep-magenta handle"
+    },
+    "brightness_plan": "light canvas passes the frame-brightness gate by construction; the two screen_capture editor windows and the split provide the dark value beats.",
+    "inverted_beat": "the split scene flips polarity between its two panes"
+  }
+}

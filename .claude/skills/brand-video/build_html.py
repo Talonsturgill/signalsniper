@@ -346,6 +346,39 @@ def build_css(spec):
     # light canvas the core ships as a solid --ink disc (the decision point the network
     # converges on) so the scene carries genuine dark coverage. Dark canvas keeps teal.
     mp_core_fill = "var(--ink)" if _pane_light else "var(--accent-ink)"
+    # screen_capture window polarity (v11, light-canvas fix 2026-07-13). The default
+    # translucent-dark window turns a bright paper video into dark islands, which the
+    # wow no-flash check reads as an opening brightness swing (the bright title open
+    # sits far above a dark screen_capture midpoint frame). On a light canvas render
+    # the editor as a light card with a SOLID dark titlebar: the frame stays uniformly
+    # bright (no-flash + brightness both pass) AND the dark chrome bar plus the big dark
+    # code lines carry genuine dark coverage for the readability gate. Dark canvas is
+    # unchanged (native translucent window on the dark field).
+    sc_win_bg = "rgba(0,0,0,0.30)" if not _pane_light else "#ffffff"
+    sc_win_shadow = "0 3cqw 9cqw rgba(0,0,0,0.45)" if not _pane_light else "0 2.4cqw 7cqw rgba(20,20,32,0.20)"
+    sc_chrome_bg = "rgba(255,255,255,0.05)" if not _pane_light else "var(--ink)"
+    sc_chrome_border = "var(--hairline)" if not _pane_light else "var(--ink)"
+    sc_addr_bg = "rgba(0,0,0,0.32)" if not _pane_light else "rgba(255,255,255,0.14)"
+    sc_addr_color = "var(--muted-content)" if not _pane_light else "rgba(245,240,234,0.88)"
+    sc_dot_bg = "var(--ink-muted)" if not _pane_light else "rgba(245,240,234,0.60)"
+    # mono_block on a light canvas (2026-07-13): the dark code lines must own >=0.7%
+    # of the frame in near-black pixels or the readability 0.7-percentile reads the
+    # bright paper behind them (the recurring coverage failure). This scene sits at the
+    # runtime midpoint on a bright run so it can't become a dark panel (that would trip
+    # the no-flash swing), so instead the glyphs carry heavier weight and a touch more
+    # size -- dark ink coverage without darkening the frame. Dark canvas is unchanged.
+    mb_line_size = "4.2cqw" if not _pane_light else "4.4cqw"
+    mb_line_weight = "500" if not _pane_light else "700"
+    # On light canvas the accent line renders as a solid dark "highlighted code" chip
+    # (dark fill, paper text) so the scene carries a real dark element (~2% of frame)
+    # for the readability 0.7-percentile, while the scene mean stays bright (one dark
+    # pill on paper -> no-flash midpoint safe). Dark canvas keeps the accent-ink text.
+    mb_accent_color = "var(--accent-ink)" if not _pane_light else "var(--canvas)"
+    mb_accent_bg = "transparent" if not _pane_light else "var(--ink)"
+    mb_accent_pad = "0" if not _pane_light else "1.1cqw 2.6cqw"
+    mb_accent_radius = "0" if not _pane_light else "1.4cqw"
+    mb_accent_display = "block" if not _pane_light else "inline-block"
+    mb_accent_align = "auto" if not _pane_light else "center"
     accent_ink = _text_safe_accent(accent, canvas)
     muted_content = _content_muted(ink_muted, ink, canvas)
 
@@ -878,15 +911,15 @@ body {{
 /* ---- mono_block ---- */
 .mb-line {{
   font-family: var(--mono);
-  font-weight: 500;
-  font-variation-settings: "wght" 500;
-  font-size: 4.2cqw;
+  font-weight: {mb_line_weight};
+  font-variation-settings: "wght" {mb_line_weight};
+  font-size: {mb_line_size};
   line-height: 1.45;
   color: var(--ink);
   letter-spacing: 0;
   text-transform: none;
 }}
-.mb-line.accent {{ color: var(--accent-ink); font-weight: 700; font-variation-settings: "wght" 700; }}
+.mb-line.accent {{ color: {mb_accent_color}; font-weight: 700; font-variation-settings: "wght" 700; background: {mb_accent_bg}; padding: {mb_accent_pad}; border-radius: {mb_accent_radius}; display: {mb_accent_display}; align-self: {mb_accent_align}; }}
 
 /* ---- quote ---- */
 .q-quote {{
@@ -1070,10 +1103,10 @@ body {{
 
 /* ---- screen_capture (watch-it-work app window, v11 #2) ---- */
 .sc-title {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 3cqw; opacity: 0; }}
-.sc-window {{ width: 78cqw; border-radius: 2.2cqw; overflow: hidden; background: rgba(0,0,0,0.30); border: 0.14cqw solid var(--hairline); box-shadow: 0 3cqw 9cqw rgba(0,0,0,0.45); opacity: 0; }}
-.sc-chrome {{ display: flex; align-items: center; gap: 1cqw; padding: 1.4cqw 1.8cqw; background: rgba(255,255,255,0.05); border-bottom: 0.1cqw solid var(--hairline); }}
-.sc-dot {{ width: 1.2cqw; height: 1.2cqw; border-radius: 50%; background: var(--ink-muted); opacity: 0.5; }}
-.sc-address {{ flex: 1; margin-left: 1.5cqw; font-family: var(--mono); font-size: 1.9cqw; color: var(--muted-content); background: rgba(0,0,0,0.32); border-radius: 1cqw; padding: 0.7cqw 1.4cqw; white-space: nowrap; overflow: hidden; }}
+.sc-window {{ width: 78cqw; border-radius: 2.2cqw; overflow: hidden; background: {sc_win_bg}; border: 0.14cqw solid var(--hairline); box-shadow: {sc_win_shadow}; opacity: 0; }}
+.sc-chrome {{ display: flex; align-items: center; gap: 1cqw; padding: 1.4cqw 1.8cqw; background: {sc_chrome_bg}; border-bottom: 0.1cqw solid {sc_chrome_border}; }}
+.sc-dot {{ width: 1.2cqw; height: 1.2cqw; border-radius: 50%; background: {sc_dot_bg}; opacity: 0.5; }}
+.sc-address {{ flex: 1; margin-left: 1.5cqw; font-family: var(--mono); font-size: 1.9cqw; color: {sc_addr_color}; background: {sc_addr_bg}; border-radius: 1cqw; padding: 0.7cqw 1.4cqw; white-space: nowrap; overflow: hidden; }}
 .sc-body {{ padding: 4cqw 4.5cqw 5cqw; min-height: 34cqw; display: flex; flex-direction: column; justify-content: center; gap: 2.2cqw; }}
 .sc-line {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 4.6cqw; line-height: 1.05; color: var(--ink); opacity: 0; }}
 .sc-line:first-child {{ color: var(--accent-ink); }}
