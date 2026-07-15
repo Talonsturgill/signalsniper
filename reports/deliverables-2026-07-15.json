@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-15",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "creator_handle": "@_can1357",
+  "caption": "@_can1357 oh-my-pi is past 17k stars. It's a terminal coding agent that anchors every edit to the code's content hash, not a line number, so an edit lands on exactly the right spot or it's rejected. No silent corruption when the file moves underneath it.",
+  "capability_fact": "anchors every edit to the code's content hash, not a line number, so an edit lands on exactly the right spot or it's rejected",
+  "differentiator": "oh-my-pi anchors every edit to the content hash of the surrounding code, not to a line number, so the edit lands on exactly the right place or it is rejected.",
+  "first_reply": "oh-my-pi is open source and MIT licensed. https://github.com/can1357/oh-my-pi",
+  "why_this_one": "can1357 reverse engineers VMProtect and Windows kernels for fun. That instinct, distrust positions and anchor to content, is why his agent hashes the code around an edit before it changes a thing. Correctness folks will love this.",
+  "track_license": "CC BY 4.0",
+  "attribution_reply": "Music. Phoenix by Scott Buckley (scottbuckley.com.au), licensed under CC BY 4.0.",
+  "linkedin_caption": "Most AI coding agents edit your files by line number. Then the file shifts and the edit lands in the wrong place. oh-my-pi does it differently. It anchors every edit to a hash of the surrounding code. So the edit finds the exact spot or it gets rejected. No silent corruption. It also drives your real language server and debugger instead of guessing with text. Can Boluk built it and it is past 17k stars. Cleanest take on agent code edits I have seen in a while.",
+  "linkedin_hashtags": "#AI #DevTools #OpenSource #CodingAgents",
+  "linkedin_tag": {"name": "Can Boluk", "url": "https://nl.linkedin.com/in/canboluk"}
+}

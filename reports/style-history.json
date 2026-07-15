@@ -1,12 +1,5 @@
 [
  {
-  "date": "2026-06-11",
-  "brand_slug": null,
-  "aesthetic_slug": "gallery",
-  "framework": "SCHEMATIC",
-  "project_url": "https://github.com/kenn-io/agentsview"
- },
- {
   "date": "2026-06-12",
   "brand_slug": "cursor",
   "aesthetic_slug": "cursor",
@@ -208,5 +201,12 @@
   "aesthetic_slug": "mesh-blue",
   "framework": "DISPATCH",
   "project_url": "https://github.com/Mesh-LLM/mesh-llm"
+ },
+ {
+  "date": "2026-07-15",
+  "brand_slug": "omp-native-assisted",
+  "aesthetic_slug": "omp-paper-rose",
+  "framework": "MANIFESTO",
+  "project_url": "https://github.com/can1357/oh-my-pi"
  }
 ]

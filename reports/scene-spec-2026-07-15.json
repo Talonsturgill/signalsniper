@@ -1,0 +1,165 @@
+{
+  "date": "2026-07-15",
+  "project": "oh-my-pi",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "design": {
+    "framework": "MANIFESTO",
+    "brand_slug": "omp-native-assisted",
+    "aesthetic_slug": "omp-paper-rose",
+    "tokens": {
+      "canvas": "#edebe7",
+      "ink": "#191926",
+      "accent": "#920864",
+      "ink_muted": "#4c4c58",
+      "hairline": "#cbc7c1"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": 0.0,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.06,
+      "stagger_s": 0.1
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.1,
+      "halation": 0.05,
+      "lighting_arc": 0.14
+    },
+    "background": {
+      "style": "none",
+      "intensity": 0.0
+    },
+    "transition_style": "dip",
+    "foley_style": "click_minimal",
+    "audio_palette": "ambient",
+    "held_subject": "oh my pi",
+    "accent_contrast_min": 4.0,
+    "beat": {
+      "bpm": 143.6,
+      "offset_s": 50.0,
+      "aligned": true,
+      "median_drift_ms": 50.7
+    }
+  },
+  "scenes": [
+    {
+      "template": "title",
+      "eyebrow": "oh my pi",
+      "headline": "edits that land",
+      "camera": "tilt_reveal",
+      "duration_s": 3.58,
+      "illustrates": "The eyebrow names the project on frame 0 and the headline claims the win up front, so the muted poster already carries name and thesis."
+    },
+    {
+      "template": "two_line",
+      "lines": [
+        "line numbers lie.",
+        "content doesn't."
+      ],
+      "accent_idx": 1,
+      "camera": "push_in",
+      "duration_s": 3.39,
+      "illustrates": "Two clipped beats state the stance; the accented second line is the whole argument in three words, dark ink slamming onto paper."
+    },
+    {
+      "template": "three_line",
+      "lines": [
+        "it edits by line number",
+        "the file shifts",
+        "applied to the wrong place"
+      ],
+      "accent_idx": 2,
+      "camera": "parallax_drift",
+      "sheen": true,
+      "duration_s": 3.85,
+      "illustrates": "The flaw stated in three bold beats: an edit keyed to a line number drifts when the file shifts and lands in the wrong place. The accented last line is the failure, big dark type carrying the frame."
+    },
+    {
+      "template": "object",
+      "glyph": "lock",
+      "label": "the exact spot",
+      "eyebrow": "matched by content, then locked",
+      "camera": "orbit",
+      "duration_s": 3.83,
+      "illustrates": "A target glyph settling onto its center enacts the anchor: oh-my-pi matches an edit to the code's content and locks onto the exact spot, orbiting to show it holds in depth."
+    },
+    {
+      "template": "split",
+      "left": {
+        "label": "line number",
+        "value": "wrong place"
+      },
+      "right": {
+        "label": "content hash",
+        "value": "exact content"
+      },
+      "camera": "rack_focus",
+      "emphasize": true,
+      "duration_s": 4.37,
+      "illustrates": "The money shot as a duel: the file moves and the line-number edit corrupts (wrong place), while the content-hash edit re-finds and lands (exact content). Rack focus resolves onto the clean side. The picture IS the argument."
+    },
+    {
+      "template": "panes",
+      "eyebrow": "ide, wired in",
+      "panes": [
+        {
+          "name": "rename",
+          "lines": [
+            "language server"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "breakpoint",
+          "lines": [
+            "dap stepping"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        },
+        {
+          "name": "python kernel",
+          "lines": [
+            "persistent"
+          ],
+          "state": "working",
+          "flip_to": "done"
+        }
+      ],
+      "camera": "dolly_up",
+      "sheen": true,
+      "duration_s": 4.04,
+      "illustrates": "Three diegetic panels flip to done: a real rename through the language server, a real breakpoint through the debugger, its own persistent Python kernel. The same anchor-to-truth rigor, wired through the whole IDE."
+    },
+    {
+      "template": "close",
+      "primary": "it knows the spot.",
+      "accent": "every time.",
+      "subtitle": "oh my pi by @_can1357",
+      "camera": "pull_back",
+      "emphasize": true,
+      "sheen": true,
+      "duration_s": 4.2,
+      "illustrates": "The stance reframed as a builder credit, rose accent on the promise, pulling back to rhyme with the opening title so the autoloop replays clean."
+    }
+  ]
+}

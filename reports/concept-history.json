@@ -310,5 +310,31 @@
       "kinetic_type",
       "kinetic_type"
     ]
+  },
+  {
+    "date": "2026-07-15",
+    "arc": "head_to_head",
+    "device": "split_compare",
+    "hero": "side_by_side_flip",
+    "open": "cold_open_result",
+    "close": "punchline",
+    "scene_seq": [
+      "COLD_RESULT",
+      "STANCE",
+      "THE_FLAW",
+      "THE_ANCHOR",
+      "THE_DUEL",
+      "IDE_WIRED",
+      "PUNCHLINE"
+    ],
+    "device_seq": [
+      "kinetic_type",
+      "kinetic_type",
+      "kinetic_type",
+      "object_metaphor",
+      "split_compare",
+      "diegetic_ui",
+      "kinetic_type"
+    ]
   }
 ]

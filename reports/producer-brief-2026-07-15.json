@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-15",
+  "project": "oh-my-pi",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "audience": "AI engineers and systems/low-level builders who run coding agents and have watched one silently corrupt a file",
+  "single_takeaway": "oh-my-pi anchors every edit to the code's content hash, not a line number, so the edit lands exactly right or not at all.",
+  "viewer_action": "star the repo / quote the video",
+  "desired_feeling": "the quiet relief of correctness - the reverse-engineer's instinct (anchor to content, distrust positions) finally applied to AI code editing",
+  "tone_adjectives": ["precise", "confident", "unshowy"],
+  "references": ["git content-addressed objects", "a colorist's before/after wipe as argument", "a key cut to one lock"],
+  "mandatories": "oh-my-pi native palette (light theme: warm paper canvas, deep-rose accent, dark terminal panels), CC BY music attribution, @_can1357 tagged, pi-mono origin credited in PR notes",
+  "success_criteria": "Can Bolук quote-posts it; the story reads fully muted; a stranger understands content-vs-line editing in one glance",
+  "platform": "x"
+}
