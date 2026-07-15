@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-15",
+  "brand_slug": "omp-native-assisted",
+  "preset_slug": null,
+  "aesthetic_slug": "omp-paper-rose",
+  "framework": "MANIFESTO",
+  "rationale_one_line": "oh-my-pi's own light theme (warm paper, deep-rose accent, dark terminal panels) rendered as a head-to-head duel that shows content-hash editing beating line-number editing.",
+  "writing_tone_notes": "Precise, confident, unshowy. Short declaratives. A reverse-engineer's voice: anchor to content, distrust positions. Lowercase brand.",
+  "do_rules": [
+    "lead the caption with the star metric, then the capability fact (hash-anchored edits)",
+    "let the split duel carry the argument; words only name it",
+    "keep every code panel dark (#100e18) on the warm paper canvas so light-canvas readability has solid coverage",
+    "one differentiator, named on screen: edits anchored to content, not line numbers"
+  ],
+  "dont_rules": [
+    "no terminal-tour / node-diagram-of-32-tools default (killed in the concept)",
+    "no fabricated numerals on screen (only the star count is double-sourced)",
+    "no per-cut swipe; foley click only on the lock",
+    "no dark wash - the light canvas answers the standing brightness complaint"
+  ]
+}

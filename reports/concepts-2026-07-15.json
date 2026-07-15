@@ -1,0 +1,43 @@
+{
+  "date": "2026-07-15",
+  "project": "oh-my-pi",
+  "differentiator": "oh-my-pi anchors every edit to the content hash of the surrounding code, not to a line number, so the edit lands on exactly the right place or it is rejected.",
+  "color_script": {
+    "dominant": "warm off-white paper #edebe7 (the day)",
+    "secondary": "oh-my-pi's own dark terminal surface #100e18 as inset code panels (the night inside the day) - these are the SOLID dark elements the light-canvas readability gate needs",
+    "accent": "deep rose #920864 for text-scale hash/anchor marks; bright rose #dd389d for glows on dark panels; success-green #5fd37f (lands) and a danger-red (#e5484d) at the duel; cyan #00dbe4 as the cool IDE accent",
+    "temperature_beats": ["warm paper open", "cool dark/cyan IDE panels midway", "warm rose lock at the money shot", "warm paper close"],
+    "brightness": "light canvas => bright by construction (crawl4ai's light run hit mean luma 217); >=30% bright is trivial; every scene carries a solid dark panel or bold dark headline so readability has real coverage"
+  },
+  "concepts": [
+    {
+      "name": "The Duel (CHOSEN)",
+      "world": "An editor's desk rendered as warm technical paper; the code itself lives in dark terminal panels inset on the page.",
+      "shows": "A file shifts underneath two pending edits. The line-number edit lands where line 47 USED to be and corrupts the file (red). The content-hash edit re-finds its exact target by fingerprint and locks in clean (rose). Side-by-side, the pictures ARE the argument.",
+      "money_shot": "the side-by-side flip: left corrupts, right locks, at the same instant the file moves",
+      "creator_repost": "Can is a reverse engineer - anchor-to-content, distrust-positions is his native instinct. Seeing his editing idea dramatized correctly is flattering to the exact audience he respects.",
+      "stranger_stop": "every AI coding tool paste-edits and sometimes wrecks a file; the duel shows a fix you can feel in one glance",
+      "argument": "head_to_head is the clearest dual-coding available: the viewer SEES why content-anchoring beats line-anchoring without a word of explanation. The split is the money device; the anchor motif (concept B) folds in as the setup beat; the locksmith idea (concept C) is a reference, not a scene."
+    },
+    {
+      "name": "The Anchor",
+      "world": "one sustained metaphor - a rose content-hash anchor glyph that clamps a code block",
+      "shows": "the anchor grips the code; the file changes; the anchor either holds (content still matches) or releases cleanly (content gone) - never corrupts",
+      "money_shot": "the anchor clamping with a precise click",
+      "why_not": "beautiful but single-threaded - it shows content-anchoring works but never contrasts it with the line-number failure, so the WHY is weaker than the duel"
+    },
+    {
+      "name": "The Locksmith",
+      "world": "the hash as a key cut to exactly one lock",
+      "shows": "the key turns only when the code (the lock) matches the hash; wrong code, key won't turn",
+      "money_shot": "the key turning / refusing",
+      "why_not": "cute but one metaphor-step too abstract for a systems audience; git's content-addressing is the truer reference and it stays a touchstone, not the frame"
+    }
+  ],
+  "chosen": "The Duel",
+  "wow_bets": [
+    "the side_by_side_flip money shot: file shifts, left edit corrupts red, right edit re-locks rose, on the same beat",
+    "a precise click (foley click_minimal) landing ONLY on the lock - the mechanism you can hear",
+    "oh-my-pi's real dark terminal panels sitting inside a bright editorial page - a look none of the last 12 videos have"
+  ]
+}

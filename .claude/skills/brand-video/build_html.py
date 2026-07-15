@@ -346,6 +346,15 @@ def build_css(spec):
     # light canvas the core ships as a solid --ink disc (the decision point the network
     # converges on) so the scene carries genuine dark coverage. Dark canvas keeps teal.
     mp_core_fill = "var(--ink)" if _pane_light else "var(--accent-ink)"
+    # Light canvas: the object glyph is a thin accent-stroked line-icon (stroke 2.6)
+    # that covers <0.7% of pixels, so the readability gate reads the cream behind it
+    # (2026-07-15: object/lock scene p0.7=95 > 70) -- the same small-bright-element class
+    # the panes/big_number/metaphor fixes already close. On a light canvas draw the glyph
+    # in deep-rose --accent-ink with a heavy stroke so it is a SOLID dark object with real
+    # coverage (and keeps the brand rose). Dark canvas keeps the thin accent line-icon.
+    ob_stroke = "var(--accent-ink)" if _pane_light else "var(--accent)"
+    ob_stroke_w = "5.0" if _pane_light else "2.6"
+    ob_fill = "var(--ink)" if _pane_light else "none"
     accent_ink = _text_safe_accent(accent, canvas)
     muted_content = _content_muted(ink_muted, ink, canvas)
 
@@ -1099,7 +1108,7 @@ body {{
 /* ---- object (object_metaphor: a procedural line-icon, v11 #2) ---- */
 .ob-eyebrow {{ font-family: var(--mono); font-size: 1.7cqw; letter-spacing: 0.30em; text-transform: uppercase; color: var(--muted-content); margin-bottom: 2.5cqw; opacity: 0; }}
 .ob-svg {{ width: 42cqw; height: 42cqw; overflow: visible; transform-origin: center center; }}
-.ob-svg * {{ fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }}
+.ob-svg * {{ fill: {ob_fill}; stroke: {ob_stroke}; stroke-width: {ob_stroke_w}; stroke-linecap: round; stroke-linejoin: round; }}
 .ob-label {{ font-family: var(--display); font-weight: var(--display-weight); font-variation-settings: "wght" var(--display-weight); font-size: 6.4cqw; color: var(--ink); margin-top: 3cqw; opacity: 0; }}
 
 /* ---- montage (code-native tile mosaic, v11 #2) ---- */

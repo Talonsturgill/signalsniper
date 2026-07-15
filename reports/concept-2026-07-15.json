@@ -1,0 +1,16 @@
+{
+  "date": "2026-07-15",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "singular_truth": "oh-my-pi addresses every edit by the content hash of the surrounding code, not by a line number. It edits by what the code IS, not where it sits.",
+  "money_thing": "an edit re-finding its exact target by content-hash after the file has shifted underneath, while a line-number edit silently lands in the wrong place and corrupts the file.",
+  "logline": "Most coding agents paste edits at a line number and pray they land; oh-my-pi anchors every edit to the code's own content hash, so it lands on exactly the right place or it is rejected.",
+  "rejected_default": "The obvious treatment for a terminal coding agent is a terminal typing `omp`, a node-diagram touring its 32 tools, a flash, and wordmark bookends. Rejected: that is a feature TOUR that shows WHAT it has and buries the ONE singular idea (content-hash editing) in a tool cloud. It never shows WHY the edit can't miss. The singular truth is a mechanism, so the video must dramatize the mechanism, not inventory the toolbox.",
+  "arc": "head_to_head",
+  "device": "split_compare",
+  "hero": "side_by_side_flip",
+  "open": "cold_open_result",
+  "close": "punchline",
+  "scene_seq": ["COLD_RESULT", "STANCE", "THE_FLAW", "THE_ANCHOR", "THE_DUEL", "IDE_WIRED", "PUNCHLINE"],
+  "device_seq": ["kinetic_type", "kinetic_type", "kinetic_type", "object_metaphor", "split_compare", "diegetic_ui", "kinetic_type"],
+  "references": ["git's content-addressed objects (a blob keyed by its hash, not its path)", "a key cut to fit one specific lock", "a colorist's before/after wipe used as an argument, not a transition"]
+}

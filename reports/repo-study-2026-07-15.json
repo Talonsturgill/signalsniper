@@ -1,0 +1,35 @@
+{
+  "date": "2026-07-15",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "components": [
+    "hashline: content-hash anchored edits",
+    "32 built-in tools (read, write, edit, ast_edit, search, bash, eval, lsp, debug, task, browser, web_search)",
+    "14 LSP operations (diagnostics, navigation, symbols, renames, code actions)",
+    "28 DAP operations (breakpoints, stepping, threads, stack, variables)",
+    "2 persistent kernels (Python and Bun) with tool re-entry",
+    "first-class subagents with typed JSON results and IRC coordination",
+    "40+ LLM providers with per-role routing (default, smol, slow, plan)",
+    "~55,000 lines of Rust core"
+  ],
+  "commands": [
+    {"text": "curl -fsSL https://omp.sh/install | sh", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"},
+    {"text": "brew install can1357/tap/omp", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"},
+    {"text": "bun install -g @oh-my-pi/pi-coding-agent", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"},
+    {"text": "omp", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"},
+    {"text": "omp -p", "source": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"}
+  ],
+  "outputs": [],
+  "architecture_facts": [
+    "Every edit is anchored to a content hash of the surrounding code, not to a line number",
+    "An edit lands on the exact content it targets, or it is rejected rather than applied to the wrong place",
+    "Two parallel agents editing one file collide immediately by hash instead of silently corrupting it",
+    "Symbol operations like rename and find-callers go through the language server, not the model's text substitution",
+    "A built-in debugger drives real breakpoints and stepping through DAP",
+    "Persistent Python and Bun kernels can call back into the agent's own tools over a loopback bridge",
+    "It routes across 40+ providers with per-role routing for default, smol, slow, and plan roles",
+    "Native bindings for ripgrep and glob avoid fork and exec overhead"
+  ],
+  "surprising_detail": "Every edit is anchored to a content hash of the code around it, so the agent edits by what the code is rather than where it sits. A stale or conflicting edit is caught and rejected instead of quietly corrupting the file.",
+  "prompt_char": "$",
+  "notes": "Fork of pi-mono by Mario Zechner (https://github.com/badlogic/pi-mono), extended into a batteries-included terminal coding agent. Tagline: 'A coding agent with the IDE wired in.' Repo README: https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"
+}

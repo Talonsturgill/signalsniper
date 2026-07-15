@@ -1,0 +1,82 @@
+{
+  "date": "2026-07-15",
+  "project": "oh-my-pi",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "design": {
+    "framework": "MANIFESTO",
+    "brand_slug": "omp-native-assisted",
+    "aesthetic_slug": "omp-paper-rose",
+    "tokens": {
+      "canvas": "#edebe7",
+      "ink": "#191926",
+      "accent": "#920864",
+      "ink_muted": "#4c4c58",
+      "hairline": "#cbc7c1"
+    },
+    "token_provenance": {
+      "canvas": "omp.sh stylesheet --bg light theme oklch(94% .006 80)",
+      "ink": "omp.sh --fg light theme oklch(22% .025 285)",
+      "accent": "omp.sh --accent light theme oklch(44% .18 348) (deep rose, the brand primary)",
+      "ink_muted": "omp.sh --fg-dim oklch(42% .02 285)",
+      "hairline": "warm light rule derived to read on the cream canvas",
+      "method": "brand_extract.py returned insufficient signal (SPA); tokens hand-mined from omp.sh/assets/index-Cxvog3cH.css custom properties and converted oklch->sRGB. Assisted-native path per routine Step 6.3."
+    },
+    "secondary_palette": {
+      "dark_panel": "#100e18",
+      "neon_magenta": "#f84fcc",
+      "neon_cyan": "#00dbe4",
+      "iris": "#9362f4",
+      "success_green": "#5fd37f",
+      "warn": "#ecbe24",
+      "danger_red": "#e5484d",
+      "note": "oh-my-pi's own dark-theme surface + neon accents, used for inset code/terminal panels and the duel win/corrupt states on the light frame"
+    },
+    "fonts": {
+      "display": "JetBrainsMono",
+      "body": "Inter",
+      "italic": "Inter",
+      "mono": "JetBrainsMono"
+    },
+    "typography": {
+      "display_weight": 700,
+      "body_weight": 400,
+      "letter_spacing_em": 0.0,
+      "case": "lower",
+      "italic_descriptors": false
+    },
+    "motion": {
+      "register": "cut",
+      "scene_in_s": 0.06,
+      "scene_out_s": 0.06,
+      "stagger_s": 0.10
+    },
+    "layout": {
+      "padding_pct": 8,
+      "rule_thickness_px": 1,
+      "stage_radius_px": 6
+    },
+    "texture": {
+      "grain": 0.04,
+      "vignette": 0.10,
+      "halation": 0.05,
+      "lighting_arc": 0.14
+    },
+    "background": {
+      "style": "none",
+      "intensity": 0.0
+    },
+    "transition_style": "dip",
+    "foley_style": "click_minimal",
+    "audio_palette": "ambient",
+    "held_subject": "oh my pi",
+    "accent_contrast_min": 4.0,
+    "readability": {
+      "canvas_polarity": "light (canvas luma ~235; build_html light path auto-engages: dark ink, accent-ink deepened toward ~60, dark code panels)",
+      "ink_floor": "primary ink #191926 luma ~26 (<=60 light floor); bold display carries p0.7 with -webkit-text-stroke",
+      "accent_as_text": "deep rose #920864 (luma ~44) reads dark-on-cream at ~8:1; used for hash/anchor marks and one accent word per beat",
+      "solid_dark_coverage": "every scene carries a dark code panel or a bold dark headline so the light-canvas readability gate has real dark coverage (crawl4ai lesson: never thin dark text on cream)",
+      "inverted_beat": "the dark code panels ARE the inverted (dark-field) beats on a light canvas; the split money shot flips polarity per pane",
+      "brightness_plan": "light canvas => bright by construction; >=30% bright trivially satisfied; >=2 temperature beats (warm paper / cool cyan IDE panels / warm rose lock)"
+    }
+  }
+}

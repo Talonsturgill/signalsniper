@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-15",
+  "project_url": "https://github.com/can1357/oh-my-pi",
+  "claims": [
+    {
+      "claim": "past 17k stars (17.8k)",
+      "sources": [
+        "https://github.com/can1357/oh-my-pi",
+        "https://img.shields.io/github/stars/can1357/oh-my-pi"
+      ],
+      "verified": true,
+      "as_of": "2026-07-15",
+      "note": "GitHub repo page reads 17.8k; live shields.io badge reads 18k. Both clearly exceed 17k. Ship as 'past 17k stars' to stay true to both."
+    },
+    {
+      "claim": "1.6k forks",
+      "sources": [
+        "https://github.com/can1357/oh-my-pi",
+        "https://img.shields.io/github/forks/can1357/oh-my-pi"
+      ],
+      "verified": true,
+      "as_of": "2026-07-15"
+    },
+    {
+      "claim": "MIT licensed",
+      "sources": [
+        "https://github.com/can1357/oh-my-pi",
+        "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-15"
+    },
+    {
+      "claim": "fork of pi-mono by Mario Zechner, extended into a terminal coding agent",
+      "sources": [
+        "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md",
+        "https://github.com/badlogic/pi-mono"
+      ],
+      "verified": true,
+      "as_of": "2026-07-15",
+      "note": "Credit line, not a shipped numeral. Honor pi-mono origin in the dossier/PR notes; the tribute is to can1357's oh-my-pi build."
+    },
+    {
+      "claim": "written in TypeScript with a Rust core; language TypeScript primary",
+      "sources": [
+        "https://github.com/can1357/oh-my-pi",
+        "https://raw.githubusercontent.com/can1357/oh-my-pi/main/README.md"
+      ],
+      "verified": true,
+      "as_of": "2026-07-15"
+    }
+  ],
+  "not_shipped_single_source": {
+    "note": "README-only self-reported counts, used for repo-study grounding only, NEVER shipped as on-screen or caption numerals (T3MP3ST lesson).",
+    "items": ["32 built-in tools", "14 LSP operations", "28 DAP operations", "40+ LLM providers", "~55,000 lines of Rust core", "61% fewer tokens on Grok 4 Fast (hashline)"]
+  }
+}
