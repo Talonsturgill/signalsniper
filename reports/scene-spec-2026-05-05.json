@@ -1,0 +1,60 @@
+{
+  "date": "2026-05-05",
+  "topic": "Hegelion dialectical loop for agents",
+  "creator": "Hunter Bown (@huntermbown)",
+  "project_url": "https://github.com/Hmbown/Hegelion",
+  "theme": {
+    "background": "#F2EEE3",
+    "ink": "#0F1A2E",
+    "accent": "#3A56D4",
+    "muted": "#808488",
+    "rule": "#DBD9D1",
+    "serif": "'Bitstream Charter', 'DejaVu Serif', Georgia, serif",
+    "sans": "'DejaVu Sans', sans-serif"
+  },
+  "scenes": {
+    "title": {
+      "headline": "Hegelion",
+      "eyebrow": "dialectical reasoning for agents"
+    },
+    "three_things": {
+      "eyebrow": "THE LOOP",
+      "items": [
+        {"name": "Thesis", "descriptor": "first claim"},
+        {"name": "Antithesis", "descriptor": "argue against it"},
+        {"name": "Synthesis", "descriptor": "what survives"}
+      ]
+    },
+    "problem": {
+      "line_a": "Single-pass agents",
+      "line_b": "trust themselves.",
+      "accent_line": "b"
+    },
+    "specific_case": {
+      "line_a": "The model grades",
+      "line_b": "its own homework",
+      "line_c": "and lies.",
+      "accent_line": "b"
+    },
+    "fix": {
+      "primary": "Make it argue.",
+      "secondary": "Across separate calls."
+    },
+    "mechanism": {
+      "line_a": "Thesis states the case.",
+      "line_b": "Antithesis attacks it.",
+      "line_c": "Synthesis takes survivors.",
+      "accent_line": "c"
+    },
+    "consequence": {
+      "line_a": "An independent coach",
+      "line_b": "refuses to trust",
+      "line_c": "the player's self-grade."
+    },
+    "close": {
+      "primary": "Make it argue.",
+      "accent": "Then synthesize.",
+      "subtitle": "the part most agent builders skip."
+    }
+  }
+}
